@@ -9,12 +9,11 @@
  */
 
 // Import from RBI-Kernel types (main export)
-import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis as RBIEnhancedAnalysis, type ContentMetadata } from 'rbi-kernel';
+import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis, type ContentMetadata } from 'rbi-kernel';
 import type { ResonanceVector, FieldDynamics } from 'rbi-kernel';
 
 // Re-export types for backward compatibility
-export type { ResonanceVector, FieldDynamics };
-export type { EnhancedResonanceAnalysis };
+export type { ResonanceVector, FieldDynamics, EnhancedResonanceAnalysis };
 
 /**
  * Enhanced Resonance Engine - Wrapper class
