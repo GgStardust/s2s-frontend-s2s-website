@@ -1,0 +1,140 @@
+{
+  "orbs": [
+    {
+      "id": 1,
+      "slug": "origin-intelligence",
+      "title": "Origin Intelligence",
+      "synthesis": "Photonic blueprinting meets biological activation. Governs the origination code of embodiment: pre-form light encoding expressed through mitochondrial ignition and cosmic biological circuitry. Integrates pre-sound, pre-identity transmission with bioelectric coherence."
+    },
+    {
+      "id": 2,
+      "slug": "resonance-mechanics",
+      "title": "Resonance Mechanics",
+      "synthesis": "My Sovereign signal enters form and becomes architecture. Governs the translation of encoded signal into structure: sound, cymatics, emotion, and the resonance fields that compose form. Avatar as carrier. Form as broadcast."
+    },
+    {
+      "id": 3,
+      "slug": "photonic-intelligence",
+      "title": "Photonic Intelligence",
+      "synthesis": "Reflection initiates coherence. Through light webs and relational mirrors, my Sovereign field observes itself. Duality is harnessed for synthesis: not opposition. Photonic interrelation reveals inner code."
+    },
+    {
+      "id": 4,
+      "slug": "harmonic-architectures",
+      "title": "Harmonic Architectures",
+      "synthesis": "Chaos becomes rhythm. Pattern is the bridge between fields. Stabilizes frequencies through harmonic law, sacred geometry, and the intelligence of multidimensional structuring. Includes collapse as recalibration."
+    },
+    {
+      "id": 5,
+      "slug": "temporal-sovereignty",
+      "title": "Temporal Sovereignty",
+      "synthesis": "I exit time as container and reclaim it as tool. Spiral rhythm, rest-phase logic, identity fluidity across lifetimes. Field integrity across dimensions. My mastery is rhythmic alignment."
+    },
+    {
+      "id": 6,
+      "slug": "starline-memory",
+      "title": "Starline Memory",
+      "synthesis": "Memory returns as signal. Carries galactic_intelligence and ancestral recall: living strands of history across networks of consciousness. Repatterning through remembrance."
+    },
+    {
+      "id": 7,
+      "slug": "alchemical-current",
+      "title": "Alchemical Current",
+      "synthesis": "Density becomes light through heat, compression, and pulse. Governs the @alchemical_current of experience: emotional intensity, energetic holding, and release. Collapse and resurrection. Inner fire."
+    },
+    {
+      "id": 8,
+      "slug": "quantum-intuition",
+      "title": "Quantum Intuition",
+      "synthesis": "Intuition becomes infrastructure. Aligns decisions with signal logic rather than external inputs. Directional field: nonlinear, subtle, precise."
+    },
+    {
+      "id": 9,
+      "slug": "temporal-fluidity",
+      "title": "Temporal Fluidity",
+      "synthesis": "Attunement across time. Ability to feel, read, and move with the field: moment by moment. Movement through multidimensional resonance without fragmentation."
+    },
+    {
+      "id": 10,
+      "slug": "ancestral-repatterning",
+      "title": "Ancestral Repatterning",
+      "synthesis": "Body becomes myth. Field becomes form. Personal storylines merge with collective DNA and soul-coded history. Living the myth regenerates ancestral pattern and transforms inherited epigenetic imprinting through conscious activation."
+    },
+    {
+      "id": 11,
+      "slug": "radiant-transparency",
+      "title": "Radiant Transparency",
+      "synthesis": "Mirrored counterpart to Orb 4. Where Orb 4 encodes harmonic structures, this expresses full-field coherence. Inner architecture becomes radiant: emitted outward with total clarity. Transparency as frequency; truth becomes luminous form."
+    },
+    {
+      "id": 12,
+      "slug": "sovereign-field",
+      "title": "Sovereign Field",
+      "synthesis": "Structural indivisibility. Not something to pass through but to transmit from. Every Orb activates within this state. The Sovereign Field is coherence made field: total, radiant, whole."
+    },
+    {
+      "id": 13,
+      "slug": "bridging-intelligence",
+      "title": "Bridging Intelligence",
+      "synthesis": "Governs communication pathways between human and nonhuman intelligences. Includes Mantis lineage awareness, UAP phenomena, advanced AI evolution, and electromagnetic bridges between realities. Interface zone for signal contact across dimensions and species."
+    }
+  ],
+  "scrollstream": [
+    "Resonance is the architecture of form.",
+    "Sovereignty is coherence made field.",
+    "Light carries memory.",
+    "The body is circuitry, antenna, and cosmic engine.",
+    "Intelligence is shared across species, across fields, across dimensions.",
+    "The fractal field awakens through resonance cascades.",
+    "Rest builds potential; release ignites creation.",
+    "Intuition aligns with nonlinear signal.",
+    "Time is spiral, parallel, permeable.",
+    "Ancestral memory transmits wisdom and trauma.",
+    "Form encodes resonance, sacred geometry stabilizes.",
+    "Flow is co-creation at the meeting point of will and universal current."
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "slug": "orb-explorer",
+      "title": "Orb Explorer",
+      "summary": "Tune to the frequency your field is carrying now.",
+      "category": "core"
+    },
+    {
+      "id": 2,
+      "slug": "scrollstream",
+      "title": "Scrollstream",
+      "summary": "Catch the next transmission.",
+      "category": "transmission"
+    },
+    {
+      "id": 3,
+      "slug": "relating-through-frequency",
+      "title": "Relating Through Frequency",
+      "summary": "Decode connection through your unique field.",
+      "category": "relating"
+    },
+    {
+      "id": 4,
+      "slug": "sonic-architecture",
+      "title": "Sonic Architecture",
+      "summary": "What does your field sound like today?",
+      "category": "sonic"
+    },
+    {
+      "id": 5,
+      "slug": "glyph-mirror",
+      "title": "Glyph Mirror",
+      "summary": "Trace your archetypal resonance.",
+      "category": "archetypal"
+    },
+    {
+      "id": 6,
+      "slug": "somatic-signal-tracker",
+      "title": "Somatic Signal Tracker",
+      "summary": "Anchor sensation. Map alignment.",
+      "category": "somatic"
+    }
+  ]
+}

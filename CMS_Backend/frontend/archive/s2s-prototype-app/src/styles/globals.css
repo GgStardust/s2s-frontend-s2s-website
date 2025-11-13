@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes gentle-oscillation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes resonance-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes coherence-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes field-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Custom utility classes */
+.gentle-oscillation {
+  animation: gentle-oscillation 3s ease-in-out infinite;
+}
+
+.resonance-pulse {
+  animation: resonance-pulse 2s ease-in-out infinite;
+}
+
+.coherence-ring {
+  animation: coherence-ring 20s linear infinite;
+}
+
+.field-gradient {
+  animation: field-gradient 8s ease-in-out infinite;
+}
+
+.glass-effect {
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.resonance-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}

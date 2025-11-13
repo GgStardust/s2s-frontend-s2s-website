@@ -1,0 +1,22 @@
+required: [title, type, category, status]
+properties:
+  title: {type: string}
+  type: {type: string, enum: [album, track]}
+  category: {type: string, const: "music"}
+  status: {type: string, enum: [draft, active, archived]}
+  artist: {type: string}
+  release_date: {type: string}
+  key_signature: {type: string}
+  bpm: {type: number}
+  time_signature: {type: string}
+  mood: {type: string}
+  energy_curve: {type: string}           # intro → build → peak → resolve
+  instrumentation: {type: array, items: {type: string}}
+  lyrics: {type: array, items: {type: string}}
+  lyric_fragments: {type: array, items: {type: string}}
+  audio_refs: {type: array, items: {type: string}}
+  production_notes: {type: array, items: {type: string}}
+  ritual_use: {type: array, items: {type: string}}         # meditation, activation, etc.
+  glyphs: {type: array, items: {type: string}}
+  orb_tags: {type: array, items: {type: string}}
+  codex_links: {type: array, items: {type: string}}

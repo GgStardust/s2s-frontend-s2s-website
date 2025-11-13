@@ -1,0 +1,8 @@
+required: [title, source, orb_associations]
+properties:
+  title: {type: string}
+  source: {type: string}                 # track/album/artist/resonance map
+  orb_associations: {type: array, items: {type: string}}
+  field_excerpt: {type: string}          # your uncollapsed longform
+  codex_links: {type: array, items: {type: string}}
+  tags: {type: array, items: {type: string}}

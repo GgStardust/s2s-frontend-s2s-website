@@ -1,0 +1,9 @@
+# Styles Directory
+
+This directory contains:
+- **Golden-ratio grid** - Field-driven layout system
+- **Color variables** - Deep Gold (#C49A6C), Deep Navy (#1C1F3B), Creamy White (#F4F1E8)
+- **Motion constants** - Resonance-based animation parameters
+
+All styles respond to RBI computations and field state, not fixed design rules.
+

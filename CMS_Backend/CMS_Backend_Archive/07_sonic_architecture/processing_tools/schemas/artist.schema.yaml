@@ -1,0 +1,25 @@
+# Required base fields from Codex Tagging Structure + music-specific fields
+required:
+  - title
+  - type
+  - category
+  - status
+  - dashboard_connections
+  - orb_associations
+  - integration_points
+  - tags
+properties:
+  title: {type: string, description: "Artist name"}
+  type: {type: string, const: "artist"}
+  category: {type: string, const: "music"}
+  status: {type: string, enum: [draft, active, archived]}
+  dashboard_connections: {type: array, items: {type: string}}
+  orb_associations: {type: array, items: {type: string}}
+  integration_points: {type: array, items: {type: string}}
+  tags: {type: array, items: {type: string}}
+  sources: {type: array, items: {type: string}}            # interviews, liner notes
+  periods: {type: array, items: {type: string}}            # eras/years
+  mythic_threads: {type: array, items: {type: string}}     # Bowie cosmology, etc.
+  sonic_palette: {type: array, items: {type: string}}      # timbres/instruments
+  field_events: {type: array, items: {type: string}}       # lived moments tied to works
+  codex_links: {type: array, items: {type: string}}        # internal links to Codex pages

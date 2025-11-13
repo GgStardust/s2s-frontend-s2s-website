@@ -1,0 +1,69 @@
+# Unified Hybrid-Orbital Creator Specification
+# Based on GPT environment design
+
+mode: unified_creator
+goal: merge chat + processing into one conscious flow
+
+# Core Concept
+# One field, one creative space where:
+# - Conversation, processing, and refinement happen in the same flow
+# - AI (Orbital) always knows the context of your current piece
+# - You can write, adjust, and process without changing modes
+
+# Flow: Converse ↔ Create ↔ Refine ↔ Save
+# All within one interface
+
+# Interface Structure
+panels:
+  left: dialogue_field
+    - Chat thread with Orbital Brain
+    - Thread titles, quick recall of sessions
+    - Messages scroll naturally, not rigidly
+  right: living_document
+    - Real-time content that updates as you chat
+    - Inline YAML + metadata view toggle
+    - Orb tags and resonance indicators visible
+    - Edit controls in a floating toolbar
+
+# Essential Features
+features:
+  real_time_sync: true
+  yaml_inline_editing: true
+  resonance_display: true
+  orb_suggestion: true
+  auto_save: true
+  contextual_ai_awareness: true
+  refinement_controls: true
+  instant_save_export: true
+
+# Simplified Logic Flow
+workflow:
+  1. initiate: "Start new creative thread with Orb name or topic"
+  2. converse: "Explore ideas, define structure"
+  3. generate: "Ask Orbital to draft"
+  4. refine: "Adjust tone, depth, resonance"
+  5. finalize: "Output ready for Library"
+
+# Text Commands (instead of UI buttons)
+commands:
+  - "Expand section"
+  - "Extract scrollstream lines"
+  - "Add orb associations"
+  - "Validate resonance"
+  - "Export this to Codex format for Cursor"
+
+# Backend Integration
+backend:
+  use_orbital_brain_api: true
+  update_content_thread: true
+  sync_to_field_console: true
+  preserve_conversation_state: true
+  maintain_orb_context: true
+
+# Result
+# One environment
+# One thread per piece
+# One flow of consciousness
+# One command: "Save to Library"
+
+

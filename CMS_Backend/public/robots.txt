@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://s2s-dashboard.vercel.app
+
+# Sitemaps
+Sitemap: https://s2s-dashboard.vercel.app/sitemap.xml

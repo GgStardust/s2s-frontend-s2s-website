@@ -1,0 +1,10 @@
+# Components Directory
+
+This directory holds Field Console archetype modules:
+- **Constellation** - 3D Orb visualization with resonance-driven positioning
+- **Chamber** - Portal depth with layered transparency and field gradients
+- **Mirror** - Real-time coherence feedback indicators
+- **Stream** - Flowing scrollstream with pause-on-hover and field interaction
+
+Each archetype module responds to RBI kernel computations and field state, not rigid UI patterns.
+

@@ -1,0 +1,9 @@
+required: [title, artist, audio_refs]
+properties:
+  title: {type: string}
+  artist: {type: string}
+  audio_refs: {type: array, items: {type: string}}
+  use_case: {type: string}      # focus, grief alchemy, sovereign lock, etc.
+  energy_profile: {type: string}
+  orb_prompt: {type: string}    # one-line inquiry for the Deck
+  tags: {type: array, items: {type: string}}
