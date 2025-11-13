@@ -1,6 +1,6 @@
 {
-  "installCommand": "pnpm install --frozen-lockfile && pnpm --filter=rbi-kernel... --filter=orbital-brain... build",
-  "buildCommand": "pnpm --filter=s2s-dashboard build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter=rbi-kernel... --filter=orbital-brain... build && pnpm --filter=s2s-dashboard build",
   "outputDirectory": "CMS_Backend/.next",
   "framework": "nextjs"
 }
