@@ -1,5 +1,5 @@
 {
-  "installCommand": "pnpm install --ignore-scripts && cd RBI-Kernel && pnpm build && cd ../Orbital-Brain && pnpm build && cd .. && pnpm install",
-  "buildCommand": "cd CMS_Backend && pnpm build",
+  "installCommand": "pnpm install && pnpm --filter 'RBI-Kernel' build && pnpm --filter 'Orbital-Brain' build",
+  "buildCommand": "pnpm --filter 'CMS_Backend' build",
   "framework": "nextjs"
 }
