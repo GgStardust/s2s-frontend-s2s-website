@@ -33,4 +33,32 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-frontend/archive/**/node_modules/
+
+# Content directories (should be in Supabase, not repo)
+/09_PROCESSED/
+/04_BRAND_GUIDELINES/
+/01_CORE_FRAMEWORK/
+/CMS_Backend_Archive/
+/06_FICTION_PROJECT/
+/training/
+/reports/
+/SYSTEM_PLANS/
+
+# Archive directories
+/frontend/archive/
+/docs/ARCHIVE/
+
+# Data files
+/data/
+
+# Monitoring (optional)
+/monitoring/
+
+# Design system (optional)
+/design-system/
+
+# Tools (optional)
+/tools/
+
+# Empty directories
+/apps/

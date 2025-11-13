@@ -1,0 +1,40 @@
+# Content directories (should be in Supabase, not repo)
+09_PROCESSED/
+04_BRAND_GUIDELINES/
+01_CORE_FRAMEWORK/
+CMS_Backend_Archive/
+06_FICTION_PROJECT/
+training/
+reports/
+SYSTEM_PLANS/
+
+# Archive directories
+frontend/archive/
+docs/ARCHIVE/
+
+# Build artifacts
+.next/
+.cache/
+node_modules/
+dist/
+build/
+out/
+
+# TypeScript
+*.tsbuildinfo
+
+# Data files
+data/
+
+# Monitoring (if not needed in deployment)
+monitoring/
+
+# Design system (if not needed)
+design-system/
+
+# Tools (if not needed)
+tools/
+
+# Empty directories
+apps/
+
