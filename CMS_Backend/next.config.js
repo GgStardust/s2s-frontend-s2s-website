@@ -26,8 +26,8 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname),
-      'orbital-brain': path.resolve(__dirname, '../Orbital-Brain/dist'),
-      'rbi-kernel': path.resolve(__dirname, '../RBI-Kernel/dist'),
+      'orbital-brain': path.resolve(__dirname, '../Orbital-Brain'),
+      'rbi-kernel': path.resolve(__dirname, '../RBI-Kernel'),
     };
     return config;
   },
