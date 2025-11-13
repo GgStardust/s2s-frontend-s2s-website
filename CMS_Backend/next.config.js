@@ -26,6 +26,13 @@ const nextConfig = {
       ...config.resolve.alias,
       '@': require('path').resolve(__dirname),
     };
+    // Resolve workspace packages (file: dependencies)
+    const path = require('path');
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'orbital-brain': path.resolve(__dirname, '../Orbital-Brain/dist'),
+      'rbi-kernel': path.resolve(__dirname, '../RBI-Kernel/dist'),
+    };
     return config;
   },
 }
