@@ -4,29 +4,16 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import { getCorsHeaders } from '@/lib/cors';
 
-// Resolve manuscript paths - handle both development and production
+// Resolve manuscript paths - only check 02g_generated_book_content folder
 function getManuscriptPaths(): string[] {
   const baseDir = process.cwd();
+  const generatedContentPath = path.join(baseDir, '09_PROCESSED/02g_generated_book_content');
   
-  // Try multiple base paths (CMS_Backend is at S2S_RBI_System/CMS_Backend)
-  const possibleBases = [
-    path.join(baseDir, '../S2S_Manuscript'),     // From CMS_Backend: ../S2S_Manuscript
-    path.join(baseDir, '../../S2S_Manuscript'), // Alternative: ../../S2S_Manuscript
-    path.resolve(baseDir, 'S2S_Manuscript'),     // If in root
+  return [
+    path.join(generatedContentPath, 'STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT.md'),
+    path.join(generatedContentPath, 'STARDUST_TO_SOVEREIGNTY_COMPLETE.md'),
+    path.join(generatedContentPath, 'STARDUST_TO_SOVEREIGNTY.md')
   ];
-  
-  const paths: string[] = [];
-  
-  for (const base of possibleBases) {
-    paths.push(
-      path.join(base, 'current/STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT.md'),
-      path.join(base, 'STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT.md'),
-      path.join(base, 'STARDUST_TO_SOVEREIGNTY_V6.md')
-    );
-  }
-  
-  // Remove duplicates
-  return [...new Set(paths)];
 }
 
 function findManuscriptFile(): string | null {

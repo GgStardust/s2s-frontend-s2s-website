@@ -7,7 +7,35 @@ const nextConfig = {
   },
   // Real-time infrastructure configuration
   experimental: {
-    serverComponentsExternalPackages: ['socket.io', 'orbital-brain', 'rbi-kernel']
+    serverComponentsExternalPackages: [
+      'socket.io',
+      'orbital-brain',
+      'rbi-kernel',
+      'three',
+      '@react-three/fiber',
+      '@react-three/drei',
+      'ioredis',
+      'bull',
+      'redis'
+    ],
+    // Exclude large packages from output file tracing
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/@swc/core-linux-x64-gnu',
+        'node_modules/@swc/core-linux-x64-musl',
+        'node_modules/@esbuild/linux-x64',
+        'node_modules/three/**',
+        'node_modules/@react-three/**',
+        'node_modules/gl/**',
+        'node_modules/glslify/**',
+        'node_modules/socket.io/**',
+        'node_modules/socket.io-client/**',
+        'node_modules/engine.io/**',
+        'node_modules/ws/**',
+        'node_modules/bufferutil/**',
+        'node_modules/utf-8-validate/**',
+      ],
+    },
   },
   // WebSocket support
   webpack: (config, { isServer }) => {
@@ -19,6 +47,19 @@ const nextConfig = {
         fs: false,
       };
     }
+    
+    // Exclude large packages from server bundle
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        'three': 'commonjs three',
+        '@react-three/fiber': 'commonjs @react-three/fiber',
+        '@react-three/drei': 'commonjs @react-three/drei',
+        'socket.io': 'commonjs socket.io',
+        'socket.io-client': 'commonjs socket.io-client',
+      });
+    }
+    
     // Handle ES module .js extensions
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx'],
