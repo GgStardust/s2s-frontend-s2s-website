@@ -22,10 +22,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "orbital-brain": ["../Orbital-Brain"],
-      "orbital-brain/*": ["../Orbital-Brain/*"],
-      "rbi-kernel": ["../RBI-Kernel"],
-      "rbi-kernel/*": ["../RBI-Kernel/*"]
+      "orbital-brain": ["../Orbital-Brain/dist"],
+      "orbital-brain/types": ["../Orbital-Brain/dist/types"],
+      "orbital-brain/*": ["../Orbital-Brain/dist/*"],
+      "rbi-kernel": ["../RBI-Kernel/dist"],
+      "rbi-kernel/mathematics": ["../RBI-Kernel/dist/mathematics"],
+      "rbi-kernel/field": ["../RBI-Kernel/dist/field/computation"],
+      "rbi-kernel/*": ["../RBI-Kernel/dist/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
