@@ -21,7 +21,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "orbital-brain": ["../Orbital-Brain"],
+      "orbital-brain/*": ["../Orbital-Brain/*"],
+      "rbi-kernel": ["../RBI-Kernel"],
+      "rbi-kernel/*": ["../RBI-Kernel/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
