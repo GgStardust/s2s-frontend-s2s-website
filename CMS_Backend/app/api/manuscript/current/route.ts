@@ -3,6 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
 import { getCorsHeaders } from '@/lib/cors';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 // Resolve manuscript paths - only check 02g_generated_book_content folder
 function getManuscriptPaths(): string[] {
@@ -35,6 +39,48 @@ function findManuscriptFile(): string | null {
   }
   
   return null;
+}
+
+// Try to load manuscript from Supabase
+async function loadManuscriptFromSupabase(): Promise<{ content: string; metadata: any } | null> {
+  try {
+    const supabase = createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    });
+
+    // Look for manuscript in content_files table
+    // Try multiple possible file paths
+    const possiblePaths = [
+      '02g_generated_book_content/STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT.md',
+      '02g_generated_book_content/STARDUST_TO_SOVEREIGNTY_COMPLETE.md',
+      '02g_generated_book_content/STARDUST_TO_SOVEREIGNTY.md'
+    ];
+
+    for (const filePath of possiblePaths) {
+      const { data, error } = await supabase
+        .from('content_files')
+        .select('*')
+        .eq('file_path', filePath)
+        .eq('content_type', 'book_output')
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (!error && data) {
+        const content = data.markdown_body || data.content || '';
+        const metadata = data.yaml_frontmatter || {};
+        return { content, metadata };
+      }
+    }
+
+    return null;
+  } catch (error) {
+    console.error('[manuscript/current] Error loading from Supabase:', error);
+    return null;
+  }
 }
 
 interface ChapterInfo {
@@ -247,47 +293,62 @@ export async function OPTIONS(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    // Find manuscript file
-    const manuscriptPath = findManuscriptFile();
     const origin = request.headers.get('origin');
-    if (!manuscriptPath) {
-      const searchedPaths = getManuscriptPaths();
-      console.error('[manuscript/current] Manuscript not found. Searched paths:', searchedPaths);
-      console.error('[manuscript/current] Current working directory:', process.cwd());
-      return NextResponse.json(
-        { 
-          error: 'Current manuscript not found', 
-          searched_paths: searchedPaths.slice(0, 10), // Limit to first 10 for response size
-          cwd: process.cwd()
-        },
-        { 
-          status: 404,
-          headers: getCorsHeaders(origin),
-        }
-      );
+    let content: string;
+    let metadata: any;
+    let source: 'file' | 'supabase' = 'file';
+
+    // Try file system first (for local development with V7)
+    const manuscriptPath = findManuscriptFile();
+    if (manuscriptPath) {
+      console.log('[manuscript/current] Found manuscript at:', manuscriptPath);
+      const fileContent = fs.readFileSync(manuscriptPath, 'utf-8');
+      const parsed = matter(fileContent);
+      content = parsed.content;
+      metadata = parsed.data;
+      source = 'file';
+    } else {
+      // Fall back to Supabase (for production/Vercel)
+      console.log('[manuscript/current] File not found, trying Supabase...');
+      const supabaseResult = await loadManuscriptFromSupabase();
+      if (supabaseResult) {
+        content = supabaseResult.content;
+        metadata = supabaseResult.metadata;
+        source = 'supabase';
+        console.log('[manuscript/current] Loaded from Supabase');
+      } else {
+        const searchedPaths = getManuscriptPaths();
+        console.error('[manuscript/current] Manuscript not found in file system or Supabase');
+        return NextResponse.json(
+          { 
+            error: 'Current manuscript not found', 
+            searched_paths: searchedPaths.slice(0, 10),
+            message: 'Manuscript not found in file system or Supabase. Place V7 in 02g_generated_book_content/ or sync to Supabase.'
+          },
+          { 
+            status: 404,
+            headers: getCorsHeaders(origin),
+          }
+        );
+      }
     }
     
-    console.log('[manuscript/current] Found manuscript at:', manuscriptPath);
-    
-    // Read manuscript file
-    const content = fs.readFileSync(manuscriptPath, 'utf-8');
-    const parsed = matter(content);
-    
     // Parse chapters
-    const chapters = parseManuscript(parsed.content);
+    const chapters = parseManuscript(content);
     
     // Get metadata
-    const metadata = {
-      title: parsed.data.title || 'Stardust to Sovereignty',
-      author: parsed.data.author || 'Gigi Stardust',
-      version: parsed.data.version || 'current',
-      date: parsed.data.date || new Date().toISOString().split('T')[0],
-      description: parsed.data.description || '',
+    const finalMetadata = {
+      title: metadata?.title || 'Stardust to Sovereignty',
+      author: metadata?.author || 'Gigi Stardust',
+      version: metadata?.version || 'current',
+      date: metadata?.date || new Date().toISOString().split('T')[0],
+      description: metadata?.description || '',
     };
     
     return NextResponse.json({
       success: true,
-      metadata,
+      source, // Indicate where it came from
+      metadata: finalMetadata,
       chapters,
       total_chapters: chapters.filter(c => c.type === 'chapter').length,
       total_interludes: chapters.filter(c => c.type === 'interlude').length,

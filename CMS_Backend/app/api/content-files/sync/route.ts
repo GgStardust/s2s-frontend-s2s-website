@@ -165,15 +165,16 @@ async function scanDirectory(dirPath: string, relativePath: string, supabase: an
         await scanDirectory(fullPath, itemRelativePath, supabase, stats, results);
       }
     } else if (item.endsWith('.md') && !item.startsWith('.')) {
-      // Skip non-content files
+      // Skip non-content files (but allow manuscript files in 02g_generated_book_content)
       const skipFiles = [
         'README',
         'README_COMPILATION',
-        'STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT',
         'STARDUST_TO_SOVEREIGNTY_MAIN_CONTENT',
         'STARDUST_TO_SOVEREIGNTY_READER_VERSION',
       ];
-      const shouldSkip = skipFiles.some(skip => item.includes(skip));
+      // Allow manuscript files in 02g_generated_book_content to be synced
+      const isManuscriptFile = item.includes('STARDUST_TO_SOVEREIGNTY') && itemRelativePath.startsWith('02g_generated_book_content');
+      const shouldSkip = !isManuscriptFile && skipFiles.some(skip => item.includes(skip));
       if (shouldSkip) {
         return; // Skip this file
       }
