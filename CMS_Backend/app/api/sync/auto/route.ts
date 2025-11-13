@@ -127,8 +127,9 @@ function queueFileChange(change: FileChangeEvent) {
   }, SYNC_DEBOUNCE_MS);
 }
 
-// Set up file change listener
-if (!contentWatcher.isActive()) {
+// Only start file watcher in development mode
+// In production (Vercel), content should be in Supabase, not local filesystem
+if (process.env.NODE_ENV === 'development' && !contentWatcher.isActive()) {
   contentWatcher.startWatching();
   contentWatcher.on('fileChange', queueFileChange);
 }

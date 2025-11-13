@@ -63,6 +63,11 @@ yarn.lock
 *.zip
 *.tar.gz
 
+# Content files (should be in Supabase, not git)
+CMS_Backend/09_PROCESSED/
+CMS_Backend/04_BRAND_GUIDELINES/
+CMS_Backend/CMS_Backend_Archive/
+
 # Large processed files (if needed)
 # 09_PROCESSED/**/*.html
 # 09_PROCESSED/**/*.backup_*

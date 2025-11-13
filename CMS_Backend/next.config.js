@@ -34,6 +34,13 @@ const nextConfig = {
         'node_modules/ws/**',
         'node_modules/bufferutil/**',
         'node_modules/utf-8-validate/**',
+        // Content directories (stored in Supabase, not needed in deployment)
+        '09_PROCESSED/**',
+        '04_BRAND_GUIDELINES/**',
+        'CMS_Backend_Archive/**',
+        'docs/ARCHIVE/**',
+        '.next/cache/**',
+        '.next/trace/**',
       ],
     },
   },

@@ -1,0 +1,28 @@
+# Next.js build cache (should never be deployed)
+.next/cache
+.next/trace
+
+# Content directories (should be in Supabase, not in deployment)
+CMS_Backend/09_PROCESSED/
+CMS_Backend/04_BRAND_GUIDELINES/
+CMS_Backend/CMS_Backend_Archive/
+
+# Documentation and archives
+CMS_Backend/docs/ARCHIVE/
+
+# Development files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+*.test.ts
+*.spec.ts
+__tests__/
+
+# Git
+.git/
+.gitignore
