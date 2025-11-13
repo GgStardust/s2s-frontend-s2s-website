@@ -21,15 +21,11 @@ const nextConfig = {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx'],
     };
-    // Ensure path aliases work
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname),
-    };
-    // Resolve workspace packages (file: dependencies)
+    // Ensure path aliases work and resolve workspace packages
     const path = require('path');
     config.resolve.alias = {
       ...config.resolve.alias,
+      '@': path.resolve(__dirname),
       'orbital-brain': path.resolve(__dirname, '../Orbital-Brain/dist'),
       'rbi-kernel': path.resolve(__dirname, '../RBI-Kernel/dist'),
     };
