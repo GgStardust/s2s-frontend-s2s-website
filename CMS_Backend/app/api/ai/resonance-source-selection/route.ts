@@ -299,8 +299,8 @@ function calculateEnhancedResonanceScore(
   const chapterText = `${metadata.chapterTitle} ${metadata.chapterDescription}`.toLowerCase();
   const purposeWords = contentPurpose.toLowerCase().split(/\s+/);
   const chapterWords = chapterText.split(/\s+/);
-  const matchingWords = purposeWords.filter(word => 
-    word.length > 4 && chapterWords.some(cw => cw.includes(word) || word.includes(cw))
+  const matchingWords = purposeWords.filter((word: string) =>
+    word.length > 4 && chapterWords.some((cw: string) => cw.includes(word) || word.includes(cw))
   );
   const fieldFunctionScore = Math.min(matchingWords.length / 3, 1.0); // Cap at 1.0
   

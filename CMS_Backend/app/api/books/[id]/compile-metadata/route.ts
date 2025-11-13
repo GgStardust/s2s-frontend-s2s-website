@@ -107,7 +107,7 @@ function selectSourcesForChapter(
     if (file.yaml.framework_handling?.auto_include_keywords) {
       const chapterText = `${chapterTitle} ${chapterDescription}`.toLowerCase();
       const keywords = file.yaml.framework_handling.auto_include_keywords.map((k: string) => k.toLowerCase());
-      const hasMatch = keywords.some(keyword => chapterText.includes(keyword));
+      const hasMatch = keywords.some((keyword: string) => chapterText.includes(keyword));
       
       if (hasMatch) {
         const weight = typeof file.yaml.inclusion_weight === 'number' ? file.yaml.inclusion_weight : 0.25;
@@ -127,10 +127,10 @@ function selectSourcesForChapter(
     const fieldFunction = file.yaml.field_function || {};
     const contentPurpose = (fieldFunction.content_purpose || '').toLowerCase();
     const chapterText = `${chapterTitle} ${chapterDescription}`.toLowerCase();
-    const chapterWords = chapterText.split(/\s+/).filter(w => w.length > 4);
-    const purposeWords = contentPurpose.split(/\s+/).filter(w => w.length > 4);
-    const matchingWords = purposeWords.filter(pw => 
-      chapterWords.some(cw => cw.includes(pw) || pw.includes(cw))
+    const chapterWords = chapterText.split(/\s+/).filter((w: string) => w.length > 4);
+    const purposeWords = contentPurpose.split(/\s+/).filter((w: string) => w.length > 4);
+    const matchingWords = purposeWords.filter((pw: string) =>
+      chapterWords.some((cw: string) => cw.includes(pw) || pw.includes(cw))
     );
     
     if (matchingWords.length > 0) {

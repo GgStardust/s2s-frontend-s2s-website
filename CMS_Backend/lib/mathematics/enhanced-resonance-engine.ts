@@ -8,18 +8,12 @@
  * Future code should import directly from 'rbi-kernel'.
  */
 
-// Import from field export path for computation layer
-import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis as RBIEnhancedAnalysis, type ContentMetadata } from 'rbi-kernel/field';
-import type { ResonanceVector, FieldDynamics } from 'rbi-kernel/types';
+// Import from RBI-Kernel types (main export)
+import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis as RBIEnhancedAnalysis, type ContentMetadata } from 'rbi-kernel';
+import type { ResonanceVector, FieldDynamics } from 'rbi-kernel';
 
 // Re-export types for backward compatibility
-export type { ResonanceVector, FieldDynamics } from 'rbi-kernel';
-
-// Extend RBI-Kernel's EnhancedResonanceAnalysis to match local interface
-export interface EnhancedResonanceAnalysis extends RBIEnhancedAnalysis {
-  // Local interface may have additional fields from ResonanceAnalysis
-  // These are preserved from the base RBIEnhancedAnalysis
-}
+export type { ResonanceVector, FieldDynamics, EnhancedResonanceAnalysis } from 'rbi-kernel';
 
 /**
  * Enhanced Resonance Engine - Wrapper class

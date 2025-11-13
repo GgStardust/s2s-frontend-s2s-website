@@ -61,16 +61,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Build system prompt with research context
-    const systemPrompt = buildOrbitalPrompt(contentType, researchSynthesis);
+    const systemPrompt = await buildOrbitalPrompt(contentType, researchSynthesis);
 
     // Call OpenAI GPT-4o
     const response = await openai.chat.completions.create({
       model: 'gpt-4o',
       temperature: 0.7,
       messages: [
-        { role: 'system', content: systemPrompt },
+        { role: 'system' as const, content: systemPrompt },
         {
-          role: 'user',
+          role: 'user' as const,
           content: `Process the following content:\n\n${text}`,
         },
       ],
