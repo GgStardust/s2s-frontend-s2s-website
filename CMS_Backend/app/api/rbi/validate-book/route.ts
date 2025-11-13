@@ -114,10 +114,10 @@ export async function POST(request: NextRequest) {
           sovereignty,
           proof_status: proofStatus,
           resonance_metrics: {
-            strength: analysis.resonance?.strength || 0,
-            clarity: analysis.resonance?.clarity || 0,
-            coherence: analysis.resonance?.coherence || 0,
-            pattern: analysis.resonance?.pattern || 0
+            strength: analysis.signature?.resonance || 0,
+            clarity: analysis.signature?.clarity || 0,
+            coherence: analysis.signature?.coherence || 0,
+            pattern: analysis.signature?.sovereignty || 0
           },
           proof_structure: analysis.mathematical?.sovereignLogic || null
         };

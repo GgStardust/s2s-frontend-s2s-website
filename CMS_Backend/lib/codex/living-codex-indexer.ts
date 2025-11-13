@@ -289,9 +289,9 @@ class LivingCodexIndexer {
           validatedOrbs: analysis.orb_associations,
           explanation: `Mathematical validation completed with ${analysis.mathematical.sovereignLogic.validity} result`
         },
-        proofStatus: analysis.mathematical.sovereignLogic.validity === 'proven' ? 'proven' : 
+        proofStatus: analysis.mathematical.sovereignLogic.validity === 'proven' ? 'proven' :
                      analysis.mathematical.sovereignLogic.validity === 'partial' ? 'inconclusive' : 'disproven',
-        proofId: analysis.proofId || '',
+        proofId: `proof_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         metadata: {
           contentLength: content.length,
           processingTime,

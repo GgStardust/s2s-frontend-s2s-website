@@ -51,7 +51,7 @@ export async function runResonanceValidation(markdown: string, title?: string, m
       ? 'unproven'
       : 'error';
     
-    const explanation = analysis.mathematical?.sovereignLogic?.explanation || 
+    const explanation = analysis.mathematical?.sovereignLogic?.statement ||
       `RBI analysis: ${validatedOrbs.length} Orbs detected, coherence ${(coherenceScore * 100).toFixed(1)}%`;
     
     return {

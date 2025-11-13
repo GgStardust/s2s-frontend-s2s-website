@@ -28,7 +28,7 @@ interface ConstellationProps {
 
 // Particle fog component
 function ParticleFog() {
-  const particlesRef = useRef<THREE.Points>(null);
+  const particlesRef = useRef<any>(null);
   const particleCount = 1000;
 
   const positions = useMemo(() => {
@@ -82,7 +82,7 @@ function Orb({
   onSelect: () => void;
   time: number;
 }) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<any>(null);
   const [hovered, setHovered] = React.useState(false);
   
   // Load Orb glyph texture
@@ -181,7 +181,7 @@ function ConnectionLine({
 
   return (
     <Line
-      points={points}
+      points={points as any}
       color={COLORS.deepGold}
       lineWidth={lineWidth}
       opacity={opacity}

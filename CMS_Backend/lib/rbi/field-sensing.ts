@@ -80,10 +80,10 @@ export class FieldSensingService {
           contentId: file.id,
           title: file.title,
           resonance: {
-            strength: analysis.resonance?.strength || 0,
-            clarity: analysis.resonance?.clarity || 0,
-            coherence: analysis.resonance?.coherence || 0,
-            pattern: analysis.resonance?.pattern || 0
+            strength: analysis.signature?.resonance || 0,
+            clarity: analysis.signature?.clarity || 0,
+            coherence: analysis.signature?.coherence || 0,
+            pattern: analysis.signature?.sovereignty || 0
           },
           coherenceScore: analysis.mathematical?.sovereignLogic?.coherence || 0,
           proofStatus: analysis.mathematical?.sovereignLogic?.validity === 'proven' ? 'proven' :

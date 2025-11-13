@@ -14,15 +14,15 @@ import {
 } from './compute';
 
 // Simple test runner
-function test(name: string, fn: () => void) {
+function test(name: string, fn: () => void): number {
   try {
     fn();
     console.log(`✅ ${name}`);
-    return true;
+    return 1;
   } catch (error) {
     console.error(`❌ ${name}`);
     console.error(`   Error: ${error instanceof Error ? error.message : String(error)}`);
-    return false;
+    return 0;
   }
 }
 

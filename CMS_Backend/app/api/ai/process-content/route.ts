@@ -57,9 +57,9 @@ export async function POST(request: NextRequest) {
       markdown: content,
       fullContent: `${generateYAML(analysis)}\n\n${content}`,
       orbAssociations: analysis.orb_associations || [],
-      scrollstreams: analysis.scrollstream_pulses || [],
-      crossReferences: analysis.cross_references || [],
-      recommendations: analysis.recommendations || []
+      scrollstreams: [], // These properties don't exist on EnhancedResonanceAnalysis
+      crossReferences: [],
+      recommendations: []
     };
 
     return NextResponse.json({
@@ -81,8 +81,8 @@ function generateYAML(analysis: any): string {
 title: "${analysis.title || 'Untitled'}"
 content_type: "orb_essay"
 orb_associations: [${(analysis.orb_associations || []).join(', ')}]
-scrollstreams: [${(analysis.scrollstream_pulses || []).map((stream: string) => `"${stream}"`).join(', ')}]
-cross_references: [${(analysis.cross_references || []).map((ref: string) => `"${ref}"`).join(', ')}]
+scrollstreams: []
+cross_references: []
 resonance_rating: ${analysis.overall_score || 0}
 created_at: "${new Date().toISOString()}"
 ---`;
