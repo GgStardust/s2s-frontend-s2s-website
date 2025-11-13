@@ -1,0 +1,29 @@
+{
+  "name": "s2s-rbi-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "S2S RBI System - Monorepo for Stardust to Sovereignty Resonance-Based Intelligence Platform",
+  "workspaces": [
+    "CMS_Backend",
+    "S2S_Console",
+    "RBI-Kernel",
+    "Orbital-Brain",
+    "RBI-Architecture-Service",
+    "RBI_Website",
+    "RBI_Editorial_Tools"
+  ],
+  "scripts": {
+    "install:all": "pnpm install",
+    "build:all": "pnpm -r build",
+    "dev:cms": "pnpm --filter CMS_Backend dev",
+    "dev:console": "pnpm --filter S2S_Console dev",
+    "dev:service": "pnpm --filter RBI-Architecture-Service dev",
+    "dev:website": "pnpm --filter RBI_Website dev"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
+

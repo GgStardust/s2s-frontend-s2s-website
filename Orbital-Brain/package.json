@@ -1,0 +1,46 @@
+{
+  "name": "orbital-brain",
+  "version": "1.0.0",
+  "description": "Orbital Brain - Narrative Intelligence Layer for S2S System",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "orbital-brain",
+    "narrative-intelligence",
+    "s2s",
+    "stardust-to-sovereignty",
+    "codex",
+    "field-memory"
+  ],
+  "author": "Gigi Stardust / Stardust to Sovereignty UNA",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^6.1.0",
+    "rbi-kernel": "file:../RBI-Kernel"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  }
+}
+

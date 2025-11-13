@@ -1,0 +1,32 @@
+{
+  "name": "rbi-architecture-service",
+  "version": "1.1.0-service",
+  "description": "RBI Architecture Service - Continuously running coherence architecture accessible to all connected systems",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "echo \"Tests to be added\" && exit 0"
+  },
+  "keywords": [
+    "rbi",
+    "resonance",
+    "coherence",
+    "architecture-service"
+  ],
+  "author": "Gigi Stardust / Stardust to Sovereignty UNA",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "rbi-kernel": "file:../RBI-Kernel"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

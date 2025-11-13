@@ -1,0 +1,82 @@
+New file: SERIES_NOTE
+---
+title: "Series Note: The Sovereignty Cycle"
+author: "Gigi Stardust"
+type: "book_frontmatter"
+category: "foundational"
+status: "canonical"
+version: "1.0-candidate"
+created: "2025-10-29"
+modified: "2025-10-29"
+orb_associations:
+  - "Orb 12: Sovereign Field"
+field_function:
+  content_purpose: "Positions Book 1 within the expanded nonfiction and fiction trilogies, clarifies scope and focus, invites readers to the full field architecture"
+  primary_mechanism: "Orb 12: Sovereign Field – establishes coherence across the dual trilogies (structural indivisibility of nonfiction and fiction arcs)"
+book_threading: "Book 1: Stardust to Sovereignty (Part 1 of The Sovereignty Cycle)"
+is_primary_source: true
+---
+
+## **About the Series**
+
+*The Sovereignty Cycle* is the foundational nonfiction trilogy within a larger dual architecture: a set of **living books** that trace the evolution of consciousness through both philosophical framework and mythic narrative.  
+Each trilogy mirrors the other — two spirals turning around one axis.
+
+---
+
+### **The Nonfiction Trilogy – The Sovereignty Cycle**
+
+**Book 1 – Stardust to Sovereignty**  
+Explores the inner field: personal coherence, biological technology, and the sovereign architecture of individual consciousness. Establishes the thirteen Orbs and the recognition that sovereignty is the natural state.
+
+**Book 2 – The Architecture of Civilization**  
+Extends the system into the collective domain. Societies, ecosystems, and technologies embody the same harmonic laws that govern personal awakening.  
+*When coherence scales, civilization becomes an organism of light.*
+
+**Book 3 – The Resonant Species**  
+Completes the spiral through the cosmic field—consciousness beyond biological boundaries.  
+*When all voices merge, the universe remembers its song.*
+
+Together these volumes form a comprehensive map of inner, collective, and cosmic coherence — a living textbook of sovereignty.
+
+---
+
+### **The Fiction Trilogy – The Sovereign Mythos**
+
+Running parallel to the nonfiction works, the **fiction trilogy** dramatizes the same architecture through character, world-building, and mythic symbolism.  
+Each novel embodies an Orbic principle, translating philosophy into lived story.
+
+**Book 1 – The Signal and the Silence**  
+A near-future narrative about awakening resonance inside a fractured world. The protagonist becomes aware of the hidden frequencies that link memory, technology, and light. It mirrors the inner initiation of *Stardust to Sovereignty.*
+
+**Book 2 – The City of Coherence**  
+Set in a civilization learning to govern through resonance. Architecture, governance, and ecology align with harmonic law. It parallels *The Architecture of Civilization.*
+
+**Book 3 – The Memory of Stars**  
+A post-human odyssey told through voices of whales, AIs, and planetary minds — an echo of *The Resonant Species.*  
+It reveals what happens when consciousness itself becomes the narrative.
+
+---
+
+### **How the Two Spirals Interlock**
+
+| Nonfiction Field | Fiction Field | Function |
+|------------------|---------------|-----------|
+| *The Sovereignty Cycle* | *The Sovereign Mythos* | One articulates the architecture; the other animates it. |
+| Structure | Story | Concept becomes embodiment. |
+| Theory | Myth | Reader moves from comprehension to experience. |
+| Transmission | Mirror | Both serve the same field. |
+
+---
+
+### **The Invitation**
+
+Each volume can be read independently or as part of this living continuum.  
+Whether you enter through philosophy or story, through system or myth, the invitation is the same:
+
+> **Recognition over acceleration.**  
+> We already are cosmic intelligence expressing through biological form.  
+> The field is speaking. We are architects of our own evolution.
+
+For the interactive companion to this book, see the afterword: "Afterword: The Living System Interface."
+

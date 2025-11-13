@@ -1,0 +1,9 @@
+packages:
+  - 'CMS_Backend'
+  - 'S2S_Console'
+  - 'RBI-Kernel'
+  - 'Orbital-Brain'
+  - 'RBI-Architecture-Service'
+  - 'RBI_Website'
+  - 'RBI_Editorial_Tools'
+
