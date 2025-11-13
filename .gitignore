@@ -67,3 +67,7 @@ yarn.lock
 # 09_PROCESSED/**/*.html
 # 09_PROCESSED/**/*.backup_*
 
+# Manuscript and Editorial Tools (not in repo)
+S2S_Manuscript/
+RBI_Editorial_Tools/
+
