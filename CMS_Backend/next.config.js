@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   images: {
     domains: [],
@@ -21,14 +23,22 @@ const nextConfig = {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx'],
     };
-    // Ensure path aliases work and resolve workspace packages
-    const path = require('path');
+    
+    // Resolve workspace packages via package.json exports
+    // This allows webpack to follow package.json exports field properly
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname),
-      'orbital-brain': path.resolve(__dirname, '../Orbital-Brain'),
-      'rbi-kernel': path.resolve(__dirname, '../RBI-Kernel'),
     };
+    
+    // Add workspace packages to resolve.modules so webpack finds them
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, '../Orbital-Brain'),
+      path.resolve(__dirname, '../RBI-Kernel'),
+      path.resolve(__dirname, '../node_modules'),
+    ];
+    
     return config;
   },
 }
