@@ -3,627 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RBI Architecture Service - Demo UI</title>
+    <title>RBI Demo - Choose Your Demo</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
             min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #666;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        .status.healthy {
-            background: #10b981;
-            color: white;
-        }
-
-        .status.unhealthy {
-            background: #ef4444;
-            color: white;
-        }
-
-        .tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .tab {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .tab:hover {
-            border-color: #667eea;
-        }
-
-        .tab.active {
-            background: #667eea;
-            color: white;
-        }
-
-        .panel {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: none;
-        }
-
-        .panel.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        textarea, input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        textarea:focus, input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        button {
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #5568d3;
-        }
-
-        button:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-        }
-
-        .result {
-            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            background: #f9fafb;
-            border-radius: 6px;
-            border-left: 4px solid #667eea;
         }
-
-        .result pre {
-            background: #1f2937;
-            color: #10b981;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-size: 13px;
-            line-height: 1.5;
+        .container {
+            text-align: center;
+            max-width: 600px;
         }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 10px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .candidate-item {
-            background: #f9fafb;
-            padding: 15px;
-            border-radius: 6px;
+        h1 {
+            color: #14b8a6;
             margin-bottom: 10px;
+            font-size: 2.5rem;
         }
-
-        .candidate-item input {
-            margin-bottom: 10px;
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
-
-        .add-candidate {
-            background: #10b981;
-            margin-top: 10px;
+        .demo-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-
-        .remove-candidate {
-            background: #ef4444;
-            padding: 8px 15px;
-            font-size: 14px;
-            margin-top: 10px;
+        .demo-link {
+            display: block;
+            padding: 20px 30px;
+            background: rgba(20, 184, 166, 0.1);
+            border: 2px solid rgba(20, 184, 166, 0.3);
+            border-radius: 12px;
+            color: #14b8a6;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s;
         }
-
-        .metric {
-            display: inline-block;
-            padding: 8px 15px;
-            background: #e0e7ff;
-            border-radius: 6px;
-            margin: 5px;
-            font-size: 14px;
+        .demo-link:hover {
+            background: rgba(20, 184, 166, 0.2);
+            border-color: #14b8a6;
+            transform: translateY(-2px);
         }
-
-        .metric strong {
-            color: #667eea;
+        .demo-link strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        .demo-link small {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🌀 RBI Architecture Service</h1>
-            <p>Field-Level Coherence Computation - Demo Interface</p>
-            <div id="serviceStatus" class="status unhealthy">Checking...</div>
-        </div>
-
-        <div class="tabs">
-            <div class="tab" onclick="window.location.href='/demo.html'" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
-                📊 Enterprise Demo
-            </div>
-            <div class="tab active" onclick="showPanel('score')">Score</div>
-            <div class="tab" onclick="showPanel('validate')">Validate</div>
-            <div class="tab" onclick="showPanel('neighbors')">Find Similar</div>
-            <div class="tab" onclick="showPanel('analyze')">Full Analysis</div>
-            <div class="tab" onclick="showPanel('vector')">Vector</div>
-            <div class="tab" onclick="showPanel('manifest')">Architecture</div>
-        </div>
-
-        <!-- Score Panel -->
-        <div id="score" class="panel active">
-            <h2>Score Content</h2>
-            <p style="color: #666; margin-bottom: 20px;">Get clarity, coherence, resonance, and sovereignty scores</p>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea id="scoreContent" placeholder="Enter content to score...">Transaction TXN001: $1250.50 on 2025-01-15 in North region, Electronics category, Corporate customer</textarea>
-            </div>
-            <button onclick="scoreContent()">Score Content</button>
-            <div id="scoreResult"></div>
-        </div>
-
-        <!-- Validate Panel -->
-        <div id="validate" class="panel">
-            <h2>Validate with Proof-of-Meaning</h2>
-            <p style="color: #666; margin-bottom: 20px;">Mathematical verification of structural integrity</p>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea id="validateContent" placeholder="Enter content to validate...">AI-generated content that needs verification for accuracy and coherence.</textarea>
-            </div>
-            <div class="form-group">
-                <label>Category Associations (optional, comma-separated)</label>
-                <input type="text" id="validateCategories" placeholder="1, 2, 3">
-            </div>
-            <button onclick="validateContent()">Validate Content</button>
-            <div id="validateResult"></div>
-        </div>
-
-        <!-- Neighbors Panel -->
-        <div id="neighbors" class="panel">
-            <h2>Find Similar Items</h2>
-            <p style="color: #666; margin-bottom: 20px;">Find top-N most similar items (useful for fraud detection, recommendations)</p>
-            <div class="form-group">
-                <label>Query</label>
-                <textarea id="neighborsQuery" placeholder="Enter query text...">Transaction: North region, Electronics, Corporate</textarea>
-            </div>
-            <div class="form-group">
-                <label>Candidates</label>
-                <div id="neighborsCandidates">
-                    <div class="candidate-item">
-                        <input type="text" placeholder="ID" value="TXN001">
-                        <textarea placeholder="Text content">Transaction TXN001: $1250.50, North, Electronics, Corporate</textarea>
-                        <button class="remove-candidate" onclick="removeCandidate(this)">Remove</button>
-                    </div>
-                    <div class="candidate-item">
-                        <input type="text" placeholder="ID" value="TXN002">
-                        <textarea placeholder="Text content">Transaction TXN002: $890.25, South, Clothing, Retail</textarea>
-                        <button class="remove-candidate" onclick="removeCandidate(this)">Remove</button>
-                    </div>
-                </div>
-                <button class="add-candidate" onclick="addCandidate()">+ Add Candidate</button>
-            </div>
-            <div class="form-group">
-                <label>Top N</label>
-                <input type="number" id="neighborsTopN" value="3" min="1" max="10">
-            </div>
-            <button onclick="findNeighbors()">Find Similar Items</button>
-            <div id="neighborsResult"></div>
-        </div>
-
-        <!-- Analyze Panel -->
-        <div id="analyze" class="panel">
-            <h2>Full Content Analysis</h2>
-            <p style="color: #666; margin-bottom: 20px;">Complete 5-layer analysis with coherence matrix and field dynamics</p>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea id="analyzeContent" placeholder="Enter content to analyze...">Network security log showing 10,000 requests from single IP in 5 minutes. Pattern indicates potential DDoS attack or bot activity.</textarea>
-            </div>
-            <div class="form-group">
-                <label>Title (optional)</label>
-                <input type="text" id="analyzeTitle" placeholder="Optional title">
-            </div>
-            <button onclick="analyzeContent()">Analyze Content</button>
-            <div id="analyzeResult"></div>
-        </div>
-
-        <!-- Vector Panel -->
-        <div id="vector" class="panel">
-            <h2>Convert to 4D Resonance Vector</h2>
-            <p style="color: #666; margin-bottom: 20px;">Convert content to 4D resonance vector for vector databases</p>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea id="vectorContent" placeholder="Enter content to convert...">Transaction data for vector database storage</textarea>
-            </div>
-            <button onclick="convertToVector()">Convert to Vector</button>
-            <div id="vectorResult"></div>
-        </div>
-
-        <!-- Manifest Panel -->
-        <div id="manifest" class="panel">
-            <h2>Architecture Manifest</h2>
-            <p style="color: #666; margin-bottom: 20px;">Complete 5-layer architecture structure</p>
-            <button onclick="getManifest()">Get Architecture Manifest</button>
-            <div id="manifestResult"></div>
+        <h1>RBI Architecture Service</h1>
+        <p>Choose a demo to explore</p>
+        <div class="demo-links">
+            <a href="tpb-comprehensive-demo.html" class="demo-link">
+                <strong>TPB Comprehensive Demo</strong>
+                <small>Complete showcase with all features - Station Intelligence, NFC Demo, Multi-Dimensional Search, and more</small>
+            </a>
+            <a href="demo.html" class="demo-link">
+                <strong>Enterprise Demo</strong>
+                <small>Financial services fraud detection showcase</small>
+            </a>
+            <a href="index.html" class="demo-link">
+                <strong>API Testing Interface</strong>
+                <small>Test all RBI endpoints interactively</small>
+            </a>
         </div>
     </div>
-
-    <script>
-        // Auto-detect API URL (works locally and on Vercel)
-        const API_URL = window.location.origin;
-
-        // Check service status
-        async function checkStatus() {
-            try {
-                const response = await fetch(`${API_URL}/health`);
-                const data = await response.json();
-                const statusEl = document.getElementById('serviceStatus');
-                if (data.status === 'healthy') {
-                    statusEl.textContent = '✅ Service Healthy';
-                    statusEl.className = 'status healthy';
-                } else {
-                    statusEl.textContent = '❌ Service Unhealthy';
-                    statusEl.className = 'status unhealthy';
-                }
-            } catch (error) {
-                document.getElementById('serviceStatus').textContent = '❌ Service Offline';
-                document.getElementById('serviceStatus').className = 'status unhealthy';
-            }
-        }
-
-        // Panel switching
-        function showPanel(panelName) {
-            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.getElementById(panelName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // Score content
-        async function scoreContent() {
-            const content = document.getElementById('scoreContent').value;
-            const resultEl = document.getElementById('scoreResult');
-            resultEl.innerHTML = '<div class="loading"></div> Processing...';
-
-            try {
-                const response = await fetch(`${API_URL}/field/score`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ content })
-                });
-
-                const data = await response.json();
-                resultEl.innerHTML = `
-                    <div class="result">
-                        <h3>Results</h3>
-                        <div class="metric"><strong>Clarity:</strong> ${(data.clarity * 100).toFixed(1)}%</div>
-                        <div class="metric"><strong>Coherence:</strong> ${(data.coherence * 100).toFixed(1)}%</div>
-                        <div class="metric"><strong>Resonance:</strong> ${(data.resonance * 100).toFixed(1)}%</div>
-                        <div class="metric"><strong>Sovereignty:</strong> ${(data.sovereignty * 100).toFixed(1)}%</div>
-                        <div style="margin-top: 15px;">
-                            <strong>Field Dynamics:</strong><br>
-                            <div class="metric"><strong>Field Strength:</strong> ${data.fieldDynamics.fieldStrength.toFixed(3)}</div>
-                            <div class="metric"><strong>Stability:</strong> ${(data.fieldDynamics.stability * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Coherence:</strong> ${(data.fieldDynamics.coherence * 100).toFixed(1)}%</div>
-                        </div>
-                        <pre>${JSON.stringify(data, null, 2)}</pre>
-                    </div>
-                `;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Validate content
-        async function validateContent() {
-            const content = document.getElementById('validateContent').value;
-            const categories = document.getElementById('validateCategories').value
-                .split(',')
-                .map(c => parseInt(c.trim()))
-                .filter(c => !isNaN(c));
-            const resultEl = document.getElementById('validateResult');
-            resultEl.innerHTML = '<div class="loading"></div> Processing...';
-
-            try {
-                const response = await fetch(`${API_URL}/field/validate`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        content,
-                        categoryAssociations: categories.length > 0 ? categories : undefined
-                    })
-                });
-
-                const data = await response.json();
-                resultEl.innerHTML = `
-                    <div class="result">
-                        <h3>Validation Results</h3>
-                        <div class="metric" style="background: ${data.verified ? '#d1fae5' : '#fee2e2'};">
-                            <strong>Verified:</strong> ${data.verified ? '✅ Yes' : '❌ No'}
-                        </div>
-                        <div class="metric"><strong>Confidence:</strong> ${(data.confidence * 100).toFixed(1)}%</div>
-                        <div style="margin-top: 15px;">
-                            <strong>Sovereign Logic:</strong><br>
-                            <div class="metric"><strong>Validity:</strong> ${data.sovereignLogic.validity ? '✅ Valid' : '❌ Invalid'}</div>
-                            <div class="metric"><strong>Coherence:</strong> ${(data.sovereignLogic.coherence * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Sovereignty:</strong> ${(data.sovereignLogic.sovereignty * 100).toFixed(1)}%</div>
-                        </div>
-                        <pre>${JSON.stringify(data, null, 2)}</pre>
-                    </div>
-                `;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Find neighbors
-        function addCandidate() {
-            const container = document.getElementById('neighborsCandidates');
-            const div = document.createElement('div');
-            div.className = 'candidate-item';
-            div.innerHTML = `
-                <input type="text" placeholder="ID">
-                <textarea placeholder="Text content"></textarea>
-                <button class="remove-candidate" onclick="removeCandidate(this)">Remove</button>
-            `;
-            container.appendChild(div);
-        }
-
-        function removeCandidate(btn) {
-            btn.parentElement.remove();
-        }
-
-        async function findNeighbors() {
-            const query = document.getElementById('neighborsQuery').value;
-            const topN = parseInt(document.getElementById('neighborsTopN').value) || 3;
-            const candidates = Array.from(document.querySelectorAll('#neighborsCandidates .candidate-item')).map(item => {
-                const inputs = item.querySelectorAll('input, textarea');
-                return {
-                    id: inputs[0].value || 'unknown',
-                    text: inputs[1].value
-                };
-            }).filter(c => c.text);
-
-            const resultEl = document.getElementById('neighborsResult');
-            resultEl.innerHTML = '<div class="loading"></div> Processing...';
-
-            try {
-                const response = await fetch(`${API_URL}/field/neighbors`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        query: { text: query },
-                        candidates,
-                        topN
-                    })
-                });
-
-                const data = await response.json();
-                let neighborsHtml = `
-                    <div class="result">
-                        <h3>Similar Items (Top ${data.count})</h3>
-                `;
-
-                data.neighbors.forEach((neighbor, index) => {
-                    neighborsHtml += `
-                        <div style="margin: 15px 0; padding: 15px; background: #f3f4f6; border-radius: 6px;">
-                            <strong>#${index + 1}: ${neighbor.id}</strong>
-                            <div class="metric"><strong>Score:</strong> ${(neighbor.score * 100).toFixed(1)}%</div>
-                            ${neighbor.fieldDynamics ? `
-                                <div class="metric"><strong>Field Strength:</strong> ${neighbor.fieldDynamics.fieldStrength.toFixed(3)}</div>
-                                <div class="metric"><strong>Stability:</strong> ${(neighbor.fieldDynamics.stability * 100).toFixed(1)}%</div>
-                            ` : ''}
-                        </div>
-                    `;
-                });
-
-                neighborsHtml += `<pre>${JSON.stringify(data, null, 2)}</pre></div>`;
-                resultEl.innerHTML = neighborsHtml;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Analyze content
-        async function analyzeContent() {
-            const content = document.getElementById('analyzeContent').value;
-            const title = document.getElementById('analyzeTitle').value || undefined;
-            const resultEl = document.getElementById('analyzeResult');
-            resultEl.innerHTML = '<div class="loading"></div> Processing...';
-
-            try {
-                const response = await fetch(`${API_URL}/field/analyze`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ content, title })
-                });
-
-                const data = await response.json();
-                resultEl.innerHTML = `
-                    <div class="result">
-                        <h3>Full Analysis Results</h3>
-                        <div class="metric"><strong>Overall Score:</strong> ${(data.overallScore * 100).toFixed(1)}%</div>
-                        <div style="margin-top: 15px;">
-                            <strong>Signature:</strong><br>
-                            <div class="metric"><strong>Clarity:</strong> ${(data.signature.clarity * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Coherence:</strong> ${(data.signature.coherence * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Resonance:</strong> ${(data.signature.resonance * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Sovereignty:</strong> ${(data.signature.sovereignty * 100).toFixed(1)}%</div>
-                        </div>
-                        <div style="margin-top: 15px;">
-                            <strong>Coherence Matrix:</strong><br>
-                            <div class="metric"><strong>Rank:</strong> ${data.coherenceMatrix.rank}</div>
-                            <div class="metric"><strong>Size:</strong> ${data.coherenceMatrix.size}</div>
-                        </div>
-                        <div style="margin-top: 15px;">
-                            <strong>Field Dynamics:</strong><br>
-                            <div class="metric"><strong>Field Strength:</strong> ${data.fieldDynamics.fieldStrength.toFixed(3)}</div>
-                            <div class="metric"><strong>Stability:</strong> ${(data.fieldDynamics.stability * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Coherence:</strong> ${(data.fieldDynamics.coherence * 100).toFixed(1)}%</div>
-                        </div>
-                        <pre>${JSON.stringify(data, null, 2)}</pre>
-                    </div>
-                `;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Convert to vector
-        async function convertToVector() {
-            const content = document.getElementById('vectorContent').value;
-            const resultEl = document.getElementById('vectorResult');
-            resultEl.innerHTML = '<div class="loading"></div> Processing...';
-
-            try {
-                const response = await fetch(`${API_URL}/field/vector`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ content })
-                });
-
-                const data = await response.json();
-                resultEl.innerHTML = `
-                    <div class="result">
-                        <h3>4D Resonance Vector</h3>
-                        <div class="metric"><strong>X (Clarity):</strong> ${data.vector.x.toFixed(4)}</div>
-                        <div class="metric"><strong>Y (Coherence):</strong> ${data.vector.y.toFixed(4)}</div>
-                        <div class="metric"><strong>Z (Resonance):</strong> ${data.vector.z.toFixed(4)}</div>
-                        <div class="metric"><strong>W (Sovereignty):</strong> ${data.vector.w.toFixed(4)}</div>
-                        <div style="margin-top: 15px;">
-                            <strong>Field Dynamics:</strong><br>
-                            <div class="metric"><strong>Field Strength:</strong> ${data.fieldDynamics.fieldStrength.toFixed(3)}</div>
-                            <div class="metric"><strong>Stability:</strong> ${(data.fieldDynamics.stability * 100).toFixed(1)}%</div>
-                            <div class="metric"><strong>Coherence:</strong> ${(data.fieldDynamics.coherence * 100).toFixed(1)}%</div>
-                        </div>
-                        <pre>${JSON.stringify(data, null, 2)}</pre>
-                    </div>
-                `;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Get manifest
-        async function getManifest() {
-            const resultEl = document.getElementById('manifestResult');
-            resultEl.innerHTML = '<div class="loading"></div> Loading...';
-
-            try {
-                const response = await fetch(`${API_URL}/architecture/manifest`);
-                const data = await response.json();
-                
-                let layersHtml = '<div class="result"><h3>5-Layer Architecture</h3>';
-                Object.entries(data.layers).forEach(([name, layer]) => {
-                    layersHtml += `
-                        <div style="margin: 15px 0; padding: 15px; background: #f3f4f6; border-radius: 6px;">
-                            <strong>Layer ${layer.layer}: ${name.charAt(0).toUpperCase() + name.slice(1)}</strong><br>
-                            <div style="margin-top: 10px; color: #666;">${layer.purpose}</div>
-                            <div class="metric" style="margin-top: 10px;"><strong>Status:</strong> ${layer.status}</div>
-                            ${layer.endpoints ? `<div style="margin-top: 10px;"><strong>Endpoints:</strong> ${layer.endpoints.join(', ')}</div>` : ''}
-                            ${layer.features ? `<div style="margin-top: 10px;"><strong>Features:</strong> ${layer.features.join(', ')}</div>` : ''}
-                        </div>
-                    `;
-                });
-                layersHtml += `<pre>${JSON.stringify(data, null, 2)}</pre></div>`;
-                resultEl.innerHTML = layersHtml;
-            } catch (error) {
-                resultEl.innerHTML = `<div class="result" style="border-left-color: #ef4444;">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Initialize
-        checkStatus();
-        setInterval(checkStatus, 30000); // Check every 30 seconds
-    </script>
 </body>
 </html>
-
