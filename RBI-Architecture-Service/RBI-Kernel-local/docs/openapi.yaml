@@ -1,0 +1,319 @@
+openapi: 3.0.3
+info:
+  title: RBI Kernel API
+  description: REST API for RBI Kernel field-level coherence architecture including resonance scoring and vector similarity
+  version: 1.0.0
+  contact:
+    name: RBI Kernel
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+  - url: https://api.example.com
+    description: Production server (example)
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the service
+      operationId: getHealth
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  service:
+                    type: string
+                    example: rbi-kernel
+                  version:
+                    type: string
+                    example: 1.0.0
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  /rbi/score:
+    post:
+      summary: Calculate resonance score
+      description: |
+        Calculate resonance scores from various input types:
+        - Direct resonance parameters (vectorSimilarity, orbOverlap, temporalDecay)
+        - Vector pair for cosine similarity
+        - Text pair for Jaccard similarity
+      operationId: computeScore
+      tags:
+        - RBI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/ResonanceScoreRequest'
+                - $ref: '#/components/schemas/VectorScoreRequest'
+                - $ref: '#/components/schemas/TextScoreRequest'
+            examples:
+              resonance:
+                summary: Resonance parameters
+                value:
+                  vectorSimilarity: 0.8
+                  orbOverlap: 0.7
+                  temporalDecay: 0.9
+              vectors:
+                summary: Vector pair
+                value:
+                  vectors:
+                    vector1: [0.1, 0.2, 0.3, 0.4]
+                    vector2: [0.2, 0.3, 0.4, 0.5]
+              texts:
+                summary: Text pair
+                value:
+                  texts:
+                    text1: "The resonance between these concepts"
+                    text2: "The resonance among these ideas"
+      responses:
+        '200':
+          description: Successfully computed score
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoreResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /rbi/neighbors:
+    post:
+      summary: Find top-N neighbors
+      description: Find the top-N most similar items based on vector similarity or resonance scores
+      operationId: findNeighbors
+      tags:
+        - RBI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NeighborsRequest'
+            example:
+              query:
+                vector: [0.1, 0.2, 0.3, 0.4]
+              candidates:
+                - id: item1
+                  vector: [0.2, 0.3, 0.4, 0.5]
+                  metadata:
+                    title: "Item 1"
+                - id: item2
+                  vector: [0.5, 0.6, 0.7, 0.8]
+                  metadata:
+                    title: "Item 2"
+              topN: 5
+              useResonance: false
+      responses:
+        '200':
+          description: Successfully found neighbors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NeighborsResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ResonanceScoreRequest:
+      type: object
+      required:
+        - vectorSimilarity
+        - orbOverlap
+        - temporalDecay
+      properties:
+        vectorSimilarity:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Vector similarity score (0-1)
+        orbOverlap:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Orb overlap score (0-1)
+        temporalDecay:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Temporal decay score (0-1)
+
+    VectorScoreRequest:
+      type: object
+      required:
+        - vectors
+      properties:
+        vectors:
+          type: object
+          required:
+            - vector1
+            - vector2
+          properties:
+            vector1:
+              type: array
+              items:
+                type: number
+              description: First vector
+            vector2:
+              type: array
+              items:
+                type: number
+              description: Second vector
+
+    TextScoreRequest:
+      type: object
+      required:
+        - texts
+      properties:
+        texts:
+          type: object
+          required:
+            - text1
+            - text2
+          properties:
+            text1:
+              type: string
+              description: First text string
+            text2:
+              type: string
+              description: Second text string
+
+    ScoreResponse:
+      type: object
+      properties:
+        score:
+          type: number
+          description: Computed score (0-1 range)
+          example: 0.78
+        method:
+          type: string
+          enum: [resonance, vector_similarity, text_similarity]
+          description: Method used for computation
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of computation
+
+    ResonanceParams:
+      type: object
+      properties:
+        vectorSimilarity:
+          type: number
+        orbOverlap:
+          type: number
+        temporalDecay:
+          type: number
+
+    NeighborItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the item
+        score:
+          type: number
+          description: Similarity score (0-1)
+        metadata:
+          type: object
+          additionalProperties: true
+          description: Optional metadata for the item
+
+    NeighborsRequest:
+      type: object
+      required:
+        - query
+        - candidates
+      properties:
+        query:
+          type: object
+          properties:
+            vector:
+              type: array
+              items:
+                type: number
+              description: Query vector
+            text:
+              type: string
+              description: Query text
+            resonanceParams:
+              $ref: '#/components/schemas/ResonanceParams'
+        candidates:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+            properties:
+              id:
+                type: string
+              vector:
+                type: array
+                items:
+                  type: number
+              text:
+                type: string
+              resonanceParams:
+                $ref: '#/components/schemas/ResonanceParams'
+              metadata:
+                type: object
+                additionalProperties: true
+        topN:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+          description: Number of top neighbors to return
+        useResonance:
+          type: boolean
+          default: false
+          description: Whether to use full resonance computation
+
+    NeighborsResponse:
+      type: object
+      properties:
+        neighbors:
+          type: array
+          items:
+            $ref: '#/components/schemas/NeighborItem'
+        count:
+          type: integer
+          description: Number of neighbors returned
+        topN:
+          type: integer
+          description: Requested top-N value
+        timestamp:
+          type: string
+          format: date-time
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+
+
+
+

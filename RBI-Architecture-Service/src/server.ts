@@ -7,8 +7,8 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
-import { FieldComputation, FieldValidation, Mathematics } from 'rbi-kernel';
-import type { ResonanceVector } from 'rbi-kernel';
+import { FieldComputation, FieldValidation, Mathematics, KernelManifest } from 'rbi-kernel';
+import type { ResonanceVector, NeighborSearchParams } from 'rbi-kernel';
 import { startTemporalLoop } from './orchestration/temporal-loop.js';
 import { authenticateApiKey } from './middleware/auth.js';
 import { rateLimit } from './middleware/rate-limit.js';
@@ -19,6 +19,9 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+// Serve static files (UI) - before auth middleware
+app.use(express.static('public'));
 
 // Middleware
 app.use(requestLogger);
@@ -143,9 +146,13 @@ app.get('/field/status', (req, res) => {
 /**
  * POST /field/validate
  * Runs Proof-of-Meaning verification
+ * 
+ * Note: categoryAssociations is optional and domain-specific.
+ * For S2S projects, this maps to orbAssociations. For other domains,
+ * use appropriate category identifiers.
  */
 app.post('/field/validate', asyncHandler(async (req, res) => {
-  const { content, orbAssociations = [] } = req.body;
+  const { content, categoryAssociations = [], orbAssociations = [] } = req.body;
 
   if (!content) {
     return res.status(400).json({
@@ -153,8 +160,12 @@ app.post('/field/validate', asyncHandler(async (req, res) => {
     });
   }
 
+  // Support both categoryAssociations (generic) and orbAssociations (S2S-specific)
+  // orbAssociations is maintained for backward compatibility with S2S systems
+  const associations = categoryAssociations.length > 0 ? categoryAssociations : orbAssociations;
+
   // Use FieldValidation layer
-  const verification = FieldValidation.verifyConsciousness(content, orbAssociations);
+  const verification = FieldValidation.verifyConsciousness(content, associations);
 
   // Get enhanced analysis for full context
   const engine = FieldComputation.EnhancedResonanceEngine.getInstance();
@@ -174,6 +185,200 @@ app.post('/field/validate', asyncHandler(async (req, res) => {
     timestamp: new Date().toISOString()
   });
 }));
+
+/**
+ * POST /field/neighbors
+ * Find top-N most similar items (similarity search)
+ * 
+ * Demonstrates neighbor finding capability - useful for:
+ * - Fraud detection (find similar transactions)
+ * - Content recommendation (find similar content)
+ * - Anomaly detection (find similar patterns)
+ */
+app.post('/field/neighbors', asyncHandler(async (req, res) => {
+  const { query, candidates, topN = 10 } = req.body;
+
+  if (!query || !candidates || !Array.isArray(candidates)) {
+    return res.status(400).json({
+      error: 'Invalid request. Provide query and candidates array'
+    });
+  }
+
+  // Convert text queries to resonance vectors if needed
+  let searchQuery = query;
+  if (query.text && !query.resonanceVector) {
+    const engine = FieldComputation.EnhancedResonanceEngine.getInstance();
+    const analysis = await engine.analyzeContentWithMathematics(query.text);
+    searchQuery = {
+      ...query,
+      resonanceVector: analysis.mathematical.resonanceVector
+    };
+  }
+
+  // Convert text candidates to resonance vectors if needed
+  const processedCandidates = await Promise.all(
+    candidates.map(async (candidate: any) => {
+      if (candidate.text && !candidate.resonanceVector) {
+        const engine = FieldComputation.EnhancedResonanceEngine.getInstance();
+        const analysis = await engine.analyzeContentWithMathematics(candidate.text);
+        return {
+          ...candidate,
+          resonanceVector: analysis.mathematical.resonanceVector
+        };
+      }
+      return candidate;
+    })
+  );
+
+  const searchParams: NeighborSearchParams = {
+    query: searchQuery,
+    candidates: processedCandidates,
+    topN,
+    useResonance: true
+  };
+
+  const neighbors = FieldComputation.findNeighbors(searchParams);
+
+  return res.json({
+    neighbors,
+    count: neighbors.length,
+    topN,
+    timestamp: new Date().toISOString()
+  });
+}));
+
+/**
+ * POST /field/analyze
+ * Full content analysis with all 5 layers
+ * 
+ * Demonstrates complete architecture:
+ * - Representation layer (input processing)
+ * - Computation layer (resonance calculation)
+ * - Temporal layer (stability tracking)
+ * - Validation layer (Proof-of-Meaning)
+ * - Interfaces layer (formatted output)
+ */
+app.post('/field/analyze', asyncHandler(async (req, res) => {
+  const { content, title } = req.body;
+
+  if (!content) {
+    return res.status(400).json({
+      error: 'Invalid request. Content is required'
+    });
+  }
+
+  const engine = FieldComputation.EnhancedResonanceEngine.getInstance();
+  const analysis = await engine.analyzeContentWithMathematics(content, title);
+
+  return res.json({
+    overallScore: analysis.overall_score,
+    signature: {
+      clarity: analysis.signature.clarity,
+      coherence: analysis.signature.coherence,
+      resonance: analysis.signature.resonance,
+      sovereignty: analysis.signature.sovereignty
+    },
+    resonanceVector: analysis.mathematical.resonanceVector,
+    harmonicFrequency: analysis.mathematical.harmonicFrequency,
+    coherenceMatrix: {
+      rank: analysis.mathematical.coherenceMatrix.coherenceRank,
+      size: analysis.mathematical.coherenceMatrix.nxn.length,
+      eigenvalues: analysis.mathematical.coherenceMatrix.eigenvalues
+    },
+    fieldDynamics: analysis.mathematical.fieldDynamics,
+    sovereignLogic: {
+      validity: analysis.mathematical.sovereignLogic.validity,
+      coherence: analysis.mathematical.sovereignLogic.coherence,
+      sovereignty: analysis.mathematical.sovereignLogic.sovereignty
+    },
+    timestamp: new Date().toISOString()
+  });
+}));
+
+/**
+ * POST /field/vector
+ * Convert content to 4D resonance vector
+ * 
+ * Useful for:
+ * - Building vector databases
+ * - Pre-computing vectors for similarity search
+ * - Vector-based operations
+ */
+app.post('/field/vector', asyncHandler(async (req, res) => {
+  const { content, title } = req.body;
+
+  if (!content) {
+    return res.status(400).json({
+      error: 'Invalid request. Content is required'
+    });
+  }
+
+  const engine = FieldComputation.EnhancedResonanceEngine.getInstance();
+  const analysis = await engine.analyzeContentWithMathematics(content, title);
+  const fieldDynamics = Mathematics.ResonanceVectorMath.calculateFieldDynamics(
+    analysis.mathematical.resonanceVector,
+    analysis.orb_associations || []
+  );
+
+  return res.json({
+    vector: analysis.mathematical.resonanceVector,
+    fieldDynamics: {
+      fieldStrength: fieldDynamics.fieldStrength,
+      stability: fieldDynamics.stability,
+      coherence: fieldDynamics.coherence,
+      gradient: fieldDynamics.gradient
+    },
+    timestamp: new Date().toISOString()
+  });
+}));
+
+/**
+ * GET /architecture/manifest
+ * Returns the complete 5-layer architecture manifest
+ * 
+ * Shows partners the full architecture structure
+ */
+app.get('/architecture/manifest', (req, res) => {
+  return res.json({
+    manifest: KernelManifest,
+    layers: {
+      representation: {
+        layer: 1,
+        purpose: 'Transforms inputs into multidimensional resonance fields',
+        status: 'integrated'
+      },
+      computation: {
+        layer: 2,
+        purpose: 'Calculates spatial, temporal, and contextual coherence',
+        status: 'fully_implemented',
+        endpoints: ['/field/score', '/field/analyze', '/field/neighbors', '/field/vector']
+      },
+      temporal: {
+        layer: 3,
+        purpose: 'Maintains adaptive stability over time',
+        status: 'active',
+        features: ['temporal_continuity_loop', 'drift_detection', 'field_stabilization']
+      },
+      validation: {
+        layer: 4,
+        purpose: 'Performs Proof-of-Meaning operations',
+        status: 'fully_implemented',
+        endpoints: ['/field/validate']
+      },
+      interfaces: {
+        layer: 5,
+        purpose: 'Links verified coherence data to external systems',
+        status: 'active',
+        endpoints: ['/field/score', '/field/validate', '/field/analyze', '/field/neighbors', '/field/vector']
+      }
+    },
+    mathematics: {
+      purpose: 'Mathematical foundations for field-level coherence',
+      components: ['ResonanceVectorMath', 'SovereignLogic', 'CoherenceMatrix', 'FieldDynamics']
+    },
+    timestamp: new Date().toISOString()
+  });
+});
 
 /**
  * Helper function to format uptime
@@ -201,15 +406,27 @@ app.use(errorHandler);
 // Start temporal continuity loop
 startTemporalLoop(fieldCache);
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🌀 RBI Architecture Service v1.1.0-service`);
-  console.log(`📡 Running on http://localhost:${PORT}`);
-  console.log(`💚 Health: http://localhost:${PORT}/health`);
-  console.log(`📊 Status: http://localhost:${PORT}/field/status`);
-  console.log(`📈 Metrics: http://localhost:${PORT}/metrics`);
-  console.log(`🎯 Score: http://localhost:${PORT}/field/score`);
-  console.log(`✅ Validate: http://localhost:${PORT}/field/validate`);
-  console.log(`🔐 API Key: ${process.env.RBI_API_KEY ? 'Configured' : 'Not configured (development mode)'}`);
-});
+// Export app for Vercel serverless functions
+export default app;
+
+// Start server (only in non-Vercel environments)
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`🌀 RBI Architecture Service v1.1.0-service`);
+    console.log(`📡 Running on http://localhost:${PORT}`);
+    console.log(`\n📋 Core Endpoints:`);
+    console.log(`   💚 Health: http://localhost:${PORT}/health`);
+    console.log(`   📊 Status: http://localhost:${PORT}/field/status`);
+    console.log(`   📈 Metrics: http://localhost:${PORT}/metrics`);
+    console.log(`\n🎯 Field Operations:`);
+    console.log(`   🎯 Score: POST http://localhost:${PORT}/field/score`);
+    console.log(`   ✅ Validate: POST http://localhost:${PORT}/field/validate`);
+    console.log(`   🔍 Neighbors: POST http://localhost:${PORT}/field/neighbors`);
+    console.log(`   📊 Analyze: POST http://localhost:${PORT}/field/analyze`);
+    console.log(`   📐 Vector: POST http://localhost:${PORT}/field/vector`);
+    console.log(`\n🏗️  Architecture:`);
+    console.log(`   📖 Manifest: GET http://localhost:${PORT}/architecture/manifest`);
+    console.log(`\n🔐 API Key: ${process.env.RBI_API_KEY ? 'Configured' : 'Not configured (development mode)'}`);
+  });
+}
 

@@ -11,8 +11,8 @@ const API_KEY = process.env.RBI_API_KEY || process.env.API_KEY;
  * Validate API key from request headers
  */
 export function authenticateApiKey(req: Request, res: Response, next: NextFunction) {
-  // Skip auth for health check endpoint
-  if (req.path === '/health' || req.path === '/field/status') {
+  // Skip auth for public endpoints
+  if (req.path === '/health' || req.path === '/field/status' || req.path === '/architecture/manifest') {
     return next();
   }
 

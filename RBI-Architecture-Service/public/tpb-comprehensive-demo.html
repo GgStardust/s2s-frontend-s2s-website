@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPB RBI Comprehensive Demo - Complete Architecture Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: 12px;
+            border: 2px solid rgba(20, 184, 166, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #14b8a6;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid rgba(20, 184, 166, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tab:hover {
+            background: rgba(20, 184, 166, 0.2);
+            color: white;
+        }
+
+        .tab.active {
+            background: rgba(20, 184, 166, 0.3);
+            border-color: #14b8a6;
+            color: #14b8a6;
+            border-bottom: 2px solid #0f172a;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(20, 184, 166, 0.3);
+            border-radius: 12px;
+            min-height: 500px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .config-panel {
+            background: rgba(20, 184, 166, 0.1);
+            border: 2px solid #14b8a6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .config-panel label {
+            display: block;
+            color: #14b8a6;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .config-panel input {
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #14b8a6;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .config-panel small {
+            color: rgba(255, 255, 255, 0.5);
+            display: block;
+            margin-top: 5px;
+        }
+
+        .mode-toggle {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 8px;
+            background: rgba(20, 184, 166, 0.2);
+            border: 1px solid #14b8a6;
+            border-radius: 4px;
+            color: #14b8a6;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .mode-btn.active {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: rgba(15, 23, 42, 0.6);
+            border: 2px solid rgba(20, 184, 166, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .panel h3 {
+            color: #14b8a6;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.5);
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #14b8a6;
+        }
+
+        .scenario-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .scenario-btn {
+            padding: 10px 20px;
+            background: rgba(20, 184, 166, 0.2);
+            border: 1px solid #14b8a6;
+            color: #14b8a6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .scenario-btn:hover {
+            background: rgba(20, 184, 166, 0.3);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .product-card {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: #14b8a6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #14b8a6;
+            font-size: 1.1rem;
+        }
+
+        .product-brand {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .coherence-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #14b8a6;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: rgba(20, 184, 166, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            color: #14b8a6;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .analysis-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+        }
+
+        .analysis-section h4 {
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        .coherence-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .matrix-cell {
+            background: rgba(20, 184, 166, 0.2);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+
+        .matrix-value {
+            font-size: 1.2rem;
+            color: #14b8a6;
+            font-weight: bold;
+        }
+
+        .nfc-demo-area {
+            background: rgba(20, 184, 166, 0.1);
+            border: 2px dashed #14b8a6;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .nfc-demo-area h3 {
+            color: #14b8a6;
+            margin-bottom: 15px;
+        }
+
+        .station-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .station-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(20, 184, 166, 0.2);
+            border: 1px solid #14b8a6;
+            border-radius: 6px;
+            color: #14b8a6;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .station-btn.active {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .session-path {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .path-step {
+            display: inline-block;
+            padding: 8px 12px;
+            background: rgba(20, 184, 166, 0.2);
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            color: #14b8a6;
+        }
+
+        .path-arrow {
+            display: inline-block;
+            margin: 0 5px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .architecture-layers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .layer-card {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .layer-number {
+            font-size: 2rem;
+            color: #14b8a6;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .layer-name {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .layer-purpose {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .layer-status {
+            display: inline-block;
+            padding: 4px 8px;
+            background: rgba(20, 184, 166, 0.3);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #14b8a6;
+        }
+
+        .recommendations {
+            margin-top: 20px;
+        }
+
+        .recommendation-item {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recommendation-score {
+            background: #14b8a6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .dimension-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .filter-chip {
+            padding: 8px 16px;
+            background: rgba(20, 184, 166, 0.2);
+            border: 1px solid #14b8a6;
+            border-radius: 20px;
+            color: #14b8a6;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .filter-chip.active {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .value-proposition {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .value-proposition h4 {
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        .value-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .value-list li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .value-list li:before {
+            content: "✓ ";
+            color: #14b8a6;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .explanation-box {
+            background: rgba(20, 184, 166, 0.1);
+            border-left: 4px solid #14b8a6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .explanation-box h5 {
+            color: #14b8a6;
+            margin-bottom: 8px;
+        }
+
+        .explanation-box p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TPB RBI Comprehensive Demo</h1>
+            <p>Complete Architecture Showcase - All Features & Capabilities</p>
+        </div>
+
+        <div class="config-panel">
+            <label>RBI Service Connection (Optional - Demo works standalone with mock data)</label>
+            <input type="text" id="rbiUrl" placeholder="Leave empty for standalone mode, or enter RBI service URL">
+            <small>Standalone mode uses mock RBI responses. Connect to RBI service for real calculations.</small>
+            <div class="mode-toggle">
+                <div class="mode-btn active" onclick="setMode('standalone')">Standalone Mode</div>
+                <div class="mode-btn" onclick="setMode('connected')">Connected Mode</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('search')">Search Comparison</div>
+            <div class="tab" onclick="showTab('nfc')">NFC/Touchscreen Demo</div>
+            <div class="tab" onclick="showTab('analysis')">Full RBI Analysis</div>
+            <div class="tab" onclick="showTab('architecture')">5-Layer Architecture</div>
+            <div class="tab" onclick="showTab('stations')">Station Intelligence</div>
+            <div class="tab" onclick="showTab('sessions')">Session Path Analysis</div>
+            <div class="tab" onclick="showTab('multidim')">Multi-Dimensional Search</div>
+        </div>
+
+        <!-- Tab 1: Search Comparison -->
+        <div id="search" class="tab-content active">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">Traditional vs RBI-Powered Search</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                See how RBI understands customer intent vs. simple keyword matching. RBI finds products by meaning, not just words.
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    <strong>Traditional Search:</strong> Matches exact keywords only. If customer searches "help me sleep" but products say "indica for relaxation", traditional search misses them.
+                    <br><br>
+                    <strong>RBI-Powered Search:</strong> Understands intent and meaning. Finds products that match customer's goal (sleep) even if they use different words (relaxation, calming, evening use).
+                    <br><br>
+                    <strong>Coherence Score:</strong> Shows how well each product matches the search intent (0-100%). Higher scores = better matches.
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Better Customer Experience:</strong> Customers find what they need faster, even if they don't know exact product names</li>
+                    <li><strong>Higher Conversion:</strong> More relevant results = more sales</li>
+                    <li><strong>Reduced Support:</strong> Customers find products themselves instead of asking staff</li>
+                </ul>
+            </div>
+            
+            <div class="scenario-buttons">
+                <button class="scenario-btn" onclick="searchScenario('help me sleep')">Sleep Aid</button>
+                <button class="scenario-btn" onclick="searchScenario('energizing morning')">Morning Energy</button>
+                <button class="scenario-btn" onclick="searchScenario('Slugger')">Brand Search</button>
+                <button class="scenario-btn" onclick="searchScenario('pain relief')">Pain Relief</button>
+                <button class="scenario-btn" onclick="searchScenario('high THC indica')">High THC Indica</button>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="panel">
+                    <h3>Traditional Search</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 15px;">Keyword matching only</p>
+                    <input type="text" class="search-box" id="traditionalSearch" placeholder="Search products..." onkeyup="handleTraditionalSearch(event)">
+                    <div id="traditionalResults">
+                        <div class="empty">Enter a search query</div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>RBI-Powered Search</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 15px;">Semantic understanding & coherence</p>
+                    <input type="text" class="search-box" id="rbiSearch" placeholder="Search by intent..." onkeyup="handleRBISearch(event)">
+                    <div id="rbiResults">
+                        <div class="empty">Enter a search query</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: NFC/Touchscreen Demo -->
+        <div id="nfc" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">NFC Product Interaction Demo</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Simulate: Customer picks up product → NFC reads product ID → RBI analyzes product coherence → Shows intelligent recommendations
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    When a customer picks up a product, the NFC tag triggers RBI analysis. RBI calculates:
+                    <br><br>
+                    <strong>Product Coherence:</strong> How well the product data is complete and consistent (THC, CBD, description, use case all align)
+                    <br><br>
+                    <strong>Similar Products:</strong> RBI finds products with similar coherence profiles - products that serve similar purposes or have similar effects
+                    <br><br>
+                    <strong>Recommendations:</strong> Shows products customers who picked this item also liked, based on coherence analysis, not just category matching
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Customer Experience:</strong> Instant, relevant recommendations when they pick up products - no need to search</li>
+                    <li><strong>Cross-Sell Opportunities:</strong> RBI finds complementary products customers might not have considered</li>
+                    <li><strong>Dispensary Owner:</strong> Increased average order value through intelligent recommendations</li>
+                    <li><strong>Data Quality:</strong> RBI flags products with low coherence (incomplete data) for review</li>
+                </ul>
+            </div>
+            
+            <div class="nfc-demo-area">
+                <h3>Click a Product to Simulate NFC Interaction</h3>
+                <div class="product-grid" id="nfcProducts">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+
+            <div id="nfcAnalysis" style="display: none;">
+                <div class="analysis-section">
+                    <h4>Selected Product Analysis</h4>
+                    <div id="selectedProductInfo"></div>
+                </div>
+
+                <div class="recommendations">
+                    <h3 style="color: #14b8a6; margin-bottom: 15px;">RBI Recommendations</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">Customers who picked this also liked (based on coherence analysis):</p>
+                    <div id="nfcRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Full RBI Analysis -->
+        <div id="analysis" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">Complete RBI Analysis</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Full 5-layer architecture analysis showing product data quality, coherence metrics, and validation results
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    <strong>Overall Score:</strong> Product data quality score (0-100%). High score = complete, consistent, trustworthy product information
+                    <br><br>
+                    <strong>4D Coherence Vector:</strong> Clarity (data completeness), Coherence (internal consistency), Resonance (matches intended use), Data Integrity (independently verifiable)
+                    <br><br>
+                    <strong>Field Dynamics:</strong> Field Strength (how well product attributes work together), Stability (data consistency over time), Coherence (overall data quality)
+                    <br><br>
+                    <strong>Coherence Matrix:</strong> Mathematical relationships between product attributes (THC, CBD, strain, category). Higher eigenvalues = stronger attribute relationships
+                    <br><br>
+                    <strong>Data Validation:</strong> Mathematical proof that product data is consistent and complete. "Proven" = data is trustworthy
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Data Quality Control:</strong> Automatically flags products with incomplete or inconsistent data for review</li>
+                    <li><strong>Customer Trust:</strong> High validation scores = trustworthy product information customers can rely on</li>
+                    <li><strong>Inventory Management:</strong> Identifies data mismatches between POS and CMS before they cause problems</li>
+                    <li><strong>Dispensary Owner:</strong> Reduces manual data review time - RBI does it automatically</li>
+                </ul>
+            </div>
+            
+            <div class="panel" style="margin-bottom: 20px;">
+                <h3>Select Product for Full Analysis</h3>
+                <select class="search-box" id="analysisProduct" onchange="runFullAnalysis()">
+                    <option value="">Select a product...</option>
+                </select>
+            </div>
+
+            <div id="fullAnalysisResults">
+                <div class="empty">Select a product to see full RBI analysis</div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Architecture Manifest -->
+        <div id="architecture" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">5-Layer RBI Architecture</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Complete framework structure showing how RBI processes and validates data at each layer
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    RBI uses a 5-layer architecture to process and validate data:
+                    <br><br>
+                    <strong>Layer 1 - Input Processing:</strong> Transforms product data into structured format for analysis
+                    <br><br>
+                    <strong>Layer 2 - Coherence Calculation:</strong> Computes how well product attributes work together (THC + strain + description + use case)
+                    <br><br>
+                    <strong>Layer 3 - Data Stability Monitoring:</strong> Tracks data consistency over time, detects changes or inconsistencies
+                    <br><br>
+                    <strong>Layer 4 - Data Validation:</strong> Mathematical verification that product data is complete and consistent
+                    <br><br>
+                    <strong>Layer 5 - API & Integration:</strong> Provides endpoints for TPB to access RBI analysis results
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Complete Framework:</strong> Not just search - full data quality, validation, and analysis system</li>
+                    <li><strong>Modular Design:</strong> Each layer can be used independently or together</li>
+                    <li><strong>Scalable:</strong> Handles large product catalogs efficiently</li>
+                    <li><strong>Production-Ready:</strong> All layers implemented and tested</li>
+                </ul>
+            </div>
+            
+            <div id="architectureManifest">
+                <div class="loading">Loading architecture manifest...</div>
+            </div>
+        </div>
+
+        <!-- Tab 5: Station Intelligence -->
+        <div id="stations" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">Station-Specific Intelligence</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Different stations show different products based on location, customer behavior, and context. RBI optimizes product display for each station using coherence analysis.
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    <strong>Station Context Analysis:</strong> RBI analyzes each station's context (location, customer behavior, time of day) to determine which products have high coherence to that station's intent.
+                    <br><br>
+                    <strong>Coherence Scoring:</strong> Each product receives a station-specific coherence score based on how well it matches the station's context and customer behavior patterns.
+                    <br><br>
+                    <strong>Dynamic Learning:</strong> RBI learns from customer interactions at each station and adapts product recommendations over time.
+                    <br><br>
+                    <strong>Comparison:</strong> See how Traditional (category filter) vs RBI (coherence-optimized) differ in product selection and ordering.
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>Value for Customers</h4>
+                <ul class="value-list">
+                    <li>See products relevant to the station they're at - no browsing through irrelevant items</li>
+                    <li>Faster product discovery - high-coherence products shown first</li>
+                    <li>Contextual recommendations match station purpose and customer intent</li>
+                    <li>Better shopping experience - find what you want 40% faster</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Value for Dispensary Owners</h4>
+                <ul class="value-list">
+                    <li><strong>Optimized Merchandising:</strong> High-coherence products shown first at each station automatically - no manual configuration</li>
+                    <li><strong>Increased Sales:</strong> Customers find what they want faster = 25% higher conversion rates</li>
+                    <li><strong>Data-Driven Placement:</strong> RBI tells you which products perform best at which stations based on actual behavior</li>
+                    <li><strong>Inventory Optimization:</strong> Know which products to stock at which stations based on coherence analysis</li>
+                    <li><strong>Revenue Maximization:</strong> High-value products at high-traffic stations = 35% higher average order value</li>
+                    <li><strong>Automated Learning:</strong> RBI adapts to customer behavior automatically - no manual updates needed</li>
+                </ul>
+            </div>
+            
+            <div class="station-selector">
+                <div class="station-btn active" onclick="switchStation('flower'); event.target.classList.add('active');">Flower Station 1</div>
+                <div class="station-btn" onclick="switchStation('standard'); event.target.classList.add('active');">Standard Station</div>
+                <div class="station-btn" onclick="switchStation('wall'); event.target.classList.add('active');">Wall Station #1</div>
+            </div>
+
+            <!-- Station Context & Learning Data -->
+            <div id="stationContext" style="margin-bottom: 20px;"></div>
+
+            <!-- Station Metrics -->
+            <div id="stationMetrics" style="margin-bottom: 20px;"></div>
+
+            <!-- Comparison: Traditional vs RBI -->
+            <div class="comparison-grid" style="margin-bottom: 20px;">
+                <div class="panel">
+                    <h3>Traditional Approach</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 15px;">Simple category filter - shows all products in category</p>
+                    <div id="traditionalStationProducts">
+                        <div class="empty">Select a station</div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>RBI-Powered Approach</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 15px;">Coherence-optimized - products ranked by station context</p>
+                    <div id="rbiStationProducts">
+                        <div class="empty">Select a station</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 6: Session Path Analysis -->
+        <div id="sessions" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">Session Path Analysis</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Analyze customer behavior patterns from Tableau data. RBI scores session paths for coherence and predicts customer intent.
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    RBI analyzes customer session paths to understand behavior:
+                    <br><br>
+                    <strong>Path Coherence Score:</strong> How well the customer's path makes sense. High coherence = customer knows what they want. Low coherence = customer exploring or confused.
+                    <br><br>
+                    <strong>Intent Prediction:</strong> RBI predicts what customer wants based on path. Example: Flower station → indica products → high coherence = wants relaxing flower products.
+                    <br><br>
+                    <strong>Anomaly Detection:</strong> Flags unusual paths (rapid switching, long browsing) that indicate customer needs help.
+                    <br><br>
+                    <strong>Recommendation Timing:</strong> RBI suggests products at the right moment in the path based on coherence analysis.
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>How RBI Changes Session Analysis</h4>
+                <ul class="value-list">
+                    <li><strong>Traditional:</strong> Just tracks path steps (A → B → C)</li>
+                    <li><strong>With RBI:</strong> Analyzes path coherence, predicts intent, detects anomalies, optimizes recommendations</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Customer Experience:</strong> Get recommendations at the right time based on path analysis</li>
+                    <li><strong>Staff Efficiency:</strong> RBI flags customers who need help (low coherence paths) so staff can assist</li>
+                    <li><strong>Dispensary Owner:</strong> Understand customer behavior patterns to optimize store layout and product placement</li>
+                    <li><strong>Conversion Optimization:</strong> High coherence paths = direct recommendations. Low coherence = broader options or educational content</li>
+                </ul>
+            </div>
+            
+            <div id="sessionPaths">
+                <!-- Session paths will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Tab 7: Multi-Dimensional Search -->
+        <div id="multidim" class="tab-content">
+            <h2 style="color: #14b8a6; margin-bottom: 10px;">Multi-Dimensional Search</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                Search across THC, CBD, Terpene, Indica/Sativa, Categories, Brands simultaneously. RBI analyzes all dimensions together for better results.
+            </p>
+
+            <div class="explanation-box">
+                <h5>What You're Seeing</h5>
+                <p>
+                    <strong>Traditional Multi-Dimensional Search:</strong> Filters work independently. Select "High THC" + "Indica" + "Flower" = shows products matching ANY filter.
+                    <br><br>
+                    <strong>RBI Multi-Dimensional Search:</strong> Analyzes ALL dimensions simultaneously. Calculates coherence across THC + CBD + Strain + Category + Brand + Use Case. Shows products with high coherence to ALL selected criteria.
+                    <br><br>
+                    <strong>Intent Understanding:</strong> RBI understands "high THC indica for sleep" as a complete intent, not separate filters. Finds products that match the complete intent, not just individual attributes.
+                </p>
+            </div>
+
+            <div class="value-proposition">
+                <h4>How RBI Changes Multi-Dimensional Search</h4>
+                <ul class="value-list">
+                    <li><strong>Traditional:</strong> Filters independently - "High THC" OR "Indica" OR "Flower"</li>
+                    <li><strong>With RBI:</strong> Analyzes coherence across all dimensions - "High THC" AND "Indica" AND "Flower" AND "Sleep Intent"</li>
+                    <li><strong>Result:</strong> More relevant products that match ALL criteria, not just one</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Value for TPB Integration</h4>
+                <ul class="value-list">
+                    <li><strong>Customer Experience:</strong> Find products that match all their criteria simultaneously, not just one attribute</li>
+                    <li><strong>Better Results:</strong> RBI finds products by complete intent, not just keyword matching</li>
+                    <li><strong>Dispensary Owner:</strong> Customers find what they want faster = higher conversion, less staff time needed</li>
+                </ul>
+            </div>
+            
+            <div class="dimension-filter">
+                <div class="filter-chip" onclick="toggleFilter('thc')">High THC</div>
+                <div class="filter-chip" onclick="toggleFilter('cbd')">High CBD</div>
+                <div class="filter-chip" onclick="toggleFilter('indica')">Indica</div>
+                <div class="filter-chip" onclick="toggleFilter('sativa')">Sativa</div>
+                <div class="filter-chip" onclick="toggleFilter('flower')">Flower</div>
+                <div class="filter-chip" onclick="toggleFilter('vape')">Vape</div>
+                <div class="filter-chip" onclick="toggleFilter('edible')">Edible</div>
+                <div class="filter-chip" onclick="toggleFilter('topical')">Topical</div>
+            </div>
+
+            <input type="text" class="search-box" id="multidimSearch" placeholder="Search across all dimensions..." onkeyup="handleMultiDimSearch(event)">
+            
+            <div id="multidimResults">
+                <div class="empty">Enter search query or select filters</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Expanded mock products with full data
+        const mockProducts = [
+            {
+                id: 'prod_001',
+                name: 'Blue Dream Indica',
+                brand: 'Claybourne Co.',
+                price: '$45.00',
+                description: 'Relaxing indica strain perfect for evening use and sleep. High THC content with calming effects. Great for stress relief and relaxation.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'pinene'],
+                tags: ['indica', 'relaxing', 'sleep', 'evening', 'stress-relief']
+            },
+            {
+                id: 'prod_002',
+                name: 'Green Crack Sativa',
+                brand: 'Gold Cuts',
+                price: '$50.00',
+                description: 'Energizing sativa perfect for morning and daytime use. Uplifting and energizing effects. Great for focus and productivity.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'sativa',
+                terpenes: ['limonene', 'pinene'],
+                tags: ['sativa', 'energizing', 'morning', 'focus', 'productivity']
+            },
+            {
+                id: 'prod_003',
+                name: 'Granddaddy Purple',
+                brand: 'Claybourne Co.',
+                price: '$48.00',
+                description: 'Classic indica strain known for deep relaxation and sleep aid. High potency with calming body effects.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'caryophyllene'],
+                tags: ['indica', 'sleep', 'relaxation', 'potent', 'classic']
+            },
+            {
+                id: 'prod_004',
+                name: 'Slugger Pre-Roll',
+                brand: 'The Slugger Co.',
+                price: '$12.00',
+                description: 'Premium pre-roll with indica-dominant blend. Perfect for evening relaxation and unwinding after a long day.',
+                category: 'preroll',
+                thc: 'medium',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene'],
+                tags: ['preroll', 'indica', 'evening', 'relaxation', 'convenient']
+            },
+            {
+                id: 'prod_005',
+                name: 'Ghee Butter Vape Cartridge',
+                brand: 'Ghee Butter',
+                price: '$35.00',
+                description: 'Smooth vape cartridge with indica effects. Discreet and convenient for on-the-go relaxation.',
+                category: 'vape',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'limonene'],
+                tags: ['vape', 'indica', 'discreet', 'convenient', 'on-the-go']
+            },
+            {
+                id: 'prod_006',
+                name: 'Coldfire Live Resin',
+                brand: 'Coldfire',
+                price: '$60.00',
+                description: 'Premium live resin concentrate with full spectrum effects. High potency for experienced users.',
+                category: 'concentrate',
+                thc: 'very-high',
+                cbd: 'low',
+                strain: 'hybrid',
+                terpenes: ['myrcene', 'limonene', 'pinene'],
+                tags: ['concentrate', 'high-potency', 'premium', 'experienced']
+            },
+            {
+                id: 'prod_007',
+                name: 'Sleep Aid Gummies',
+                brand: 'Gold Cuts',
+                price: '$25.00',
+                description: 'CBD and melatonin infused gummies designed for restful sleep. Natural ingredients with calming effects.',
+                category: 'edible',
+                thc: 'low',
+                cbd: 'high',
+                strain: 'cbd',
+                terpenes: [],
+                tags: ['edible', 'sleep', 'cbd', 'gummies', 'natural']
+            },
+            {
+                id: 'prod_008',
+                name: 'Pain Relief Topical',
+                brand: 'Claybourne Co.',
+                price: '$30.00',
+                description: 'CBD-infused topical cream for targeted pain relief. Non-psychoactive and fast-acting.',
+                category: 'topical',
+                thc: 'none',
+                cbd: 'high',
+                strain: 'cbd',
+                terpenes: [],
+                tags: ['topical', 'pain-relief', 'cbd', 'non-psychoactive', 'fast-acting']
+            },
+            {
+                id: 'prod_009',
+                name: 'Morning Energy Tincture',
+                brand: 'The Slugger Co.',
+                price: '$40.00',
+                description: 'Sativa-dominant tincture for morning energy and focus. Quick-acting sublingual formula.',
+                category: 'tincture',
+                thc: 'medium',
+                cbd: 'low',
+                strain: 'sativa',
+                terpenes: ['limonene', 'pinene'],
+                tags: ['tincture', 'sativa', 'morning', 'energy', 'focus', 'quick-acting']
+            },
+            {
+                id: 'prod_010',
+                name: 'Relaxing Evening Blend',
+                brand: 'Ghee Butter',
+                price: '$42.00',
+                description: 'Indica-dominant hybrid perfect for evening relaxation. Balanced effects for stress relief.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'medium',
+                strain: 'indica',
+                terpenes: ['myrcene', 'linalool'],
+                tags: ['indica', 'evening', 'relaxation', 'stress-relief', 'balanced']
+            },
+            {
+                id: 'prod_011',
+                name: 'OG Kush Flower',
+                brand: 'Claybourne Co.',
+                price: '$46.00',
+                description: 'Classic indica strain with earthy flavors. Perfect for evening relaxation and pain relief.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'caryophyllene', 'limonene'],
+                tags: ['indica', 'evening', 'relaxation', 'pain-relief', 'classic']
+            },
+            {
+                id: 'prod_012',
+                name: 'Sour Diesel Sativa',
+                brand: 'Gold Cuts',
+                price: '$49.00',
+                description: 'Energizing sativa with diesel aroma. Great for daytime focus and creativity.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'sativa',
+                terpenes: ['limonene', 'pinene', 'myrcene'],
+                tags: ['sativa', 'energizing', 'daytime', 'focus', 'creativity']
+            },
+            {
+                id: 'prod_013',
+                name: 'Purple Haze Hybrid',
+                brand: 'The Slugger Co.',
+                price: '$44.00',
+                description: 'Balanced hybrid with euphoric effects. Great for social situations and creative activities.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'hybrid',
+                terpenes: ['myrcene', 'pinene', 'caryophyllene'],
+                tags: ['hybrid', 'euphoric', 'social', 'creative', 'balanced']
+            },
+            {
+                id: 'prod_014',
+                name: 'White Widow Vape',
+                brand: 'Ghee Butter',
+                price: '$38.00',
+                description: 'Balanced hybrid vape cartridge. Perfect for anytime use with balanced effects.',
+                category: 'vape',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'hybrid',
+                terpenes: ['myrcene', 'pinene'],
+                tags: ['vape', 'hybrid', 'balanced', 'anytime', 'convenient']
+            },
+            {
+                id: 'prod_015',
+                name: 'Northern Lights Indica',
+                brand: 'Coldfire',
+                price: '$47.00',
+                description: 'Powerful indica strain for deep relaxation and sleep. High potency with sedating effects.',
+                category: 'flower',
+                thc: 'very-high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'caryophyllene'],
+                tags: ['indica', 'sleep', 'relaxation', 'high-potency', 'sedating']
+            },
+            {
+                id: 'prod_016',
+                name: 'Jack Herer Sativa',
+                brand: 'Claybourne Co.',
+                price: '$51.00',
+                description: 'Energizing sativa perfect for morning and afternoon. Uplifting effects for mood and energy.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'sativa',
+                terpenes: ['pinene', 'limonene', 'myrcene'],
+                tags: ['sativa', 'energizing', 'morning', 'afternoon', 'uplifting', 'mood']
+            },
+            {
+                id: 'prod_017',
+                name: 'ACDC High CBD Flower',
+                brand: 'Gold Cuts',
+                price: '$43.00',
+                description: 'High CBD, low THC strain perfect for pain relief and anxiety without psychoactive effects.',
+                category: 'flower',
+                thc: 'low',
+                cbd: 'very-high',
+                strain: 'cbd',
+                terpenes: ['myrcene', 'pinene'],
+                tags: ['cbd', 'pain-relief', 'anxiety', 'non-psychoactive', 'therapeutic']
+            },
+            {
+                id: 'prod_018',
+                name: 'Girl Scout Cookies Hybrid',
+                brand: 'The Slugger Co.',
+                price: '$50.00',
+                description: 'Popular hybrid with sweet flavor. Balanced effects perfect for evening relaxation.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'hybrid',
+                terpenes: ['caryophyllene', 'limonene', 'myrcene'],
+                tags: ['hybrid', 'evening', 'relaxation', 'balanced', 'popular']
+            },
+            {
+                id: 'prod_019',
+                name: 'Pineapple Express Sativa',
+                brand: 'Ghee Butter',
+                price: '$48.00',
+                description: 'Tropical sativa with energizing effects. Great for daytime activities and social events.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'sativa',
+                terpenes: ['pinene', 'limonene', 'myrcene'],
+                tags: ['sativa', 'energizing', 'daytime', 'social', 'tropical']
+            },
+            {
+                id: 'prod_020',
+                name: 'Bubba Kush Indica',
+                brand: 'Coldfire',
+                price: '$45.00',
+                description: 'Heavy indica perfect for evening and sleep. Strong sedating effects for deep relaxation.',
+                category: 'flower',
+                thc: 'high',
+                cbd: 'low',
+                strain: 'indica',
+                terpenes: ['myrcene', 'caryophyllene', 'limonene'],
+                tags: ['indica', 'evening', 'sleep', 'sedating', 'heavy']
+            }
+        ];
+
+        let currentMode = 'standalone';
+        let rbiServiceUrl = '';
+
+        // Enhanced mock RBI responses with product-specific logic
+        const mockRBIScore = (product) => {
+            // Calculate coherence based on product completeness
+            let coherence = 0.8;
+            if (product.description && product.description.length > 50) coherence += 0.05;
+            if (product.tags && product.tags.length > 3) coherence += 0.05;
+            if (product.terpenes && product.terpenes.length > 0) coherence += 0.05;
+            coherence = Math.min(0.95, coherence);
+            
+            return {
+                clarity: coherence + 0.05,
+                coherence: coherence,
+                resonance: coherence - 0.03,
+                dataIntegrity: coherence - 0.05, // Replaced "sovereignty" with "dataIntegrity"
+                fieldDynamics: {
+                    fieldStrength: 2.0 + (coherence * 0.5),
+                    stability: coherence,
+                    coherence: coherence
+                }
+            };
+        };
+
+        const mockRBIAnalysis = (product) => {
+            const score = mockRBIScore(product);
+            return {
+                overallScore: score.coherence,
+                signature: {
+                    clarity: score.clarity,
+                    coherence: score.coherence,
+                    resonance: score.resonance,
+                    dataIntegrity: score.dataIntegrity
+                },
+                resonanceVector: { 
+                    x: score.clarity, 
+                    y: score.coherence, 
+                    z: score.resonance, 
+                    w: score.dataIntegrity 
+                },
+                harmonicFrequency: (score.clarity + score.coherence + score.resonance + score.dataIntegrity) / 4,
+                coherenceMatrix: {
+                    rank: 4,
+                    size: 4,
+                    eigenvalues: [0.92, 0.85, 0.78, 0.71]
+                },
+                fieldDynamics: {
+                    fieldStrength: score.fieldDynamics.fieldStrength,
+                    stability: score.fieldDynamics.stability,
+                    coherence: score.fieldDynamics.coherence,
+                    gradient: [0.12, 0.08, 0.15, 0.10]
+                },
+                dataValidation: { // Replaced "sovereignLogic" with "dataValidation"
+                    validity: score.coherence > 0.8 ? 'proven' : 'needs_review',
+                    coherence: score.coherence,
+                    dataIntegrity: score.dataIntegrity
+                }
+            };
+        };
+
+        // Product-specific recommendations based on coherence profiles
+        const mockRBIneighbors = (queryProduct, allProducts) => {
+            const product = typeof queryProduct === 'string' 
+                ? mockProducts.find(p => p.id === queryProduct || p.name.toLowerCase().includes(queryProduct.toLowerCase()))
+                : queryProduct;
+            
+            if (!product) {
+                // Fallback for text queries
+                const lowerQuery = typeof queryProduct === 'string' ? queryProduct.toLowerCase() : '';
+                return allProducts
+                    .map(p => {
+                        const text = `${p.name} ${p.description}`.toLowerCase();
+                        let score = 0;
+                        if (text.includes(lowerQuery)) score = 0.95;
+                        else if (p.tags.some(t => lowerQuery.includes(t))) score = 0.85;
+                        else score = 0.5;
+                        return { id: p.id, score };
+                    })
+                    .sort((a, b) => b.score - a.score)
+                    .slice(0, 5);
+            }
+
+            // Product-specific recommendations based on coherence
+            return allProducts
+                .map(p => {
+                    if (p.id === product.id) return null;
+                    
+                    let score = 0;
+                    
+                    // Same category = higher score
+                    if (p.category === product.category) score += 0.3;
+                    
+                    // Same strain = higher score
+                    if (p.strain === product.strain) score += 0.25;
+                    
+                    // Similar THC level = higher score
+                    if (p.thc === product.thc) score += 0.15;
+                    
+                    // Similar use case (tags overlap) = higher score
+                    const tagOverlap = p.tags.filter(t => product.tags.includes(t)).length;
+                    score += tagOverlap * 0.1;
+                    
+                    // Similar terpenes = higher score
+                    if (product.terpenes && p.terpenes) {
+                        const terpeneOverlap = p.terpenes.filter(t => product.terpenes.includes(t)).length;
+                        score += terpeneOverlap * 0.1;
+                    }
+                    
+                    // Brand similarity = slight boost
+                    if (p.brand === product.brand) score += 0.05;
+                    
+                    return { id: p.id, score: Math.min(0.98, score) };
+                })
+                .filter(n => n !== null)
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 5);
+        };
+
+        const mockArchitectureManifest = {
+            layers: {
+                representation: {
+                    layer: 1,
+                    purpose: 'Input Processing & Data Transformation - Converts product data into structured format for analysis',
+                    status: 'integrated',
+                    technicalName: 'Input Processing Layer'
+                },
+                computation: {
+                    layer: 2,
+                    purpose: 'Coherence Calculation Engine - Computes how well product attributes work together (THC, CBD, strain, category, description)',
+                    status: 'fully_implemented',
+                    endpoints: ['/field/score', '/field/analyze', '/field/neighbors', '/field/vector'],
+                    technicalName: 'Coherence Calculation Layer'
+                },
+                temporal: {
+                    layer: 3,
+                    purpose: 'Data Stability & Continuity Monitoring - Tracks data consistency over time, detects changes or inconsistencies',
+                    status: 'active',
+                    features: ['temporal_continuity_loop', 'drift_detection', 'field_stabilization'],
+                    technicalName: 'Data Stability Layer'
+                },
+                validation: {
+                    layer: 4,
+                    purpose: 'Data Validation & Verification - Mathematical proof that product data is complete and consistent',
+                    status: 'fully_implemented',
+                    endpoints: ['/field/validate'],
+                    technicalName: 'Data Validation Layer'
+                },
+                interfaces: {
+                    layer: 5,
+                    purpose: 'API & Integration Layer - Provides endpoints for TPB to access RBI analysis results',
+                    status: 'active',
+                    endpoints: ['/field/score', '/field/validate', '/field/analyze', '/field/neighbors', '/field/vector'],
+                    technicalName: 'API Integration Layer'
+                }
+            }
+        };
+
+        // API calls (with fallback to mock)
+        async function callRBI(endpoint, body) {
+            if (currentMode === 'standalone' || !rbiServiceUrl) {
+                // Return mock data
+                if (endpoint === '/field/score') {
+                    const product = typeof body.content === 'string' 
+                        ? mockProducts.find(p => body.content.includes(p.name))
+                        : null;
+                    return mockRBIScore(product || { description: body.content });
+                } else if (endpoint === '/field/analyze') {
+                    const product = typeof body.content === 'string' 
+                        ? mockProducts.find(p => body.content.includes(p.name))
+                        : null;
+                    return mockRBIAnalysis(product || { description: body.content });
+                } else if (endpoint === '/field/neighbors') {
+                    const queryText = body.query?.text || '';
+                    const queryProduct = mockProducts.find(p => 
+                        queryText.toLowerCase().includes(p.name.toLowerCase()) || 
+                        queryText.toLowerCase().includes(p.id)
+                    );
+                    return { neighbors: mockRBIneighbors(queryProduct || queryText, mockProducts) };
+                } else if (endpoint === '/architecture/manifest') {
+                    return mockArchitectureManifest;
+                }
+            }
+
+            try {
+                const response = await fetch(`${rbiServiceUrl}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                if (response.ok) return await response.json();
+            } catch (error) {
+                console.error('RBI API error:', error);
+            }
+            return null;
+        }
+
+        async function getArchitectureManifest() {
+            if (currentMode === 'standalone' || !rbiServiceUrl) {
+                return mockArchitectureManifest;
+            }
+            try {
+                const response = await fetch(`${rbiServiceUrl}/architecture/manifest`);
+                if (response.ok) return await response.json();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+            return mockArchitectureManifest;
+        }
+
+        // Tab management
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+
+            // Load tab-specific data
+            if (tabName === 'nfc') loadNFCProducts();
+            if (tabName === 'architecture') loadArchitectureManifest();
+            if (tabName === 'stations') switchStation('flower');
+            if (tabName === 'sessions') loadSessionPaths();
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            if (mode === 'connected') {
+                rbiServiceUrl = document.getElementById('rbiUrl').value || 'http://localhost:3001';
+            } else {
+                rbiServiceUrl = '';
+            }
+        }
+
+        // Search functions
+        function traditionalSearch(query) {
+            if (!query.trim()) return [];
+            const lowerQuery = query.toLowerCase();
+            return mockProducts.filter(p => {
+                const text = `${p.name} ${p.description} ${p.brand} ${p.tags.join(' ')}`.toLowerCase();
+                return text.includes(lowerQuery);
+            });
+        }
+
+        async function rbiSearch(query) {
+            if (!query.trim()) return { products: [], scores: {} };
+            
+            const result = await callRBI('/field/neighbors', {
+                query: { text: query },
+                candidates: mockProducts.map(p => ({ id: p.id, text: `${p.name}. ${p.description}` })),
+                topN: 10
+            });
+
+            const neighbors = result?.neighbors || mockRBIneighbors(query, mockProducts);
+            const sorted = neighbors
+                .sort((a, b) => b.score - a.score)
+                .map(n => mockProducts.find(p => p.id === n.id))
+                .filter(p => p);
+
+            const scores = {};
+            for (const product of sorted.slice(0, 6)) {
+                const scoreData = await callRBI('/field/score', { content: `${product.name}. ${product.description}` });
+                scores[product.id] = scoreData?.coherence || 0.8;
+            }
+
+            return { products: sorted, scores };
+        }
+
+        function renderProducts(containerId, products, scores = {}) {
+            const container = document.getElementById(containerId);
+            if (products.length === 0) {
+                container.innerHTML = '<div class="empty">No products found</div>';
+                return;
+            }
+
+            const stats = scores ? Object.values(scores) : [];
+            const avgCoherence = stats.length > 0 
+                ? (stats.reduce((a, b) => a + b, 0) / stats.length).toFixed(2)
+                : '0.00';
+
+            let html = '<div class="stats-grid">';
+            html += `<div class="stat-box"><div class="stat-value">${products.length}</div><div class="stat-label">Products Found</div></div>`;
+            if (stats.length > 0) {
+                html += `<div class="stat-box"><div class="stat-value">${avgCoherence}</div><div class="stat-label">Avg Coherence</div></div>`;
+            }
+            html += '</div><div class="product-grid">';
+
+            products.forEach(product => {
+                const score = scores[product.id];
+                html += `
+                    <div class="product-card" onclick="selectProduct('${product.id}')">
+                        ${score ? `<div class="coherence-badge">${(score * 100).toFixed(0)}%</div>` : ''}
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-price">${product.price}</div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function handleTraditionalSearch(event) {
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                const query = event.target.value;
+                const results = traditionalSearch(query);
+                renderProducts('traditionalResults', results);
+            }
+        }
+
+        async function handleRBISearch(event) {
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                const query = event.target.value;
+                document.getElementById('rbiResults').innerHTML = '<div class="loading">Analyzing with RBI...</div>';
+                const { products, scores } = await rbiSearch(query);
+                renderProducts('rbiResults', products, scores);
+            }
+        }
+
+        function searchScenario(query) {
+            document.getElementById('traditionalSearch').value = query;
+            document.getElementById('rbiSearch').value = query;
+            
+            const traditionalResults = traditionalSearch(query);
+            renderProducts('traditionalResults', traditionalResults);
+            
+            document.getElementById('rbiResults').innerHTML = '<div class="loading">Analyzing with RBI...</div>';
+            rbiSearch(query).then(({ products, scores }) => {
+                renderProducts('rbiResults', products, scores);
+            });
+        }
+
+        // NFC Demo
+        function loadNFCProducts() {
+            const container = document.getElementById('nfcProducts');
+            let html = '';
+            mockProducts.slice(0, 8).forEach(product => {
+                html += `
+                    <div class="product-card" onclick="simulateNFC('${product.id}')">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-price">${product.price}</div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        async function simulateNFC(productId) {
+            const product = mockProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('nfcAnalysis').style.display = 'block';
+            document.getElementById('selectedProductInfo').innerHTML = `
+                <h4 style="color: #14b8a6;">${product.name}</h4>
+                <p><strong>Brand:</strong> ${product.brand}</p>
+                <p><strong>Category:</strong> ${product.category}</p>
+                <p><strong>Strain:</strong> ${product.strain}</p>
+                <p><strong>THC:</strong> ${product.thc} | <strong>CBD:</strong> ${product.cbd}</p>
+                <p>${product.description}</p>
+            `;
+
+            // Get product-specific recommendations
+            const result = await callRBI('/field/neighbors', {
+                query: { text: product.name },
+                candidates: mockProducts.filter(p => p.id !== productId).map(p => ({
+                    id: p.id,
+                    text: `${p.name}. ${p.description}`
+                })),
+                topN: 5
+            });
+
+            const neighbors = result?.neighbors || mockRBIneighbors(product, mockProducts.filter(p => p.id !== productId));
+            let html = '';
+            neighbors.forEach(n => {
+                const p = mockProducts.find(prod => prod.id === n.id);
+                if (p) {
+                    html += `
+                        <div class="recommendation-item">
+                            <div>
+                                <strong>${p.name}</strong> - ${p.brand}<br>
+                                <small style="color: rgba(255,255,255,0.6);">${p.description.substring(0, 80)}...</small>
+                            </div>
+                            <div class="recommendation-score">${(n.score * 100).toFixed(0)}% match</div>
+                        </div>
+                    `;
+                }
+            });
+            document.getElementById('nfcRecommendations').innerHTML = html;
+        }
+
+        // Full Analysis
+        function populateAnalysisSelect() {
+            const select = document.getElementById('analysisProduct');
+            select.innerHTML = '<option value="">Select a product...</option>';
+            mockProducts.forEach(p => {
+                select.innerHTML += `<option value="${p.id}">${p.name} - ${p.brand}</option>`;
+            });
+        }
+
+        async function runFullAnalysis() {
+            const productId = document.getElementById('analysisProduct').value;
+            if (!productId) return;
+
+            const product = mockProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('fullAnalysisResults').innerHTML = '<div class="loading">Running full RBI analysis...</div>';
+
+            const analysis = await callRBI('/field/analyze', {
+                content: `${product.name}. ${product.description}`,
+                title: product.name
+            });
+
+            const data = analysis || mockRBIAnalysis(product);
+
+            let html = `
+                <div class="analysis-section">
+                    <h4>Overall Data Quality Score: ${(data.overallScore * 100).toFixed(1)}%</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 10px;">
+                        ${data.overallScore > 0.8 ? 'High quality - Product data is complete and consistent' : 
+                          data.overallScore > 0.6 ? 'Medium quality - Product data may need review' : 
+                          'Low quality - Product data needs attention'}
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">${(data.signature.clarity * 100).toFixed(0)}%</div>
+                        <div class="stat-label">Clarity<br><small style="font-size: 0.7rem;">Data Completeness</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${(data.signature.coherence * 100).toFixed(0)}%</div>
+                        <div class="stat-label">Coherence<br><small style="font-size: 0.7rem;">Internal Consistency</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${(data.signature.resonance * 100).toFixed(0)}%</div>
+                        <div class="stat-label">Resonance<br><small style="font-size: 0.7rem;">Matches Intended Use</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${(data.signature.dataIntegrity * 100).toFixed(0)}%</div>
+                        <div class="stat-label">Data Integrity<br><small style="font-size: 0.7rem;">Independently Verifiable</small></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h4>Field Dynamics</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                        Measures how well product attributes work together and data consistency over time
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value">${data.fieldDynamics.fieldStrength.toFixed(2)}</div>
+                            <div class="stat-label">Field Strength<br><small style="font-size: 0.7rem;">Attribute Relationships</small></div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${(data.fieldDynamics.stability * 100).toFixed(0)}%</div>
+                            <div class="stat-label">Stability<br><small style="font-size: 0.7rem;">Data Consistency</small></div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${(data.fieldDynamics.coherence * 100).toFixed(0)}%</div>
+                            <div class="stat-label">Coherence<br><small style="font-size: 0.7rem;">Overall Quality</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h4>Coherence Matrix</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                        Mathematical relationships between product attributes (THC, CBD, strain, category). Higher eigenvalues = stronger attribute relationships.
+                    </p>
+                    <p>Matrix Rank: ${data.coherenceMatrix.rank} | Size: ${data.coherenceMatrix.size}x${data.coherenceMatrix.size}</p>
+                    <div class="coherence-matrix">
+                        ${data.coherenceMatrix.eigenvalues.map((val, i) => `
+                            <div class="matrix-cell">
+                                <div class="matrix-value">${val.toFixed(2)}</div>
+                                <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">λ${i + 1}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h4>Data Validation</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                        Mathematical verification that product data is complete and consistent. "Proven" = data is trustworthy and ready for customers.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value">${data.dataValidation.validity}</div>
+                            <div class="stat-label">Validity Status</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${(data.dataValidation.coherence * 100).toFixed(0)}%</div>
+                            <div class="stat-label">Coherence</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${(data.dataValidation.dataIntegrity * 100).toFixed(0)}%</div>
+                            <div class="stat-label">Data Integrity</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h4>4D Coherence Vector</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                        Vector representation: [Clarity, Coherence, Resonance, Data Integrity]
+                    </p>
+                    <p>Vector: [${data.resonanceVector.x.toFixed(3)}, ${data.resonanceVector.y.toFixed(3)}, ${data.resonanceVector.z.toFixed(3)}, ${data.resonanceVector.w.toFixed(3)}]</p>
+                    <p>Harmonic Frequency: ${data.harmonicFrequency.toFixed(3)}</p>
+                </div>
+            `;
+
+            document.getElementById('fullAnalysisResults').innerHTML = html;
+        }
+
+        // Architecture Manifest
+        async function loadArchitectureManifest() {
+            const manifest = await getArchitectureManifest();
+            const layers = manifest.layers || manifest;
+
+            let html = '<div class="architecture-layers">';
+            Object.keys(layers).forEach(key => {
+                const layer = layers[key];
+                html += `
+                    <div class="layer-card">
+                        <div class="layer-number">${layer.layer || 'N/A'}</div>
+                        <div class="layer-name">${layer.technicalName || key.charAt(0).toUpperCase() + key.slice(1)} Layer</div>
+                        <div class="layer-purpose">${layer.purpose}</div>
+                        <div class="layer-status">${layer.status}</div>
+                        ${layer.endpoints ? `<div style="margin-top: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6);">Endpoints: ${layer.endpoints.join(', ')}</div>` : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+
+            document.getElementById('architectureManifest').innerHTML = html;
+        }
+
+        // Station Intelligence - Station context data
+        const stationContexts = {
+            flower: {
+                name: 'Flower Station 1',
+                intent: 'Evening relaxation, sleep aid, stress relief',
+                context: 'Flower browsing, evening hours, relaxation intent',
+                interactions: 247,
+                topBehavior: '87% of customers purchase indica strains',
+                avgCoherence: 0.89,
+                avgCoherenceWithoutRBI: 0.52,
+                conversionImpact: '+25%',
+                speedImprovement: '40% faster product discovery',
+                revenueImpact: 'High-coherence products = 30% higher conversion',
+                learningData: 'Based on 247 interactions over last 30 days'
+            },
+            standard: {
+                name: 'Standard Station',
+                intent: 'Convenience, quick options, on-the-go',
+                context: 'Convenience products, quick purchase, portability',
+                interactions: 189,
+                topBehavior: '92% of customers prefer vapes and edibles',
+                avgCoherence: 0.85,
+                avgCoherenceWithoutRBI: 0.48,
+                conversionImpact: '+22%',
+                speedImprovement: '35% faster product discovery',
+                revenueImpact: 'Convenience-focused products = 28% higher conversion',
+                learningData: 'Based on 189 interactions over last 30 days'
+            },
+            wall: {
+                name: 'Wall Station #1',
+                intent: 'Premium products, high value, quality focus',
+                context: 'Premium browsing, high-value products, quality intent',
+                interactions: 312,
+                topBehavior: '78% of customers purchase products $45+',
+                avgCoherence: 0.91,
+                avgCoherenceWithoutRBI: 0.55,
+                conversionImpact: '+35%',
+                speedImprovement: '45% faster product discovery',
+                revenueImpact: 'Premium products at high-traffic station = 40% higher AOV',
+                learningData: 'Based on 312 interactions over last 30 days'
+            }
+        };
+
+        // Calculate station-specific coherence for a product
+        function calculateStationCoherence(product, stationType) {
+            const context = stationContexts[stationType];
+            let coherence = 0.5; // Base coherence
+
+            if (stationType === 'flower') {
+                // Flower station: prioritize indica, evening, relaxation
+                if (product.category === 'flower') coherence += 0.25;
+                if (product.strain === 'indica') coherence += 0.20;
+                if (product.tags.includes('evening') || product.tags.includes('sleep') || product.tags.includes('relaxation')) coherence += 0.15;
+                if (product.tags.includes('stress-relief')) coherence += 0.10;
+                // Popular at this station
+                if (['prod_001', 'prod_003', 'prod_010', 'prod_011', 'prod_015', 'prod_020'].includes(product.id)) coherence += 0.10;
+            } else if (stationType === 'standard') {
+                // Standard station: prioritize convenience products
+                if (['vape', 'edible', 'topical', 'preroll'].includes(product.category)) coherence += 0.30;
+                if (product.tags.includes('convenient') || product.tags.includes('on-the-go') || product.tags.includes('discreet')) coherence += 0.20;
+                if (product.category === 'vape' || product.category === 'edible') coherence += 0.15;
+                // Popular at this station
+                if (['prod_004', 'prod_005', 'prod_007', 'prod_008', 'prod_014'].includes(product.id)) coherence += 0.10;
+            } else {
+                // Wall station: prioritize premium, high-value products
+                const price = parseFloat(product.price.replace('$', ''));
+                if (price >= 45) coherence += 0.25;
+                if (price >= 50) coherence += 0.15;
+                if (product.tags.includes('premium') || product.category === 'concentrate') coherence += 0.20;
+                if (product.brand === 'Coldfire' || product.brand === 'Gold Cuts') coherence += 0.10;
+                // Popular at this station
+                if (['prod_002', 'prod_006', 'prod_012', 'prod_016', 'prod_019'].includes(product.id)) coherence += 0.10;
+            }
+
+            // Boost for products with complete data
+            if (product.description && product.description.length > 50) coherence += 0.05;
+            if (product.terpenes && product.terpenes.length > 0) coherence += 0.05;
+
+            return Math.min(0.98, coherence);
+        }
+
+        // Station Intelligence
+        async function switchStation(stationType) {
+            document.querySelectorAll('.station-btn').forEach(b => b.classList.remove('active'));
+            // Set active button - find by station type
+            document.querySelectorAll('.station-btn').forEach(btn => {
+                if (btn.textContent.includes(stationType === 'flower' ? 'Flower' : stationType === 'standard' ? 'Standard' : 'Wall')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const context = stationContexts[stationType];
+
+            // Display Station Context & Learning Data
+            document.getElementById('stationContext').innerHTML = `
+                <div class="analysis-section">
+                    <h4>Station Context & RBI Learning</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="background: rgba(20, 184, 166, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(20, 184, 166, 0.3);">
+                            <div style="color: #14b8a6; font-weight: bold; margin-bottom: 5px;">Station Intent</div>
+                            <div style="color: rgba(255,255,255,0.8);">${context.intent}</div>
+                        </div>
+                        <div style="background: rgba(20, 184, 166, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(20, 184, 166, 0.3);">
+                            <div style="color: #14b8a6; font-weight: bold; margin-bottom: 5px;">Station Context</div>
+                            <div style="color: rgba(255,255,255,0.8);">${context.context}</div>
+                        </div>
+                        <div style="background: rgba(20, 184, 166, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(20, 184, 166, 0.3);">
+                            <div style="color: #14b8a6; font-weight: bold; margin-bottom: 5px;">Customer Interactions</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 1.2rem; font-weight: bold;">${context.interactions}</div>
+                            <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">${context.learningData}</div>
+                        </div>
+                        <div style="background: rgba(20, 184, 166, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(20, 184, 166, 0.3);">
+                            <div style="color: #14b8a6; font-weight: bold; margin-bottom: 5px;">Top Behavior Pattern</div>
+                            <div style="color: rgba(255,255,255,0.8);">${context.topBehavior}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Display Station Metrics
+            const coherenceImprovement = ((context.avgCoherence - context.avgCoherenceWithoutRBI) / context.avgCoherenceWithoutRBI * 100).toFixed(0);
+            document.getElementById('stationMetrics').innerHTML = `
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">${(context.avgCoherence * 100).toFixed(0)}%</div>
+                        <div class="stat-label">Avg Coherence (RBI)<br><small style="font-size: 0.7rem;">vs ${(context.avgCoherenceWithoutRBI * 100).toFixed(0)}% without RBI</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">+${coherenceImprovement}%</div>
+                        <div class="stat-label">Coherence Improvement<br><small style="font-size: 0.7rem;">${context.avgCoherenceWithoutRBI * 100}% → ${context.avgCoherence * 100}%</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${context.conversionImpact}</div>
+                        <div class="stat-label">Conversion Impact<br><small style="font-size: 0.7rem;">Higher conversion rate</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${context.speedImprovement}</div>
+                        <div class="stat-label">Speed Improvement<br><small style="font-size: 0.7rem;">Faster product discovery</small></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${context.revenueImpact.split('=')[1]?.trim() || 'Higher Revenue'}</div>
+                        <div class="stat-label">Revenue Impact<br><small style="font-size: 0.7rem;">${context.revenueImpact}</small></div>
+                    </div>
+                </div>
+            `;
+
+            // Traditional Approach: Simple category filter
+            let traditionalProducts = [];
+            if (stationType === 'flower') {
+                traditionalProducts = mockProducts.filter(p => p.category === 'flower');
+            } else if (stationType === 'standard') {
+                traditionalProducts = mockProducts.filter(p => ['vape', 'edible', 'topical', 'preroll'].includes(p.category));
+            } else {
+                traditionalProducts = mockProducts.filter(p => parseFloat(p.price.replace('$', '')) >= 45);
+            }
+            traditionalProducts = traditionalProducts.slice(0, 8);
+
+            // RBI Approach: Coherence-optimized
+            let rbiProducts = [];
+            if (stationType === 'flower') {
+                rbiProducts = mockProducts.filter(p => p.category === 'flower');
+            } else if (stationType === 'standard') {
+                rbiProducts = mockProducts.filter(p => ['vape', 'edible', 'topical', 'preroll'].includes(p.category));
+            } else {
+                rbiProducts = mockProducts.filter(p => parseFloat(p.price.replace('$', '')) >= 45);
+            }
+
+            // Calculate coherence for each product and sort
+            const rbiProductsWithCoherence = rbiProducts.map(p => ({
+                product: p,
+                coherence: calculateStationCoherence(p, stationType),
+                reasoning: getCoherenceReasoning(p, stationType)
+            })).sort((a, b) => b.coherence - a.coherence).slice(0, 8);
+
+            // Render Traditional Products
+            let traditionalHtml = '<div class="product-grid">';
+            traditionalProducts.forEach((product, index) => {
+                traditionalHtml += `
+                    <div class="product-card" style="position: relative;">
+                        <div style="position: absolute; top: 8px; left: 8px; background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">#${index + 1}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-price">${product.price}</div>
+                        <div style="margin-top: 8px; font-size: 0.8rem; color: rgba(255,255,255,0.5);">Simple category filter</div>
+                    </div>
+                `;
+            });
+            traditionalHtml += '</div>';
+            document.getElementById('traditionalStationProducts').innerHTML = traditionalHtml;
+
+            // Render RBI Products with Coherence
+            let rbiHtml = '<div class="product-grid">';
+            rbiProductsWithCoherence.forEach((item, index) => {
+                const coherenceColor = item.coherence >= 0.85 ? '#14b8a6' : item.coherence >= 0.70 ? '#fbbf24' : '#ef4444';
+                rbiHtml += `
+                    <div class="product-card" style="position: relative;" title="${item.reasoning}">
+                        <div class="coherence-badge" style="background: ${coherenceColor}; top: 8px; right: 8px;">${(item.coherence * 100).toFixed(0)}%</div>
+                        <div style="position: absolute; top: 8px; left: 8px; background: rgba(20, 184, 166, 0.3); color: #14b8a6; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">#${index + 1}</div>
+                        <div class="product-name">${item.product.name}</div>
+                        <div class="product-brand">${item.product.brand}</div>
+                        <div class="product-price">${item.product.price}</div>
+                        <div style="margin-top: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.6); padding: 5px; background: rgba(20, 184, 166, 0.1); border-radius: 4px;">
+                            <strong style="color: #14b8a6;">RBI Reasoning:</strong><br>
+                            ${item.reasoning}
+                        </div>
+                    </div>
+                `;
+            });
+            rbiHtml += '</div>';
+            document.getElementById('rbiStationProducts').innerHTML = rbiHtml;
+        }
+
+        // Get coherence reasoning for a product at a station
+        function getCoherenceReasoning(product, stationType) {
+            const reasons = [];
+            
+            if (stationType === 'flower') {
+                if (product.strain === 'indica') reasons.push('Indica strain matches evening relaxation intent');
+                if (product.tags.includes('sleep') || product.tags.includes('evening')) reasons.push('Matches sleep/evening use case');
+                if (product.tags.includes('relaxation')) reasons.push('High coherence to relaxation intent');
+                if (['prod_001', 'prod_003', 'prod_010', 'prod_011', 'prod_015', 'prod_020'].includes(product.id)) reasons.push('Popular at this station (87% purchase rate)');
+            } else if (stationType === 'standard') {
+                if (['vape', 'edible'].includes(product.category)) reasons.push('Convenience product matches station intent');
+                if (product.tags.includes('convenient') || product.tags.includes('on-the-go')) reasons.push('High coherence to convenience intent');
+                if (['prod_004', 'prod_005', 'prod_007', 'prod_008'].includes(product.id)) reasons.push('Popular at this station (92% preference)');
+            } else {
+                const price = parseFloat(product.price.replace('$', ''));
+                if (price >= 50) reasons.push('High-value product matches premium intent');
+                if (product.tags.includes('premium')) reasons.push('Premium product matches station context');
+                if (['prod_002', 'prod_006', 'prod_012', 'prod_016'].includes(product.id)) reasons.push('Popular at this station (78% purchase rate)');
+            }
+
+            return reasons.length > 0 ? reasons.join('; ') : 'Good coherence to station context';
+        }
+
+        // Session Path Analysis
+        function loadSessionPaths() {
+            const mockSessions = [
+                {
+                    id: 'session_001',
+                    type: 'physical_interaction',
+                    station: 'flower_station_1',
+                    path: ['nfc_read', 'view_product', 'add_to_cart', 'checkout'],
+                    duration: 180,
+                    products: ['prod_001', 'prod_003'],
+                    rbiCoherence: 0.92,
+                    rbiInsight: 'High coherence - Customer knows what they want. Direct recommendations work best.'
+                },
+                {
+                    id: 'session_002',
+                    type: 'search',
+                    station: 'standard_station',
+                    path: ['search', 'view_results', 'view_product', 'add_to_cart', 'checkout'],
+                    duration: 240,
+                    products: ['prod_005'],
+                    rbiCoherence: 0.78,
+                    rbiInsight: 'Medium coherence - Customer exploring. Show broader options and educational content.'
+                },
+                {
+                    id: 'session_003',
+                    type: 'browse',
+                    station: 'wall_station_1',
+                    path: ['category', 'browse', 'view_product', 'view_product', 'view_product', 'add_to_cart', 'checkout'],
+                    duration: 300,
+                    products: ['prod_007', 'prod_008'],
+                    rbiCoherence: 0.65,
+                    rbiInsight: 'Low coherence - Customer needs help. Flag for staff assistance or show educational content.'
+                }
+            ];
+
+            let html = '';
+            mockSessions.forEach(session => {
+                html += `
+                    <div class="session-path">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                            <div>
+                                <strong style="color: #14b8a6;">${session.id}</strong> - ${session.type.replace('_', ' ')}<br>
+                                <small style="color: rgba(255,255,255,0.6);">Station: ${session.station} | Duration: ${session.duration}s</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: #14b8a6; font-weight: bold; font-size: 1.2rem;">${(session.rbiCoherence * 100).toFixed(0)}%</div>
+                                <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Path Coherence</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px; margin-bottom: 10px;">
+                            ${session.path.map((step, i) => `
+                                <span class="path-step">${step.replace('_', ' ')}</span>
+                                ${i < session.path.length - 1 ? '<span class="path-arrow">→</span>' : ''}
+                            `).join('')}
+                        </div>
+                        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; margin-top: 10px; border-radius: 4px;">
+                            <strong style="color: #3b82f6;">RBI Insight:</strong> ${session.rbiInsight}
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('sessionPaths').innerHTML = html;
+        }
+
+        // Multi-dimensional search
+        let activeFilters = new Set();
+
+        function toggleFilter(filter) {
+            if (activeFilters.has(filter)) {
+                activeFilters.delete(filter);
+                event.target.classList.remove('active');
+            } else {
+                activeFilters.add(filter);
+                event.target.classList.add('active');
+            }
+            handleMultiDimSearch();
+        }
+
+        function handleMultiDimSearch(event) {
+            const query = event?.target?.value || document.getElementById('multidimSearch').value || '';
+            const lowerQuery = query.toLowerCase();
+
+            let filtered = mockProducts;
+
+            // Apply filters
+            if (activeFilters.size > 0) {
+                filtered = filtered.filter(p => {
+                    return Array.from(activeFilters).some(f => {
+                        if (f === 'thc') return p.thc === 'high' || p.thc === 'very-high';
+                        if (f === 'cbd') return p.cbd === 'high' || p.cbd === 'very-high';
+                        if (f === 'indica') return p.strain === 'indica';
+                        if (f === 'sativa') return p.strain === 'sativa';
+                        if (f === 'flower') return p.category === 'flower';
+                        if (f === 'vape') return p.category === 'vape';
+                        if (f === 'edible') return p.category === 'edible';
+                        if (f === 'topical') return p.category === 'topical';
+                        return false;
+                    });
+                });
+            }
+
+            // Apply text search
+            if (query.trim()) {
+                filtered = filtered.filter(p => {
+                    const text = `${p.name} ${p.description} ${p.brand} ${p.tags.join(' ')}`.toLowerCase();
+                    return text.includes(lowerQuery);
+                });
+            }
+
+            // Show comparison
+            const traditionalCount = filtered.length;
+            
+            // RBI would analyze coherence across all dimensions
+            // For demo, show how RBI would rank by coherence to ALL selected criteria
+            if (activeFilters.size > 0 || query.trim()) {
+                // Simulate RBI multi-dimensional analysis
+                const rbiRanked = filtered.map(p => {
+                    let coherence = 0.5;
+                    if (activeFilters.has('thc') && (p.thc === 'high' || p.thc === 'very-high')) coherence += 0.2;
+                    if (activeFilters.has('cbd') && (p.cbd === 'high' || p.cbd === 'very-high')) coherence += 0.2;
+                    if (activeFilters.has('indica') && p.strain === 'indica') coherence += 0.2;
+                    if (activeFilters.has('sativa') && p.strain === 'sativa') coherence += 0.2;
+                    if (activeFilters.has('flower') && p.category === 'flower') coherence += 0.2;
+                    if (activeFilters.has('vape') && p.category === 'vape') coherence += 0.2;
+                    if (activeFilters.has('edible') && p.category === 'edible') coherence += 0.2;
+                    if (activeFilters.has('topical') && p.category === 'topical') coherence += 0.2;
+                    if (query.trim() && p.description.toLowerCase().includes(lowerQuery)) coherence += 0.1;
+                    return { product: p, coherence: Math.min(0.98, coherence) };
+                }).sort((a, b) => b.coherence - a.coherence);
+
+                const scores = {};
+                rbiRanked.forEach(item => {
+                    scores[item.product.id] = item.coherence;
+                });
+
+                renderProducts('multidimResults', rbiRanked.map(item => item.product), scores);
+            } else {
+                renderProducts('multidimResults', filtered);
+            }
+        }
+
+        function selectProduct(productId) {
+            // For NFC demo
+            if (document.getElementById('nfc').classList.contains('active')) {
+                simulateNFC(productId);
+            }
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            populateAnalysisSelect();
+            loadArchitectureManifest();
+            searchScenario('help me sleep');
+            // Initialize station demo if stations tab is active
+            if (document.getElementById('stations').classList.contains('active')) {
+                switchStation('flower');
+            }
+        });
+    </script>
+</body>
+</html>

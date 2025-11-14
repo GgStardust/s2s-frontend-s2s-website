@@ -162,9 +162,11 @@ Runs Proof-of-Meaning verification.
 ```json
 {
   "content": "Content to validate",
-  "orbAssociations": [1, 2, 3]  // Optional
+  "categoryAssociations": [1, 2, 3]  // Optional - domain-specific categories
 }
 ```
+
+**Note:** For S2S projects, `orbAssociations` is also supported for backward compatibility. For other domains, use `categoryAssociations` with your own category system.
 
 **Response:**
 ```json

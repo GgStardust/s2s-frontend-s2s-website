@@ -38,7 +38,8 @@ const response = await fetch('https://api.rbi-kernel.com/field/validate', {
   },
   body: JSON.stringify({
     content: 'Content to validate',
-    orbAssociations: [1, 2, 3] // Optional
+    categoryAssociations: [1, 2, 3] // Optional - domain-specific categories
+    // Note: orbAssociations also supported for S2S projects
   })
 });
 
@@ -70,7 +71,8 @@ const score = await adapter.pushData('Content to analyze');
 // Validate content
 const validation = await adapter.validateContent(
   'Content to validate',
-  [1, 2, 3] // orb associations
+  [1, 2, 3] // category associations (domain-specific)
+  // Note: For S2S projects, these map to orbAssociations
 );
 ```
 
