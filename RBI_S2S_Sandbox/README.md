@@ -1,100 +1,105 @@
 # RBI S2S Sandbox
 
-**Purpose:** Demonstrate RBI Kernel value by analyzing codebases and structured data
-
-**Status:** 🟡 In Development
+**Temporary workspace for exploring partner projects and creating RBI integration guides**
 
 ---
 
-## Overview
+## Purpose
 
-The RBI Sandbox allows developers to:
-1. Upload codebases (GitHub repo URL or zip file)
-2. Upload data files (CSV, TSV, XML, JSON)
-3. Get RBI analysis showing:
-   - Code coherence metrics
-   - Architectural pattern detection
-   - Dependency relationship mapping
-   - Technical debt identification
-   - Refactoring suggestions based on RBI coherence
+This directory is a **temporary workspace** for:
+1. **Exploring partner projects** - Clone or copy partner codebases here for analysis
+2. **Creating RBI assessments** - Analyze how RBI can add value to their projects
+3. **Writing integration guides** - Document step-by-step RBI integration instructions
+4. **Testing RBI integration** - Validate RBI works with their specific use cases
+
+**Once assessment and guides are complete, full project codebases can be deleted from here.**
 
 ---
 
-## Features (Planned)
+## Workflow
 
-### Codebase Analysis
-- **Structure Analysis:** File tree, directory organization, entry points
-- **Dependency Mapping:** External/internal dependencies, frameworks, languages
-- **Pattern Detection:** Architectural patterns (MVC, Microservices, etc.), design patterns
-- **Metrics:** Lines of code, complexity, test coverage, documentation
-- **Relationship Mapping:** Import/export relationships, dependencies
+### 1. Add Partner Project
+```bash
+# Clone partner's project
+cd RBI_S2S_Sandbox
+git clone https://github.com/partner/project.git project-name
+# OR copy project files here
+```
 
-### Data File Analysis
-- **CSV/TSV:** Column structure, data types, sample data
-- **XML:** Element structure, attributes, hierarchies
-- **JSON:** Schema extraction, type detection, relationships
+### 2. Explore & Analyze
+- Review project structure and workflows
+- Identify RBI integration opportunities
+- Test RBI integration locally
 
-### RBI Analysis
-- **Coherence Scoring:** How well-structured is the codebase/data?
-- **Resonance Mapping:** Relationships between components
-- **Proof-of-Meaning:** Structural integrity verification
-- **Value Report:** ROI and improvement suggestions
+### 3. Create Documentation
+Create in the project directory:
+- `RBI_VALUE_ASSESSMENT.md` - ROI analysis and benefits
+- `RBI_IMPLEMENTATION_GUIDE.md` - Step-by-step integration guide
+- Test integration code
 
----
+### 4. Extract to RBI-Kernel
+Move documentation to `RBI-Kernel/examples/`:
+```bash
+# Copy RBI-specific docs to examples
+cp project-name/RBI_VALUE_ASSESSMENT.md RBI-Kernel/examples/project-name/
+cp project-name/RBI_IMPLEMENTATION_GUIDE.md RBI-Kernel/examples/project-name/
+# Create minimal integration snippet
+# Create README.md in examples folder
+```
 
-## Implementation Status
+### 5. Clean Up
+```bash
+# Delete full project (it remains in partner's repo)
+rm -rf project-name/
+```
 
-### ✅ Completed
-- ✅ Metadata parsers created in RBI-Kernel:
-  - Codebase metadata parser
-  - CSV/TSV parser
-  - XML parser
-  - JSON parser
-
-### ⏳ In Progress
-- 🔄 Sandbox UI (upload interface)
-- 🔄 Analysis engine integration
-- 🔄 Report generation
-
-### 📋 Planned
-- [ ] Upload handler (GitHub API or file upload)
-- [ ] Analysis orchestration
-- [ ] Value report generator
-- [ ] Demo examples
+**Result:** Partners access RBI integration guides in `RBI-Kernel/examples/` without needing full project code.
 
 ---
 
-## Usage (Future)
+## Current Projects
 
-```typescript
-import { 
-  parseCodebaseStructure,
-  parseCSVTSV,
-  parseXML,
-  parseJSON,
-  codebaseToContentMetadata
-} from 'rbi-kernel/metadata';
+### little-hero-books-main
+**Status:** ✅ Assessment and guide complete  
+**Next:** Extract to `RBI-Kernel/examples/little-hero-books/` (if not already done)
 
-// Analyze codebase
-const codebaseMetadata = parseCodebaseStructure(fileTree);
-const contentMetadata = codebaseToContentMetadata(codebaseMetadata);
+- `RBI_VALUE_ASSESSMENT.md` - Complete value analysis
+- `RBI_IMPLEMENTATION_GUIDE.md` - Complete integration guide
 
-// Run RBI analysis
-const rbiAnalysis = await analyzeContentWithMathematics(
-  codebaseSummary,
-  'My Codebase',
-  contentMetadata
-);
+---
+
+## Best Practices
+
+1. **Keep it temporary** - Don't commit full partner projects to this repo
+2. **Extract useful parts** - Move only RBI documentation to `RBI-Kernel/examples/`
+3. **Link to partner repos** - Examples should link to partner's repository for full code
+4. **Clean up regularly** - Delete projects after assessment/guide creation
+5. **Minimal code examples** - Only include RBI integration snippets, not full projects
+
+---
+
+## Structure
+
+```
+RBI_S2S_Sandbox/
+  ├── README.md (this file)
+  ├── SANDBOX_TUTORIAL.md (future: RBI sandbox tool docs)
+  ├── example-usage.ts (RBI usage examples)
+  └── [project-name]/ (temporary - delete when done)
+      ├── [full project code]
+      ├── RBI_VALUE_ASSESSMENT.md
+      └── RBI_IMPLEMENTATION_GUIDE.md
 ```
 
 ---
 
-## Revenue Model
+## Notes
 
-- **Free:** Basic analysis (coherence score only)
-- **Pro Report:** $49-$99 per report (detailed analysis + suggestions)
-- **Enterprise Analysis:** $500-$2,000 per analysis (custom metrics + consulting)
+- **Full project codebases** remain in partner repositories
+- **RBI-Kernel examples** contain only integration guides and minimal code
+- **This sandbox** is for temporary exploration and documentation creation
+- **Partners access** RBI integration info via `RBI-Kernel/examples/`, not this sandbox
 
 ---
 
-**Next Steps:** Build Sandbox UI and integrate with RBI-Kernel parsers
+**Remember:** This is a workspace, not a permanent archive. Extract useful parts, then clean up!

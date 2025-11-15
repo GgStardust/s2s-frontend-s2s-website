@@ -76,3 +76,10 @@ CMS_Backend/CMS_Backend_Archive/
 S2S_Manuscript/
 RBI_Editorial_Tools/
 
+# Partner projects in sandbox (temporary workspace - full projects should not be committed)
+# Only RBI documentation extracted to RBI-Kernel/examples/ should be committed
+RBI_S2S_Sandbox/*/
+!RBI_S2S_Sandbox/README.md
+!RBI_S2S_Sandbox/SANDBOX_TUTORIAL.md
+!RBI_S2S_Sandbox/example-usage.ts
+

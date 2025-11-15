@@ -1,7 +1,7 @@
 {
   "name": "rbi-kernel",
-  "version": "1.0.0",
-  "description": "RBI Kernel - Field-Level Coherence Architecture for resonance scoring and vector similarity",
+  "version": "2.0.0",
+  "description": "Resonance-Based Intelligence - Unified coherence computation framework (Library + Service)",
   "type": "module",
   "main": "dist/kernel.js",
   "types": "dist/kernel.d.ts",
@@ -9,6 +9,14 @@
     ".": {
       "import": "./dist/kernel.js",
       "types": "./dist/kernel.d.ts"
+    },
+    "./kernel": {
+      "import": "./dist/kernel.js",
+      "types": "./dist/kernel.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server/server.js",
+      "types": "./dist/server/server.d.ts"
     },
     "./mathematics": {
       "import": "./dist/mathematics/index.js",
@@ -19,11 +27,15 @@
       "types": "./dist/field/computation/index.d.ts"
     }
   },
+  "bin": {
+    "rbi-server": "./dist/server/server.js"
+  },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "dev": "tsx watch src/server/server.ts",
+    "start": "node dist/server/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
   },
   "keywords": [
     "rbi",
@@ -34,18 +46,23 @@
     "api"
   ],
   "author": "Gigi Stardust / Stardust to Sovereignty UNA",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE_UNA.md, LICENSE_RESEARCH.md, COMMERCIAL_LICENSE.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/GgStardust/rbi-kernel.git"
   },
   "dependencies": {
-    "fastify": "^4.24.3"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20.10.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
 
