@@ -44,3 +44,7 @@ coverage/
 *.db
 *.sqlite
 *.sqlite3
+rbi-pitch/
+PITCH_DECK_README.md
+RBI_PITCH_DECK_SLIDEV.md
+RBI_PITCH_DECK_SLIDEV.pdf
