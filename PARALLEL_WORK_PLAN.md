@@ -71,15 +71,15 @@ This plan coordinates three parallel tracks:
   - [ ] Document Console vs Manual Relationship
 
 - [ ] **Console Architecture Fix** (if not already complete)
-  - [x] Remove direct RBI calls from S2S_Console
-  - [x] Update InquiryInterface to call `CMS_Backend/api/ai/conversation` only
-  - [ ] Test end-to-end flow
+- [x] Remove direct RBI calls from S2S_Console
+- [x] Update InquiryInterface to call `CMS_Backend/api/ai/conversation` only
+- [ ] Test end-to-end flow
 
 - [ ] **Console CMS Connection** (if not already complete)
-  - [x] Verify `NEXT_PUBLIC_CMS_BACKEND_URL` configuration
-  - [x] Connect all Console API calls to CMS_Backend
-  - [ ] Test with live data (not static JSON) - requires running servers
-  - [ ] Fix any CORS or connection issues - requires running servers
+- [x] Verify `NEXT_PUBLIC_CMS_BACKEND_URL` configuration
+- [x] Connect all Console API calls to CMS_Backend
+- [ ] Test with live data (not static JSON) - requires running servers
+- [ ] Fix any CORS or connection issues - requires running servers
 
 **Result:** V7 Front Matter complete, Console Identity defined, Console architecture connected
 

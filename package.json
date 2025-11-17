@@ -8,7 +8,6 @@
     "S2S_Console",
     "RBI-Kernel",
     "Orbital-Brain",
-    "RBI-Architecture-Service",
     "RBI_Website",
     "RBI_Editorial_Tools"
   ],
@@ -17,7 +16,7 @@
     "build:all": "pnpm -r build",
     "dev:cms": "pnpm --filter CMS_Backend dev",
     "dev:console": "pnpm --filter S2S_Console dev",
-    "dev:service": "pnpm --filter RBI-Architecture-Service dev",
+    "dev:service": "pnpm --filter RBI-Kernel dev",
     "dev:website": "pnpm --filter RBI_Website dev"
   },
   "engines": {
@@ -26,4 +25,3 @@
   },
   "packageManager": "pnpm@8.15.0"
 }
-

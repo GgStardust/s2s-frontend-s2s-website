@@ -40,8 +40,10 @@ export async function POST(request: NextRequest) {
     const enhancedEngine = EnhancedResonanceEngine.getInstance();
     
     // METADATA-FIRST: Extract metadata from request body if provided
+    // Support both categoryAssociations (generic) and orb_associations (S2S) for backward compatibility
     const metadata = body.metadata ? {
-      orb_associations: body.metadata.orb_associations,
+      categoryAssociations: body.metadata.categoryAssociations ?? body.metadata.orb_associations,
+      orb_associations: body.metadata.orb_associations, // Keep for S2S backward compatibility
       field_function: body.metadata.field_function,
       book_threading: body.metadata.book_threading,
       integration_points: body.metadata.integration_points,

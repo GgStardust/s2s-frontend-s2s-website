@@ -1,151 +1,24 @@
 /**
- * Metadata-Compiler API Endpoint
+ * Book Compiler API Endpoint
  * 
- * Wraps the metadata-compiler script as an API endpoint
- * Compiles chapters using YAML frontmatter and inline tags only (no RBI)
+ * Compiles chapters using the modular book compiler.
+ * Supports both metadata-only and full-featured compilation modes.
+ * 
+ * Request body:
+ * {
+ *   chapter_id: string (required),
+ *   mode?: 'metadata' | 'full' (default: 'metadata'),
+ *   config?: Partial<CompilerConfig> (optional overrides)
+ * }
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import * as fs from 'fs';
 import * as path from 'path';
-import matter from 'gray-matter';
+import { compileChapter } from '@/lib/book-compiler/index.js';
+import type { ChapterOutline, CompilerConfig } from '@/lib/book-compiler/index.js';
 
 export const dynamic = 'force-dynamic';
-
-interface ContentFile {
-  file_path: string;
-  title: string;
-  yaml: any;
-  content: string;
-  inline_tags: string[];
-  orb_tags: number[];
-}
-
-function extractInlineTags(content: string): { orbTags: number[]; allTags: string[] } {
-  const orbTags: number[] = [];
-  const allTags: string[] = [];
-  
-  const orbMatches = content.matchAll(/@orb[_\s]*(\d+)/gi);
-  for (const match of orbMatches) {
-    const orbNum = parseInt(match[1]);
-    if (orbNum >= 1 && orbNum <= 13) {
-      orbTags.push(orbNum);
-      allTags.push(`@orb_${orbNum}`);
-    }
-  }
-  
-  const tagMatches = content.matchAll(/@([a-z_]+)/gi);
-  for (const match of tagMatches) {
-    const tag = match[1].toLowerCase();
-    if (!allTags.includes(`@${tag}`) && tag !== 'orb' && !tag.startsWith('orb')) {
-      allTags.push(`@${tag}`);
-    }
-  }
-  
-  return {
-    orbTags: Array.from(new Set(orbTags)).sort((a, b) => a - b),
-    allTags: Array.from(new Set(allTags))
-  };
-}
-
-function loadContentFiles(): ContentFile[] {
-  const files: ContentFile[] = [];
-  const baseDir = path.join(process.cwd(), '09_PROCESSED');
-  
-  const dirs = [
-    path.join(baseDir, '02d_Orb_Essays'),
-    path.join(baseDir, '02f_S2S_codex_essays')
-  ];
-  
-  for (const dir of dirs) {
-    if (!fs.existsSync(dir)) continue;
-    
-    const filenames = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
-    for (const filename of filenames) {
-      const filePath = path.join(dir, filename);
-      const content = fs.readFileSync(filePath, 'utf-8');
-      const parsed = matter(content);
-      const tags = extractInlineTags(parsed.content);
-      
-      files.push({
-        file_path: filePath.replace(process.cwd() + '/', ''),
-        title: parsed.data.title || filename.replace('.md', ''),
-        yaml: parsed.data,
-        content: parsed.content,
-        inline_tags: tags.allTags,
-        orb_tags: tags.orbTags
-      });
-    }
-  }
-  
-  return files;
-}
-
-function selectSourcesForChapter(
-  chapterTitle: string,
-  chapterDescription: string,
-  contentFiles: ContentFile[]
-): ContentFile[] {
-  const essayFiles = contentFiles.filter(f => {
-    if (f.yaml.type !== 'essay') return false;
-    
-    if (f.yaml.source_type === 'system_reference' || f.yaml.system_role === 'core_framework') {
-      return f.yaml.use_in_book_compiler === true;
-    }
-    
-    return true;
-  });
-  
-  const scored: Array<{ file: ContentFile; score: number; reasons: string[] }> = [];
-  
-  for (const file of essayFiles) {
-    let score = 0;
-    const reasons: string[] = [];
-    
-    // Framework keyword matching
-    if (file.yaml.framework_handling?.auto_include_keywords) {
-      const chapterText = `${chapterTitle} ${chapterDescription}`.toLowerCase();
-      const keywords = file.yaml.framework_handling.auto_include_keywords.map((k: string) => k.toLowerCase());
-      const hasMatch = keywords.some((keyword: string) => chapterText.includes(keyword));
-      
-      if (hasMatch) {
-        const weight = typeof file.yaml.inclusion_weight === 'number' ? file.yaml.inclusion_weight : 0.25;
-        score += 8 * weight;
-        reasons.push(`framework keyword match (weight: ${weight})`);
-      }
-    }
-    
-    // Book threading match
-    const bookThreading = file.yaml.book_threading || '';
-    if (bookThreading.includes('Stardust to Sovereignty')) {
-      score += 10;
-      reasons.push('book_threading match');
-    }
-    
-    // Field function match
-    const fieldFunction = file.yaml.field_function || {};
-    const contentPurpose = (fieldFunction.content_purpose || '').toLowerCase();
-    const chapterText = `${chapterTitle} ${chapterDescription}`.toLowerCase();
-    const chapterWords = chapterText.split(/\s+/).filter((w: string) => w.length > 4);
-    const purposeWords = contentPurpose.split(/\s+/).filter((w: string) => w.length > 4);
-    const matchingWords = purposeWords.filter((pw: string) =>
-      chapterWords.some((cw: string) => cw.includes(pw) || pw.includes(cw))
-    );
-    
-    if (matchingWords.length > 0) {
-      score += matchingWords.length * 2;
-      reasons.push(`content_purpose match (${matchingWords.length} keywords)`);
-    }
-    
-    if (score > 0) {
-      scored.push({ file, score, reasons });
-    }
-  }
-  
-  scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, 3).map(item => item.file);
-}
 
 export async function POST(
   request: NextRequest,
@@ -153,7 +26,7 @@ export async function POST(
 ) {
   try {
     const body = await request.json();
-    const { chapter_id } = body;
+    const { chapter_id, mode = 'metadata', config: configOverrides } = body;
     const bookId = params.id;
 
     if (!chapter_id) {
@@ -165,10 +38,10 @@ export async function POST(
 
     const supabase = await createClient();
 
-    // Get chapter details
+    // Get chapter details from database
     const { data: chapter, error: chapterError } = await supabase
       .from('chapters')
-      .select('*')
+      .select('id, chapter_number, title, description, orb_focus, notes')
       .eq('id', chapter_id)
       .eq('book_id', bookId)
       .single();
@@ -180,53 +53,89 @@ export async function POST(
       );
     }
 
-    // Load content files
-    const contentFiles = loadContentFiles();
+    // Convert database chapter to ChapterOutline
+    const chapterOutline: ChapterOutline = {
+      chapter_number: chapter.chapter_number,
+      title: chapter.title,
+      description: chapter.description || chapter.notes || undefined,
+      orb_focus: chapter.orb_focus ? parseInt(chapter.orb_focus.toString()) : undefined,
+    };
 
-    // Select sources using metadata
-    const sources = selectSourcesForChapter(
-      chapter.title,
-      chapter.description || '',
-      contentFiles
-    );
+    // Build compiler config based on mode
+    const baseConfig: Partial<CompilerConfig> = {
+      contentBasePath: path.join(process.cwd(), '09_PROCESSED'),
+      orbEssaysPath: path.join(process.cwd(), '09_PROCESSED', '02d_Orb_Essays'),
+      codexEssaysPath: path.join(process.cwd(), '09_PROCESSED', '02f_S2S_codex_essays'),
+      systemEssaysPath: path.join(process.cwd(), '09_PROCESSED', '02a_System_essays'),
+    };
 
-    if (sources.length === 0) {
-      return NextResponse.json(
-        { error: 'No matching sources found' },
-        { status: 400 }
-      );
+    if (mode === 'full') {
+      // Full-featured compilation with all layers
+      baseConfig.useRBIDiscovery = true;
+      baseConfig.useRBIValidation = true;
+      baseConfig.useRBIOrdering = true;
+      baseConfig.useOrbitalBrain = true;
+      baseConfig.useStyleTraining = true;
+      baseConfig.useEditorialLayer = true;
+      baseConfig.enableGapBridging = true;
+      baseConfig.maxSources = 15;
+      baseConfig.minCoherence = 0.7;
+    } else {
+      // Metadata-only mode (backward compatible)
+      baseConfig.useRBIDiscovery = false;
+      baseConfig.useRBIValidation = false;
+      baseConfig.useRBIOrdering = false;
+      baseConfig.useOrbitalBrain = false;
+      baseConfig.useStyleTraining = false;
+      baseConfig.useEditorialLayer = false;
+      baseConfig.enableGapBridging = false;
+      baseConfig.maxSources = 3;
     }
 
-    // Merge sources preserving inline tags
-    let compiledContent = '';
-    for (const source of sources) {
-      compiledContent += `\n\n${source.content}\n\n`;
-    }
+    // Merge with any provided overrides
+    const finalConfig: Partial<CompilerConfig> = {
+      ...baseConfig,
+      ...configOverrides,
+    };
 
-    // Preserve all inline tags from sources
+    // Compile chapter using modular compiler
+    const compiled = await compileChapter(chapterOutline, finalConfig);
+
+    // Extract preserved tags from sources
     const allTags = new Set<string>();
-    sources.forEach(s => s.inline_tags.forEach(tag => allTags.add(tag)));
+    compiled.sources.forEach(source => {
+      source.inline_tags.forEach(tag => allTags.add(tag));
+    });
 
+    // Build response
     return NextResponse.json({
       success: true,
       chapter_id,
-      sources: sources.map(s => ({
+      chapter_number: chapter.chapter_number,
+      chapter_title: chapter.title,
+      sources: compiled.sources.map(s => ({
         title: s.title,
         file_path: s.file_path,
-        tags: s.inline_tags
+        tags: s.inline_tags,
+        orb_tags: s.orb_tags,
       })),
-      compiled_content: compiledContent,
+      compiled_content: compiled.content,
       preserved_tags: Array.from(allTags),
-      method: 'metadata_only'
+      method: mode,
+      layers_applied: compiled.layersApplied || ['metadata_matching'],
+      rbi_metrics: compiled.rbi_metrics,
+      style_applied: compiled.style_applied,
+      warnings: compiled.warnings,
     });
 
   } catch (error) {
-    console.error('Error in metadata compiler:', error);
+    console.error('Error in book compiler API:', error);
     return NextResponse.json(
       {
         success: false,
         error: 'Internal server error',
-        message: error instanceof Error ? error.message : 'Unknown error'
+        message: error instanceof Error ? error.message : 'Unknown error',
+        stack: process.env.NODE_ENV === 'development' && error instanceof Error ? error.stack : undefined,
       },
       { status: 500 }
     );

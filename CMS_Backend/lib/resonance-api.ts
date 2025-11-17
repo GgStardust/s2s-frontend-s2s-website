@@ -20,8 +20,10 @@ export async function runResonanceValidation(markdown: string, title?: string, m
     const engine = EnhancedResonanceEngine.getInstance();
     
     // METADATA-FIRST: Use provided metadata or extract from markdown if available
+    // Support both categoryAssociations (generic) and orb_associations (S2S) for backward compatibility
     const contentMetadata = metadata ? {
-      orb_associations: metadata.orb_associations,
+      categoryAssociations: metadata.categoryAssociations ?? metadata.orb_associations,
+      orb_associations: metadata.orb_associations, // Keep for S2S backward compatibility
       field_function: metadata.field_function,
       book_threading: metadata.book_threading,
       integration_points: metadata.integration_points,

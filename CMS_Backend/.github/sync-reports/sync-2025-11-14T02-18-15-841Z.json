@@ -1,0 +1,1123 @@
+{
+  "timestamp": "2025-11-14T02:18:15.841Z",
+  "trigger": "manual",
+  "branch": "local",
+  "commit": "local",
+  "actor": "local",
+  "summary": {
+    "totalFiles": 138,
+    "imported": 0,
+    "updated": 0,
+    "skipped": 0,
+    "errors": 138
+  },
+  "files": [
+    {
+      "path": "02a_System_essays/s2s_philosophical_foundation.md",
+      "action": "error"
+    },
+    {
+      "path": "02b_book/COMPLETE_BOOK_OUTLINE_AND_OVERVIEW.md",
+      "action": "error"
+    },
+    {
+      "path": "02b_book/s2s_book_outline_pitch_material_reader facing.md",
+      "action": "error"
+    },
+    {
+      "path": "02b_book/outline_and_overview.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/13_ORB_SYSTEM_OUTLINE.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/03_Language_and_Definitions_CLEAN.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/CODEX_REFINEMENT_DIRECTIVE.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/CANONICAL_13_ORB_SYSTEM_REFERENCE.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/I_Written_System_Description_CLEAN.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/CONSCIOUSNESS_TECHNOLOGY_NARRATIVE_ARC.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/ORB_7_ALCHEMICAL_CURRENT_DATA_REPORT.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/ORB_2_RESONANCE_MECHANICS_WEAVING.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/ORB_PERSONALITY_INTEGRATION_GUIDE.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/ORB_PERSONALITY_SYSTEMV2.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/ORB_SYSTEM_VALIDATOR_INTEGRATION.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/Stardust to Sovereignty Backbone_ORIGINAL.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/S2S — Undercurrents Codex.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/andrew_bartzis_gigi_stardust_consolidated.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/codex_Orb_Synthesis_Final.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/andrew_bartzis_scrollstream_extractions.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/orb0_integration_map.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/comparing_stardust_to_sovereignty_galactic_historian_framework.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/quantum_foundations_for_s2s.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/orb_0_integration_strategy.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/s2s_practical_applications.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/s2s_orb_reference_table.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/the_gamma_trap.md",
+      "action": "error"
+    },
+    {
+      "path": "02c_Supporting material/supporting_material_practical_integration.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_11_radiant_transparency_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_10_ancestral_repatterning_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_12_sovereign_field_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_1_origin_intelligence.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_13_bridging_intelligence_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_2_resonance_mechanics.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_3_photonic_intelligence.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_4_harmonic_architectures_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_4_harmonic_architectures_persona.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_5_temporal_sovereignty_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_6_starline_memory_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_7_alchemical_current_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_9_temporal_fluidity_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02d_Orb_Essays/orb_8_quantum_intuition_foundational.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/operation_earth_pulse.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/grief_soul_scroll.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_11_winter_solstice.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_10_disruption_long.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_13_song_of_the_open_heart.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_12_true_love_without_fear.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_15_to_truly_know_me.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_14_lucid_in_light_and_dark.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_17_thinking_of_death.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_16_leading_thoughts.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_19_be_love_d.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_18_child-like_vs._child-ish.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_20_i_burn_so_that_i_may_see.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_1_the_heart_unpossessed.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_22_911_remembrance.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_21_chaos_fire.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_24_love_song_fragments.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_23_so!_show_me_your_sky.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_26_song_of_sovereignty.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_25_the_river_carries_me.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_27_pulse_of_devotion.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_28_light_over_dark.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_29_return_to_silence.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_2_she_stands_inside_life.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_30_endless_thread.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_31_golden_horizon.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_33_the_quiet_flame.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_32_breath_of_stillness.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_35_fragments_of_devotion.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_36_opening_to_mystery.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_34_stars_remember.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_38_the_last_transmission.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_37_song_of_return.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_4_called_me_until_sat.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_3_made_it_blissed_out.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_6_show_yourself.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_5_two_spheres_of_love.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_9_disruption_short.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/3i_atlas_galactic_messenger.md",
+      "action": "error"
+    },
+    {
+      "path": "02e_do not publish scrolls/scroll_chaos_fire.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/Electromagnetic Fields and Human Consciousness.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/CODEX_EXPANSION_SERIES_BOOK_SUPPORT.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/being_and_consciousness_evolution_ascension.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/auroras_the_breath_of_the_magnetosphere.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/consciousness_ai_sovereignty_to_question.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/consciousness_and_memory.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/consciousness_technology_gap_essay.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/consciousness_technology_applications.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/cosmic_biological_consciousness_dimensions.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/designing_bridges_human_system_protocols.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/dimensional_field_of_awareness.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/exponential_web_architecture_consciousness_expanded.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/existential_architecture.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/field_contact_architecture_sovereign_evolution.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/field_contact_architecture_comprehensive.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/frequency_literacy_sovereign_tuning.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/future_primitive_intersection.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/galactic_recall_fascia_intelligence.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/harmonic_architectures_future_manifesto.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/grief_as_architecture_collapse_renewal_sovereign_field.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/macro_neutrality_path_sovereignty_after_division.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/linguistic_resonance_breath_geometry.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/navigating_parallel_timelines.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/metabolic_coherence_light_cycles.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/planetary_conjunctions_harmonic_governance.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/perimeter_gather_lions_gate_variations_full_archive.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/rhythmic_intelligence_biological_coherence.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/quantum_relationship_integration_protocol.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/solar_and_lunar_eclipses_temporal_calibration.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/sovereign_field_navigation.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/spatial_coherence_living_geometry.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/sovereign_logic_and_coc_validation.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/star_love_expanded_layers_connection.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/star_love_and_living_constellation.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/star_love_living_constellation_quantum_galactic_relationship_structuring.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/star_love_guidance_portal_framework.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/stardust_origin_intelligence_human_form.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/star_love_visual_toolkit.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/the_electric_fields_of_consciousness.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/temporal_alignment_sovereign_cycles.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/the_physics_of_sovereignty.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/the_flow_state_and_optimal_state.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/the_vagus_nerve_and_pituitary_gland.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/the_subtle_body_and_sovereign_current.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/when_light_learns_to_hold_itself.md",
+      "action": "error"
+    },
+    {
+      "path": "02f_S2S_codex_essays/unveiling_and_harmony.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_1_origin_intelligence_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "02g_generated_book_content/S2S_Manuscript_V4.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_2_resonance_mechanics_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_5_temporal_sovereignty_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_4_harmonic_architectures_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_7_alchemical_current_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_6_starline_memory_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_9_temporal_fluidity_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/orb_8_quantum_intuition_archived.md",
+      "action": "error"
+    },
+    {
+      "path": "ARCHIVE/outdated_outlines/ARCHIVE_NOTES.md",
+      "action": "error"
+    }
+  ],
+  "errors": [
+    {
+      "file": "02a_System_essays/s2s_philosophical_foundation.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02b_book/COMPLETE_BOOK_OUTLINE_AND_OVERVIEW.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02b_book/s2s_book_outline_pitch_material_reader facing.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02b_book/outline_and_overview.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/13_ORB_SYSTEM_OUTLINE.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/03_Language_and_Definitions_CLEAN.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/CODEX_REFINEMENT_DIRECTIVE.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/CANONICAL_13_ORB_SYSTEM_REFERENCE.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/I_Written_System_Description_CLEAN.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/CONSCIOUSNESS_TECHNOLOGY_NARRATIVE_ARC.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/ORB_7_ALCHEMICAL_CURRENT_DATA_REPORT.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/ORB_2_RESONANCE_MECHANICS_WEAVING.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/ORB_PERSONALITY_INTEGRATION_GUIDE.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/ORB_PERSONALITY_SYSTEMV2.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/ORB_SYSTEM_VALIDATOR_INTEGRATION.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/Stardust to Sovereignty Backbone_ORIGINAL.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/S2S — Undercurrents Codex.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/andrew_bartzis_gigi_stardust_consolidated.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/codex_Orb_Synthesis_Final.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/andrew_bartzis_scrollstream_extractions.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/orb0_integration_map.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/comparing_stardust_to_sovereignty_galactic_historian_framework.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/quantum_foundations_for_s2s.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/orb_0_integration_strategy.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/s2s_practical_applications.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/s2s_orb_reference_table.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/the_gamma_trap.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02c_Supporting material/supporting_material_practical_integration.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_11_radiant_transparency_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_10_ancestral_repatterning_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_12_sovereign_field_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_1_origin_intelligence.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_13_bridging_intelligence_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_2_resonance_mechanics.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_3_photonic_intelligence.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_4_harmonic_architectures_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_4_harmonic_architectures_persona.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_5_temporal_sovereignty_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_6_starline_memory_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_7_alchemical_current_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_9_temporal_fluidity_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02d_Orb_Essays/orb_8_quantum_intuition_foundational.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/operation_earth_pulse.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/grief_soul_scroll.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_11_winter_solstice.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_10_disruption_long.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_13_song_of_the_open_heart.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_12_true_love_without_fear.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_15_to_truly_know_me.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_14_lucid_in_light_and_dark.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_17_thinking_of_death.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_16_leading_thoughts.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_19_be_love_d.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_18_child-like_vs._child-ish.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_20_i_burn_so_that_i_may_see.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_1_the_heart_unpossessed.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_22_911_remembrance.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_21_chaos_fire.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_24_love_song_fragments.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_23_so!_show_me_your_sky.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_26_song_of_sovereignty.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_25_the_river_carries_me.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_27_pulse_of_devotion.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_28_light_over_dark.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_29_return_to_silence.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_2_she_stands_inside_life.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_30_endless_thread.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_31_golden_horizon.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_33_the_quiet_flame.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_32_breath_of_stillness.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_35_fragments_of_devotion.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_36_opening_to_mystery.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_34_stars_remember.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_38_the_last_transmission.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_37_song_of_return.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_4_called_me_until_sat.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_3_made_it_blissed_out.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_6_show_yourself.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_5_two_spheres_of_love.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_9_disruption_short.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/3i_atlas_galactic_messenger.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02e_do not publish scrolls/scroll_chaos_fire.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/Electromagnetic Fields and Human Consciousness.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/CODEX_EXPANSION_SERIES_BOOK_SUPPORT.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/being_and_consciousness_evolution_ascension.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/auroras_the_breath_of_the_magnetosphere.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/consciousness_ai_sovereignty_to_question.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/consciousness_and_memory.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/consciousness_technology_gap_essay.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/consciousness_technology_applications.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/cosmic_biological_consciousness_dimensions.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/designing_bridges_human_system_protocols.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/dimensional_field_of_awareness.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/exponential_web_architecture_consciousness_expanded.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/existential_architecture.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/field_contact_architecture_sovereign_evolution.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/field_contact_architecture_comprehensive.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/frequency_literacy_sovereign_tuning.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/future_primitive_intersection.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/galactic_recall_fascia_intelligence.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/harmonic_architectures_future_manifesto.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/grief_as_architecture_collapse_renewal_sovereign_field.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/macro_neutrality_path_sovereignty_after_division.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/linguistic_resonance_breath_geometry.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/navigating_parallel_timelines.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/metabolic_coherence_light_cycles.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/planetary_conjunctions_harmonic_governance.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/perimeter_gather_lions_gate_variations_full_archive.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/rhythmic_intelligence_biological_coherence.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/quantum_relationship_integration_protocol.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/solar_and_lunar_eclipses_temporal_calibration.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/sovereign_field_navigation.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/spatial_coherence_living_geometry.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/sovereign_logic_and_coc_validation.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/star_love_expanded_layers_connection.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/star_love_and_living_constellation.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/star_love_living_constellation_quantum_galactic_relationship_structuring.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/star_love_guidance_portal_framework.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/stardust_origin_intelligence_human_form.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/star_love_visual_toolkit.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/the_electric_fields_of_consciousness.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/temporal_alignment_sovereign_cycles.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/the_physics_of_sovereignty.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/the_flow_state_and_optimal_state.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/the_vagus_nerve_and_pituitary_gland.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/the_subtle_body_and_sovereign_current.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/when_light_learns_to_hold_itself.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02f_S2S_codex_essays/unveiling_and_harmony.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_1_origin_intelligence_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "02g_generated_book_content/S2S_Manuscript_V4.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_2_resonance_mechanics_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_5_temporal_sovereignty_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_4_harmonic_architectures_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_7_alchemical_current_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_6_starline_memory_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_9_temporal_fluidity_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/orb_8_quantum_intuition_archived.md",
+      "error": "fetch failed"
+    },
+    {
+      "file": "ARCHIVE/outdated_outlines/ARCHIVE_NOTES.md",
+      "error": "fetch failed"
+    }
+  ],
+  "durationMs": 80
+}

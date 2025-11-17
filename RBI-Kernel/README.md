@@ -1,31 +1,42 @@
-# RBI - Resonance-Based Intelligence
+# RBI Kernel (Resonance Kernel Implementation)
 
-**Version:** 2.0.0  
-**Unified Product:** Library Mode + Service Mode
-
-> **Provenance Notice**  
-> *Resonance-Based Intelligence (RBI)* was developed by **Jen Dye (Gigi Stardust)** under the **Stardust to Sovereignty UNA (2025)**.  
-> This system implements the *Resonance Kernel* as a computational framework for **coherence verification**, **Proof-of-Meaning computation**, and **temporal continuity validation**.
+> **Provenance Notice**
+> *Resonance-Based Intelligence (RBI)* was developed by **Jen Dye (Gigi Stardust)** under the **Stardust to Sovereignty UNA (2025)**.
+> This kernel implements the *Resonance Kernel* as a computational framework for **coherence verification**, **Proof-of-Meaning computation**, and **temporal continuity validation**.
+> It replaces probabilistic AI scoring with measurable coherence equations grounded in the *Resonance-Based Coherence Architecture Defensive Publication (2025)*.
 
 ---
 
 ## Overview
 
-RBI is a unified coherence computation framework that can be used in two modes:
+A field-level coherence architecture providing computational functions for **Resonance-Based Intelligence (RBI)**.
+The RBI Kernel operationalizes the *Resonance Kernel* mathematics for coherence computation across vector, text, and temporal data inputs.
 
-1. **Library Mode**: Import RBI as a library for direct computation in your application
-2. **Service Mode**: Run RBI as an HTTP service accessible via REST API
+**Primary Functions:**
 
-**Core Capabilities:**
-- Proof-of-Meaning verification
-- Coherence-based vector similarity
-- Temporal continuity scoring
-- Neighbor identification via resonance alignment
-- 4D Resonance Vector computation
+* Proof-of-Meaning verification
+* Coherence-based vector similarity
+* Temporal continuity scoring
+* Neighbor identification via resonance alignment
+
+---
+
+## Features
+
+* **Coherence Verification**: Compute coherence scores using resonance-weighted relationships and temporal feedback.
+* **Vector Similarity**: Calculate cosine similarity or custom coherence metrics between multidimensional embeddings.
+* **Text Resonance**: Measure structural similarity between text strings using Jaccard or resonance-augmented matching.
+* **Neighbor Finding**: Identify top-N most coherent relationships based on adjustable weighting functions.
+* **Modular Core**: Core computation modules can be extended or replaced with proprietary equations defined in the S2S technical stack.
 
 ---
 
 ## Quick Start
+
+### Prerequisites
+
+* Node.js 20+ (or Docker)
+* npm or yarn
 
 ### Installation
 
@@ -33,172 +44,178 @@ RBI is a unified coherence computation framework that can be used in two modes:
 npm install
 ```
 
-### Library Mode (Recommended for Integration)
+### Usage Modes
 
-Use RBI as a library in your application:
+#### Architecture Mode (Recommended)
+
+Use RBI Kernel as a field-level coherence architecture:
 
 ```typescript
-import { FieldComputation, FieldValidation, Mathematics } from 'rbi-kernel';
+import { FieldComputation, FieldValidation, KernelManifest } from './kernel.js';
 
-// Compute coherence score
+// Access field computation layer
 const score = FieldComputation.computeResonance({
   vectorSimilarity: 0.8,
-  categoryOverlap: 0.7,  // Generic (or orbOverlap for S2S compatibility)
+  orbOverlap: 0.7,
   temporalDecay: 0.9
 });
 
-// Verify Proof-of-Meaning
+// Access validation layer
 const proof = FieldValidation.verifyConsciousness(
   "Your content here",
-  [1, 2, 3] // category associations (or orbAssociations for S2S)
+  [1, 2, 3] // category associations
 );
 
-// Convert content to 4D resonance vector
-const vector = Mathematics.ResonanceVectorMath.contentToVector("Your content");
+// View architecture manifest
+console.log(KernelManifest);
 ```
 
-### Service Mode (HTTP API)
+#### Plugin Mode (REST API)
 
-Start the RBI service:
+Start the server and use REST endpoints:
 
 ```bash
-npm run dev    # Development mode (hot reload)
-npm start      # Production mode
+npm run dev
 ```
 
-The service runs on `http://localhost:3001` by default.
+The service will start on `http://localhost:3000` with hot reload enabled.
 
-**API Endpoints:**
-- `GET /health` - Health check
-- `POST /field/score` - Compute coherence score
-- `POST /field/validate` - Verify Proof-of-Meaning (accepts `categoryAssociations` or `orbAssociations`)
-- `POST /field/neighbors` - Find similar items
-- `POST /field/analyze` - Full content analysis
-- `POST /field/vector` - Convert content to vector
+```typescript
+// Using fetch
+const response = await fetch('http://localhost:3000/rbi/score', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    resonanceVectors: {
+      vector1: { x: 0.8, y: 0.7, z: 0.9, w: 0.6 },
+      vector2: { x: 0.7, y: 0.8, z: 0.6, w: 0.9 }
+    }
+  })
+});
 
-See [docs/integration/LIVE_SERVICE_OVERVIEW.md](./docs/integration/LIVE_SERVICE_OVERVIEW.md) for complete API documentation.
-
----
-
-## Architecture
-
-RBI implements a **5-layer field-level coherence architecture**:
-
-1. **Representation Layer**: Transforms inputs into multidimensional resonance fields
-2. **Computation Layer**: Calculates spatial, temporal, and contextual coherence
-3. **Temporal Layer**: Maintains adaptive stability over time
-4. **Validation Layer**: Performs Proof-of-Meaning operations
-5. **Interface Layer**: Links verified coherence data to external systems
-
-**Mathematical Foundation:**
-- 4D Resonance Vectors (clarity, coherence, resonance, sovereignty)
-- Coherence-based similarity algorithms
-- Temporal continuity operators
-- Proof-of-Meaning verification
-
-See [docs/RBI_ARCHITECTURE_COMPLETE.md](./docs/RBI_ARCHITECTURE_COMPLETE.md) for complete technical documentation.
-
----
-
-## Licensing
-
-RBI is available under different license terms depending on your use case:
-
-- **[LICENSE_UNA.md](./LICENSE_UNA.md)**: Free use for UNA members and business partners (side projects)
-- **[LICENSE_RESEARCH.md](./LICENSE_RESEARCH.md)**: Research collaboration and validation
-- **[COMMERCIAL_LICENSE.md](./COMMERCIAL_LICENSE.md)**: Commercial use (requires license agreement)
-
-**Patent Notice:** This software implements methods covered by U.S. Provisional Patent Application No. 63/909,031. See [PATENT_NOTICE.md](./PATENT_NOTICE.md) for details.
-
----
-
-## Documentation
-
-### Integration Guides
-- [Live Service Overview](./docs/integration/LIVE_SERVICE_OVERVIEW.md) - Complete API documentation
-- [Demo Quick Start](./docs/integration/DEMO_QUICK_START.md) - Quick start guide for partners
-
-### Sector Use Cases
-- [Finance](./docs/sector-use-cases/rbi_finance.md)
-- [Healthcare](./docs/sector-use-cases/rbi_healthcare_clinical.md)
-- [Energy Systems](./docs/sector-use-cases/rbi_energy_systems.md)
-- [Cybersecurity](./docs/sector-use-cases/rbi_cybersecurity.md)
-- [Academic Research](./docs/sector-use-cases/rbi_academic_research.md)
-- [And more...](./docs/sector-use-cases/README.md)
-
-### Research & Technical
-- [RBI Architecture Complete](./docs/RBI_ARCHITECTURE_COMPLETE.md) - Complete technical overview
-- [Sector Use Cases Overview](./docs/sector-use-cases/README.md) - All sector applications
-- [Generic API Migration](./GENERIC_API_MIGRATION.md) - Migration guide for generic API
-
----
-
-## Production Features
-
-### API Key Authentication
-Set `RBI_API_KEY` environment variable to require authentication. All endpoints except `/health` require API key in `x-api-key` header or `Authorization: Bearer <key>` header.
-
-### Rate Limiting
-- Default: 100 requests per minute per API key/IP
-- Configurable via `RATE_LIMIT_MAX_REQUESTS` and `RATE_LIMIT_WINDOW_MS` environment variables
-
-### Monitoring & Logging
-- Request logging with response times
-- Metrics endpoint: `/metrics` (requires auth)
-- Error logging with stack traces in development mode
-
----
-
-## Environment Variables
-
-```bash
-# Server Configuration
-PORT=3001                    # Server port (default: 3001)
-HOST=0.0.0.0                 # Server host (default: 0.0.0.0)
-NODE_ENV=production          # Environment (production/development)
-
-# Authentication
-RBI_API_KEY=your-api-key     # API key for authentication (optional)
-
-# Rate Limiting
-RATE_LIMIT_MAX_REQUESTS=100  # Max requests per window (default: 100)
-RATE_LIMIT_WINDOW_MS=60000   # Rate limit window in ms (default: 60000)
+const result = await response.json();
+console.log(result.score);
 ```
 
----
-
-## Build for Production
+### Build for Production
 
 ```bash
-npm run build    # Compile TypeScript
-npm start        # Run production server
-```
-
----
-
-## Deployment
-
-### Vercel
-```bash
-vercel deploy
+npm run build
+npm start
 ```
 
 ### Docker
+
 ```bash
-docker build -t rbi-kernel:2.0.0 .
-docker run -p 3001:3001 rbi-kernel:2.0.0
+docker build -t rbi-kernel .
+docker run -p 3000:3000 rbi-kernel
 ```
 
 ---
 
-## Generic API vs S2S Compatibility
+## API Endpoints
 
-RBI-Kernel uses generic terminology in public APIs while maintaining full backward compatibility with S2S-specific terminology:
+### Health Check
 
-- **Generic (Preferred):** `categoryAssociations`, `categoryOverlap`, `computeResonanceWithCategories()`
-- **S2S (Backward Compatible):** `orb_associations`, `orbOverlap`, `computeResonanceWithOrbs()`
+```http
+GET /health
+```
 
-S2S code using `orb_associations` continues to work unchanged. See [GENERIC_API_MIGRATION.md](./GENERIC_API_MIGRATION.md) for details.
+**Response:**
+
+```json
+{
+  "status": "ok",
+  "service": "rbi-kernel",
+  "version": "1.0.0",
+  "timestamp": "2025-01-01T00:00:00.000Z"
+}
+```
+
+### Coherence Score Computation
+
+```http
+POST /rbi/score
+```
+
+**Purpose:** Compute a Proof-of-Meaning score from various input forms.
+
+**Option 1: Direct Coherence Parameters**
+
+```json
+{
+  "vectorSimilarity": 0.8,
+  "orbOverlap": 0.7,
+  "temporalContinuity": 0.9
+}
+```
+
+**Option 2: Vector Pair**
+
+```json
+{
+  "vectors": {
+    "vector1": [0.1, 0.2, 0.3, 0.4],
+    "vector2": [0.2, 0.3, 0.4, 0.5]
+  }
+}
+```
+
+**Option 3: Text Pair**
+
+```json
+{
+  "texts": {
+    "text1": "The resonance between these concepts",
+    "text2": "The coherence among these ideas"
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "proofOfMeaning": 0.78,
+  "method": "coherence-verification",
+  "timestamp": "2025-01-01T00:00:00.000Z"
+}
+```
+
+### Find Coherent Neighbors
+
+```http
+POST /rbi/neighbors
+```
+
+Find top-N most coherent candidates.
+
+**Request Body:**
+
+```json
+{
+  "query": { "vector": [0.1, 0.2, 0.3, 0.4] },
+  "candidates": [
+    { "id": "item1", "vector": [0.2, 0.3, 0.4, 0.5] },
+    { "id": "item2", "vector": [0.5, 0.6, 0.7, 0.8] }
+  ],
+  "topN": 5
+}
+```
+
+**Response:**
+
+```json
+{
+  "neighbors": [
+    { "id": "item1", "score": 0.95 },
+    { "id": "item2", "score": 0.82 }
+  ],
+  "count": 2,
+  "topN": 5,
+  "timestamp": "2025-01-01T00:00:00.000Z"
+}
+```
 
 ---
 
@@ -206,10 +223,10 @@ S2S code using `orb_associations` continues to work unchanged. See [GENERIC_API_
 
 This service complies with the **Ethical Invariance Protocol** defined in the *Resonance-Based Coherence Architecture*.
 
-- No personal or persistent data is stored
-- All computations are **ephemeral** and **context-bound** to preserve sovereignty and user trust
-- Outputs include Proof-of-Meaning verification but exclude probabilistic inference
-- The Kernel resists manipulation through incoherent input; distortions are automatically neutralized by field-level integrity checks
+* No personal or persistent data is stored.
+* All computations are **ephemeral** and **context-bound** to preserve sovereignty and user trust.
+* Outputs include Proof-of-Meaning verification but exclude probabilistic inference.
+* The Kernel resists manipulation through incoherent input; distortions are automatically neutralized by field-level integrity checks.
 
 ---
 
@@ -217,34 +234,43 @@ This service complies with the **Ethical Invariance Protocol** defined in the *R
 
 This implementation is aligned with:
 
-- **Resonance Kernel Technical Dossier (2025)**
-- **Validation Framework: Temporal Continuity Operator**
-- **Resonance-Based Coherence Architecture Defensive Publication (USPTO 63/909,031)**
+* **Resonance Kernel Technical Dossier (2025)**
+* **Validation Framework: Temporal Continuity Operator**
+* **Resonance-Based Coherence Architecture Defensive Publication (USPTO 63/909,031)**
 
 Each equation and computation in this service reflects the verified coherence mathematics established under the S2S UNA research lineage.
 
 ---
 
+## Environment Variables
+
+* `PORT` – Server port (default: 3000)
+* `HOST` – Server host (default: 0.0.0.0)
+* `NODE_ENV` – Environment (production/development)
+
+---
+
+## Customizing Computations
+
+The core computation functions are modular. Developers may extend coherence equations or integrate proprietary models.
+
+1. Edit `src/field/computation/coherence-calculator.ts`
+2. Replace `computeResonance()` with custom Proof-of-Meaning or Temporal Continuity equations.
+3. Rebuild: `npm run build && npm start`
+
+---
+
+## Documentation
+
+* **Architecture Guide**: [`docs/architecture.md`](docs/architecture.md) - Complete 5-layer architecture documentation
+* **Plugin Mode**: [`docs/PLUGIN_MODE.md`](docs/PLUGIN_MODE.md) - Using RBI Kernel as REST API or local SDK
+* **API Reference**: [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) - Complete API endpoint documentation
+* **OpenAPI Spec**: [`docs/openapi.yaml`](docs/openapi.yaml) - OpenAPI 3.0 specification
+
+---
+
 ## License and Authorship
 
-Copyright © 2025 **Jen Dye (Gigi Stardust)**  
+Copyright © 2025 **Jen Dye (Gigi Stardust)**
 Published under the **Stardust to Sovereignty UNA**.
-
-This repository operates under multiple license terms depending on use case. See license files for details.
-
-This repository adheres to the Coherence Ethics Charter: truth, transparency, and verified alignment in all computational design.
-
----
-
-## Support
-
-For questions about:
-- **Licensing**: See license files or contact Gigi Stardust
-- **Technical Integration**: See [docs/integration/](./docs/integration/)
-- **Sector Use Cases**: See [docs/sector-use-cases/](./docs/sector-use-cases/)
-- **Research Collaboration**: See [LICENSE_RESEARCH.md](./LICENSE_RESEARCH.md)
-
----
-
-**Service Version:** 2.0.0  
-**RBI-Kernel Version:** 2.0.0 (Unified Library + Service)
+This repository operates under the ISC license and adheres to the Coherence Ethics Charter: truth, transparency, and verified alignment in all computational design.

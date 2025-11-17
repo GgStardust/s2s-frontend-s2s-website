@@ -1,0 +1,53 @@
+{
+  "name": "rbi-architecture-service",
+  "version": "2.0.0",
+  "description": "RBI Architecture Service - Resonance-Based Intelligence as a Service (REST API)",
+  "type": "module",
+  "main": "dist/server/server.js",
+  "bin": {
+    "rbi-service": "./dist/server/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server/server.ts",
+    "start": "node dist/server/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "slidev": "slidev RBI_PITCH_DECK_SLIDEV.md",
+    "slidev:build": "slidev build RBI_PITCH_DECK_SLIDEV.md --out rbi-pitch --base ./",
+    "slidev:export": "slidev export RBI_PITCH_DECK_SLIDEV.md --output RBI_PITCH_DECK_SLIDEV.pdf",
+    "slidev:serve": "cd rbi-pitch && python3 -m http.server 8080 || npx serve -p 8080"
+  },
+  "keywords": [
+    "rbi",
+    "resonance",
+    "coherence-architecture",
+    "api",
+    "service",
+    "rest-api"
+  ],
+  "author": "Gigi Stardust / Stardust to Sovereignty UNA",
+  "license": "SEE LICENSE IN LICENSE_UNA.md, LICENSE_RESEARCH.md, COMMERCIAL_LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GgStardust/rbi-architecture-service.git"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.8.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "playwright-chromium": "^1.56.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
+
