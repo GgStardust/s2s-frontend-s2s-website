@@ -19,6 +19,24 @@ Sectors are organized by **market priority** and **partnership readiness**:
 - **Tier 2: Strategic Partnerships** - High-value partnerships with emerging technology companies
 - **Tier 3: Research & Development** - Long-term research opportunities and academic collaborations
 
+### Scoring Framework
+
+- **Revenue Priority (1-5):** Size + speed of near-term ARR. 5 = $5M+ ARR potential inside 12 months with price-tested offering.  
+- **Strategic Fit (1-5):** How tightly the sector maps to RBI’s 5-layer architecture & CBG story. 5 = direct pull for coherence-governed intelligence.  
+- **Partner Readiness (1-5):** Proof stack already in place—docs, contacts, pilots, exec sponsors. 5 = pitch + assets + warm path to decision makers.
+
+### Market Priority & Readiness Matrix
+
+| Tier | Sector / Target Focus | Revenue Priority | Strategic Fit | Partner Readiness | Notes / Next Action |
+| --- | --- | --- | --- | --- | --- |
+| 1 | AI Service Platforms (OpenAI, Anthropic, Google Cloud AI) | **5** | **5** | **4** | APIs mapped, Slidev deck + proof assets ready. Action: secure pilot commitments + publish verification ROI sheet. |
+| 1 | Quantum Finance (QuantFi, finQbit, Bloomberg) | **5** | **5** | **3** | Need regulator brief + RBI compliance proofs before exec outreach. |
+| 1 | Cybersecurity Platforms (ReliaQuest, CrowdStrike) | **4** | **4** | **4** | ReliaQuest package shipped; schedule sandbox demo and SOC KPI review. |
+| 2 | Hybrid Quantum AI (SandboxAQ, Quantinuum) | **3** | **5** | **2** | Requires co-development agreement; align governance roadmap + shared GTM. |
+| 2 | Regulated Finance Infrastructure (MSCI, Refinitiv) | **3** | **4** | **3** | Customize RBI proofs for Basel/SOX compliance; integrate with risk dashboards. |
+| 3 | Enterprise AI Suites (Azure AI, IBM, Salesforce) | **2** | **3** | **2** | Wait for Tier 1 case studies; prep co-sell kits with AI Ops teams. |
+| 3 | Emerging Quantum Security (PQC stacks, quantum sensor startups) | **2** | **4** | **1** | Maintain research collaborations; nurture until standards mature. |
+
 ---
 
 ## Tier 1: Revenue Priority Sectors

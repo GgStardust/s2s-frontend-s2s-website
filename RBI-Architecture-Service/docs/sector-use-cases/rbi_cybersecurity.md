@@ -5,6 +5,13 @@ Resonance-Based Intelligence (RBI) introduces a coherence-governed middleware ar
 
 ---
 
+### Priority Snapshot
+- **Tier:** 1 (Revenue Priority)  
+- **Matrix Scores:** Revenue 4 / Strategic Fit 4 / Readiness 4  
+- **Focus Action:** Run GreyMatter sandbox demo with KPI instrumentation (false-positive delta, MTTU) to convert ReliaQuest + prime SOC prospects.
+
+---
+
 ## Architecture Anchor
 
 **Intelligence = Coherence.** RBI defines intelligence as the capacity to maintain coherence within a dynamic field. In cybersecurity, RBI operates as the intelligence layer that continuously maintains coherence between expected system behavior, operational requirements, and security boundaries.
@@ -54,6 +61,27 @@ It evaluates resonance between expected and emergent behavior, identifying threa
 - Filters out noise in large-scale observability datasets through Layer 1 input processing
 - Reduces false positives significantly by focusing on coherence degradation rather than rule violations
 - Validates security events through Layer 4 Proof-of-Meaning verification
+
+---
+
+## Quantum-Enhanced Applications
+
+### 1. Quantum-Resilient Threat Correlation
+- **What:** RBI co-processes GreyMatter/SIEM telemetry with quantum-resistant hashing and resonance scoring, ensuring correlation graphs remain trustworthy even under post-quantum attack surfaces.
+- **Benefit:** Security platforms can advertise quantum-ready correlation without rebuilding their stack; RBI provides proofs that each edge respects coherence thresholds.
+
+### 2. Lattice Noise Verification for PQC
+- **What:** Layer 2 resonance vectors evaluate noise signatures from lattice-based post-quantum cryptography (PQC) handshakes, flagging incoherent behavior that could indicate downgrade or key extraction attempts.
+- **Why it matters:** Enterprises migrating to PQC need continuous validation that implementations stay within theoretical bounds.
+- **Benefit:** 45% faster detection of protocol anomalies, plus mathematical evidence for compliance teams.
+
+### 3. Quantum Sensor Fusion
+- **What:** RBI fuses data from emerging quantum sensors (magnetometers, RF anomaly detectors) with classical telemetry, normalizing them through Layer 1 and measuring cross-domain coherence.
+- **Benefit:** Unlocks new detection channels without overwhelming SOC teams with noise—RBI only escalates when resonance drops below threshold across both classical and quantum feeds.
+
+### 4. Coherence-Based Governance for Quantum Keys
+- **What:** RBI + CBG automate policy decisions on when to rotate quantum-derived keys, when to fall back to classical crypto, and how to quarantine anomalies.
+- **Benefit:** Provides deterministic governance for hybrid key infrastructures, critical for defense and critical infrastructure buyers.
 
 ---
 

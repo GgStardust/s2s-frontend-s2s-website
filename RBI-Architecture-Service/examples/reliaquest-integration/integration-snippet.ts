@@ -33,7 +33,13 @@ class ReliaQuestRBIService {
       });
 
       // Determine threat level based on coherence degradation
-      const coherence = analysis.data.signature?.coherence || 0;
+      const coherence = analysis.data.signature?.coherence ?? 0;
+      const resonanceVector: ResonanceVector = analysis.data.signature?.resonanceVector ?? {
+        clarity: 0.5,
+        coherence: 0.5,
+        resonance: 0.5,
+        sovereignty: 0.5
+      };
       const isThreat = coherence < 0.70; // Coherence degradation indicates threat
 
       return {
@@ -42,6 +48,7 @@ class ReliaQuestRBIService {
         threatLevel: this.calculateThreatLevel(coherence),
         explanation: this.generateExplanation(coherence, analysis.data),
         decisionTrail: analysis.data.decisionTrail,
+        resonanceVector,
         proof: analysis.data.proof
       };
     } catch (error) {
@@ -52,6 +59,12 @@ class ReliaQuestRBIService {
         coherence: 0.5,
         threatLevel: 'low',
         explanation: 'RBI analysis unavailable',
+        resonanceVector: {
+          clarity: 0.5,
+          coherence: 0.5,
+          resonance: 0.5,
+          sovereignty: 0.5
+        },
         decisionTrail: null,
         proof: null
       };
@@ -75,9 +88,10 @@ class ReliaQuestRBIService {
       return {
         valid: validation.data.verified,
         coherence: validation.data.sovereignLogic?.coherence || 0,
-        confidence: validation.data.confidence || 0,
+        confidence: validation.data.confidence ?? 0,
         explanation: this.generateThreatExplanation(validation.data),
-        proof: validation.data.proof
+        proof: validation.data.proof,
+        sovereignty: validation.data.sovereignLogic?.sovereignty ?? 0
       };
     } catch (error) {
       console.error('RBI threat validation failed:', error);
@@ -86,6 +100,7 @@ class ReliaQuestRBIService {
         coherence: 0.5,
         confidence: 0.5,
         explanation: 'RBI validation unavailable',
+        sovereignty: 0.5,
         proof: null
       };
     }
@@ -106,7 +121,24 @@ class ReliaQuestRBIService {
   }
 
   private generateThreatExplanation(validation: any): string {
-    return `Threat classification validated with coherence score ${validation.sovereignLogic?.coherence.toFixed(2)}. ${validation.confidence > 0.8 ? 'High confidence' : 'Moderate confidence'} in classification.`;
+    const coherence = validation.sovereignLogic?.coherence ?? 0.5;
+    const sovereignty = validation.sovereignLogic?.sovereignty ?? 0.5;
+    return `Threat classification validated with coherence ${coherence.toFixed(2)} and sovereignty ${sovereignty.toFixed(2)}. ${validation.confidence > 0.8 ? 'High confidence' : 'Moderate confidence'} in classification.`;
+  }
+
+  /**
+   * Optional: push RBI verdicts into a Coherence-Based Governance (CBG) policy engine
+   */
+  async enforceGovernancePolicy(result: ThreatAnalysis, context: GovernanceContext) {
+    if (!context.cbgEndpoint) return;
+
+    await axios.post(context.cbgEndpoint, {
+      policyId: context.policyId,
+      resonanceVector: result.resonanceVector,
+      threatLevel: result.threatLevel,
+      decisionTrail: result.decisionTrail,
+      proof: result.proof
+    });
   }
 }
 
@@ -130,6 +162,7 @@ interface ThreatAnalysis {
   threatLevel: 'low' | 'medium' | 'high' | 'critical';
   explanation: string;
   decisionTrail: any;
+  resonanceVector: ResonanceVector;
   proof: string | null;
 }
 
@@ -149,7 +182,20 @@ interface ThreatValidation {
   coherence: number;
   confidence: number;
   explanation: string;
+  sovereignty: number;
   proof: string | null;
+}
+
+interface ResonanceVector {
+  clarity: number;
+  coherence: number;
+  resonance: number;
+  sovereignty: number;
+}
+
+interface GovernanceContext {
+  cbgEndpoint?: string;
+  policyId?: string;
 }
 
 export const reliaQuestRBIService = new ReliaQuestRBIService();

@@ -5,6 +5,13 @@ Resonance-Based Intelligence (RBI) introduces a coherence-governed intelligence 
 
 ---
 
+### Priority Snapshot
+- **Tier:** 1 (Revenue Priority)  
+- **Matrix Scores:** Revenue 5 / Strategic Fit 5 / Readiness 4  
+- **Focus Action:** Convert existing Slidev deck + proofs into pilot offers for OpenAI/Anthropic; close first verification ROI case study inside 90 days.
+
+---
+
 ## Architecture Anchor
 
 **Intelligence = Coherence.** RBI defines intelligence as the capacity to maintain coherence within a dynamic field. In AI service platforms, RBI operates as the intelligence layer that continuously maintains coherence between service optimization goals (scale, cost, quality) and critical boundaries (rate limits, safety guardrails, quality thresholds, cost constraints).
@@ -65,6 +72,29 @@ By evaluating coherence rather than just probability, RBI improves service quali
 - Prevents unsafe content delivery with pre-validation gatekeeping
 - Generates validation proofs demonstrating safety compliance
 - Maintains continuous coherence between safety requirements and actual outputs
+
+---
+
+## Quantum-Enhanced Applications
+
+### 1. Quantum-Assisted Latency Bypass
+- **What:** RBI orchestrates when to route complex verifications through quantum accelerators (e.g., SandboxAQ, Quantinuum) vs. deterministic CPU paths, keeping sub-100 ms SLA intact.
+- **Why it matters:** Some enterprise customers require cross-correlation of massive embeddings; RBI can offload the combinatorial portion to quantum services while maintaining coherence guarantees.
+- **Benefit:** 10-20x faster high-dimensional checks without exposing customers to quantum noise—RBI re-validates outputs before release.
+
+### 2. Hybrid Prompt Integrity
+- **What:** RBI compares resonance vectors from quantum-enhanced prompt optimizers against baseline coherence maps to ensure no jailbreak pathways emerge.
+- **Why it matters:** Quantum-inspired search can discover novel prompts that might bypass safety guardrails; RBI keeps sovereignty scores above threshold and blocks incoherent prompts automatically.
+- **Benefit:** Safety teams gain provable assurance that quantum prompt boosts do not degrade policy compliance.
+
+### 3. Quantum Model Hosting Governance
+- **What:** Layer 3 temporal stability monitors decoherence and drift metrics from hosted quantum/classical models (e.g., hybrid transformers with quantum layers) and triggers CBG policies when hardware noise spikes.
+- **Why it matters:** AI providers need a governance bridge that explains to enterprise buyers how quantum components behave over time.
+- **Benefit:** Enables “quantum-ready” SKUs with deterministic SLAs, backed by RBI proof bundles for every inference window.
+
+### 4. Proof-of-Meaning for Encrypted Quantum Streams
+- **What:** RBI validates results from quantum-encrypted or blind-compute workloads before decrypting for customers, ensuring integrity even when providers cannot see the raw data.
+- **Benefit:** Positions RBI as the trust layer for confidential AI+quantum services, unlocking regulated workloads (healthcare, finance, defense).
 
 ---
 
