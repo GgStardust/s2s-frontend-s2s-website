@@ -48,3 +48,6 @@ rbi-pitch/
 PITCH_DECK_README.md
 RBI_PITCH_DECK_SLIDEV.md
 RBI_PITCH_DECK_SLIDEV.pdf
+
+# Internal development files
+.internal/

@@ -3,11 +3,10 @@
  * 
  * Architecture Layer: 3 (Temporal Continuity)
  * 
- * Note: Temporal continuity operations are currently integrated
- * into the computation layer. This layer can be expanded for
- * explicit temporal field evolution operations.
+ * Maintains adaptive stability over time through time-series analysis,
+ * drift detection, and baseline management.
  */
 
-// Placeholder for future temporal continuity operations
-export {};
+export { analyzeTimeSeries } from './timeseries-analyzer.js';
+export type { TimePoint, TimeSeriesAnalysis } from './timeseries-analyzer.js';
 

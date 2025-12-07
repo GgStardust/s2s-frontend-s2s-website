@@ -20,12 +20,11 @@ export class ContentWatcher extends EventEmitter {
   private watchedDirectories: Set<string> = new Set();
   private isWatching: boolean = false;
 
-  // Content directories to watch
+  // Content directories to watch (matches import script - only these 3 sync to Supabase)
   private readonly CONTENT_DIRECTORIES = [
     '09_PROCESSED/02d_Orb_Essays',
     '09_PROCESSED/02f_S2S_codex_essays',
-    '09_PROCESSED/02g_generated_book_content',
-    '09_PROCESSED/02c_Supporting material'
+    '09_PROCESSED/02g_generated_book_content'
   ];
 
   /**

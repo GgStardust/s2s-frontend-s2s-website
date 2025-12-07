@@ -8,8 +8,8 @@
 import type { ContentFile } from '../types.js';
 import { scoreRecognitionQuality } from './recognition-first.js';
 import { parseIntoSections } from './section-parser.js';
-import { EnhancedResonanceEngine } from '@/lib/mathematics/enhanced-resonance-engine';
-import { ResonanceVectorMath } from '@/lib/mathematics/resonance-vectors.js';
+import { EnhancedResonanceEngine } from '../../mathematics/enhanced-resonance-engine.js';
+import { ResonanceVectorMath } from '../../mathematics/resonance-vectors.js';
 
 export interface SynthesizedSection {
   content: string;

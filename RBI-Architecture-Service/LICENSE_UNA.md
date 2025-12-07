@@ -39,6 +39,16 @@ Association members agree to:
 - Not disclose RBI implementation details to non-members
 - Use RBI only for Association-approved projects
 
+## Prohibition on AI Platform Use
+
+**CRITICAL RESTRICTION:** Association members are strictly prohibited from:
+- Pasting, uploading, or sharing RBI code with AI platforms (ChatGPT, Claude, Copilot, GitHub Copilot, or any other AI-assisted development tools)
+- Using RBI code to train AI models
+- Sharing RBI code in AI-assisted code review or development tools
+- Allowing AI platforms to analyze, process, or store RBI code
+
+**Violation of this prohibition constitutes a material breach of this license and will result in immediate termination of access and potential legal action.**
+
 ## Termination
 
 This license may be terminated if:

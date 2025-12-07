@@ -7,7 +7,7 @@
  * Part of Layer 2 (Computation) of the compiler architecture.
  */
 
-import { EnhancedResonanceEngine } from '@/lib/mathematics/enhanced-resonance-engine';
+import { EnhancedResonanceEngine } from '../../mathematics/enhanced-resonance-engine.js';
 import { ResonanceVectorMath, type ResonanceVector } from '@/lib/mathematics/resonance-vectors.js';
 import type { ContentFile } from '../types.js';
 

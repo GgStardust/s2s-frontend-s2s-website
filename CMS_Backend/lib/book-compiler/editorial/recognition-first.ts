@@ -7,7 +7,7 @@
  * Part of Layer 7 (Editorial) of the compiler architecture.
  */
 
-import { EnhancedResonanceEngine } from '@/lib/mathematics/enhanced-resonance-engine';
+import { EnhancedResonanceEngine } from '../../mathematics/enhanced-resonance-engine.js';
 import type { ContentFile } from '../types.js';
 
 export interface RecognitionScore {

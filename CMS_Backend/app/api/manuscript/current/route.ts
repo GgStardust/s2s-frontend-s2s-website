@@ -10,8 +10,9 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 // Resolve manuscript paths - only check 02g_generated_book_content folder
 function getManuscriptPaths(): string[] {
+  // In Next.js API routes, process.cwd() is the project root (CMS_Backend directory)
   const baseDir = process.cwd();
-  const generatedContentPath = path.join(baseDir, '09_PROCESSED/02g_generated_book_content');
+  const generatedContentPath = path.join(baseDir, '09_PROCESSED', '02g_generated_book_content');
   
   return [
     path.join(generatedContentPath, 'STARDUST_TO_SOVEREIGNTY_COMPLETE_MANUSCRIPT.md'),
@@ -28,16 +29,21 @@ function findManuscriptFile(): string | null {
       if (fs.existsSync(filePath)) {
         // Verify it's actually a file and readable
         const stats = fs.statSync(filePath);
-        if (stats.isFile()) {
+        if (stats.isFile() && stats.size > 0) {
+          console.log(`[manuscript/current] Found manuscript file: ${filePath} (${stats.size} bytes)`);
           return filePath;
+        } else {
+          console.warn(`[manuscript/current] File exists but is empty or not a file: ${filePath}`);
         }
       }
     } catch (error) {
+      console.warn(`[manuscript/current] Error checking path ${filePath}:`, error);
       // Continue to next path
       continue;
     }
   }
   
+  console.warn(`[manuscript/current] No manuscript file found in any of these paths:`, paths);
   return null;
 }
 
@@ -274,18 +280,22 @@ export const dynamic = 'force-dynamic';
 export async function OPTIONS(request: NextRequest) {
   try {
     const origin = request.headers.get('origin');
-    return NextResponse.json({}, {
+    const corsHeaders = getCorsHeaders(origin);
+    // 204 No Content should not have a body
+    return new NextResponse(null, {
       status: 204,
-      headers: getCorsHeaders(origin),
+      headers: corsHeaders,
     });
   } catch (error) {
-    console.error('OPTIONS handler error:', error);
-    return NextResponse.json({}, {
+    console.error('[manuscript/current] OPTIONS handler error:', error);
+    // Fallback CORS headers
+    return new NextResponse(null, {
       status: 204,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': origin || '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Credentials': 'true',
       },
     });
   }
@@ -294,26 +304,38 @@ export async function OPTIONS(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const origin = request.headers.get('origin');
-    let content: string;
+    let content: string | undefined;
     let metadata: any;
     let source: 'file' | 'supabase' = 'file';
 
     // Try file system first (for local development with V7)
     const manuscriptPath = findManuscriptFile();
     if (manuscriptPath) {
-      console.log('[manuscript/current] Found manuscript at:', manuscriptPath);
-      const fileContent = fs.readFileSync(manuscriptPath, 'utf-8');
-      const parsed = matter(fileContent);
-      content = parsed.content;
-      metadata = parsed.data;
-      source = 'file';
-    } else {
+      console.log('[manuscript/current] Reading manuscript from:', manuscriptPath);
+      try {
+        const fileContent = fs.readFileSync(manuscriptPath, 'utf-8');
+        if (!fileContent || fileContent.trim().length === 0) {
+          throw new Error('Manuscript file is empty');
+        }
+        const parsed = matter(fileContent);
+        content = parsed.content;
+        metadata = parsed.data;
+        source = 'file';
+        console.log(`[manuscript/current] Successfully loaded manuscript (${content.length} chars, ${Object.keys(metadata).length} metadata fields)`);
+      } catch (fileError) {
+        console.error('[manuscript/current] Error reading manuscript file:', fileError);
+        // Fall through to Supabase
+        content = undefined;
+      }
+    }
+    
+    if (!content) {
       // Fall back to Supabase (for production/Vercel)
-      console.log('[manuscript/current] File not found, trying Supabase...');
+      console.log('[manuscript/current] File not found or failed to read, trying Supabase...');
       const supabaseResult = await loadManuscriptFromSupabase();
-      if (supabaseResult) {
+      if (supabaseResult && supabaseResult.content) {
         content = supabaseResult.content;
-        metadata = supabaseResult.metadata;
+        metadata = supabaseResult.metadata || {};
         source = 'supabase';
         console.log('[manuscript/current] Loaded from Supabase');
       } else {
@@ -321,8 +343,9 @@ export async function GET(request: NextRequest) {
         console.error('[manuscript/current] Manuscript not found in file system or Supabase');
         return NextResponse.json(
           { 
+            success: false,
             error: 'Current manuscript not found', 
-            searched_paths: searchedPaths.slice(0, 10),
+            searched_paths: searchedPaths,
             message: 'Manuscript not found in file system or Supabase. Place V7 in 02g_generated_book_content/ or sync to Supabase.'
           },
           { 

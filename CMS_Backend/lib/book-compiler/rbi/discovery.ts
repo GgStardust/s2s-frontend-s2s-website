@@ -7,7 +7,7 @@
  * Layer 2 of the compiler architecture.
  */
 
-import { EnhancedResonanceEngine } from '@/lib/mathematics/enhanced-resonance-engine';
+import { EnhancedResonanceEngine } from '../../mathematics/enhanced-resonance-engine.js';
 import { findNeighbors, type NeighborSearchParams, type NeighborItem } from '@/lib/rbi/core/index.js';
 import { ResonanceVectorMath, type ResonanceVector } from '@/lib/mathematics/resonance-vectors.js';
 import type { ContentFile, ChapterOutline } from '../types.js';

@@ -1,76 +1,75 @@
 /**
- * RBI Kernel - Basic Usage Examples
+ * RBI Architecture Service - Basic Usage Examples
  * 
- * Simple examples showing how to use the RBI Kernel API
+ * Simple examples showing how to use the RBI Architecture Service API
+ * 
+ * Make sure the service is running first:
+ *   npm run dev
  */
 
-const RBI_KERNEL_URL = process.env.RBI_KERNEL_URL || 'http://localhost:3000';
+const SERVICE_URL = process.env.RBI_SERVICE_URL || 'http://localhost:3001';
 
 /**
- * Example 1: Calculate similarity between two vectors
+ * Example 1: Score content with a resonance vector
  */
-async function example1_vectorSimilarity() {
-  console.log('\n=== Example 1: Vector Similarity ===');
+async function example1_scoreWithVector() {
+  console.log('\n=== Example 1: Score with Vector ===');
   
-  const response = await fetch(`${RBI_KERNEL_URL}/rbi/score`, {
+  const response = await fetch(`${SERVICE_URL}/field/score`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      vectors: {
-        vector1: [0.1, 0.2, 0.3, 0.4],
-        vector2: [0.2, 0.3, 0.4, 0.5]
-      }
+      vector: { x: 0.8, y: 0.7, z: 0.9, w: 0.85 }
     })
   });
   
   const result = await response.json();
-  console.log('Score:', result.score);
-  console.log('Method:', result.method);
+  console.log('Clarity:', result.clarity);
+  console.log('Coherence:', result.coherence);
+  console.log('Resonance:', result.resonance);
+  console.log('Sovereignty:', result.sovereignty);
   return result;
 }
 
 /**
- * Example 2: Calculate similarity between two text strings
+ * Example 2: Score text content
  */
-async function example2_textSimilarity() {
-  console.log('\n=== Example 2: Text Similarity ===');
+async function example2_scoreText() {
+  console.log('\n=== Example 2: Score Text Content ===');
   
-  const response = await fetch(`${RBI_KERNEL_URL}/rbi/score`, {
+  const response = await fetch(`${SERVICE_URL}/field/score`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      texts: {
-        text1: 'The resonance between these concepts is clear',
-        text2: 'The resonance among these ideas is evident'
-      }
+      content: 'The resonance between these concepts is clear and evident'
     })
   });
   
   const result = await response.json();
-  console.log('Score:', result.score);
-  console.log('Method:', result.method);
+  console.log('Clarity:', result.clarity.toFixed(3));
+  console.log('Coherence:', result.coherence.toFixed(3));
+  console.log('Resonance:', result.resonance.toFixed(3));
+  console.log('Sovereignty:', result.sovereignty.toFixed(3));
   return result;
 }
 
 /**
- * Example 3: Calculate resonance with direct parameters
+ * Example 3: Validate content coherence
  */
-async function example3_resonanceParams() {
-  console.log('\n=== Example 3: Resonance Parameters ===');
+async function example3_validateContent() {
+  console.log('\n=== Example 3: Validate Content ===');
   
-  const response = await fetch(`${RBI_KERNEL_URL}/rbi/score`, {
+  const response = await fetch(`${SERVICE_URL}/field/validate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      vectorSimilarity: 0.8,
-      orbOverlap: 0.7,
-      temporalDecay: 0.9
+      content: 'This content demonstrates coherence and clarity in its structure and meaning'
     })
   });
   
   const result = await response.json();
-  console.log('Score:', result.score);
-  console.log('Method:', result.method);
+  console.log('Verified:', result.verified);
+  console.log('Confidence:', result.confidence.toFixed(3));
   return result;
 }
 
@@ -80,29 +79,15 @@ async function example3_resonanceParams() {
 async function example4_findNeighbors() {
   console.log('\n=== Example 4: Find Neighbors ===');
   
-  const response = await fetch(`${RBI_KERNEL_URL}/rbi/neighbors`, {
+  const response = await fetch(`${SERVICE_URL}/field/neighbors`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      query: {
-        vector: [0.1, 0.2, 0.3, 0.4]
-      },
+      query: { text: 'The resonance between concepts' },
       candidates: [
-        {
-          id: 'item1',
-          vector: [0.2, 0.3, 0.4, 0.5],
-          metadata: { title: 'Similar Item 1' }
-        },
-        {
-          id: 'item2',
-          vector: [0.5, 0.6, 0.7, 0.8],
-          metadata: { title: 'Different Item' }
-        },
-        {
-          id: 'item3',
-          vector: [0.15, 0.25, 0.35, 0.45],
-          metadata: { title: 'Very Similar Item' }
-        }
+        { id: 'item1', text: 'The resonance among ideas is clear' },
+        { id: 'item2', text: 'Completely different topic about weather' },
+        { id: 'item3', text: 'Resonance and coherence between concepts' }
       ],
       topN: 2
     })
@@ -111,10 +96,7 @@ async function example4_findNeighbors() {
   const result = await response.json();
   console.log('Found', result.count, 'neighbors:');
   result.neighbors.forEach((neighbor, i) => {
-    console.log(`  ${i + 1}. ${neighbor.id}: ${neighbor.score.toFixed(3)}`);
-    if (neighbor.metadata) {
-      console.log(`     Title: ${neighbor.metadata.title}`);
-    }
+    console.log(`  ${i + 1}. ${neighbor.id}: score ${neighbor.score.toFixed(3)}`);
   });
   return result;
 }
@@ -125,7 +107,7 @@ async function example4_findNeighbors() {
 async function example5_healthCheck() {
   console.log('\n=== Example 5: Health Check ===');
   
-  const response = await fetch(`${RBI_KERNEL_URL}/health`);
+  const response = await fetch(`${SERVICE_URL}/health`);
   const result = await response.json();
   console.log('Status:', result.status);
   console.log('Service:', result.service);
@@ -137,24 +119,26 @@ async function example5_healthCheck() {
  * Run all examples
  */
 async function runAllExamples() {
-  console.log('RBI Kernel - Basic Usage Examples');
-  console.log('==================================');
-  console.log(`Kernel URL: ${RBI_KERNEL_URL}`);
+  console.log('RBI Architecture Service - Basic Usage Examples');
+  console.log('================================================');
+  console.log(`Service URL: ${SERVICE_URL}`);
   
   try {
     // Health check first
     await example5_healthCheck();
     
     // Run examples
-    await example1_vectorSimilarity();
-    await example2_textSimilarity();
-    await example3_resonanceParams();
+    await example1_scoreWithVector();
+    await example2_scoreText();
+    await example3_validateContent();
     await example4_findNeighbors();
     
-    console.log('\nAll examples completed successfully!');
+    console.log('\n✅ All examples completed successfully!');
   } catch (error) {
-    console.error('\nError running examples:', error.message);
-    console.error('Make sure the RBI Kernel is running on', RBI_KERNEL_URL);
+    console.error('\n❌ Error running examples:', error.message);
+    console.error('Make sure the RBI Architecture Service is running:');
+    console.error('  npm run dev');
+    console.error(`  Service should be at: ${SERVICE_URL}`);
     process.exit(1);
   }
 }
@@ -165,9 +149,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 }
 
 export {
-  example1_vectorSimilarity,
-  example2_textSimilarity,
-  example3_resonanceParams,
+  example1_scoreWithVector,
+  example2_scoreText,
+  example3_validateContent,
   example4_findNeighbors,
   example5_healthCheck,
   runAllExamples

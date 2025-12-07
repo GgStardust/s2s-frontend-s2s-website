@@ -56,6 +56,16 @@ The Licensee agrees to:
 - Not disclose proprietary algorithms or methods to third parties
 - Use RBI only for authorized commercial applications
 
+## Prohibition on AI Platform Use
+
+**CRITICAL RESTRICTION:** The Licensee is strictly prohibited from:
+- Pasting, uploading, or sharing RBI code with AI platforms (ChatGPT, Claude, Copilot, GitHub Copilot, or any other AI-assisted development tools)
+- Using RBI code to train AI models
+- Sharing RBI code in AI-assisted code review or development tools
+- Allowing AI platforms to analyze, process, or store RBI code
+
+**Violation of this prohibition constitutes a material breach of this license and will result in immediate termination of access, revocation of license, and potential legal action.**
+
 ## Warranty and Liability
 
 - RBI is provided "as is" without warranty

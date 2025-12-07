@@ -1,13 +1,11 @@
 /**
  * Field Propagation Layer - Exports
- * 
- * Field propagation and diffusion operations.
- * 
- * Note: Propagation operations are currently integrated
- * into the computation layer. This layer can be expanded for
- * explicit field diffusion operations.
+ *
+ * Houses graph construction utilities and propagation algorithms.
  */
 
-// Placeholder for future propagation operations
-export {};
+export * from './relationship-graph.js';
+export * from './diffusion-algorithm.js';
+export * from './wave-algorithm.js';
+export * from './propagation-engine.js';
 

@@ -5,6 +5,11 @@
  * - field_function.console_context
  * - field_function.console_relation
  * - integration_points.console_views
+ * 
+ * Only returns content from the 3 synced folders:
+ * - 02d_Orb_Essays
+ * - 02f_S2S_codex_essays
+ * - 02g_generated_book_content
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -12,6 +17,17 @@ import { createClient } from '@/lib/supabase/server';
 import { getCorsHeaders } from '@/lib/cors';
 
 export const dynamic = 'force-dynamic';
+
+// Only these folders should appear in Console content
+const ALLOWED_FOLDERS = [
+  '02d_Orb_Essays',
+  '02f_S2S_codex_essays',
+  '02g_generated_book_content'
+];
+
+function isFileFromAllowedFolder(filePath: string): boolean {
+  return ALLOWED_FOLDERS.some(folder => filePath.startsWith(`${folder}/`));
+}
 
 export async function OPTIONS(request: NextRequest) {
   const origin = request.headers.get('origin');
@@ -34,59 +50,97 @@ export async function GET(request: NextRequest) {
 
     const supabase = await createClient();
 
-    // Build query - start with all active content files
-    let query = supabase
+    // Simplified approach: Fetch all active content files and filter in memory
+    // This is more reliable than complex JSONB queries and handles edge cases better
+    const { data: contentFiles, error } = await supabase
       .from('content_files')
       .select('*')
       .eq('status', 'active')
       .order('created_at', { ascending: false });
 
-    // Filter by console_context if provided
-    if (consoleContext) {
-      // Query YAML frontmatter for console_context
-      query = query.contains('yaml_frontmatter', {
-        'field_function': {
-          'console_context': consoleContext
-        }
-      });
-    }
-
-    // Filter by console_relation if provided
-    if (consoleRelation) {
-      // This requires a more complex query - we'll filter in memory for now
-      // TODO: Optimize with proper JSONB query
-    }
-
-    // Filter by console_view if provided
-    if (consoleView) {
-      // Query integration_points.console_views array
-      query = query.contains('yaml_frontmatter', {
-        'integration_points': {
-          'console_views': [consoleView]
-        }
-      });
-    }
-
-    // Filter by orb_associations if orb_id provided
-    // Note: We'll filter in memory after fetching to handle null values safely
-    const { data: contentFiles, error } = await query;
-
     if (error) {
       console.error('Error fetching console content:', error);
       return NextResponse.json(
-        { error: 'Failed to fetch console content', message: error.message },
+        { 
+          success: false,
+          error: 'Failed to fetch console content', 
+          message: error.message,
+          details: error 
+        },
         { status: 500, headers: corsHeaders }
       );
     }
 
-    // Filter by console_relation and orb_id in memory (since JSONB queries are complex)
-    let filteredFiles = contentFiles || [];
+    // Filter all criteria in memory for reliability
+    // Handle case where contentFiles is null or undefined
+    if (!contentFiles) {
+      console.warn('No content files returned from Supabase (may be empty table)');
+      return NextResponse.json({
+        success: true,
+        data: [],
+        metadata: {
+          count: 0,
+          filters: {
+            console_context: consoleContext || null,
+            console_relation: consoleRelation || null,
+            console_view: consoleView || null,
+            orb_id: orbId || null
+          }
+        }
+      }, {
+        headers: corsHeaders,
+      });
+    }
     
-    if (consoleRelation && contentFiles) {
-      filteredFiles = contentFiles.filter((file: any) => {
-        const yaml = file.yaml_frontmatter || {};
-        const fieldFunction = yaml.field_function || {};
-        return fieldFunction.console_relation === consoleRelation;
+    let filteredFiles = contentFiles;
+    
+    // FIRST: Filter to only include files from the 3 synced folders
+    // This ensures Console only shows content from allowed sources
+    filteredFiles = filteredFiles.filter((file: any) => {
+      const filePath = file?.file_path || '';
+      return isFileFromAllowedFolder(filePath);
+    });
+    
+    // Filter by console_context if provided
+    if (consoleContext && filteredFiles.length > 0) {
+      filteredFiles = filteredFiles.filter((file: any) => {
+        try {
+          const yaml = file.yaml_frontmatter || {};
+          const fieldFunction = yaml.field_function || {};
+          return fieldFunction.console_context === consoleContext;
+        } catch (err) {
+          console.warn(`Error filtering console_context for file ${file?.id}:`, err);
+          return false;
+        }
+      });
+    }
+    
+    // Filter by console_relation if provided
+    if (consoleRelation && filteredFiles.length > 0) {
+      filteredFiles = filteredFiles.filter((file: any) => {
+        try {
+          const yaml = file.yaml_frontmatter || {};
+          const fieldFunction = yaml.field_function || {};
+          return fieldFunction.console_relation === consoleRelation;
+        } catch (err) {
+          console.warn(`Error filtering console_relation for file ${file?.id}:`, err);
+          return false;
+        }
+      });
+    }
+    
+    // Filter by console_view if provided
+    if (consoleView && filteredFiles.length > 0) {
+      filteredFiles = filteredFiles.filter((file: any) => {
+        try {
+          const yaml = file.yaml_frontmatter || {};
+          const integrationPoints = yaml.integration_points || {};
+          const consoleViews = integrationPoints.console_views || [];
+          return Array.isArray(consoleViews) && consoleViews.includes(consoleView);
+        } catch (err) {
+          console.warn(`Error filtering console_view for file ${file?.id}:`, err);
+          return false;
+        }
       });
     }
     

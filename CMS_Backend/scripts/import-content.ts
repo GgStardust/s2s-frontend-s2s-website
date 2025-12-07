@@ -3,11 +3,13 @@
 /**
  * S2S Content Import Script
  *
- * Scans 09_PROCESSED folder, parses markdown files with YAML frontmatter,
- * and imports them into Supabase database.
+ * Scans ONLY these folders in 09_PROCESSED:
+ * - 02d_Orb_Essays
+ * - 02f_S2S_codex_essays
+ * - 02g_generated_book_content
  *
- * Respects exclusion rules from lib/config.ts
- * Extracts embedded scrollstreams
+ * Parses markdown files with YAML frontmatter and imports them into Supabase.
+ * Extracts embedded scrollstreams.
  * Follows strict writing rules from PROCESSING_WORKFLOW.md
  */
 
@@ -17,6 +19,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import { createClient } from '@supabase/supabase-js';
 import { shouldExcludeFile } from '../lib/config';
+
+// Only sync these three directories (matches API sync behavior)
+const TARGET_DIRECTORIES = [
+  '02d_Orb_Essays',
+  '02f_S2S_codex_essays',
+  '02g_generated_book_content'
+];
 
 // Load environment variables from .env.local
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
@@ -167,6 +176,7 @@ async function processFile(filePath: string, relativePath: string) {
 
 /**
  * Recursively scan directory for markdown files
+ * Only processes TARGET_DIRECTORIES
  */
 async function scanDirectory(dirPath: string, baseDir: string) {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
@@ -176,11 +186,27 @@ async function scanDirectory(dirPath: string, baseDir: string) {
     const relativePath = path.relative(baseDir, fullPath);
 
     if (entry.isDirectory()) {
-      // Recursively scan subdirectories
-      await scanDirectory(fullPath, baseDir);
+      // Check if this directory name matches a target directory
+      const dirName = entry.name;
+      const isTargetDir = TARGET_DIRECTORIES.includes(dirName);
+      
+      // Also check if we're already inside a target directory (for subdirectories)
+      const isInTargetPath = TARGET_DIRECTORIES.some(target => 
+        relativePath.startsWith(target + path.sep) || relativePath === target
+      );
+      
+      if (isTargetDir || isInTargetPath) {
+        // Recursively scan subdirectories
+        await scanDirectory(fullPath, baseDir);
+      }
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      // Process markdown file
-      await processFile(fullPath, relativePath);
+      // Only process files within target directories
+      const isInTargetPath = TARGET_DIRECTORIES.some(target => 
+        relativePath.startsWith(target + path.sep) || relativePath.startsWith(target)
+      );
+      if (isInTargetPath) {
+        await processFile(fullPath, relativePath);
+      }
     }
   }
 }
@@ -208,6 +234,9 @@ async function main() {
   }
 
   console.log(`📂 Scanning: 09_PROCESSED/\n`);
+  console.log(`📁 Target directories:`);
+  TARGET_DIRECTORIES.forEach(dir => console.log(`   - ${dir}`));
+  console.log('');
 
   // Scan and import
   await scanDirectory(processedDir, processedDir);

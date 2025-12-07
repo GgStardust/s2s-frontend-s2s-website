@@ -13,31 +13,63 @@ export const dynamic = 'force-dynamic';
 export async function OPTIONS(request: NextRequest) {
   try {
     const origin = request.headers.get('origin');
-    return NextResponse.json({}, {
+    const corsHeaders = getCorsHeaders(origin);
+    // 204 No Content should not have a body
+    return new NextResponse(null, {
       status: 204,
-      headers: getCorsHeaders(origin),
+      headers: corsHeaders,
     });
   } catch (error) {
-    console.error('OPTIONS handler error:', error);
+    console.error('[ai/conversation] OPTIONS handler error:', error);
     // Fallback CORS headers
-    return NextResponse.json({}, {
+    return new NextResponse(null, {
       status: 204,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': origin || '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Credentials': 'true',
       },
     });
   }
 }
 
 export async function POST(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+  
   try {
-    // Handle CORS preflight
-    const origin = request.headers.get('origin');
-    const corsHeaders = getCorsHeaders(origin);
+    // Validate environment variables
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('[ai/conversation] OPENAI_API_KEY not set');
+      return NextResponse.json(
+        { 
+          error: 'OpenAI API key not configured',
+          message: 'OPENAI_API_KEY environment variable is required'
+        },
+        { status: 500, headers: corsHeaders }
+      );
+    }
+
     // Dynamic imports to prevent build-time execution
-    const { chatCompletions } = await import('orbital-brain');
+    let chatCompletions: any;
+    try {
+      const orbitalBrain = await import('orbital-brain');
+      chatCompletions = orbitalBrain.chatCompletions;
+      if (!chatCompletions) {
+        throw new Error('chatCompletions not exported from orbital-brain');
+      }
+    } catch (importError: any) {
+      console.error('[ai/conversation] Failed to import orbital-brain:', importError);
+      return NextResponse.json(
+        { 
+          error: 'Failed to load orbital-brain package',
+          message: importError?.message || 'orbital-brain package not available'
+        },
+        { status: 500, headers: corsHeaders }
+      );
+    }
+
     const { runResonanceValidation } = await import('@/lib/resonance-api');
     const { writingStyleTrainer } = await import('@/lib/ai/style-training');
 
@@ -47,12 +79,19 @@ export async function POST(request: NextRequest) {
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
         { error: 'Messages array is required' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
     // Get the user's inquiry (last message)
     const inquiry = messages[messages.length - 1]?.content || '';
+    
+    if (!inquiry || inquiry.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Inquiry message content is required' },
+        { status: 400, headers: corsHeaders }
+      );
+    }
     
     // METADATA-FIRST: Extract metadata from request or create minimal metadata
     const contentMetadata: ContentMetadata = metadata || {
@@ -69,12 +108,27 @@ export async function POST(request: NextRequest) {
     };
 
     // STEP 1: Call RBI Kernel with metadata (metadata-first)
-    const resonanceEngine = EnhancedResonanceEngine.getInstance();
-    const rbiAnalysis = await resonanceEngine.analyzeContentWithMathematics(
-      inquiry,
-      title || undefined,
-      contentMetadata
-    );
+    let rbiAnalysis: any;
+    try {
+      const resonanceEngine = EnhancedResonanceEngine.getInstance();
+      rbiAnalysis = await resonanceEngine.analyzeContentWithMathematics(
+        inquiry,
+        title || undefined,
+        contentMetadata
+      );
+      if (!rbiAnalysis) {
+        throw new Error('RBI analysis returned null or undefined');
+      }
+    } catch (rbiError: any) {
+      console.error('[ai/conversation] RBI analysis error:', rbiError);
+      return NextResponse.json(
+        { 
+          error: 'RBI analysis failed',
+          message: rbiError?.message || 'Failed to analyze content with RBI kernel'
+        },
+        { status: 500, headers: corsHeaders }
+      );
+    }
 
     // Format RBI output for Orbital Brain
     const rbiOutput: RBIOutput = {
@@ -98,30 +152,59 @@ export async function POST(request: NextRequest) {
     };
 
     // STEP 2: Generate Orbital Brain response
-    const orbitalResponse = await generateOrbitalResponse({
-      inquiry,
-      content: currentContent,
-      metadata: contentMetadata,
-      rbi_output: rbiOutput,
-      session_id
-    });
+    let orbitalResponse: any;
+    try {
+      orbitalResponse = await generateOrbitalResponse({
+        inquiry,
+        content: currentContent,
+        metadata: contentMetadata,
+        rbi_output: rbiOutput,
+        session_id
+      });
+      if (!orbitalResponse) {
+        throw new Error('Orbital Brain response returned null or undefined');
+      }
+    } catch (orbitalError: any) {
+      console.error('[ai/conversation] Orbital Brain error:', orbitalError);
+      return NextResponse.json(
+        { 
+          error: 'Orbital Brain generation failed',
+          message: orbitalError?.message || 'Failed to generate Orbital Brain response'
+        },
+        { status: 500, headers: corsHeaders }
+      );
+    }
 
     // STEP 3: Use Orbital Brain interpretation to enhance OpenAI prompt
     let baseSystemPrompt = await buildOrbitalSystemPrompt();
     
-    // Add Orbital Brain context to system prompt
-    baseSystemPrompt += `\n\n## FIELD STATE: ${orbitalResponse.orbital_interpretation.field_state.toUpperCase()}\n`;
-    baseSystemPrompt += `Narrative Coherence: ${(orbitalResponse.orbital_interpretation.narrative_coherence * 100).toFixed(0)}%\n`;
+    // Add Orbital Brain context to system prompt (with safety checks)
+    const orbitalInterpretation = orbitalResponse.orbital_interpretation || {};
+    if (orbitalInterpretation.field_state) {
+      baseSystemPrompt += `\n\n## FIELD STATE: ${String(orbitalInterpretation.field_state).toUpperCase()}\n`;
+    }
+    if (orbitalInterpretation.narrative_coherence !== undefined) {
+      baseSystemPrompt += `Narrative Coherence: ${(orbitalInterpretation.narrative_coherence * 100).toFixed(0)}%\n`;
+    }
     
-    if (orbitalResponse.orbital_interpretation.primary_orb) {
-      const personality = await referenceLoaders.getOrbPersonality(orbitalResponse.orbital_interpretation.primary_orb);
-      if (personality) {
-        baseSystemPrompt += `\n## PRIMARY ORB CONTEXT: Orb ${personality.number} - ${personality.name}\n`;
-        baseSystemPrompt += `When responding, embody the personality of ${personality.name}:\n`;
-        baseSystemPrompt += `- Core Traits: ${personality.coreTraits.join(', ')}\n`;
-        baseSystemPrompt += `- Communication Style: ${personality.communicationStyle.join(', ')}\n`;
-        baseSystemPrompt += `- Archetype: ${personality.culturalArchetype}\n`;
-        baseSystemPrompt += `- Unique Gift: ${personality.uniqueGift}\n`;
+    // Get primary orb (handle both object and number formats)
+    const primaryOrb = orbitalInterpretation.primary_orb;
+    const primaryOrbId = typeof primaryOrb === 'number' ? primaryOrb : primaryOrb?.id;
+    
+    if (primaryOrbId) {
+      try {
+        const personality = await referenceLoaders.getOrbPersonality(primaryOrbId);
+        if (personality) {
+          baseSystemPrompt += `\n## PRIMARY ORB CONTEXT: Orb ${personality.number} - ${personality.name}\n`;
+          baseSystemPrompt += `When responding, embody the personality of ${personality.name}:\n`;
+          baseSystemPrompt += `- Core Traits: ${personality.coreTraits.join(', ')}\n`;
+          baseSystemPrompt += `- Communication Style: ${personality.communicationStyle.join(', ')}\n`;
+          baseSystemPrompt += `- Archetype: ${personality.culturalArchetype}\n`;
+          baseSystemPrompt += `- Unique Gift: ${personality.uniqueGift}\n`;
+        }
+      } catch (personalityError) {
+        console.warn(`[ai/conversation] Failed to load Orb ${primaryOrbId} personality:`, personalityError);
+        // Continue without personality context
       }
     }
 
@@ -152,12 +235,23 @@ export async function POST(request: NextRequest) {
     }
 
     // STEP 4: Call OpenAI with enhanced prompt (using shared Orbital-Brain service)
-    const aiResponse = await chatCompletions({
-      model: 'gpt-4o',
-      messages: conversationMessages,
-      temperature: 0.7,
-      max_tokens: 2000,
-    });
+    let aiResponse: string;
+    try {
+      aiResponse = await chatCompletions({
+        model: 'gpt-4o',
+        messages: conversationMessages,
+        temperature: 0.7,
+        max_tokens: 2000,
+      });
+      if (!aiResponse || typeof aiResponse !== 'string') {
+        throw new Error('OpenAI response is invalid');
+      }
+    } catch (openaiError: any) {
+      console.error('[ai/conversation] OpenAI API error:', openaiError);
+      // Fallback to Orbital Brain content if OpenAI fails
+      console.warn('[ai/conversation] Falling back to Orbital Brain narrative');
+      aiResponse = orbitalResponse.content || 'I apologize, but I encountered an error generating a response.';
+    }
 
     // STEP 5: Return unified OrbitalResponse structure
     // Use OpenAI response as the narrative content, but include all Orbital Brain interpretation
@@ -172,17 +266,26 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error: any) {
-    console.error('AI conversation error:', error);
-    const origin = request.headers.get('origin');
+    console.error('[ai/conversation] Unhandled error:', error);
+    console.error('[ai/conversation] Error stack:', error?.stack);
+    
+    // Provide more detailed error information in development
+    const errorDetails = process.env.NODE_ENV === 'development' ? {
+      message: error?.message,
+      stack: error?.stack,
+      name: error?.name
+    } : undefined;
+    
     return NextResponse.json(
       { 
         error: 'Internal server error',
         content: 'I apologize, but I encountered an error. Please try again.',
-        message: error?.message || 'Unknown error'
+        message: error?.message || 'Unknown error',
+        ...(errorDetails && { details: errorDetails })
       },
       { 
         status: 500,
-        headers: getCorsHeaders(origin),
+        headers: corsHeaders,
       }
     );
   }

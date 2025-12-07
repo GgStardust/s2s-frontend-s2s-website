@@ -16,4 +16,4 @@ export {
   type HarmonicFrequency,
   type CoherenceMatrix,
   type FieldDynamics
-} from 'rbi-kernel/mathematics';
+} from 'rbi-kernel/dist/mathematics/index.js';

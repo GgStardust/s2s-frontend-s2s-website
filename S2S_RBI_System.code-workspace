@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"name": "S2S_Console",
+			"path": "S2S_Console"
+		},
+		{
+			"name": "CMS_Backend",
+			"path": "CMS_Backend"
+		},
+		{
+			"name": "Orbital-Brain",
+			"path": "Orbital-Brain"
+		},
+		{
+			"name": "RBI-Kernel",
+			"path": "RBI-Kernel"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/.next": true,
+			"**/coverage": true
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/.next": true,
+			"**/coverage": true
+		}
+	}
+}
+

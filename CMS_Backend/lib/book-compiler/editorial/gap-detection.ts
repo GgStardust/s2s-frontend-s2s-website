@@ -7,7 +7,7 @@
  * Part of Layer 7 (Editorial) of the compiler architecture.
  */
 
-import { EnhancedResonanceEngine } from '@/lib/mathematics/enhanced-resonance-engine';
+import { EnhancedResonanceEngine } from '../../mathematics/enhanced-resonance-engine.js';
 import { ResonanceVectorMath, type ResonanceVector } from '@/lib/mathematics/resonance-vectors.js';
 import { computeResonance } from '@/lib/rbi/core/compute.js';
 

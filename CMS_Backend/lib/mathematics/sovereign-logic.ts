@@ -16,4 +16,4 @@ export {
   type ProofTerm,
   type CoherenceProof,
   type ConsciousnessContext
-} from 'rbi-kernel/mathematics';
+} from 'rbi-kernel/dist/mathematics/index.js';

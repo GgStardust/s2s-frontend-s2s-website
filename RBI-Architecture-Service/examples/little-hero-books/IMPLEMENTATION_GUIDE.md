@@ -1,6 +1,20 @@
 # RBI Integration Guide for Little Hero Books
 
-**Simple, practical implementation guide with exact API formats**
+**API v1 Complete - Simple, practical implementation guide with exact API formats**
+
+---
+
+## 🎉 API v1 New Features
+
+**All endpoints now support:**
+- ✅ **JSON Objects Directly** - No stringification needed! Send JSON objects, strings, or text
+- ✅ **Decision Trails** - See which validation rules were active
+- ✅ **JSON Schema Extraction** - Automatic schema detection in responses
+- ✅ **Codebase Analysis** - Analyze n8n workflows, backend, frontend code
+- ✅ **Batch Operations** - Process multiple orders at once
+- ✅ **Baseline Management** - Track drift over time
+
+**See [API v1 Implementation Guide](../../API_V1_IMPLEMENTATION_GUIDE.md) for complete overview.**
 
 ---
 
@@ -78,19 +92,51 @@ curl -X POST http://localhost:3001/field/score \
 
 **Purpose:** Validate content with Proof-of-Meaning verification
 
-**Request:**
+**Request (JSON Object - API v1):**
 ```json
 {
-  "content": "Content to validate",
+  "content": {
+    "name": "Emma",
+    "age": 4,
+    "hairColor": "blonde",
+    "skinTone": "fair"
+  },
   "categoryAssociations": [1, 2, 3]  // Optional
 }
 ```
 
-**Response:**
+**Or (JSON String - still works):**
+```json
+{
+  "content": "{\"name\":\"Emma\",\"age\":4}",
+  "categoryAssociations": [1, 2, 3]
+}
+```
+
+**Response (API v1):**
 ```json
 {
   "verified": true,
   "confidence": 0.875,
+  "decisionTrail": {
+    "activeAssociations": [1, 2, 3],
+    "validationRules": [
+      { "rule": "coherence_validation", "result": "passed", "weight": 0.4 },
+      { "rule": "association_validation", "result": "passed", "weight": 0.3 },
+      { "rule": "confidence_threshold", "result": "passed", "weight": 0.3 }
+    ],
+    "metadata": {
+      "contentType": "json",
+      "hasSchema": true,
+      "associationsProvided": true
+    }
+  },
+  "jsonSchema": {
+    "name": { "type": "string" },
+    "age": { "type": "number" },
+    "hairColor": { "type": "string" },
+    "skinTone": { "type": "string" }
+  },
   "mathematicalProof": "proof_serialization_string",
   "resonanceVector": {
     "x": 0.8,
@@ -112,12 +158,17 @@ curl -X POST http://localhost:3001/field/score \
 }
 ```
 
-**Example:**
+**Example (JSON Object - API v1):**
 ```bash
 curl -X POST http://localhost:3001/field/validate \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "Order validation: character specs for Emma, age 5, blonde hair",
+    "content": {
+      "name": "Emma",
+      "age": 4,
+      "hairColor": "blonde",
+      "skinTone": "fair"
+    },
     "categoryAssociations": [1, 2, 3]
   }'
 ```
@@ -128,7 +179,25 @@ curl -X POST http://localhost:3001/field/validate \
 
 **Purpose:** Find similar items (duplicate detection, similarity search)
 
-**Request:**
+**Request (JSON Objects - API v1):**
+```json
+{
+  "query": {
+    "text": {
+      "name": "Emma",
+      "age": 4,
+      "hairColor": "blonde"
+    }
+  },
+  "candidates": [
+    { "id": "order-1", "text": { "name": "Emmy", "age": 4, "hairColor": "blonde" } },
+    { "id": "order-2", "text": { "name": "Emma", "age": 5, "hairColor": "blonde" } }
+  ],
+  "topN": 5
+}
+```
+
+**Or (JSON Strings - still works):**
 ```json
 {
   "query": {
@@ -155,15 +224,38 @@ curl -X POST http://localhost:3001/field/validate \
 }
 ```
 
-**Example:**
+**Example (JSON Objects - API v1):**
 ```bash
 curl -X POST http://localhost:3001/field/neighbors \
   -H "Content-Type: application/json" \
   -d '{
-    "query": { "text": "Character: Emma, age 5, blonde hair" },
+    "query": {
+      "text": {
+        "name": "Emma",
+        "age": 4,
+        "hairColor": "blonde",
+        "skinTone": "fair"
+      }
+    },
     "candidates": [
-      { "id": "order-1", "text": "Character: Emma, age 5, blonde hair" },
-      { "id": "order-2", "text": "Character: Alex, age 7, brown hair" }
+      {
+        "id": "order-1",
+        "text": {
+          "name": "Emmy",
+          "age": 4,
+          "hairColor": "blonde",
+          "skinTone": "fair"
+        }
+      },
+      {
+        "id": "order-2",
+        "text": {
+          "name": "Emma",
+          "age": 5,
+          "hairColor": "blonde",
+          "skinTone": "fair"
+        }
+      }
     ],
     "topN": 3
   }'
@@ -246,8 +338,9 @@ const RBI_SERVICE_URL = process.env.RBI_SERVICE_URL || 'http://localhost:3001';
  * Validate order before processing
  */
 export async function validateOrder(order: any) {
+  // API v1: Send JSON object directly (no stringification needed!)
   const response = await axios.post(`${RBI_SERVICE_URL}/field/validate`, {
-    content: JSON.stringify(order),
+    content: order,  // JSON object directly
     categoryAssociations: [1, 2, 3] // Your category IDs
   });
   
@@ -281,11 +374,12 @@ export async function scoreQuality(content: string) {
  * Find similar orders (duplicate detection)
  */
 export async function findSimilarOrders(queryOrder: any, candidateOrders: any[]) {
+  // API v1: Send JSON objects directly
   const response = await axios.post(`${RBI_SERVICE_URL}/field/neighbors`, {
-    query: { text: JSON.stringify(queryOrder) },
+    query: { text: queryOrder },  // JSON object directly
     candidates: candidateOrders.map(order => ({
       id: order.id,
-      text: JSON.stringify(order)
+      text: order  // JSON object directly
     })),
     topN: 5
   });
@@ -546,13 +640,86 @@ docker run -p 3001:3001 rbi-kernel:2.0.0
 
 ---
 
+## API v1 New Endpoints
+
+### Codebase Analysis
+
+**POST /field/analyze/codebase**
+
+Analyze n8n workflows, backend, frontend code:
+
+```bash
+curl -X POST http://localhost:3001/field/analyze/codebase \
+  -H "Content-Type: application/json" \
+  -d '{
+    "codebase": {
+      "fileTree": [
+        { "path": "workflows/order-processing.json", "type": "file", "size": 2048 }
+      ],
+      "codeFiles": [
+        {
+          "path": "workflows/order-processing.json",
+          "content": "{ \"nodes\": [...] }",
+          "language": "json"
+        }
+      ]
+    }
+  }'
+```
+
+### Batch Operations
+
+**POST /field/batch**
+
+Process multiple orders at once:
+
+```bash
+curl -X POST http://localhost:3001/field/batch \
+  -H "Content-Type: application/json" \
+  -d '{
+    "items": [
+      { "content": { "name": "Emma", "age": 4 }, "title": "Order 1" },
+      { "content": { "name": "Alex", "age": 5 }, "title": "Order 2" }
+    ],
+    "operation": "validate"
+  }'
+```
+
+### Baseline Management
+
+**Store baseline for drift detection:**
+
+```bash
+# Store baseline
+curl -X POST http://localhost:3001/field/baseline \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": "character-baseline",
+    "name": "Character Spec Baseline",
+    "resonanceVector": { "x": 0.5, "y": 0.5, "z": 0.5, "w": 0.5 }
+  }'
+
+# Compare against baseline
+curl -X POST http://localhost:3001/field/baseline/compare \
+  -H "Content-Type: application/json" \
+  -d '{
+    "baselineId": "character-baseline",
+    "content": { "name": "Emma", "age": 4 }
+  }'
+```
+
+See [API v1 Implementation Guide](../../API_V1_IMPLEMENTATION_GUIDE.md) for complete details.
+
+---
+
 ## Next Steps
 
-1. **Start RBI service:** `cd rbi-kernel && npm run dev`
+1. **Start RBI service:** `cd rbi-architecture-service && npm run dev`
 2. **Test endpoints:** Use curl examples above
-3. **Add to backend:** Create `rbi-service.ts` file
+3. **Add to backend:** Create `rbi-service.ts` file (updated examples above)
 4. **Integrate in workflows:** Add validation calls before expensive operations
-5. **Test integration:** Verify responses match expected formats
+5. **Use API v1 features:** JSON objects, batch operations, codebase analysis
+6. **Test integration:** Verify responses match expected formats
 
 ---
 
