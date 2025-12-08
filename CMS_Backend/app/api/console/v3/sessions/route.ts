@@ -62,6 +62,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Guard clause: verify session exists before accessing properties
+    if (!session) {
+      console.error('Session creation returned no data');
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'Failed to create diagnostic session: no session data returned' },
+        { status: 500, headers: getCorsHeaders(origin) }
+      );
+    }
+
     // Fetch questions using question selection service
     // Default to beta question set, can be extended to include early_reader questions
     const questions = await selectQuestionsForSession(supabase, {
