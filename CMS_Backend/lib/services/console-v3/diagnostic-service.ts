@@ -1,6 +1,7 @@
 /**
  * Console V3 Diagnostic Service
  * Handles SFI calculation, practice readiness assessment, and pathway matching
+ * Uses RBI Kernel as primary computation method
  */
 
 import type {
@@ -12,15 +13,64 @@ import type {
   PathwayTemplate,
   PathwayMatch,
 } from '@/lib/types/console-v3';
+import { computeFieldSignatureWithRBI } from './rbi-integration-service';
 
 /**
  * Calculate SFI (Sovereign Field Index) from diagnostic responses
+ * Uses RBI Kernel as primary method for field signature computation
  */
 export async function computeSFI(
   session: DiagnosticSession,
   responses: DiagnosticResponse[],
   questions: DiagnosticQuestion[]
 ): Promise<SFIResult> {
+  // Use RBI Kernel as primary method
+  try {
+    const rbiResult = await computeFieldSignatureWithRBI(session, responses, questions);
+    
+    // Use RBI-computed orb and undercurrent profiles
+    const orbProfile = rbiResult.orb_profile;
+    const undercurrentProfile = rbiResult.undercurrent_profile;
+    
+    // Calculate SFI score from RBI coherence metrics
+    const sfiScore = rbiResult.coherence_metrics.coherence;
+    
+    // Determine SFI state based on RBI metrics
+    let sfiState: SFIResult['state'] = 'Emergent';
+    if (sfiScore > 0.75) {
+      sfiState = 'Coherent';
+    } else if (sfiScore > 0.4) {
+      sfiState = 'Fluid';
+    }
+    
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[SFI] Using RBI Kernel computation');
+      console.log('[SFI] RBI coherence metrics:', rbiResult.coherence_metrics);
+      console.log('[SFI] RBI orb profile:', orbProfile);
+    }
+    
+    return {
+      score: sfiScore,
+      state: sfiState,
+      orb_profile: orbProfile,
+      undercurrent_profile: undercurrentProfile,
+    };
+  } catch (rbiError) {
+    // Fallback to weighted sum method only if RBI fails
+    console.warn('[SFI] RBI computation failed, falling back to weighted sum method:', rbiError);
+    return computeSFIWeightedSum(session, responses, questions);
+  }
+}
+
+/**
+ * Fallback SFI computation using weighted sum method
+ * Only used if RBI Kernel computation fails
+ */
+function computeSFIWeightedSum(
+  session: DiagnosticSession,
+  responses: DiagnosticResponse[],
+  questions: DiagnosticQuestion[]
+): SFIResult {
   // Initialize orb and undercurrent profiles
   const orbProfile: Record<string, number> = {};
   const undercurrentProfile: Record<string, number> = {};
