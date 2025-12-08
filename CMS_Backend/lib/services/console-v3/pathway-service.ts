@@ -38,7 +38,28 @@ export async function ensurePathwaySteps(
     return [];
   }
 
+  // First, create the introduction step (step_number 0)
+  const { data: introStep } = await supabase
+    .from('pathway_steps')
+    .insert({
+      pathway_template_id: template.id,
+      step_number: 0, // Before practice steps
+      type: 'reading',
+      title: 'Pathway Introduction',
+      description: template.description || 'Begin your practice pathway',
+      instructions: `Welcome to ${template.name}. This pathway includes ${practiceSequence.length} practices designed to support your field development.`,
+      est_duration_minutes: 5,
+      requires_step_ids: [], // Introduction step has no dependencies
+    })
+    .select()
+    .single();
+
+  if (introStep) {
+    steps.push(introStep);
+  }
+
   // Create a step for each practice in the sequence
+  // Each step depends on the previous step (sequential pathway)
   for (let i = 0; i < practiceSequence.length; i++) {
     const practiceId = practiceSequence[i];
     
@@ -49,6 +70,12 @@ export async function ensurePathwaySteps(
       .eq('id', practiceId)
       .single();
 
+    // Determine dependencies: first practice step depends on intro (if exists), 
+    // subsequent steps depend on the previous practice step
+    const previousStepId = i === 0 
+      ? (introStep?.id ? [introStep.id] : []) // First practice depends on intro
+      : (steps.length > 0 ? [steps[steps.length - 1].id] : []); // Subsequent steps depend on previous step
+
     const stepData = {
       pathway_template_id: template.id,
       step_number: i + 1,
@@ -58,7 +85,7 @@ export async function ensurePathwaySteps(
       description: practice?.core_function || undefined,
       instructions: `Engage with Practice ${practiceId}: ${practice?.name || 'Practice'}. This is a ${practice?.layer || 'foundational'} practice.`,
       est_duration_minutes: 15, // Default duration
-      requires_step_ids: i > 0 ? [] : [], // First step has no dependencies
+      requires_step_ids: previousStepId, // Sequential dependencies
     };
 
     const { data: step, error: stepError } = await supabase
@@ -73,28 +100,6 @@ export async function ensurePathwaySteps(
     }
 
     steps.push(step);
-  }
-
-  // Add an optional reading/reflection step at the beginning
-  if (steps.length > 0) {
-    const { data: introStep } = await supabase
-      .from('pathway_steps')
-      .insert({
-        pathway_template_id: template.id,
-        step_number: 0, // Before practice steps
-        type: 'reading',
-        title: 'Pathway Introduction',
-        description: template.description || 'Begin your practice pathway',
-        instructions: `Welcome to ${template.name}. This pathway includes ${practiceSequence.length} practices designed to support your field development.`,
-        est_duration_minutes: 5,
-        requires_step_ids: [],
-      })
-      .select()
-      .single();
-
-    if (introStep) {
-      steps.unshift(introStep);
-    }
   }
 
   return steps;
