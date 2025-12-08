@@ -7,7 +7,11 @@ import type {
   UserPathway,
   PathwayTemplate,
   PathwayStep,
+  SFIResult,
+  PracticeReadinessAssessment,
 } from '@/lib/types/console-v3';
+import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { loadCoreArchitecture } from './architecture-loader';
 
 /**
  * Create pathway steps from template's practice_sequence
@@ -119,6 +123,244 @@ export async function ensurePathwaySteps(
   }
 
   return steps;
+}
+
+/**
+ * Generate dynamic practice sequence using RBI coherence
+ * Phase 7.3: Coherence-based practice sequencing
+ * 
+ * Uses RBI to:
+ * 1. Analyze each practice's coherence with user's field state
+ * 2. Calculate resonance between practices (ensuring they resonate with each other)
+ * 3. Order practices by coherence and resonance
+ * 4. Ensure practices build on each other coherently
+ */
+export async function generateDynamicPracticeSequence(
+  sfi: SFIResult,
+  readiness: PracticeReadinessAssessment,
+  availablePractices: any[], // Practices from database
+  options: {
+    minCoherence?: number; // Default: 0.7
+    maxPractices?: number; // Default: 8 or 12 based on layer
+    layer?: 'foundational' | 'functional' | 'advanced' | 'mixed';
+  } = {}
+): Promise<number[]> {
+  const {
+    minCoherence = 0.7,
+    maxPractices = 8,
+    layer,
+  } = options;
+
+  try {
+    const engine = EnhancedResonanceEngine.getInstance();
+    const architecture = loadCoreArchitecture();
+
+    // Build user's field signature
+    const userFieldSignature = JSON.stringify({
+      sfi_score: sfi.score,
+      sfi_state: sfi.state,
+      orb_profile: sfi.orb_profile,
+      undercurrent_profile: sfi.undercurrent_profile,
+      foundational_readiness: readiness.foundational_readiness,
+      functional_readiness: readiness.functional_readiness,
+      advanced_readiness: readiness.advanced_readiness,
+    });
+
+    // Get user's top orbs
+    const userOrbAssociations = Object.entries(sfi.orb_profile)
+      .sort(([, a], [, b]) => (b as number) - (a as number))
+      .slice(0, 5)
+      .map(([key]) => parseInt(key.replace('orb_', '')))
+      .filter(orbNum => !isNaN(orbNum) && orbNum >= 1 && orbNum <= 13);
+
+    // Analyze user's field state with RBI
+    const userAnalysis = await engine.analyzeContentWithMathematics(
+      userFieldSignature,
+      'User Field State',
+      {
+        orb_associations: userOrbAssociations.length > 0 ? userOrbAssociations : undefined,
+        field_function: {
+          content_purpose: 'user_field_state',
+          primary_mechanism: 'practice_sequencing',
+          console_context: 'dynamic_sequence_generation',
+        },
+      }
+    );
+
+    // Filter practices by layer if specified
+    let filteredPractices = availablePractices;
+    if (layer && layer !== 'mixed') {
+      filteredPractices = availablePractices.filter(p => p.layer === layer);
+    }
+
+    // Analyze each practice's coherence with user's field state
+    const practiceAnalyses = await Promise.all(
+      filteredPractices.map(async (practice) => {
+        // Build practice content
+        const practiceContent = practice.description || practice.instructions || practice.name || '';
+        
+        // Get practice orb associations
+        const practiceOrbAssociations: number[] = [];
+        if (practice.orb_mappings && Array.isArray(practice.orb_mappings)) {
+          practiceOrbAssociations.push(...practice.orb_mappings.map((m: any) => m.orb_number));
+        }
+
+        // Analyze practice with RBI
+        const practiceAnalysis = await engine.analyzeContentWithMathematics(
+          practiceContent,
+          practice.name || `Practice ${practice.id}`,
+          {
+            orb_associations: practiceOrbAssociations.length > 0 ? practiceOrbAssociations : undefined,
+            field_function: {
+              content_purpose: 'practice_module',
+              primary_mechanism: 'practice_sequencing',
+              console_context: 'dynamic_sequence_generation',
+            },
+          }
+        );
+
+        // Calculate resonance with user's field state
+        const resonance = await engine.calculateResonanceSimilarity(
+          userFieldSignature,
+          practiceContent,
+          {
+            orb_associations: userOrbAssociations.length > 0 ? userOrbAssociations : undefined,
+            field_function: {
+              content_purpose: 'user_field_state',
+              primary_mechanism: 'practice_sequencing',
+              console_context: 'dynamic_sequence_generation',
+            },
+          },
+          {
+            orb_associations: practiceOrbAssociations.length > 0 ? practiceOrbAssociations : undefined,
+            field_function: {
+              content_purpose: 'practice_module',
+              primary_mechanism: 'practice_sequencing',
+              console_context: 'dynamic_sequence_generation',
+            },
+          }
+        );
+
+        // Get coherence metrics
+        const coherence = practiceAnalysis.mathematical?.sovereignLogic?.coherence || 0;
+        const fieldStrength = practiceAnalysis.mathematical?.fieldDynamics?.fieldStrength || 0;
+
+        // Get practice readiness
+        const practiceReadiness = readiness.practice_readiness_profile[`practice_${practice.id}`] || 0;
+
+        // Combined score: resonance (primary) + coherence + readiness
+        const score = (
+          resonance * 0.5 + // 50% weight on RBI resonance
+          coherence * 0.3 + // 30% weight on practice coherence
+          practiceReadiness * 0.2 // 20% weight on user readiness
+        );
+
+        return {
+          practice,
+          practiceId: practice.id,
+          resonance,
+          coherence,
+          fieldStrength,
+          practiceReadiness,
+          score,
+        };
+      })
+    );
+
+    // Filter by coherence threshold
+    const validPractices = practiceAnalyses
+      .filter(analysis => analysis.coherence >= minCoherence)
+      .sort((a, b) => b.score - a.score); // Sort by combined score
+
+    // Now calculate resonance between practices to ensure they resonate with each other
+    // This ensures the sequence is coherent, not just individual practices
+    const sequencedPractices: number[] = [];
+    const remainingPractices = [...validPractices];
+
+    // Start with the highest-scoring practice
+    if (remainingPractices.length > 0) {
+      const firstPractice = remainingPractices.shift()!;
+      sequencedPractices.push(firstPractice.practiceId);
+
+      // Build sequence by finding practices that resonate with the current sequence
+      while (sequencedPractices.length < maxPractices && remainingPractices.length > 0) {
+        let bestNextPractice: typeof remainingPractices[0] | null = null;
+        let bestResonance = 0;
+
+        // Build current sequence signature
+        const currentSequenceContent = sequencedPractices
+          .map(id => {
+            const practice = filteredPractices.find(p => p.id === id);
+            return practice?.name || `Practice ${id}`;
+          })
+          .join('; ');
+
+        // Find practice that resonates best with current sequence
+        for (const candidate of remainingPractices) {
+          const candidateContent = candidate.practice.description || candidate.practice.name || '';
+          
+          // Calculate resonance with current sequence
+          const sequenceResonance = await engine.calculateResonanceSimilarity(
+            currentSequenceContent,
+            candidateContent,
+            undefined,
+            {
+              orb_associations: candidate.practice.orb_mappings?.map((m: any) => m.orb_number) || undefined,
+              field_function: {
+                content_purpose: 'practice_module',
+                primary_mechanism: 'practice_sequencing',
+                console_context: 'dynamic_sequence_generation',
+              },
+            }
+          );
+
+          // Combined score: resonance with sequence + original score
+          const combinedScore = (sequenceResonance * 0.4) + (candidate.score * 0.6);
+
+          if (combinedScore > bestResonance) {
+            bestResonance = combinedScore;
+            bestNextPractice = candidate;
+          }
+        }
+
+        if (bestNextPractice) {
+          sequencedPractices.push(bestNextPractice.practiceId);
+          // Remove from remaining
+          const index = remainingPractices.findIndex(p => p.practiceId === bestNextPractice!.practiceId);
+          if (index >= 0) {
+            remainingPractices.splice(index, 1);
+          }
+        } else {
+          // No good match found, break
+          break;
+        }
+      }
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[Dynamic Practice Sequence] RBI coherence-based sequencing:');
+      console.log(`   Generated sequence: ${sequencedPractices.join(', ')}`);
+      console.log(`   Practices analyzed: ${practiceAnalyses.length}`);
+      console.log(`   Valid practices (coherence >= ${minCoherence}): ${validPractices.length}`);
+      console.log(`   Final sequence length: ${sequencedPractices.length}`);
+    }
+
+    return sequencedPractices;
+  } catch (error) {
+    console.error('[Dynamic Practice Sequence] RBI sequencing failed, falling back to readiness-based:', error);
+    
+    // Fallback: sort by practice readiness
+    const sortedByReadiness = filteredPractices
+      .map(practice => ({
+        practice,
+        readiness: readiness.practice_readiness_profile[`practice_${practice.id}`] || 0,
+      }))
+      .sort((a, b) => b.readiness - a.readiness)
+      .slice(0, maxPractices)
+      .map(item => item.practice.id);
+
+    return sortedByReadiness;
+  }
 }
 
 /**

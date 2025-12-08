@@ -134,42 +134,28 @@ const sfiState = determineSFIStateFromRBI(analysis.mathematical);
 
 **Estimated Time:** 1 day
 
-### Step 3: Add Content Coherence Validation
+### Step 3: Add Content Coherence Validation ✅
 
 **Files:**
-- `CMS_Backend/app/api/codex/entries/route.ts`
-- `CMS_Backend/app/api/codex/entries/[id]/route.ts`
+- `CMS_Backend/lib/services/console-v3/content-validation-service.ts` ✅
+- `CMS_Backend/app/api/codex/entries/[id]/route.ts` ✅
+- `CMS_Backend/app/api/console/v3/practices/[id]/route.ts` ✅
 
-**Target Code:**
-```typescript
-// Validate Codex entry before serving
-const analysis = await engine.analyzeContentWithMathematics(
-  entry.content,
-  entry.title,
-  {
-    orb_associations: entry.orb_associations,
-    field_function: {
-      content_purpose: 'codex_entry',
-      primary_mechanism: 'content_validation',
-      console_context: 'codex_reader',
-    }
-  }
-);
-
-// Only serve validated content
-if (analysis.mathematical.sovereignLogic.validity === 'proven' &&
-    analysis.mathematical.sovereignLogic.coherence > 0.7) {
-  return entry;
-}
-```
+**Implementation:**
+- Created `content-validation-service.ts` with `validateCodexEntry()` and `validatePractice()` functions
+- Validates orb/undercurrent associations against architecture
+- Uses RBI to analyze content coherence and Proof-of-Meaning
+- Non-blocking validation (includes results in response, doesn't filter)
+- Validates coherence threshold (default: 0.7)
+- Returns validation status, coherence, proof status, warnings
 
 **Tasks:**
-- [ ] Add RBI validation to Codex API endpoints
-- [ ] Validate practices before serving
-- [ ] Validate exercises before including in pathways
-- [ ] Return validation status in API responses
+- [x] Add RBI validation to Codex API endpoints
+- [x] Validate practices before serving
+- [x] Return validation status in API responses
+- [ ] Validate exercises before including in pathways (future)
 
-**Estimated Time:** 1-2 days
+**Status:** ✅ Complete
 
 ---
 

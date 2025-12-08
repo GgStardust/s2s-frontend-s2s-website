@@ -14,6 +14,8 @@ import type {
   PathwayMatch,
 } from '@/lib/types/console-v3';
 import { computeFieldSignatureWithRBI } from './rbi-integration-service';
+import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { loadCoreArchitecture, getOrbDefinition } from './architecture-loader';
 
 /**
  * Calculate SFI (Sovereign Field Index) from diagnostic responses
@@ -343,11 +345,232 @@ export async function computePracticeReadiness(
 /**
  * Match diagnostic results to pathway template
  */
+/**
+ * Match pathway using RBI resonance-based matching
+ * Replaces simple weighted scoring with RBI's coherence-based matching
+ */
 export async function matchPathway(
   sfi: SFIResult,
   readiness: PracticeReadinessAssessment,
   pathwayTemplates: PathwayTemplate[]
 ): Promise<PathwayMatch | null> {
+  if (pathwayTemplates.length === 0) {
+    return null;
+  }
+
+  try {
+    const engine = EnhancedResonanceEngine.getInstance();
+    const architecture = loadCoreArchitecture();
+
+    // Build user's field signature from SFI and readiness
+    const userFieldSignature = JSON.stringify({
+      sfi_score: sfi.score,
+      sfi_state: sfi.state,
+      orb_profile: sfi.orb_profile,
+      undercurrent_profile: sfi.undercurrent_profile,
+      foundational_readiness: readiness.foundational_readiness,
+      functional_readiness: readiness.functional_readiness,
+      advanced_readiness: readiness.advanced_readiness,
+      practice_readiness: readiness.practice_readiness_profile,
+    });
+
+    // Build orb associations from user's orb profile (top orbs)
+    const userOrbAssociations = Object.entries(sfi.orb_profile)
+      .sort(([, a], [, b]) => (b as number) - (a as number))
+      .slice(0, 5) // Top 5 orbs
+      .map(([key]) => parseInt(key.replace('orb_', '')))
+      .filter(orbNum => !isNaN(orbNum) && orbNum >= 1 && orbNum <= 13);
+
+    // Analyze user's field state with RBI
+    const userAnalysis = await engine.analyzeContentWithMathematics(
+      userFieldSignature,
+      'User Field State',
+      {
+        orb_associations: userOrbAssociations.length > 0 ? userOrbAssociations : undefined,
+        field_function: {
+          content_purpose: 'user_field_state',
+          primary_mechanism: 'pathway_matching',
+          console_context: 'pathway_selection',
+        },
+      }
+    );
+
+    // Calculate resonance with each pathway template
+    const pathwayMatches = await Promise.all(
+      pathwayTemplates.map(async (template) => {
+        // Build pathway template content
+        const templateContent = JSON.stringify({
+          name: template.name,
+          description: template.description,
+          orb_focus: template.orb_focus,
+          practice_sequence: template.practice_sequence,
+          layer_focus: template.layer_focus,
+        });
+
+        // Get orb definitions from architecture for metadata
+        const templateOrbDefs = template.orb_focus
+          .map(orbNum => architecture.orbs.get(orbNum))
+          .filter(Boolean);
+
+        // Build template description from orb definitions
+        const templateDescription = template.description || 
+          templateOrbDefs.map(orb => `${orb?.name}: ${orb?.function || ''}`).join('; ') ||
+          `Pathway focusing on orbs ${template.orb_focus.join(', ')}`;
+
+        // Analyze pathway template with RBI
+        const templateAnalysis = await engine.analyzeContentWithMathematics(
+          templateDescription,
+          template.name,
+          {
+            orb_associations: template.orb_focus.length > 0 ? template.orb_focus : undefined,
+            field_function: {
+              content_purpose: 'pathway_template',
+              primary_mechanism: 'pathway_matching',
+              console_context: 'pathway_selection',
+            },
+          }
+        );
+
+        // Calculate resonance similarity (coherence-based matching)
+        const resonance = await engine.calculateResonanceSimilarity(
+          userFieldSignature,
+          templateDescription,
+          {
+            orb_associations: userOrbAssociations.length > 0 ? userOrbAssociations : undefined,
+            field_function: {
+              content_purpose: 'user_field_state',
+              primary_mechanism: 'pathway_matching',
+              console_context: 'pathway_selection',
+            },
+          },
+          {
+            orb_associations: template.orb_focus.length > 0 ? template.orb_focus : undefined,
+            field_function: {
+              content_purpose: 'pathway_template',
+              primary_mechanism: 'pathway_matching',
+              console_context: 'pathway_selection',
+            },
+          }
+        );
+
+        // Get coherence metrics
+        const templateCoherence = templateAnalysis.mathematical?.sovereignLogic?.coherence || 0;
+        const userCoherence = userAnalysis.mathematical?.sovereignLogic?.coherence || 0;
+
+        // Calculate field alignment (how well template orbs match user's orb profile)
+        let fieldAlignment = 0;
+        if (template.orb_focus.length > 0) {
+          const orbAlignment = template.orb_focus.reduce((sum, orbNum) => {
+            const orbKey = `orb_${orbNum}`;
+            return sum + (sfi.orb_profile[orbKey] || 0);
+          }, 0) / template.orb_focus.length;
+          fieldAlignment = orbAlignment;
+        }
+
+        // Calculate layer alignment
+        let layerAlignment = 0;
+        if (template.layer_focus) {
+          if (template.layer_focus === 'foundational') {
+            layerAlignment = readiness.foundational_readiness;
+          } else if (template.layer_focus === 'functional') {
+            layerAlignment = readiness.functional_readiness;
+          } else if (template.layer_focus === 'advanced') {
+            layerAlignment = readiness.advanced_readiness;
+          } else if (template.layer_focus === 'mixed') {
+            layerAlignment = (
+              readiness.foundational_readiness +
+              readiness.functional_readiness +
+              readiness.advanced_readiness
+            ) / 3;
+          }
+        }
+
+        // Combined match score: resonance (primary) + field alignment + layer alignment
+        // Resonance is coherence-based, so it's the primary factor
+        const matchScore = (
+          resonance * 0.6 + // 60% weight on RBI resonance (coherence-based)
+          fieldAlignment * 0.25 + // 25% weight on orb alignment
+          layerAlignment * 0.15 // 15% weight on layer readiness
+        );
+
+        // Build reasoning
+        const reasons: string[] = [];
+        reasons.push(`RBI resonance: ${(resonance * 100).toFixed(0)}%`);
+        reasons.push(`Template coherence: ${(templateCoherence * 100).toFixed(0)}%`);
+        reasons.push(`Field alignment: ${(fieldAlignment * 100).toFixed(0)}%`);
+        if (template.layer_focus) {
+          reasons.push(`${template.layer_focus} layer: ${(layerAlignment * 100).toFixed(0)}%`);
+        }
+
+        return {
+          template,
+          resonance,
+          coherence: templateCoherence,
+          fieldAlignment,
+          layerAlignment,
+          matchScore,
+          reasoning: reasons.join('; '),
+        };
+      })
+    );
+
+    // Filter by coherence threshold (> 0.7) and sort by resonance
+    const validMatches = pathwayMatches
+      .filter(m => m.coherence > 0.7) // Only coherent pathways
+      .sort((a, b) => {
+        // Primary: resonance score (coherence-based matching)
+        if (Math.abs(a.resonance - b.resonance) > 0.05) {
+          return b.resonance - a.resonance;
+        }
+        // Secondary: match score
+        return b.matchScore - a.matchScore;
+      });
+
+    if (validMatches.length === 0) {
+      // Fallback: if no pathways meet coherence threshold, use best match regardless
+      const bestMatch = pathwayMatches.sort((a, b) => b.matchScore - a.matchScore)[0];
+      if (bestMatch) {
+        return {
+          pathway_template: bestMatch.template,
+          match_score: bestMatch.matchScore,
+          reasoning: bestMatch.reasoning + ' (below coherence threshold, using best available)',
+        };
+      }
+      return null;
+    }
+
+    const bestMatch = validMatches[0];
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[Pathway Matching] RBI resonance-based matching:');
+      console.log(`   Best match: ${bestMatch.template.name}`);
+      console.log(`   Resonance: ${(bestMatch.resonance * 100).toFixed(0)}%`);
+      console.log(`   Coherence: ${(bestMatch.coherence * 100).toFixed(0)}%`);
+      console.log(`   Match score: ${(bestMatch.matchScore * 100).toFixed(0)}%`);
+    }
+
+    return {
+      pathway_template: bestMatch.template,
+      match_score: bestMatch.matchScore,
+      reasoning: bestMatch.reasoning,
+    };
+  } catch (error) {
+    console.error('[Pathway Matching] RBI matching failed, falling back to simple scoring:', error);
+    
+    // Fallback to simple scoring if RBI fails
+    return matchPathwaySimple(sfi, readiness, pathwayTemplates);
+  }
+}
+
+/**
+ * Fallback pathway matching using simple weighted scoring
+ * Only used if RBI matching fails
+ */
+function matchPathwaySimple(
+  sfi: SFIResult,
+  readiness: PracticeReadinessAssessment,
+  pathwayTemplates: PathwayTemplate[]
+): PathwayMatch | null {
   if (pathwayTemplates.length === 0) {
     return null;
   }
@@ -361,13 +584,12 @@ export async function matchPathway(
     const reasons: string[] = [];
 
     // Score based on orb alignment
-    // orb_focus contains orb numbers (1, 2, 12, etc.), orb_profile uses keys like "orb_1", "orb_2", etc.
     if (template.orb_focus.length > 0) {
       const orbAlignment = template.orb_focus.reduce((sum, orbNum) => {
-        const orbKey = `orb_${orbNum}`; // Format: "orb_1", "orb_2", etc. to match orb_profile keys
+        const orbKey = `orb_${orbNum}`;
         return sum + (sfi.orb_profile[orbKey] || 0);
       }, 0) / template.orb_focus.length;
-      matchScore += orbAlignment * 0.4; // 40% weight
+      matchScore += orbAlignment * 0.4;
       reasons.push(`Orb alignment: ${(orbAlignment * 100).toFixed(0)}%`);
     }
 
@@ -387,7 +609,7 @@ export async function matchPathway(
           readiness.advanced_readiness
         ) / 3;
       }
-      matchScore += layerReadiness * 0.3; // 30% weight
+      matchScore += layerReadiness * 0.3;
       reasons.push(`${template.layer_focus} layer readiness: ${(layerReadiness * 100).toFixed(0)}%`);
     }
 
@@ -397,7 +619,7 @@ export async function matchPathway(
         const practiceKey = `practice_${practiceId}`;
         return sum + (readiness.practice_readiness_profile[practiceKey] || 0);
       }, 0) / template.practice_sequence.length;
-      matchScore += practiceAlignment * 0.3; // 30% weight
+      matchScore += practiceAlignment * 0.3;
       reasons.push(`Practice alignment: ${(practiceAlignment * 100).toFixed(0)}%`);
     }
 

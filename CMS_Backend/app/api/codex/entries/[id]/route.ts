@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { getCorsHeaders } from '@/lib/cors';
+import { validateCodexEntry } from '@/lib/services/console-v3/content-validation-service';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -69,9 +70,27 @@ export async function GET(
       );
     }
 
+    // Validate entry with RBI (non-blocking - include validation in response)
+    const validation = await validateCodexEntry(entry, {
+      minCoherence: 0.7,
+      requireProof: false, // Warn but don't block
+      validateOrbAssociations: true,
+    });
+
+    // Include validation results in response
+    const entryWithValidation = {
+      ...entry,
+      validation: {
+        coherence: validation.coherence,
+        proofStatus: validation.proofStatus,
+        isValid: validation.isValid,
+        warnings: validation.warnings,
+      },
+    };
+
     const origin = request.headers.get('origin');
     return NextResponse.json(
-      { entry },
+      { entry: entryWithValidation },
       {
         headers: getCorsHeaders(origin),
       }
