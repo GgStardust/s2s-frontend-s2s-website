@@ -76,9 +76,42 @@ export async function GET(request: NextRequest) {
       query = query.overlaps('console_tags', tagArray);
     }
 
-    // Pagination
-    const limit = parseInt(searchParams.get('limit') || '50', 10);
-    const offset = parseInt(searchParams.get('offset') || '0', 10);
+    // Pagination - validate and sanitize inputs
+    const limitParam = searchParams.get('limit');
+    const offsetParam = searchParams.get('offset');
+    
+    // Validate limit: must be positive integer, max 100, default 50
+    let limit = 50;
+    if (limitParam) {
+      const parsedLimit = parseInt(limitParam, 10);
+      if (!isNaN(parsedLimit) && parsedLimit > 0 && parsedLimit <= 100) {
+        limit = parsedLimit;
+      } else {
+        // Invalid limit - return error
+        const origin = request.headers.get('origin');
+        return NextResponse.json(
+          { error: 'Invalid limit parameter. Must be a positive integer between 1 and 100.' },
+          { status: 400, headers: getCorsHeaders(origin) }
+        );
+      }
+    }
+    
+    // Validate offset: must be non-negative integer, default 0
+    let offset = 0;
+    if (offsetParam) {
+      const parsedOffset = parseInt(offsetParam, 10);
+      if (!isNaN(parsedOffset) && parsedOffset >= 0) {
+        offset = parsedOffset;
+      } else {
+        // Invalid offset - return error
+        const origin = request.headers.get('origin');
+        return NextResponse.json(
+          { error: 'Invalid offset parameter. Must be a non-negative integer.' },
+          { status: 400, headers: getCorsHeaders(origin) }
+        );
+      }
+    }
+    
     query = query.range(offset, offset + limit - 1);
 
     const { data, error } = await query;

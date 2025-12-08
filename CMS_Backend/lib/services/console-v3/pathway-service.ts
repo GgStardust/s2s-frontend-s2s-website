@@ -39,7 +39,7 @@ export async function ensurePathwaySteps(
   }
 
   // First, create the introduction step (step_number 0)
-  const { data: introStep } = await supabase
+  const { data: introStep, error: introError } = await supabase
     .from('pathway_steps')
     .insert({
       pathway_template_id: template.id,
@@ -54,9 +54,16 @@ export async function ensurePathwaySteps(
     .select()
     .single();
 
-  if (introStep) {
-    steps.push(introStep);
+  if (introError) {
+    console.error('Failed to create introduction step:', introError);
+    throw new Error(`Failed to create pathway introduction step: ${introError.message}`);
   }
+
+  if (!introStep) {
+    throw new Error('Introduction step creation returned no data');
+  }
+
+  steps.push(introStep);
 
   // Create a step for each practice in the sequence
   // Each step depends on the previous step (sequential pathway)
@@ -64,16 +71,25 @@ export async function ensurePathwaySteps(
     const practiceId = practiceSequence[i];
     
     // Get practice details for title/description
-    const { data: practice } = await supabase
+    const { data: practice, error: practiceError } = await supabase
       .from('practices')
       .select('name, layer, core_function')
       .eq('id', practiceId)
       .single();
 
-    // Determine dependencies: first practice step depends on intro (if exists), 
+    if (practiceError) {
+      console.error(`Practice ${practiceId} not found:`, practiceError);
+      throw new Error(`Practice ${practiceId} not found: ${practiceError.message}`);
+    }
+
+    if (!practice) {
+      throw new Error(`Practice ${practiceId} not found: no data returned`);
+    }
+
+    // Determine dependencies: first practice step depends on intro, 
     // subsequent steps depend on the previous practice step
     const previousStepId = i === 0 
-      ? (introStep?.id ? [introStep.id] : []) // First practice depends on intro
+      ? [introStep.id] // First practice depends on intro (guaranteed to exist)
       : (steps.length > 0 ? [steps[steps.length - 1].id] : []); // Subsequent steps depend on previous step
 
     const stepData = {
@@ -81,9 +97,9 @@ export async function ensurePathwaySteps(
       step_number: i + 1,
       type: 'practice' as const,
       practice_id: practiceId,
-      title: practice ? `Practice ${practiceId}: ${practice.name}` : `Practice ${practiceId}`,
-      description: practice?.core_function || undefined,
-      instructions: `Engage with Practice ${practiceId}: ${practice?.name || 'Practice'}. This is a ${practice?.layer || 'foundational'} practice.`,
+      title: `Practice ${practiceId}: ${practice.name}`,
+      description: practice.core_function || undefined,
+      instructions: `Engage with Practice ${practiceId}: ${practice.name}. This is a ${practice.layer || 'foundational'} practice.`,
       est_duration_minutes: 15, // Default duration
       requires_step_ids: previousStepId, // Sequential dependencies
     };
@@ -139,7 +155,7 @@ export async function buildPathwayFromTemplate(
   }
 
   // Get first step to set as current
-  const { data: firstStep } = await supabase
+  const { data: firstStep, error: firstStepError } = await supabase
     .from('pathway_steps')
     .select('*')
     .eq('pathway_template_id', template.id)
@@ -147,7 +163,11 @@ export async function buildPathwayFromTemplate(
     .limit(1)
     .single();
 
-  if (firstStep) {
+  if (firstStepError) {
+    console.error('Failed to fetch first pathway step:', firstStepError);
+    // Don't throw - pathway was created, just log the error
+    // The pathway can still be used, user will need to manually select first step
+  } else if (firstStep) {
     const { error: updateError } = await supabase
       .from('user_pathways')
       .update({ current_step_id: firstStep.id })
@@ -155,9 +175,11 @@ export async function buildPathwayFromTemplate(
 
     if (updateError) {
       console.warn('Failed to set current step:', updateError);
+      // Don't throw - pathway was created successfully, just couldn't set current step
     }
   } else {
     console.warn(`No pathway steps found for template ${template.id}`);
+    // This shouldn't happen if ensurePathwaySteps worked, but handle gracefully
   }
 
   return pathway;
