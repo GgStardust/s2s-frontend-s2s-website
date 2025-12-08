@@ -55,9 +55,10 @@ export async function POST(request: NextRequest) {
 
     if (sessionError) {
       console.error('Error creating diagnostic session:', sessionError);
+      const origin = request.headers.get('origin');
       return NextResponse.json(
         { error: 'Failed to create diagnostic session', details: sessionError.message },
-        { status: 500 }
+        { status: 500, headers: getCorsHeaders(origin) }
       );
     }
 

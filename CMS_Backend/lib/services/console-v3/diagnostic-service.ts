@@ -29,17 +29,27 @@ export async function computeSFI(
     const rbiResult = await computeFieldSignatureWithRBI(session, responses, questions);
     
     // Use RBI-computed orb and undercurrent profiles
-    const orbProfile = rbiResult.orb_profile;
+    let orbProfile = rbiResult.orb_profile;
     const undercurrentProfile = rbiResult.undercurrent_profile;
     
-    // Calculate SFI score from RBI coherence metrics
-    const sfiScore = rbiResult.coherence_metrics.coherence;
+    // Handle empty orb profile: create default uniform distribution across all 13 orbs
+    if (Object.keys(orbProfile).length === 0) {
+      console.warn('[SFI] Empty orb profile from RBI - creating default uniform distribution');
+      for (let i = 1; i <= 13; i++) {
+        orbProfile[`orb_${i}`] = 1 / 13;
+      }
+    }
     
-    // Determine SFI state based on RBI metrics
+    // Calculate SFI score from RBI coherence metrics
+    // RBI coherence is 0.0-1.0, scale to 0.0-100.0 for SFI score
+    const rbiCoherence = rbiResult.coherence_metrics.coherence;
+    const sfiScore = Math.max(0, Math.min(100, rbiCoherence * 100));
+    
+    // Determine SFI state based on scaled SFI score (0-100 range)
     let sfiState: SFIResult['state'] = 'Emergent';
-    if (sfiScore > 0.75) {
+    if (sfiScore > 75.0) {
       sfiState = 'Coherent';
-    } else if (sfiScore > 0.4) {
+    } else if (sfiScore > 40.0) {
       sfiState = 'Fluid';
     }
     
@@ -190,9 +200,12 @@ function computeSFIWeightedSum(
       orbProfile[key] = orbProfile[key] / orbSum;
     }
   } else {
-    // If no orb weights were applied, create a default uniform distribution
-    // This shouldn't happen, but handle it gracefully
-    console.warn('[SFI] No orb weights applied - all responses may have been invalid');
+    // If no orb weights were applied, create a default uniform distribution across all 13 orbs
+    // This prevents empty profile from causing incorrect coherence calculations
+    console.warn('[SFI] No orb weights applied - creating default uniform distribution across 13 orbs');
+    for (let i = 1; i <= 13; i++) {
+      orbProfile[`orb_${i}`] = 1 / 13;
+    }
   }
 
   if (ucSum > 0) {

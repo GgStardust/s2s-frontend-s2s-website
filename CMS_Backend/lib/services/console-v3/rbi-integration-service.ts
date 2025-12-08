@@ -153,6 +153,13 @@ export async function computeFieldSignatureWithRBI(
     for (const key in orbProfile) {
       orbProfile[key] /= orbSum;
     }
+  } else {
+    // If orb profile is empty (no valid contributions), create default uniform distribution
+    // This prevents empty profile from causing incorrect field dynamics calculations
+    console.warn('[RBI] Empty orb profile - creating default uniform distribution across 13 orbs');
+    for (let i = 1; i <= 13; i++) {
+      orbProfile[`orb_${i}`] = 1 / 13;
+    }
   }
 
   // Build normalized undercurrent profile
