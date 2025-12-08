@@ -361,10 +361,10 @@ export async function matchPathway(
     const reasons: string[] = [];
 
     // Score based on orb alignment
-    // orb_focus contains orb numbers (1, 2, 12, etc.), orb_profile uses same keys
+    // orb_focus contains orb numbers (1, 2, 12, etc.), orb_profile uses keys like "orb_1", "orb_2", etc.
     if (template.orb_focus.length > 0) {
       const orbAlignment = template.orb_focus.reduce((sum, orbNum) => {
-        const orbKey = String(orbNum); // Convert to string to match orb_profile keys
+        const orbKey = `orb_${orbNum}`; // Format: "orb_1", "orb_2", etc. to match orb_profile keys
         return sum + (sfi.orb_profile[orbKey] || 0);
       }, 0) / template.orb_focus.length;
       matchScore += orbAlignment * 0.4; // 40% weight
