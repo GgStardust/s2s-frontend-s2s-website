@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { getCorsHeaders } from '@/lib/cors';
+import { generateInquiryResponse } from '@/lib/services/console-v3/inquiry-service';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -117,9 +118,39 @@ export async function POST(request: NextRequest) {
       .ilike('question_text', `%${question.substring(0, 20)}%`)
       .limit(5);
 
-    // For now, return a placeholder response
-    // Phase 8.3 will integrate with Orbital Brain for actual responses
-    const responseText = `This inquiry capability is being built. Your question: "${question}" will be answered by Orbital Brain integration (coming in Phase 8.3).`;
+    // Get diagnostic session for field state context
+    let diagnosticSession = null;
+    if (session_id) {
+      const { data: diagnostic } = await supabase
+        .from('diagnostic_sessions')
+        .select('*')
+        .eq('id', session_id)
+        .single();
+      diagnosticSession = diagnostic;
+    }
+
+    // Generate Orbital Brain response
+    let responseText: string;
+    let rbiAnalysis: any;
+    let orbitalInterpretation: any;
+    let responseMetadata: any;
+
+    try {
+      const inquiryResponse = await generateInquiryResponse(question, {
+        diagnosticSession,
+        matchedInquiryQuestion: matchedQuestions?.[0] || null,
+        inquirySessionId: inquirySession.id,
+      });
+
+      responseText = inquiryResponse.response;
+      rbiAnalysis = inquiryResponse.rbi_analysis;
+      orbitalInterpretation = inquiryResponse.orbital_interpretation;
+      responseMetadata = inquiryResponse.metadata;
+    } catch (orbitalError: any) {
+      console.error('[Inquiry] Orbital Brain error:', orbitalError);
+      // Fallback response
+      responseText = `I'm processing your question: "${question}". This inquiry system uses Orbital Brain to provide S2S-aligned responses. If you're experiencing issues, please try rephrasing your question.`;
+    }
 
     // Log the inquiry
     const { data: inquiryLog, error: logError } = await supabase
@@ -174,7 +205,13 @@ export async function POST(request: NextRequest) {
         question_text: matchedQuestions[0].question_text,
         category: matchedQuestions[0].category,
       } : null,
-      note: 'Orbital Brain integration coming in Phase 8.3',
+      rbi_analysis: rbiAnalysis ? {
+        coherence: rbiAnalysis.mathematical?.sovereignLogic?.coherence,
+        proof_status: rbiAnalysis.mathematical?.sovereignLogic?.validity,
+        field_dynamics: rbiAnalysis.mathematical?.fieldDynamics,
+      } : undefined,
+      orbital_interpretation: orbitalInterpretation,
+      metadata: responseMetadata,
     }, {
       headers: getCorsHeaders(origin),
     });
