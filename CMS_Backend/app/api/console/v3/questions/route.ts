@@ -22,6 +22,106 @@ export async function OPTIONS(request: NextRequest) {
 }
 
 /**
+ * POST /api/console/v3/questions
+ * Create a new diagnostic question
+ * Phase 2.5: Question Management System
+ */
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // Validate required fields
+    if (!body.question_text && !body.text) {
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'question_text is required' },
+        { status: 400, headers: getCorsHeaders(origin) }
+      );
+    }
+
+    if (!body.response_type || !['single_choice', 'multi_choice', 'scale'].includes(body.response_type)) {
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'response_type is required and must be one of: single_choice, multi_choice, scale' },
+        { status: 400, headers: getCorsHeaders(origin) }
+      );
+    }
+
+    // Validate question_set if provided
+    if (body.question_set && !['beta', 'early_reader', 'inquiry', 'contextual', 'system_generated'].includes(body.question_set)) {
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'Invalid question_set. Must be one of: beta, early_reader, inquiry, contextual, system_generated' },
+        { status: 400, headers: getCorsHeaders(origin) }
+      );
+    }
+
+    // Validate source if provided
+    if (body.source && !['early_reader_feedback', 'system_generated', 'user_submitted', 'beta_test'].includes(body.source)) {
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'Invalid source. Must be one of: early_reader_feedback, system_generated, user_submitted, beta_test' },
+        { status: 400, headers: getCorsHeaders(origin) }
+      );
+    }
+
+    // Set defaults
+    const questionData = {
+      question_text: body.question_text || body.text,
+      text: body.question_text || body.text, // Alias for compatibility
+      question_description: body.question_description || body.description,
+      slug: body.slug,
+      response_type: body.response_type,
+      answer_options: body.answer_options || [],
+      orb_weights: body.orb_weights || {},
+      undercurrent_weights: body.undercurrent_weights || {},
+      practice_weights: body.practice_weights || {},
+      tags: body.tags || [],
+      order_index: body.order_index || 0,
+      layer_focus: body.layer_focus,
+      // Phase 2.5 metadata
+      question_set: body.question_set || 'beta',
+      source: body.source || 'system_generated',
+      inquiry_context: body.inquiry_context,
+      triggers: body.triggers || {},
+      follow_up_question_ids: body.follow_up_question_ids || [],
+      selection_priority: body.selection_priority || 5,
+      is_active: body.is_active !== undefined ? body.is_active : true,
+    };
+
+    // Create question
+    const { data: question, error } = await supabase
+      .from('diagnostic_questions')
+      .insert(questionData)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating question:', error);
+      const origin = request.headers.get('origin');
+      return NextResponse.json(
+        { error: 'Failed to create question', details: error.message },
+        { status: 500, headers: getCorsHeaders(origin) }
+      );
+    }
+
+    const origin = request.headers.get('origin');
+    return NextResponse.json({ question }, {
+      status: 201,
+      headers: getCorsHeaders(origin),
+    });
+  } catch (err: any) {
+    console.error('Unexpected error in POST /api/console/v3/questions:', err);
+    const origin = request.headers.get('origin');
+    return NextResponse.json(
+      { error: 'Internal server error', details: err.message },
+      { status: 500, headers: getCorsHeaders(origin) }
+    );
+  }
+}
+
+/**
  * GET /api/console/v3/questions
  * Fetch diagnostic questions with optional filtering
  * 
