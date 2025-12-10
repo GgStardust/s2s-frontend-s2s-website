@@ -99,7 +99,7 @@ export default function CodexPage() {
               </div>
               <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  The Codex contains foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration: a thought, conversation, reflection, or article. The process moves through research, writing, and RBI analysis to identify resonance nodes.
+                  The Codex reveals foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration: a thought, conversation, reflection, or article. The process moves through research, writing, and RBI analysis to identify resonance nodes.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
                   These essays function as the source material from which all books are compiled. They are manually tagged with metadata frontmatter and inline tagging, then analyzed through the Orb system and backbone to identify resonance patterns. This rigorous methodology produces the consciousness technology that becomes the books.
@@ -282,13 +282,13 @@ export default function CodexPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays are pulled from the content library to meet the framework identified for each book.
+                  The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays emerge from the content library to meet the framework identified for each book.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy functions as direct companions, creating another access point to the same foundational system.
+                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy functions as direct companions, revealing another access point to the same foundational system.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  The Console functions as another interface, creating dynamic access to the same source material through the RBI system.
+                  The Console functions as another interface, revealing dynamic access to the same source material through the RBI system.
                 </p>
                 <div className="mt-6">
                   <Button href="/books" variant="secondary">
