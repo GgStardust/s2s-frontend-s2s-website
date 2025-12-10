@@ -8,7 +8,7 @@ export default function BooksPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
@@ -21,7 +21,7 @@ export default function BooksPage() {
       </section>
 
       {/* Book One Block */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Cover Image */}
           <div className="flex justify-center perspective-1000">
@@ -70,7 +70,7 @@ export default function BooksPage() {
       </section>
 
       {/* Report from the Field Section */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -92,7 +92,7 @@ export default function BooksPage() {
       </section>
 
       {/* Book Previews */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -268,7 +268,7 @@ export default function BooksPage() {
       </section>
 
       {/* Book Two Block */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -290,7 +290,7 @@ export default function BooksPage() {
       </section>
 
       {/* Book Three Block */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -312,7 +312,7 @@ export default function BooksPage() {
       </section>
 
       {/* Relationship Block */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

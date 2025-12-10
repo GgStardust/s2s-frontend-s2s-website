@@ -77,3 +77,4 @@ When the Console is ready, add environment variable:
 ## License
 
 Copyright © 2025 Stardust to Sovereignty. All rights reserved.
+

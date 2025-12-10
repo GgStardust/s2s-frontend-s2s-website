@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Preorder Announcement Banner */}
-      <section className="max-w-4xl mx-auto pt-8 px-6">
+      <section className="max-w-6xl mx-auto pt-8 px-6">
         <div className="text-center space-y-4">
           <div className="inline-block terminator-border-rounded">
             <div className="px-6 py-2 bg-cosmic-blue/95 backdrop-blur-sm rounded-full">
@@ -24,7 +24,7 @@ export default function HomePage() {
       </section>
 
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
             Stardust to Sovereignty
@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* The Paradigm */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -83,7 +83,7 @@ export default function HomePage() {
       </section>
 
       {/* What Book One Contains */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 px-6 border-t border-stone-300/30">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 px-6 border-t border-stone-300/30">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-6">
@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* A Glimpse Into The Manuscript */}
-      <section className="max-w-4xl mx-auto py-20 lg:py-24 px-6 border-t border-stone-300/30">
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 px-6 border-t border-stone-300/30">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-6">
@@ -114,7 +114,7 @@ export default function HomePage() {
       </section>
 
       {/* Who This Is For */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -136,7 +136,7 @@ export default function HomePage() {
       </section>
 
       {/* About This Work - Celebratory */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -181,7 +181,7 @@ export default function HomePage() {
       </section>
 
       {/* Begin Your Journey */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="text-center">

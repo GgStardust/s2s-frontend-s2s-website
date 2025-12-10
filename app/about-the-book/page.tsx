@@ -5,7 +5,7 @@ export default function AboutTheBookPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
@@ -21,7 +21,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* Presale Callout */}
-      <section className="max-w-4xl mx-auto py-8 px-6">
+      <section className="max-w-6xl mx-auto py-8 px-6">
         <div className="text-center">
           <p className="text-lg text-cyan-300 font-medium mb-2">Book One Presale Now Open</p>
           <p className="text-base text-stone-200">Reserve your First Edition copy before February 28, 2026</p>
@@ -29,7 +29,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* Opening Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
@@ -45,7 +45,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* The Structure Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -74,7 +74,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* The Architecture Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -100,7 +100,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* The Journey Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -162,7 +162,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* The Field Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -197,7 +197,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* How to Read It Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -223,7 +223,7 @@ export default function AboutTheBookPage() {
       </section>
 
       {/* Invitation Section */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="text-center max-w-3xl mx-auto">

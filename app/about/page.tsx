@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
             What Stardust to Sovereignty Is
@@ -17,7 +17,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Paradigm */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* The System */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -120,7 +120,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Architect */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -143,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTAs */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="flex flex-col sm:flex-row justify-center gap-6">
           <Button href="/preorder" variant="primary">
             Preorder Book One

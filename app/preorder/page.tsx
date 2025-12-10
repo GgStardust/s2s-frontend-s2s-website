@@ -97,7 +97,7 @@ export default function PreorderPage() {
   if (submitted) {
     return (
       <main className="min-h-screen bg-structural-grid">
-        <section className="max-w-4xl mx-auto py-20 px-6 text-center">
+        <section className="max-w-6xl mx-auto py-20 px-6 text-center">
           <h1 className="text-4xl font-bold mb-6 tracking-tight text-stone-100">Thank You</h1>
           <p className="text-base leading-relaxed text-stone-200 mb-4">
           Your preorder has been received. You'll receive a confirmation email with payment information (Zelle or Venmo) within 24-48 hours.
@@ -119,7 +119,7 @@ export default function PreorderPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Header */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">Reserve Your First Edition Copy</h1>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-200">
@@ -135,7 +135,7 @@ export default function PreorderPage() {
       </section>
 
       {/* What's Inside */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -174,7 +174,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-stone-100 mb-8 text-center">Choose Your Edition</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Print Edition Card */}
@@ -247,7 +247,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Preorder Form */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border mb-8">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -507,7 +507,7 @@ export default function PreorderPage() {
       </section>
 
       {/* FAQ */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -575,7 +575,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Future Volumes */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

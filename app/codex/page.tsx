@@ -43,7 +43,7 @@ export default function CodexPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black tracking-tight">The Codex</h1>
           <h2 className="text-xl md:text-2xl font-light mb-6 text-neutral-700 italic">
@@ -53,7 +53,7 @@ export default function CodexPage() {
       </section>
 
       {/* Active Codex Explanation */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-neutral-200/20 px-6">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-neutral-200/20 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
             <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-black">
@@ -77,7 +77,7 @@ export default function CodexPage() {
 
       {/* Entries List */}
       {isLoading && (
-        <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
           <div className="text-center">
             <p className="text-neutral-500">Loading Codex entries...</p>
           </div>
@@ -85,7 +85,7 @@ export default function CodexPage() {
       )}
 
       {error && (
-        <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
           <div className="border border-red-200 rounded-lg p-8 bg-red-50">
             <p className="text-red-700">{error}</p>
           </div>
@@ -93,7 +93,7 @@ export default function CodexPage() {
       )}
 
       {!isLoading && !error && entries.length === 0 && (
-        <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
           <div className="border border-neutral-200 rounded-lg p-8 bg-white shadow-sm text-center">
             <p className="text-base text-neutral-600 italic">
               No Codex entries are available yet. Entries will appear here as they are added to the system.
@@ -103,7 +103,7 @@ export default function CodexPage() {
       )}
 
       {!isLoading && !error && entries.length > 0 && (
-        <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
           <div className="mb-8">
             <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-black">
               Codex Entries

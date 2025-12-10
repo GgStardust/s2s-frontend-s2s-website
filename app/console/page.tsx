@@ -5,7 +5,7 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 export default function ConsolePage() {
   return (
     <main className="min-h-screen bg-structural-grid">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <section className="py-20 px-6">
           <div className="text-center">
