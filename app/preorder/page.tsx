@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export default function PreorderPage() {
+  const router = useRouter();
   const [selectedOrder, setSelectedOrder] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -80,9 +82,11 @@ export default function PreorderPage() {
       });
 
       if (response.ok) {
-        setSubmitted(true);
+        const orderType = formData.get('order') as string;
         form.reset();
         setSelectedOrder('');
+        // Redirect to thank you page with order type for dynamic pricing
+        router.push(`/thank-you-preorder?order=${encodeURIComponent(orderType)}`);
       } else {
         const data = await response.json();
         setSubmitError(data.error || 'There was an error submitting your preorder. Please try again.');
@@ -93,28 +97,6 @@ export default function PreorderPage() {
       setIsSubmitting(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <main className="min-h-screen bg-structural-grid">
-        <section className="max-w-6xl mx-auto py-20 px-6 text-center">
-          <h1 className="text-4xl font-bold mb-6 tracking-tight text-stone-100">Thank You</h1>
-          <p className="text-base leading-relaxed text-stone-200 mb-4">
-          Your preorder has been received. You'll receive a confirmation email with payment information (Zelle or Venmo) within 24-48 hours.
-          </p>
-          <p className="text-base leading-relaxed text-stone-200 mb-4">
-          Books will ship on February 28, 2026. Digital editions will be delivered in mid-February 2026.
-          </p>
-          <p className="text-base leading-relaxed text-cyan-300 mb-8 font-medium">
-          Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but it may be available sooner.
-          </p>
-          <Button href="/" variant="tertiary">
-          Return to Home
-          </Button>
-        </section>
-      </main>
-    );
-  }
 
   return (
     <main className="min-h-screen bg-structural-grid">
@@ -288,6 +270,9 @@ export default function PreorderPage() {
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+          <input type="hidden" name="_redirect" value="https://stardusttosovereignty.com/thank-you-preorder" />
+          <input type="hidden" name="_subject" value="Preorder Submission - Stardust to Sovereignty" />
+          <input type="hidden" name="_template" value="box" />
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2 text-stone-300">
               Name
@@ -502,6 +487,9 @@ export default function PreorderPage() {
           </button>
           </div>
         </form>
+        <p className="text-sm text-stone-400 mt-4 text-center max-w-2xl mx-auto">
+          Thank you for supporting this first edition. After submitting your preorder, you'll be redirected to complete payment.
+        </p>
           </div>
         </div>
       </section>
