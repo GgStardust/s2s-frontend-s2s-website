@@ -18,6 +18,13 @@ export async function GET(request: NextRequest) {
     const orbEssaysDir = path.join(processedDir, '02d_Orb_Essays');
     const codexEssaysDir = path.join(processedDir, '02f_S2S_codex_essays');
 
+    console.log('Fallback API: Looking for files in:');
+    console.log('  Processed dir:', processedDir);
+    console.log('  Orb essays dir:', orbEssaysDir);
+    console.log('  Codex essays dir:', codexEssaysDir);
+    console.log('  Orb exists:', fs.existsSync(orbEssaysDir));
+    console.log('  Codex exists:', fs.existsSync(codexEssaysDir));
+
     const entries: any[] = [];
 
     // Helper to extract orb number from orb association string
@@ -88,24 +95,32 @@ export async function GET(request: NextRequest) {
     // Load Orb Essays
     if (fs.existsSync(orbEssaysDir)) {
       const orbFiles = fs.readdirSync(orbEssaysDir).filter(f => f.endsWith('.md'));
+      console.log(`  Found ${orbFiles.length} orb essay files`);
       orbFiles.forEach(filename => {
         const filePath = path.join(orbEssaysDir, filename);
         const relativePath = `02d_Orb_Essays/${filename}`;
         const entry = parseFile(filePath, relativePath, 'orb');
         if (entry) entries.push(entry);
       });
+    } else {
+      console.warn('  Orb essays directory not found:', orbEssaysDir);
     }
 
     // Load Codex Essays
     if (fs.existsSync(codexEssaysDir)) {
       const codexFiles = fs.readdirSync(codexEssaysDir).filter(f => f.endsWith('.md'));
+      console.log(`  Found ${codexFiles.length} codex essay files`);
       codexFiles.forEach(filename => {
         const filePath = path.join(codexEssaysDir, filename);
         const relativePath = `02f_S2S_codex_essays/${filename}`;
         const entry = parseFile(filePath, relativePath, 'codex');
         if (entry) entries.push(entry);
       });
+    } else {
+      console.warn('  Codex essays directory not found:', codexEssaysDir);
     }
+
+    console.log(`  Total entries parsed: ${entries.length}`);
 
     // Sort by created date or filename
     entries.sort((a, b) => {
