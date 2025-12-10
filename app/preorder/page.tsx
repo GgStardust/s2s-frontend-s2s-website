@@ -32,9 +32,22 @@ export default function PreorderPage() {
       errors.order = 'Please select an order type';
     }
     if (order === 'print' || order === 'bundle') {
-      const shipping = formData.get('shipping') as string;
-      if (!shipping || shipping.trim().length < 10) {
-        errors.shipping = 'Please provide a complete shipping address';
+      const street = formData.get('street') as string;
+      const city = formData.get('city') as string;
+      const state = formData.get('state') as string;
+      const zip = formData.get('zip') as string;
+      
+      if (!street || street.trim().length < 5) {
+        errors.street = 'Please provide a street address';
+      }
+      if (!city || city.trim().length < 2) {
+        errors.city = 'Please provide a city';
+      }
+      if (!state || state.trim().length < 2) {
+        errors.state = 'Please provide a state';
+      }
+      if (!zip || !/^\d{5}(-\d{4})?$/.test(zip.trim())) {
+        errors.zip = 'Please provide a valid ZIP code';
       }
     }
 
@@ -284,10 +297,10 @@ export default function PreorderPage() {
               id="name"
               name="name"
               required
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
                 fieldErrors.name 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.name}
               aria-describedby={fieldErrors.name ? 'name-error' : undefined}
@@ -306,10 +319,10 @@ export default function PreorderPage() {
               id="email"
               name="email"
               required
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
                 fieldErrors.email 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.email}
               aria-describedby={fieldErrors.email ? 'email-error' : undefined}
@@ -334,10 +347,10 @@ export default function PreorderPage() {
                   setFieldErrors(prev => ({ ...prev, order: '' }));
                 }
               }}
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 focus:outline-none focus:ring-2 ${
                 fieldErrors.order 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.order}
               aria-describedby={fieldErrors.order ? 'order-error' : undefined}
@@ -352,26 +365,105 @@ export default function PreorderPage() {
             )}
           </div>
 
-          <div>
-            <label htmlFor="shipping" className="block text-sm font-medium mb-2 text-stone-300">
-              Shipping Address (if print)
-            </label>
-            <textarea
-              id="shipping"
-              name="shipping"
-              rows={3}
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 resize-none ${
-                fieldErrors.shipping 
-                  ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
-              }`}
-              aria-invalid={!!fieldErrors.shipping}
-              aria-describedby={fieldErrors.shipping ? 'shipping-error' : undefined}
-            />
-            {fieldErrors.shipping && (
-              <p id="shipping-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.shipping}</p>
-            )}
-          </div>
+          {(selectedOrder === 'print' || selectedOrder === 'bundle') && (
+            <>
+              <div className="border-t border-stone-600/30 pt-6">
+                <label className="block text-sm font-medium mb-4 text-cyan-300">
+                  Shipping Address
+                </label>
+                
+                <div className="mb-4">
+                  <label htmlFor="street" className="block text-sm font-medium mb-2 text-stone-300">
+                    Street Address
+                  </label>
+                  <input
+                    type="text"
+                    id="street"
+                    name="street"
+                    required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                    className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                      fieldErrors.street 
+                        ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                        : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                    }`}
+                    aria-invalid={!!fieldErrors.street}
+                    aria-describedby={fieldErrors.street ? 'street-error' : undefined}
+                  />
+                  {fieldErrors.street && (
+                    <p id="street-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.street}</p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="city" className="block text-sm font-medium mb-2 text-stone-300">
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.city 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.city}
+                      aria-describedby={fieldErrors.city ? 'city-error' : undefined}
+                    />
+                    {fieldErrors.city && (
+                      <p id="city-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.city}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="state" className="block text-sm font-medium mb-2 text-stone-300">
+                      State
+                    </label>
+                    <input
+                      type="text"
+                      id="state"
+                      name="state"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.state 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.state}
+                      aria-describedby={fieldErrors.state ? 'state-error' : undefined}
+                    />
+                    {fieldErrors.state && (
+                      <p id="state-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.state}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="zip" className="block text-sm font-medium mb-2 text-stone-300">
+                      ZIP Code
+                    </label>
+                    <input
+                      type="text"
+                      id="zip"
+                      name="zip"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.zip 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.zip}
+                      aria-describedby={fieldErrors.zip ? 'zip-error' : undefined}
+                    />
+                    {fieldErrors.zip && (
+                      <p id="zip-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.zip}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
 
           <div>
             <label htmlFor="notes" className="block text-sm font-medium mb-2 text-stone-300">
@@ -381,7 +473,7 @@ export default function PreorderPage() {
               id="notes"
               name="notes"
               rows={3}
-              className="w-full px-4 py-3 bg-white border border-stone-300/30 rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 resize-none"
+              className="w-full px-4 py-3 bg-stone-800/50 border border-stone-600/50 rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 resize-none"
             />
           </div>
 
