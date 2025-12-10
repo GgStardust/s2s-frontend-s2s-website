@@ -49,42 +49,64 @@ export default function CodexPage() {
         setIsLoading(true);
         setError(null);
 
+        console.log('Loading Codex entries from:', CMS_BACKEND_URL);
+
         // Try Supabase API first
-        const response = await fetch(`${CMS_BACKEND_URL}/api/codex/entries?limit=100`);
-        
-        if (response.ok) {
-          const data = await response.json();
-          if (data.entries && data.entries.length > 0) {
-            setEntries(data.entries);
-            setIsLoading(false);
-            return;
+        try {
+          const response = await fetch(`${CMS_BACKEND_URL}/api/codex/entries?limit=100`);
+          console.log('Supabase API response status:', response.status);
+          
+          if (response.ok) {
+            const data = await response.json();
+            console.log('Supabase API data:', { count: data.count, entriesLength: data.entries?.length });
+            if (data.entries && data.entries.length > 0) {
+              console.log(`✅ Loaded ${data.entries.length} entries from Supabase`);
+              setEntries(data.entries);
+              setIsLoading(false);
+              return;
+            }
+          } else {
+            const errorText = await response.text();
+            console.warn('Supabase API error:', response.status, errorText);
           }
+        } catch (supabaseErr: any) {
+          console.warn('Supabase API request failed:', supabaseErr.message);
         }
 
         // Fallback to file system
         console.log('No Supabase entries, trying file system fallback...');
-        const fallbackResponse = await fetch(`${CMS_BACKEND_URL}/api/codex/entries/fallback`);
-        
-        if (fallbackResponse.ok) {
-          const fallbackData = await fallbackResponse.json();
-          console.log('Fallback response:', fallbackData);
-          if (fallbackData.entries && fallbackData.entries.length > 0) {
-            console.log(`Loaded ${fallbackData.entries.length} entries from file system`);
-            setEntries(fallbackData.entries);
-            setIsLoading(false);
-            return;
+        try {
+          const fallbackResponse = await fetch(`${CMS_BACKEND_URL}/api/codex/entries/fallback`);
+          console.log('Fallback API response status:', fallbackResponse.status);
+          
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            console.log('Fallback API data:', { count: fallbackData.count, entriesLength: fallbackData.entries?.length, source: fallbackData.source });
+            if (fallbackData.entries && fallbackData.entries.length > 0) {
+              console.log(`✅ Loaded ${fallbackData.entries.length} entries from file system`);
+              setEntries(fallbackData.entries);
+              setIsLoading(false);
+              return;
+            } else {
+              console.warn('⚠️ Fallback returned 0 entries');
+            }
           } else {
-            console.warn('Fallback returned 0 entries');
+            const errorText = await fallbackResponse.text();
+            console.error('❌ Fallback API error:', fallbackResponse.status, errorText);
+            setError(`CMS Backend unavailable (${fallbackResponse.status}). Please ensure the CMS backend is running at ${CMS_BACKEND_URL}`);
           }
-        } else {
-          const errorText = await fallbackResponse.text();
-          console.error('Fallback API error:', fallbackResponse.status, errorText);
+        } catch (fallbackErr: any) {
+          console.error('❌ Fallback API request failed:', fallbackErr.message);
+          setError(`Cannot connect to CMS Backend at ${CMS_BACKEND_URL}. Error: ${fallbackErr.message}`);
         }
 
         // No entries found
+        if (entries.length === 0) {
+          console.warn('⚠️ No entries loaded from any source');
+        }
         setEntries([]);
       } catch (err: any) {
-        console.error('Error loading entries:', err);
+        console.error('❌ Error loading entries:', err);
         setError(`Failed to load Codex entries: ${err.message}`);
       } finally {
         setIsLoading(false);
