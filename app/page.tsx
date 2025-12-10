@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
-import PreorderCountdown from '@/components/PreorderCountdown';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export default function HomePage() {
@@ -14,11 +13,7 @@ export default function HomePage() {
               <p className="text-sm text-cyan-300 font-medium">
                 Book One Presale Now Open • Book One: The Cosmic Tapestry • Ships February 28, 2026
           </p>
-        </div>
           </div>
-          <div className="pt-4">
-            <p className="text-sm text-cyan-300/80 mb-3">Time until release:</p>
-            <PreorderCountdown />
           </div>
         </div>
       </section>
