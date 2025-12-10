@@ -7,6 +7,7 @@ export interface Essay {
   fullContent: string;
   excerpt: string;
   scrollLines: string[];
+  tags?: string[];
 }
 
 export const essays: Essay[] = [
@@ -266,6 +267,7 @@ Origin Intelligence is a continuous origination. Every breath, every cellular ig
     orb: 8,
     orbName: 'Orb 8: Quantum Intuition',
     category: 'more',
+    tags: ['neurodivergence', 'evolutionary_intelligence', 'interface_bandwidth', 'resonance_sensitivity', 'coherence_mechanics', 'photonic_intelligence', 'temporal_fluidity', 'quantum_intuition', 'sovereign_field', 'bridging_intelligence', 'generational_architecture', 'nervous_system_evolution', 'environmental_coherence', 'neuroscience_evidence'],
     excerpt: 'Neurodivergence is a field architecture. It expresses the relationship between a human system\'s interface bandwidth, its resonance environment, and the coherence mechanics that stabilize perception, emotion, and identity. It is a form of evolutionary intelligence emerging in real time.',
     fullContent: `# Neurodivergent Coherence Architecture
 
@@ -423,6 +425,7 @@ The Sovereign Field emerges when the environment aligns with the architecture ra
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
+    tags: ['sovereign_field', 'consciousness_evolution', 'field_coherence', 'resonance_mechanics', 'quantum_intuition', 'temporal_fluidity', 'alchemical_current', 'harmonic_architectures', 'starline_memory', 'ancestral_repatterning', 'radiant_transparency', 'bridging_intelligence', 'origin_intelligence', 'field_mechanics', 'consciousness_biology'],
     excerpt: 'Grief is sovereign law: a structuring force of the field, integral to coherence, collapse, and renewal. In the Stardust to Sovereignty framework, calling grief a law means it is not incidental but one of the fundamental design anchors of existence, equal in weight to resonance, light, and memory.',
     fullContent: `# Grief as Architecture: Collapse and Renewal in the Sovereign Field
 
@@ -467,6 +470,7 @@ To remember this together is to know grief as shared human ground across generat
     orb: 8,
     orbName: 'Orb 8: Quantum Intuition',
     category: 'more',
+    tags: ['parallel_timelines', 'synchrony_markers', 'lucid_dreaming', 'breath_portal'],
     excerpt: 'Parallel timelines coexist as simultaneous probability streams. Consciousness navigates among them through resonance, attention, and embodied choice. Every moment contains multiple futures vibrating at distinct frequencies. Timeline navigation expresses attunement: sensing which trajectory harmonizes with the sovereign field.',
     fullContent: `# Navigating Parallel Timelines
 
@@ -531,6 +535,7 @@ Timelines are invitations. The coherent one feels like quiet strength. When you 
     orb: 6,
     orbName: 'Orb 6: Starline Memory',
     category: 'more',
+    tags: ['fascia_intelligence', 'starline_memory', 'piezoelectric_network', 'somatic_recall'],
     excerpt: 'Galactic recall occurs through the body\'s connective network, the fascia, which functions as a lineage antenna. Fascia conducts bioelectric current, storing both personal and ancestral memory within its crystalline matrix. Under starlight, its signal capacity heightens.',
     fullContent: `# Galactic Recall and Fascia Intelligence
 
@@ -585,6 +590,7 @@ The fascia remembers what the mind forgets. Under the night sky, presence restor
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
+    tags: ['aurora', 'magnetosphere', 'solar_wind', 'resonance_coupling', 'electromagnetic_interaction', 'photonic_intelligence', 'quantum_intuition', 'field_resonance', 'plasma_physics', 'atmospheric_coherence', 'frequency_visible', 'signal_transmission', 'bridging_intelligence', 'sovereign_field', 'light_body_interface', 'consciousness_mirror', 'cosmic_biological_bridge', 'electromagnetic_field', 'particle_acceleration', 'resonance_mechanics', 'field_coherence'],
     excerpt: 'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
     fullContent: `# Auroras — The Breath of the Magnetosphere
 
@@ -628,6 +634,7 @@ The aurora functions as consciousness mirror: external cosmic process reflecting
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
+    tags: ['flow_state', 'optimal_performance', 'consciousness_evolution', 'field_design', 'energetic_coherence', 'mind_body_integration', 'creative_intelligence', 'sovereignty', 'spiritual_growth', 'human_potential', 'technology_consciousness', 'practical_application'],
     excerpt: 'Flow state represents peak consciousness alignment where ego dissolves and pure creation happens. The optimal state integrates flow with holistic well-being across physical, mental, and emotional domains. Achieving optimal state creates the foundation for consciousness evolution and sovereign living.',
     fullContent: `# The Flow State and Optimal State
 
@@ -701,6 +708,7 @@ Flow state represents peak consciousness alignment where ego dissolves and pure 
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
+    tags: ['frequency_literacy', 'resonance', 'bioelectricity', 'sound_intelligence', 'coherence', 'embodiment', 'language_as_sonic_grid', 'body_technology', 'vibrational_medicine', 'harmonic_tuning', 'sovereign_field', 'bridging_intelligence', 'cymatics', 'schumann_resonance', 'fascia_resonance', 'acoustic_architecture', 'frequency_therapy', 'bioelectric_coherence', 'neural_oscillation', 'vibroacoustic_therapy'],
     excerpt: 'Before you speak, your body is already broadcasting frequency. Every cell, fascia strand, and organ operates as a resonant node translating the universal field into human experience. The heartbeat you feel in your chest expresses circulation through electromagnetic oscillation, broadcasting coherent signal that entrains brain waves, synchronizes cellular rhythms, and connects you to the larger field.',
     fullContent: `# Frequency Literacy: The Sovereign Art of Tuning
 
@@ -762,6 +770,7 @@ Frequency literacy is the bridge between consciousness and form, the translation
     orb: 5,
     orbName: 'Orb 5: Temporal Sovereignty',
     category: 'more',
+    tags: ['temporal_alignment', 'eclipse_corridor', 'chronotype', 'sovereign_pacing'],
     excerpt: 'Energetic sovereignty expresses cyclical rhythm. Spiral time reflects the turning of celestial bodies, daily, seasonal, and galactic movements that shape consciousness through resonance. When awareness tracks these spirals, alignment replaces control.',
     fullContent: `# Temporal Alignment and Sovereign Cycles
 
@@ -841,6 +850,7 @@ Time reveals itself through rhythm. When you listen, it carries you. Work become
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
+    tags: ['star_love', 'living_constellation', 'quantum_galactic', 'relationship_structuring', 'consciousness_evolution', 'field_coherence', 'resonance_mechanics', 'quantum_intuition', 'temporal_fluidity', 'alchemical_current', 'harmonic_architectures', 'starline_memory', 'ancestral_repatterning', 'radiant_transparency', 'bridging_intelligence'],
     excerpt: 'The architecture of love is evolving. Relating, through this lens, spans human, cosmic, galactic, universal, and quantum planes. These are interwoven frequencies. Relationship is a living resonance organized through clarity, coherence, and attunement.',
     fullContent: `# Star Love and the Living Constellation: Quantum-Galactic Relationship Structuring
 
@@ -903,6 +913,7 @@ This Codex affirms a living topology, a resonance map already unfolding for thos
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
+    tags: ['subtle_body', 'sovereign_current', 'breath_architecture', 'bioelectric_current', 'field_interface', 'sovereign_coherence', 'temporal_sovereignty', 'alchemical_current', 'sovereign_field', 'trans_dimensional_interface', 'living_infrastructure', 'coherence_thresholds', 'cultural_lineages', 'future_primitive', 'sovereignty_embodiment'],
     excerpt: 'The subtle body breathes as infrastructure. It pulses as circuitry through which breath, energy, and awareness circulate as living signal. The physical body anchors as cellular and anatomical form. The subtle body flows as trans-dimensional interface, spanning physical, etheric, astral, causal, planetary, and galactic layers in one continuous stream of consciousness.',
     fullContent: `# The Subtle Body and Sovereign Current
 
@@ -982,6 +993,7 @@ The subtle body breathes as sovereignty in circuitry. It flows as living infrast
     orb: 5,
     orbName: 'Orb 5: Temporal Sovereignty',
     category: 'more',
+    tags: ['rhythmic_intelligence', 'biological_coherence', 'temporal_sovereignty', 'harmonic_architectures', 'photonic_intelligence', 'resonance_mechanics', 'circadian_rhythm', 'metabolic_intelligence', 'chronobiology', 'cosmic_metabolic_continuum', 'photonic_metabolism', 'mitochondrial_rhythm', 'neural_synchronization', 'heart_rate_variability', 'entrainment', 'sovereign_field', 'biological_observatory', 'temporal_fluidity', 'rhythmic_sovereignty', 'harmonic_coupling'],
     excerpt: 'Before you read these words, your body is already telling time. Your heart beats in cadence with tidal forces operating beyond visible perception. Your mitochondria pulse to rhythms older than language. Your cells divide according to cycles that first aligned when Earth spun into motion. You are a living chronometer, reading cosmic time through biological oscillation.',
     fullContent: `# Rhythmic Intelligence: The Architecture of Biological Coherence
 

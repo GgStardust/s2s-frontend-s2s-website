@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { essays } from '@/content/essays-data';
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function EssayPage() {
   const params = useParams();
@@ -115,7 +117,7 @@ export default function EssayPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             {/* Header */}
             <div className="mb-6">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded text-sm font-medium">
                   {essay.orbName}
                 </span>
@@ -123,6 +125,23 @@ export default function EssayPage() {
                   <span className="px-3 py-1 bg-cyan-400/10 text-cyan-300/80 rounded text-xs">
                     Featured
                   </span>
+                )}
+                {essay.tags && essay.tags.length > 0 && (
+                  <>
+                    {essay.tags.slice(0, 5).map((tag, index) => (
+                      <span 
+                        key={index}
+                        className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs font-normal"
+                      >
+                        {tag.replace(/_/g, ' ')}
+                      </span>
+                    ))}
+                    {essay.tags.length > 5 && (
+                      <span className="px-2 py-1 bg-stone-700/30 text-stone-400 rounded text-xs">
+                        +{essay.tags.length - 5} more
+                      </span>
+                    )}
+                  </>
                 )}
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-cyan-300 mb-2">
@@ -132,7 +151,7 @@ export default function EssayPage() {
 
             {/* Content - with protection styles */}
             <div 
-              className="prose prose-invert prose-cyan max-w-none text-base leading-relaxed text-stone-200 whitespace-pre-line select-none"
+              className="prose prose-invert prose-cyan max-w-none text-base leading-relaxed text-stone-200 select-none"
               style={{
                 userSelect: 'none',
                 WebkitUserSelect: 'none',
@@ -158,7 +177,24 @@ export default function EssayPage() {
                 return false;
               }}
             >
-              {essay.fullContent}
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({node, ...props}) => <h1 className="text-3xl font-semibold text-cyan-300 mt-8 mb-4" {...props} />,
+                  h2: ({node, ...props}) => <h2 className="text-2xl font-semibold text-cyan-300 mt-6 mb-3" {...props} />,
+                  h3: ({node, ...props}) => <h3 className="text-xl font-semibold text-cyan-300 mt-4 mb-2" {...props} />,
+                  p: ({node, ...props}) => <p className="mb-4 leading-relaxed" {...props} />,
+                  ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2 ml-4" {...props} />,
+                  ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-4 space-y-2 ml-4" {...props} />,
+                  li: ({node, ...props}) => <li className="leading-relaxed" {...props} />,
+                  strong: ({node, ...props}) => <strong className="font-semibold text-cyan-200" {...props} />,
+                  em: ({node, ...props}) => <em className="italic" {...props} />,
+                  code: ({node, ...props}) => <code className="bg-stone-800 px-1.5 py-0.5 rounded text-sm" {...props} />,
+                  blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-cyan-400/50 pl-4 italic my-4" {...props} />,
+                }}
+              >
+                {essay.fullContent}
+              </ReactMarkdown>
             </div>
 
             {/* Footer */}

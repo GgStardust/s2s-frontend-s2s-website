@@ -131,3 +131,4 @@ import ParadigmSection from '@/components/ParadigmSection';
 2. Add more shared content to `lib/content.ts` as patterns emerge
 3. Create additional components for other repeated sections (e.g., "What Book One Contains")
 
+

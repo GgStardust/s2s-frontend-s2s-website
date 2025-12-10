@@ -130,3 +130,4 @@
 3. **Low Priority:** Add taglines if space allows
 4. **Consider:** Add trilogy progression explanation somewhere (maybe About page or new section)
 
+
