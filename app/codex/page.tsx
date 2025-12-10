@@ -151,6 +151,9 @@ export default function CodexPage() {
 
   return (
     <main className="min-h-screen bg-structural-grid">
+      {/* Test render indicator */}
+      {!isLoading && <div className="p-4 bg-red-500 text-white">TEST: Component is rendering</div>}
+      
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
