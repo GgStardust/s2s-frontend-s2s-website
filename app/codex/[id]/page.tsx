@@ -1,16 +1,13 @@
 'use client';
 
-import { use } from 'react';
 import Link from 'next/link';
 import { essays } from '@/content/essays-data';
 import { useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
-interface PageProps {
-  params: Promise<{ id: string }>;
-}
-
-export default function EssayPage({ params }: PageProps) {
-  const { id } = use(params);
+export default function EssayPage() {
+  const params = useParams();
+  const id = params?.id as string;
   const essay = essays.find(e => e.id === id);
 
   // Protection: Disable text selection, right-click, and keyboard shortcuts
