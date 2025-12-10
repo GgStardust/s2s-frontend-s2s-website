@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
@@ -10,13 +10,15 @@ interface CodexEntry {
   id?: string;
   title: string;
   content?: string;
+  excerpt?: string;
   author?: string;
   type?: string;
   category?: string;
+  codex_category?: string;
   status?: string;
   created?: string;
   modified?: string;
-  orb_associations?: {
+  orb_associations?: number[] | {
     primary_orb?: string;
     secondary_orbs?: string[];
     orb_mentions_all?: string[];
@@ -28,30 +30,55 @@ interface CodexEntry {
   };
   is_primary_source?: boolean;
   book_threading?: string;
+  source_type?: 'orb' | 'codex';
 }
 
 export default function CodexPage() {
   const [entries, setEntries] = useState<CodexEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Filter state
+  const [selectedOrb, setSelectedOrb] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const loadEntries = async () => {
       try {
-        // Try to fetch from CMS backend API
-        const response = await fetch(`${CMS_BACKEND_URL}/api/content-files?type=s2s_codex&limit=50`);
-        if (!response.ok) {
-          // If API fails, that's okay for MVP - we'll show the structure
-          console.log('CMS backend not available, showing structure only');
-          setEntries([]);
-        } else {
+        setIsLoading(true);
+        setError(null);
+
+        // Try Supabase API first
+        const response = await fetch(`${CMS_BACKEND_URL}/api/codex/entries?limit=100`);
+        
+        if (response.ok) {
           const data = await response.json();
-          setEntries(data.files || data.entries || []);
+          if (data.entries && data.entries.length > 0) {
+            setEntries(data.entries);
+            setIsLoading(false);
+            return;
+          }
         }
-      } catch (err: any) {
-        // For MVP, if backend isn't ready, we show the page structure
-        console.log('Backend connection not available:', err.message);
+
+        // Fallback to file system
+        console.log('No Supabase entries, trying file system fallback...');
+        const fallbackResponse = await fetch(`${CMS_BACKEND_URL}/api/codex/entries/fallback`);
+        
+        if (fallbackResponse.ok) {
+          const fallbackData = await fallbackResponse.json();
+          if (fallbackData.entries && fallbackData.entries.length > 0) {
+            setEntries(fallbackData.entries);
+            setIsLoading(false);
+            return;
+          }
+        }
+
+        // No entries found
         setEntries([]);
+      } catch (err: any) {
+        console.error('Error loading entries:', err);
+        setError('Failed to load Codex entries');
       } finally {
         setIsLoading(false);
       }
@@ -60,8 +87,76 @@ export default function CodexPage() {
     loadEntries();
   }, []);
 
-  const formatOrbName = (orb: string) => {
-    // Extract just the orb number and name from "Orb 4: Harmonic Architectures"
+  // Extract orb numbers from various formats
+  const getOrbNumbers = (entry: CodexEntry): number[] => {
+    if (Array.isArray(entry.orb_associations)) {
+      return entry.orb_associations;
+    }
+    if (entry.orb_associations && typeof entry.orb_associations === 'object') {
+      const orbs: number[] = [];
+      if (entry.orb_associations.primary_orb) {
+        const match = entry.orb_associations.primary_orb.match(/Orb\s+(\d+)/i);
+        if (match) orbs.push(parseInt(match[1], 10));
+      }
+      if (Array.isArray(entry.orb_associations.secondary_orbs)) {
+        entry.orb_associations.secondary_orbs.forEach((orb: string) => {
+          const match = orb.match(/Orb\s+(\d+)/i);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            if (!orbs.includes(num)) orbs.push(num);
+          }
+        });
+      }
+      return orbs;
+    }
+    return [];
+  };
+
+  // Filter entries
+  const filteredEntries = useMemo(() => {
+    return entries.filter(entry => {
+      // Orb filter
+      if (selectedOrb !== null) {
+        const orbNumbers = getOrbNumbers(entry);
+        if (!orbNumbers.includes(selectedOrb)) return false;
+      }
+
+      // Category filter
+      if (selectedCategory) {
+        const category = entry.codex_category || entry.category || 'essay';
+        if (category !== selectedCategory) return false;
+      }
+
+      // Search filter
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const searchable = [
+          entry.title,
+          entry.excerpt,
+          entry.field_function?.content_purpose,
+          entry.tags?.join(' '),
+        ].filter(Boolean).join(' ').toLowerCase();
+        if (!searchable.includes(query)) return false;
+      }
+
+      return true;
+    });
+  }, [entries, selectedOrb, selectedCategory, searchQuery]);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = new Set<string>();
+    entries.forEach(entry => {
+      const cat = entry.codex_category || entry.category || 'essay';
+      cats.add(cat);
+    });
+    return Array.from(cats).sort();
+  }, [entries]);
+
+  const formatOrbName = (orb: string | number): string => {
+    if (typeof orb === 'number') {
+      return `Orb ${orb}`;
+    }
     const match = orb.match(/Orb (\d+):\s*(.+)/);
     if (match) {
       return `Orb ${match[1]}: ${match[2]}`;
@@ -185,7 +280,7 @@ export default function CodexPage() {
         </div>
       </section>
 
-      {/* Entries List */}
+      {/* Entries List with Filters */}
       {isLoading && (
         <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="text-center">
@@ -204,6 +299,184 @@ export default function CodexPage() {
         </section>
       )}
 
+      {!isLoading && !error && entries.length > 0 && (
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+          <div className="mb-8">
+            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+              Codex Entries
+            </h2>
+            <p className="text-sm text-stone-400 mb-6">
+              {filteredEntries.length} of {entries.length} entries
+            </p>
+
+            {/* Filters */}
+            <div className="space-y-4 mb-8">
+              {/* Search */}
+              <div>
+                <input
+                  type="text"
+                  placeholder="Search entries..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full md:w-96 px-4 py-2 bg-stone-800/50 border border-stone-600 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                />
+              </div>
+
+              {/* Orb Filter */}
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedOrb(null)}
+                  className={`px-3 py-1 rounded text-sm ${
+                    selectedOrb === null
+                      ? 'bg-cyan-400 text-stone-900'
+                      : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
+                  }`}
+                >
+                  All Orbs
+                </button>
+                {Array.from({ length: 13 }, (_, i) => i + 1).map(orbNum => (
+                  <button
+                    key={orbNum}
+                    onClick={() => setSelectedOrb(selectedOrb === orbNum ? null : orbNum)}
+                    className={`px-3 py-1 rounded text-sm ${
+                      selectedOrb === orbNum
+                        ? 'bg-cyan-400 text-stone-900'
+                        : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
+                    }`}
+                  >
+                    Orb {orbNum}
+                  </button>
+                ))}
+              </div>
+
+              {/* Category Filter */}
+              {categories.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={() => setSelectedCategory(null)}
+                    className={`px-3 py-1 rounded text-sm ${
+                      selectedCategory === null
+                        ? 'bg-cyan-400 text-stone-900'
+                        : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
+                    }`}
+                  >
+                    All Categories
+                  </button>
+                  {categories.map(cat => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
+                      className={`px-3 py-1 rounded text-sm capitalize ${
+                        selectedCategory === cat
+                          ? 'bg-cyan-400 text-stone-900'
+                          : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Entries Grid */}
+          {filteredEntries.length === 0 ? (
+            <div className="terminator-border">
+              <div className="p-8 bg-cosmic-blue rounded-lg text-center">
+                <p className="text-stone-300">No entries match your filters.</p>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {filteredEntries.map((entry, index) => {
+                const orbNumbers = getOrbNumbers(entry);
+                const category = entry.codex_category || entry.category || 'essay';
+                
+                return (
+                  <div
+                    key={entry.id || index}
+                    className="terminator-border"
+                  >
+                    <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
+                      {/* Category Badge */}
+                      <div className="mb-3">
+                        <span className="px-2 py-1 bg-cyan-400/20 text-cyan-300 rounded text-xs uppercase tracking-wide">
+                          {category}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
+                        {entry.title || 'Untitled Entry'}
+                      </h3>
+
+                      {/* Orb Badges */}
+                      {orbNumbers.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {orbNumbers.slice(0, 5).map(orbNum => (
+                            <span
+                              key={orbNum}
+                              className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs font-medium"
+                            >
+                              Orb {orbNum}
+                            </span>
+                          ))}
+                          {orbNumbers.length > 5 && (
+                            <span className="px-2 py-1 text-stone-400 text-xs">
+                              +{orbNumbers.length - 5} more
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Excerpt */}
+                      {entry.excerpt && (
+                        <p className="text-sm text-stone-300 mb-4 leading-relaxed flex-grow">
+                          {entry.excerpt}
+                        </p>
+                      )}
+
+                      {/* Content Purpose (if no excerpt) */}
+                      {!entry.excerpt && entry.field_function?.content_purpose && (
+                        <p className="text-sm text-stone-300 mb-4 leading-relaxed flex-grow">
+                          {entry.field_function.content_purpose.substring(0, 150)}
+                          {entry.field_function.content_purpose.length > 150 ? '...' : ''}
+                        </p>
+                      )}
+
+                      {/* Tags */}
+                      {entry.tags && entry.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {entry.tags.slice(0, 4).map((tag, i) => (
+                            <span
+                              key={i}
+                              className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                          {entry.tags.length > 4 && (
+                            <span className="text-stone-400 text-xs">+{entry.tags.length - 4}</span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Footer */}
+                      <div className="mt-auto pt-4 border-t border-cyan-400/20">
+                        {entry.is_primary_source && (
+                          <span className="text-xs text-cyan-400/80 italic">Primary source material</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </section>
+      )}
+
       {!isLoading && !error && entries.length === 0 && (
         <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="terminator-border">
@@ -215,86 +488,6 @@ export default function CodexPage() {
                 The Codex updates continuously with new essays, often daily. The system remains alive, revealing fresh perspectives.
               </p>
             </div>
-          </div>
-        </section>
-      )}
-
-      {!isLoading && !error && entries.length > 0 && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-          <div className="mb-8">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-              Codex Entries
-            </h2>
-            <p className="text-sm text-stone-400 mt-2">
-              Source material that becomes books
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {entries.map((entry, index) => (
-              <div
-                key={entry.id || index}
-                className="terminator-border"
-              >
-                <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-                  <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
-                    {entry.title || 'Untitled Entry'}
-                  </h3>
-                  
-                  {entry.orb_associations && (
-                    <div className="mb-4 space-y-2">
-                      {entry.orb_associations.primary_orb && (
-                        <div>
-                          <span className="text-xs text-cyan-400/60 uppercase tracking-wide">Primary Orb</span>
-                          <p className="text-sm text-cyan-300 mt-1">
-                            {formatOrbName(entry.orb_associations.primary_orb)}
-                          </p>
-                        </div>
-                      )}
-                      {entry.orb_associations.secondary_orbs && entry.orb_associations.secondary_orbs.length > 0 && (
-                        <div>
-                          <span className="text-xs text-cyan-400/60 uppercase tracking-wide">Secondary Orbs</span>
-                          <div className="flex flex-wrap gap-2 mt-1">
-                            {entry.orb_associations.secondary_orbs.slice(0, 3).map((orb, i) => (
-                              <span
-                                key={i}
-                                className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs"
-                              >
-                                {formatOrbName(orb)}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {entry.field_function?.content_purpose && (
-                    <p className="text-sm text-stone-300 mb-4 leading-relaxed">
-                      {entry.field_function.content_purpose}
-                    </p>
-                  )}
-
-                  {entry.tags && entry.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {entry.tags.slice(0, 5).map((tag, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {entry.is_primary_source && (
-                    <div className="mt-4 pt-4 border-t border-cyan-400/20">
-                      <span className="text-xs text-cyan-400/80 italic">Primary source material</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
           </div>
         </section>
       )}
