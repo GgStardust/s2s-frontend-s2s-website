@@ -2,8 +2,15 @@
 
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import FeaturedEssay from '@/components/FeaturedEssay';
+import EssayCard from '@/components/EssayCard';
+import FieldNotesScroll from '@/components/FieldNotesScroll';
+import { essays } from '@/content/essays-data';
 
 export default function CodexPage() {
+  const featuredEssays = essays.filter(e => e.category === 'featured');
+  const moreEssays = essays.filter(e => e.category === 'more');
+
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
@@ -119,6 +126,43 @@ export default function CodexPage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Essays */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="mb-8">
+          <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+            Featured Essays
+          </h2>
+          <p className="text-sm text-stone-400">
+            Foundational essays that reveal the architecture of the system
+          </p>
+        </div>
+        <div className="space-y-8">
+          {featuredEssays.map(essay => (
+            <FeaturedEssay key={essay.id} essay={essay} />
+          ))}
+        </div>
+      </section>
+
+      {/* More From the Codex */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="mb-8">
+          <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+            More From the Codex
+          </h2>
+          <p className="text-sm text-stone-400">
+            Additional foundational essays
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {moreEssays.map(essay => (
+            <EssayCard key={essay.id} essay={essay} />
+          ))}
+        </div>
+      </section>
+
+      {/* Field Notes / Scrollstream */}
+      <FieldNotesScroll />
 
       {/* Connection to Books */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
