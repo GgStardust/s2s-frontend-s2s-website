@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-// Ticker intentionally removed
-// import TestimonialsTicker from '@/components/TestimonialsTicker';
+import TestimonialsTicker from '@/components/TestimonialsTicker';
 import ExpandableExcerpt from '@/components/ExpandableExcerpt';
 
 export default function BooksPage() {
@@ -85,7 +84,7 @@ export default function BooksPage() {
                 </div>
               </div>
               <div className="lg:col-span-3">
-                {/* Ticker removed for clarity and simplicity */}
+                <TestimonialsTicker />
               </div>
             </div>
           </div>
