@@ -18,22 +18,33 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
+  title: {
+    default: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
+    template: '%s | Stardust to Sovereignty',
+  },
   description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and the full system of sovereign intelligences.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book'],
-  authors: [{ name: 'Stardust to Sovereignty' }],
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
+  authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/about' }],
+  creator: 'Gigi Stardust',
+  publisher: 'Stardust to Sovereignty',
+  metadataBase: new URL('https://stardusttosovereignty.com'),
+  alternates: {
+    canonical: 'https://stardusttosovereignty.com',
+  },
   openGraph: {
     title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
     description: 'A living architecture for coherence, perception, and sovereign identity. Book One: The Cosmic Tapestry - Ships February 28, 2026.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
+    locale: 'en_US',
     images: [
       {
         url: 'https://stardusttosovereignty.com/book-cover.jpeg',
         width: 400,
         height: 600,
         alt: 'Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -42,10 +53,22 @@ export const metadata: Metadata = {
     title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
     description: 'A living architecture for coherence, perception, and sovereign identity.',
     images: ['https://stardusttosovereignty.com/book-cover.jpeg'],
+    creator: '@gigi_stardust',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add Google Search Console verification if available
+    // google: 'your-verification-code',
   },
 }
 

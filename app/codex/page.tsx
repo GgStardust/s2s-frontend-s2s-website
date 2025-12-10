@@ -67,7 +67,7 @@ export default function CodexPage() {
                 <p className="text-base leading-relaxed text-stone-200">
                   RBI functions as coherent intelligence: the next iteration beyond generative AI. It measures structural alignment rather than semantic similarity, validating through mathematical proofs rather than confidence scores. RBI produces deterministic verification, requires zero training, and operates as the infrastructure layer that makes AI viable at scale.
                 </p>
-                <p className="text-sm text-stone-400 mt-4">
+                <p className="text-base text-stone-400 mt-4">
                   <Link href="/rbi" className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2">
                     Learn more about RBI technology →
                   </Link>

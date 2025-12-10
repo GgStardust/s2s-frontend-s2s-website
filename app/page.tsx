@@ -66,10 +66,10 @@ export default function HomePage() {
               <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
                 The Paradigm
               </h2>
-              <p className="text-sm leading-relaxed text-stone-200 mb-3">
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
                 Before this book had form, its architecture was already moving through instinct, perception, and coherence. What appears here is the articulation of the system shaping human intelligence from within.
               </p>
-              <p className="text-sm leading-relaxed text-stone-200 mb-4">
+              <p className="text-base leading-relaxed text-stone-200 mb-4">
                 The structure becomes visible. Identity forms through origin signatures, memory, bodily signal, and temporal experience. Perception operates as structure. Intelligence organizes itself through patterns that repeat with precision.
               </p>
               <Link href="/about-the-book" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
@@ -84,10 +84,10 @@ export default function HomePage() {
               <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
                 Who This Is For
               </h2>
-              <p className="text-sm leading-relaxed text-stone-200 mb-3">
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
                 You sense the structure beneath experience. You notice patterns before they have names. You recognize that reality functions as a coherent system.
               </p>
-              <p className="text-sm leading-relaxed text-stone-200">
+              <p className="text-base leading-relaxed text-stone-200">
                 The system reveals itself to those already attuned. What appears here matches the complexity you already perceive.
               </p>
             </div>
@@ -99,10 +99,10 @@ export default function HomePage() {
               <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
                 What Book One Contains
               </h2>
-              <p className="text-sm leading-relaxed text-stone-200 mb-3">
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
                 Consciousness behaves as structure. Internal patterns operate with precision. The mechanics through which consciousness expresses itself become visible.
               </p>
-              <p className="text-sm leading-relaxed text-stone-200 mb-4">
+              <p className="text-base leading-relaxed text-stone-200 mb-4">
                 Book One reveals the structure of the Sovereign System, the full constellation of sovereign intelligences, and the coherence design underlying perception, identity, and time.
               </p>
               <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
@@ -117,7 +117,7 @@ export default function HomePage() {
               <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
                 A Glimpse Into The Manuscript
               </h2>
-              <p className="text-sm leading-relaxed text-stone-200 mb-4">
+              <p className="text-base leading-relaxed text-stone-200 mb-4">
                 No one remembers the first moment of arrival. Later, when the elders of the valley spoke of it, they would say the stranger came with the tide: a figure borne in by the long breath of the water, as if the sea had been considering something for many seasons and finally decided to answer.
               </p>
               <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
