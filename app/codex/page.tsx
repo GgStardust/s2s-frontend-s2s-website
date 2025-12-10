@@ -132,7 +132,7 @@ export default function CodexPage() {
                   Generative AI produces probabilistic outputs. RBI produces deterministic verification. Generative AI requires training data. RBI needs zero training. Generative AI gives confidence scores. RBI gives mathematical proofs.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  RBI operates as the infrastructure layer that makes AI viable at scale. It validates outputs, enforces boundaries, and reduces costs by 90-99% through deterministic computation. The system reveals coherent relationships with field states rather than retrieving similar text.
+                  RBI operates as the infrastructure layer that makes AI viable at scale. It validates outputs, enforces boundaries, and reduces computational costs through deterministic verification. The system reveals coherent relationships rather than retrieving similar text.
                 </p>
                 <p className="text-sm text-stone-400 italic mt-4">
                   Patent Pending: U.S. Provisional Patent Application No. 63/909,031
