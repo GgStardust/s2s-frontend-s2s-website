@@ -96,6 +96,12 @@ function generateCodexEntries() {
     });
   } else {
     console.warn('  Orb essays directory not found:', orbEssaysDir);
+    // In deployment, directories won't exist - return empty array gracefully
+    if (!fs.existsSync(CMS_BACKEND_ROOT)) {
+      console.log('  CMS_Backend not found - skipping (using hardcoded essays)');
+      fs.writeFileSync(outputFile, JSON.stringify({ entries: [], count: 0, generated_at: new Date().toISOString(), source: 'static_file' }, null, 2));
+      return;
+    }
   }
 
   // Load Codex Essays
