@@ -34,6 +34,18 @@ export default function TermsPage() {
             <p className="mb-4">
               All content on this website and in the books is the intellectual property of Stardust to Sovereignty and is protected by copyright. You may not reproduce, distribute, or create derivative works without permission.
             </p>
+            <p className="mb-4">
+              <strong className="text-cyan-300">Trademarks and Service Marks:</strong> Stardust to Sovereignty, S2S, Resonance-Based Intelligence, RBI, The Console, The S2S Interface, The Codex, The Cosmic Tapestry, and related marks are trademarks and service marks of Stardust to Sovereignty. Unauthorized use is prohibited.
+            </p>
+            <p className="mb-4">
+              <strong className="text-cyan-300">Patent Protection:</strong> The Resonance-Based Intelligence (RBI) computational framework, Proof-of-Meaning verification methods, field-level coherence computation, temporal continuity validation, 4D Resonance Vector mathematics, and coherence-based similarity algorithms are covered by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
+            </p>
+            <p className="mb-4">
+              <strong className="text-cyan-300">RBI Technology:</strong> All RBI code, methods, algorithms, and mathematical foundations are protected by patent application and copyright. Use of RBI technology requires appropriate licensing.
+            </p>
+            <p className="mb-4">
+              <strong className="text-cyan-300">Book Titles and Series:</strong> Book titles, series names, and related intellectual property are protected. The Stardust to Sovereignty book series, including "The Cosmic Tapestry," "The Architecture of Civilization," and "The Resonant Species," are protected works.
+            </p>
           </section>
 
           <section>
