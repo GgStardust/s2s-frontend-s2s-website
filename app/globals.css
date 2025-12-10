@@ -1,0 +1,789 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-blue: #0A0E27;
+  --cosmic-blue-light: #1A2342;
+  --fluorescent-blue: #00D4FF;
+  --fluorescent-cyan: #4DFFFF;
+  --fluorescent-purple: #9D4EDD;
+  --node-glow: rgba(0, 212, 255, 0.4);
+  /* Earth-from-space accent colors */
+  --sunrise-gold: #FF8C42;
+  --sunrise-amber: #FFB347;
+  --sunrise-orange: #FF9500;
+  --atmospheric-blue: #4A9EFF;
+  --azure-blue: #6BB6FF;
+  --sky-blue: #7BC4FF;
+  --emerald-green: #2ECC71;
+  --light-emerald: #34D399;
+  --city-light: #F8F9FA;
+  --pale-yellow-white: #FFF9E6;
+}
+
+body {
+  background-color: #0A0E27;
+  color: #F4F1E8;
+}
+
+/* Background matching header/footer */
+.bg-structural-grid {
+  background-color: var(--cosmic-blue);
+  position: relative;
+  overflow: hidden;
+  /* Structured octagonal web pattern - like geometric diagram */
+  background-image: 
+    /* Octagon outlines and internal web connections */
+    /* Horizontal lines */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    ),
+    /* Vertical lines */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    ),
+    /* Diagonal lines at 45deg (octagon sides) */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent calc(50px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(50px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(50px + 0.5px),
+      transparent calc(50px + 0.5px),
+      transparent 100px
+    ),
+    /* Diagonal lines at 135deg (octagon sides) */
+    repeating-linear-gradient(
+      135deg,
+      transparent 0,
+      transparent calc(50px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(50px - 0.5px),
+      rgba(150, 135, 120, 0.14) calc(50px + 0.5px),
+      transparent calc(50px + 0.5px),
+      transparent 100px
+    ),
+    /* Additional internal connection lines at 22.5deg intervals for web structure */
+    repeating-linear-gradient(
+      22.5deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    ),
+    repeating-linear-gradient(
+      67.5deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    ),
+    repeating-linear-gradient(
+      112.5deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    ),
+    repeating-linear-gradient(
+      157.5deg,
+      transparent 0,
+      transparent calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
+      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
+      transparent calc(70px + 0.5px),
+      transparent 140px
+    );
+  background-size: 
+    140px 140px,
+    140px 140px,
+    100px 100px,
+    100px 100px,
+    140px 140px,
+    140px 140px,
+    140px 140px,
+    140px 140px;
+  background-position:
+    0 0,
+    10px 8px,
+    -6px 12px,
+    12px -10px,
+    0 0,
+    14px -6px,
+    -10px 10px,
+    8px -14px;
+}
+
+.bg-structural-grid::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-image: 
+    /* 13 MAIN NODES - Bigger and Brighter */
+    /* Cluster 1 main (top left) */
+    radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    /* Cluster 2 main (top right) */
+    radial-gradient(circle at 85% 25%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    /* Cluster 3 center hub - BRIGHTEST */
+    radial-gradient(circle at 50% 50%, rgba(77, 255, 255, 0.5) 6px, rgba(0, 212, 255, 0.5) 9px, rgba(77, 255, 255, 0.4) 12px, rgba(0, 212, 255, 0.3) 18px, rgba(0, 212, 255, 0.15) 25px, transparent 35px),
+    /* Cluster 4 main (bottom left) */
+    radial-gradient(circle at 18% 75%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    /* Cluster 5 main (bottom right) */
+    radial-gradient(circle at 82% 80%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    /* Scattered nodes - bigger */
+    radial-gradient(circle at 30% 65%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 70% 35%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 35% 40%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 65% 60%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    /* Additional key nodes from clusters - bigger */
+    radial-gradient(circle at 20% 25%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 15% 80%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    /* Smaller supporting nodes */
+    radial-gradient(circle at 12% 28%, var(--node-glow) 2px, rgba(0, 212, 255, 0.2) 3px, transparent 6px),
+    radial-gradient(circle at 25% 18%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 88% 28%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 75% 22%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 48% 48%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 52% 52%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 46% 52%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 54% 48%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 22% 78%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 12% 72%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 78% 82%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
+    radial-gradient(circle at 88% 78%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px);
+  background-size: 
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh,
+    100vw 100vh;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  pointer-events: none;
+  animation: cosmicPulse 8s ease-in-out infinite, nodeActivation 35s linear infinite;
+}
+
+@keyframes cosmicPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+}
+
+/* Node activation when comet passes - synchronized with comet trajectory - ENHANCED */
+@keyframes nodeActivation {
+  /* Base state */
+  0%, 100% {
+    filter: brightness(1);
+  }
+  /* Cluster 1 (top left) - comet passes around 12-18% */
+  11%, 19% {
+    filter: brightness(1.1);
+  }
+  12%, 18% {
+    filter: brightness(1.6);
+  }
+  13%, 17% {
+    filter: brightness(1.4);
+  }
+  15% {
+    filter: brightness(1.8);
+  }
+  /* Cluster 2 (top right) - comet passes around 20-26% */
+  19%, 27% {
+    filter: brightness(1.1);
+  }
+  20%, 26% {
+    filter: brightness(1.6);
+  }
+  21%, 25% {
+    filter: brightness(1.4);
+  }
+  23% {
+    filter: brightness(1.8);
+  }
+  /* Approaching center - 30% */
+  29%, 31% {
+    filter: brightness(1.2);
+  }
+  30% {
+    filter: brightness(1.5);
+  }
+  /* Center hub - comet passes around 35-40% - MAXIMUM ACTIVATION */
+  34%, 41% {
+    filter: brightness(1.3);
+  }
+  35%, 40% {
+    filter: brightness(2);
+  }
+  36%, 39% {
+    filter: brightness(1.7);
+  }
+  37.5% {
+    filter: brightness(2.3);
+  }
+  /* Cluster 4 (bottom left) - comet passes around 50-56% */
+  49%, 57% {
+    filter: brightness(1.1);
+  }
+  50%, 56% {
+    filter: brightness(1.6);
+  }
+  51%, 55% {
+    filter: brightness(1.4);
+  }
+  53% {
+    filter: brightness(1.8);
+  }
+  /* Cluster 5 (bottom right) - comet passes around 60-66% */
+  59%, 67% {
+    filter: brightness(1.1);
+  }
+  60%, 66% {
+    filter: brightness(1.6);
+  }
+  61%, 65% {
+    filter: brightness(1.4);
+  }
+  63% {
+    filter: brightness(1.8);
+  }
+  /* Scattered nodes activation */
+  28%, 32%, 44%, 46%, 54%, 58%, 64%, 68% {
+    filter: brightness(1.15);
+  }
+}
+
+.bg-structural-grid::after {
+  content: '';
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  width: 72px;
+  height: 36px;
+  z-index: 1;
+  /* Main body - classic saucer shape - MORE PROMINENT */
+  background: 
+    radial-gradient(ellipse 80% 40% at 50% 30%, rgba(77, 255, 255, 1) 0%, rgba(0, 212, 255, 0.7) 30%, rgba(0, 212, 255, 0.3) 60%, transparent 80%),
+    radial-gradient(ellipse 100% 50% at 50% 50%, rgba(0, 212, 255, 0.9) 0%, rgba(0, 212, 255, 0.5) 50%, rgba(0, 212, 255, 0.2) 80%, transparent 100%),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.6) 0%, rgba(0, 212, 255, 0.4) 50%, rgba(0, 212, 255, 0.1) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  /* Enhanced windows/lights - MORE VISIBLE */
+  box-shadow: 
+    /* Main glow - STRONGER */
+    0 0 20px rgba(0, 212, 255, 0.8),
+    0 0 40px rgba(0, 212, 255, 0.6),
+    0 0 60px rgba(0, 212, 255, 0.4),
+    0 0 80px rgba(0, 212, 255, 0.2),
+    /* Inner highlights - BRIGHTER */
+    inset 0 4px 8px rgba(77, 255, 255, 0.6),
+    inset 0 -3px 6px rgba(0, 212, 255, 0.5),
+    /* Window lights - MORE DEFINED */
+    inset 18px 12px 3px rgba(77, 255, 255, 0.5),
+    inset -18px 12px 3px rgba(77, 255, 255, 0.5),
+    inset 0 15px 4px rgba(77, 255, 255, 0.4),
+    inset 25px 8px 2px rgba(77, 255, 255, 0.4),
+    inset -25px 8px 2px rgba(77, 255, 255, 0.4);
+  pointer-events: none;
+  animation: ufoFloat 14s ease-in-out infinite;
+  opacity: 0.95;
+  filter: blur(0px);
+}
+
+@keyframes ufoFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.95;
+  }
+  20% {
+    transform: translate(-20px, -25px) rotate(-3deg) scale(1.05);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(10px, -35px) rotate(2deg) scale(0.98);
+    opacity: 0.92;
+  }
+  60% {
+    transform: translate(-12px, -22px) rotate(-1deg) scale(1.03);
+    opacity: 0.98;
+  }
+  80% {
+    transform: translate(15px, -30px) rotate(1.5deg) scale(0.99);
+    opacity: 0.94;
+  }
+}
+
+/* 3I/ATLAS Comet - Hyperbolic Trajectory with Node Activation */
+.comet-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.comet {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, rgba(77, 255, 255, 1) 0%, rgba(0, 212, 255, 0.95) 20%, rgba(0, 212, 255, 0.8) 35%, rgba(0, 212, 255, 0.5) 50%, transparent 75%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 12px rgba(77, 255, 255, 0.9),
+    0 0 20px rgba(0, 212, 255, 0.6),
+    0 0 30px rgba(0, 212, 255, 0.4);
+  animation: cometHyperbolicTrajectory 35s linear infinite, cometGlowPulse 35s linear infinite;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Comet subtle glow when passing nodes - TONED DOWN */
+@keyframes cometGlowPulse {
+  /* Base state */
+  0%, 100% {
+    box-shadow: 
+      0 0 12px rgba(77, 255, 255, 0.9),
+      0 0 20px rgba(0, 212, 255, 0.6),
+      0 0 30px rgba(0, 212, 255, 0.4);
+    filter: brightness(1);
+  }
+  /* Passing cluster 1 (top left) - 12-18% */
+  12%, 18% {
+    box-shadow: 
+      0 0 16px rgba(77, 255, 255, 1),
+      0 0 28px rgba(0, 212, 255, 0.8),
+      0 0 42px rgba(0, 212, 255, 0.6);
+    filter: brightness(1.2);
+  }
+  15% {
+    box-shadow: 
+      0 0 18px rgba(77, 255, 255, 1),
+      0 0 32px rgba(0, 212, 255, 0.85),
+      0 0 48px rgba(0, 212, 255, 0.65);
+    filter: brightness(1.3);
+  }
+  /* Passing cluster 2 (top right) - 20-26% */
+  20%, 26% {
+    box-shadow: 
+      0 0 16px rgba(77, 255, 255, 1),
+      0 0 28px rgba(0, 212, 255, 0.8),
+      0 0 42px rgba(0, 212, 255, 0.6);
+    filter: brightness(1.2);
+  }
+  23% {
+    box-shadow: 
+      0 0 18px rgba(77, 255, 255, 1),
+      0 0 32px rgba(0, 212, 255, 0.85),
+      0 0 48px rgba(0, 212, 255, 0.65);
+    filter: brightness(1.3);
+  }
+  /* Approaching center - 30% */
+  30% {
+    box-shadow: 
+      0 0 18px rgba(77, 255, 255, 1),
+      0 0 30px rgba(0, 212, 255, 0.85),
+      0 0 45px rgba(0, 212, 255, 0.65);
+    filter: brightness(1.25);
+  }
+  /* Passing center hub - 35-40% */
+  35%, 40% {
+    box-shadow: 
+      0 0 20px rgba(77, 255, 255, 1),
+      0 0 35px rgba(0, 212, 255, 0.9),
+      0 0 52px rgba(0, 212, 255, 0.7);
+    filter: brightness(1.4);
+  }
+  37.5% {
+    box-shadow: 
+      0 0 22px rgba(77, 255, 255, 1),
+      0 0 38px rgba(0, 212, 255, 0.95),
+      0 0 56px rgba(0, 212, 255, 0.75);
+    filter: brightness(1.5);
+  }
+  /* Passing cluster 4 (bottom left) - 50-56% */
+  50%, 56% {
+    box-shadow: 
+      0 0 16px rgba(77, 255, 255, 1),
+      0 0 28px rgba(0, 212, 255, 0.8),
+      0 0 42px rgba(0, 212, 255, 0.6);
+    filter: brightness(1.2);
+  }
+  53% {
+    box-shadow: 
+      0 0 18px rgba(77, 255, 255, 1),
+      0 0 32px rgba(0, 212, 255, 0.85),
+      0 0 48px rgba(0, 212, 255, 0.65);
+    filter: brightness(1.3);
+  }
+  /* Passing cluster 5 (bottom right) - 60-66% */
+  60%, 66% {
+    box-shadow: 
+      0 0 16px rgba(77, 255, 255, 1),
+      0 0 28px rgba(0, 212, 255, 0.8),
+      0 0 42px rgba(0, 212, 255, 0.6);
+    filter: brightness(1.2);
+  }
+  63% {
+    box-shadow: 
+      0 0 18px rgba(77, 255, 255, 1),
+      0 0 32px rgba(0, 212, 255, 0.85),
+      0 0 48px rgba(0, 212, 255, 0.65);
+    filter: brightness(1.3);
+  }
+}
+
+.comet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -400px;
+  width: 400px;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 212, 255, 0.15) 5%,
+    rgba(0, 212, 255, 0.25) 15%,
+    rgba(77, 255, 255, 0.4) 30%,
+    rgba(0, 212, 255, 0.5) 40%,
+    rgba(77, 255, 255, 0.45) 50%,
+    rgba(0, 212, 255, 0.35) 60%,
+    rgba(0, 212, 255, 0.2) 75%,
+    rgba(0, 212, 255, 0.1) 90%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  filter: blur(4px);
+  z-index: -1;
+  animation: tailGlowIntensify 35s linear infinite;
+}
+
+@keyframes tailGlowIntensify {
+  /* Base tail - more dispersed */
+  0%, 100% {
+    opacity: 1;
+    filter: blur(4px);
+    height: 8px;
+    width: 400px;
+  }
+  /* Subtle intensification when passing nodes */
+  12%, 18%, 20%, 26%, 50%, 56%, 60%, 66% {
+    opacity: 1.2;
+    filter: blur(3.5px);
+    height: 10px;
+    width: 420px;
+  }
+  15%, 23%, 53%, 63% {
+    opacity: 1.3;
+    filter: blur(3px);
+    height: 12px;
+    width: 440px;
+  }
+  30% {
+    opacity: 1.25;
+    filter: blur(3.2px);
+    height: 10px;
+    width: 430px;
+  }
+  /* Slightly more at center */
+  35%, 40% {
+    opacity: 1.4;
+    filter: blur(2.5px);
+    height: 14px;
+    width: 460px;
+  }
+  37.5% {
+    opacity: 1.5;
+    filter: blur(2px);
+    height: 16px;
+    width: 480px;
+  }
+}
+
+.comet::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -300px;
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 212, 255, 0.15) 10%,
+    rgba(77, 255, 255, 0.3) 30%,
+    rgba(0, 212, 255, 0.4) 45%,
+    rgba(77, 255, 255, 0.35) 55%,
+    rgba(0, 212, 255, 0.25) 70%,
+    rgba(0, 212, 255, 0.15) 85%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  filter: blur(3px);
+  z-index: -1;
+  animation: tailGlowIntensify 35s linear infinite;
+}
+
+/* Hyperbolic trajectory - enters top-left, curves through center, exits bottom-right */
+@keyframes cometHyperbolicTrajectory {
+  0% {
+    top: 5%;
+    left: -30px;
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.95;
+  }
+  /* Passes cluster 1 (top left) */
+  12% {
+    top: 15%;
+    left: 12%;
+    transform: translate(0, 0) rotate(-43deg);
+    opacity: 1;
+  }
+  /* Passes cluster 2 (top right) */
+  20% {
+    top: 22%;
+    left: 25%;
+    transform: translate(0, 0) rotate(-41deg);
+    opacity: 1;
+  }
+  /* Approaches center */
+  30% {
+    top: 35%;
+    left: 42%;
+    transform: translate(0, 0) rotate(-39deg);
+    opacity: 1;
+  }
+  /* Passes center hub - brightest activation */
+  35% {
+    top: 45%;
+    left: 48%;
+    transform: translate(0, 0) rotate(-38deg);
+    opacity: 1;
+  }
+  40% {
+    top: 50%;
+    left: 52%;
+    transform: translate(0, 0) rotate(-37deg);
+    opacity: 1;
+  }
+  /* Passes cluster 4 (bottom left area) */
+  50% {
+    top: 60%;
+    left: 62%;
+    transform: translate(0, 0) rotate(-35deg);
+    opacity: 1;
+  }
+  /* Passes cluster 5 (bottom right) */
+  60% {
+    top: 72%;
+    left: 75%;
+    transform: translate(0, 0) rotate(-33deg);
+    opacity: 0.95;
+  }
+  70% {
+    top: 80%;
+    left: 88%;
+    transform: translate(0, 0) rotate(-31deg);
+    opacity: 0.9;
+  }
+  95% {
+    opacity: 0.85;
+  }
+  100% {
+    top: 95%;
+    left: 110%;
+    transform: translate(0, 0) rotate(-28deg);
+    opacity: 0;
+  }
+}
+
+.bg-structural-grid > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Base text color for bg-structural-grid - can be overridden by Tailwind utilities */
+.bg-structural-grid {
+  color: #F8F9FA;
+}
+
+/* Accessibility: Enhanced focus states for keyboard navigation */
+.bg-structural-grid a:focus,
+.bg-structural-grid button:focus,
+.bg-structural-grid input:focus,
+.bg-structural-grid select:focus,
+.bg-structural-grid textarea:focus {
+  outline: 2px solid rgba(120, 110, 100, 0.6);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #00D4FF;
+  color: #0A0E27;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+/* Note: Background and button styles should be handled by Tailwind utilities */
+/* Removed overrides to allow Tailwind classes to work correctly */
+
+/* Custom classes for 3D effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Earth terminator gradient border - the bright band at Earth's edge */
+/* Uses wrapper div with gradient background and inner content */
+.terminator-border {
+  position: relative;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    #FFB347 0%,
+    #FFA500 50%,
+    #4A9EFF 100%
+  );
+  border-radius: 0.5rem;
+}
+
+.terminator-border > * {
+  border-radius: calc(0.5rem - 1px);
+  width: 100%;
+  height: 100%;
+  /* Background must be explicitly set on inner element - do NOT inherit */
+}
+
+.terminator-border-rounded {
+  position: relative;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    #FFB347 0%,
+    #FFA500 50%,
+    #4A9EFF 100%
+  );
+  border-radius: 9999px;
+}
+
+.terminator-border-rounded > * {
+  border-radius: 9999px;
+  width: 100%;
+  height: 100%;
+  /* Background will be set by inner element classes */
+}
+
+/* Thin terminator border for buttons - uses wrapper with 1px padding */
+.terminator-border-thin {
+  position: relative;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    #FFB347 0%,
+    #FFA500 50%,
+    #4A9EFF 100%
+  );
+  border-radius: 0.375rem;
+  display: inline-block;
+}
+
+.terminator-border-thin > * {
+  border-radius: calc(0.375rem - 1px);
+  width: 100%;
+  height: 100%;
+}
+
