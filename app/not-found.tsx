@@ -24,7 +24,7 @@ export default function NotFound() {
             Return Home
           </Button>
           <Button href="/books" variant="secondary">
-            Explore the Book
+            Inside Book One
           </Button>
         </div>
       </div>

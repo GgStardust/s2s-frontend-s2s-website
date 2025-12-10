@@ -36,7 +36,7 @@ export default function HomePage() {
             The Cosmic Tapestry
           </h3>
           <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
-            A cosmological field report and foundational field manual.
+            A cosmological field report and sovereign architecture for the advancement of human consciousness.
           </p>
           <p className="text-base text-cyan-300 mb-8 font-medium">
             Presale Now Open • Ships February 28, 2026
@@ -46,10 +46,10 @@ export default function HomePage() {
               Preorder Book One
             </Button>
             <Button href="/books" variant="secondary">
-              Explore the Book
+              Inside Book One
             </Button>
             <Button href="/about-the-book" variant="tertiary">
-              What This Book Is
+              About This Book
             </Button>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
                   Preorder Book One →
                 </Button>
                 <Button href="/books" variant="secondary" className="text-lg">
-                  Explore the Book →
+                  Inside Book One →
                 </Button>
               </div>
             </div>

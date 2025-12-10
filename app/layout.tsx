@@ -83,7 +83,7 @@ export default function RootLayout({
       "name": "Stardust to Sovereignty"
     },
     "datePublished": "2026-02-28",
-    "description": "A cosmological field report and foundational field manual introducing the structure of the Sovereign Field and the constellation of sovereign intelligences.",
+    "description": "A cosmological field report and sovereign architecture for the advancement of human consciousness introducing the structure of the Sovereign Field and the constellation of sovereign intelligences.",
     "bookFormat": ["Paperback", "EPUB"],
     "image": "https://stardusttosovereignty.com/book-cover.jpeg",
     "offers": {

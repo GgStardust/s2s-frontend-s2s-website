@@ -149,7 +149,7 @@ export default function AboutPage() {
             Preorder Book One
           </Button>
           <Button href="/books" variant="secondary">
-            Explore the Book
+            Inside Book One
           </Button>
         </div>
       </section>
