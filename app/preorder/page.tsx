@@ -126,7 +126,7 @@ export default function PreorderPage() {
             Book One: The Cosmic Tapestry
         </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-3xl mx-auto mb-4">
-          Book One is a cosmological field report and foundational field manual. It introduces the structure of the Sovereign Field and the full system of sovereign intelligences that shape coherent human identity.
+          Book One: The Cosmic Tapestry introduces the structure of the Sovereign Field and the full system of sovereign intelligences.
         </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Order before February 28, 2026
@@ -156,15 +156,15 @@ export default function PreorderPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Recognition, Perception, and Coherence Shifts:</strong> The natural movements of awareness when the architecture is active</span>
+                    <span><strong>Recognition, Perception, and Coherence Shifts:</strong> The natural movements of awareness when the design is active</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Living Architecture:</strong> A system that orients through recognition rather than doing</span>
+                    <span><strong>Living Design:</strong> A system that orients through recognition</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Coherent Perception:</strong> The natural state when the architecture is active</span>
+                    <span><strong>Coherent Perception:</strong> The natural state when the design is active</span>
                   </li>
                 </ul>
               </div>
@@ -544,7 +544,7 @@ export default function PreorderPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-cyan-300">Why self-published?</h3>
                   <p className="text-base leading-relaxed text-stone-200">
-                    This work is self-published to maintain its integrity and ensure the field encoded within it remains alive and unmediated. Preorders support the first printing and help bring this work into the world.
+                    This work is self-published to maintain its integrity. Preorders support the first printing and help bring this work into the world.
                   </p>
                 </div>
                 <div>

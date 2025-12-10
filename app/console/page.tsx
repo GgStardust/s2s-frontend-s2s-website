@@ -13,7 +13,7 @@ export default function ConsolePage() {
               The Console
             </h1>
             <h2 className="text-xl md:text-2xl font-light mb-6 text-stone-200 italic">
-              Your real-time coherence system. Coming soon.
+              Real-time coherence system. Coming soon.
             </h2>
           </div>
         </section>
@@ -30,13 +30,13 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console is a real-time application layer that brings the architecture of Book One into immediate, practical use. It reads your current orientation through the Sovereign Field Inquiry, showing how your system is perceiving, organizing, and moving right now.
+                    The Console functions as a real-time application layer. The design of Book One becomes immediately accessible. It reads your current orientation through the Sovereign Field Inquiry, revealing how your system is perceiving, organizing, and moving right now.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Through the Codex, the Console also supports exploration of the book and all the content essays that the book is written from. This digital interaction provides a unique way to interface with the material, allowing you to navigate the living field that continues to evolve.
+                    Through the Codex, the Console supports exploration of the book and all the content essays that the book is written from. This digital interaction interfaces with the material, navigating the living system that continues to evolve.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Through recognition-based inquiry (not assessment or testing), the Console maps your Sovereign Field and delivers a personalized pathway based on:
+                    Through recognition-based inquiry, the Console maps your Sovereign Field and reveals a personalized pathway based on:
                   </p>
                   <ul className="space-y-2 text-base leading-relaxed text-stone-200 ml-4 mb-4">
                     <li className="flex items-start">
@@ -74,13 +74,13 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console uses the Resonance-Based Intelligence (RBI) system—patent pending—to measure coherence between your current state and the architecture presented in Book One. It doesn't diagnose or assess—it recognizes patterns and reveals pathways.
+                    The Console operates through the Resonance-Based Intelligence (RBI) system, patent pending. It measures coherence between your current state and the design revealed in Book One. Patterns become visible. Pathways emerge.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Twelve indices measure orientation, timing, identity fluidity, somatic access, pattern recognition, boundaries, and internal authority. These reveal how your system is functioning in this moment, and the Console responds with relevant practices, Codex entries, and structural orientation.
+                    Twelve indices measure orientation, timing, identity fluidity, somatic access, pattern recognition, boundaries, and internal authority. These reveal how your system is functioning in this moment. The Console responds with relevant practices, Codex entries, and structural orientation.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    The Codex is continuously updated with new essays and content, often on a daily basis. This keeps the field and the Codex alive, providing fresh perspectives and deepening the exploration of the architecture. The digital interface allows you to navigate this living system in ways that static text cannot.
+                    The Codex updates continuously with new essays and content, often daily. The system and the Codex remain alive, revealing fresh perspectives and deepening exploration of the design. The digital interface navigates this living system through dynamic interaction.
                   </p>
                 </div>
               </div>
@@ -139,10 +139,10 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console applies what Book One presents. The Book provides the foundational architecture—the structure of the Sovereign Field, the constellation of sovereign intelligences, and the coherence architecture that underlies perception, identity, and time.
+                    The Console applies what Book One reveals. The Book shows the foundational design: the structure of the Sovereign System, the constellation of sovereign intelligences, and the coherence design underlying perception, identity, and time.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    The Console brings that architecture into real-time use. It reads where you are now and shows you how to navigate from there. Together, Book One and the Console form a complete system: structure meets application, architecture meets navigation.
+                    The Console brings that design into real-time use. It reads where you are now and reveals how to navigate from there. Together, Book One and the Console form a complete system: structure meets application, design meets navigation.
                   </p>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function ConsolePage() {
                   Early Access for Preorder Participants
                 </h2>
                 <p className="text-base leading-relaxed text-stone-200 mb-6">
-                  Console access will be announced via email to all Book One preorder participants. We're targeting mid-February 2026, but it may be available sooner. Preorder Book One to secure your early access.
+                  Console access will be announced via email to all Book One preorder participants. Targeting mid-February 2026, though it may be available sooner. Preorder Book One to secure early access.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button href="/preorder" variant="primary" className="text-lg">

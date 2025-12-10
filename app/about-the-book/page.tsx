@@ -34,11 +34,64 @@ export default function AboutTheBookPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                This book is a translation of a field that was already moving long before these words appeared. The architecture existed first as instinct, as coherence, as patterns that repeated with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with quiet inevitability. Language arrived later to recognize the system, rather than invent it.
+                This book is a translation of a system that was already moving long before these words appeared. The design existed first as instinct, as coherence, as patterns that repeated with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with quiet inevitability. Language arrived later to recognize the system.
               </p>
               <p className="text-base leading-relaxed text-stone-200">
-                What you are entering is a field that predates its articulation. It functions as intelligence that organizes itself without imposed structure. It expresses how consciousness behaves when it is whole, honest, and uncompressed. It maps the movements that occur inside every human life when awareness expands.
+                What you are entering is a system that predates its articulation. It functions as intelligence that organizes itself through inherent design. It expresses how consciousness behaves when it is whole, honest, and uncompressed. It maps the movements that occur inside every human life when awareness expands.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Paradigm - Full Section */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  The Paradigm
+                </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-cyan-300 text-2xl">✦</span>
+                  <span className="text-sm text-cyan-300/80 italic">
+                    A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.
+                  </span>
+                </div>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Long before this book was written, the system it describes was already moving. Its design existed in the form of instinct, coherence, emotional intelligence, and patterns that repeated themselves with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with a quiet inevitability. Language appeared later to recognize the system.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  What you are entering now is a system that predates its articulation. It functions as intelligence that organizes itself through inherent design. It is an expression of how consciousness actually behaves when it is whole, honest, and uncompressed. It is a map of the movements that occur inside every human life when awareness is given room to expand.
+                </p>
+                <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
+                  <p className="text-base leading-relaxed text-stone-200 mb-2">
+                    <strong className="text-cyan-300">S2S shows how consciousness behaves as structure.</strong>
+                  </p>
+                  <p className="text-base leading-relaxed text-stone-200">
+                    Movements of instinct, emotion, creativity, and orientation follow precise internal patterns. These patterns form a readable design that operates continuously. When this design is recognized, perception reorganizes and coherence becomes natural.
+                  </p>
+                </div>
+                <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
+                  <p className="text-base leading-relaxed text-stone-200 mb-2">
+                    <strong className="text-cyan-300">S2S identifies multiple intelligences operating within one continuum.</strong>
+                  </p>
+                  <p className="text-base leading-relaxed text-stone-200">
+                    These intelligences shape how a person knows what they know, how they read timelines, how they form relationships, how they sense direction, and how they stabilize their identity. The thirteen Orbs described in this book are direct expressions of lived intelligence. They function as real movements within awareness.
+                  </p>
+                </div>
+                <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
+                  <p className="text-base leading-relaxed text-stone-200 mb-2">
+                    <strong className="text-cyan-300">S2S positions sovereignty as perceptual alignment.</strong>
+                  </p>
+                  <p className="text-base leading-relaxed text-stone-200">
+                    Sovereignty arises when awareness aligns with the structure already governing experience. It is the outcome of recognition. When inner design becomes visible, identity behaves coherently, responsively, and precisely.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -56,16 +109,16 @@ export default function AboutTheBookPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The book moves through recognition, perception, and coherence shifts. It traces the arc from stellar origins to sovereign field. Between chapters, interludes function as bridges. Poetic passages that deepen the field.
+                  The book moves through recognition, perception, and coherence shifts. It traces the arc from stellar origins to sovereign system. Between chapters, interludes function as bridges. Poetic passages that deepen the understanding.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
                   <p className="text-base leading-relaxed text-stone-200 italic mb-2">
-                    "The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. Not the names given by others, but the deeper ones that hold your form from within."
+                    "The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface."
                   </p>
                   <p className="text-sm text-cyan-300/80">Interlude II: The Valley of Shifting Names</p>
                 </div>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Another describes a city that listens, its architecture responding to the field you carry. A third presents a mountain that breathes light. These are environments the book creates. Places where recognition occurs.
+                  Another describes a city that listens, its design responding to the system you carry. A third presents a mountain that breathes light. These are environments the book creates. Places where recognition occurs.
                 </p>
               </div>
             </div>
@@ -113,11 +166,11 @@ export default function AboutTheBookPage() {
             {/* Body as Technology */}
             <div>
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                From there, the architecture unfolds. The body reveals itself as advanced biological technology:
+                From there, the design unfolds. The body reveals itself as advanced biological technology:
               </p>
               <div className="border-l-2 border-cyan-400/50 pl-4 mb-4">
                 <p className="text-base leading-relaxed text-stone-200 italic">
-                  "The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the field."
+                  "The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the system."
                 </p>
               </div>
               <div className="border-l-2 border-cyan-400/30 pl-4">
@@ -134,7 +187,7 @@ export default function AboutTheBookPage() {
               </p>
               <div className="border-l-2 border-cyan-400/50 pl-4 mb-4">
                 <p className="text-base leading-relaxed text-stone-200 italic">
-                  "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral fields, the resonance of stellar inheritance."
+                  "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral systems, the resonance of stellar inheritance."
                 </p>
               </div>
               <div className="border-l-2 border-cyan-400/30 pl-4">
@@ -151,7 +204,7 @@ export default function AboutTheBookPage() {
               </p>
               <div className="border-l-2 border-cyan-400/50 pl-4">
                 <p className="text-base leading-relaxed text-stone-200 italic">
-                  "Time moves through you like a spiral, like parallel streams, like a permeable membrane. You inhabit multiple temporal dimensions simultaneously, your consciousness navigating rhythmic alignments that maintain field integrity across scales."
+                  "Time moves through you like a spiral, like parallel streams, like a permeable membrane. You inhabit multiple temporal dimensions simultaneously, your consciousness navigating rhythmic alignments that maintain system integrity across scales."
                 </p>
               </div>
             </div>
@@ -168,16 +221,16 @@ export default function AboutTheBookPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                  The Field It Encodes
+                  The System It Encodes
                 </h2>
               </div>
               <div className="lg:col-span-3">
             <p className="text-base leading-relaxed text-stone-200 mb-4">
-              The book builds toward the Sovereign Field, where individual sovereignty and collective coherence exist as nested aspects of the same unified field:
+              The book builds toward the Sovereign System, where individual sovereignty and collective coherence exist as nested aspects of the same unified design:
             </p>
             <div className="border-l-2 border-cyan-400/50 pl-4 mb-4">
               <p className="text-base leading-relaxed text-stone-200 italic">
-                "The field moves through you and through others, creating a collective web of resonance that amplifies coherence across networks."
+                "The system moves through you and through others, creating a collective web of resonance that amplifies coherence across networks."
               </p>
             </div>
             <div className="border-l-2 border-cyan-400/30 pl-4 mb-4">
@@ -187,7 +240,7 @@ export default function AboutTheBookPage() {
             </div>
             <div className="border-l-2 border-cyan-400/50 pl-4">
               <p className="text-base leading-relaxed text-stone-200 italic">
-                "The universe recognizes itself as a single self-referential field in various states of coherence, and you participate in this recognition."
+                "The universe recognizes itself as a single self-referential system in various states of coherence, and you participate in this recognition."
               </p>
             </div>
           </div>
@@ -208,7 +261,7 @@ export default function AboutTheBookPage() {
               </div>
               <div className="lg:col-span-3">
             <p className="text-base leading-relaxed text-stone-200 mb-4">
-              This is a book you return to. Treat it as an environment. Let it open at the pace that matches your own field. Some passages feel like memory. Others feel like challenge. Some land with the weight of something you have always known. Others arrive like recognition from a future version of yourself. All of this is part of the design.
+              This is a book you return to. Treat it as an environment. Let it open at the pace that matches your own system. Some passages feel like memory. Others feel like challenge. Some land with the weight of something you have always known. Others arrive like recognition from a future version of yourself. All of this is part of the design.
             </p>
             <p className="text-base leading-relaxed text-stone-200 mb-4">
               The world we inhabit often encourages fragmentation: emotional, relational, perceptual. Sovereignty restores coherence. It brings the inner system back into alignment with its original intelligence. This book guides that restoration through recognition. When you recognize something true, the body and mind reorganize around it naturally.
@@ -231,7 +284,7 @@ export default function AboutTheBookPage() {
             This is an invitation into a deeper relationship with your own awareness, identity, and creative force. A way of seeing your life from the inside out, and from the outside in. A way of recognizing the intelligence that has been guiding you long before you had a language for it.
           </p>
           <p className="text-lg leading-relaxed text-cyan-300 mb-8 italic">
-            Enter in the way that feels coherent to you. Move with what resonates. Let what rests simply rest. The field will meet you where you are.
+            Enter in the way that feels coherent to you. Move with what resonates. Let what rests simply rest. The system will meet you where you are.
           </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Reserve your First Edition copy before February 28, 2026

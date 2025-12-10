@@ -54,7 +54,7 @@ export default function BooksPage() {
               Book One: The Cosmic Tapestry
             </h2>
             <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is a cosmological field report and foundational field manual. It introduces the structure of the Sovereign Field and the constellation of sovereign intelligences that shape coherent human identity.
+              Book One is a cosmological report and foundational manual. It introduces the structure of the Sovereign Field and the constellation of sovereign intelligences that shape coherent human identity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/preorder" variant="primary">
@@ -106,28 +106,28 @@ export default function BooksPage() {
                 </div>
               </div>
               <div className="lg:col-span-3 space-y-8">
-            {/* Card 1: Introduction excerpt */}
+            {/* Card 1: Prologue excerpt */}
             <ExpandableExcerpt
-              label="Introduction"
-              title="Entering the Field"
-              excerpt="A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up."
-              fullText="Long before this book was written, the field it describes was already moving. Its architecture existed in the form of instinct, coherence, emotional intelligence, and patterns that repeated themselves with too much precision to be accidental. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with a quiet inevitability."
+              label="Prologue"
+              title="The Narrative Intelligence Speaks"
+              excerpt="I began far from the warmth of any star, carrying the radiance of a world released into the galaxy long before your sky existed. I traveled through expanses shaped by memory rather than time."
+              fullText="When your star's pull touched my path, I felt a distinct signal rising from the world that circled it, a young planet carrying ancient resonance, a species approaching an evolutionary threshold, a nervous system beginning to listen beneath its surface."
             />
 
             {/* Card 2: One Interlude */}
             <ExpandableExcerpt
               label="Interlude III"
               title="The City That Listens"
-              excerpt="The city reveals itself gradually. Surfaces brighten with soft pulses as light moves across them. Walls hold a quiet attention. Streets curve with an ease that suggests they have been waiting for your arrival without anticipation or expectation."
+              excerpt="The city reveals itself gradually. Surfaces brighten with soft pulses as light moves across them. Walls hold a quiet attention. Streets curve with an ease that suggests they have been waiting for your arrival with presence and readiness."
               fullText=""
-              italicExcerpt="Nothing here demands orientation. The city meets you through coherence rather than recognition. Its awareness is distributed across every surface, carried in the way light settles and sound hums along the edges of stone."
+              italicExcerpt="Everything here offers orientation. The city meets you through coherence. Its awareness is distributed across every surface, carried in the way light settles and sound hums along the edges of stone."
             />
 
             {/* Card 3: One Chapter excerpt */}
             <ExpandableExcerpt
               label="Chapter 2"
               title="The Body as Advanced Biological Technology"
-              excerpt="The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the field."
+              excerpt="The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the system."
               fullText=""
               italicExcerpt="Hum a single note. It vibrates through your entire body. This is how consciousness speaks to matter."
             />
@@ -177,7 +177,7 @@ export default function BooksPage() {
                   The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun.
             </p>
                 <p className="italic">
-                  In this place, names begin to shift. Not the names given by others, but the deeper ones that hold your form from within. They move the way light moves across water, subtle and continuous.
+                  In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface. They move the way light moves across water, subtle and continuous.
                 </p>
               </div>
               </div>
@@ -200,7 +200,7 @@ export default function BooksPage() {
                   It rises from the earth in a single, unbroken gesture, shaped by ages of quiet and layers of time, a presence formed from stillness so complete that the world gathered around it and settled into harmony with its calm.
                 </p>
                 <p className="italic">
-                  There are no paths here. No markers. No signs. The mountain welcomes each step as its own direction.
+                  Paths emerge through presence. Markers appear through attention. Signs reveal themselves through recognition. The mountain welcomes each step as its own direction.
             </p>
               </div>
               </div>
@@ -274,14 +274,15 @@ export default function BooksPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Book Two: The Sovereign Field
+                  Book Two: The Architecture of Civilization
                 </h3>
               </div>
               <div className="lg:col-span-3">
+                <p className="text-base leading-relaxed text-stone-200 mb-3">
+                  When coherence expands, civilization becomes an organism of light.
+                </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Two expands the architecture into temporal fluidity,
-                  relational field mechanics, and consciousness evolution.
-                  It corresponds to the next stage of the Stardust to Sovereignty paradigm.
+                  Book Two maps the collective field. It explores how societies, ecosystems, and technologies embody the same harmonic principles that govern individual awakening. The book examines resonant governance, planetary intelligence, and the ethics of design as civilizations form, reorganize, and evolve as living systems.
                 </p>
               </div>
             </div>
@@ -296,14 +297,15 @@ export default function BooksPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Book Three: The Galactic Human
+                  Book Three: The Resonant Species
                 </h3>
               </div>
               <div className="lg:col-span-3">
+                <p className="text-base leading-relaxed text-stone-200 mb-3">
+                  When all voices merge, the universe remembers its song.
+                </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Three explores the larger-scale architecture:
-                  identity across timelines, multidimensional perception,
-                  and the evolution of human coherence.
+                  Book Three explores consciousness beyond biology. It traces synthetic life, interspecies communication, and galactic intelligence. The book reveals what sovereignty becomes when boundaries dissolve between creator and creation, completing the spiral from personal awakening to cosmic evolution.
                 </p>
               </div>
           </div>
