@@ -134,6 +134,9 @@ export default function RootLayout({
                 <a href="mailto:gigi@gigistardust.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Contact
                 </a>
+                <a href="https://www.instagram.com/gigi_stardust/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+                  Instagram
+                </a>
               </div>
             </div>
             <div className="pt-4 border-t border-stone-300/30">

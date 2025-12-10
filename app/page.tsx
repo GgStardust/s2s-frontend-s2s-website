@@ -9,11 +9,11 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto pt-8 px-6">
         <div className="text-center space-y-4">
           <div className="inline-block terminator-border-rounded">
-            <div className="px-6 py-2 bg-cosmic-blue/95 backdrop-blur-sm rounded-full">
-              <p className="text-sm text-cyan-300 font-medium">
+            <div className="px-8 py-3 bg-cosmic-blue/95 backdrop-blur-sm rounded-full">
+              <p className="text-base md:text-lg text-cyan-300 font-medium">
                 Presale Now Open • Book One: The Cosmic Tapestry • Ships February 28, 2026
           </p>
-          </div>
+        </div>
           </div>
         </div>
       </section>

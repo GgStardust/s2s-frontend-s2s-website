@@ -32,104 +32,7 @@ body {
   background-color: var(--cosmic-blue);
   position: relative;
   overflow: hidden;
-  /* Structured octagonal web pattern - like geometric diagram */
-  background-image: 
-    /* Octagon outlines and internal web connections */
-    /* Horizontal lines */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    ),
-    /* Vertical lines */
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    ),
-    /* Diagonal lines at 45deg (octagon sides) */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent calc(50px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(50px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(50px + 0.5px),
-      transparent calc(50px + 0.5px),
-      transparent 100px
-    ),
-    /* Diagonal lines at 135deg (octagon sides) */
-    repeating-linear-gradient(
-      135deg,
-      transparent 0,
-      transparent calc(50px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(50px - 0.5px),
-      rgba(150, 135, 120, 0.14) calc(50px + 0.5px),
-      transparent calc(50px + 0.5px),
-      transparent 100px
-    ),
-    /* Additional internal connection lines at 22.5deg intervals for web structure */
-    repeating-linear-gradient(
-      22.5deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    ),
-    repeating-linear-gradient(
-      67.5deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    ),
-    repeating-linear-gradient(
-      112.5deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    ),
-    repeating-linear-gradient(
-      157.5deg,
-      transparent 0,
-      transparent calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px - 0.5px),
-      rgba(150, 135, 120, 0.10) calc(70px + 0.5px),
-      transparent calc(70px + 0.5px),
-      transparent 140px
-    );
-  background-size: 
-    140px 140px,
-    140px 140px,
-    100px 100px,
-    100px 100px,
-    140px 140px,
-    140px 140px,
-    140px 140px,
-    140px 140px;
-  background-position:
-    0 0,
-    10px 8px,
-    -6px 12px,
-    12px -10px,
-    0 0,
-    14px -6px,
-    -10px 10px,
-    8px -14px;
+  /* Grid removed for cleaner, less busy design */
 }
 
 .bg-structural-grid::before {
@@ -141,40 +44,40 @@ body {
   bottom: 0;
   z-index: 0;
   background-image: 
-    /* 13 MAIN NODES - Bigger and Brighter */
+    /* 13 MAIN NODES - Smaller and dimmer */
     /* Cluster 1 main (top left) */
-    radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.3) 3px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 18px),
     /* Cluster 2 main (top right) */
-    radial-gradient(circle at 85% 25%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
-    /* Cluster 3 center hub - BRIGHTEST */
-    radial-gradient(circle at 50% 50%, rgba(77, 255, 255, 0.5) 6px, rgba(0, 212, 255, 0.5) 9px, rgba(77, 255, 255, 0.4) 12px, rgba(0, 212, 255, 0.3) 18px, rgba(0, 212, 255, 0.15) 25px, transparent 35px),
+    radial-gradient(circle at 85% 25%, rgba(0, 212, 255, 0.3) 3px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 18px),
+    /* Cluster 3 center hub */
+    radial-gradient(circle at 50% 50%, rgba(77, 255, 255, 0.35) 4px, rgba(0, 212, 255, 0.3) 6px, rgba(77, 255, 255, 0.25) 8px, rgba(0, 212, 255, 0.2) 12px, rgba(0, 212, 255, 0.1) 18px, transparent 25px),
     /* Cluster 4 main (bottom left) */
-    radial-gradient(circle at 18% 75%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
+    radial-gradient(circle at 18% 75%, rgba(0, 212, 255, 0.3) 3px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 18px),
     /* Cluster 5 main (bottom right) */
-    radial-gradient(circle at 82% 80%, rgba(0, 212, 255, 0.5) 5px, rgba(77, 255, 255, 0.45) 7px, rgba(0, 212, 255, 0.35) 10px, rgba(0, 212, 255, 0.2) 15px, transparent 25px),
-    /* Scattered nodes - bigger */
-    radial-gradient(circle at 30% 65%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 70% 35%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 35% 40%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 65% 60%, rgba(77, 255, 255, 0.45) 4px, rgba(0, 212, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    /* Additional key nodes from clusters - bigger */
-    radial-gradient(circle at 20% 25%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 15% 80%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
-    radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.45) 4px, rgba(77, 255, 255, 0.4) 6px, rgba(0, 212, 255, 0.3) 9px, rgba(0, 212, 255, 0.15) 14px, transparent 20px),
+    radial-gradient(circle at 82% 80%, rgba(0, 212, 255, 0.3) 3px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 18px),
+    /* Scattered nodes - smaller */
+    radial-gradient(circle at 30% 65%, rgba(77, 255, 255, 0.3) 2px, rgba(0, 212, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 70% 35%, rgba(77, 255, 255, 0.3) 2px, rgba(0, 212, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 35% 40%, rgba(77, 255, 255, 0.3) 2px, rgba(0, 212, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 65% 60%, rgba(77, 255, 255, 0.3) 2px, rgba(0, 212, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    /* Additional key nodes from clusters - smaller */
+    radial-gradient(circle at 20% 25%, rgba(0, 212, 255, 0.3) 2px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.3) 2px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 15% 80%, rgba(0, 212, 255, 0.3) 2px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
+    radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.3) 2px, rgba(77, 255, 255, 0.25) 4px, rgba(0, 212, 255, 0.2) 6px, rgba(0, 212, 255, 0.1) 10px, transparent 15px),
     /* Smaller supporting nodes */
-    radial-gradient(circle at 12% 28%, var(--node-glow) 2px, rgba(0, 212, 255, 0.2) 3px, transparent 6px),
-    radial-gradient(circle at 25% 18%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 88% 28%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 75% 22%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 48% 48%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 52% 52%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 46% 52%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 54% 48%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 22% 78%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 12% 72%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 78% 82%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px),
-    radial-gradient(circle at 88% 78%, var(--node-glow) 2px, rgba(0, 212, 255, 0.3) 3px, transparent 6px);
+    radial-gradient(circle at 12% 28%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 25% 18%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 88% 28%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 75% 22%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 48% 48%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 52% 52%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 46% 52%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 54% 48%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 22% 78%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 12% 72%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 78% 82%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px),
+    radial-gradient(circle at 88% 78%, rgba(0, 212, 255, 0.15) 1px, rgba(0, 212, 255, 0.1) 2px, transparent 4px);
   background-size: 
     100vw 100vh,
     100vw 100vh,
@@ -234,12 +137,12 @@ body {
 
 @keyframes cosmicPulse {
   0%, 100% {
-    opacity: 1;
-    filter: brightness(1);
+    opacity: 0.8;
+    filter: brightness(0.8);
   }
   50% {
-    opacity: 0.9;
-    filter: brightness(1.1);
+    opacity: 0.75;
+    filter: brightness(0.85);
   }
 }
 
@@ -332,57 +235,57 @@ body {
   position: fixed;
   top: 15%;
   right: 5%;
-  width: 72px;
-  height: 36px;
+  width: 58px;
+  height: 29px;
   z-index: 1;
-  /* Main body - classic saucer shape - MORE PROMINENT */
+  /* Main body - classic saucer shape - REDUCED SIZE AND BRIGHTNESS */
   background: 
-    radial-gradient(ellipse 80% 40% at 50% 30%, rgba(77, 255, 255, 1) 0%, rgba(0, 212, 255, 0.7) 30%, rgba(0, 212, 255, 0.3) 60%, transparent 80%),
-    radial-gradient(ellipse 100% 50% at 50% 50%, rgba(0, 212, 255, 0.9) 0%, rgba(0, 212, 255, 0.5) 50%, rgba(0, 212, 255, 0.2) 80%, transparent 100%),
-    linear-gradient(to bottom, rgba(0, 212, 255, 0.6) 0%, rgba(0, 212, 255, 0.4) 50%, rgba(0, 212, 255, 0.1) 100%);
+    radial-gradient(ellipse 80% 40% at 50% 30%, rgba(77, 255, 255, 0.8) 0%, rgba(0, 212, 255, 0.56) 30%, rgba(0, 212, 255, 0.24) 60%, transparent 80%),
+    radial-gradient(ellipse 100% 50% at 50% 50%, rgba(0, 212, 255, 0.72) 0%, rgba(0, 212, 255, 0.4) 50%, rgba(0, 212, 255, 0.16) 80%, transparent 100%),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.48) 0%, rgba(0, 212, 255, 0.32) 50%, rgba(0, 212, 255, 0.08) 100%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  /* Enhanced windows/lights - MORE VISIBLE */
+  /* Enhanced windows/lights - REDUCED BRIGHTNESS */
   box-shadow: 
-    /* Main glow - STRONGER */
-    0 0 20px rgba(0, 212, 255, 0.8),
-    0 0 40px rgba(0, 212, 255, 0.6),
-    0 0 60px rgba(0, 212, 255, 0.4),
-    0 0 80px rgba(0, 212, 255, 0.2),
-    /* Inner highlights - BRIGHTER */
-    inset 0 4px 8px rgba(77, 255, 255, 0.6),
-    inset 0 -3px 6px rgba(0, 212, 255, 0.5),
-    /* Window lights - MORE DEFINED */
-    inset 18px 12px 3px rgba(77, 255, 255, 0.5),
-    inset -18px 12px 3px rgba(77, 255, 255, 0.5),
-    inset 0 15px 4px rgba(77, 255, 255, 0.4),
-    inset 25px 8px 2px rgba(77, 255, 255, 0.4),
-    inset -25px 8px 2px rgba(77, 255, 255, 0.4);
+    /* Main glow - REDUCED */
+    0 0 16px rgba(0, 212, 255, 0.64),
+    0 0 32px rgba(0, 212, 255, 0.48),
+    0 0 48px rgba(0, 212, 255, 0.32),
+    0 0 64px rgba(0, 212, 255, 0.16),
+    /* Inner highlights - REDUCED */
+    inset 0 4px 8px rgba(77, 255, 255, 0.48),
+    inset 0 -3px 6px rgba(0, 212, 255, 0.4),
+    /* Window lights - REDUCED */
+    inset 14px 10px 3px rgba(77, 255, 255, 0.4),
+    inset -14px 10px 3px rgba(77, 255, 255, 0.4),
+    inset 0 12px 4px rgba(77, 255, 255, 0.32),
+    inset 20px 6px 2px rgba(77, 255, 255, 0.32),
+    inset -20px 6px 2px rgba(77, 255, 255, 0.32);
   pointer-events: none;
   animation: ufoFloat 14s ease-in-out infinite;
-  opacity: 0.95;
+  opacity: 0.76;
   filter: blur(0px);
 }
 
 @keyframes ufoFloat {
   0%, 100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 0.95;
+    opacity: 0.76;
   }
   20% {
     transform: translate(-20px, -25px) rotate(-3deg) scale(1.05);
-    opacity: 1;
+    opacity: 0.8;
   }
   40% {
     transform: translate(10px, -35px) rotate(2deg) scale(0.98);
-    opacity: 0.92;
+    opacity: 0.74;
   }
   60% {
     transform: translate(-12px, -22px) rotate(-1deg) scale(1.03);
-    opacity: 0.98;
+    opacity: 0.78;
   }
   80% {
     transform: translate(15px, -30px) rotate(1.5deg) scale(0.99);
-    opacity: 0.94;
+    opacity: 0.75;
   }
 }
 
