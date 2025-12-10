@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book'],
   authors: [{ name: 'Stardust to Sovereignty' }],
   openGraph: {
-    title: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
-    description: 'A living architecture for coherence, perception, and sovereign identity. Preorder now - Ships February 28, 2026.',
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A living architecture for coherence, perception, and sovereign identity. Book One: The Cosmic Tapestry - Ships February 28, 2026.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stardust to Sovereignty | Preorder Book One',
-    description: 'A living architecture for coherence, perception, and sovereign identity. Preorder now.',
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A living architecture for coherence, perception, and sovereign identity.',
     images: ['https://stardusttosovereignty.com/book-cover.jpeg'],
   },
   robots: {
