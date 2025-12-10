@@ -1,159 +1,40 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 interface CodexEntry {
   id?: string;
   title: string;
-  content?: string;
   excerpt?: string;
-  author?: string;
-  type?: string;
-  category?: string;
-  codex_category?: string;
-  status?: string;
-  created?: string;
-  modified?: string;
-  orb_associations?: number[] | {
-    primary_orb?: string;
-    secondary_orbs?: string[];
-    orb_mentions_all?: string[];
-  };
+  orb_associations?: number[];
   tags?: string[];
-  field_function?: {
-    content_purpose?: string;
-    primary_mechanism?: string;
-  };
-  is_primary_source?: boolean;
-  book_threading?: string;
-  source_type?: 'orb' | 'codex';
+  codex_category?: string;
 }
 
 export default function CodexPage() {
   const [entries, setEntries] = useState<CodexEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  
-  // Filter state
-  const [selectedOrb, setSelectedOrb] = useState<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const loadEntries = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        // Load from static JSON file
-        const response = await fetch('/codex-entries.json');
-        
-        if (!response.ok) {
-          throw new Error(`Failed to load codex entries: ${response.status}`);
-        }
-
-        const data = await response.json();
-        
-        if (data.entries && Array.isArray(data.entries)) {
-          console.log(`✅ Loaded ${data.entries.length} entries from static file`);
+    fetch('/codex-entries.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.entries) {
           setEntries(data.entries);
-        } else {
-          throw new Error('Invalid data format in codex-entries.json');
         }
-      } catch (err: any) {
+      })
+      .catch(err => {
         console.error('Error loading entries:', err);
-        setError(`Failed to load Codex entries: ${err.message}`);
-      } finally {
+      })
+      .finally(() => {
         setIsLoading(false);
-      }
-    };
-
-    loadEntries();
+      });
   }, []);
-
-  // Extract orb numbers from various formats
-  const getOrbNumbers = (entry: CodexEntry): number[] => {
-    if (Array.isArray(entry.orb_associations)) {
-      return entry.orb_associations;
-    }
-    if (entry.orb_associations && typeof entry.orb_associations === 'object') {
-      const orbs: number[] = [];
-      if (entry.orb_associations.primary_orb) {
-        const match = entry.orb_associations.primary_orb.match(/Orb\s+(\d+)/i);
-        if (match) orbs.push(parseInt(match[1], 10));
-      }
-      if (Array.isArray(entry.orb_associations.secondary_orbs)) {
-        entry.orb_associations.secondary_orbs.forEach((orb: string) => {
-          const match = orb.match(/Orb\s+(\d+)/i);
-          if (match) {
-            const num = parseInt(match[1], 10);
-            if (!orbs.includes(num)) orbs.push(num);
-          }
-        });
-      }
-      return orbs;
-    }
-    return [];
-  };
-
-  // Filter entries
-  const filteredEntries = useMemo(() => {
-    return entries.filter(entry => {
-      // Orb filter
-      if (selectedOrb !== null) {
-        const orbNumbers = getOrbNumbers(entry);
-        if (!orbNumbers.includes(selectedOrb)) return false;
-      }
-
-      // Category filter
-      if (selectedCategory) {
-        const category = entry.codex_category || entry.category || 'essay';
-        if (category !== selectedCategory) return false;
-      }
-
-      // Search filter
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const searchable = [
-          entry.title,
-          entry.excerpt,
-          entry.field_function?.content_purpose,
-          entry.tags?.join(' '),
-        ].filter(Boolean).join(' ').toLowerCase();
-        if (!searchable.includes(query)) return false;
-      }
-
-      return true;
-    });
-  }, [entries, selectedOrb, selectedCategory, searchQuery]);
-
-  // Get unique categories
-  const categories = useMemo(() => {
-    const cats = new Set<string>();
-    entries.forEach(entry => {
-      const cat = entry.codex_category || entry.category || 'essay';
-      cats.add(cat);
-    });
-    return Array.from(cats).sort();
-  }, [entries]);
-
-  // Debug: Log current state
-  useEffect(() => {
-    console.log('Codex Page State:', {
-      isLoading,
-      error,
-      entriesCount: entries.length,
-      filteredCount: filteredEntries.length,
-    });
-  }, [isLoading, error, entries.length, filteredEntries.length]);
 
   return (
     <main className="min-h-screen bg-structural-grid">
-      {/* Test render indicator */}
-      {!isLoading && <div className="p-4 bg-red-500 text-white">TEST: Component is rendering</div>}
-      
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
@@ -163,12 +44,6 @@ export default function CodexPage() {
           <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
             The source material from which all books are compiled
           </h2>
-          {/* Debug info */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="mt-4 text-xs text-stone-500">
-              Debug: Loading={isLoading ? 'true' : 'false'}, Entries={entries.length}, Filtered={filteredEntries.length}
-            </div>
-          )}
         </div>
       </section>
 
@@ -274,212 +149,70 @@ export default function CodexPage() {
         </div>
       </section>
 
-      {/* Entries List with Filters */}
-      {isLoading && (
+      {/* Entries List - Simplified */}
+      {isLoading ? (
         <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="text-center">
             <p className="text-stone-300">Loading Codex entries...</p>
           </div>
         </section>
-      )}
-
-      {error && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg border border-red-400/30">
-              <p className="text-red-300">{error}</p>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {!isLoading && !error && entries.length > 0 && (
+      ) : entries.length > 0 ? (
         <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="mb-8">
             <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
               Codex Entries
             </h2>
-            <p className="text-sm text-stone-400 mb-6">
-              {filteredEntries.length} of {entries.length} entries
+            <p className="text-sm text-stone-400">
+              {entries.length} entries
             </p>
-
-            {/* Filters */}
-            <div className="space-y-4 mb-8">
-              {/* Search */}
-              <div>
-                <input
-                  type="text"
-                  placeholder="Search entries..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full md:w-96 px-4 py-2 bg-stone-800/50 border border-stone-600 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-                />
-              </div>
-
-              {/* Orb Filter */}
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => setSelectedOrb(null)}
-                  className={`px-3 py-1 rounded text-sm transition-colors ${
-                    selectedOrb === null
-                      ? 'bg-cyan-400 text-stone-900'
-                      : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
-                  }`}
-                >
-                  All Orbs
-                </button>
-                {Array.from({ length: 13 }, (_, i) => i + 1).map(orbNum => (
-                  <button
-                    key={orbNum}
-                    onClick={() => setSelectedOrb(selectedOrb === orbNum ? null : orbNum)}
-                    className={`px-3 py-1 rounded text-sm transition-colors ${
-                      selectedOrb === orbNum
-                        ? 'bg-cyan-400 text-stone-900'
-                        : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
-                    }`}
-                  >
-                    Orb {orbNum}
-                  </button>
-                ))}
-              </div>
-
-              {/* Category Filter */}
-              {categories.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedCategory(null)}
-                    className={`px-3 py-1 rounded text-sm transition-colors ${
-                      selectedCategory === null
-                        ? 'bg-cyan-400 text-stone-900'
-                        : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
-                    }`}
-                  >
-                    All Categories
-                  </button>
-                  {categories.map(cat => (
-                    <button
-                      key={cat}
-                      onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
-                      className={`px-3 py-1 rounded text-sm capitalize transition-colors ${
-                        selectedCategory === cat
-                          ? 'bg-cyan-400 text-stone-900'
-                          : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
           </div>
-
-          {/* Entries Grid */}
-          {filteredEntries.length === 0 ? (
-            <div className="terminator-border">
-              <div className="p-8 bg-cosmic-blue rounded-lg text-center">
-                <p className="text-stone-300">No entries match your filters.</p>
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredEntries.map((entry, index) => {
-                const orbNumbers = getOrbNumbers(entry);
-                const category = entry.codex_category || entry.category || 'essay';
-                
-                return (
-                  <div
-                    key={entry.id || index}
-                    className="terminator-border"
-                  >
-                    <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
-                      {/* Category Badge */}
-                      <div className="mb-3">
-                        <span className="px-2 py-1 bg-cyan-400/20 text-cyan-300 rounded text-xs uppercase tracking-wide">
-                          {category}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {entries.map((entry, index) => (
+              <div key={entry.id || index} className="terminator-border">
+                <div className="p-6 bg-cosmic-blue rounded-lg h-full">
+                  <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
+                    {entry.title || 'Untitled Entry'}
+                  </h3>
+                  {entry.excerpt && (
+                    <p className="text-sm text-stone-300 mb-4 leading-relaxed">
+                      {entry.excerpt}
+                    </p>
+                  )}
+                  {entry.orb_associations && entry.orb_associations.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {entry.orb_associations.slice(0, 5).map(orbNum => (
+                        <span
+                          key={orbNum}
+                          className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs"
+                        >
+                          Orb {orbNum}
                         </span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
-                        {entry.title || 'Untitled Entry'}
-                      </h3>
-
-                      {/* Orb Badges */}
-                      {orbNumbers.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {orbNumbers.slice(0, 5).map(orbNum => (
-                            <span
-                              key={orbNum}
-                              className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs font-medium"
-                            >
-                              Orb {orbNum}
-                            </span>
-                          ))}
-                          {orbNumbers.length > 5 && (
-                            <span className="px-2 py-1 text-stone-400 text-xs">
-                              +{orbNumbers.length - 5} more
-                            </span>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Excerpt */}
-                      {entry.excerpt && (
-                        <p className="text-sm text-stone-300 mb-4 leading-relaxed flex-grow">
-                          {entry.excerpt}
-                        </p>
-                      )}
-
-                      {/* Content Purpose (if no excerpt) */}
-                      {!entry.excerpt && entry.field_function?.content_purpose && (
-                        <p className="text-sm text-stone-300 mb-4 leading-relaxed flex-grow">
-                          {entry.field_function.content_purpose.substring(0, 150)}
-                          {entry.field_function.content_purpose.length > 150 ? '...' : ''}
-                        </p>
-                      )}
-
-                      {/* Tags */}
-                      {entry.tags && entry.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {entry.tags.slice(0, 4).map((tag, i) => (
-                            <span
-                              key={i}
-                              className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                          {entry.tags.length > 4 && (
-                            <span className="text-stone-400 text-xs">+{entry.tags.length - 4}</span>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Footer */}
-                      <div className="mt-auto pt-4 border-t border-cyan-400/20">
-                        {entry.is_primary_source && (
-                          <span className="text-xs text-cyan-400/80 italic">Primary source material</span>
-                        )}
-                      </div>
+                      ))}
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+                  )}
+                  {entry.tags && entry.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {entry.tags.slice(0, 3).map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
-      )}
-
-      {!isLoading && !error && entries.length === 0 && (
+      ) : (
         <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="terminator-border">
             <div className="p-8 bg-cosmic-blue rounded-lg text-center">
               <p className="text-base text-stone-200 mb-4">
                 Codex entries will appear here as they are added to the system.
-              </p>
-              <p className="text-sm text-stone-400 italic">
-                The Codex updates continuously with new essays, often daily. The system remains alive, revealing fresh perspectives.
               </p>
             </div>
           </div>
