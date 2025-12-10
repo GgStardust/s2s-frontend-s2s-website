@@ -131,8 +131,37 @@ export default function CodexPage() {
                 <p className="text-base leading-relaxed text-stone-200">
                   Generative AI produces probabilistic outputs. RBI produces deterministic verification. Generative AI requires training data. RBI needs zero training. Generative AI gives confidence scores. RBI gives mathematical proofs.
                 </p>
-                <p className="text-base leading-relaxed text-stone-200">
-                  RBI operates as the infrastructure layer that makes AI viable at scale. It validates outputs, enforces boundaries, and reduces computational costs through deterministic verification. The system reveals coherent relationships rather than retrieving similar text.
+                <div className="space-y-3 mt-4">
+                  <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">What Makes RBI Distinct</p>
+                  <ul className="space-y-2 text-sm text-stone-200">
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Mathematical Proofs:</strong> Deterministic validation with complete explainability. Every decision is traceable, not a black box.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Zero Training:</strong> No training data required. No model retraining. No drift over time.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Deterministic:</strong> Same input always produces same output. Reproducible, verifiable, predictable.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Structural Coherence:</strong> Validates relationships and integrity. Finds coherent patterns, not just similar text.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Temporal Continuity:</strong> Maintains coherence over time. No degradation, no drift, consistent validation.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">•</span>
+                      <span><strong className="text-cyan-300">Regulatory Compliance:</strong> Mathematical proofs enable audit trails. Deterministic validation meets compliance requirements.</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-base leading-relaxed text-stone-200 mt-4">
+                  RBI operates as the infrastructure layer that makes AI viable at scale. It functions as quality control for AI systems, providing the verification and boundary enforcement that probabilistic models cannot deliver.
                 </p>
                 <p className="text-sm text-stone-400 italic mt-4">
                   Patent Pending: U.S. Provisional Patent Application No. 63/909,031
