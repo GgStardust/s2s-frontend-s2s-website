@@ -7,7 +7,7 @@
  * Phase 7.1 Step 3: Add content coherence validation
  */
 
-import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture, getOrbDefinition, getUndercurrentDefinition } from './architecture-loader';
 
 interface ContentValidationResult {

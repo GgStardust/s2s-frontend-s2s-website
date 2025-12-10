@@ -18,34 +18,57 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
+  title: {
+    default: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
+    template: '%s | Stardust to Sovereignty',
+  },
   description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and the full system of sovereign intelligences.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book'],
-  authors: [{ name: 'Stardust to Sovereignty' }],
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
+  authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/about' }],
+  creator: 'Gigi Stardust',
+  publisher: 'Stardust to Sovereignty',
+  metadataBase: new URL('https://stardusttosovereignty.com'),
+  alternates: {
+    canonical: 'https://stardusttosovereignty.com',
+  },
   openGraph: {
-    title: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
-    description: 'A living architecture for coherence, perception, and sovereign identity. Preorder now - Ships February 28, 2026.',
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A living architecture for coherence, perception, and sovereign identity. Book One: The Cosmic Tapestry - Ships February 28, 2026.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
+    locale: 'en_US',
     images: [
       {
         url: 'https://stardusttosovereignty.com/book-cover.jpeg',
         width: 400,
         height: 600,
         alt: 'Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stardust to Sovereignty | Preorder Book One',
-    description: 'A living architecture for coherence, perception, and sovereign identity. Preorder now.',
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A living architecture for coherence, perception, and sovereign identity.',
     images: ['https://stardusttosovereignty.com/book-cover.jpeg'],
+    creator: '@gigi_stardust',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add Google Search Console verification if available
+    // google: 'your-verification-code',
   },
 }
 
@@ -63,7 +86,7 @@ export default function RootLayout({
     "description": "A living architecture for coherence, perception, and sovereign identity",
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "gigi@gigistardust.com",
+      "email": "gigi@stardusttosovereignty.com",
       "contactType": "Customer Service"
     },
     "sameAs": []
@@ -83,7 +106,7 @@ export default function RootLayout({
       "name": "Stardust to Sovereignty"
     },
     "datePublished": "2026-02-28",
-    "description": "A cosmological field report and foundational field manual introducing the structure of the Sovereign Field and the constellation of sovereign intelligences.",
+    "description": "A cosmological field report and sovereign architecture for the advancement of human consciousness introducing the structure of the Sovereign Field and the constellation of sovereign intelligences.",
     "bookFormat": ["Paperback", "EPUB"],
     "image": "https://stardusttosovereignty.com/book-cover.jpeg",
     "offers": {
@@ -123,7 +146,10 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 space-y-6">
             <div>
               <p className="text-stone-100 mb-2 font-medium">S2S - A Consciousness Technology</p>
-              <p className="text-stone-300 mb-4">© {new Date().getFullYear()} Stardust to Sovereignty. All rights reserved.</p>
+              <p className="text-stone-300 mb-2">© {new Date().getFullYear()} Stardust to Sovereignty. All rights reserved.</p>
+              <p className="text-stone-400 text-xs mb-4">
+                Resonance-Based Intelligence (RBI) technology protected by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
+              </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link href="/privacy" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Privacy Policy
@@ -131,8 +157,11 @@ export default function RootLayout({
                 <Link href="/terms" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Terms of Service
                 </Link>
-                <a href="mailto:gigi@gigistardust.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+                <a href="mailto:gigi@stardusttosovereignty.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Contact
+                </a>
+                <a href="https://www.instagram.com/gigi_stardust/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+                  Instagram
                 </a>
               </div>
             </div>

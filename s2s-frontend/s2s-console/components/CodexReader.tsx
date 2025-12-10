@@ -76,18 +76,18 @@ export default function CodexReader({ entryId, onClose }: CodexReaderProps) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto px-4 md:px-6">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-6 md:mb-8">
         {onClose && (
           <button
             onClick={onClose}
-            className="mb-4 text-editorial-text/60 hover:text-editorial-text underline text-sm"
+            className="mb-4 text-editorial-text/60 hover:text-editorial-text underline text-xs md:text-sm"
           >
             ← Back to Pathway
           </button>
         )}
-        <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-editorial-text">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 text-editorial-text">
           {entry.title || 'Codex Entry'}
         </h1>
         {(entry.orb_associations || entry.console_tags) && (
@@ -95,7 +95,7 @@ export default function CodexReader({ entryId, onClose }: CodexReaderProps) {
             {entry.orb_associations?.map((orb: number) => (
               <span
                 key={orb}
-                className="px-3 py-1 bg-editorial-gold/20 rounded text-sm text-editorial-text"
+                className="px-2 md:px-3 py-1 bg-editorial-gold/20 rounded text-xs md:text-sm text-editorial-text"
               >
                 Orb {orb}
               </span>
@@ -103,7 +103,7 @@ export default function CodexReader({ entryId, onClose }: CodexReaderProps) {
             {entry.console_tags?.map((tag: string) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-gray-100 rounded text-sm text-editorial-text/60"
+                className="px-2 md:px-3 py-1 bg-gray-100 rounded text-xs md:text-sm text-editorial-text/60"
               >
                 {tag}
               </span>
@@ -113,30 +113,32 @@ export default function CodexReader({ entryId, onClose }: CodexReaderProps) {
       </div>
 
       {/* Content */}
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-sm md:prose-base lg:prose-lg max-w-none">
         {entry.content ? (
           typeof entry.content === 'string' ? (
             <div
-              className="text-editorial-text/90 leading-relaxed"
+              className="text-sm md:text-base text-editorial-text/90 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: entry.content }}
             />
           ) : (
-            <pre className="text-editorial-text/90 leading-relaxed whitespace-pre-wrap">
+            <pre className="text-xs md:text-sm text-editorial-text/90 leading-relaxed whitespace-pre-wrap overflow-x-auto">
               {JSON.stringify(entry.content, null, 2)}
             </pre>
           )
         ) : (
-          <p className="text-editorial-text/60 italic">No content available for this entry.</p>
+          <p className="text-sm md:text-base text-editorial-text/60 italic">
+            No content available for this entry.
+          </p>
         )}
       </div>
 
       {/* Navigation (if multiple entries) */}
       {entry.navigation && (
-        <div className="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between gap-4">
           {entry.navigation.previous && (
             <Link
               href={`/codex/${entry.navigation.previous.id}`}
-              className="px-4 py-2 border border-gray-300 rounded-lg hover:border-editorial-gold transition-colors text-editorial-text"
+              className="px-4 py-2 border border-gray-300 rounded-lg hover:border-editorial-gold transition-colors text-sm md:text-base text-editorial-text text-center"
             >
               ← Previous
             </Link>
@@ -144,7 +146,7 @@ export default function CodexReader({ entryId, onClose }: CodexReaderProps) {
           {entry.navigation.next && (
             <Link
               href={`/codex/${entry.navigation.next.id}`}
-              className="px-4 py-2 border border-gray-300 rounded-lg hover:border-editorial-gold transition-colors text-editorial-text ml-auto"
+              className="px-4 py-2 border border-gray-300 rounded-lg hover:border-editorial-gold transition-colors text-sm md:text-base text-editorial-text text-center sm:ml-auto"
             >
               Next →
             </Link>

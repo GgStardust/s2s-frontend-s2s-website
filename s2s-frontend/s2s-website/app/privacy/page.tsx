@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-structural-grid">
-      <div className="max-w-4xl mx-auto py-20 px-6">
+      <div className="max-w-6xl mx-auto py-20 px-6">
         <h1 className="text-4xl font-bold mb-8 text-stone-100">Privacy Policy</h1>
         
         <div className="space-y-6 text-base leading-relaxed text-stone-200">
@@ -43,14 +43,14 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Your Rights</h2>
             <p className="mb-4">
-              You can request access to, correction of, or deletion of your personal information by contacting us at <a href="mailto:gigi@gigistardust.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@gigistardust.com</a>.
+              You can request access to, correction of, or deletion of your personal information by contacting us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Contact Us</h2>
             <p>
-              If you have questions about this Privacy Policy, please contact us at <a href="mailto:gigi@gigistardust.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@gigistardust.com</a>.
+              If you have questions about this Privacy Policy, please contact us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
             </p>
           </section>
         </div>

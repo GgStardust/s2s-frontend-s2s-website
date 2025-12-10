@@ -15,7 +15,8 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // Path to core architecture files
-const ARCHITECTURE_DIR = path.join(process.cwd(), '09_PROCESSED', '02c_Supporting material');
+// Fix: process.cwd() in Next.js returns project root, need to include CMS_Backend
+const ARCHITECTURE_DIR = path.resolve(process.cwd(), 'CMS_Backend/09_PROCESSED/02c_Supporting material');
 
 export interface OrbDefinition {
   number: number;
@@ -403,4 +404,5 @@ export function findUndercurrentsByKeyword(keyword: string): UndercurrentDefinit
     );
   });
 }
+
 

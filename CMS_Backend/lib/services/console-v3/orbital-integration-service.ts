@@ -4,7 +4,6 @@
  * Phase 7: RBI + Orbital Brain Integration
  */
 
-import { generateOrbitalResponse } from 'orbital-brain';
 import type { ContentMetadata, RBIOutput } from 'orbital-brain/types';
 import type {
   DiagnosticSession,
@@ -61,7 +60,8 @@ functional readiness ${(readiness.functional_readiness * 100).toFixed(0)}%,
 and advanced readiness ${(readiness.advanced_readiness * 100).toFixed(0)}%.
 Explain why this pathway is recommended and how it supports their current field configuration.`;
 
-    // Generate Orbital Brain response
+    // Generate Orbital Brain response (dynamic import for Next.js compatibility)
+    const { generateOrbitalResponse } = await import('orbital-brain');
     const orbitalResponse = await generateOrbitalResponse({
       inquiry,
       metadata,
@@ -179,6 +179,8 @@ The user's readiness for this practice is ${(practiceReadiness * 100).toFixed(0)
 Their current orb profile shows alignment with these Orbs.
 Keep the explanation concise and aligned with S2S language.`;
 
+    // Dynamic import for Next.js compatibility
+    const { generateOrbitalResponse } = await import('orbital-brain');
     const orbitalResponse = await generateOrbitalResponse({
       inquiry,
       metadata,

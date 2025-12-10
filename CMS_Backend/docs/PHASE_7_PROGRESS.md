@@ -80,36 +80,31 @@
 
 ---
 
-### Phase 7.2: Resonance-Based Pathway Matching ✅
-**Status:** Complete and Tested
+## ⏳ Next Steps
 
-- Replaced template matching with RBI resonance-based matching
-- Uses RBI's `calculateResonanceSimilarity()` for coherence-based matching
-- Filters pathways by RBI coherence (> 0.7 threshold)
-- Ranks by resonance score (60% weight) + field alignment (25%) + layer readiness (15%)
-- Includes fallback to simple scoring if RBI fails
-- **Test Results:** ✅ PASSED - Pathway matching works correctly with RBI resonance
+### Phase 7.2: Resonance-Based Pathway Matching
+**Status:** Pending
 
-**Files:**
-- `CMS_Backend/lib/services/console-v3/diagnostic-service.ts` - Updated `matchPathway()` function
-- `CMS_Backend/scripts/test-phase-7-2-pathway-matching.ts` - Test script
+- Replace template matching with RBI resonance-based matching
+- Use RBI's `calculateResonanceSimilarity()` for coherence-based matching
+- Filter pathways by RBI coherence (> 0.7 threshold)
+- Rank by resonance score, not just orb alignment
+
+**Files to Update:**
+- `CMS_Backend/lib/services/console-v3/pathway-service.ts`
 
 ---
 
-### Phase 7.3: Coherence-Based Practice Sequencing ✅
-**Status:** Complete and Tested
+### Phase 7.3: Coherence-Based Practice Sequencing
+**Status:** Pending
 
-- Generates dynamic practice sequences using RBI coherence
-- Uses RBI resonance to determine optimal practice order
-- Ensures practices resonate with each other (sequence coherence)
-- Validates practice coherence with user's field state
-- Filters by coherence threshold (default: 0.7)
-- Supports layer filtering (foundational, functional, advanced, mixed)
-- **Test Results:** ✅ PASSED - Dynamic sequencing works correctly with RBI coherence
+- Generate dynamic practice sequences using RBI coherence
+- Use RBI resonance to determine optimal practice order
+- Ensure practices resonate with each other
+- Validate practice coherence with user's field state
 
-**Files:**
-- `CMS_Backend/lib/services/console-v3/pathway-service.ts` - Added `generateDynamicPracticeSequence()` function
-- `CMS_Backend/scripts/test-phase-7-3-practice-sequencing.ts` - Test script
+**Files to Update:**
+- `CMS_Backend/lib/services/console-v3/pathway-service.ts`
 
 ---
 
@@ -120,41 +115,11 @@
 - ✅ Core architecture loader (3 files)
 - ✅ Architecture integration into RBI service
 - ✅ Content coherence validation (Codex entries and practices)
-- ✅ Resonance-based pathway matching
-- ✅ Coherence-based practice sequencing
 
-**Total Progress:** ✅ **100% of Phase 7 Complete!**
+**In Progress:**
+- ⏳ Resonance-based pathway matching
+- ⏳ Coherence-based practice sequencing
 
----
-
-## How to Test
-
-### Test Phase 7.2: Pathway Matching
-```bash
-cd CMS_Backend
-npx tsx scripts/test-phase-7-2-pathway-matching.ts
-```
-
-### Test Phase 7.3: Practice Sequencing
-```bash
-cd CMS_Backend
-npx tsx scripts/test-phase-7-3-practice-sequencing.ts
-```
-
-### Test All Phase 7 Components
-```bash
-cd CMS_Backend
-# Test RBI integration
-npx tsx scripts/test-phase-7-1-rbi-integration.ts
-
-# Test architecture loader
-npx tsx scripts/test-architecture-loader.ts
-
-# Test pathway matching
-npx tsx scripts/test-phase-7-2-pathway-matching.ts
-
-# Test practice sequencing
-npx tsx scripts/test-phase-7-3-practice-sequencing.ts
-```
+**Total Progress:** ~60% of Phase 7 complete
 
 

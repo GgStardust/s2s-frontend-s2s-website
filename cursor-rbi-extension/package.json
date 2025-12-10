@@ -1,0 +1,102 @@
+{
+  "name": "rbi-coherence-extension",
+  "displayName": "RBI Coherence Monitor",
+  "description": "Resonance-Based Intelligence coherence monitoring for Cursor/VS Code. Tracks architectural coherence, detects drift, and validates code quality.",
+  "version": "0.1.0",
+  "publisher": "stardust-to-sovereignty",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Linters",
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "rbi",
+    "coherence",
+    "architecture",
+    "code-quality",
+    "resonance",
+    "validation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rbi.showDashboard",
+        "title": "Show RBI Coherence Dashboard"
+      },
+      {
+        "command": "rbi.analyzeWorkspace",
+        "title": "Analyze Workspace Coherence"
+      },
+      {
+        "command": "rbi.refresh",
+        "title": "Refresh RBI Analysis"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "rbiCoherenceView",
+          "name": "RBI Coherence",
+          "when": "true"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "RBI Coherence",
+      "properties": {
+        "rbi.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable RBI coherence monitoring"
+        },
+        "rbi.analysisDelay": {
+          "type": "number",
+          "default": 1000,
+          "description": "Delay in milliseconds before analyzing files after changes"
+        },
+        "rbi.coherenceThreshold": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Minimum coherence score threshold for warnings"
+        },
+        "rbi.watchPatterns": {
+          "type": "array",
+          "default": [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
+            "**/*.jsx"
+          ],
+          "description": "File patterns to watch for coherence analysis"
+        },
+        "rbi.rbiKernelPath": {
+          "type": "string",
+          "default": "../RBI-Kernel",
+          "description": "Path to RBI-Kernel directory (relative to extension)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {}
+}

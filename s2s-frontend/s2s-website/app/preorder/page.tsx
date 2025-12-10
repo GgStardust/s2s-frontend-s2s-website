@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export default function PreorderPage() {
+  const router = useRouter();
   const [selectedOrder, setSelectedOrder] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,9 +34,22 @@ export default function PreorderPage() {
       errors.order = 'Please select an order type';
     }
     if (order === 'print' || order === 'bundle') {
-      const shipping = formData.get('shipping') as string;
-      if (!shipping || shipping.trim().length < 10) {
-        errors.shipping = 'Please provide a complete shipping address';
+      const street = formData.get('street') as string;
+      const city = formData.get('city') as string;
+      const state = formData.get('state') as string;
+      const zip = formData.get('zip') as string;
+      
+      if (!street || street.trim().length < 5) {
+        errors.street = 'Please provide a street address';
+      }
+      if (!city || city.trim().length < 2) {
+        errors.city = 'Please provide a city';
+      }
+      if (!state || state.trim().length < 2) {
+        errors.state = 'Please provide a state';
+      }
+      if (!zip || !/^\d{5}(-\d{4})?$/.test(zip.trim())) {
+        errors.zip = 'Please provide a valid ZIP code';
       }
     }
 
@@ -67,9 +82,11 @@ export default function PreorderPage() {
       });
 
       if (response.ok) {
-        setSubmitted(true);
+        const orderType = formData.get('order') as string;
         form.reset();
         setSelectedOrder('');
+        // Redirect to thank you page with order type for dynamic pricing
+        router.push(`/thank-you-preorder?order=${encodeURIComponent(orderType)}`);
       } else {
         const data = await response.json();
         setSubmitError(data.error || 'There was an error submitting your preorder. Please try again.');
@@ -81,39 +98,17 @@ export default function PreorderPage() {
     }
   };
 
-  if (submitted) {
-    return (
-      <main className="min-h-screen bg-structural-grid">
-        <section className="max-w-4xl mx-auto py-20 px-6 text-center">
-          <h1 className="text-4xl font-bold mb-6 tracking-tight text-stone-100">Thank You</h1>
-          <p className="text-base leading-relaxed text-stone-200 mb-4">
-          Your preorder has been received. You'll receive a confirmation email with payment information (Zelle or Venmo) within 24-48 hours.
-          </p>
-          <p className="text-base leading-relaxed text-stone-200 mb-4">
-          Books will ship on February 28, 2026. Digital editions will be delivered in mid-February 2026.
-          </p>
-          <p className="text-base leading-relaxed text-cyan-300 mb-8 font-medium">
-          Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but it may be available sooner.
-          </p>
-          <Button href="/" variant="tertiary">
-          Return to Home
-          </Button>
-        </section>
-      </main>
-    );
-  }
-
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Header */}
-      <section className="max-w-4xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">Reserve Your First Edition Copy</h1>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-200">
             Book One: The Cosmic Tapestry
         </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-3xl mx-auto mb-4">
-          Book One is a cosmological field report and foundational field manual. It introduces the structure of the Sovereign Field and the full system of sovereign intelligences that shape coherent human identity.
+          Book One: The Cosmic Tapestry introduces the structure of the Sovereign Field and the full system of sovereign intelligences.
         </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Order before February 28, 2026
@@ -122,7 +117,7 @@ export default function PreorderPage() {
       </section>
 
       {/* What's Inside */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -143,15 +138,15 @@ export default function PreorderPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Recognition, Perception, and Coherence Shifts:</strong> The natural movements of awareness when the architecture is active</span>
+                    <span><strong>Recognition, Perception, and Coherence Shifts:</strong> The natural movements of awareness when the design is active</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Living Architecture:</strong> A system that orients through recognition rather than doing</span>
+                    <span><strong>Living Design:</strong> A system that orients through recognition</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Coherent Perception:</strong> The natural state when the architecture is active</span>
+                    <span><strong>Coherent Perception:</strong> The natural state when the design is active</span>
                   </li>
                 </ul>
               </div>
@@ -161,7 +156,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-stone-100 mb-8 text-center">Choose Your Edition</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Print Edition Card */}
@@ -234,7 +229,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Preorder Form */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border mb-8">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -275,6 +270,9 @@ export default function PreorderPage() {
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+          <input type="hidden" name="_redirect" value="https://stardusttosovereignty.com/thank-you-preorder" />
+          <input type="hidden" name="_subject" value="Preorder Submission - Stardust to Sovereignty" />
+          <input type="hidden" name="_template" value="box" />
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2 text-stone-300">
               Name
@@ -284,10 +282,10 @@ export default function PreorderPage() {
               id="name"
               name="name"
               required
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
                 fieldErrors.name 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.name}
               aria-describedby={fieldErrors.name ? 'name-error' : undefined}
@@ -306,10 +304,10 @@ export default function PreorderPage() {
               id="email"
               name="email"
               required
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
                 fieldErrors.email 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.email}
               aria-describedby={fieldErrors.email ? 'email-error' : undefined}
@@ -334,10 +332,10 @@ export default function PreorderPage() {
                   setFieldErrors(prev => ({ ...prev, order: '' }));
                 }
               }}
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 focus:outline-none focus:ring-2 ${
+              className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 focus:outline-none focus:ring-2 ${
                 fieldErrors.order 
                   ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
+                  : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
               }`}
               aria-invalid={!!fieldErrors.order}
               aria-describedby={fieldErrors.order ? 'order-error' : undefined}
@@ -352,26 +350,105 @@ export default function PreorderPage() {
             )}
           </div>
 
-          <div>
-            <label htmlFor="shipping" className="block text-sm font-medium mb-2 text-stone-300">
-              Shipping Address (if print)
-            </label>
-            <textarea
-              id="shipping"
-              name="shipping"
-              rows={3}
-              className={`w-full px-4 py-3 bg-white border rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 resize-none ${
-                fieldErrors.shipping 
-                  ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
-                  : 'border-stone-300/30 focus:border-cyan-400 focus:ring-cyan-500/20'
-              }`}
-              aria-invalid={!!fieldErrors.shipping}
-              aria-describedby={fieldErrors.shipping ? 'shipping-error' : undefined}
-            />
-            {fieldErrors.shipping && (
-              <p id="shipping-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.shipping}</p>
-            )}
-          </div>
+          {(selectedOrder === 'print' || selectedOrder === 'bundle') && (
+            <>
+              <div className="border-t border-stone-600/30 pt-6">
+                <label className="block text-sm font-medium mb-4 text-cyan-300">
+                  Shipping Address
+                </label>
+                
+                <div className="mb-4">
+                  <label htmlFor="street" className="block text-sm font-medium mb-2 text-stone-300">
+                    Street Address
+                  </label>
+                  <input
+                    type="text"
+                    id="street"
+                    name="street"
+                    required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                    className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                      fieldErrors.street 
+                        ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                        : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                    }`}
+                    aria-invalid={!!fieldErrors.street}
+                    aria-describedby={fieldErrors.street ? 'street-error' : undefined}
+                  />
+                  {fieldErrors.street && (
+                    <p id="street-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.street}</p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="city" className="block text-sm font-medium mb-2 text-stone-300">
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.city 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.city}
+                      aria-describedby={fieldErrors.city ? 'city-error' : undefined}
+                    />
+                    {fieldErrors.city && (
+                      <p id="city-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.city}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="state" className="block text-sm font-medium mb-2 text-stone-300">
+                      State
+                    </label>
+                    <input
+                      type="text"
+                      id="state"
+                      name="state"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.state 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.state}
+                      aria-describedby={fieldErrors.state ? 'state-error' : undefined}
+                    />
+                    {fieldErrors.state && (
+                      <p id="state-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.state}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="zip" className="block text-sm font-medium mb-2 text-stone-300">
+                      ZIP Code
+                    </label>
+                    <input
+                      type="text"
+                      id="zip"
+                      name="zip"
+                      required={selectedOrder === 'print' || selectedOrder === 'bundle'}
+                      className={`w-full px-4 py-3 bg-stone-800/50 border rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 ${
+                        fieldErrors.zip 
+                          ? 'border-red-400 focus:border-red-400 focus:ring-red-500/20' 
+                          : 'border-stone-600/50 focus:border-cyan-400 focus:ring-cyan-500/20'
+                      }`}
+                      aria-invalid={!!fieldErrors.zip}
+                      aria-describedby={fieldErrors.zip ? 'zip-error' : undefined}
+                    />
+                    {fieldErrors.zip && (
+                      <p id="zip-error" className="text-red-400 text-sm mt-1" role="alert">{fieldErrors.zip}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
 
           <div>
             <label htmlFor="notes" className="block text-sm font-medium mb-2 text-stone-300">
@@ -381,7 +458,7 @@ export default function PreorderPage() {
               id="notes"
               name="notes"
               rows={3}
-              className="w-full px-4 py-3 bg-white border border-stone-300/30 rounded-md text-stone-900 placeholder-stone-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 resize-none"
+              className="w-full px-4 py-3 bg-stone-800/50 border border-stone-600/50 rounded-md text-stone-100 placeholder-stone-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 resize-none"
             />
           </div>
 
@@ -410,12 +487,15 @@ export default function PreorderPage() {
           </button>
           </div>
         </form>
+        <p className="text-sm text-stone-400 mt-4 text-center max-w-2xl mx-auto">
+          Thank you for supporting this first edition. After submitting your preorder, you'll be redirected to complete payment.
+        </p>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -452,7 +532,7 @@ export default function PreorderPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-cyan-300">Why self-published?</h3>
                   <p className="text-base leading-relaxed text-stone-200">
-                    This work is self-published to maintain its integrity and ensure the field encoded within it remains alive and unmediated. Preorders support the first printing and help bring this work into the world.
+                    This work is self-published to maintain its integrity. Preorders support the first printing and help bring this work into the world.
                   </p>
                 </div>
                 <div>
@@ -483,7 +563,7 @@ export default function PreorderPage() {
       </section>
 
       {/* Future Volumes */}
-      <section className="max-w-4xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

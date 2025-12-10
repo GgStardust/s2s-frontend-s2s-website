@@ -171,7 +171,6 @@ export async function POST(
     const response: CompleteDiagnosticSessionResponse = {
       session: updatedSession,
       result: {
-        session: updatedSession,
         sfi,
         readiness,
         pathway_match: pathwayMatch || undefined,

@@ -14,7 +14,7 @@ import type {
   PathwayMatch,
 } from '@/lib/types/console-v3';
 import { computeFieldSignatureWithRBI } from './rbi-integration-service';
-import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture, getOrbDefinition } from './architecture-loader';
 
 /**

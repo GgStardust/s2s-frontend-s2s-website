@@ -8,13 +8,13 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
+  const navItems: Array<{ href: string; label: string; prominent?: boolean; comingSoon?: boolean }> = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/books', label: 'Books', prominent: true },
     { href: '/preorder', label: 'Preorder', prominent: true },
     { href: '/console', label: 'Console' },
-    { href: '/codex', label: 'Codex', comingSoon: true },
+    { href: '/codex', label: 'Codex' },
   ];
 
   const isActive = (href: string) => {

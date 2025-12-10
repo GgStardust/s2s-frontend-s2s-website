@@ -3,9 +3,8 @@
  * Generates Orbital Brain responses to user inquiry questions
  */
 
-import { generateOrbitalResponse } from 'orbital-brain';
 import type { ContentMetadata, RBIOutput } from 'orbital-brain/types';
-import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture } from './architecture-loader';
 import type { DiagnosticSession } from '@/lib/types/console-v3';
 
@@ -101,7 +100,8 @@ export async function generateInquiryResponse(
       }
     };
 
-    // STEP 3: Generate Orbital Brain response
+    // STEP 3: Generate Orbital Brain response (dynamic import for Next.js compatibility)
+    const { generateOrbitalResponse } = await import('orbital-brain');
     const orbitalResponse = await generateOrbitalResponse({
       inquiry,
       metadata,

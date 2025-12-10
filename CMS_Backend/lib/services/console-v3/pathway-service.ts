@@ -10,7 +10,7 @@ import type {
   SFIResult,
   PracticeReadinessAssessment,
 } from '@/lib/types/console-v3';
-import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture } from './architecture-loader';
 
 /**

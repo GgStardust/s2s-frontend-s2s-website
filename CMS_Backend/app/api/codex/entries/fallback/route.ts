@@ -8,6 +8,18 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 /**
+ * OPTIONS /api/codex/entries/fallback
+ * Handle CORS preflight
+ */
+export async function OPTIONS(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  return new NextResponse(null, {
+    status: 204,
+    headers: getCorsHeaders(origin),
+  });
+}
+
+/**
  * GET /api/codex/entries/fallback
  * Fallback endpoint that reads markdown files directly when Supabase has no entries
  * Reads from 02d_Orb_Essays and 02f_S2S_codex_essays directories

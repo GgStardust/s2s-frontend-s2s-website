@@ -16,7 +16,7 @@
  * - Matches user responses to actual orb/undercurrent content via resonance
  */
 
-import { EnhancedResonanceEngine } from 'rbi-kernel/types';
+import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture, findOrbsByKeyword, findUndercurrentsByKeyword } from './architecture-loader';
 import type {
   DiagnosticSession,
@@ -82,11 +82,13 @@ function extractOrbAssociations(
 /**
  * Build orb profile from RBI analysis results
  * Extracts orb activation from RBI's orb_associations and coherence matrix
+ * Uses architecture to validate and enhance orb associations
  */
 function buildOrbProfileFromRBI(
   analysis: any,
   responses: DiagnosticResponse[],
-  questions: DiagnosticQuestion[]
+  questions: DiagnosticQuestion[],
+  architecture?: any
 ): Record<string, number> {
   // Get orb associations from RBI analysis (metadata-first approach)
   const orbAssociations = analysis.orb_associations || [];
@@ -222,11 +224,13 @@ function buildOrbProfileFromRBI(
 /**
  * Build undercurrent profile from RBI analysis results
  * Uses question undercurrent_weights as fallback
+ * Uses architecture to validate undercurrent associations
  */
 function buildUndercurrentProfileFromRBI(
   analysis: any,
   responses: DiagnosticResponse[],
-  questions: DiagnosticQuestion[]
+  questions: DiagnosticQuestion[],
+  architecture?: any
 ): Record<string, number> {
   const undercurrentProfile: Record<string, number> = {};
   const undercurrentContributions: Record<string, number[]> = {};
@@ -327,18 +331,63 @@ export async function computeFieldSignatureWithRBI(
     // Extract orb associations from responses and questions
     const orbAssociations = extractOrbAssociations(responses, questions);
     
-    // Build ContentMetadata for RBI (metadata-first approach)
+    // Load core architecture to enhance metadata
+    const architecture = loadCoreArchitecture();
+    
+    // Build enhanced orb associations using architecture
+    // Verify orbs exist in architecture and get their definitions
+    const validatedOrbAssociations = orbAssociations.filter(orbNum => {
+      const orbDef = architecture.orbs.get(orbNum);
+      if (!orbDef) {
+        console.warn(`[RBI] Orb ${orbNum} not found in architecture, excluding from associations`);
+        return false;
+      }
+      return true;
+    });
+    
+    // Extract undercurrent associations from questions
+    const undercurrentAssociations: number[] = [];
+    for (const response of responses) {
+      const question = questions.find(q => q.id === response.question_id);
+      if (!question || !question.undercurrent_weights) continue;
+      
+      for (const ucKey of Object.keys(question.undercurrent_weights)) {
+        const ucNum = parseInt(ucKey.replace('uc_', ''));
+        if (!isNaN(ucNum) && ucNum >= 1 && ucNum <= 12 && !undercurrentAssociations.includes(ucNum)) {
+          // Verify undercurrent exists in architecture
+          const ucDef = architecture.undercurrents.get(ucNum);
+          if (ucDef) {
+            undercurrentAssociations.push(ucNum);
+          }
+        }
+      }
+    }
+    
+    // Build ContentMetadata for RBI (metadata-first approach with architecture context)
     const metadata: ContentMetadata = {
-      orb_associations: orbAssociations.length > 0 ? orbAssociations : undefined,
+      orb_associations: validatedOrbAssociations.length > 0 ? validatedOrbAssociations : undefined,
       field_function: {
         content_purpose: 'sovereign_field_inquiry',
         primary_mechanism: 'diagnostic_analysis',
         console_context: 'sfi_computation',
         console_relation: 'field_signature_generation',
       },
-      tags: ['diagnostic', 'sfi', 'field_analysis', 'sovereign_field_inquiry'],
+      tags: [
+        'diagnostic',
+        'sfi',
+        'field_analysis',
+        'sovereign_field_inquiry',
+        ...validatedOrbAssociations.map(orb => `orb_${orb}`),
+        ...undercurrentAssociations.map(uc => `undercurrent_${uc}`),
+      ],
       category: 'diagnostic_response',
     };
+    
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[RBI] Architecture-enhanced metadata:');
+      console.log(`   Orbs: ${validatedOrbAssociations.join(', ')}`);
+      console.log(`   Undercurrents: ${undercurrentAssociations.join(', ')}`);
+    }
     
     // Use RBI Kernel's full field analysis
     const analysis = await engine.analyzeContentWithMathematics(
@@ -348,8 +397,9 @@ export async function computeFieldSignatureWithRBI(
     );
     
     // Extract field signature from RBI analysis
-    const orbProfile = buildOrbProfileFromRBI(analysis, responses, questions);
-    const undercurrentProfile = buildUndercurrentProfileFromRBI(analysis, responses, questions);
+    // Use architecture to enhance orb profile building
+    const orbProfile = buildOrbProfileFromRBI(analysis, responses, questions, architecture);
+    const undercurrentProfile = buildUndercurrentProfileFromRBI(analysis, responses, questions, architecture);
     
     // Extract coherence metrics from RBI's field dynamics
     const fieldDynamics = analysis.mathematical?.fieldDynamics;

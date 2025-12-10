@@ -91,3 +91,5 @@ curl -X POST http://localhost:4000/api/console/v3/inquiry \
 2. **Orbital Brain integration** - Connect inquiry endpoint to Orbital Brain for actual responses
 3. **Frontend integration** - Connect Console UI to inquiry endpoint
 
+
+
