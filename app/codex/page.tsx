@@ -73,8 +73,8 @@ export default function CodexPage() {
           console.warn('Supabase API request failed:', supabaseErr.message);
         }
 
-        // Fallback to file system
-        console.log('No Supabase entries, trying file system fallback...');
+        // Fallback to file system API
+        console.log('No Supabase entries, trying file system fallback API...');
         try {
           const fallbackResponse = await fetch(`${CMS_BACKEND_URL}/api/codex/entries/fallback`);
           console.log('Fallback API response status:', fallbackResponse.status);
@@ -83,21 +83,36 @@ export default function CodexPage() {
             const fallbackData = await fallbackResponse.json();
             console.log('Fallback API data:', { count: fallbackData.count, entriesLength: fallbackData.entries?.length, source: fallbackData.source });
             if (fallbackData.entries && fallbackData.entries.length > 0) {
-              console.log(`✅ Loaded ${fallbackData.entries.length} entries from file system`);
+              console.log(`✅ Loaded ${fallbackData.entries.length} entries from file system API`);
               setEntries(fallbackData.entries);
               setIsLoading(false);
               return;
             } else {
-              console.warn('⚠️ Fallback returned 0 entries');
+              console.warn('⚠️ Fallback API returned 0 entries');
             }
           } else {
-            const errorText = await fallbackResponse.text();
-            console.error('❌ Fallback API error:', fallbackResponse.status, errorText);
-            setError(`CMS Backend unavailable (${fallbackResponse.status}). Please ensure the CMS backend is running at ${CMS_BACKEND_URL}`);
+            console.warn('⚠️ Fallback API unavailable, trying static file...');
           }
         } catch (fallbackErr: any) {
-          console.error('❌ Fallback API request failed:', fallbackErr.message);
-          setError(`Cannot connect to CMS Backend at ${CMS_BACKEND_URL}. Error: ${fallbackErr.message}`);
+          console.warn('⚠️ Fallback API request failed, trying static file:', fallbackErr.message);
+        }
+
+        // Final fallback: static JSON file
+        console.log('Trying static JSON file fallback...');
+        try {
+          const staticResponse = await fetch('/codex-entries.json');
+          if (staticResponse.ok) {
+            const staticData = await staticResponse.json();
+            console.log('Static file data:', { count: staticData.count, entriesLength: staticData.entries?.length });
+            if (staticData.entries && staticData.entries.length > 0) {
+              console.log(`✅ Loaded ${staticData.entries.length} entries from static file`);
+              setEntries(staticData.entries);
+              setIsLoading(false);
+              return;
+            }
+          }
+        } catch (staticErr: any) {
+          console.warn('⚠️ Static file not found:', staticErr.message);
         }
 
         // No entries found
