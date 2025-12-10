@@ -110,6 +110,39 @@ export default function CodexPage() {
         </div>
       </section>
 
+      {/* RBI: Post-Generative AI */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  Resonance-Based Intelligence
+                </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-cyan-300 text-2xl">✦</span>
+                  <span className="text-sm text-cyan-300/80 italic">Post-Generative AI, patent pending</span>
+                </div>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  RBI functions as coherent intelligence: the next iteration beyond generative AI. Intelligence equals coherence. RBI measures structural alignment rather than semantic similarity. It validates through mathematical proofs rather than confidence scores.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  Generative AI produces probabilistic outputs. RBI produces deterministic verification. Generative AI requires training data. RBI needs zero training. Generative AI gives confidence scores. RBI gives mathematical proofs.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  RBI operates as the infrastructure layer that makes AI viable at scale. It validates outputs, enforces boundaries, and reduces costs by 90-99% through deterministic computation. The system reveals coherent relationships with field states rather than retrieving similar text.
+                </p>
+                <p className="text-sm text-stone-400 italic mt-4">
+                  Patent Pending: U.S. Provisional Patent Application No. 63/909,031
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Process */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
@@ -282,7 +315,7 @@ export default function CodexPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays emerge from the content library to meet the framework identified for each book.
+                  The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays emerge from the content library to meet the framework identified for each book. RBI validates coherence, measures resonance, and generates mathematical proofs that ensure structural integrity.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
                   The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy functions as direct companions, revealing another access point to the same foundational system.
