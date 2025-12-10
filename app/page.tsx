@@ -11,7 +11,7 @@ export default function HomePage() {
           <div className="inline-block terminator-border-rounded">
             <div className="px-6 py-2 bg-cosmic-blue/95 backdrop-blur-sm rounded-full">
               <p className="text-sm text-cyan-300 font-medium">
-                Book One Presale Now Open • Book One: The Cosmic Tapestry • Ships February 28, 2026
+                Presale Now Open • Book One: The Cosmic Tapestry • Ships February 28, 2026
           </p>
           </div>
           </div>
