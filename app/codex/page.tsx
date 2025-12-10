@@ -166,6 +166,11 @@ export default function CodexPage() {
                 <p className="text-sm text-stone-400 italic mt-4">
                   Patent Pending: U.S. Provisional Patent Application No. 63/909,031
                 </p>
+                <p className="text-sm text-stone-400 mt-4">
+                  <Link href="/rbi" className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2">
+                    Learn more about RBI technology →
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -211,7 +216,7 @@ export default function CodexPage() {
             </div>
             <div className="mt-8 pt-6 border-t border-cyan-400/30">
               <p className="text-base leading-relaxed text-stone-200">
-                Essays live in the content library. RBI pulls from this library to meet the framework identified for each book. The Codex essays, Orb essays, backbone, and Orbs together form the paradigm: the foundation from which all books are compiled.
+                RBI analyzes resonance patterns to identify which essays align with the framework for each book. This compilation then moves through writing and editing to become the final manuscript. The Codex essays, Orb essays, backbone, and Orbs together form the paradigm: the foundation from which all books are compiled.
               </p>
             </div>
           </div>
