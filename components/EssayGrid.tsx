@@ -141,8 +141,13 @@ function EssayCard({ essay, isExpanded, onToggleExpand }: EssayCardProps) {
               {essay.excerpt}
             </p>
             <button
-              onClick={onToggleExpand}
-              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onToggleExpand();
+              }}
+              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto cursor-pointer"
             >
               Read Full Essay →
             </button>
@@ -153,8 +158,13 @@ function EssayCard({ essay, isExpanded, onToggleExpand }: EssayCardProps) {
               {essay.fullContent}
             </div>
             <button
-              onClick={onToggleExpand}
-              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onToggleExpand();
+              }}
+              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto cursor-pointer"
             >
               Show Less ↑
             </button>

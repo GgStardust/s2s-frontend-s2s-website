@@ -758,6 +758,59 @@
       "source_type": "codex"
     },
     {
+      "id": "02f_S2S_codex_essays_neurodivergent_coherence_architecture_md",
+      "title": "Neurodivergent Coherence Architecture",
+      "excerpt": "@scrollstream:neurodivergent_architecture @scrollstream:interface_bandwidth @scrollstream:evolutionary_intelligence @scrollstream:sovereign_nervous_sy...",
+      "author": "Gigi Stardust",
+      "type": "essay",
+      "category": "evolutionary_intelligence",
+      "codex_category": "essay",
+      "status": "coherent_refined",
+      "created": "2025-11-18",
+      "modified": "2025-11-18",
+      "orb_associations": [
+        8,
+        3,
+        5,
+        9,
+        12,
+        13
+      ],
+      "tags": [
+        "neurodivergence",
+        "evolutionary_intelligence",
+        "interface_bandwidth",
+        "resonance_sensitivity",
+        "coherence_mechanics",
+        "photonic_intelligence",
+        "temporal_fluidity",
+        "quantum_intuition",
+        "sovereign_field",
+        "bridging_intelligence",
+        "generational_architecture",
+        "nervous_system_evolution",
+        "environmental_coherence",
+        "neuroscience_evidence"
+      ],
+      "field_function": {
+        "content_purpose": "Maps neurodivergence as evolutionary field architecture expressing increased interface bandwidth, resonance sensitivity, and coherence mechanics. Establishes generational patterns, environmental dynamics, and sovereignty as stabilization strategy for high-bandwidth nervous systems.",
+        "primary_mechanism": "Orb 8: Quantum Intuition — direct perception, internal signal logic, nonlinear relational mapping",
+        "console_context": "codex_viewer",
+        "console_relation": "standalone",
+        "secondary_mechanisms": [
+          "Orb 3: Photonic Intelligence — recognition through light, metabolic processes translating photonic input into biological coherence",
+          "Orb 5: Temporal Sovereignty — sequencing energy into clear arcs, sovereign pacing",
+          "Orb 9: Temporal Fluidity — adaptive pacing, timeline attunement, multidimensional time",
+          "Orb 12: Sovereign Field — integrity maintained across change, bandwidth expansion",
+          "Orb 13: Bridging Intelligence — translation between architectures, intergenerational stabilization"
+        ]
+      },
+      "is_primary_source": true,
+      "book_threading": "evolutionary_field_architectures",
+      "file_path": "02f_S2S_codex_essays/neurodivergent_coherence_architecture.md",
+      "source_type": "codex"
+    },
+    {
       "id": "02f_S2S_codex_essays_galactic_recall_fascia_intelligence_md",
       "title": "Galactic Recall and Fascia Intelligence",
       "excerpt": "@scrollstream:fascia_release @scrollstream:starline_memory @scrollstream:somatic_recall Codex Entry 3: Galactic Recall and Fascia Intelligence Linked ...",
@@ -2864,7 +2917,7 @@
       "source_type": "codex"
     }
   ],
-  "count": 60,
-  "generated_at": "2025-12-10T17:09:28.916Z",
+  "count": 61,
+  "generated_at": "2025-12-10T17:41:42.539Z",
   "source": "static_file"
 }
