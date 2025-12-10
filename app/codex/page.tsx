@@ -78,7 +78,7 @@ export default function CodexPage() {
             The Codex
           </h1>
           <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
-            Foundational source material for Stardust to Sovereignty
+            The source material from which all books are compiled
           </h2>
         </div>
       </section>
@@ -90,16 +90,16 @@ export default function CodexPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  What the Codex Is
+                  The Codex
                 </h2>
                 <div className="flex items-center gap-2 mt-4">
                   <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">Source material, not blogs</span>
+                  <span className="text-sm text-cyan-300/80 italic">Source material that reveals its own structure</span>
                 </div>
               </div>
               <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  The Codex contains foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration—a thought, conversation, reflection, or article—then moves through research, writing, and RBI analysis to identify resonance nodes.
+                  The Codex contains foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration: a thought, conversation, reflection, or article. The process moves through research, writing, and RBI analysis to identify resonance nodes.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
                   These essays function as the source material from which all books are compiled. They are manually tagged with metadata frontmatter and inline tagging, then analyzed through the Orb system and backbone to identify resonance patterns. This rigorous methodology produces the consciousness technology that becomes the books.
@@ -122,7 +122,7 @@ export default function CodexPage() {
                 <div className="text-cyan-300 text-2xl mb-2">1</div>
                 <h3 className="text-lg font-semibold text-cyan-300">Inspiration</h3>
                 <p className="text-sm text-stone-200">
-                  A thought, conversation, reflection, or article triggers the process.
+                  A thought, conversation, reflection, or article initiates the process.
                 </p>
               </div>
               <div className="space-y-2">
@@ -149,7 +149,7 @@ export default function CodexPage() {
             </div>
             <div className="mt-8 pt-6 border-t border-cyan-400/30">
               <p className="text-base leading-relaxed text-stone-200">
-                Essays live in the content library. RBI pulls from this library to meet the framework identified for each book. The Codex essays, Orb essays, backbone, and Orbs together form the paradigm—the foundation from which all books are compiled.
+                Essays live in the content library. RBI pulls from this library to meet the framework identified for each book. The Codex essays, Orb essays, backbone, and Orbs together form the paradigm: the foundation from which all books are compiled.
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function CodexPage() {
                 Codex entries will appear here as they are added to the system.
               </p>
               <p className="text-sm text-stone-400 italic">
-                The Codex is continuously updated with new essays, often daily. This keeps the system alive and provides fresh perspectives.
+                The Codex updates continuously with new essays, often daily. The system remains alive, revealing fresh perspectives.
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function CodexPage() {
               Codex Entries
             </h2>
             <p className="text-sm text-stone-400 mt-2">
-              Foundational source material compiled into books
+              Source material that becomes books
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -285,10 +285,10 @@ export default function CodexPage() {
                   The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays are pulled from the content library to meet the framework identified for each book.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy serves as direct companions, providing another access point to the same foundational system.
+                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy functions as direct companions, creating another access point to the same foundational system.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  The Console will function as yet another interface, providing dynamic access to the same source material through the RBI system.
+                  The Console functions as another interface, creating dynamic access to the same source material through the RBI system.
                 </p>
                 <div className="mt-6">
                   <Button href="/books" variant="secondary">
