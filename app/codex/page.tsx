@@ -139,6 +139,16 @@ export default function CodexPage() {
     return Array.from(cats).sort();
   }, [entries]);
 
+  // Debug: Log current state
+  useEffect(() => {
+    console.log('Codex Page State:', {
+      isLoading,
+      error,
+      entriesCount: entries.length,
+      filteredCount: filteredEntries.length,
+    });
+  }, [isLoading, error, entries.length, filteredEntries.length]);
+
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
@@ -150,6 +160,12 @@ export default function CodexPage() {
           <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
             The source material from which all books are compiled
           </h2>
+          {/* Debug info */}
+          {process.env.NODE_ENV === 'development' && (
+            <div className="mt-4 text-xs text-stone-500">
+              Debug: Loading={isLoading ? 'true' : 'false'}, Entries={entries.length}, Filtered={filteredEntries.length}
+            </div>
+          )}
         </div>
       </section>
 
