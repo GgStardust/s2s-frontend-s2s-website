@@ -1,38 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
-interface CodexEntry {
-  id?: string;
-  title: string;
-  excerpt?: string;
-  orb_associations?: number[];
-  tags?: string[];
-  codex_category?: string;
-}
-
 export default function CodexPage() {
-  const [entries, setEntries] = useState<CodexEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/codex-entries.json')
-      .then(res => res.json())
-      .then(data => {
-        if (data.entries) {
-          setEntries(data.entries);
-        }
-      })
-      .catch(err => {
-        console.error('Error loading entries:', err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
-
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
@@ -148,76 +119,6 @@ export default function CodexPage() {
           </div>
         </div>
       </section>
-
-      {/* Entries List - Simplified */}
-      {isLoading ? (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-          <div className="text-center">
-            <p className="text-stone-300">Loading Codex entries...</p>
-          </div>
-        </section>
-      ) : entries.length > 0 ? (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-          <div className="mb-8">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-              Codex Entries
-            </h2>
-            <p className="text-sm text-stone-400">
-              {entries.length} entries
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {entries.map((entry, index) => (
-              <div key={entry.id || index} className="terminator-border">
-                <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-                  <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
-                    {entry.title || 'Untitled Entry'}
-                  </h3>
-                  {entry.excerpt && (
-                    <p className="text-sm text-stone-300 mb-4 leading-relaxed">
-                      {entry.excerpt}
-                    </p>
-                  )}
-                  {entry.orb_associations && entry.orb_associations.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {entry.orb_associations.slice(0, 5).map(orbNum => (
-                        <span
-                          key={orbNum}
-                          className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs"
-                        >
-                          Orb {orbNum}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  {entry.tags && entry.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {entry.tags.slice(0, 3).map((tag, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-          <div className="terminator-border">
-            <div className="p-8 bg-cosmic-blue rounded-lg text-center">
-              <p className="text-base text-stone-200 mb-4">
-                Codex entries will appear here as they are added to the system.
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Connection to Books */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
