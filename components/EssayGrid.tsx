@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { Essay } from '@/content/essays-data';
 
 interface EssayGridProps {
@@ -10,7 +11,6 @@ interface EssayGridProps {
 export default function EssayGrid({ essays: essaysProp }: EssayGridProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedOrb, setSelectedOrb] = useState<number | null>(null);
-  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   // Get unique orbs for index
   const uniqueOrbs = useMemo(() => {
@@ -32,9 +32,6 @@ export default function EssayGrid({ essays: essaysProp }: EssayGridProps) {
     });
   }, [essaysProp, searchQuery, selectedOrb]);
 
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
@@ -105,8 +102,6 @@ export default function EssayGrid({ essays: essaysProp }: EssayGridProps) {
               <EssayCard
                 key={essay.id}
                 essay={essay}
-                isExpanded={expandedId === essay.id}
-                onToggleExpand={() => toggleExpand(essay.id)}
               />
             ))}
           </div>
@@ -118,11 +113,9 @@ export default function EssayGrid({ essays: essaysProp }: EssayGridProps) {
 
 interface EssayCardProps {
   essay: Essay;
-  isExpanded: boolean;
-  onToggleExpand: () => void;
 }
 
-function EssayCard({ essay, isExpanded, onToggleExpand }: EssayCardProps) {
+function EssayCard({ essay }: EssayCardProps) {
   return (
     <div className="terminator-border">
       <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
@@ -135,41 +128,16 @@ function EssayCard({ essay, isExpanded, onToggleExpand }: EssayCardProps) {
           {essay.title}
         </h3>
         
-        {!isExpanded ? (
-          <>
-            <p className="text-sm text-stone-300 mb-4 leading-relaxed line-clamp-4 flex-grow">
-              {essay.excerpt}
-            </p>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onToggleExpand();
-              }}
-              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto cursor-pointer"
-            >
-              Read Full Essay →
-            </button>
-          </>
-        ) : (
-          <>
-            <div className="text-sm text-stone-300 mb-4 leading-relaxed whitespace-pre-line flex-grow">
-              {essay.fullContent}
-            </div>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onToggleExpand();
-              }}
-              className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto cursor-pointer"
-            >
-              Show Less ↑
-            </button>
-          </>
-        )}
+        <p className="text-sm text-stone-300 mb-4 leading-relaxed line-clamp-4 flex-grow">
+          {essay.excerpt}
+        </p>
+        
+        <Link
+          href={`/codex/${essay.id}`}
+          className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto inline-block"
+        >
+          Read Full Essay →
+        </Link>
       </div>
     </div>
   );
