@@ -4,8 +4,6 @@ import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
-const CMS_BACKEND_URL = process.env.NEXT_PUBLIC_CMS_BACKEND_URL || 'http://localhost:4000';
-
 interface CodexEntry {
   id?: string;
   title: string;
@@ -49,79 +47,23 @@ export default function CodexPage() {
         setIsLoading(true);
         setError(null);
 
-        console.log('Loading Codex entries from:', CMS_BACKEND_URL);
-
-        // Try Supabase API first
-        try {
-          const response = await fetch(`${CMS_BACKEND_URL}/api/codex/entries?limit=100`);
-          console.log('Supabase API response status:', response.status);
-          
-          if (response.ok) {
-            const data = await response.json();
-            console.log('Supabase API data:', { count: data.count, entriesLength: data.entries?.length });
-            if (data.entries && data.entries.length > 0) {
-              console.log(`✅ Loaded ${data.entries.length} entries from Supabase`);
-              setEntries(data.entries);
-              setIsLoading(false);
-              return;
-            }
-          } else {
-            const errorText = await response.text();
-            console.warn('Supabase API error:', response.status, errorText);
-          }
-        } catch (supabaseErr: any) {
-          console.warn('Supabase API request failed:', supabaseErr.message);
+        // Load from static JSON file
+        const response = await fetch('/codex-entries.json');
+        
+        if (!response.ok) {
+          throw new Error(`Failed to load codex entries: ${response.status}`);
         }
 
-        // Fallback to file system API
-        console.log('No Supabase entries, trying file system fallback API...');
-        try {
-          const fallbackResponse = await fetch(`${CMS_BACKEND_URL}/api/codex/entries/fallback`);
-          console.log('Fallback API response status:', fallbackResponse.status);
-          
-          if (fallbackResponse.ok) {
-            const fallbackData = await fallbackResponse.json();
-            console.log('Fallback API data:', { count: fallbackData.count, entriesLength: fallbackData.entries?.length, source: fallbackData.source });
-            if (fallbackData.entries && fallbackData.entries.length > 0) {
-              console.log(`✅ Loaded ${fallbackData.entries.length} entries from file system API`);
-              setEntries(fallbackData.entries);
-              setIsLoading(false);
-              return;
-            } else {
-              console.warn('⚠️ Fallback API returned 0 entries');
-            }
-          } else {
-            console.warn('⚠️ Fallback API unavailable, trying static file...');
-          }
-        } catch (fallbackErr: any) {
-          console.warn('⚠️ Fallback API request failed, trying static file:', fallbackErr.message);
+        const data = await response.json();
+        
+        if (data.entries && Array.isArray(data.entries)) {
+          console.log(`✅ Loaded ${data.entries.length} entries from static file`);
+          setEntries(data.entries);
+        } else {
+          throw new Error('Invalid data format in codex-entries.json');
         }
-
-        // Final fallback: static JSON file
-        console.log('Trying static JSON file fallback...');
-        try {
-          const staticResponse = await fetch('/codex-entries.json');
-          if (staticResponse.ok) {
-            const staticData = await staticResponse.json();
-            console.log('Static file data:', { count: staticData.count, entriesLength: staticData.entries?.length });
-            if (staticData.entries && staticData.entries.length > 0) {
-              console.log(`✅ Loaded ${staticData.entries.length} entries from static file`);
-              setEntries(staticData.entries);
-              setIsLoading(false);
-              return;
-            }
-          }
-        } catch (staticErr: any) {
-          console.warn('⚠️ Static file not found:', staticErr.message);
-        }
-
-        // No entries found
-        if (entries.length === 0) {
-          console.warn('⚠️ No entries loaded from any source');
-        }
-        setEntries([]);
       } catch (err: any) {
-        console.error('❌ Error loading entries:', err);
+        console.error('Error loading entries:', err);
         setError(`Failed to load Codex entries: ${err.message}`);
       } finally {
         setIsLoading(false);
@@ -196,17 +138,6 @@ export default function CodexPage() {
     });
     return Array.from(cats).sort();
   }, [entries]);
-
-  const formatOrbName = (orb: string | number): string => {
-    if (typeof orb === 'number') {
-      return `Orb ${orb}`;
-    }
-    const match = orb.match(/Orb (\d+):\s*(.+)/);
-    if (match) {
-      return `Orb ${match[1]}: ${match[2]}`;
-    }
-    return orb;
-  };
 
   return (
     <main className="min-h-screen bg-structural-grid">
@@ -370,7 +301,7 @@ export default function CodexPage() {
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => setSelectedOrb(null)}
-                  className={`px-3 py-1 rounded text-sm ${
+                  className={`px-3 py-1 rounded text-sm transition-colors ${
                     selectedOrb === null
                       ? 'bg-cyan-400 text-stone-900'
                       : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
@@ -382,7 +313,7 @@ export default function CodexPage() {
                   <button
                     key={orbNum}
                     onClick={() => setSelectedOrb(selectedOrb === orbNum ? null : orbNum)}
-                    className={`px-3 py-1 rounded text-sm ${
+                    className={`px-3 py-1 rounded text-sm transition-colors ${
                       selectedOrb === orbNum
                         ? 'bg-cyan-400 text-stone-900'
                         : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
@@ -398,7 +329,7 @@ export default function CodexPage() {
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => setSelectedCategory(null)}
-                    className={`px-3 py-1 rounded text-sm ${
+                    className={`px-3 py-1 rounded text-sm transition-colors ${
                       selectedCategory === null
                         ? 'bg-cyan-400 text-stone-900'
                         : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
@@ -410,7 +341,7 @@ export default function CodexPage() {
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
-                      className={`px-3 py-1 rounded text-sm capitalize ${
+                      className={`px-3 py-1 rounded text-sm capitalize transition-colors ${
                         selectedCategory === cat
                           ? 'bg-cyan-400 text-stone-900'
                           : 'bg-stone-700/50 text-stone-300 hover:bg-stone-700'
