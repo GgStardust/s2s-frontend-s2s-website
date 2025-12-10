@@ -154,6 +154,43 @@ export default function RBIPage() {
         </div>
       </section>
 
+      {/* Use Cases and Contact */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  Use Cases and Opportunities
+                </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-cyan-300 text-2xl">✦</span>
+                  <span className="text-sm text-cyan-300/80 italic">Research and implementation</span>
+                </div>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  RBI can be applied across domains: AI service platforms, financial systems, healthcare, cybersecurity, academic research, organizational design, and knowledge management. It functions as infrastructure for any system seeking coherence rather than extraction.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  For research partnerships, implementation opportunities, or technical collaboration, contact Gigi Stardust to explore how RBI can be integrated into your work.
+                </p>
+                <div className="mt-6 pt-6 border-t border-cyan-400/30">
+                  <p className="text-base text-stone-200 mb-2">
+                    <strong className="text-cyan-300">Contact:</strong>
+                  </p>
+                  <p className="text-base text-stone-200">
+                    <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-2">
+                      gigi@stardusttosovereignty.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Patent Notice */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
