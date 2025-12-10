@@ -2,18 +2,32 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 const CMS_BACKEND_URL = process.env.NEXT_PUBLIC_CMS_BACKEND_URL || 'http://localhost:4000';
 
 interface CodexEntry {
-  id: string;
+  id?: string;
   title: string;
-  codex_category?: string;
-  orb_associations?: number[];
-  practice_associations?: number[];
-  console_tags?: string[];
   content?: string;
-  created_at?: string;
+  author?: string;
+  type?: string;
+  category?: string;
+  status?: string;
+  created?: string;
+  modified?: string;
+  orb_associations?: {
+    primary_orb?: string;
+    secondary_orbs?: string[];
+    orb_mentions_all?: string[];
+  };
+  tags?: string[];
+  field_function?: {
+    content_purpose?: string;
+    primary_mechanism?: string;
+  };
+  is_primary_source?: boolean;
+  book_threading?: string;
 }
 
 export default function CodexPage() {
@@ -24,14 +38,20 @@ export default function CodexPage() {
   useEffect(() => {
     const loadEntries = async () => {
       try {
-        const response = await fetch(`${CMS_BACKEND_URL}/api/codex/entries?limit=50`);
+        // Try to fetch from CMS backend API
+        const response = await fetch(`${CMS_BACKEND_URL}/api/content-files?type=s2s_codex&limit=50`);
         if (!response.ok) {
-          throw new Error('Failed to load Codex entries');
+          // If API fails, that's okay for MVP - we'll show the structure
+          console.log('CMS backend not available, showing structure only');
+          setEntries([]);
+        } else {
+          const data = await response.json();
+          setEntries(data.files || data.entries || []);
         }
-        const data = await response.json();
-        setEntries(data.entries || []);
       } catch (err: any) {
-        setError(err.message || 'Failed to load entries');
+        // For MVP, if backend isn't ready, we show the page structure
+        console.log('Backend connection not available:', err.message);
+        setEntries([]);
       } finally {
         setIsLoading(false);
       }
@@ -40,133 +60,246 @@ export default function CodexPage() {
     loadEntries();
   }, []);
 
+  const formatOrbName = (orb: string) => {
+    // Extract just the orb number and name from "Orb 4: Harmonic Architectures"
+    const match = orb.match(/Orb (\d+):\s*(.+)/);
+    if (match) {
+      return `Orb ${match[1]}: ${match[2]}`;
+    }
+    return orb;
+  };
+
   return (
     <main className="min-h-screen bg-structural-grid">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black tracking-tight">The Codex</h1>
-          <h2 className="text-xl md:text-2xl font-light mb-6 text-neutral-700 italic">
-            The structural archive of Stardust to Sovereignty.
+          <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
+            The Codex
+          </h1>
+          <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
+            Foundational source material for Stardust to Sovereignty
           </h2>
-      </div>
+        </div>
       </section>
 
-      {/* Active Codex Explanation */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-neutral-200/20 px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-black">
-              The Archive
-            </h2>
+      {/* What the Codex Is */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  What the Codex Is
+                </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-cyan-300 text-2xl">✦</span>
+                  <span className="text-sm text-cyan-300/80 italic">Source material, not blogs</span>
+                </div>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  The Codex contains foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration—a thought, conversation, reflection, or article—then moves through research, writing, and RBI analysis to identify resonance nodes.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  These essays function as the source material from which all books are compiled. They are manually tagged with metadata frontmatter and inline tagging, then analyzed through the Orb system and backbone to identify resonance patterns. This rigorous methodology produces the consciousness technology that becomes the books.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="lg:col-span-3">
-            <p className="text-base leading-relaxed text-neutral-700 mb-4">
-              The Codex is the refined layer beneath the Console.
-              It contains curated entries that map to Orbs, Practices,
-              diagnostic indices, and paradigm elements.
-              Every module the Console shows you originates here.
-        </p>
-            <p className="text-base leading-relaxed text-neutral-700">
-              This page will dynamically render Codex entries
-              as they are ingested and tagged in the backend.
-        </p>
-      </div>
+        </div>
+      </section>
+
+      {/* The Process */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-8">
+              The Process
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="space-y-2">
+                <div className="text-cyan-300 text-2xl mb-2">1</div>
+                <h3 className="text-lg font-semibold text-cyan-300">Inspiration</h3>
+                <p className="text-sm text-stone-200">
+                  A thought, conversation, reflection, or article triggers the process.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="text-cyan-300 text-2xl mb-2">2</div>
+                <h3 className="text-lg font-semibold text-cyan-300">Research</h3>
+                <p className="text-sm text-stone-200">
+                  Deep investigation into the patterns, signals, and structures that emerge.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="text-cyan-300 text-2xl mb-2">3</div>
+                <h3 className="text-lg font-semibold text-cyan-300">Write</h3>
+                <p className="text-sm text-stone-200">
+                  The essay captures the content needed to articulate the system.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="text-cyan-300 text-2xl mb-2">4</div>
+                <h3 className="text-lg font-semibold text-cyan-300">RBI Analysis</h3>
+                <p className="text-sm text-stone-200">
+                  Resonance-Based Intelligence identifies patterns through the Orb system and backbone.
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 pt-6 border-t border-cyan-400/30">
+              <p className="text-base leading-relaxed text-stone-200">
+                Essays live in the content library. RBI pulls from this library to meet the framework identified for each book. The Codex essays, Orb essays, backbone, and Orbs together form the paradigm—the foundation from which all books are compiled.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Entries List */}
       {isLoading && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="text-center">
-            <p className="text-neutral-500">Loading Codex entries...</p>
+            <p className="text-stone-300">Loading Codex entries...</p>
           </div>
         </section>
       )}
 
       {error && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
-          <div className="border border-red-200 rounded-lg p-8 bg-red-50">
-            <p className="text-red-700">{error}</p>
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+          <div className="terminator-border">
+            <div className="p-6 bg-cosmic-blue rounded-lg border border-red-400/30">
+              <p className="text-red-300">{error}</p>
+            </div>
           </div>
         </section>
       )}
 
       {!isLoading && !error && entries.length === 0 && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
-          <div className="border border-neutral-200 rounded-lg p-8 bg-white shadow-sm text-center">
-            <p className="text-base text-neutral-600 italic">
-              No Codex entries are available yet. Entries will appear here as they are added to the system.
-            </p>
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+          <div className="terminator-border">
+            <div className="p-8 bg-cosmic-blue rounded-lg text-center">
+              <p className="text-base text-stone-200 mb-4">
+                Codex entries will appear here as they are added to the system.
+              </p>
+              <p className="text-sm text-stone-400 italic">
+                The Codex is continuously updated with new essays, often daily. This keeps the system alive and provides fresh perspectives.
+              </p>
+            </div>
           </div>
         </section>
       )}
 
       {!isLoading && !error && entries.length > 0 && (
-        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-cyan-500/20 px-6 bg-cyan-500/3">
+        <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="mb-8">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-black">
+            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
               Codex Entries
             </h2>
+            <p className="text-sm text-stone-400 mt-2">
+              Foundational source material compiled into books
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {entries.map((entry) => (
+            {entries.map((entry, index) => (
               <div
-                key={entry.id}
-                className="border border-neutral-200 rounded-lg p-6 bg-white shadow-sm hover:shadow-md transition-shadow"
+                key={entry.id || index}
+                className="terminator-border"
               >
-                <h3 className="text-xl font-semibold mb-3 text-black tracking-tight">
-                  {entry.title || 'Untitled Entry'}
-                </h3>
-                {(entry.orb_associations || entry.practice_associations || entry.console_tags) && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {entry.orb_associations?.map((orb) => (
-                      <span
-                        key={orb}
-                        className="px-3 py-1 bg-warm-accent/10 text-warm-accent rounded text-xs font-medium"
-                      >
-                        Orb {orb}
-                      </span>
-                    ))}
-                    {entry.practice_associations?.map((practice) => (
-                      <span
-                        key={practice}
-                        className="px-3 py-1 bg-warm-accent/10 text-warm-accent rounded text-xs font-medium"
-                      >
-                        Practice {practice}
-                      </span>
-                    ))}
-                    {entry.console_tags?.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-neutral-100 text-neutral-600 rounded text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                {entry.codex_category && (
-                  <p className="text-xs text-warm-accent uppercase tracking-wide mb-2">
-                    {entry.codex_category}
-                  </p>
-                )}
-                {entry.content && (
-                  <div
-                    className="text-sm text-neutral-600 leading-relaxed line-clamp-3"
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        typeof entry.content === 'string'
-                          ? entry.content.substring(0, 200) + '...'
-                          : '',
-                    }}
-                  />
-                )}
+                <div className="p-6 bg-cosmic-blue rounded-lg h-full">
+                  <h3 className="text-xl font-semibold mb-3 tracking-tight text-cyan-300">
+                    {entry.title || 'Untitled Entry'}
+                  </h3>
+                  
+                  {entry.orb_associations && (
+                    <div className="mb-4 space-y-2">
+                      {entry.orb_associations.primary_orb && (
+                        <div>
+                          <span className="text-xs text-cyan-400/60 uppercase tracking-wide">Primary Orb</span>
+                          <p className="text-sm text-cyan-300 mt-1">
+                            {formatOrbName(entry.orb_associations.primary_orb)}
+                          </p>
+                        </div>
+                      )}
+                      {entry.orb_associations.secondary_orbs && entry.orb_associations.secondary_orbs.length > 0 && (
+                        <div>
+                          <span className="text-xs text-cyan-400/60 uppercase tracking-wide">Secondary Orbs</span>
+                          <div className="flex flex-wrap gap-2 mt-1">
+                            {entry.orb_associations.secondary_orbs.slice(0, 3).map((orb, i) => (
+                              <span
+                                key={i}
+                                className="px-2 py-1 bg-cyan-400/10 text-cyan-300 rounded text-xs"
+                              >
+                                {formatOrbName(orb)}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {entry.field_function?.content_purpose && (
+                    <p className="text-sm text-stone-300 mb-4 leading-relaxed">
+                      {entry.field_function.content_purpose}
+                    </p>
+                  )}
+
+                  {entry.tags && entry.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {entry.tags.slice(0, 5).map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-stone-700/50 text-stone-300 rounded text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {entry.is_primary_source && (
+                    <div className="mt-4 pt-4 border-t border-cyan-400/20">
+                      <span className="text-xs text-cyan-400/80 italic">Primary source material</span>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         </section>
       )}
+
+      {/* Connection to Books */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
+                  From Codex to Books
+                </h2>
+              </div>
+              <div className="lg:col-span-3">
+                <p className="text-base leading-relaxed text-stone-200 mb-4">
+                  The Codex essays are the foundation from which all books are compiled. Through RBI analysis, essays are pulled from the content library to meet the framework identified for each book.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200 mb-4">
+                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction trilogy serves as direct companions, providing another access point to the same foundational system.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  The Console will function as yet another interface, providing dynamic access to the same source material through the RBI system.
+                </p>
+                <div className="mt-6">
+                  <Button href="/books" variant="secondary">
+                    Learn About the Books →
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

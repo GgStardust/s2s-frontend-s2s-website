@@ -14,7 +14,7 @@ export default function Navigation() {
     { href: '/books', label: 'Books', prominent: true },
     { href: '/preorder', label: 'Preorder', prominent: true },
     { href: '/console', label: 'Console' },
-    { href: '/codex', label: 'Codex', comingSoon: true },
+    { href: '/codex', label: 'Codex' },
   ];
 
   const isActive = (href: string) => {
