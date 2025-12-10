@@ -67,18 +67,25 @@ export default function CodexPage() {
         
         if (fallbackResponse.ok) {
           const fallbackData = await fallbackResponse.json();
+          console.log('Fallback response:', fallbackData);
           if (fallbackData.entries && fallbackData.entries.length > 0) {
+            console.log(`Loaded ${fallbackData.entries.length} entries from file system`);
             setEntries(fallbackData.entries);
             setIsLoading(false);
             return;
+          } else {
+            console.warn('Fallback returned 0 entries');
           }
+        } else {
+          const errorText = await fallbackResponse.text();
+          console.error('Fallback API error:', fallbackResponse.status, errorText);
         }
 
         // No entries found
         setEntries([]);
       } catch (err: any) {
         console.error('Error loading entries:', err);
-        setError('Failed to load Codex entries');
+        setError(`Failed to load Codex entries: ${err.message}`);
       } finally {
         setIsLoading(false);
       }
