@@ -55,8 +55,11 @@ export default function CodexPage() {
                   RBI Technology
                 </h2>
               </div>
-              <p className="text-base leading-relaxed text-stone-200 mb-4 flex-grow">
+              <p className="text-base leading-relaxed text-stone-200 mb-3 flex-grow">
                 Resonance-Based Intelligence functions as coherent intelligence: the next iteration beyond generative AI. It measures structural alignment, validates through mathematical proofs, and operates as the infrastructure layer that makes AI viable at scale.
+              </p>
+              <p className="text-sm text-stone-300 mb-4 italic">
+                RBI emerged as a byproduct of the Codex methodology. This novel technology is currently under provisional patent.
               </p>
               <Link href="/rbi" className="text-sm text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 mt-auto">
                 Learn more →

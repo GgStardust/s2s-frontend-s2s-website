@@ -98,7 +98,7 @@ export default function EssayGrid({ essays: essaysProp }: EssayGridProps) {
                     >
                       <div className="flex items-center gap-2">
                         <span className="px-1.5 py-0.5 bg-cyan-400/20 text-cyan-300 rounded text-[10px] font-medium flex-shrink-0">
-                          {essay.orb}
+                          {essay.orbName.replace('Orb ', '').replace(': ', ' ')}
                         </span>
                         <span className="truncate">{essay.title}</span>
                       </div>
@@ -147,14 +147,14 @@ function EssayCard({ essay }: EssayCardProps) {
   return (
     <div className="terminator-border">
       <div className="p-4 bg-cosmic-blue rounded-lg h-full flex flex-col">
+        <h3 className="text-lg font-semibold mb-2 tracking-tight text-cyan-300 line-clamp-2">
+          {essay.title}
+        </h3>
         <div className="mb-2">
           <span className="px-1.5 py-0.5 bg-cyan-400/20 text-cyan-300 rounded text-[10px] font-medium">
             {essay.orbName}
           </span>
         </div>
-        <h3 className="text-lg font-semibold mb-2 tracking-tight text-cyan-300 line-clamp-2">
-          {essay.title}
-        </h3>
         
         <p className="text-sm text-stone-300 mb-3 leading-relaxed line-clamp-3 flex-grow">
           {essay.excerpt}
