@@ -89,28 +89,28 @@ export default function CodexPage() {
               <div className="space-y-2">
                 <div className="text-cyan-300 text-2xl mb-2">1</div>
                 <h3 className="text-lg font-semibold text-cyan-300">Inspiration</h3>
-                <p className="text-sm text-stone-200">
+                <p className="text-base text-stone-200">
                   A thought, conversation, reflection, or article initiates the process.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="text-cyan-300 text-2xl mb-2">2</div>
                 <h3 className="text-lg font-semibold text-cyan-300">Research</h3>
-                <p className="text-sm text-stone-200">
+                <p className="text-base text-stone-200">
                   Deep investigation into the patterns, signals, and structures that emerge.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="text-cyan-300 text-2xl mb-2">3</div>
                 <h3 className="text-lg font-semibold text-cyan-300">Write</h3>
-                <p className="text-sm text-stone-200">
+                <p className="text-base text-stone-200">
                   The essay captures the content needed to articulate the system.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="text-cyan-300 text-2xl mb-2">4</div>
                 <h3 className="text-lg font-semibold text-cyan-300">RBI Analysis</h3>
-                <p className="text-sm text-stone-200">
+                <p className="text-base text-stone-200">
                   Resonance-Based Intelligence identifies patterns through the Orb system and backbone.
                 </p>
               </div>
@@ -130,7 +130,7 @@ export default function CodexPage() {
           <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
             Codex Essays
           </h2>
-          <p className="text-sm text-stone-400">
+          <p className="text-base text-stone-400">
             Foundational essays that reveal the architecture of the system
           </p>
         </div>

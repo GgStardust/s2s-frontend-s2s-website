@@ -128,7 +128,7 @@ function EssayCard({ essay }: EssayCardProps) {
           {essay.title}
         </h3>
         
-        <p className="text-sm text-stone-300 mb-4 leading-relaxed line-clamp-4 flex-grow">
+        <p className="text-base text-stone-300 mb-4 leading-relaxed line-clamp-4 flex-grow">
           {essay.excerpt}
         </p>
         
