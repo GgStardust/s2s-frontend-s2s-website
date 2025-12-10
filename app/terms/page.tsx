@@ -46,7 +46,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Contact</h2>
             <p>
-              For questions about these terms, contact us at <a href="mailto:gigi@gigistardust.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@gigistardust.com</a>.
+              For questions about these terms, contact us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
             </p>
           </section>
         </div>

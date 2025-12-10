@@ -43,14 +43,14 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Your Rights</h2>
             <p className="mb-4">
-              You can request access to, correction of, or deletion of your personal information by contacting us at <a href="mailto:gigi@gigistardust.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@gigistardust.com</a>.
+              You can request access to, correction of, or deletion of your personal information by contacting us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Contact Us</h2>
             <p>
-              If you have questions about this Privacy Policy, please contact us at <a href="mailto:gigi@gigistardust.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@gigistardust.com</a>.
+              If you have questions about this Privacy Policy, please contact us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
             </p>
           </section>
         </div>

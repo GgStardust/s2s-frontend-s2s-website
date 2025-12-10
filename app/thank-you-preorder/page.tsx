@@ -14,7 +14,11 @@ const PRICING = {
 function ThankYouContent() {
   const searchParams = useSearchParams();
   const orderType = searchParams.get('order') || 'print';
-  const amount = PRICING[orderType as keyof typeof PRICING] || PRICING.print;
+  // Validate order type and default to print if invalid
+  const validOrderType = (orderType === 'print' || orderType === 'digital' || orderType === 'bundle') 
+    ? orderType 
+    : 'print';
+  const amount = PRICING[validOrderType as keyof typeof PRICING];
 
   return (
     <main className="min-h-screen bg-structural-grid">
@@ -88,7 +92,7 @@ function ThankYouContent() {
 
         <div className="border-t border-stone-600/30 pt-8 text-center">
           <p className="text-sm text-stone-400 mb-6">
-            For any questions, contact: <a href="mailto:stardusttosovereignty@gmail.com" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4">stardusttosovereignty@gmail.com</a>
+            For any questions, contact: <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4">gigi@stardusttosovereignty.com</a>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/" variant="tertiary">

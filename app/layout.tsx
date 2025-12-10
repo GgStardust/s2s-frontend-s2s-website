@@ -63,7 +63,7 @@ export default function RootLayout({
     "description": "A living architecture for coherence, perception, and sovereign identity",
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "gigi@gigistardust.com",
+      "email": "gigi@stardusttosovereignty.com",
       "contactType": "Customer Service"
     },
     "sameAs": []
@@ -131,7 +131,7 @@ export default function RootLayout({
                 <Link href="/terms" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Terms of Service
                 </Link>
-                <a href="mailto:gigi@gigistardust.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+                <a href="mailto:gigi@stardusttosovereignty.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Contact
                 </a>
                 <a href="https://www.instagram.com/gigi_stardust/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
