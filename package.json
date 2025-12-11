@@ -10,6 +10,7 @@
     "generate-codex": "tsx scripts/generate-codex-entries.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "next": "^14.2.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
