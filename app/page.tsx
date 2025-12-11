@@ -1,9 +1,27 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PresaleBanner from '@/components/PresaleBanner';
 import AudienceCarousel from '@/components/AudienceCarousel';
 import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+  description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and the full system of sovereign intelligences through consciousness technology.',
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'preorder', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
+  openGraph: {
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    url: 'https://stardusttosovereignty.com',
+    siteName: 'Stardust to Sovereignty',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: {
+    canonical: 'https://stardusttosovereignty.com',
+  },
+};
 
 export default function HomePage() {
   return (
