@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PresaleBanner from '@/components/PresaleBanner';
+import TestimonialsTicker from '@/components/TestimonialsTicker';
 import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -45,9 +46,6 @@ export default function HomePage() {
             The Cosmic Tapestry
           </h3>
           <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
-            {BOOK_DESCRIPTIONS.bookOne.subtitle}
-          </p>
-          <p className="text-base lg:text-lg leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
             {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
           </p>
           <p className="text-base text-cyan-300 mb-8 font-medium">
@@ -63,6 +61,28 @@ export default function HomePage() {
             <Button href="/about-the-book" variant="tertiary">
               {BUTTON_LABELS.aboutBook}
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Early Reader Reflections Section */}
+      <section className="max-w-6xl mx-auto py-12 lg:py-16 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-6 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  Early Reader Reflections
+                </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-cyan-300 text-2xl">✦</span>
+                  <span className="text-sm text-cyan-300/80 italic">From early readers engaging with the manuscript.</span>
+                </div>
+              </div>
+              <div className="lg:col-span-3">
+                <TestimonialsTicker />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -31,7 +31,7 @@ export const BOOK_DESCRIPTIONS = {
   bookOne: {
     short: "Book One: The Cosmic Tapestry",
     subtitle: "A cosmological framework for understanding how consciousness, the body, and identity function.",
-    subtitleExtended: "A system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.",
+    subtitleExtended: "A cosmological framework for how consciousness works at both personal and cosmic scales. Revealing patterns shaping identity, memory, and perception through the same organizing principles that shape the universe itself.",
     full: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
     fullWithSystem: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
   },

@@ -34,9 +34,9 @@ export default function TestimonialsTicker() {
   }, []);
 
   return (
-    <div className="relative min-h-[120px] flex items-center justify-center">
+    <div className="relative min-h-[80px] flex items-center justify-center">
       <div
-        className={`text-lg md:text-xl leading-relaxed text-stone-50 italic text-center max-w-3xl mx-auto px-4 transition-opacity duration-[1200ms] ${
+        className={`text-base md:text-lg leading-relaxed text-stone-50 italic text-center max-w-3xl mx-auto px-4 transition-opacity duration-[1200ms] ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
