@@ -1,9 +1,28 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PresaleBanner from '@/components/PresaleBanner';
-import AudienceCarousel from '@/components/AudienceCarousel';
-import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS } from '@/lib/content';
+import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+  },
+  description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover how consciousness operates as structure and how to move from fragmentation to coherence.',
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'preorder', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
+  openGraph: {
+    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+    description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    url: 'https://stardusttosovereignty.com',
+    siteName: 'Stardust to Sovereignty',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: {
+    canonical: 'https://stardusttosovereignty.com',
+  },
+};
 
 export default function HomePage() {
   return (
@@ -28,6 +47,9 @@ export default function HomePage() {
           <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
             {BOOK_DESCRIPTIONS.bookOne.subtitle}
           </p>
+          <p className="text-base lg:text-lg leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
+            {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
+          </p>
           <p className="text-base text-cyan-300 mb-8 font-medium">
             {PRESALE_INFO.announcement}
           </p>
@@ -45,19 +67,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Who This Is For - Carousel Section */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-6 text-center">
-              Who This Is For
-            </h2>
-            <AudienceCarousel />
-          </div>
-        </div>
-      </section>
-
-      {/* Four Box Grid: Paradigm, Who This Is For, What Book One Contains, Glimpse */}
+      {/* Two Box Grid: Paradigm and Glimpse */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Box 1: The Paradigm */}
@@ -67,10 +77,10 @@ export default function HomePage() {
                 The Paradigm
               </h2>
               <p className="text-base leading-relaxed text-stone-200 mb-3">
-                Before this book had form, its architecture was already moving through instinct, perception, and coherence. What appears here is the articulation of the system shaping human intelligence from within.
+                {HOMEPAGE_SECTIONS.paradigm.paragraph1}
               </p>
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                The structure becomes visible. Identity forms through origin signatures, memory, bodily signal, and temporal experience. Perception operates as structure. Intelligence organizes itself through patterns that repeat with precision.
+                {HOMEPAGE_SECTIONS.paradigm.paragraph2}
               </p>
               <Link href="/about-the-book" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
                 The full paradigm →
@@ -78,47 +88,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Box 2: Who This Is For */}
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
-                Who This Is For
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200 mb-3">
-                You sense the structure beneath experience. You notice patterns before they have names. You recognize that reality functions as a coherent system.
-              </p>
-              <p className="text-base leading-relaxed text-stone-200">
-                The system reveals itself to those already attuned. What appears here matches the complexity you already perceive.
-              </p>
-            </div>
-          </div>
-
-          {/* Box 3: What Book One Contains */}
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
-                What Book One Contains
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200 mb-3">
-                Consciousness behaves as structure. Internal patterns operate with precision. The mechanics through which consciousness expresses itself become visible.
-              </p>
-              <p className="text-base leading-relaxed text-stone-200 mb-4">
-                Book One reveals the structure of the Sovereign System, the full constellation of sovereign intelligences, and the coherence design underlying perception, identity, and time.
-              </p>
-              <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
-                Detailed contents →
-              </Link>
-            </div>
-          </div>
-
-          {/* Box 4: A Glimpse Into The Manuscript */}
+          {/* Box 2: A Glimpse Into The Manuscript */}
           <div className="terminator-border">
             <div className="p-6 bg-cosmic-blue rounded-lg h-full">
               <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
                 A Glimpse Into The Manuscript
               </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-3 font-medium">
+                {HOMEPAGE_SECTIONS.glimpse.paragraph1}
+              </p>
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
+                {HOMEPAGE_SECTIONS.glimpse.paragraph2}
+              </p>
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                No one remembers the first moment of arrival. Later, when the elders of the valley spoke of it, they would say the stranger came with the tide: a figure borne in by the long breath of the water, as if the sea had been considering something for many seasons and finally decided to answer.
+                {HOMEPAGE_SECTIONS.glimpse.paragraph3}
               </p>
               <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
                 Read more excerpts →
@@ -148,7 +131,7 @@ export default function HomePage() {
                     <strong className="text-cyan-300">Why Self-Published:</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    The system encoded here remains alive and unmediated. Every word, structure, and timing preserves what emerged through direct encounter. The framework made itself visible through lived experience, pattern, and necessity.
+                    Preserves the system exactly as it emerged, without editorial mediation. Every word maintains what appeared through direct encounter.
                   </p>
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4">
@@ -156,7 +139,7 @@ export default function HomePage() {
                     <strong className="text-cyan-300">What Makes This Different:</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Here, the mechanics of awareness become visible. When aligned with internal design, fragmentation decreases, relational clarity increases, intuition becomes directional, and coherence emerges as a lived state. The constellation of sovereign intelligences function as real movements within awareness.
+                    Shows how consciousness operates as structure. When you recognize and align with your internal design, fragmentation decreases, clarity increases, and coherence emerges naturally.
                   </p>
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4">
@@ -164,7 +147,7 @@ export default function HomePage() {
                     <strong className="text-cyan-300">Your Preorder Matters:</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Preorders support the first printing. By reserving your copy, you bring this work into the world exactly as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.
+                    Supports the first printing and reserves your First Edition copy. Order before February 28, 2026.
                   </p>
                 </div>
               </div>
@@ -181,8 +164,11 @@ export default function HomePage() {
               <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
                 Reserve Your First Edition Copy
               </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-4 max-w-2xl mx-auto">
+                Book One reveals how consciousness operates as structure: recognizing internal design, clearing distortion, and moving from fragmentation to coherence.
+              </p>
               <p className="text-base leading-relaxed text-stone-200 mb-6 max-w-2xl mx-auto">
-                Order Book One before February 28, 2026. The First Edition preserves the system exactly as it was intended.
+                Reserve your First Edition copy before February 28, 2026.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button href="/preorder" variant="primary" className="text-lg">

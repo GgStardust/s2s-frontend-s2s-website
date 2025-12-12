@@ -139,7 +139,7 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console applies what Book One reveals. The Book shows the foundational design: the structure of the Sovereign System, the constellation of sovereign intelligences, and the coherence design underlying perception, identity, and time.
+                    The Console applies what Book One reveals. The Book shows the foundational design: the structure of the Sovereign System, constellation of intelligences, and the coherence design underlying perception, identity, and time.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
                     The Console brings that design into real-time use. It reads where you are now and reveals how to navigate from there. Together, Book One and the Console form a complete system: structure meets application, design meets navigation.

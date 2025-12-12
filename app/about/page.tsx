@@ -11,7 +11,7 @@ export default function AboutPage() {
             What Stardust to Sovereignty Is
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-stone-200 italic">
-            A system for coherent perception and sovereign identity.
+            A cosmological framework for coherent perception and sovereign identity.
         </h2>
       </div>
       </section>
@@ -28,10 +28,10 @@ export default function AboutPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Stardust to Sovereignty introduces a complete system for understanding how human intelligence organizes itself. It arose through sustained study, pattern recognition, direct research, and transmission. Over years of inquiry, a consistent design became visible, one that operates beneath personality, belief, and preference.
+                  Stardust to Sovereignty is a cosmological framework: a system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  This design organizes identity, perception, time, emotion, creativity, relational orientation, and decision-making as one integrated system. S2S names and reveals this system by mapping the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
+                  This framework organizes identity, perception, time, emotion, creativity, relational orientation, and decision-making as one integrated system. S2S maps the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
                   The system operates through recognition. It shows you what happens when awareness aligns with the structure already governing experience. Sovereignty emerges as a native condition of awareness when the design is recognized and activated.
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   Existing models of psychology, spirituality, and self-development fall short of accounting for the speed, scale, and multidimensional nature of current human experience.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  S2S offers a system built for this era. It provides a way to understand experience that preserves complexity. It delivers a structural orientation that matches the depth of the moment.
+                  S2S offers a cosmological framework built for this era. It provides a way to understand experience that preserves complexity. It delivers a structural orientation that matches the depth of the moment.
                 </p>
               </div>
             </div>

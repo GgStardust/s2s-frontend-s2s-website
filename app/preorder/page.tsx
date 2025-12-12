@@ -108,7 +108,7 @@ export default function PreorderPage() {
             Book One: The Cosmic Tapestry
         </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-3xl mx-auto mb-4">
-          Book One: The Cosmic Tapestry introduces the structure of the Sovereign Field and the full system of sovereign intelligences.
+          Book One reveals how consciousness operates as structure: recognizing internal design, clearing distortion, and moving from fragmentation to coherence.
         </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Order before February 28, 2026

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Books | Stardust to Sovereignty',
-  description: 'Explore the Stardust to Sovereignty book series. Book One: The Cosmic Tapestry introduces the Sovereign Field and the constellation of sovereign intelligences.',
+  description: 'Explore the Stardust to Sovereignty book series. Book One: The Cosmic Tapestry introduces the Sovereign Field and constellation of intelligences.',
   keywords: ['books', 'book series', 'The Cosmic Tapestry', 'sovereign field', 'consciousness', 'preorder'],
   openGraph: {
     title: 'Books | Stardust to Sovereignty',

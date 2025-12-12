@@ -20,7 +20,7 @@
 - Created Terms of Service page (`/terms`)
 - Added footer links to both pages
 - Included refund policy (no refunds, all sales final)
-- Added contact email (gigi@stardusttosovereignty.com)
+- Added contact email (gigi@gigistardust.com)
 
 ### 4. "What Happens Next" Messaging
 - Updated preorder confirmation page with:

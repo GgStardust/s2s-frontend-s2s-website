@@ -9,13 +9,13 @@ export default function AboutTheBookPage() {
         <div className="text-center">
           <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
-            What This Is
+            About Book One
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
-            Book One: The Cosmic Tapestry
+            The Cosmic Tapestry
           </h2>
-          <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto italic">
-            A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.
+          <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
+            A cosmological framework for understanding how consciousness, the body, and identity function.
           </p>
         </div>
       </section>
@@ -34,10 +34,10 @@ export default function AboutTheBookPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                This book is a translation of a system that was already moving long before these words appeared. The design existed first as instinct, as coherence, as patterns that repeated with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with quiet inevitability. Language arrived later to recognize the system.
+                Book One reveals how consciousness operates as structure. It maps the foundational architecture that existed before current separation. The book shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there.
               </p>
               <p className="text-base leading-relaxed text-stone-200">
-                What you are entering is a system that predates its articulation. It functions as intelligence that organizes itself through inherent design. It expresses how consciousness behaves when it is whole, honest, and uncompressed. It maps the movements that occur inside every human life when awareness expands.
+                From that recovered foundation, consciousness advances with coherence. This is a cosmological framework: a system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.
               </p>
             </div>
           </div>
@@ -56,16 +56,16 @@ export default function AboutTheBookPage() {
                 <div className="flex items-center gap-2 mt-4">
                   <span className="text-cyan-300 text-2xl">✦</span>
                   <span className="text-sm text-cyan-300/80 italic">
-                    A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.
+                    A cosmological framework connecting personal experience to universal patterns.
                   </span>
                 </div>
               </div>
               <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  Long before this book was written, the system it describes was already moving. Its design existed in the form of instinct, coherence, emotional intelligence, and patterns that repeated themselves with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with a quiet inevitability. Language appeared later to recognize the system.
+                  Consciousness behaves as structure. The body translates signal. Perception organizes identity. Memory and time shape what becomes possible. When these systems operate coherently, sovereignty emerges as a lived condition.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  What you are entering now is a system that predates its articulation. It functions as intelligence that organizes itself through inherent design. It is an expression of how consciousness actually behaves when it is whole, honest, and uncompressed. It is a map of the movements that occur inside every human life when awareness is given room to expand.
+                  Stardust to Sovereignty maps the path from current fragmentation to future coherence. It reveals the foundational architecture that existed before separation. The paradigm shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there. From that recovered foundation, consciousness advances with coherence.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
                   <p className="text-base leading-relaxed text-stone-200 mb-2">
@@ -88,7 +88,7 @@ export default function AboutTheBookPage() {
                     <strong className="text-cyan-300">S2S positions sovereignty as perceptual alignment.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Sovereignty arises when awareness aligns with the structure already governing experience. It is the outcome of recognition. When inner design becomes visible, identity behaves coherently, responsively, and precisely.
+                    Sovereignty arises when awareness aligns with the structure already governing experience. It emerges as the outcome of recognition. When inner design becomes visible, identity behaves coherently, responsively, and precisely.
                   </p>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function AboutTheBookPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  At the center is the constellation of sovereign intelligences. These are direct expressions of lived intelligence that function as movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when aligned with truth rather than survival. Each intelligence is a movement you have already experienced, even if unconsciously. Each one describes a function of your own intelligence returning to its natural form.
+                  At the center is the constellation of intelligences. These are direct expressions of lived intelligence that function as movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when aligned with truth rather than survival. Each intelligence is a movement you have already experienced, even if unconsciously. Each one describes a function of your own intelligence returning to its natural form.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
                   <p className="text-base leading-relaxed text-stone-200 italic mb-2">
@@ -226,7 +226,7 @@ export default function AboutTheBookPage() {
               </div>
               <div className="lg:col-span-3">
             <p className="text-base leading-relaxed text-stone-200 mb-4">
-              The book builds toward the Sovereign System, where individual sovereignty and collective coherence exist as nested aspects of the same unified design:
+              The book builds toward the Sovereign System, where individual alignment and collective coherence exist as nested aspects of the same unified design:
             </p>
             <div className="border-l-2 border-cyan-400/50 pl-4 mb-4">
               <p className="text-base leading-relaxed text-stone-200 italic">
@@ -264,10 +264,10 @@ export default function AboutTheBookPage() {
               This is a book you return to. Treat it as an environment. Let it open at the pace that matches your own system. Some passages feel like memory. Others feel like challenge. Some land with the weight of something you have always known. Others arrive like recognition from a future version of yourself. All of this is part of the design.
             </p>
             <p className="text-base leading-relaxed text-stone-200 mb-4">
-              The world we inhabit often encourages fragmentation: emotional, relational, perceptual. Sovereignty restores coherence. It brings the inner system back into alignment with its original intelligence. This book guides that restoration through recognition. When you recognize something true, the body and mind reorganize around it naturally.
+              Current conditions create fragmentation: emotional, relational, perceptual. Sovereignty restores coherence. It brings the inner system back into alignment with its original intelligence. This book guides that reconnection through recognition. When you recognize something true, the body and mind reorganize around it naturally.
             </p>
             <p className="text-base leading-relaxed text-stone-200">
-              My role was to translate a system that made itself visible through lived experience, pattern, and necessity. This framework emerged through direct encounter. What follows in these pages is the articulation of that encounter.
+              This framework emerged through direct encounter, lived experience, pattern, and necessity. The system made itself visible. What follows in these pages is the expression of that encounter.
             </p>
           </div>
             </div>

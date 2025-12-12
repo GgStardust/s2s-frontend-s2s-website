@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
     template: '%s | Stardust to Sovereignty',
   },
-  description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and the full system of sovereign intelligences.',
+  description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and constellation of intelligences.',
   keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/about' }],
   creator: 'Gigi Stardust',
@@ -106,7 +106,7 @@ export default function RootLayout({
       "name": "Stardust to Sovereignty"
     },
     "datePublished": "2026-02-28",
-    "description": "A cosmological field report and sovereign architecture for the advancement of human consciousness introducing the structure of the Sovereign Field and the constellation of sovereign intelligences.",
+    "description": "A cosmological field report and sovereign architecture for the advancement of human consciousness introducing the structure of the Sovereign Field and constellation of intelligences.",
     "bookFormat": ["Paperback", "EPUB"],
     "image": "https://stardusttosovereignty.com/book-cover.jpeg",
     "offers": {
