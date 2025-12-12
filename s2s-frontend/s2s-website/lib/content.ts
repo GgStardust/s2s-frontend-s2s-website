@@ -30,9 +30,47 @@ export const QUOTES = {
 export const BOOK_DESCRIPTIONS = {
   bookOne: {
     short: "Book One: The Cosmic Tapestry",
-    subtitle: "A cosmological field report revealing the sovereign architecture shaping human consciousness.",
-    full: "Book One is a cosmological field report and foundational field manual. It reveals the structure of the Sovereign System and the constellation of sovereign intelligences that shape coherent human identity.",
-    fullWithSystem: "Book One is a cosmological field report and foundational field manual. It reveals the structure of the Sovereign System and the full constellation of sovereign intelligences that shape coherent human identity.",
+    subtitle: "A cosmological framework for understanding how consciousness, the body, and identity function.",
+    subtitleExtended: "A system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.",
+    full: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
+    fullWithSystem: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
+  },
+} as const;
+
+// Homepage Section Content (Style-Training Aligned)
+export const HOMEPAGE_SECTIONS = {
+  paradigm: {
+    paragraph1: "Consciousness behaves as structure. The body translates signal. Perception organizes identity. Memory and time shape what becomes possible. When these systems operate coherently, sovereignty emerges as a lived condition.",
+    paragraph2: "Stardust to Sovereignty maps the path from current fragmentation to future coherence. It reveals the foundational architecture that existed before separation. The paradigm shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there. From that recovered foundation, consciousness advances with coherence. This is a functional model for reconnection and evolution.",
+  },
+  whoThisIsFor: {
+    intro: "This book is for people who want a clear model of how their inner system functions.",
+    qualities: [
+      "Notice patterns before they have names",
+      "Experience intelligence through sensation, movement, and bodily signal",
+      "Value structure, clarity, and internal authority in complex situations",
+      "Perceive reality through pattern, rhythm, and resonance",
+      "Navigate high-stakes choices and seek internal coherence under pressure",
+      "Feel scattered, stuck, or overdue for change and want a way to unify their inner world with clarity",
+    ],
+    closing: "Curiosity and self-honesty are enough.",
+  },
+  whatBookOneContains: {
+    intro: "Book One establishes the foundational architecture of the system, including:",
+    items: [
+      "The foundational architecture: stellar origins and the design that existed before current distortion",
+      "Reconnection methods: ancestral repatterning, recognition practices, and alignment protocols",
+      "The body as an advanced biological interface for signal, perception, and intelligence",
+      "Thirteen sovereign intelligences that shape perception, identity, and coherence",
+      "The sovereign field as a collective resonance environment",
+      "Bridging intelligence: the interface between current condition and future evolution",
+    ],
+    closing: "Each section builds on the last, forming a coherent model for reconnection and evolution.",
+  },
+  glimpse: {
+    paragraph1: "Sovereignty is a condition of coherence reclaimed.",
+    paragraph2: "When perception, body signal, memory, and temporal awareness operate in alignment, decision-making becomes clean. Identity stabilizes. Attention returns to the present system rather than fragmenting across past conditioning or future projection.",
+    paragraph3: "This book describes how intelligence organizes itself through form. It maps the reconnection process: recognizing foundational architecture, clearing distortion, and advancing from recovered coherence.",
   },
 } as const;
 
