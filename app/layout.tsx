@@ -157,6 +157,9 @@ export default function RootLayout({
                 <Link href="/terms" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Terms of Service
                 </Link>
+                <Link href="/glossary" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+                  Glossary
+                </Link>
                 <a href="mailto:gigi@stardusttosovereignty.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Contact
                 </a>
