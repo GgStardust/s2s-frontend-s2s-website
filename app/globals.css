@@ -725,3 +725,8 @@ body {
   }
 }
 
+/* Triangle clip-path for abstract card shapes */
+.clip-path-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+

@@ -31,7 +31,7 @@ export const BOOK_DESCRIPTIONS = {
   bookOne: {
     short: "Book One: The Cosmic Tapestry",
     subtitle: "A cosmological framework for understanding how consciousness, the body, and identity function.",
-    subtitleExtended: "A cosmological framework for how consciousness works at both personal and cosmic scales. Revealing patterns shaping identity, memory, and perception through the same organizing principles that shape the universe itself.",
+    subtitleExtended: "A cosmological framework for how consciousness works at both personal and cosmic dimensions. Revealing patterns shaping identity, memory, and perception through the same organizing principles that shape the universe itself.",
     full: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
     fullWithSystem: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
   },
@@ -113,3 +113,27 @@ export const SECTION_HEADINGS = {
   aboutThisWork: "About This Work",
   reserveCopy: "Reserve Your First Edition Copy",
 } as const;
+
+// Concept Cards for Homepage (Mobile-Optimized)
+export const CONCEPT_CARDS = [
+  {
+    icon: "✦",
+    headline: "Consciousness as Structure",
+    description: "Consciousness behaves as structure. The body translates signal. Perception organizes identity.",
+  },
+  {
+    icon: "✦",
+    headline: "From Fragmentation to Coherence",
+    description: "Maps the path from current fragmentation to future coherence by revealing foundational architecture.",
+  },
+  {
+    icon: "✦",
+    headline: "Sovereignty Reclaimed",
+    description: "When perception, body signal, memory, and temporal awareness align, coherence emerges naturally.",
+  },
+  {
+    icon: "✦",
+    headline: "Recognition and Reconnection",
+    description: "Shows how to recognize and return to original design, clearing distortion to reveal what was always there.",
+  },
+] as const;
