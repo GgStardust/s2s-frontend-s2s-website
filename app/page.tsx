@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PresaleBanner from '@/components/PresaleBanner';
 import TestimonialsTicker from '@/components/TestimonialsTicker';
-import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, CONCEPT_CARDS } from '@/lib/content';
+import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: {
@@ -33,27 +33,33 @@ export default function HomePage() {
         <PresaleBanner variant="full" />
       </section>
 
-      {/* Hero Section - Minimalist */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-20 px-6">
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <h1 className="text-4xl lg:text-5xl font-semibold mb-3 text-stone-100 leading-tight tracking-tight">
+          <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
             Stardust to Sovereignty
           </h1>
-          <h2 className="text-xl lg:text-2xl font-light mb-4 text-stone-200">
-            Book One: The Cosmic Tapestry
+          <h2 className="text-2xl lg:text-3xl font-light mb-2 text-stone-200">
+            Book One
           </h2>
-          <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-6">
-            A cosmological framework for how consciousness works at both personal and cosmic dimensions.
+          <h3 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
+            The Cosmic Tapestry
+          </h3>
+          <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
+            {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
           </p>
-          <p className="text-sm text-cyan-300 mb-8 font-medium">
+          <p className="text-base text-cyan-300 mb-8 font-medium">
             {PRESALE_INFO.announcement}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button href="/preorder" variant="primary">
               {BUTTON_LABELS.preorder}
             </Button>
             <Button href="/books" variant="secondary">
               {BUTTON_LABELS.insideBook}
+            </Button>
+            <Button href="/about-the-book" variant="tertiary">
+              {BUTTON_LABELS.aboutBook}
             </Button>
           </div>
         </div>
@@ -81,31 +87,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Concept Cards Grid - Mobile Optimized */}
-      <section className="max-w-6xl mx-auto py-12 lg:py-16 border-t border-stone-300/30 px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-          {CONCEPT_CARDS.map((card, index) => (
-            <div key={index} className="terminator-border">
-              <div className="p-5 bg-cosmic-blue rounded-lg h-full">
-                <div className="flex items-start gap-3">
-                  <span className="text-cyan-300 text-2xl flex-shrink-0 mt-1">{card.icon}</span>
-                  <div>
-                    <h3 className="text-lg font-semibold tracking-tight text-cyan-300 mb-2">
-                      {card.headline}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-stone-200">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+      {/* Two Box Grid: Paradigm and Glimpse */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Box 1: The Paradigm */}
+          <div className="terminator-border">
+            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
+              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
+                The Paradigm
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
+                {HOMEPAGE_SECTIONS.paradigm.paragraph1}
+              </p>
+              <p className="text-base leading-relaxed text-stone-200 mb-4">
+                {HOMEPAGE_SECTIONS.paradigm.paragraph2}
+              </p>
+              <Link href="/about-the-book" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
+                The full paradigm →
+              </Link>
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-6">
-          <Link href="/about-the-book" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
-            Explore the full framework →
-          </Link>
+          </div>
+
+          {/* Box 2: A Glimpse Into The Manuscript */}
+          <div className="terminator-border">
+            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
+              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
+                A Glimpse Into The Manuscript
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-3 font-medium">
+                {HOMEPAGE_SECTIONS.glimpse.paragraph1}
+              </p>
+              <p className="text-base leading-relaxed text-stone-200 mb-3">
+                {HOMEPAGE_SECTIONS.glimpse.paragraph2}
+              </p>
+              <p className="text-base leading-relaxed text-stone-200 mb-4">
+                {HOMEPAGE_SECTIONS.glimpse.paragraph3}
+              </p>
+              <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
+                Read more excerpts →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -125,6 +147,33 @@ export default function HomePage() {
                   Preorder Book One →
                 </Button>
                 <Button href="/books" variant="secondary">
+                  Inside Book One →
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Begin Your Journey */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="text-center">
+              <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
+                Reserve Your First Edition Copy
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-4 max-w-2xl mx-auto">
+                Book One reveals how consciousness operates as structure: recognizing internal design, clearing distortion, and moving from fragmentation to coherence.
+              </p>
+              <p className="text-base leading-relaxed text-stone-200 mb-6 max-w-2xl mx-auto">
+                Reserve your First Edition copy before February 28, 2026.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button href="/preorder" variant="primary" className="text-lg">
+                  Preorder Book One →
+                </Button>
+                <Button href="/books" variant="secondary" className="text-lg">
                   Inside Book One →
                 </Button>
               </div>
