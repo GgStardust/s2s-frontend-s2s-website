@@ -54,7 +54,7 @@ export default function BooksPage() {
               Book One: The Cosmic Tapestry
             </h2>
             <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is a cosmological framework for understanding how consciousness, the body, and identity function. It reveals the structure of the Sovereign Field and constellation of intelligences that shape coherent human identity.
+              Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness. It reveals the structure of the Sovereign Field and constellation of intelligences that shape coherent human identity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/preorder" variant="primary">

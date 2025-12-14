@@ -15,7 +15,7 @@ export default function AboutTheBookPage() {
             The Cosmic Tapestry
           </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
-            A cosmological framework for understanding how consciousness, the body, and identity function.
+            A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception.
           </p>
         </div>
       </section>
@@ -34,10 +34,10 @@ export default function AboutTheBookPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                Book One reveals how consciousness operates as structure. It maps the foundational architecture that existed before current separation. The book shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there.
+                Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness. It reveals a system that is already operating. It asks you to recognize what is already there.
               </p>
               <p className="text-base leading-relaxed text-stone-200">
-                From that recovered foundation, consciousness advances with coherence. This is a cosmological framework: a system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.
+                This consciousness architecture reveals the shared organizing principles that structure galaxies, biology, and human perception. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior.
               </p>
             </div>
           </div>
@@ -56,16 +56,16 @@ export default function AboutTheBookPage() {
                 <div className="flex items-center gap-2 mt-4">
                   <span className="text-cyan-300 text-2xl">✦</span>
                   <span className="text-sm text-cyan-300/80 italic">
-                    A cosmological framework connecting personal experience to universal patterns.
+                    A consciousness architecture connecting personal experience to universal patterns.
                   </span>
                 </div>
               </div>
               <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  Consciousness behaves as structure. The body translates signal. Perception organizes identity. Memory and time shape what becomes possible. When these systems operate coherently, sovereignty emerges as a lived condition.
+                  Consciousness behaves as structure. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior. Humans are a localized expression of cosmic order.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Stardust to Sovereignty maps the path from current fragmentation to future coherence. It reveals the foundational architecture that existed before separation. The paradigm shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there. From that recovered foundation, consciousness advances with coherence.
+                  S2S makes this architecture legible. It demonstrates that consciousness is a primary system. Consciousness is structural, lawful, and measurable through its effects. This work reveals a system that is already operating. It asks you to recognize what is already there.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
                   <p className="text-base leading-relaxed text-stone-200 mb-2">
@@ -264,7 +264,7 @@ export default function AboutTheBookPage() {
               This is a book you return to. Treat it as an environment. Let it open at the pace that matches your own system. Some passages feel like memory. Others feel like challenge. Some land with the weight of something you have always known. Others arrive like recognition from a future version of yourself. All of this is part of the design.
             </p>
             <p className="text-base leading-relaxed text-stone-200 mb-4">
-              Current conditions create fragmentation: emotional, relational, perceptual. Sovereignty restores coherence. It brings the inner system back into alignment with its original intelligence. This book guides that reconnection through recognition. When you recognize something true, the body and mind reorganize around it naturally.
+              Sovereignty is structural coherence. It emerges when perception, biology, and action align with the underlying intelligence that organizes reality. This book reveals a system that is already operating. When you recognize what is already there, the body and mind align with it naturally.
             </p>
             <p className="text-base leading-relaxed text-stone-200">
               This framework emerged through direct encounter, lived experience, pattern, and necessity. The system made itself visible. What follows in these pages is the expression of that encounter.

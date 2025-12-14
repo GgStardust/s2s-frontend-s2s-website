@@ -30,18 +30,18 @@ export const QUOTES = {
 export const BOOK_DESCRIPTIONS = {
   bookOne: {
     short: "Book One: The Cosmic Tapestry",
-    subtitle: "A cosmological framework for understanding how consciousness, the body, and identity function.",
-    subtitleExtended: "A cosmological framework for how consciousness works at both personal and cosmic dimensions. Revealing patterns shaping identity, memory, and perception through the same organizing principles that shape the universe itself.",
-    full: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
-    fullWithSystem: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
+    subtitle: "A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception.",
+    subtitleExtended: "Stardust to Sovereignty is a consciousness architecture. It reveals the shared organizing principles that structure galaxies, biology, and human perception.",
+    full: "Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness.",
+    fullWithSystem: "Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness.",
   },
 } as const;
 
 // Homepage Section Content (Style-Training Aligned)
 export const HOMEPAGE_SECTIONS = {
   paradigm: {
-    paragraph1: "Consciousness behaves as structure. The body translates signal. Perception organizes identity. Memory and time shape what becomes possible. When these systems operate coherently, sovereignty emerges as a lived condition.",
-    paragraph2: "Stardust to Sovereignty maps the path from current fragmentation to future coherence. It reveals the foundational architecture that existed before separation. The paradigm shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there. From that recovered foundation, consciousness advances with coherence. This is a functional model for reconnection and evolution.",
+    paragraph1: "Consciousness behaves as structure. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior. Humans are a localized expression of cosmic order.",
+    paragraph2: "S2S makes this architecture legible. It demonstrates that consciousness is a primary system. Consciousness is structural, lawful, and measurable through its effects. This work reveals a system that is already operating. It asks you to recognize what is already there.",
   },
   whoThisIsFor: {
     intro: "This book is for people who want a clear model of how their inner system functions.",
@@ -68,9 +68,9 @@ export const HOMEPAGE_SECTIONS = {
     closing: "Each section builds on the last, forming a coherent model for reconnection and evolution.",
   },
   glimpse: {
-    paragraph1: "Sovereignty is a condition of coherence reclaimed.",
-    paragraph2: "When perception, body signal, memory, and temporal awareness operate in alignment, decision-making becomes clean. Identity stabilizes. Attention returns to the present system rather than fragmenting across past conditioning or future projection.",
-    paragraph3: "This book describes how intelligence organizes itself through form. It maps the reconnection process: recognizing foundational architecture, clearing distortion, and advancing from recovered coherence.",
+    paragraph1: "Sovereignty is structural coherence. It emerges when perception, biology, and action align with the underlying intelligence that organizes reality.",
+    paragraph2: "The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the field.",
+    paragraph3: "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral fields, the resonance of stellar inheritance, the architecture of recognition that spans time.",
   },
 } as const;
 

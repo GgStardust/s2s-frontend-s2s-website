@@ -11,7 +11,7 @@ export default function AboutPage() {
             What Stardust to Sovereignty Is
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-stone-200 italic">
-            A cosmological framework for coherent perception and sovereign identity.
+            A consciousness architecture for coherent perception and sovereign identity.
         </h2>
       </div>
       </section>
@@ -28,7 +28,7 @@ export default function AboutPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Stardust to Sovereignty is a cosmological framework: a system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.
+                  Stardust to Sovereignty is a consciousness architecture. It reveals the shared organizing principles that structure galaxies, biology, and human perception. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
                   This framework organizes identity, perception, time, emotion, creativity, relational orientation, and decision-making as one integrated system. S2S maps the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   Existing models of psychology, spirituality, and self-development fall short of accounting for the speed, scale, and multidimensional nature of current human experience.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  S2S offers a cosmological framework built for this era. It provides a way to understand experience that preserves complexity. It delivers a structural orientation that matches the depth of the moment.
+                  S2S is a consciousness architecture built for this era. It provides a way to understand experience that preserves complexity. It delivers a structural orientation that matches the depth of the moment.
                 </p>
               </div>
             </div>

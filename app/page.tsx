@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
   },
-  description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover how consciousness operates as structure and how to move from fragmentation to coherence.',
+  description: 'A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
   keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'preorder', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
   openGraph: {
     title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
-    description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    description: 'A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     type: 'website',
@@ -147,33 +147,6 @@ export default function HomePage() {
                   Preorder Book One →
                 </Button>
                 <Button href="/books" variant="secondary">
-                  Inside Book One →
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Begin Your Journey */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="text-center">
-              <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                Reserve Your First Edition Copy
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200 mb-4 max-w-2xl mx-auto">
-                Book One reveals how consciousness operates as structure: recognizing internal design, clearing distortion, and moving from fragmentation to coherence.
-              </p>
-              <p className="text-base leading-relaxed text-stone-200 mb-6 max-w-2xl mx-auto">
-                Reserve your First Edition copy before February 28, 2026.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button href="/preorder" variant="primary" className="text-lg">
-                  Preorder Book One →
-                </Button>
-                <Button href="/books" variant="secondary" className="text-lg">
                   Inside Book One →
                 </Button>
               </div>
