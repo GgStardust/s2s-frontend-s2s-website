@@ -22,6 +22,15 @@ export default function CodexPage() {
         </div>
       </section>
 
+      {/* Role Boundary Statement */}
+      <section className="max-w-4xl mx-auto py-8 px-6">
+        <div className="text-center">
+          <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
+            The Codex is the source material of the system. It reveals structure. The Codex maps architecture. Personalization and navigation occur through the Console.
+          </p>
+        </div>
+      </section>
+
       {/* Field Notes / Scrollstream - Moved to top */}
       <FieldNotesScroll />
 
@@ -38,7 +47,7 @@ export default function CodexPage() {
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-stone-200 mb-4 flex-grow">
-                Foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration, moves through research and writing, then undergoes RBI analysis to identify resonance patterns.
+                Foundational essays written over four years of research, contemplation, experience, and exploration. Each entry begins with inspiration, moves through research and writing. RBI analysis reveals resonance patterns within this source material.
               </p>
               <p className="text-sm text-cyan-300/80 italic">
                 Source material that reveals its own structure
@@ -56,14 +65,11 @@ export default function CodexPage() {
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-stone-200 mb-3 flex-grow">
-                Resonance-Based Intelligence functions as coherent intelligence: the next iteration beyond generative AI. It measures structural alignment, validates through mathematical proofs, and operates as the infrastructure layer that makes AI viable at scale.
+                The Codex methodology generated RBI as a measurable output. Resonance-Based Intelligence functions as coherent intelligence: the next iteration beyond generative AI. It measures structural alignment, validates through mathematical proofs, and operates as the infrastructure layer that makes AI viable at scale.
               </p>
               <p className="text-sm text-stone-300 mb-4 italic">
-                RBI emerged as a byproduct of the Codex methodology. This novel technology is currently under provisional patent.
+                This novel technology is currently under provisional patent.
               </p>
-              <Link href="/rbi" className="text-sm text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 mt-auto">
-                Learn more →
-              </Link>
             </div>
           </div>
 
@@ -77,7 +83,7 @@ export default function CodexPage() {
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-stone-200 mb-4 flex-grow">
-                Essays are compiled through RBI analysis, which identifies resonance patterns and validates coherence. The compilation moves through writing and editing to become manuscripts. Non-fiction books compile this source material; the fiction trilogy and Console provide additional access points.
+                Essays are compiled into manuscripts through writing and editing. RBI analysis identifies resonance patterns and validates coherence within this compilation process. Non-fiction books compile this source material; the fiction trilogy and Console provide additional access points.
               </p>
               <Button href="/books" variant="secondary" className="mt-auto">
                 Learn About the Books →

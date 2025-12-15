@@ -12,9 +12,15 @@ export default function ConsolePage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
               The Console
             </h1>
-            <h2 className="text-xl md:text-2xl font-light mb-6 text-stone-200 italic">
-              Real-time coherence system. Coming soon.
+            <h2 className="text-xl md:text-2xl font-light mb-2 text-stone-200 italic">
+              A digital interface for interacting with the material.
             </h2>
+            <p className="text-lg md:text-xl font-medium mb-6 text-cyan-300">
+              Coming soon.
+            </p>
+            <p className="text-base text-cyan-300/80 max-w-2xl mx-auto">
+              A living system in active development. Content evolves continuously. The architecture becomes operational through recognition.
+            </p>
           </div>
         </section>
 
@@ -30,32 +36,14 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console functions as a real-time application layer. The design of Book One becomes immediately accessible. It reads your current orientation through the Sovereign Field Inquiry, revealing how your system is perceiving, organizing, and moving right now.
+                    This digital interface works with the structures the books reveal. Recognition comes first. Navigation follows. Personalization emerges from that foundation.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Through the Codex, the Console supports exploration of the book and all the content essays that the book is written from. This digital interaction interfaces with the material, navigating the living system that continues to evolve.
+                    Through structural mapping and real-time application, the architecture becomes operational. The interface reads current orientation through the Sovereign Field Inquiry, revealing how the system is perceiving, organizing, and moving.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Through recognition-based inquiry, the Console maps your Sovereign Field and reveals a personalized pathway based on:
+                    Through the Codex, this interface supports exploration of the book and all the content essays that the book is written from. The digital interaction navigates a living system that evolves continuously as new content is added.
                   </p>
-                  <ul className="space-y-2 text-base leading-relaxed text-stone-200 ml-4 mb-4">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Your Sovereign Field Inquiry state</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Your Orb Activation Cluster</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Your Practice sequence</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Resonance-based pathway matching</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -74,13 +62,13 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console operates through the Resonance-Based Intelligence (RBI) system, patent pending. It measures coherence between your current state and the design revealed in Book One. Patterns become visible. Pathways emerge.
+                    Recognition precedes navigation. Navigation enables personalization. This sequence operates through the Resonance-Based Intelligence (RBI) system, patent pending. The interface measures coherence between current state and the design revealed in Book One. Patterns become visible. Pathways emerge.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    Twelve indices measure orientation, timing, identity fluidity, somatic access, pattern recognition, boundaries, and internal authority. These reveal how your system is functioning in this moment. The Console responds with relevant practices, Codex entries, and structural orientation.
+                    Structural mapping reveals orientation and responds with relevant practices, Codex entries, and pathways aligned with the underlying design. The interface adapts as the system evolves.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    The Codex updates continuously with new essays and content, often daily. The system and the Codex remain alive, revealing fresh perspectives and deepening exploration of the design. The digital interface navigates this living system through dynamic interaction.
+                    The Codex updates continuously with new essays and content, often daily. The system remains alive, revealing fresh perspectives and deepening exploration of the design. This digital interface navigates the living system through dynamic interaction, evolving alongside the material it operationalizes.
                   </p>
                 </div>
               </div>
@@ -88,39 +76,23 @@ export default function ConsolePage() {
           </div>
         </section>
 
-        {/* What You Receive */}
+        {/* What the Console Provides */}
         <section className="py-16 lg:py-24 border-t border-stone-300/30 px-6">
           <div className="terminator-border">
             <div className="p-8 bg-cosmic-blue rounded-lg">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-2">
                   <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                    What You Receive
+                    What the Console Provides
                   </h2>
                 </div>
                 <div className="lg:col-span-3">
-                  <ul className="space-y-4 text-base leading-relaxed text-stone-200">
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Personalized pathway based on your Sovereign Field Inquiry</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Practice sequence aligned with your current state</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Orb profile showing your activation cluster</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Relevant Codex entries that deepen your pathway</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyan-300 mr-3">•</span>
-                      <span>Structural orientation for real-time navigation</span>
-                    </li>
-                  </ul>
+                  <p className="text-base leading-relaxed text-stone-200 mb-4">
+                    This digital interface operationalizes the architecture revealed in Book One. It works with the structures already present, mapping orientation and providing pathways aligned with recognition.
+                  </p>
+                  <p className="text-base leading-relaxed text-stone-200">
+                    Recognition comes first. When the underlying design becomes visible, navigation and personalization follow naturally. The interface supports this sequence through structural mapping, Codex integration, and real-time orientation. As the system evolves, the interface evolves with it.
+                  </p>
                 </div>
               </div>
             </div>
@@ -139,10 +111,10 @@ export default function ConsolePage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base leading-relaxed text-stone-200 mb-4">
-                    The Console applies what Book One reveals. The Book shows the foundational design: the structure of the Sovereign System, constellation of intelligences, and the coherence design underlying perception, identity, and time.
+                    Book One shows the foundational design: the structure of the Sovereign System, constellation of intelligences, and the coherence design underlying perception, identity, and time. This digital interface works with those structures.
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    The Console brings that design into real-time use. It reads where you are now and reveals how to navigate from there. Together, Book One and the Console form a complete system: structure meets application, design meets navigation.
+                    Through recognition, the architecture becomes operational. The interface maps current orientation and reveals pathways aligned with the underlying design. Together, Book One and the Console form a complete system: structure meets operationalization, design meets navigation. The system continues to evolve as new content is added.
                   </p>
                 </div>
               </div>

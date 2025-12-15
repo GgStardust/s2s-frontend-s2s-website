@@ -7,7 +7,6 @@ export default function AboutTheBookPage() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
             About Book One
           </h1>
@@ -17,14 +16,6 @@ export default function AboutTheBookPage() {
           <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
             A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception.
           </p>
-        </div>
-      </section>
-
-      {/* Presale Callout */}
-      <section className="max-w-6xl mx-auto py-8 px-6">
-        <div className="text-center">
-          <p className="text-lg text-cyan-300 font-medium mb-2">Book One Presale Now Open</p>
-          <p className="text-base text-stone-200">Reserve your First Edition copy before February 28, 2026</p>
         </div>
       </section>
 
@@ -80,7 +71,7 @@ export default function AboutTheBookPage() {
                     <strong className="text-cyan-300">S2S identifies multiple intelligences operating within one continuum.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    These intelligences shape how a person knows what they know, how they read timelines, how they form relationships, how they sense direction, and how they stabilize their identity. The thirteen Orbs described in this book are direct expressions of lived intelligence. They function as real movements within awareness.
+                    These intelligences shape how a person knows what they know, how they read timelines, how they form relationships, how they sense direction, and how orientation stabilizes. The thirteen Orbs described in this book are direct expressions of lived intelligence. They function as real movements within awareness.
                   </p>
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
@@ -88,7 +79,7 @@ export default function AboutTheBookPage() {
                     <strong className="text-cyan-300">S2S positions sovereignty as perceptual alignment.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Sovereignty arises when awareness aligns with the structure already governing experience. It emerges as the outcome of recognition. When inner design becomes visible, identity behaves coherently, responsively, and precisely.
+                    Sovereignty arises when awareness aligns with the structure already governing experience. It emerges as the outcome of recognition. When inner design becomes visible, perception reorganizes and coherence becomes natural.
                   </p>
                 </div>
               </div>
@@ -138,7 +129,7 @@ export default function AboutTheBookPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  At the center is the constellation of intelligences. These are direct expressions of lived intelligence that function as movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when aligned with truth rather than survival. Each intelligence is a movement you have already experienced, even if unconsciously. Each one describes a function of your own intelligence returning to its natural form.
+                  At the center is the constellation of intelligences. These are direct expressions of lived intelligence that function as movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when aligned with truth rather than survival. Each intelligence is a movement you have already experienced, even if unconsciously. Each one describes a function of awareness expressing itself through structure.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
                   <p className="text-base leading-relaxed text-stone-200 italic mb-2">
@@ -281,10 +272,13 @@ export default function AboutTheBookPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="text-center max-w-3xl mx-auto">
           <p className="text-base leading-relaxed text-stone-200 mb-6">
-            This is an invitation into a deeper relationship with your own awareness, identity, and creative force. A way of seeing your life from the inside out, and from the outside in. A way of recognizing the intelligence that has been guiding you long before you had a language for it.
+            This is an invitation into recognition of structure. A way of seeing experience from the inside out, and from the outside in. A way of recognizing the intelligence that organizes perception, orientation, and coherence.
           </p>
-          <p className="text-lg leading-relaxed text-cyan-300 mb-8 italic">
+          <p className="text-lg leading-relaxed text-cyan-300 mb-4 italic">
             Enter in the way that feels coherent to you. Move with what resonates. Let what rests simply rest. The system will meet you where you are.
+          </p>
+          <p className="text-base leading-relaxed text-stone-200 mb-6">
+            This work reveals structure. Recognition precedes application. It does not promise healing, transcendence, or inner work. It maps the architecture that already operates.
           </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Reserve your First Edition copy before February 28, 2026
