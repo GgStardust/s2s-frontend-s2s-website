@@ -70,7 +70,7 @@ export default function HomePage() {
               <div className="lg:col-span-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
                   Early Reader Reflections
-                </h2>
+            </h2>
                 <div className="flex items-center gap-2 mt-4">
                   <span className="text-cyan-300 text-2xl">✦</span>
                   <span className="text-sm text-cyan-300/80 italic">From early readers engaging with the manuscript.</span>
