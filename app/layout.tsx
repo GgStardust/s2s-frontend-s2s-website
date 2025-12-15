@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Analytics from '@/components/Analytics'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -137,10 +138,14 @@ export default function RootLayout({
         <div className="comet-container">
           <div className="comet"></div>
         </div>
-        <Navigation />
+        <ErrorBoundary>
+          <Navigation />
+        </ErrorBoundary>
         <Breadcrumbs />
         <main id="main-content" className="flex-grow">
-        {children}
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
         </main>
         <footer className="text-center text-base text-stone-200 py-12 border-t border-stone-300/30">
           <div className="max-w-6xl mx-auto px-6 space-y-6">
