@@ -45,13 +45,10 @@ export default function HomePage() {
           <h3 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
             The Cosmic Tapestry
           </h3>
-          <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
+          <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-8">
             {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
           </p>
-          <p className="text-base text-cyan-300 mb-8 font-medium">
-            {PRESALE_INFO.announcement}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/preorder" variant="primary">
               {BUTTON_LABELS.preorder}
             </Button>

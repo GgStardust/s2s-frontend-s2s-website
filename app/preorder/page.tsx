@@ -108,7 +108,7 @@ export default function PreorderPage() {
             Book One: The Cosmic Tapestry
         </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-3xl mx-auto mb-4">
-          Book One reveals how consciousness operates as structure. It restores direct access to the intelligence that already governs reality.
+          Book One reveals how consciousness operates as structure. It restores perceptual coherence by making visible the intelligence that already governs reality.
         </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
             Order before February 28, 2026
@@ -130,11 +130,11 @@ export default function PreorderPage() {
                 <ul className="space-y-4 text-base leading-relaxed text-stone-200">
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Sovereign Field:</strong> Your internal coherence system and how to recognize it</span>
+                    <span><strong>The Sovereign Field:</strong> The internal coherence system and how it becomes recognizable</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Full System of Sovereign Intelligences:</strong> Structural coordinates that map perception, timing, orientation, and identity</span>
+                    <span><strong>The Full System of Sovereign Intelligences:</strong> Structural coordinates that map perception, timing, and orientation</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
@@ -146,7 +146,7 @@ export default function PreorderPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>Coherent Perception:</strong> The natural state when the design is active</span>
+                    <span><strong>Coherent Perception:</strong> The natural state when the underlying design is recognized</span>
                   </li>
                 </ul>
               </div>
@@ -532,7 +532,7 @@ export default function PreorderPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-cyan-300">Why self-published?</h3>
                   <p className="text-base leading-relaxed text-stone-200">
-                    This work is self-published to maintain its integrity. Preorders support the first printing and help bring this work into the world.
+                    This work is self-published to preserve the integrity of its structure and language. Preorders support the first printing and help bring this work into the world.
                   </p>
                 </div>
                 <div>

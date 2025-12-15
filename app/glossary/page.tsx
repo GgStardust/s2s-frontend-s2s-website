@@ -21,13 +21,16 @@ export default function GlossaryPage() {
             Key terms and definitions from the Stardust to Sovereignty system
           </h2>
           <p className="text-base text-stone-300 max-w-2xl mx-auto">
-            These definitions are drawn directly from Book One. Each term represents a precise concept within the S2S framework.
+            These definitions are drawn directly from Book One. Each term names a precise structural element within the S2S architecture.
           </p>
         </div>
       </section>
 
       {/* Glossary Terms */}
       <section className="max-w-4xl mx-auto py-12 lg:py-16 px-6">
+        <p className="text-sm text-stone-300 mb-8 text-center">
+          Each definition describes function and structure directly, without metaphor or symbolic substitution.
+        </p>
         <div className="space-y-6">
           {glossaryTerms.map((item) => (
             <div key={item.slug} id={item.slug} className="terminator-border scroll-mt-20">
@@ -48,7 +51,7 @@ export default function GlossaryPage() {
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="text-center">
           <p className="text-base leading-relaxed text-stone-200 mb-6 max-w-2xl mx-auto">
-            These terms are introduced and explained throughout Book One. The book provides the full context and depth for each concept.
+            These terms are introduced throughout Book One. The book provides the structural context and depth in which each term operates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/preorder" variant="primary">

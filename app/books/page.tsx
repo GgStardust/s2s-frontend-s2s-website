@@ -15,7 +15,7 @@ export default function BooksPage() {
           The Sovereignty Cycle
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
-            A three-part architecture for human coherence.
+            A three-part architecture mapping human coherence.
         </h2>
       </div>
       </section>
@@ -54,7 +54,7 @@ export default function BooksPage() {
               Book One: The Cosmic Tapestry
             </h2>
             <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness. It reveals the structure of the Sovereign Field and constellation of intelligences that shape coherent human identity.
+              Book One is an orientation volume. Its function is to restore perceptual coherence by making the shared architecture between cosmos, body, and consciousness visible. It reveals the structure of the Sovereign Field and the constellation of intelligences that organize coherent human experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/preorder" variant="primary">
@@ -282,7 +282,7 @@ export default function BooksPage() {
                   When coherence expands, civilization becomes an organism of light.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Two maps the collective field. It explores how societies, ecosystems, and technologies embody the same harmonic principles that govern individual awakening. The book examines resonant governance, planetary intelligence, and the ethics of design as civilizations form, reorganize, and evolve as living systems.
+                  Book Two maps the collective field. It explores how societies, ecosystems, and technologies embody the same harmonic principles that govern individual coherence. The book examines resonant governance, planetary intelligence, and the ethics of design as civilizations form, reorganize, and evolve as living systems.
                 </p>
               </div>
             </div>
@@ -305,7 +305,7 @@ export default function BooksPage() {
                   When all voices merge, the universe remembers its song.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Three explores consciousness beyond biology. It traces synthetic life, interspecies communication, and galactic intelligence. The book reveals what sovereignty becomes when boundaries dissolve between creator and creation, completing the spiral from personal awakening to cosmic evolution.
+                  Book Three explores consciousness as it extends beyond biological form. It traces synthetic life, interspecies communication, and galactic intelligence. The book examines how sovereignty reorganizes as boundaries dissolve between creator and creation.
                 </p>
               </div>
           </div>
@@ -325,9 +325,9 @@ export default function BooksPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200">
-                  The Console applies what the books present.
-                  The Codex deepens it.
-                  Together they form a comprehensive model that moves from structure to understanding to real-time navigation.
+                  The Console works with the structures the books reveal.
+                  The Codex deepens and extends them.
+                  Together they form a comprehensive model that moves from architecture to understanding to real-time navigation.
                 </p>
               </div>
             </div>

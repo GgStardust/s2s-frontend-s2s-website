@@ -11,7 +11,7 @@ export default function AboutPage() {
             What Stardust to Sovereignty Is
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-stone-200 italic">
-            A consciousness architecture for coherent perception and sovereign identity.
+            A consciousness architecture for coherent perception and sovereign operation.
         </h2>
       </div>
       </section>
@@ -31,7 +31,7 @@ export default function AboutPage() {
                   Stardust to Sovereignty is a consciousness architecture. It reveals the shared organizing principles that structure galaxies, biology, and human perception. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  This framework organizes identity, perception, time, emotion, creativity, relational orientation, and decision-making as one integrated system. S2S maps the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
+                  This framework maps how identity, perception, time, emotion, creativity, relational orientation, and decision-making already organize as one integrated system. S2S maps the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
                   The system operates through recognition. It shows you what happens when awareness aligns with the structure already governing experience. Sovereignty emerges as a native condition of awareness when the design is recognized and activated.
@@ -93,7 +93,7 @@ export default function AboutPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  S2S as consciousness technology offers a repeatable, precise, structurally grounded method for working with the mechanics of awareness. It defines the components that generate coherence. It supplies a functional design system. It produces measurable changes in perception and decision-making.
+                  S2S functions as a form of consciousness technology in that it makes the mechanics of awareness visible, precise, and structurally legible. It defines the components that generate coherence. It supplies a functional design system. When the underlying design of awareness becomes visible, perception and decision-making reorganize naturally.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200 mb-4">
                   Every component of S2S is built around the same structural insight: human coherence emerges when the underlying design of awareness becomes visible.
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 <ul className="space-y-3 text-base leading-relaxed text-stone-200 mb-4">
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Book</strong> teaches the design.</span>
+                    <span><strong>The Book</strong> teaches the design through recognition and orientation.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Console</strong> operationalizes it through real-time application and structural mapping.</span>
+                    <span><strong>The Console</strong> operationalizes the architecture through structural mapping and real-time application, following recognition.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-cyan-300 mr-3 mt-1">•</span>
