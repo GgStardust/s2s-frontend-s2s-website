@@ -12,7 +12,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Preorders</h2>
             <p className="mb-4">
-              By placing a preorder, you agree to purchase the book at the listed price. Preorders support the first printing of this self-published work.
+              By placing a preorder, you agree to purchase the book at the listed price. Preorders support the first printing of this author-published work.
             </p>
             <p className="mb-4">
               <strong className="text-cyan-300">Payment:</strong> Payment instructions (Zelle or Venmo) will be sent via email within 24-48 hours of your preorder. Payment is due within 7 days of receiving instructions.
@@ -25,7 +25,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Refund Policy</h2>
             <p className="mb-4">
-              This is a limited first edition supporting self-publishing. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
+              This is a limited first edition. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
             </p>
           </section>
 

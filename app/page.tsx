@@ -1,20 +1,16 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import Button from '@/components/ui/Button';
-import NewsletterSignup from '@/components/NewsletterSignup';
-import PresaleBanner from '@/components/PresaleBanner';
-import TestimonialsTicker from '@/components/TestimonialsTicker';
-import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
+  title: 'Stardust to Sovereignty',
+  description: 'A consciousness architecture that describes the structural principles through which perception, identity, time, and coherence organize.',
+  robots: {
+    index: true,
+    follow: true,
   },
-  description: 'A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'preorder', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
   openGraph: {
-    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
-    description: 'A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    title: 'Stardust to Sovereignty',
+    description: 'A consciousness architecture that describes the structural principles through which perception, identity, time, and coherence organize.',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     type: 'website',
@@ -25,133 +21,69 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default function EnterPage() {
   return (
-    <main className="min-h-screen bg-structural-grid">
-      {/* Preorder Announcement Banner */}
-      <section className="max-w-6xl mx-auto pt-8 px-6">
-        <PresaleBanner variant="full" />
-      </section>
+    <main className="min-h-screen bg-structural-grid flex flex-col">
+      <div className="flex-1 flex items-center justify-center px-6 py-20">
+        <div className="max-w-2xl mx-auto">
+          <div className="p-8 md:p-12 bg-cosmic-blue rounded-lg shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.4),0_4px_16px_rgba(0,0,0,0.3)]">
+              <div className="text-center space-y-8">
+                {/* Title */}
+                <h1 className="text-4xl md:text-5xl font-bold text-stone-100 tracking-tight">
+                  Stardust to Sovereignty
+                </h1>
 
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <div className="text-center">
-          <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
-            Stardust to Sovereignty
-          </h1>
-          <h2 className="text-2xl lg:text-3xl font-light mb-2 text-stone-200">
-            Book One
-          </h2>
-          <h3 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
-            The Cosmic Tapestry
-          </h3>
-          <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-8">
-            {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/preorder" variant="primary">
-              {BUTTON_LABELS.preorder}
-            </Button>
-            <Button href="/books" variant="secondary">
-              {BUTTON_LABELS.insideBook}
-            </Button>
-            <Button href="/about-the-book" variant="tertiary">
-              {BUTTON_LABELS.aboutBook}
-            </Button>
-          </div>
-        </div>
-      </section>
+                {/* Body Copy */}
+                <div className="space-y-6 text-base md:text-lg leading-relaxed text-stone-200">
+                <p>
+                  Stardust to Sovereignty is a consciousness architecture.
+                  It emerges from studying the same organizing patterns in galaxies, biological systems, and human perception.
+                </p>
+                  <p>
+                    It describes the structural principles through which perception, identity, time, and coherence organize.
+                    These principles operate continuously and do not depend on interpretation.
+                  </p>
+                <p>
+                  The system functions through visibility.
+                  When structure becomes visible, perception reorganizes.
+                  Coherence stabilizes as alignment.
+                  These shifts are experienced directly, often before they can be named.
+                </p>
+                  <p>
+                    The architecture described here is continuous across scale.
+                    From stellar formation to biological systems.
+                    From embodied awareness to collective fields.
+                  </p>
+                  <p>
+                    The material is organized as an environment rather than a sequence.
+                    It is designed to be returned to and navigated over time.
+                    Recognition precedes application.
+                  </p>
+                  <p>
+                    What follows is a description of a system that is already operating.
+                  </p>
+                </div>
 
-      {/* Early Reader Reflections Section */}
-      <section className="max-w-6xl mx-auto py-12 lg:py-16 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-6 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  Early Reader Reflections
-            </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">From early readers engaging with the manuscript.</span>
+                {/* Links */}
+                <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button href="/books" variant="secondary">
+                    Enter the Book
+                  </Button>
+                  <Button href="/about" variant="secondary">
+                    About the System
+                  </Button>
                 </div>
               </div>
-              <div className="lg:col-span-3">
-                <TestimonialsTicker />
-              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Two Box Grid: Paradigm and Glimpse */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Box 1: The Paradigm */}
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
-                The Paradigm
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200 mb-3">
-                {HOMEPAGE_SECTIONS.paradigm.paragraph1}
-              </p>
-              <p className="text-base leading-relaxed text-stone-200 mb-4">
-                {HOMEPAGE_SECTIONS.paradigm.paragraph2}
-              </p>
-              <Link href="/about-the-book" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
-                The full paradigm →
-              </Link>
-            </div>
-          </div>
-
-          {/* Box 2: A Glimpse Into The Manuscript */}
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg h-full">
-              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
-                A Glimpse Into The Manuscript
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200 mb-3 font-medium">
-                {HOMEPAGE_SECTIONS.glimpse.paragraph1}
-              </p>
-              <p className="text-base leading-relaxed text-stone-200 mb-3">
-                {HOMEPAGE_SECTIONS.glimpse.paragraph2}
-              </p>
-              <p className="text-base leading-relaxed text-stone-200 mb-4">
-                {HOMEPAGE_SECTIONS.glimpse.paragraph3}
-              </p>
-              <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm inline-block">
-                Read more excerpts →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About This Publication - Presale & Self-Publishing */}
-      <section className="max-w-6xl mx-auto py-12 lg:py-16 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-6 bg-cosmic-blue rounded-lg">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-cyan-300 mb-4">
-                About This Publication
-              </h2>
-              <p className="text-sm leading-relaxed text-stone-200 mb-6">
-                Self-published to preserve the writing and system without compromise. No editorial mediation. The framework appears exactly as intended.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button href="/preorder" variant="primary">
-                  Preorder Book One →
-                </Button>
-                <Button href="/books" variant="secondary">
-                  Inside Book One →
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      </main>
+      </div>
+      
+      {/* Footer */}
+      <footer className="py-8 text-center">
+        <p className="text-xs text-stone-400">
+          Author-published by S2S Press
+        </p>
+      </footer>
+    </main>
   );
 }

@@ -12,8 +12,8 @@ export default function FieldNotesScroll() {
     // Use a deterministic shuffle based on a seed to avoid hydration mismatches
     // Shuffle and select 12 lines
     try {
-      const shuffled = [...allScrollLines].sort(() => Math.random() - 0.5);
-      setDisplayLines(shuffled.slice(0, 12));
+    const shuffled = [...allScrollLines].sort(() => Math.random() - 0.5);
+    setDisplayLines(shuffled.slice(0, 12));
     } catch (error) {
       // Fallback to first 12 lines if shuffle fails
       console.error('Error in FieldNotesScroll:', error);

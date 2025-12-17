@@ -8,8 +8,13 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Hide navigation on threshold page (/)
+  if (pathname === '/') {
+    return null;
+  }
+
   const navItems: Array<{ href: string; label: string; prominent?: boolean; comingSoon?: boolean }> = [
-    { href: '/', label: 'Home' },
+    { href: '/home', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/books', label: 'Books', prominent: true },
     { href: '/preorder', label: 'Preorder', prominent: true },
@@ -18,8 +23,8 @@ export default function Navigation() {
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
+    if (href === '/home') {
+      return pathname === '/home';
     }
     return pathname?.startsWith(href);
   };

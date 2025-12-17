@@ -90,8 +90,8 @@ export const CONSOLE_INFO = {
   earlyAccess: "Console access will be announced via email to all Book One preorder participants. We're targeting mid-February 2026, but it may be available sooner. Preorder Book One to secure your early access.",
 } as const;
 
-// Self-Publishing Explanation
-export const SELF_PUBLISHING = {
+// Author-Publishing Explanation
+export const AUTHOR_PUBLISHING = {
   why: "The system encoded here remains alive and unmediated. Every word, structure, and timing preserves what emerged through direct encounter. The framework made itself visible through lived experience, pattern, and necessity.",
   preorderMatters: "Preorders support the first printing. By reserving your copy, you bring this work into the world exactly as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.",
 } as const;

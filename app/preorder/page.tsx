@@ -240,7 +240,7 @@ export default function PreorderPage() {
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-6">
-          Preorders support the first printing of this self-published book. By completing this form, 
+          Preorders support the first printing of this author-published book. By completing this form, 
           you reserve your copy and contribute to bringing this work into the world.
         </p>
                 <div className="mb-6">
@@ -530,9 +530,9 @@ export default function PreorderPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">Why self-published?</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">How is it published?</h3>
                   <p className="text-base leading-relaxed text-stone-200">
-                    This work is self-published to preserve the integrity of its structure and language. Preorders support the first printing and help bring this work into the world.
+                    This work is author-published under S2S Press to preserve the integrity of its structure and language. Preorders support the first printing and help bring this work into the world.
                   </p>
                 </div>
                 <div>
@@ -553,7 +553,7 @@ export default function PreorderPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-cyan-300">What is the refund policy?</h3>
                   <p className="text-base leading-relaxed text-stone-200">
-                    This is a limited first edition supporting self-publishing. No refunds will be issued. All sales are final.
+                    This is a limited first edition. No refunds will be issued. All sales are final.
                   </p>
                 </div>
               </div>
