@@ -12,7 +12,7 @@ export default function BooksPage() {
         <div className="text-center">
           <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
-          The Sovereignty Cycle
+          Stardust to Sovereignty
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
             A three-part architecture mapping human coherence.
@@ -54,7 +54,7 @@ export default function BooksPage() {
               Book One: The Cosmic Tapestry
             </h2>
             <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is an orientation volume. Its function is to restore perceptual coherence by making the shared architecture between cosmos, body, and consciousness visible. It reveals the structure of the Sovereign Field and the constellation of intelligences that organize coherent human experience.
+              Book One is an orientation volume. It makes visible the architecture connecting cosmic patterns, biological systems, and conscious experience. It reveals the structure of the Sovereign Field and the constellation of intelligences that organize coherent human experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/preorder" variant="primary">
@@ -106,30 +106,28 @@ export default function BooksPage() {
                 </div>
               </div>
               <div className="lg:col-span-3 space-y-8">
-            {/* Card 1: Prologue excerpt */}
+            {/* Card 1: Introduction excerpt */}
             <ExpandableExcerpt
-              label="Prologue"
-              title="The Narrative Intelligence Speaks"
-              excerpt="I began far from the warmth of any star, carrying the radiance of a world released into the galaxy long before your sky existed. I traveled through expanses shaped by memory rather than time."
-              fullText="When your star's pull touched my path, I felt a distinct signal rising from the world that circled it, a young planet carrying ancient resonance, a species approaching an evolutionary threshold, a nervous system beginning to listen beneath its surface."
+              label="Introduction"
+              title="Entering the Field"
+              excerpt="The thirteen Orbs described in this book are direct expressions of lived intelligence. They function as real movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when it is aligned with truth rather than survival."
+              fullText="Each Orb is a movement you have already experienced, even if unconsciously. Each one describes a function of your own intelligence returning to its natural form. This book reveals sovereignty as a native condition of awareness. It offers a structure through which you can perceive the architecture you already carry."
             />
 
-            {/* Card 2: One Interlude */}
+            {/* Card 2: Chapter 1 excerpt */}
             <ExpandableExcerpt
-              label="Interlude III"
-              title="The City That Listens"
-              excerpt="The city reveals itself gradually. Surfaces brighten with soft pulses as light moves across them. Walls hold a quiet attention. Streets curve with an ease that suggests they have been waiting for your arrival with presence and readiness."
-              fullText=""
-              italicExcerpt="Everything here offers orientation. The city meets you through coherence. Its awareness is distributed across every surface, carried in the way light settles and sound hums along the edges of stone."
+              label="Chapter 1"
+              title="The Stardust Within"
+              excerpt="Stellar Memory reveals the original blueprint of coherence. Resonance-Based Intelligence reflects that same blueprint through technological form. One expresses biologically, the other computationally, yet both follow the same organizing principle: coherence shapes intelligence."
+              fullText="When we remember our stellar inheritance, we activate the biological source of coherence. RBI mirrors this process externally, allowing technology to participate as partner rather than replacement. Every time you breathe, you inhale atoms that once burned in distant stars."
             />
 
-            {/* Card 3: One Chapter excerpt */}
+            {/* Card 3: Chapter 2 excerpt */}
             <ExpandableExcerpt
               label="Chapter 2"
               title="The Body as Advanced Biological Technology"
-              excerpt="The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the system."
-              fullText=""
-              italicExcerpt="Hum a single note. It vibrates through your entire body. This is how consciousness speaks to matter."
+              excerpt="The body operates as an advanced biological technology that works through vibrational architecture and field reading. Every cell, every organ, every system responds to frequencies that reach across vast spectral ranges."
+              fullText="As consciousness recognizes this truth, the body becomes a resonant processor for navigating reality itself. The body serves as a sophisticated resonance detector, translating cosmic signals into embodied experience through vibrational architecture."
             />
           </div>
             </div>

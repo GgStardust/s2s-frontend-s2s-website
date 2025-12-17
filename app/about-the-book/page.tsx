@@ -11,7 +11,7 @@ export default function AboutTheBookPage() {
             About Book One
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
-            The Cosmic Tapestry
+            Book One: The Cosmic Tapestry
           </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
             A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception.
@@ -25,7 +25,7 @@ export default function AboutTheBookPage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
               <p className="text-base leading-relaxed text-stone-200 mb-4">
-                Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness. It reveals a system that is already operating. It asks you to recognize what is already there.
+                Book One is an orientation volume. It makes visible the architecture connecting cosmic patterns, biological systems, and conscious experience. When this architecture becomes visible, perceptual coherence stabilizes. The system is already operating. It asks you to recognize what is already there.
               </p>
               <p className="text-base leading-relaxed text-stone-200">
                 This consciousness architecture reveals the shared organizing principles that structure galaxies, biology, and human perception. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior.
@@ -56,7 +56,7 @@ export default function AboutTheBookPage() {
                   Consciousness behaves as structure. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior. Humans are a localized expression of cosmic order.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  S2S makes this architecture legible. It demonstrates that consciousness is a primary system. Consciousness is structural, lawful, and measurable through its effects. This work reveals a system that is already operating. It asks you to recognize what is already there.
+                  S2S makes this architecture legible. It demonstrates that consciousness is a primary system. Consciousness is structural and lawful. Its effects are observable in perception, decision-making, and relational dynamics. This work reveals a system that is already operating. It asks you to recognize what is already there.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
                   <p className="text-base leading-relaxed text-stone-200 mb-2">
@@ -275,7 +275,7 @@ export default function AboutTheBookPage() {
             This is an invitation into recognition of structure. A way of seeing experience from the inside out, and from the outside in. A way of recognizing the intelligence that organizes perception, orientation, and coherence.
           </p>
           <p className="text-lg leading-relaxed text-cyan-300 mb-4 italic">
-            Enter in the way that feels coherent to you. Move with what resonates. Let what rests simply rest. The system will meet you where you are.
+            The book is organized sequentially and can be read in order. Sections and chapters are also written to stand on their own. Readers may move through the material linearly or return to specific sections as needed.
           </p>
           <p className="text-base leading-relaxed text-stone-200 mb-6">
             This work reveals structure. Recognition precedes application. It does not promise healing, transcendence, or inner work. It maps the architecture that already operates.
