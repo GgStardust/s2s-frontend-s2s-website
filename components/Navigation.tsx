@@ -8,23 +8,17 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Hide navigation on threshold page (/)
-  if (pathname === '/') {
-    return null;
-  }
-
   const navItems: Array<{ href: string; label: string; prominent?: boolean; comingSoon?: boolean }> = [
-    { href: '/home', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/books', label: 'Books', prominent: true },
-    { href: '/preorder', label: 'Preorder', prominent: true },
-    { href: '/console', label: 'Console' },
+    { href: '/', label: 'Enter' },
+    { href: '/about', label: 'The System' },
+    { href: '/books', label: 'Books' },
     { href: '/codex', label: 'Codex' },
+    { href: '/console', label: 'Console' },
   ];
 
   const isActive = (href: string) => {
-    if (href === '/home') {
-      return pathname === '/home';
+    if (href === '/') {
+      return pathname === '/';
     }
     return pathname?.startsWith(href);
   };

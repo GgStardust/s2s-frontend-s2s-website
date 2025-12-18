@@ -24,7 +24,7 @@ export default function Breadcrumbs() {
     <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-6 py-4">
       <ol className="flex items-center space-x-2 text-sm text-stone-300">
         <li>
-          <Link href="/home" className="hover:text-cyan-300 transition-colors">
+          <Link href="/" className="hover:text-cyan-300 transition-colors">
             Home
           </Link>
         </li>

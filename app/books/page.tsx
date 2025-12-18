@@ -10,7 +10,6 @@ export default function BooksPage() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
           Stardust to Sovereignty
           </h1>
@@ -20,8 +19,8 @@ export default function BooksPage() {
       </div>
       </section>
 
-      {/* Book One Block */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+      {/* Book One: The Cosmic Tapestry - Cover and Description */}
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Cover Image */}
           <div className="flex justify-center perspective-1000">
@@ -30,15 +29,15 @@ export default function BooksPage() {
                 <div className="terminator-border">
                   <div className="p-6 bg-cosmic-blue rounded-lg">
                     <div className="relative bg-transparent rounded border border-stone-300/20 p-3">
-                    <div className="relative overflow-hidden rounded">
-                      <Image
-                        src="/book-cover.jpeg"
-                        alt="Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust"
-                        width={400}
-                        height={600}
-                        className="w-full h-auto"
-                        priority
-                      />
+                      <div className="relative overflow-hidden rounded">
+                        <Image
+                          src="/book-cover.jpeg"
+                          alt="Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust"
+                          width={400}
+                          height={600}
+                          className="w-full h-auto"
+                          priority
+                        />
                       </div>
                     </div>
                   </div>
@@ -50,20 +49,158 @@ export default function BooksPage() {
           {/* Book Details */}
           <div className="terminator-border">
             <div className="p-8 bg-cosmic-blue rounded-lg">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-cyan-300">
-              Book One: The Cosmic Tapestry
-            </h2>
-            <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is an orientation volume. It makes visible the architecture connecting cosmic patterns, biological systems, and conscious experience. It reveals the structure of the Sovereign Field and the constellation of intelligences that organize coherent human experience.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/preorder" variant="primary">
-                Preorder Book One
-              </Button>
-              <Button href="/about-the-book" variant="tertiary">
-                Read About the Book →
-              </Button>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-cyan-300">
+                Book One: The Cosmic Tapestry
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-6">
+                Book One functions as an orientation volume within the Stardust to Sovereignty system. It documents the underlying architecture connecting cosmological systems, biological systems, and human perception. The material describes an architectural framework rather than a theoretical model.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button href="/preorder" variant="primary">
+                  Preorder Book One
+                </Button>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Book One Opening Section */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-base leading-relaxed text-stone-200">
+            Book One functions as an orientation volume within the Stardust to Sovereignty system.
+            It documents the underlying architecture connecting cosmological systems, biological systems, and human perception.
+            The material describes an architectural framework rather than a theoretical model.
+          </p>
+        </div>
+      </section>
+
+      {/* What You'll Find Here */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
+                  What You'll Find Here
+                </h2>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Book One is composed of system chapters and interludes.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  The chapters describe structural principles governing perception, coherence, and sovereignty.
+                  The interludes function as transitional environments that bridge conceptual layers.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  Each interlude introduces a shift at multiple levels of organization or orientation.
+                  They are not symbolic devices.
+                  They are structural pauses positioned before the next system layer is introduced.
+                </p>
+                <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
+                  <p className="text-base leading-relaxed text-stone-200 italic mb-2">
+                    "The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface."
+                  </p>
+                  <p className="text-sm text-cyan-300/80">Interlude II: The Valley of Shifting Names</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Condition It Addresses */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-6">
+                  The Condition It Addresses
+                </h2>
+              </div>
+              <div className="lg:col-span-3 space-y-6">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Book One documents a condition in which modern systems train perception to fragment.
+                  Information is abundant, but structure is obscured.
+                  Human cognition operates within lawful patterns, yet those patterns are rarely made visible.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  The book documents the structural principles that govern perception, decision-making, relational dynamics, and temporal orientation.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  It does not introduce new practices.
+                  It documents systems that operate continuously.
+                  The book makes structure legible rather than prescribing methods.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The System It Encodes */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
+                  The System It Encodes
+                </h2>
+              </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  The Cosmic Tapestry encodes the Sovereign System as a nested architectural framework.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  Individual alignment and collective structural alignment are described as interdependent expressions of the same structural field.
+                  The system operates through resonance across networks rather than centralized control.
+                </p>
+                <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
+                  <p className="text-base leading-relaxed text-stone-200 italic mb-2">
+                    "The system moves through you and through others, creating a collective web of resonance that amplifies coherence across networks."
+                  </p>
+                </div>
+                <div className="border-l-2 border-cyan-400/30 pl-4 mb-4">
+                  <p className="text-base leading-relaxed text-stone-200 italic text-cyan-300/90">
+                    "The body remembers what words remain beyond."
+                  </p>
+                </div>
+                <div className="border-l-2 border-cyan-400/50 pl-4">
+                  <p className="text-base leading-relaxed text-stone-200 italic">
+                    "The universe recognizes itself as a single self-referential system in various states of coherence, and you participate in this recognition."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Book One Availability */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="text-center max-w-3xl mx-auto space-y-6">
+              <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
+                Book One Availability
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200">
+                Stardust to Sovereignty: A Cosmic Tapestry is the first published volume within the system.
+              </p>
+              <p className="text-base leading-relaxed text-stone-200">
+                First Edition copies are available for preorder.
+                Publication date: February 2026.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button href="/preorder" variant="primary" className="text-lg">
+                  Preorder Book One →
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -311,27 +448,6 @@ export default function BooksPage() {
         </div>
       </section>
 
-      {/* Relationship Block */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  How the Books and Console Work Together
-                </h2>
-              </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200">
-                  The Console works with the structures the books reveal.
-                  The Codex deepens and extends them.
-                  Together they form a comprehensive model that moves from architecture to understanding to real-time navigation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

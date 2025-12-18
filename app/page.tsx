@@ -3,14 +3,14 @@ import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Stardust to Sovereignty',
-  description: 'A consciousness architecture that describes the structural principles through which perception, identity, time, and coherence organize.',
+  description: 'A consciousness technology that makes structure perceptible in how perception, identity, time, and coherence organize.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Stardust to Sovereignty',
-    description: 'A consciousness architecture that describes the structural principles through which perception, identity, time, and coherence organize.',
+    description: 'A consciousness technology that makes structure perceptible in how perception, identity, time, and coherence organize.',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     type: 'website',
@@ -33,44 +33,49 @@ export default function EnterPage() {
                   Stardust to Sovereignty
                 </h1>
 
-                {/* Body Copy */}
-                <div className="space-y-6 text-base md:text-lg leading-relaxed text-stone-200">
-                <p>
-                  Stardust to Sovereignty is a consciousness architecture.
-                  It emerges from studying the same organizing patterns in galaxies, biological systems, and human perception.
-                </p>
-                  <p>
-                    It describes the structural principles through which perception, identity, time, and coherence organize.
-                    These principles operate continuously and do not depend on interpretation.
-                  </p>
-                <p>
-                  The system functions through visibility.
-                  When structure becomes visible, perception reorganizes.
-                  Coherence stabilizes as alignment.
-                  These shifts are experienced directly, often before they can be named.
-                </p>
-                  <p>
-                    The architecture described here is continuous across scale.
-                    From stellar formation to biological systems.
-                    From embodied awareness to collective fields.
-                  </p>
-                  <p>
-                    The material is organized as an environment rather than a sequence.
-                    It is designed to be returned to and navigated over time.
-                    Recognition precedes application.
-                  </p>
-                  <p>
-                    What follows is a description of a system that is already operating.
+                {/* First Sentence - Isolated Anchor */}
+                <div className="py-4">
+                  <p className="text-xl md:text-2xl font-medium text-stone-100 leading-relaxed">
+                    Stardust to Sovereignty is consciousness technology.
                   </p>
                 </div>
 
-                {/* Links */}
-                <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button href="/books" variant="secondary">
-                    Enter the Book
-                  </Button>
+                {/* Body Copy - 4 Blocks Max */}
+                <div className="space-y-6 text-base md:text-lg leading-relaxed text-stone-200">
+                  <p>
+                    It is a structural system that makes structure perceptible in how perception, identity, time, and coherence organize.
+                  </p>
+                  <p>
+                    The technology operates through pattern recognition at multiple levels of organization.
+                    The same structural principles appear in cosmological systems, biological systems, and human cognition.
+                  </p>
+                  <p>
+                    When structure becomes observable, perception reorganizes.
+                    Structural alignment stabilizes through alignment.
+                    These changes occur prior to interpretation.
+                  </p>
+                  <p>
+                    Written works, interfaces, and applied frameworks surface the system.
+                    Stardust to Sovereignty: A Cosmic Tapestry is the first published volume within the system.
+                  </p>
+                  <p>
+                    The material is organized as a structured environment designed for orientation rather than a linear sequence.
+                    Engagement develops through orientation and return.
+                  </p>
+                </div>
+
+                {/* Final Line - Closer to Buttons */}
+                <p className="text-base md:text-lg leading-relaxed text-stone-200 pt-2">
+                  What follows is an active system.
+                </p>
+
+                {/* Navigation */}
+                <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
                   <Button href="/about" variant="secondary">
-                    About the System
+                    Enter the System
+                  </Button>
+                  <Button href="/books" variant="secondary">
+                    Book One: A Cosmic Tapestry
                   </Button>
                 </div>
               </div>

@@ -26,7 +26,7 @@ export default function CodexPage() {
       <section className="max-w-4xl mx-auto py-8 px-6">
         <div className="text-center">
           <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto">
-            The Codex is the source material of the system. It reveals structure. The Codex maps architecture. Personalization and navigation occur through the Console.
+            The Codex is the source material of the system. It reveals structure. The Codex maps the underlying architecture. Personalization and navigation occur through the Console.
           </p>
         </div>
       </section>
@@ -34,9 +34,9 @@ export default function CodexPage() {
       {/* Field Notes / Scrollstream - Moved to top */}
       <FieldNotesScroll />
 
-      {/* Three Info Cards */}
+      {/* Info Cards */}
       <section className="max-w-7xl mx-auto py-12 lg:py-16 border-t border-stone-300/30 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1: What the Codex Is */}
           <div className="terminator-border">
             <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
@@ -55,25 +55,7 @@ export default function CodexPage() {
             </div>
           </div>
 
-          {/* Card 2: RBI Technology */}
-          <div className="terminator-border">
-            <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-cyan-300 text-xl">✦</span>
-                <h2 className="text-xl font-semibold tracking-tight text-cyan-300">
-                  RBI Technology
-                </h2>
-              </div>
-              <p className="text-base leading-relaxed text-stone-200 mb-3 flex-grow">
-                The Codex methodology generated RBI as a measurable output. Resonance-Based Intelligence functions as coherent intelligence: the next iteration beyond generative AI. It measures structural alignment, validates through mathematical proofs, and operates as the infrastructure layer that makes AI viable at scale.
-              </p>
-              <p className="text-sm text-stone-300 mb-4 italic">
-                This novel technology is currently under provisional patent.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: From Codex to Books (merged with process) */}
+          {/* Card 2: From Codex to Books (merged with process) */}
           <div className="terminator-border">
             <div className="p-6 bg-cosmic-blue rounded-lg h-full flex flex-col">
               <div className="flex items-center gap-2 mb-3">
@@ -100,7 +82,7 @@ export default function CodexPage() {
             Codex Essays
           </h2>
           <p className="text-base text-stone-400">
-            Foundational essays that reveal the architecture of the system
+            Foundational essays that reveal the underlying architecture of the system
           </p>
         </div>
         <EssayGrid essays={essays} />

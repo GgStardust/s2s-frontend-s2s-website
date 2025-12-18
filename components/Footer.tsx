@@ -16,20 +16,13 @@ export default function Footer() {
     <footer className="text-center text-base text-stone-200 py-12 border-t border-stone-300/30">
       <div className="max-w-6xl mx-auto px-6 space-y-6">
         <div>
-          <p className="text-stone-100 mb-2 font-medium">S2S - A Consciousness Technology</p>
-          <p className="text-stone-300 mb-2">© {new Date().getFullYear()} Stardust to Sovereignty. All rights reserved.</p>
-          <p className="text-stone-400 text-xs mb-4">
-            Resonance-Based Intelligence (RBI) technology protected by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
-          </p>
+          <p className="text-stone-300 mb-4">© {new Date().getFullYear()} Stardust to Sovereignty. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <Link href="/privacy" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
-              Privacy Policy
+            <Link href="/about-gigi" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
+              About Gigi
             </Link>
             <Link href="/terms" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
               Terms of Service
-            </Link>
-            <Link href="/glossary" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
-              Glossary
             </Link>
             <a href="mailto:gigi@stardusttosovereignty.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
               Contact

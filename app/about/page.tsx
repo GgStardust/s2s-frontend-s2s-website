@@ -8,33 +8,30 @@ export default function AboutPage() {
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
-            What Stardust to Sovereignty Is
+            Stardust to Sovereignty
           </h1>
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-stone-200 italic">
-            A consciousness architecture for coherent perception and sovereign operation.
-        </h2>
-      </div>
+            A consciousness architecture
+          </h2>
+        </div>
       </section>
 
-      {/* The System Overview */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      {/* The Paradigm */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  The System
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
+                  The Paradigm
                 </h2>
               </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Stardust to Sovereignty is a consciousness architecture. It reveals the shared organizing principles that structure galaxies, biology, and human perception. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  This framework maps how identity, perception, time, emotion, creativity, relational orientation, and decision-making already organize as one integrated system. S2S maps the actual mechanics through which consciousness expresses itself and through which coherence stabilizes.
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Consciousness behaves as structure. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior. Humans are a localized expression of cosmic order.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  The system operates through recognition. It shows you what happens when awareness aligns with the structure already governing experience. Sovereignty emerges as a native condition of awareness when the design is recognized and activated.
+                  Consciousness is structural and lawful. Its effects are observable in perception, decision making, and relational dynamics. Perception reorganizes. Coherence stabilizes as alignment.
                 </p>
               </div>
             </div>
@@ -42,47 +39,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Principles */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      {/* Why This Exists */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Core Principles
+                  Why This Exists
                 </h2>
               </div>
-              <div className="lg:col-span-3">
-                <ul className="space-y-4 text-base leading-relaxed text-stone-200">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span>Perception widens into coherent patterning.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span>Identity operates as a dynamic system rather than a fixed role.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span>The body acts as an intelligent interface.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span>Timing reveals structural openings rather than linear steps.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span>Coherence is the natural state when the design is active.</span>
-                  </li>
-                </ul>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Stardust to Sovereignty exists because human experience unfolds across interacting biological, perceptual, relational, and technological systems without a shared structural map. These domains influence one another continuously, yet they are rarely understood as a single coherent field.
+                </p>
+                <p className="text-base leading-relaxed text-stone-200">
+                  This system was developed to make structure legible. It reveals the structural principles that govern coherence, stabilize perception, and support reliable decision making across time and context. Stardust to Sovereignty is an integrated architectural framework that enables orientation within complexity through alignment rather than interpretation.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The System */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      {/* A Consciousness Technology */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -91,82 +72,12 @@ export default function AboutPage() {
                   A Consciousness Technology
                 </h2>
               </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  S2S functions as a form of consciousness technology in that it makes the mechanics of awareness visible, precise, and structurally legible. It defines the components that generate coherence. It supplies a functional design system. When the underlying design of awareness becomes visible, perception and decision-making reorganize naturally.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Every component of S2S is built around the same structural insight: human coherence emerges when the underlying design of awareness becomes visible.
-                </p>
-                <ul className="space-y-3 text-base leading-relaxed text-stone-200 mb-4">
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Book</strong> teaches the design through recognition and orientation.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Codex</strong> expands it, continuously updated to keep the system alive.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The Console</strong> operationalizes the architecture through structural mapping and real-time application, following recognition.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-300 mr-3 mt-1">•</span>
-                    <span><strong>The S2S Interface</strong> is a structural mapping process that brings the design of awareness into view. It reveals the movements, signals, timelines, and intelligences already shaping experience, allowing coherence to stabilize and new trajectories to emerge. This direct interaction works with individuals, organizations, groups, bodies of work, art, writing, concepts, and design.</span>
-                  </li>
-                </ul>
+              <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  S2S functions as a description of how consciousness organizes itself through a human life, and a set of tools for engaging that organization with clarity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why S2S Is Relevant Now */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Why S2S Is Relevant Now
-                </h2>
-              </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  S2S emerges at a moment when traditional frameworks for understanding self and reality are dissolving. People are navigating rapid change, relational complexity, identity shifts, technological acceleration, and informational overwhelm.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Existing models of psychology, spirituality, and self-development fall short of accounting for the speed, scale, and multidimensional nature of current human experience.
+                  Stardust to Sovereignty is a consciousness technology built as a system architecture. The technology consists of coherent structural principles that describe how intelligence organizes, stabilizes, and transmits across biological, perceptual, relational, and temporal domains.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  S2S is a consciousness architecture built for this era. It provides a way to understand experience that preserves complexity. It delivers a structural orientation that matches the depth of the moment.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Architect */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  The Architect
-                </h2>
-              </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Gigi Stardust is the architect of Stardust to Sovereignty. Her work arises from years of lived research, direct perceptual inquiry, and the study of how human identity organizes through coherence. She works with origin intelligence, embodied awareness, and temporal perception to clarify the structure of the Sovereign System. S2S emerged through long cycles of pattern recognition and internal investigation. Her writing opens the design beneath perception and prepares readers to recognize the intelligence already present within their own system.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200">
-                  <em>Book One: The Cosmic Tapestry</em> is her first book. She writes and researches from California.
+                  This underlying architecture operates independently of its expressions. The Book, Codex, and Console function as interfaces that surface and apply the system, while the technology itself resides in the core system from which these expressions are generated. The system functions by making structure legible, operable, and usable within lived experience.
                 </p>
               </div>
             </div>
@@ -175,13 +86,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTAs */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="flex flex-col sm:flex-row justify-center gap-6">
           <Button href="/preorder" variant="primary">
             Preorder Book One
           </Button>
-          <Button href="/books" variant="secondary">
-            Inside Book One
+          <Button href="/codex" variant="secondary">
+            Explore Codex
           </Button>
         </div>
       </section>

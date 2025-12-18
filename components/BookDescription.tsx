@@ -27,7 +27,7 @@ export default function BookDescription({
           <Button href="/preorder" variant="primary">
             {BUTTON_LABELS.preorder}
           </Button>
-          <Button href="/about-the-book" variant="tertiary">
+          <Button href="/books" variant="tertiary">
             Read About the Book →
           </Button>
         </div>
