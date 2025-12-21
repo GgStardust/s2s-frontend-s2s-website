@@ -12,9 +12,9 @@ export default function ConsolePage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
               The Console
             </h1>
-            <h2 className="text-xl md:text-2xl font-light mb-2 text-stone-200 italic">
+            <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
               A digital interface for interacting with the material.
-            </h2>
+            </p>
             <p className="text-lg md:text-xl font-medium mb-6 text-cyan-300">
               Coming soon.
             </p>

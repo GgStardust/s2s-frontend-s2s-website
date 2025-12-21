@@ -13,9 +13,9 @@ export default function BooksPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
           Stardust to Sovereignty
           </h1>
-          <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
-            A three-part architecture mapping human coherence.
-        </h2>
+          <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
+            Three volumes that bring consciousness into view.
+          </p>
       </div>
       </section>
 

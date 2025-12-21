@@ -32,21 +32,19 @@ export default function EnterPage() {
               Stardust to Sovereignty
             </h1>
 
-            {/* First Sentence - Isolated Anchor */}
-            <div className="py-6">
-              <p className="text-xl md:text-2xl font-medium text-stone-100 leading-relaxed">
-                A system that maps human consciousness.
-              </p>
-            </div>
+            {/* Tagline */}
+            <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
+              A system that brings consciousness into view.
+            </p>
 
             {/* Body Copy - Airy spacing */}
             <div className="space-y-8 text-base md:text-lg leading-relaxed text-stone-200 max-w-2xl mx-auto">
               <p>
-                Beginning with patterns observed in the universe and tracing how those same patterns express themselves through human life, the body, perception, and the world we are shaping.
+                It begins with patterns observed in the universe and traces how those same patterns express themselves through human life, the body, perception, and the world we are shaping.
               </p>
               <p>
                 The system opens into a wide field that brings together cosmology, biology, consciousness, and lived experience.
-                It creates a framework for seeing how these layers interrelate and how that awareness reshapes what it means to be human at this moment in time.
+                It creates a framework for seeing how these layers interrelate and how that awareness reshapes what it means to be human now.
               </p>
               <p>
                 Stardust to Sovereignty is made accessible through several forms.
@@ -54,11 +52,8 @@ export default function EnterPage() {
               </p>
             </div>
 
-            {/* Ways to Enter - Three Cards */}
+            {/* Three Cards */}
             <div className="pt-12">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-cyan-300 mb-8">
-                Ways to Enter
-              </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {/* Book One Card */}
                 <div className="terminator-border">

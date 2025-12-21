@@ -10,9 +10,9 @@ export default function AboutPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
             Stardust to Sovereignty
           </h1>
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-stone-200 italic">
-            A consciousness architecture
-          </h2>
+          <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
+            A system architecture that brings structure into view.
+          </p>
         </div>
       </section>
 

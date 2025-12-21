@@ -16,9 +16,9 @@ export default function CodexPage() {
           <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
             The Codex
           </h1>
-          <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
+          <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
             The source material from which all books are compiled
-          </h2>
+          </p>
         </div>
       </section>
 
