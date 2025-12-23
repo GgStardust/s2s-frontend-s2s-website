@@ -8,10 +8,10 @@
  * Future code should import directly from 'rbi-kernel'.
  */
 
-// Import from RBI-Kernel
+// Import from RBI-Kernel (embedded source)
 // Note: Importing directly from the computation module
-import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis } from 'rbi-kernel/field/computation/enhanced-engine';
-import type { ResonanceVector, FieldDynamics } from 'rbi-kernel/mathematics/resonance-vectors';
+import { EnhancedResonanceEngine as RBIEnhancedEngine, type EnhancedResonanceAnalysis } from '@/lib/rbi-kernel/field/computation/enhanced-engine';
+import type { ResonanceVector, FieldDynamics } from '@/lib/rbi-kernel/mathematics/resonance-vectors';
 import type { ContentMetadata } from 'orbital-brain/types';
 
 // Re-export types for backward compatibility

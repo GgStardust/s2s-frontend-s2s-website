@@ -8,7 +8,7 @@
  * Future code should import directly from 'rbi-kernel'.
  */
 
-// Re-export everything from RBI-Kernel
+// Re-export everything from RBI-Kernel (embedded source)
 // Using the mathematics export path
 export {
   SovereignLogic,
@@ -16,4 +16,4 @@ export {
   type ProofTerm,
   type CoherenceProof,
   type ConsciousnessContext
-} from 'rbi-kernel/dist/mathematics/index.js';
+} from '@/lib/rbi-kernel/mathematics';

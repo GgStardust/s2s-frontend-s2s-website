@@ -9,8 +9,8 @@
  */
 
 import { EnhancedResonanceEngine } from '../mathematics/enhanced-resonance-engine';
-import { ResonanceVectorMath } from 'rbi-kernel';
-import { SovereignLogic } from 'rbi-kernel';
+import { ResonanceVectorMath } from '@/lib/rbi-kernel/mathematics';
+import { SovereignLogic } from '@/lib/rbi-kernel/mathematics';
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';

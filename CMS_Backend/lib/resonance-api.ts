@@ -7,7 +7,7 @@
  * MIGRATED: Now uses RBI-Kernel instead of local resonance-engine.ts
  */
 
-import { FieldComputation } from 'rbi-kernel';
+import { FieldComputation } from '@/lib/rbi-kernel/kernel';
 import { EnhancedResonanceEngine } from './mathematics/enhanced-resonance-engine';
 import type { ResonanceResult } from './rbi/types';
 

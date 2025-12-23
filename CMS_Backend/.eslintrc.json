@@ -2,6 +2,48 @@
   "extends": ["next/core-web-vitals"],
   "ignorePatterns": [
     "archive/**"
+  ],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [],
+        "patterns": [
+          {
+            "group": ["rbi-kernel/dist/**", "rbi-kernel/rbi_kernel_src/**"],
+            "message": "Do not import directly from rbi-kernel dist or source. Use package exports (e.g., 'rbi-kernel', 'rbi-kernel/mathematics') instead."
+          },
+          {
+            "group": ["**/RBI-Kernel/rbi_kernel_src/**", "**/RBI-Kernel/dist/**"],
+            "message": "Do not import directly from RBI-Kernel source or dist. Use 'rbi-kernel' package instead."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/S2S_Console/**/*"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "rbi-kernel",
+                "message": "S2S_Console must not import rbi-kernel directly. Use orbital-brain/types only."
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["rbi-kernel/**"],
+                "message": "S2S_Console must not import rbi-kernel. Use orbital-brain/types only."
+              }
+            ]
+          }
+        ]
+      }
+    }
   ]
 }
 

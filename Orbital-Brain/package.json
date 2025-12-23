@@ -31,8 +31,7 @@
   "author": "Gigi Stardust / Stardust to Sovereignty UNA",
   "license": "ISC",
   "dependencies": {
-    "openai": "^6.1.0",
-    "rbi-kernel": "file:../RBI-Kernel"
+    "openai": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

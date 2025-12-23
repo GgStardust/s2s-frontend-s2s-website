@@ -16,7 +16,7 @@
  * - Matches user responses to actual orb/undercurrent content via resonance
  */
 
-import { EnhancedResonanceEngine } from 'rbi-kernel/field/computation/enhanced-engine';
+import { EnhancedResonanceEngine } from '@/lib/rbi-kernel/field/computation/enhanced-engine';
 import { loadCoreArchitecture, findOrbsByKeyword, findUndercurrentsByKeyword } from './architecture-loader';
 import type {
   DiagnosticSession,

@@ -66,6 +66,14 @@ export function scoreVectors(vector1: number[], vector2: number[]): number {
 /**
  * Calculate Jaccard similarity between two arrays (for Orb overlap)
  * 
+ * TEMPORARY ADAPTER: This function is a temporary adapter for calculateJaccardSimilarity.
+ * TODO: Evaluate adding this to RBI-Kernel or keeping as CMS_Backend-specific utility.
+ * 
+ * Used by:
+ * - Book compiler (resonance-source-selection, merge-chapter)
+ * - API routes (resonance/discover)
+ * - Core compute tests
+ * 
  * @param arr1 - First array
  * @param arr2 - Second array
  * @returns Jaccard similarity score (0-1)
