@@ -159,7 +159,7 @@ export default function ConsolePage() {
                   Early Access for Preorder Participants
                 </h2>
                 <p className="text-base leading-relaxed text-stone-200 mb-6">
-                  Console access will be announced via email to all Book One preorder participants. Targeting mid-February 2026, though it may be available sooner. Preorder Book One to secure early access.
+                  Console access will be announced via email to all Book One preorder participants. Targeting Summer 2026, though it may be available sooner. Preorder Book One to secure early access.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button href="/preorder" variant="primary" className="text-lg">

@@ -103,7 +103,7 @@ export default function PreorderPage() {
       {/* Header */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">Reserve Your First Edition Copy</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">Author's Edition</h1>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-200">
             Book One: The Cosmic Tapestry
         </h2>
@@ -111,7 +111,7 @@ export default function PreorderPage() {
           Book One: The Cosmic Tapestry introduces the structure of the Sovereign Field and the full system of sovereign intelligences.
         </p>
           <p className="text-base text-cyan-300 mb-6 font-medium">
-            Order before February 28, 2026
+            Orders close February 23, 2026
           </p>
         </div>
       </section>
@@ -490,74 +490,6 @@ export default function PreorderPage() {
         <p className="text-sm text-stone-400 mt-4 text-center max-w-2xl mx-auto">
           Thank you for supporting this first edition. After submitting your preorder, you'll be redirected to complete payment.
         </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-              <div className="lg:col-span-3 space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">When will I receive my book?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    Print editions ship on <strong>February 28, 2026</strong>. Digital editions (EPUB and web access) release in <strong>mid-February 2026</strong>.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">What format is the digital edition?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    The digital edition includes both EPUB format (for e-readers) and web access, so you can read it on any device.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">What's included in the bundle?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    The bundle includes both the print edition (softcover, black & white) and the digital edition (EPUB + web access), saving you $11.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">Do you ship internationally?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    Yes, we ship internationally. No sales tax or shipping within the U.S. International orders may require a customs fee depending on location.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">Why self-published?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    This work is self-published to maintain its integrity. Preorders support the first printing and help bring this work into the world.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">What happens after I preorder?</h3>
-                  <p className="text-base leading-relaxed text-stone-200 mb-2">
-                    You'll receive a confirmation email with payment information (Zelle or Venmo) within 24-48 hours. Books will ship on February 28, 2026. Digital editions will be delivered in mid-February 2026.
-                  </p>
-                  <p className="text-base leading-relaxed text-cyan-300">
-                    Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but it may be available sooner.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">How do I pay?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    Payment instructions will be sent via email after you place your preorder. We accept Zelle and Venmo. Payment is due within 7 days of receiving instructions.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">What is the refund policy?</h3>
-                  <p className="text-base leading-relaxed text-stone-200">
-                    This is a limited first edition supporting self-publishing. No refunds will be issued. All sales are final.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

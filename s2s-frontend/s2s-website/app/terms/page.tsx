@@ -51,7 +51,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Console Access</h2>
             <p className="mb-4">
-              Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but timing may vary. Console access is included with your preorder at no additional cost.
+              Console access will be announced via email to all preorder participants. We're targeting Summer 2026, but timing may vary. Console access is included with your preorder at no additional cost.
             </p>
           </section>
 

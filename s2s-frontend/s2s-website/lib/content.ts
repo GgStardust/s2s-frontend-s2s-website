@@ -86,8 +86,8 @@ export const PRESALE_INFO = {
 
 // Console Information
 export const CONSOLE_INFO = {
-  accessAnnouncement: "Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but it may be available sooner.",
-  earlyAccess: "Console access will be announced via email to all Book One preorder participants. We're targeting mid-February 2026, but it may be available sooner. Preorder Book One to secure your early access.",
+  accessAnnouncement: "Console access will be announced via email to all preorder participants. We're targeting Summer 2026, but it may be available sooner.",
+  earlyAccess: "Console access will be announced via email to all Book One preorder participants. We're targeting Summer 2026, but it may be available sooner. Preorder Book One to secure your early access.",
 } as const;
 
 // Self-Publishing Explanation
