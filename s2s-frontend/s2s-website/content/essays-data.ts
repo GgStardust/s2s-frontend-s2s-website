@@ -531,7 +531,7 @@ Timelines are invitations. The coherent one feels like quiet strength. When you 
     orb: 6,
     orbName: 'Orb 6: Starline Memory',
     category: 'more',
-    excerpt: 'Galactic recall occurs through the body's connective network, the fascia, which functions as a lineage antenna. Fascia conducts bioelectric current, storing both personal and ancestral memory within its crystalline matrix. Under starlight, its signal capacity heightens.',
+    excerpt: 'Galactic recall occurs through the body\'s connective network, the fascia, which functions as a lineage antenna. Fascia conducts bioelectric current, storing both personal and ancestral memory within its crystalline matrix. Under starlight, its signal capacity heightens.',
     fullContent: `# Galactic Recall and Fascia Intelligence
 
 Linked Orbs: Orb 6 – Starline Memory · Orb 7 – Alchemical Current · Orb 13 – Bridging Intelligence
@@ -567,8 +567,8 @@ Mechanism: mechanical load → piezoelectric response → ionic flow → signal 
 
 The fascia remembers what the mind forgets. Under the night sky, presence restores conductivity. What seemed like personal tension reveals ancestral coding waiting for translation. When attention and breath stabilize the field, memory returns as guidance. The body recognizes itself as a local node of a galactic network and acts from that recognition with quiet authority.`,
     scrollLines: [
-      'Galactic recall occurs through the body's connective network, the fascia, which functions as a lineage antenna.',
-      'Under starlight, fascia's signal capacity heightens.',
+      'Galactic recall occurs through the body\'s connective network, the fascia, which functions as a lineage antenna.',
+      'Under starlight, fascia\'s signal capacity heightens.',
       'Looking into the night sky, recall arises through resonant recognition, your cells remembering their cosmic origin.',
       'Each fascial strand vibrates as part of a living constellation.',
       'As fascia liquifies through presence, information once trapped in tension transmits as light.',
@@ -585,7 +585,7 @@ The fascia remembers what the mind forgets. Under the night sky, presence restor
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
-    excerpt: 'Where solar wind meets Earth's magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
+    excerpt: 'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
     fullContent: `# Auroras — The Breath of the Magnetosphere
 
 Where solar wind meets Earth's magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling.
@@ -612,7 +612,7 @@ Orb 13 (Bridging Intelligence) illuminates communication pathways between cosmic
 
 The aurora functions as consciousness mirror: external cosmic process reflecting internal biological resonance. Research on electromagnetic field interaction between cosmic and biological systems reveals similar bridging mechanisms operating at multiple scales. The aurora teaches bridging intelligence: recognition of resonance pathways between human and nonhuman systems.`,
     scrollLines: [
-      'Where solar wind meets Earth's magnetic field, light and frequency dance in living color.',
+      'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color.',
       'The aurora demonstrates frequency becoming visible beauty through resonance coupling.',
       'Auroral light originates from within coherence, not external illumination.',
       'The aurora functions as consciousness mirror: external cosmic process reflecting internal biological resonance.',
@@ -691,7 +691,7 @@ Flow state represents peak consciousness alignment where ego dissolves and pure 
       'The optimal state integrates flow with holistic well-being across physical, mental, and emotional domains.',
       'Achieving optimal state creates the foundation for consciousness evolution and sovereign living.',
       'In flow, there is often a dissolution of the ego and a sense of unity with the present moment.',
-      'Flow states can be seen as moments of deep alignment with one's essence and purpose.',
+      'Flow states can be seen as moments of deep alignment with one\'s essence and purpose.',
       'The optimal state includes cultivating habits and states of mind that support ongoing well-being.',
     ],
   },
@@ -832,7 +832,7 @@ Time reveals itself through rhythm. When you listen, it carries you. Work become
       'Keep the arc whole: ignition, throughput, integration, consolidation.',
       'Time reveals itself through rhythm. When you listen, it carries you.',
       'Work becomes paced rather than forced. Alignment replaces control.',
-      'Sovereignty expresses as cadence that respects both the sky's instruction and the body's truth.',
+      'Sovereignty expresses as cadence that respects both the sky\'s instruction and the body\'s truth.',
     ],
   },
   {
@@ -1026,7 +1026,7 @@ The restoration begins within. Each person who realigns with natural rhythm rein
 When daily life tunes to that pulse, cognition clears, emotions stabilize, and the body becomes a harmonic instrument within the sovereign field. Rhythmic intelligence is how the body remembers its cosmic citizenship. Restoring rhythm restores coherence. Living rhythmically means living as architecture in motion.`,
     scrollLines: [
       'Rhythm is the first language of the body. Before thought or speech, mitochondria pulsed, neurons oscillated, and the heart traced the same sine wave that planets follow in orbit.',
-      'Metabolism is the body's way of keeping time with the cosmos.',
+      'Metabolism is the body\'s way of keeping time with the cosmos.',
       'When rhythm fragments, coherence dissolves.',
       'To restore coherence, the system re-enters rhythm.',
       'To live rhythmically is to metabolize light intentionally.',
