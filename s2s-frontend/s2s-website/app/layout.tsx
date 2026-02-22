@@ -19,11 +19,11 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
+    default: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
     template: '%s | Stardust to Sovereignty',
   },
-  description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and the full system of sovereign intelligences.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
+  description: 'A living architecture for coherence, perception, and sovereign identity. Book One: The Cosmic Tapestry available now. Discover the Sovereign Field and the full system of sovereign intelligences.',
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/about' }],
   creator: 'Gigi Stardust',
   publisher: 'Stardust to Sovereignty',
@@ -113,8 +113,8 @@ export default function RootLayout({
       "@type": "Offer",
       "price": "44.00",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/PreOrder",
-      "url": "https://stardusttosovereignty.com/preorder"
+      "availability": "https://schema.org/InStock",
+      "url": "https://stardusttosovereignty.com/books"
     }
   };
 
@@ -166,7 +166,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="pt-4 border-t border-stone-300/30">
-              <p className="text-base text-stone-200 mb-3">Stay updated with preorder announcements and Console releases:</p>
+              <p className="text-base text-stone-200 mb-3">Stay updated with Console releases and news:</p>
               <div className="max-w-md mx-auto">
                 <NewsletterSignup />
               </div>

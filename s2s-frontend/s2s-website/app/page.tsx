@@ -3,17 +3,17 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import PresaleBanner from '@/components/PresaleBanner';
-import { PRESALE_INFO, BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS } from '@/lib/content';
+import { BOOK_DESCRIPTIONS, BUTTON_LABELS, HOMEPAGE_SECTIONS, SELF_PUBLISHING, SECTION_HEADINGS } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: {
     absolute: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
   },
-  description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover how consciousness operates as structure and how to move from fragmentation to coherence.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'preorder', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
+  description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Book One: The Cosmic Tapestry available now. Discover how consciousness operates as structure and how to move from fragmentation to coherence.',
+  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'Book One The Cosmic Tapestry', 'Gigi Stardust', 'resonance-based intelligence', 'RBI'],
   openGraph: {
     title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
-    description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    description: 'A cosmological framework for understanding how consciousness, the body, and identity function. Book One: The Cosmic Tapestry available now.',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     type: 'website',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-structural-grid">
-      {/* Preorder Announcement Banner */}
+      {/* Book availability Banner */}
       <section className="max-w-6xl mx-auto pt-8 px-6">
         <PresaleBanner variant="full" />
       </section>
@@ -38,27 +38,21 @@ export default function HomePage() {
           <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
             Stardust to Sovereignty
           </h1>
-          <h2 className="text-2xl lg:text-3xl font-light mb-2 text-stone-200">
-            Book One
-          </h2>
-          <h3 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
+          <h2 className="text-2xl lg:text-3xl font-light mb-6 text-stone-200 italic">
             The Cosmic Tapestry
-          </h3>
+          </h2>
           <p className="text-lg lg:text-xl leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
             {BOOK_DESCRIPTIONS.bookOne.subtitle}
           </p>
-          <p className="text-base lg:text-lg leading-relaxed text-stone-200 max-w-2xl mx-auto mb-4">
+          <p className="text-base lg:text-lg leading-relaxed text-stone-200 max-w-2xl mx-auto mb-8">
             {BOOK_DESCRIPTIONS.bookOne.subtitleExtended}
           </p>
-          <p className="text-base text-cyan-300 mb-8 font-medium">
-            {PRESALE_INFO.announcement}
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-            <Button href="/preorder" variant="primary">
-              {BUTTON_LABELS.preorder}
+            <Button href="/books" variant="primary">
+              Get your copy
             </Button>
             <Button href="/books" variant="secondary">
-              {BUTTON_LABELS.insideBook}
+              Read excerpts
             </Button>
             <Button href="/about-the-book" variant="tertiary">
               {BUTTON_LABELS.aboutBook}
@@ -144,10 +138,10 @@ export default function HomePage() {
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4">
                   <p className="text-base leading-relaxed text-stone-200 mb-2">
-                    <strong className="text-cyan-300">Your Preorder Matters:</strong>
+                    <strong className="text-cyan-300">Get your copy:</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Supports the first printing and reserves your First Edition copy. Order before February 28, 2026.
+                    {SELF_PUBLISHING.orderMatters}
                   </p>
                 </div>
               </div>
@@ -162,20 +156,20 @@ export default function HomePage() {
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="text-center">
               <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                Reserve Your First Edition Copy
+                {SECTION_HEADINGS.reserveCopy}
               </h2>
               <p className="text-base leading-relaxed text-stone-200 mb-4 max-w-2xl mx-auto">
-                Book One reveals how consciousness operates as structure. It shows you how to recognize your internal design, clear distortion, and move from fragmentation to coherence.
+                The book reveals how consciousness operates as structure. It shows you how to recognize your internal design, clear distortion, and move from fragmentation to coherence.
               </p>
               <p className="text-base leading-relaxed text-stone-200 mb-6 max-w-2xl mx-auto">
-                Reserve your First Edition copy before February 28, 2026.
+                First Edition. Order your copy below.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button href="/preorder" variant="primary" className="text-lg">
-                  Preorder Book One →
+                <Button href="/books" variant="primary" className="text-lg">
+                  Get your copy →
                 </Button>
                 <Button href="/books" variant="secondary" className="text-lg">
-                  Inside Book One →
+                  Read excerpts →
                 </Button>
               </div>
             </div>

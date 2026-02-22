@@ -24,8 +24,8 @@ export default function BookDescription({
       </p>
       {showButtons && (
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button href="/preorder" variant="primary">
-            {BUTTON_LABELS.preorder}
+          <Button href="/books" variant="primary">
+            {BUTTON_LABELS.getBookOne}
           </Button>
           <Button href="/about-the-book" variant="tertiary">
             Read About the Book →

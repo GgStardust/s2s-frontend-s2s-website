@@ -10,12 +10,9 @@ export default function TermsPage() {
           <p className="text-sm text-stone-300 mb-6">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
           
           <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Preorders</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Purchases</h2>
             <p className="mb-4">
-              By placing a preorder, you agree to purchase the book at the listed price. Preorders support the first printing of this self-published work.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Payment:</strong> Payment instructions (Zelle or Venmo) will be sent via email within 24-48 hours of your preorder. Payment is due within 7 days of receiving instructions.
+              By placing an order, you agree to purchase the book at the listed price. Payment and fulfillment are handled by our print-on-demand partner. You will complete payment at checkout when you order.
             </p>
             <p className="mb-4">
               <strong className="text-cyan-300">Shipping:</strong> Print editions ship on February 28, 2026. Digital editions are delivered in mid-February 2026. Shipping is included in the price for U.S. orders. International orders may require customs fees.
@@ -51,7 +48,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Console Access</h2>
             <p className="mb-4">
-              Console access will be announced via email to all preorder participants. We're targeting Summer 2026, but timing may vary. Console access is included with your preorder at no additional cost.
+              Console access will be announced via email. We're targeting Summer 2026, but timing may vary. Join the newsletter to be notified when the Console launches.
             </p>
           </section>
 

@@ -12,9 +12,7 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/books', label: 'Books', prominent: true },
-    { href: '/preorder', label: 'Preorder', prominent: true },
     { href: '/console', label: 'Console' },
-    { href: '/codex', label: 'Codex' },
   ];
 
   const isActive = (href: string) => {

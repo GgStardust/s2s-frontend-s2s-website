@@ -290,8 +290,8 @@ export default function AboutTheBookPage() {
             Reserve your First Edition copy before February 28, 2026
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/preorder" variant="primary" className="text-lg">
-              Preorder Book One →
+            <Button href="/books" variant="primary" className="text-lg">
+              Get Book One →
             </Button>
             <Button href="/books" variant="secondary" className="text-lg">
               Explore More →

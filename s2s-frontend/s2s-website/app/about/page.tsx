@@ -177,8 +177,8 @@ export default function AboutPage() {
       {/* CTAs */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <Button href="/preorder" variant="primary">
-            Preorder Book One
+          <Button href="/books" variant="primary">
+            Get Book One
           </Button>
           <Button href="/books" variant="secondary">
             Inside Book One

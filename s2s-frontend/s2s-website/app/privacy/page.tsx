@@ -15,7 +15,7 @@ export default function PrivacyPage() {
               We collect information you provide directly to us, including:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-              <li>Name and email address when you preorder or sign up for our newsletter</li>
+              <li>Name and email address when you purchase or sign up for our newsletter</li>
               <li>Shipping address for print editions</li>
               <li>Order preferences and special instructions</li>
             </ul>
@@ -25,8 +25,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">How We Use Your Information</h2>
             <p className="mb-4">We use the information we collect to:</p>
             <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-              <li>Process and fulfill your preorders</li>
-              <li>Send you order confirmations and payment instructions</li>
+              <li>Process and fulfill your orders</li>
+              <li>Send you order confirmations</li>
               <li>Communicate about Console access and updates</li>
               <li>Send newsletter updates (if you've subscribed)</li>
               <li>Respond to your inquiries</li>

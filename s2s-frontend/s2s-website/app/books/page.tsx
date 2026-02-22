@@ -10,7 +10,7 @@ export default function BooksPage() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
-          <p className="text-lg text-cyan-300 font-medium mb-4">Book One Presale Now Open</p>
+          <p className="text-lg text-cyan-300 font-medium mb-4">Book One available</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
           The Sovereignty Cycle
           </h1>
@@ -57,13 +57,31 @@ export default function BooksPage() {
               Book One is a cosmological report and foundational manual. It introduces the structure of the Sovereign Field and the constellation of sovereign intelligences that shape coherent human identity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/preorder" variant="primary">
-                Preorder Book One
+              <Button href="/books#order" variant="primary">
+                Get Book One
               </Button>
               <Button href="/about-the-book" variant="tertiary">
                 Read About the Book →
               </Button>
             </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Order Book One — POD widget placeholder */}
+      <section id="order" className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4 text-center">
+              Order Book One
+            </h2>
+            <p className="text-base text-stone-300 text-center mb-8 max-w-xl mx-auto">
+              Purchase your copy below. Print and digital options available. Your POD widget will be embedded here.
+            </p>
+            {/* TODO: Replace this block with your POD embed snippet */}
+            <div className="min-h-[200px] flex items-center justify-center border border-dashed border-cyan-500/30 rounded-lg text-stone-400 text-sm">
+              POD widget placeholder — add your embed snippet when ready
             </div>
           </div>
         </div>
@@ -261,8 +279,8 @@ export default function BooksPage() {
         </details>
 
         <div className="text-center mt-12">
-          <Button href="/preorder" variant="primary" className="text-lg">
-            Preorder Book One →
+          <Button href="/books#order" variant="primary" className="text-lg">
+            Get Book One →
           </Button>
         </div>
       </section>

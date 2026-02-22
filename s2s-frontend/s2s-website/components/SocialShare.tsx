@@ -3,7 +3,7 @@
 export default function SocialShare({ url, title, description }: { url?: string; title?: string; description?: string }) {
   const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
   const shareTitle = title || 'Stardust to Sovereignty';
-  const shareText = description || 'Preorder Book One: The Cosmic Tapestry - A living architecture for coherence, perception, and sovereign identity.';
+  const shareText = description || 'Book One: The Cosmic Tapestry - A living architecture for coherence, perception, and sovereign identity.';
 
   const handleShare = (platform: string) => {
     const encodedUrl = encodeURIComponent(shareUrl);
