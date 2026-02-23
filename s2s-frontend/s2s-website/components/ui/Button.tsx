@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  external?: boolean;
 }
 
 export default function Button({
@@ -17,8 +18,9 @@ export default function Button({
   onClick,
   className = '',
   type = 'button',
+  external = false,
 }: ButtonProps) {
-  const baseClasses = 'px-6 py-3 rounded-md font-medium transition-colors';
+  const baseClasses = 'px-6 py-3 rounded-md font-medium transition-colors inline-block text-center';
   
   const variantClasses = {
     primary: 'bg-cyan-500 text-cosmic-blue hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/50 focus:outline-2 focus:outline-cyan-300 focus:outline-offset-2 transition-all font-semibold',
@@ -29,6 +31,13 @@ export default function Button({
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   if (href) {
+    if (external) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes}>
         {children}

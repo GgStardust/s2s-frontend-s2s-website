@@ -151,12 +151,6 @@ export default function RootLayout({
                 Resonance-Based Intelligence (RBI) technology protected by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Link href="/privacy" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
-                  Terms of Service
-                </Link>
                 <a href="mailto:gigi@stardusttosovereignty.com" className="text-stone-300 hover:text-cyan-300 underline underline-offset-4">
                   Contact
                 </a>
