@@ -1,5 +1,6 @@
-import { BOOK_DESCRIPTIONS, BUTTON_LABELS, MIXAM_ORDER_URL } from '@/lib/content';
+import { BOOK_DESCRIPTIONS } from '@/lib/content';
 import Button from '@/components/ui/Button';
+import { BUTTON_LABELS } from '@/lib/content';
 
 interface BookDescriptionProps {
   variant?: 'full' | 'withSystem';
@@ -23,10 +24,10 @@ export default function BookDescription({
       </p>
       {showButtons && (
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button href={MIXAM_ORDER_URL} variant="primary" external>
+          <Button href="/books" variant="primary">
             {BUTTON_LABELS.getBookOne}
           </Button>
-          <Button href="/about" variant="tertiary">
+          <Button href="/about-the-book" variant="tertiary">
             Read About the Book →
           </Button>
         </div>

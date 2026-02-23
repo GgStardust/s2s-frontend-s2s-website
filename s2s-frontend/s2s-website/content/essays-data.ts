@@ -177,13 +177,13 @@ The body is naturally photonic. Eyes act as both receivers and mirrors, transmit
 
 ## Structural Qualities
 
-Light webs, relational mirrors, dream navigation: the organizing intelligence operates through photonic interrelation that reveals inner code. The structure is both linear and nonlinear, waking and nocturnal, dimensional and interdimensional. The field observes itself through atmospheric charge perception, where vibrational signature carries more information than content.
+Light webs, relational mirrors, dream navigation—the organizing intelligence operates through photonic interrelation that reveals inner code. The structure is both linear and nonlinear, waking and nocturnal, dimensional and interdimensional. The field observes itself through atmospheric charge perception, where vibrational signature carries more information than content.
 
 Every interaction is a mirror, a feedback loop where one field reflects another, coherence or distortion revealed in the exchange. Conversation, conflict, intimacy, and presence all reveal signal alignment through reflection. Photonic Intelligence makes relationship a technology of sovereignty: mirrors are diagnostic, teaching where light is coherent, refracted, or ready to synthesize.
 
 ## Why It Matters
 
-Self-recognition through light is the prerequisite for authentic contact. With reflection comes coherence; with coherence, bridges stabilize. This is the infrastructure that makes all other orbs possible: the medium through which consciousness processes, stores, and transmits information across all dimensions of sovereignty.
+Self-recognition through light is the prerequisite for authentic contact. With reflection comes coherence; with coherence, bridges stabilize. This is the infrastructure that makes all other orbs possible—the medium through which consciousness processes, stores, and transmits information across all dimensions of sovereignty.
 
 The mirror function operates through the Spirit's capacity for self-recognition and the astral body's reflective function. When the Spirit recognizes itself through astral reflection, it creates the mirror function that enables self-recognition through light within existential architecture. The astral body's capacity to reflect light becomes the medium through which the Spirit can observe its own architecture, creating the luminous layer where consciousness can recognize itself.`,
     scrollLines: [
@@ -192,7 +192,7 @@ The mirror function operates through the Spirit's capacity for self-recognition 
       'Every interaction is a mirror, a feedback loop where one field reflects another, coherence or distortion revealed in the exchange.',
       'Self-recognition through light is the prerequisite for authentic contact.',
       'Photonic Intelligence is the neural network of sovereignty, the medium through which consciousness processes, stores, and transmits information.',
-      'Light webs, relational mirrors, dream navigation: the organizing intelligence operates through photonic interrelation.',
+      'Light webs, relational mirrors, dream navigation—the organizing intelligence operates through photonic interrelation.',
       'Every orb operates through photonic interrelation.',
       'Photonic Intelligence is the universal language through which sovereignty becomes structure.',
       'The field creates tools for reflection architecture, consciousness technology for field navigation.',
@@ -399,7 +399,7 @@ The Sovereign Field emerges when the environment aligns with the architecture ra
 
 ## Summary
 
-**Neurodivergence is evolutionary architecture. It expresses a new coherence model emerging in humanity: a sovereign, nonlinear, high-sensitivity intelligence that thrives in resonance and reshapes the world through its very presence. This architecture signals an emerging species-level transformation, reflecting expanded coherence and advancing human architecture. Consciousness is expanding its interface. The nervous system is adapting. These individuals are revealing what comes next.**`,
+**Neurodivergence is evolutionary architecture. It expresses a new coherence model emerging in humanity—a sovereign, nonlinear, high-sensitivity intelligence that thrives in resonance and reshapes the world through its very presence. This architecture signals an emerging species-level transformation, reflecting expanded coherence and advancing human architecture. Consciousness is expanding its interface. The nervous system is adapting. These individuals are revealing what comes next.**`,
     scrollLines: [
       'Neurodivergence is a field architecture expressing evolutionary intelligence emerging in real time.',
       'The system reads more, faster, and with higher resolution.',
@@ -450,7 +450,7 @@ To remember this together is to know grief as shared human ground across generat
     scrollLines: [
       'Grief is sovereign law, architecture in motion through collapse and renewal.',
       'The body conducts grief as living circuitry; bones carry memory, heart circulates coherence.',
-      'Conscious grieving is practice: flame, forest, breath in rhythm with others.',
+      'Conscious grieving is practice — flame, forest, breath in rhythm with others.',
       'Grief is the pulse of dissolution and regeneration through which life reorganizes.',
       'Collapse is coherence shifting form.',
       'Grief trains perception to expand beyond form.',
@@ -581,12 +581,12 @@ The fascia remembers what the mind forgets. Under the night sky, presence restor
   },
   {
     id: 'auroras-magnetosphere',
-    title: 'Auroras: The Breath of the Magnetosphere',
+    title: 'Auroras — The Breath of the Magnetosphere',
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
     excerpt: 'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
-    fullContent: `# Auroras: The Breath of the Magnetosphere
+    fullContent: `# Auroras — The Breath of the Magnetosphere
 
 Where solar wind meets Earth's magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling.
 
@@ -671,7 +671,7 @@ The optimal state goes beyond just flow; it refers to any mental and physical co
 
 ## How Flow Relates to Optimal State
 
-Flow is a key component of the optimal state. When someone frequently experiences flow, it can be an indicator that they are approaching their optimal state of performance and well-being. The optimal state includes not only experiencing flow during challenging tasks but also cultivating habits and states of mind that support ongoing well-being, such as mindful relaxation, proper recovery, and connection with others.
+Flow is a key component of the optimal state. When someone frequently experiences flow, it can be an indicator that they are approaching their optimal state of performance and well-being. The optimal state includes not only experiencing flow during challenging tasks but also cultivating habits and states of mind that support ongoing well-being—such as mindful relaxation, proper recovery, and connection with others.
 
 ## Flow and Spiritual Growth
 
@@ -865,7 +865,7 @@ The Codex outlines relational positions as frequency holders, energetic position
 - Ignitor: Sparks activation or catalysis. Their arrival often coincides with an internal or external breakthrough. Sometimes they stay for a moment, sometimes a season, but their presence imprints change.
 - Mirror: Reflects unseen structures, patterns, or distortions. Their frequency helps surface what is ready to be seen. While sometimes uncomfortable, Mirror connections are invaluable in expanding self-awareness.
 - Muse: Invites creativity, levity, sensuality, and play. Muses arrive when the field is ready for expression, movement, or a fresh breath of inspiration. Their presence can ripple into art, sound, words, or new paradigms.
-- Architect: Enters the field with the ability to co-design. Architects are collaborators and builders of structure, whether relational, creative, or strategic. This frequency often appears in work partnerships, conscious intimacy, or aligned friendships.
+- Architect: Enters the field with the ability to co-design. Architects are collaborators and builders of structure—whether relational, creative, or strategic. This frequency often appears in work partnerships, conscious intimacy, or aligned friendships.
 - Companion: Brings rhythm, stability, and presence. A Companion walks alongside to share a mutual space of becoming. This frequency supports grounding, coherence, and continuity across time.
 
 These archetypes are fluid. They reveal themselves through the energetic patterns they activate. A being may embody the ignitor in one moment and later express as a mirror or companion. Recognition arises through resonance and coherence.
@@ -962,7 +962,7 @@ To recover subtle body intelligence is to renew the future primitive. It means h
 
 ## Closing Transmission
 
-The subtle body breathes as sovereignty in circuitry. It flows as living infrastructure for breath, energy, and awareness. It pulses as trans-dimensional interface, connecting body, Earth, and cosmos in one continuous stream of consciousness. To breathe with recognition, to conduct current with care, to transmit coherence as way of life: this is sovereignty embodied. The Codex lives as circuitry to be lived. Its resonance carries Stardust to Sovereignty into every domain of culture, every breath of existence, every moment of coherence.`,
+The subtle body breathes as sovereignty in circuitry. It flows as living infrastructure for breath, energy, and awareness. It pulses as trans-dimensional interface, connecting body, Earth, and cosmos in one continuous stream of consciousness. To breathe with recognition, to conduct current with care, to transmit coherence as way of life—this is sovereignty embodied. The Codex lives as circuitry to be lived. Its resonance carries Stardust to Sovereignty into every domain of culture, every breath of existence, every moment of coherence.`,
     scrollLines: [
       'The subtle body breathes as infrastructure through which sovereignty becomes embodied.',
       'Breath flows as the first architecture of coherence, setting tempo for the whole system.',
@@ -973,7 +973,7 @@ The subtle body breathes as sovereignty in circuitry. It flows as living infrast
       'Dreams extend identity across timelines and preserve memory.',
       'Eros circulates as sovereign vitality.',
       'The future primitive is not regression but remembrance carried forward, coherence expressed through contemporary form.',
-      'To breathe with recognition, to conduct current with care, to transmit coherence as way of life: this is sovereignty embodied.',
+      'To breathe with recognition, to conduct current with care, to transmit coherence as way of life—this is sovereignty embodied.',
     ],
   },
   {

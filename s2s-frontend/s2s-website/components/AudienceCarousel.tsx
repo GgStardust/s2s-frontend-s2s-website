@@ -43,7 +43,7 @@ const slides: AudienceSlide[] = [
   {
     title: 'The Threshold-Walker',
     statements: [
-      'You are moving through an inner shift, identity reorganizing, perception expanding.',
+      'You are moving through an inner shift—identity reorganizing, perception expanding.',
       'Linear explanations no longer match your experience.',
       'You sense a deeper architecture beneath your life. The structure becomes visible.',
     ],
