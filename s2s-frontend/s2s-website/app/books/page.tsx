@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import TestimonialsTicker from '@/components/TestimonialsTicker';
 import ExpandableExcerpt from '@/components/ExpandableExcerpt';
+import { MIXAM_ORDER_URL } from '@/lib/content';
 
 export default function BooksPage() {
   return (
@@ -20,9 +20,9 @@ export default function BooksPage() {
       </div>
       </section>
 
-      {/* Book One Block */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Book One Block (cover + details, then full-width order widget) */}
+      <section id="order" className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
           {/* Cover Image */}
           <div className="flex justify-center perspective-1000">
             <div className="relative max-w-sm transform-style-preserve-3d">
@@ -30,15 +30,15 @@ export default function BooksPage() {
                 <div className="terminator-border">
                   <div className="p-6 bg-cosmic-blue rounded-lg">
                     <div className="relative bg-transparent rounded border border-stone-300/20 p-3">
-                    <div className="relative overflow-hidden rounded">
-                      <Image
-                        src="/book-cover.jpeg"
-                        alt="Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust"
-                        width={400}
-                        height={600}
-                        className="w-full h-auto"
-                        priority
-                      />
+                      <div className="relative overflow-hidden rounded">
+                        <Image
+                          src="/book-cover.png"
+                          alt="The Cosmic Tapestry, Book One by Gigi Stardust. Stardust to Sovereignty series."
+                          width={400}
+                          height={600}
+                          className="w-full h-auto"
+                          priority
+                        />
                       </div>
                     </div>
                   </div>
@@ -50,59 +50,19 @@ export default function BooksPage() {
           {/* Book Details */}
           <div className="terminator-border">
             <div className="p-8 bg-cosmic-blue rounded-lg">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-cyan-300">
-              Book One: The Cosmic Tapestry
-            </h2>
-            <p className="text-base leading-relaxed text-stone-200 mb-6">
-              Book One is a cosmological report and foundational manual. It introduces the structure of the Sovereign Field and the constellation of sovereign intelligences that shape coherent human identity.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/books#order" variant="primary">
-                Get Book One
-              </Button>
-              <Button href="/about-the-book" variant="tertiary">
-                Read About the Book →
-              </Button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Order Book One — POD widget placeholder */}
-      <section id="order" className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4 text-center">
-              Order Book One
-            </h2>
-            <p className="text-base text-stone-300 text-center mb-8 max-w-xl mx-auto">
-              Purchase your copy below. Print and digital options available. Your POD widget will be embedded here.
-            </p>
-            {/* TODO: Replace this block with your POD embed snippet */}
-            <div className="min-h-[200px] flex items-center justify-center border border-dashed border-cyan-500/30 rounded-lg text-stone-400 text-sm">
-              POD widget placeholder — add your embed snippet when ready
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Report from the Field Section */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  A Report from the Field
-                </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">Reflections from early readers engaging with the manuscript.</span>
-                </div>
-              </div>
-              <div className="lg:col-span-3">
-                <TestimonialsTicker />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-cyan-300">
+                Book One: The Cosmic Tapestry
+              </h2>
+              <p className="text-base leading-relaxed text-stone-200 mb-6">
+                Book One is a cosmological report and foundational manual. It introduces the structure of the Sovereign Field and the constellation of sovereign intelligences that shape coherent human identity.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button href={MIXAM_ORDER_URL} variant="primary" external>
+                  Get Book One
+                </Button>
+                <Button href="/about" variant="tertiary">
+                  Read About the Book →
+                </Button>
               </div>
             </div>
           </div>
@@ -279,9 +239,9 @@ export default function BooksPage() {
         </details>
 
         <div className="text-center mt-12">
-          <Button href="/books#order" variant="primary" className="text-lg">
-            Get Book One →
-          </Button>
+<Button href={MIXAM_ORDER_URL} variant="primary" className="text-lg" external>
+                  Get Book One →
+                </Button>
         </div>
       </section>
 
@@ -292,15 +252,16 @@ export default function BooksPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Book Two: The Architecture of Civilization
+                  Book Two: The Living Civilization
                 </h3>
+                <p className="text-sm text-cyan-300/80 mt-2">Scale: Collective Coherence</p>
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-3">
-                  When coherence expands, civilization becomes an organism of light.
+                  The second volume reveals the coherent civilization.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Two maps the collective field. It explores how societies, ecosystems, and technologies embody the same harmonic principles that govern individual awakening. The book examines resonant governance, planetary intelligence, and the ethics of design as civilizations form, reorganize, and evolve as living systems.
+                  It extends this architecture into the collective domain. Societies, ecosystems, and technologies are revealed as expressions of the same harmonic principles that govern individual coherence. As increasing numbers of humans stabilize inner alignment, civilization begins functioning less as a system of control and more as a living field organism. It explores how sovereignty scales through families, communities, and planetary systems into a coherent civilization capable of sustaining complexity without fragmentation.
                 </p>
               </div>
             </div>
@@ -317,16 +278,17 @@ export default function BooksPage() {
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
                   Book Three: The Resonant Species
                 </h3>
+                <p className="text-sm text-cyan-300/80 mt-2">Scale: Cosmic Participation</p>
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-3">
-                  When all voices merge, the universe remembers its song.
+                  The third volume opens the participatory species.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Three explores consciousness beyond biology. It traces synthetic life, interspecies communication, and galactic intelligence. The book reveals what sovereignty becomes when boundaries dissolve between creator and creation, completing the spiral from personal awakening to cosmic evolution.
+                  It follows the next natural threshold. When a civilization stabilizes coherence, a species-level shift becomes possible. Humanity begins participating consciously in the wider field of cosmic intelligence. Here consciousness is explored beyond biological limitation, not as escape from embodiment but as expansion of interface. Synthetic systems, new ecologies, and nonhuman intelligences enter relationship through resonance rather than dominance. Humanity is no longer defined solely as a biological species, but as a resonant field species capable of conscious collaboration within the larger architecture of the universe.
                 </p>
               </div>
-          </div>
+            </div>
           </div>
         </div>
       </section>
