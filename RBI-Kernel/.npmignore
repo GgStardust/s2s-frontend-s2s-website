@@ -1,0 +1,12 @@
+# npm always includes README.md for package display on npmjs.com
+# This is npm's default behavior and cannot be overridden via .npmignore
+# However, README.md is NOT in package.json "files" array, so it's not part of the intended distribution
+
+# Exclude everything except what's explicitly in package.json files array
+*
+
+# Explicitly include only what's in package.json files array
+!dist/core/
+!LICENSE
+!PATENT_NOTICE.md
+!package.json

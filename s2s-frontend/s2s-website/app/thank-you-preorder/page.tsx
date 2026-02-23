@@ -83,7 +83,7 @@ function ThankYouContent() {
 
         <div className="mb-12 space-y-6 text-base leading-relaxed text-stone-200">
           <p>
-            Thank you again for supporting the first edition of Stardust to Sovereignty.
+            Thank you again for supporting the Authors Edition of Stardust to Sovereignty.
           </p>
           <p>
             This book has taken years of work, refinement, and care, and I'm grateful you're here at the beginning.

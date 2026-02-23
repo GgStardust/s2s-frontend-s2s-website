@@ -22,7 +22,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Refund Policy</h2>
             <p className="mb-4">
-              This is a limited first edition supporting self-publishing. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
+              This is the Authors Edition supporting self-publishing. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
             </p>
           </section>
 

@@ -30,18 +30,24 @@ export const QUOTES = {
 export const BOOK_DESCRIPTIONS = {
   bookOne: {
     short: "Book One: The Cosmic Tapestry",
-    subtitle: "A cosmological framework for understanding how consciousness, the body, and identity function.",
-    subtitleExtended: "A system that shows how consciousness works at both personal and cosmic scales. It reveals that the patterns shaping your identity, memory, and perception follow the same organizing principles that shape the universe itself.",
+    subtitle: "How consciousness, the body, and identity function as a coherent field of intelligence.",
+    subtitleExtended: "The same organizing coherence that structures matter at every scale operates through biology, perception, and choice. The book names this architecture and clarifies how consciousness expresses through it as structure, and how sovereignty emerges when awareness recognizes that continuity.",
     full: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
     fullWithSystem: "Book One is a cosmological field report and foundational manual. It reveals the structure of the Sovereign System and constellation of intelligences that shape coherent human identity.",
   },
 } as const;
 
+// Homepage: book-first, minimal
+export const HOMEPAGE_HERO = {
+  bookSubtitle: "How consciousness, the body, and identity function as a coherent field of intelligence.",
+  fromParadigm: "Written from the Stardust to Sovereignty paradigm.",
+} as const;
+
 // Homepage Section Content (Style-Training Aligned)
 export const HOMEPAGE_SECTIONS = {
   paradigm: {
-    paragraph1: "Consciousness behaves as structure. The body translates signal. Perception organizes identity. Memory and time shape what becomes possible. When these systems operate coherently, sovereignty emerges as a lived condition.",
-    paragraph2: "Stardust to Sovereignty maps the path from current fragmentation to future coherence. It reveals the foundational architecture that existed before separation. The paradigm shows how to recognize and return to this original design, clearing layers of conditioning and distortion to reveal the structure that was always there. From that recovered foundation, consciousness advances with coherence. This is a functional model for reconnection and evolution.",
+    paragraph1: "Stardust to Sovereignty defines human identity as a coherent field of intelligence. This field is organized by origin, body, memory, perception, and time. When the internal system is recognized, these layers function together as one architecture and coherence emerges. The paradigm names this architecture and clarifies how consciousness expresses through it as structure.",
+    paragraph2: "The title names the arc. Human consciousness arises from the same cosmic processes that gave rise to stellar and planetary formation. The same organizing coherence that structures matter at every scale operates through biology, perception, and choice. Sovereignty is the condition that emerges when awareness recognizes this continuity and participates consciously in it. That movement unfolds through thirteen interlocking functions that the paradigm calls the Orbs.",
   },
   whoThisIsFor: {
     intro: "This book is for people who want a clear model of how their inner system functions.",
@@ -68,11 +74,18 @@ export const HOMEPAGE_SECTIONS = {
     closing: "Each section builds on the last, forming a coherent model for reconnection and evolution.",
   },
   glimpse: {
-    paragraph1: "Sovereignty is a condition of coherence reclaimed.",
-    paragraph2: "When perception, body signal, memory, and temporal awareness operate in alignment, decision-making becomes clean. Identity stabilizes. Attention returns to the present system rather than fragmenting across past conditioning or future projection.",
-    paragraph3: "This book describes how intelligence organizes itself through form. It maps the reconnection process: recognizing foundational architecture, clearing distortion, and advancing from recovered coherence.",
+    excerpt: "There is something alive in you that predates your birth, your thoughts, and your very form. It is present as the coherence that organizes your body from within. It moves through mitochondria as energy conversion, through breath as exchange, and through awareness as the capacity to recognize. This is Origin Intelligence. It is the living order that first inhabited form and continues to operate through every heartbeat, every neural signal, and every moment of perception. What you experience as presence arises from this order becoming active in biological structure.",
+    excerptSource: "The Stardust Within",
+    context: "The book moves through recognition, interludes, and the arc from stellar origins to sovereign system.",
+  },
+  beginYourJourney: {
+    paragraph1: "The book reveals how consciousness operates as structure. When you recognize your internal design and align with it, coherence emerges and sovereignty stabilizes.",
+    paragraph2: "Authors Edition. Order your copy below.",
   },
 } as const;
+
+// Mixam POD order page (direct link for now)
+export const MIXAM_ORDER_URL = 'https://mixam.com/print-on-demand/69933becde8acce66d924909' as const;
 
 // Book availability / Shipping
 export const PRESALE_INFO = {
@@ -80,7 +93,7 @@ export const PRESALE_INFO = {
   shortAnnouncement: "The Cosmic Tapestry now available",
   shipDate: "February 28, 2026",
   digitalRelease: "mid-February 2026",
-  reserveCopy: "Order your copy. First Edition.",
+  reserveCopy: "Order your copy. Authors Edition.",
   orderBefore: "Orders close February 23, 2026",
 } as const;
 

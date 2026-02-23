@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S2S Post Preview</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      
+      <!-- Stage Filter -->
+      <div class="filter-group">
+        <label>Stage</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="stage-arrival" value="Arrival">
+            <label for="stage-arrival">Arrival</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="stage-stabilization" value="Stabilization">
+            <label for="stage-stabilization">Stabilization</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="stage-deepening" value="Deepening">
+            <label for="stage-deepening">Deepening</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="stage-activation" value="Activation">
+            <label for="stage-activation">Activation</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tier Filter -->
+      <div class="filter-group">
+        <label>Tier</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="tier-empty" value="">
+            <label for="tier-empty">No Tier</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="tier-0" value="0">
+            <label for="tier-0">Tier 0</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="tier-1a" value="1a">
+            <label for="tier-1a">Tier 1a</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="tier-1" value="1">
+            <label for="tier-1">Tier 1</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="tier-1b" value="1b">
+            <label for="tier-1b">Tier 1b</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Invariant Filter -->
+      <div class="filter-group">
+        <label>Invariant</label>
+        <select id="filter-invariant">
+          <option value="">All</option>
+          <option value="1">1: Signal precedes structure</option>
+          <option value="2">2: Coherence is architectural</option>
+          <option value="3">3: Adaptation follows demand and rhythm</option>
+          <option value="4">4: Probability shifts before events</option>
+          <option value="5">5: Repetition stabilizes and narrows</option>
+          <option value="6">6: Collapse recalibrates structure</option>
+          <option value="7">7: Differentiation sustains vitality</option>
+          <option value="8">8: Time is a navigable structure</option>
+          <option value="9">9: Recognition stabilizes systems</option>
+          <option value="10">10: Systems conserve under reduced coherence</option>
+        </select>
+      </div>
+      
+      <!-- Pattern Filter -->
+      <div class="filter-group">
+        <label>Pattern</label>
+        <select id="filter-pattern">
+          <option value="">All</option>
+          <option value="P1">P1: Static / Under-Differentiated</option>
+          <option value="P2">P2: Chaotic / Overloaded</option>
+          <option value="P3">P3: Transitional / Framework-Collecting</option>
+          <option value="P4">P4: Over-Optimized / Performance-Locked</option>
+          <option value="P5">P5: Meaning-Saturated / Symbol-Overloaded</option>
+          <option value="P6">P6: Emotionally Deferred / Contained-but-Leaking</option>
+          <option value="P7">P7: Hyper-Narrativized / Identity-Bound</option>
+          <option value="P8">P8: Anxious-Seeking / External-Authority Oriented</option>
+          <option value="P9">P9: Dormant / Grief-Stalled</option>
+          <option value="P10">P10: High-Differentiation / Low-Containment</option>
+        </select>
+      </div>
+      
+      <!-- Content Type Filter -->
+      <div class="filter-group">
+        <label>Content Type</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="type-gateway" value="gateway" checked>
+            <label for="type-gateway">Gateway</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="type-scrollstream" value="scrollstream" checked>
+            <label for="type-scrollstream">Scrollstream</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="type-definition" value="definition" checked>
+            <label for="type-definition">Definition</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="type-excerpt" value="excerpt" checked>
+            <label for="type-excerpt">Excerpt</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="type-orb-introduction" value="orb-introduction" checked>
+            <label for="type-orb-introduction">Orb Introduction</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Status Filter -->
+      <div class="filter-group">
+        <label>Status</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="status-canonical" value="canonical" checked>
+            <label for="status-canonical">Canonical</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="status-generated" value="generated" checked>
+            <label for="status-generated">Generated</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="status-archived" value="archived">
+            <label for="status-archived">Archived</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Design Mode Toggle -->
+      <div class="filter-group">
+        <label>Design Mode</label>
+        <select id="design-mode">
+          <option value="all">All Posts</option>
+          <option value="light">Light Field Only</option>
+          <option value="dark">Dark Field Only</option>
+        </select>
+      </div>
+      
+      <!-- Frame Style Toggle -->
+      <div class="filter-group">
+        <label>Frame Style</label>
+        <select id="frame-style">
+          <option value="auto">Auto (by type)</option>
+          <option value="none">None</option>
+          <option value="framed">Framed</option>
+          <option value="framed-thick">Thick Frame</option>
+          <option value="boxed">Boxed</option>
+        </select>
+      </div>
+      
+      <!-- Clear Filters -->
+      <div class="filter-group">
+        <button id="clear-filters" style="width: 100%; padding: var(--space-2) var(--space-3); background-color: var(--cosmic-blue); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; color: var(--cream); font-size: 0.875rem; cursor: pointer;">
+          Clear Filters
+        </button>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-header">
+        <h1>Post Preview</h1>
+        <div class="stats" id="stats">
+          0 posts • 0 completed
+        </div>
+      </div>
+      
+      <!-- Card Grid -->
+      <div class="card-grid" id="card-grid">
+        <!-- Cards will be rendered here by JavaScript -->
+      </div>
+      
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="empty-state">
+        <p>No posts match the current filters.</p>
+      </div>
+    </main>
+  </div>
+  
+  <script src="data-embedded.js"></script>
+  <script src="hashtag-strategy.js"></script>
+  <script src="marketing-templates.js"></script>
+  <script src="cards.js"></script>
+</body>
+</html>

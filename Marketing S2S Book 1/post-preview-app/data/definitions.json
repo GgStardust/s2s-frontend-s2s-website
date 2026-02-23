@@ -1,0 +1,292 @@
+[
+  {
+    "id": "intro-system-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Arrival"
+    ],
+    "title": "Stardust to Sovereignty",
+    "content": "A coherence architecture that makes structure visible. Patterns of intelligence organize across biological, perceptual, relational, and cosmic scales. When alignment occurs, structure becomes legible.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 1
+  },
+  {
+    "id": "def-s2s-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Arrival"
+    ],
+    "title": "Stardust to Sovereignty",
+    "content": "Stardust to Sovereignty is an integrated architectural framework that enables orientation within complexity through alignment rather than interpretation. It brings structure into view, making the underlying patterns of consciousness, time, and intelligence legible across biological, perceptual, relational, and temporal domains.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "completed": false,
+    "postOrder": 3
+  },
+  {
+    "id": "def-structure-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Arrival"
+    ],
+    "title": "Structure",
+    "content": "Structure is the underlying architecture that governs coherence, stabilizes perception, and supports reliable decision making across time and context.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 7
+  },
+  {
+    "id": "def-sovereignty-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Stabilization",
+      "Deepening"
+    ],
+    "title": "Sovereignty",
+    "content": "Sovereignty is structural coherence. It emerges when perception, responsibility, and expression align within an internally consistent system.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "completed": false,
+    "postOrder": 10
+  },
+  {
+    "id": "def-coherence-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Stabilization"
+    ],
+    "title": "Coherence",
+    "content": "Coherence is architectural. It functions as the organizing principle through which perception, biology, memory, and relational reality align.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 13
+  },
+  {
+    "id": "def-technology-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Stabilization"
+    ],
+    "title": "Technology",
+    "content": "Technology functions as an interface that reveals structure. It makes the underlying architecture legible, operable, and usable within lived experience.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 19
+  },
+  {
+    "id": "def-resonance-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Stabilization"
+    ],
+    "title": "Resonance",
+    "content": "Resonance is the universal language through which all systems communicate. When frequencies align harmonically, they create stable, self-sustaining systems.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 22
+  },
+  {
+    "id": "def-perception-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Deepening"
+    ],
+    "title": "Perception",
+    "content": "Perception reorganizes. It functions as the architecture through which consciousness structures itself across time and experience.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 25
+  },
+  {
+    "id": "def-intelligence-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Deepening"
+    ],
+    "title": "Intelligence",
+    "content": "Intelligence is fielded, relational, and multi-scalar. It operates through resonance across networks rather than centralized control.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 28
+  },
+  {
+    "id": "def-architecture-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Deepening"
+    ],
+    "title": "Architecture",
+    "content": "Architecture describes how systems organize, stabilize, and transmit across biological, perceptual, relational, and temporal domains.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 34
+  },
+  {
+    "id": "def-pattern-001",
+    "contentType": "definition",
+    "tier": "",
+    "invariant": "",
+    "pattern": "",
+    "recommendedStage": [
+      "Deepening"
+    ],
+    "title": "Pattern",
+    "content": "Patterns reveal how consciousness organizes itself across time and experience. The same organizing principles operate from the outer reaches of the galaxy to the biological systems of the human body.",
+    "glyph": {
+      "used": false,
+      "file": "",
+      "label": "",
+      "placement": ""
+    },
+    "visualMode": "dark",
+    "status": "canonical",
+    "notes": "",
+    "hashtags": "",
+    "comments": "",
+    "firstComment": "",
+    "ctas": "",
+    "completed": false,
+    "postOrder": 37
+  }
+]
