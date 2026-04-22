@@ -15,7 +15,7 @@ export default function NotFound() {
             <p className="text-base leading-relaxed text-stone-200 italic mb-4">
               "The first change begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun."
             </p>
-            <p className="text-sm text-cyan-300/80">Interlude II: The Valley of Shifting Names</p>
+            <p className="text-sm text-cyan-300/80">The Cosmic Tapestry</p>
           </div>
         </div>
 

@@ -3,6 +3,10 @@
  * Consolidates repeated text, quotes, and messaging across pages
  */
 
+import { AMAZON_LISTING_URL, BOOK_CATALOG, SEARCH_KEYWORDS } from './publishingMetadata'
+
+export { BOOK_CATALOG, SEARCH_KEYWORDS } from './publishingMetadata'
+
 // Core Quotes
 export const QUOTES = {
   systemRevealsItself: "A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.",
@@ -26,22 +30,28 @@ export const QUOTES = {
   bodyRemembers: "The body remembers what words remain beyond.",
 } as const;
 
-// Book Descriptions
+// Book Descriptions (aligned with KDP / Ingram catalog copy)
 export const BOOK_DESCRIPTIONS = {
   bookOne: {
-    short: "Book One: The Cosmic Tapestry",
-    subtitle: "A consciousness architecture that reveals the shared organizing principles of galaxies, biology, and human perception.",
-    subtitleExtended: "Stardust to Sovereignty is a consciousness architecture. It reveals the shared organizing principles that structure galaxies, biology, and human perception.",
-    full: "Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness.",
-    fullWithSystem: "Book One is an orientation volume. Its function is to restore perceptual coherence by re-establishing the shared architecture between cosmos, body, and consciousness.",
+    short: `${BOOK_CATALOG.title} · ${BOOK_CATALOG.volumeLabel}`,
+    subtitle: BOOK_CATALOG.catalogDescriptionShort,
+    subtitleExtended: BOOK_CATALOG.catalogDescriptionFull,
+    full: BOOK_CATALOG.catalogDescriptionShort,
+    fullWithSystem: `${BOOK_CATALOG.catalogDescriptionShort} Readers are invited to engage with a model of sovereignty that is internally consistent, operational, and applicable across personal, relational, and collective domains.`,
   },
+} as const;
+
+// Homepage: book-first, calm — one clear pitch, low competing narrative
+export const HOMEPAGE_HERO = {
+  bookSubtitle: BOOK_CATALOG.catalogDescriptionShort,
+  authorLine: BOOK_CATALOG.author,
 } as const;
 
 // Homepage Section Content (Style-Training Aligned)
 export const HOMEPAGE_SECTIONS = {
   paradigm: {
-    paragraph1: "Consciousness behaves as structure. The same laws that govern stellar formation and electromagnetic fields govern the human nervous system, cellular communication, and relational behavior. Humans are a localized expression of cosmic order.",
-    paragraph2: "S2S makes this architecture legible. It demonstrates that consciousness is a primary system. Consciousness is structural, lawful, and measurable through its effects. This work reveals a system that is already operating. It asks you to recognize what is already there.",
+    paragraph1: "Stardust to Sovereignty defines human identity as a coherent field of intelligence. This field is organized by origin, body, memory, perception, and time. When the internal system is recognized, these layers function together as one architecture and coherence emerges. The paradigm names this architecture and clarifies how consciousness expresses through it as structure.",
+    paragraph2: "The title names the arc. Human consciousness arises from the same cosmic processes that gave rise to stellar and planetary formation. The same organizing coherence that structures matter at every scale operates through biology, perception, and choice. Sovereignty is the condition that emerges when awareness recognizes this continuity and participates consciously in it. That movement unfolds through thirteen interlocking functions that the paradigm calls the Orbs.",
   },
   whoThisIsFor: {
     intro: "This book is for people who want a clear model of how their inner system functions.",
@@ -68,37 +78,71 @@ export const HOMEPAGE_SECTIONS = {
     closing: "Each section builds on the last, forming a coherent model for reconnection and evolution.",
   },
   glimpse: {
-    paragraph1: "Sovereignty is structural coherence. It emerges when perception, biology, and action align with the underlying intelligence that organizes reality.",
-    paragraph2: "The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the field.",
-    paragraph3: "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral fields, the resonance of stellar inheritance, the architecture of recognition that spans time.",
+    excerpt: "There is something alive in you that predates your birth, your thoughts, and your very form. It is present as the coherence that organizes your body from within. It moves through mitochondria as energy conversion, through breath as exchange, and through awareness as the capacity to recognize. This is Origin Intelligence. It is the living order that first inhabited form and continues to operate through every heartbeat, every neural signal, and every moment of perception. What you experience as presence arises from this order becoming active in biological structure.",
+    excerptSource: "The Stardust Within",
+    context:
+      "The book moves through recognition, perception, and coherence shifts from stellar origins to sovereign system.",
+  },
+  beginYourJourney: {
+    paragraph1: "The book reveals how consciousness operates as structure. When you recognize your internal design and align with it, coherence emerges and sovereignty stabilizes.",
+    paragraph2: "Authors Edition. Order your copy below.",
   },
 } as const;
 
-// Presale/Shipping Information
+// Mixam POD order page (direct link for now)
+export const MIXAM_ORDER_URL = 'https://mixam.com/print-on-demand/69e2f1df3dd8e93a52caed83' as const;
+
+/** Order hub: live channels + placeholders (set `href` when Ingram / wider retail is live) */
+export const ORDER_RETAILERS = [
+  {
+    id: 'mixam',
+    name: 'Mixam (print on demand)',
+    blurb: 'Authors Edition — open Mixam to choose format and complete your order.',
+    href: MIXAM_ORDER_URL,
+    status: 'live' as const,
+  },
+  {
+    id: 'amazon',
+    name: 'Amazon',
+    blurb: 'Paperback, hardcover, and Kindle — all KDP formats on Amazon.',
+    href: AMAZON_LISTING_URL,
+    status: 'live' as const,
+  },
+  {
+    id: 'ingram',
+    name: 'Ingram Spark & bookstores',
+    blurb: 'Wholesale and wider retail — details coming when distribution is active.',
+    href: null,
+    status: 'soon' as const,
+  },
+] as const;
+
+// Book availability (aligned with publication date March 6, 2026)
 export const PRESALE_INFO = {
-  announcement: "Presale Now Open • Book One: The Cosmic Tapestry • Ships February 28, 2026",
-  shortAnnouncement: "Book One Presale Now Open",
-  shipDate: "February 28, 2026",
-  digitalRelease: "mid-February 2026",
-  reserveCopy: "Reserve your First Edition copy before February 28, 2026",
-  orderBefore: "Order before February 28, 2026",
+  announcement: 'The Cosmic Tapestry · publication March 6, 2026',
+  shortAnnouncement: 'The Cosmic Tapestry · March 6, 2026',
+  shipDate: 'March 6, 2026',
+  digitalRelease: 'March 2026',
+  reserveCopy: 'Order your copy. Authors Edition.',
+  orderBefore: '',
 } as const;
 
 // Console Information
 export const CONSOLE_INFO = {
-  accessAnnouncement: "Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but it may be available sooner.",
-  earlyAccess: "Console access will be announced via email to all Book One preorder participants. We're targeting mid-February 2026, but it may be available sooner. Preorder Book One to secure your early access.",
+  accessAnnouncement: "Console access will be announced via email. We're targeting Summer 2026.",
+  earlyAccess: "Join the newsletter to be notified when the Console launches.",
 } as const;
 
-// Author-Publishing Explanation
-export const AUTHOR_PUBLISHING = {
+// Self-Publishing Explanation
+export const SELF_PUBLISHING = {
   why: "The system encoded here remains alive and unmediated. Every word, structure, and timing preserves what emerged through direct encounter. The framework made itself visible through lived experience, pattern, and necessity.",
-  preorderMatters: "Preorders support the first printing. By reserving your copy, you bring this work into the world exactly as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.",
+  orderMatters: "By ordering your copy, you support this work as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.",
 } as const;
 
 // Button Labels
 export const BUTTON_LABELS = {
-  preorder: "Preorder Book One",
+  getBookOne: "Get Book One",
+  preorder: "Get Book One",
   insideBook: "Inside Book One",
   aboutBook: "About This Book",
   exploreMore: "Explore More",
@@ -111,29 +155,5 @@ export const SECTION_HEADINGS = {
   whatBookOneContains: "What Book One Contains",
   whoThisIsFor: "Who This Is For",
   aboutThisWork: "About This Work",
-  reserveCopy: "Reserve Your First Edition Copy",
+  reserveCopy: "Get Book One",
 } as const;
-
-// Concept Cards for Homepage (Mobile-Optimized)
-export const CONCEPT_CARDS = [
-  {
-    icon: "✦",
-    headline: "Consciousness as Structure",
-    description: "Consciousness behaves as structure. The body translates signal. Perception organizes identity.",
-  },
-  {
-    icon: "✦",
-    headline: "From Fragmentation to Coherence",
-    description: "Maps the path from current fragmentation to future coherence by revealing foundational architecture.",
-  },
-  {
-    icon: "✦",
-    headline: "Sovereignty Reclaimed",
-    description: "When perception, body signal, memory, and temporal awareness align, coherence emerges naturally.",
-  },
-  {
-    icon: "✦",
-    headline: "Recognition and Reconnection",
-    description: "Shows how to recognize and return to original design, clearing distortion to reveal what was always there.",
-  },
-] as const;

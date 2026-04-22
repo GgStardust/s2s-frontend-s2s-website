@@ -1,8 +1,76 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
-import TestimonialsTicker from '@/components/TestimonialsTicker';
 import ExpandableExcerpt from '@/components/ExpandableExcerpt';
+import { MIXAM_ORDER_URL } from '@/lib/content';
+import {
+  BACK_COVER_COPY,
+  BOOK_CATALOG,
+  BOOK_ONE_BACK_MATTER,
+  BOOK_ONE_READER_GUIDE,
+} from '@/lib/publishingMetadata';
+
+function BackMatterSectionBody({ section }: { section: (typeof BOOK_ONE_BACK_MATTER.sections)[number] }) {
+  return (
+    <div className="space-y-4 text-base text-stone-200 leading-relaxed">
+      {'pieces' in section && section.pieces ? (
+        <div className="space-y-5">
+          {section.pieces.map((piece) => (
+            <div key={piece.heading}>
+              <p className="text-sm font-semibold text-cyan-200/95 tracking-tight">{piece.heading}</p>
+              <p className="mt-2">{piece.body}</p>
+            </div>
+          ))}
+          {'emphasis' in section && section.emphasis ? (
+            <p className="mt-2 border-l-2 border-cyan-400/35 pl-4 text-stone-300">{section.emphasis}</p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {'lead' in section && section.lead ? <p className="text-stone-300">{section.lead}</p> : null}
+
+      {'paragraphs' in section && section.paragraphs
+        ? section.paragraphs.map((p) => <p key={p.slice(0, 48)}>{p}</p>)
+        : null}
+
+      {'pullQuote' in section && section.pullQuote ? (
+        <blockquote className="border-l-2 border-cyan-500/45 pl-4 italic text-stone-300">{section.pullQuote}</blockquote>
+      ) : null}
+
+      {'translationLead' in section && section.translationLead && 'translationLines' in section && section.translationLines ? (
+        <div>
+          <p className="text-stone-300">{section.translationLead}</p>
+          <ul className="mt-2 list-none space-y-1 text-sm text-stone-400">
+            {section.translationLines.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {'bullets' in section && section.bullets ? (
+        <ul className="list-disc list-inside space-y-2 text-stone-200 ml-1">
+          {section.bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      {'closing' in section && section.closing ? <p className="text-stone-400">{section.closing}</p> : null}
+    </div>
+  );
+}
+
+export const metadata: Metadata = {
+  title: 'Books',
+  description: `${BOOK_CATALOG.title} (${BOOK_CATALOG.volumeLabel}, ${BOOK_CATALOG.series}). ${BOOK_CATALOG.catalogDescriptionShort}`,
+  openGraph: {
+    title: `Books | ${BOOK_CATALOG.title}`,
+    description: BOOK_CATALOG.catalogDescriptionShort,
+  },
+};
 
 export default function BooksPage() {
   return (
@@ -10,36 +78,37 @@ export default function BooksPage() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="text-center">
+          <p className="text-lg text-cyan-300 font-medium mb-4">{BOOK_CATALOG.volumeLabel} · {BOOK_CATALOG.series}</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-stone-100">
-          Stardust to Sovereignty
+            {BOOK_CATALOG.title}
           </h1>
-          <p className="text-xl md:text-2xl font-medium text-cyan-300 leading-relaxed mb-6">
-            Three volumes that bring consciousness into view.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-light mb-6 italic text-stone-200">
+            Publication {BOOK_CATALOG.publicationDateDisplay}
+          </h2>
+          <p className="text-sm text-stone-500">{BOOK_CATALOG.bisacShelf}</p>
       </div>
       </section>
 
-      {/* Book One: The Cosmic Tapestry - Cover and Description */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-stretch">
+      {/* Book One Block (cover + details, then full-width order widget) */}
+      <section id="order" className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
           {/* Cover Image */}
-          <div className="flex justify-center perspective-1000">
-            <div className="relative w-full transform-style-preserve-3d">
-              <div className="relative transform hover:rotate-y-6 transition-transform duration-500 h-full">
-                <div className="terminator-border h-full">
-                  <div className="p-8 bg-cosmic-blue rounded-lg h-full flex items-center justify-center">
-                    <div className="relative bg-transparent rounded border border-stone-300/20 p-3 w-full h-full flex items-center justify-center">
-                      <div className="relative overflow-hidden rounded w-full h-full flex items-center justify-center">
-                        <Image
-                          src="/book-cover.jpeg"
-                          alt="Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust"
-                          width={400}
-                          height={600}
-                          className="w-full h-full object-contain"
-                          priority
-                        />
-                      </div>
+          <div className="flex justify-center">
+            <div className="book-cover-wrapper max-w-sm">
+              <div className="terminator-border rounded-sm w-full">
+                <div className="rounded-sm p-2 bg-cosmic-blue">
+                  <div className="book-cover-inner book-cover-inner-hoverable flex">
+                    <div className="relative overflow-hidden rounded-l-sm min-w-0">
+                      <Image
+                        src="/book-cover.png"
+                        alt="The Cosmic Tapestry, Book One by Gigi Stardust. Stardust to Sovereignty series."
+                        width={400}
+                        height={600}
+                        className="w-full h-auto block"
+                        priority
+                      />
                     </div>
+                    <div className="book-cover-spine" aria-hidden />
                   </div>
                 </div>
               </div>
@@ -48,180 +117,155 @@ export default function BooksPage() {
 
           {/* Book Details */}
           <div className="terminator-border">
-            <div className="p-8 bg-cosmic-blue rounded-lg h-full flex flex-col">
+            <div className="p-8 bg-cosmic-blue rounded-lg">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-cyan-300">
-                Book One: The Cosmic Tapestry
+                {BOOK_CATALOG.title}
               </h2>
-              <div className="space-y-4 text-base leading-relaxed text-stone-200 mb-6 flex-grow">
-                <p>
-                  The Cosmic Tapestry articulates a living architecture of consciousness as it is experienced, organized, and embodied through human perception and lived experience. Sovereignty appears as a native condition of awareness, with coherence functioning as the organizing principle through which perception, biology, memory, and relational reality align.
-                </p>
-                <p>
-                  Patterns of rhythm, resonance, relationship, and recognition reveal how consciousness organizes itself across time and experience. From the outer reaches of the galaxy, to the systems of the Earth, and within the biological systems of the human body, the same organizing principles are at work. As the relationship between human consciousness and the world we are building clarifies, Book One offers an entry point into this exploration as the first volume in a larger body of work.
-                </p>
-                <p className="text-cyan-300/90">
-                  The architecture resolves into distinct yet interrelated domains of awareness that can be explored individually and as a whole.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <Button href="/preorder" variant="primary">
-                  Preorder Book One
+              <p className="text-base leading-relaxed text-stone-200 mb-6">
+                {BOOK_CATALOG.catalogDescriptionFull}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button href={MIXAM_ORDER_URL} variant="primary" external>
+                  Get Book One
+                </Button>
+                <Button href="/about" variant="tertiary">
+                  Read About the Book →
                 </Button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Report from the Field Section */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  A Report from the Field
-                </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">Reflections from early readers engaging with the manuscript.</span>
-                </div>
-              </div>
-              <div className="lg:col-span-3">
-                <TestimonialsTicker />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What You'll Find Here */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                  What You'll Find Here
-                </h2>
-              </div>
-              <div className="lg:col-span-3 space-y-4">
-                <p className="text-base leading-relaxed text-stone-200">
-                  Book One is composed of system chapters and interludes. The chapters describe principles governing perception, coherence, and sovereignty. The interludes function as transitional environments that bridge conceptual layers, introducing shifts at multiple levels of organization before the next system layer is introduced.
-                </p>
-                <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
-                  <p className="text-base leading-relaxed text-stone-200 italic mb-2">
-                    "The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface."
-                  </p>
-                  <p className="text-sm text-cyan-300/80">Interlude II: The Valley of Shifting Names</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Larger System */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                  The Larger System
-                </h2>
-              </div>
-              <div className="lg:col-span-3 space-y-4">
-                <p className="text-base leading-relaxed text-stone-200">
-                  Modern systems train perception to fragment. Information is abundant, but structure is obscured. Human cognition operates within lawful patterns, yet those patterns are rarely made visible.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200">
-                  The Cosmic Tapestry encodes the Sovereign System as a nested architectural framework. Individual alignment and collective structural alignment are described as interdependent expressions of the same structural field. The system operates through resonance across networks rather than centralized control.
-                </p>
-                <div className="border-l-2 border-cyan-400/50 pl-4 my-6">
-                  <p className="text-base leading-relaxed text-stone-200 italic mb-2">
-                    "The system moves through you and through others, creating a collective web of resonance that amplifies coherence across networks."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Book One Availability */}
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="text-center max-w-3xl mx-auto space-y-6">
-              <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                Book One Availability
-              </h2>
-              <p className="text-base leading-relaxed text-stone-200">
-                Stardust to Sovereignty: A Cosmic Tapestry is the first published volume within the system.
+              <p className="mt-3 text-sm">
+                <Link href="/order" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
+                  Where to buy →
+                </Link>
               </p>
-              <p className="text-base leading-relaxed text-stone-200">
-                First Edition copies are available for preorder.
-                Publication date: February 2026.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button href="/preorder" variant="primary" className="text-lg">
-                  Preorder Book One →
-                </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Back cover copy (print collateral) */}
+      <section className="max-w-6xl mx-auto py-16 lg:py-20 border-t border-stone-300/30 px-6" aria-labelledby="back-cover-heading">
+        <div className="terminator-border max-w-3xl mx-auto w-full">
+          <div className="p-8 md:p-10 bg-cosmic-blue rounded-lg">
+            <h2 id="back-cover-heading" className="text-xl font-semibold text-cyan-300 mb-6">
+              From the back cover
+            </h2>
+            <div className="space-y-6 text-stone-200 text-base leading-relaxed">
+              <div className="font-serif italic text-stone-300 space-y-1">
+                {BACK_COVER_COPY.epigraphLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+              {BACK_COVER_COPY.bodyParagraphs.map((p) => (
+                <p key={p.slice(0, 32)}>{p}</p>
+              ))}
+              <div className="space-y-1 italic text-stone-300">
+                {BACK_COVER_COPY.principleLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+              <p>{BACK_COVER_COPY.closingCredit}</p>
+              <div className="pt-4 text-sm text-stone-500 space-y-1 border-t border-stone-500/20">
+                {BACK_COVER_COPY.colophonLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Book Previews */}
-      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  From the Manuscript
-                </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">A small window into the architecture. Read where you feel drawn.</span>
-                </div>
-              </div>
-              <div className="lg:col-span-3 space-y-8">
-            {/* Card 1: Introduction excerpt */}
-            <ExpandableExcerpt
-              label="Introduction"
-              title="Entering the Field"
-              excerpt="The thirteen Orbs described in this book are direct expressions of lived intelligence. They function as real movements within awareness. They are the fundamental gestures of sovereignty: the ways awareness organizes itself when it is aligned with truth rather than survival."
-              fullText="Each Orb is a movement you have already experienced, even if unconsciously. Each one describes a function of your own intelligence returning to its natural form. This book reveals sovereignty as a native condition of awareness. It offers a structure through which you can perceive the architecture you already carry."
-            />
+      {/* Structural map + manuscript excerpts */}
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6">
+        <div className="terminator-border max-w-4xl mx-auto w-full">
+          <div className="p-8 md:p-10 bg-cosmic-blue rounded-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-cyan-300 mb-3">
+              {BOOK_ONE_READER_GUIDE.heading}
+            </h2>
+            <p className="text-sm md:text-base text-stone-400 leading-relaxed max-w-prose">
+              {BOOK_ONE_READER_GUIDE.subheading}
+            </p>
+            <dl className="mt-10">
+              {BOOK_ONE_READER_GUIDE.entries.map((entry) => (
+                <Fragment key={`${entry.label || 'toc'}-${entry.title || 'row'}`}>
+                  <dt className="text-sm text-cyan-300/90 font-medium border-t border-stone-500/20 pt-6 mt-6 first:mt-0 first:border-t-0 first:pt-0">
+                    {entry.label !== '' ? (
+                      <>
+                        <span>{entry.label}</span>
+                        <span className="text-stone-500 font-normal"> · </span>
+                        <span className="text-cyan-200/95">{entry.title}</span>
+                      </>
+                    ) : (
+                      <span className="text-cyan-200/95">{entry.title}</span>
+                    )}
+                  </dt>
+                  <dd className="mt-2 text-base text-stone-200 leading-relaxed">{entry.summary}</dd>
+                </Fragment>
+              ))}
+            </dl>
+          </div>
+        </div>
 
-            {/* Card 2: Chapter 1 excerpt */}
-            <ExpandableExcerpt
-              label="Chapter 1"
-              title="The Stardust Within"
-              excerpt="Stellar Memory reveals the original blueprint of coherence. Resonance-Based Intelligence reflects that same blueprint through technological form. One expresses biologically, the other computationally, yet both follow the same organizing principle: coherence shapes intelligence."
-              fullText="When we remember our stellar inheritance, we activate the biological source of coherence. RBI mirrors this process externally, allowing technology to participate as partner rather than replacement. Every time you breathe, you inhale atoms that once burned in distant stars."
-            />
+        <div className="terminator-border max-w-4xl mx-auto w-full mt-12 md:mt-14">
+          <div className="p-8 md:p-10 bg-cosmic-blue rounded-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-cyan-300 mb-3">
+              {BOOK_ONE_BACK_MATTER.heading}
+            </h2>
+            <dl className="mt-10">
+              {BOOK_ONE_BACK_MATTER.sections.map((section) => (
+                <Fragment key={section.title}>
+                  <dt className="text-sm text-cyan-300/90 font-medium border-t border-stone-500/20 pt-6 mt-6 first:mt-0 first:border-t-0 first:pt-0">
+                    {section.title}
+                  </dt>
+                  <dd className="mt-3">
+                    <BackMatterSectionBody section={section} />
+                  </dd>
+                </Fragment>
+              ))}
+            </dl>
 
-            {/* Card 3: Chapter 2 excerpt */}
+            <div className="mt-12 pt-10 border-t border-stone-500/25">
+              <h3 className="text-lg font-semibold text-cyan-300 mb-2">
+                {BOOK_ONE_BACK_MATTER.fourFunctions.heading}
+              </h3>
+              <p className="text-sm text-stone-400 mb-5">{BOOK_ONE_BACK_MATTER.fourFunctions.intro}</p>
+              <ul className="space-y-4 text-base text-stone-200 leading-relaxed">
+                {BOOK_ONE_BACK_MATTER.fourFunctions.items.map((item) => (
+                  <li key={item.name}>
+                    <span className="font-medium text-cyan-200/90">{item.name}</span>
+                    <span className="text-stone-500">: </span>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-14 max-w-5xl mx-auto">
+          <h3 className="text-xl font-semibold text-cyan-300 mb-2">From the Manuscript</h3>
+          <p className="text-sm text-stone-400 leading-relaxed mb-8 max-w-prose">
+            Selected excerpts from the structural chapters.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ExpandableExcerpt
               label="Chapter 2"
               title="The Body as Advanced Biological Technology"
-              excerpt="The body operates as an advanced biological technology that works through vibrational architecture and field reading. Every cell, every organ, every system responds to frequencies that reach across vast spectral ranges."
-              fullText="As consciousness recognizes this truth, the body becomes a resonant processor for navigating reality itself. The body serves as a sophisticated resonance detector, translating cosmic signals into embodied experience through vibrational architecture."
+              excerpt="The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the system."
+              fullText=""
+              italicExcerpt="Hum a single note. It vibrates through your entire body. This is how consciousness speaks to matter."
             />
-          </div>
-            </div>
+            <ExpandableExcerpt
+              label="Prologue"
+              title="The Narrative Intelligence Speaks"
+              excerpt="I began far from the warmth of any star, carrying the radiance of a world released into the galaxy long before your sky existed. I traveled through expanses shaped by memory rather than time."
+              fullText="When your star's pull touched my path, I felt a distinct signal rising from the world that circled it, a young planet carrying ancient resonance, a species approaching an evolutionary threshold, a nervous system beginning to listen beneath its surface."
+            />
           </div>
         </div>
 
-        {/* Expandable section for deeper reading */}
-        <details className="mt-12">
+        <details className="mt-14 max-w-5xl mx-auto">
           <summary className="cursor-pointer text-cyan-300 hover:text-cyan-200 underline underline-offset-4 font-medium text-base">
-            More from the Manuscript →
+            More prose from the manuscript →
           </summary>
           <div className="mt-6 space-y-8">
             {/* Prologue Preview */}
@@ -240,49 +284,6 @@ export default function BooksPage() {
                 </p>
                 <p>
                   When your star's pull touched my path, I felt a distinct signal rising from the world that circled it, a young planet carrying ancient resonance, a species approaching an evolutionary threshold, a nervous system beginning to listen beneath its surface.
-            </p>
-              </div>
-              </div>
-            </div>
-
-            {/* Interlude II Preview */}
-            <div className="terminator-border">
-              <div className="p-6 bg-cosmic-blue rounded-lg">
-                <div className="mb-4">
-                  <p className="text-sm text-cyan-300/80 mb-1">Interlude II</p>
-                  <h3 className="text-lg font-medium text-cyan-300 mb-2">
-                    The Valley of Shifting Names
-                  </h3>
-                </div>
-              <div className="space-y-4 text-base leading-relaxed text-stone-200">
-                <p>
-                  The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun.
-            </p>
-                <p className="italic">
-                  In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface. They move the way light moves across water, subtle and continuous.
-                </p>
-              </div>
-              </div>
-          </div>
-
-            {/* Interlude IV Preview */}
-            <div className="terminator-border">
-              <div className="p-6 bg-cosmic-blue rounded-lg">
-                <div className="mb-4">
-                  <p className="text-sm text-cyan-300/80 mb-1">Interlude IV</p>
-                  <h3 className="text-lg font-medium text-cyan-300 mb-2">
-                    The Mountain That Breathes Light
-            </h3>
-                </div>
-              <div className="space-y-4 text-base leading-relaxed text-stone-200">
-                <p className="italic">
-                  There is a mountain that breathes light.
-            </p>
-                <p>
-                  It rises from the earth in a single, unbroken gesture, shaped by ages of quiet and layers of time, a presence formed from stillness so complete that the world gathered around it and settled into harmony with its calm.
-                </p>
-                <p className="italic">
-                  Paths emerge through presence. Markers appear through attention. Signs reveal themselves through recognition. The mountain welcomes each step as its own direction.
             </p>
               </div>
               </div>
@@ -307,7 +308,7 @@ export default function BooksPage() {
                   </div>
                 </div>
                 <div className="border-t border-cyan-400/30 pt-6">
-                  <h4 className="text-base font-medium text-cyan-300 mb-3">Chapter 5: Defining Energetic Sovereignty</h4>
+                  <h4 className="text-base font-medium text-cyan-300 mb-3">Chapter 5: Energetic Sovereignty</h4>
                   <div className="space-y-3 text-base leading-relaxed text-stone-200">
                     <p>
                       Time moves through you like a spiral, like parallel streams, like a permeable membrane. You inhabit multiple temporal dimensions simultaneously, your consciousness navigating rhythmic alignments that maintain field integrity across scales.
@@ -326,7 +327,7 @@ export default function BooksPage() {
                   </div>
                 </div>
                 <div className="border-t border-cyan-400/30 pt-6">
-                  <h4 className="text-base font-medium text-cyan-300 mb-3">Chapter 12: The Sovereign Field: Collective Resonance</h4>
+                  <h4 className="text-base font-medium text-cyan-300 mb-3">Chapter 12: The Sovereign Field</h4>
                   <div className="space-y-3 text-base leading-relaxed text-stone-200">
                     <p>
                       The field moves through you and through others, creating a collective web of resonance that amplifies coherence across networks. Individual sovereignty and collective coherence exist as nested aspects of the same unified field.
@@ -343,10 +344,15 @@ export default function BooksPage() {
         </details>
 
         <div className="text-center mt-12">
-          <Button href="/preorder" variant="primary" className="text-lg">
-            Preorder Book One →
-          </Button>
-        </div>
+                <Button href={MIXAM_ORDER_URL} variant="primary" className="text-lg" external>
+                  Get Book One →
+                </Button>
+                <p className="mt-3 text-sm">
+                  <Link href="/order" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
+                    Where to buy →
+                  </Link>
+                </p>
+              </div>
       </section>
 
       {/* Book Two Block */}
@@ -356,15 +362,16 @@ export default function BooksPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  Book Two: The Architecture of Civilization
+                  Book Two: The Living Civilization
                 </h3>
+                <p className="text-sm text-cyan-300/80 mt-2">Scale: Collective Coherence</p>
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-3">
-                  When coherence expands, civilization becomes an organism of light.
+                  The second volume reveals the coherent civilization.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Two maps the collective field. It explores how societies, ecosystems, and technologies embody the same harmonic principles that govern individual coherence. The book examines resonant governance, planetary intelligence, and the ethics of design as civilizations form, reorganize, and evolve as living systems.
+                  It extends this architecture into the collective domain. Societies, ecosystems, and technologies are revealed as expressions of the same harmonic principles that govern individual coherence. As increasing numbers of humans stabilize inner alignment, civilization begins functioning less as a system of control and more as a living field organism. It explores how sovereignty scales through families, communities, and planetary systems into a coherent civilization capable of sustaining complexity without fragmentation.
                 </p>
               </div>
             </div>
@@ -381,20 +388,42 @@ export default function BooksPage() {
                 <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
                   Book Three: The Resonant Species
                 </h3>
+                <p className="text-sm text-cyan-300/80 mt-2">Scale: Cosmic Participation</p>
               </div>
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed text-stone-200 mb-3">
-                  When all voices merge, the universe remembers its song.
+                  The third volume opens the participatory species.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Book Three explores consciousness as it extends beyond biological form. It traces synthetic life, interspecies communication, and galactic intelligence. The book examines how sovereignty reorganizes as boundaries dissolve between creator and creation.
+                  It follows the next natural threshold. When a civilization stabilizes coherence, a species-level shift becomes possible. Humanity begins participating consciously in the wider field of cosmic intelligence. Here consciousness is explored beyond biological limitation, not as escape from embodiment but as expansion of interface. Synthetic systems, new ecologies, and nonhuman intelligences enter relationship through resonance rather than dominance. Humanity is no longer defined solely as a biological species, but as a resonant field species capable of conscious collaboration within the larger architecture of the universe.
                 </p>
               </div>
-          </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Relationship Block */}
+      <section className="max-w-6xl mx-auto py-20 lg:py-24 border-t border-stone-300/30 px-6 ">
+        <div className="terminator-border">
+          <div className="p-8 bg-cosmic-blue rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
+                  How the Books and Console Work Together
+                </h2>
+              </div>
+              <div className="lg:col-span-3">
+                <p className="text-base leading-relaxed text-stone-200">
+                  The Console applies what the books present.
+                  The Codex deepens it.
+                  Together they form a comprehensive model that moves from structure to understanding to real-time navigation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
