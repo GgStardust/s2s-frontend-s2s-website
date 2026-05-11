@@ -20,7 +20,7 @@
 - Created Terms of Service page (`/terms`)
 - Added footer links to both pages
 - Included refund policy (no refunds, all sales final)
-- Added contact email (gigi@gigistardust.com)
+- Added contact email (gigi@stardusttosovereignty.com)
 
 ### 4. "What Happens Next" Messaging
 - Updated preorder confirmation page with:
@@ -133,6 +133,8 @@ You mentioned exploring sharing files from:
 - Consider adding Review/Rating schema if testimonials become more structured
 
 ## 🚀 Deployment Checklist
+
+**How to push to Git and trigger Vercel:** See [DEPLOY_TO_GIT_AND_VERCEL.md](../../DEPLOY_TO_GIT_AND_VERCEL.md) — use `git subtree push` from the monorepo root; do not push the whole branch to the website repo.
 
 Before pushing to GitHub/Vercel:
 
