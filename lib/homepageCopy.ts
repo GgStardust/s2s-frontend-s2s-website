@@ -7,8 +7,16 @@
 export const BOOK_EPIGRAPH =
   'A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.' as const
 
-/** Nav and hero: book title primary, system name secondary. */
-export const BOOK_SERIES_CONTEXT = 'Book One · Stardust to Sovereignty' as const
+/** Series and volume labels (hierarchy: series → volume → book title). */
+export const SERIES_NAME = 'Stardust to Sovereignty' as const
+export const BOOK_VOLUME_LABEL = 'Book One' as const
+
+/** Compact label for metadata, alt text, and title attributes. */
+export const BOOK_SERIES_CONTEXT = `${BOOK_VOLUME_LABEL} · ${SERIES_NAME}` as const
+
+/** Read page intro. */
+export const READ_PAGE_LEAD =
+  "Three excerpts introduce the book's dual register: the prologue, a structural chapter, and an imaginative passage." as const
 
 /** Home: flowing prose under the book title (no FAQ headers). */
 export const BOOK_HOME_BODY = [
@@ -55,8 +63,8 @@ export const ABOUT_AUTHOR = {
   heading: 'About the author',
   body: [
     'For more than three decades, Gigi Stardust has followed one question: how does intelligence become recognizable in living form?',
-    'Her work emerged through building businesses, traveling widely, studying living systems, and documenting recurring patterns across human experience, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
-    'Decades of observation across science, systems thinking, technology, business, mythology, and lived experience gather into a unified inquiry she calls Stardust to Sovereignty. The Cosmic Tapestry is the first volume of this evolving body of work. She continues to develop the project through writing, research, travel, and field observation.',
+    'Her work emerged through decades of building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
+    'Decades of observation across science, systems thinking, technology, business, mythology, and lived experience gather into Stardust to Sovereignty, an evolving body of work expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
   ],
 } as const
 

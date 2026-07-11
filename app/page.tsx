@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import FirstReaders from '@/components/FirstReaders';
 import { ORDER_CTA, SEARCH_KEYWORDS } from '@/lib/content';
-import { BOOK_CATALOG, PRICING, BACK_COVER_COPY } from '@/lib/publishingMetadata';
+import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata';
 import { BOOK_EPIGRAPH, BOOK_HOME_BODY, BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 import { AUTHORS_EDITION_LABEL } from '@/lib/orderCopy';
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function HomePage() {
           </div>
 
           <div className="order-1 lg:order-2 space-y-5 text-center lg:text-left">
-            <p className="text-xs uppercase tracking-[0.2em] text-stone-500 font-sans">{BOOK_SERIES_CONTEXT}</p>
+            <BookSeriesEyebrow centered={false} className="lg:text-left text-center" />
             <div>
               <h1
                 id="home-hero-heading"
@@ -78,14 +79,6 @@ export default function HomePage() {
       </section>
 
       <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-14 md:pb-16 border-t border-stone-300/15 pt-12 md:pt-14">
-        <div className="text-center mb-10 space-y-1">
-          {BACK_COVER_COPY.epigraphLines.map((line) => (
-            <p key={line} className="text-base md:text-lg text-stone-500 italic font-serif leading-relaxed">
-              {line}
-            </p>
-          ))}
-        </div>
-
         <blockquote className="border-l-2 border-stone-500/40 pl-5 md:pl-6 mb-12">
           <p className="text-lg md:text-xl leading-relaxed text-stone-300 italic font-serif">{BOOK_EPIGRAPH}</p>
         </blockquote>

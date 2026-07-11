@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import StripeCheckoutButton from '@/components/direct-checkout/StripeCheckoutButton';
 import { getDirectSalePriceUsd } from '@/lib/directPricing';
-import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 import { AUTHORS_EDITION_LABEL, AUTHORS_EDITION_WHAT } from '@/lib/orderCopy';
 import { BOOK_CATALOG } from '@/lib/publishingMetadata';
 
@@ -24,7 +24,7 @@ export default function DirectOrderPage({
     <main className="min-h-screen bg-book-vessel pb-20">
       <div className="max-w-3xl mx-auto px-6 py-14 md:py-16">
         <header className="text-center mb-10 border-b border-stone-300/15 pb-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-3 font-sans">{BOOK_SERIES_CONTEXT}</p>
+          <BookSeriesEyebrow className="mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
             {BOOK_CATALOG.title}
           </h1>

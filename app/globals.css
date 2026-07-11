@@ -809,5 +809,14 @@ body {
   .book-section-panel {
     @apply rounded-sm border border-stone-300/15 bg-stone-400/5 px-5 py-8 md:px-8 md:py-10 space-y-5;
   }
+
+  /** Back-cover principles: short axioms, visually distinct from epigraph interludes. */
+  .book-prose-axioms {
+    @apply text-center space-y-4 py-10 md:py-12 my-2 border-y border-stone-300/15 max-w-xl mx-auto;
+  }
+
+  .book-prose-axioms p {
+    @apply text-sm md:text-base text-stone-400 font-serif leading-relaxed tracking-wide;
+  }
 }
 

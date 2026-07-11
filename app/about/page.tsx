@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
-import BookProseInterlude from '@/components/book-vessel/BookProseInterlude';
+import BookProseAxioms from '@/components/book-vessel/BookProseAxioms';
 import BookProsePull from '@/components/book-vessel/BookProsePull';
+import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 import OrbsConstellation from '@/components/OrbsConstellation';
 import { ORDER_CTA } from '@/lib/content';
 import { BOOK_CATALOG, PRICING, BACK_COVER_COPY } from '@/lib/publishingMetadata';
@@ -33,7 +34,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-book-vessel pb-20">
       <section className="max-w-3xl mx-auto py-14 md:py-18 px-6 text-center border-b border-stone-300/15">
-        <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 font-sans">{BOOK_SERIES_CONTEXT}</p>
+        <BookSeriesEyebrow className="mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
           {BOOK_CATALOG.title}
         </h1>
@@ -46,8 +47,6 @@ export default function AboutPage() {
         </blockquote>
 
         <p className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">{introductionOpeningFollow}</p>
-
-        <BookProseInterlude lines={BACK_COVER_COPY.epigraphLines} />
 
         <p className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">{ABOUT_WHY_NOW.body}</p>
 
@@ -72,7 +71,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <BookProseInterlude lines={BACK_COVER_COPY.principleLines} />
+        <BookProseAxioms lines={BACK_COVER_COPY.principleLines} />
 
         <details className="pt-2 border-t border-stone-300/15 group">
           <summary className="cursor-pointer list-none pt-6 text-section-title font-semibold text-stone-200 font-serif hover:text-stone-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400/50 rounded-sm">

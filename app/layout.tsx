@@ -7,7 +7,7 @@ import NewsletterSignup from '@/components/NewsletterSignup'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Analytics from '@/components/Analytics'
 import { CONTACT_EMAIL } from '@/lib/content'
-import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy'
+import { SERIES_NAME, BOOK_VOLUME_LABEL } from '@/lib/homepageCopy'
 import {
   AMAZON_LISTING_URL,
   BOOK_CATALOG,
@@ -171,8 +171,9 @@ export default function RootLayout({
         <footer className="text-center text-base text-stone-400 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))] border-t border-stone-300/15">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-8">
             <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-stone-500 mb-0.5 font-sans">{SERIES_NAME}</p>
+              <p className="text-[10px] uppercase tracking-[0.16em] text-stone-600 mb-1 font-sans">{BOOK_VOLUME_LABEL}</p>
               <p className="text-stone-100 mb-1 font-serif text-lg">{BOOK_CATALOG.title}</p>
-              <p className="text-xs uppercase tracking-[0.18em] text-stone-500 mb-1 font-sans">{BOOK_SERIES_CONTEXT}</p>
               <p className="text-sm text-stone-500 mb-4 font-sans">{BOOK_CATALOG.author}</p>
               <p className="text-xs text-stone-600 mb-6 font-sans">
                 © {new Date().getFullYear()} {BOOK_CATALOG.author}. All rights reserved.

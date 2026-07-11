@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import { SERIES_NAME, BOOK_VOLUME_LABEL, BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -39,7 +39,10 @@ export default function Navigation() {
               The Cosmic Tapestry
             </span>
             <span className="hidden sm:block text-[11px] uppercase tracking-[0.18em] text-stone-500 font-sans mt-0.5">
-              Book One · Stardust to Sovereignty
+              {SERIES_NAME}
+            </span>
+            <span className="hidden sm:block text-[10px] uppercase tracking-[0.16em] text-stone-600 font-sans">
+              {BOOK_VOLUME_LABEL}
             </span>
           </Link>
 

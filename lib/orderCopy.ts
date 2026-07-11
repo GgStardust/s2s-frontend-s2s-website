@@ -9,7 +9,7 @@ export const ORDER_BOOK_LEAD =
   'Paperback, ordered here and shipped from the author.' as const
 
 export const AUTHORS_EDITION_WHAT =
-  "The Author's Edition of The Cosmic Tapestry. Printed and fulfilled by Gigi Stardust." as const
+  "Each Author's Edition is ordered directly from the author and supports the continued development of Stardust to Sovereignty." as const
 
 export const AUTHORS_EDITION_FULFILLMENT = 'You receive confirmation by email when your order is placed.' as const
 

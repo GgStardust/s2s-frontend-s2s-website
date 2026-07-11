@@ -11,7 +11,8 @@ import {
   prologueOpeningVerbatim,
   prologueSummary,
 } from '@/lib/manuscriptWebsiteCopy';
-import { HOMEPAGE_SERIES, READ_INTERLUDE_ROLE, BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import { HOMEPAGE_SERIES, READ_INTERLUDE_ROLE, READ_PAGE_LEAD } from '@/lib/homepageCopy';
+import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 
 export const metadata: Metadata = {
   title: 'Read',
@@ -26,11 +27,9 @@ export default function BooksPage() {
   return (
     <main className="min-h-screen bg-book-vessel pb-20">
       <section className="max-w-3xl mx-auto py-14 md:py-16 px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-3 font-sans">{BOOK_SERIES_CONTEXT}</p>
+        <BookSeriesEyebrow className="mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">The Cosmic Tapestry</h1>
-        <p className="text-base text-stone-500 leading-relaxed mt-5 max-w-xl mx-auto font-serif">
-          Three samples: prologue, a structural chapter, and an imaginative passage. That is the book&apos;s dual register.
-        </p>
+        <p className="text-base text-stone-500 leading-relaxed mt-5 max-w-xl mx-auto font-serif">{READ_PAGE_LEAD}</p>
       </section>
 
       <section

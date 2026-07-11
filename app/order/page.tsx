@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
 import { ORDER_CTA, ORDER_RETAILERS, CONTACT_EMAIL } from '@/lib/content';
+import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
 import {
   AUTHORS_EDITION_FULFILLMENT,
@@ -21,7 +22,7 @@ export default function OrderPage() {
   return (
     <main className="min-h-screen bg-book-vessel pb-20">
       <header className="max-w-3xl mx-auto px-6 pt-14 md:pt-18 pb-10 text-center border-b border-stone-300/15">
-        <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-3 font-sans">{BOOK_SERIES_CONTEXT}</p>
+        <BookSeriesEyebrow className="mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
           {BOOK_CATALOG.title}
         </h1>
