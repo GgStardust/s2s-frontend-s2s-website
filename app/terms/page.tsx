@@ -10,22 +10,19 @@ export default function TermsPage() {
           <p className="text-sm text-stone-300 mb-6">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
           
           <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Preorders</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Purchases</h2>
             <p className="mb-4">
-              By placing a preorder, you agree to purchase the book at the listed price. Preorders support the first printing of this author-published work.
+              By placing an order, you agree to purchase the book at the listed price. Payment, shipping, and returns are governed by the retailer or print partner you use (for example Amazon or a bookstore); their terms and checkout apply.
             </p>
             <p className="mb-4">
-              <strong className="text-cyan-300">Payment:</strong> Payment instructions (Zelle or Venmo) will be sent via email within 24-48 hours of your preorder. Payment is due within 7 days of receiving instructions.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Shipping:</strong> Print editions ship on February 28, 2026. Digital editions are delivered in mid-February 2026. Shipping is included in the price for U.S. orders. International orders may require customs fees.
+              <strong className="text-cyan-300">Shipping:</strong> Print fulfillment timelines follow your retailer&apos;s schedule; publication date for <em>The Cosmic Tapestry</em> is March 6, 2026. Website orders through our print partner include shipping as stated at checkout. International orders may require customs fees.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Refund Policy</h2>
             <p className="mb-4">
-              This is a limited first edition. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
+              This is the Author&apos;s Edition supporting self-publishing. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
             </p>
           </section>
 
@@ -35,7 +32,7 @@ export default function TermsPage() {
               All content on this website and in the books is the intellectual property of Stardust to Sovereignty and is protected by copyright. You may not reproduce, distribute, or create derivative works without permission.
             </p>
             <p className="mb-4">
-              <strong className="text-cyan-300">Trademarks and Service Marks:</strong> Stardust to Sovereignty, S2S, Resonance-Based Intelligence, RBI, The Console, The S2S Interface, The Codex, The Cosmic Tapestry, and related marks are trademarks and service marks of Stardust to Sovereignty. Unauthorized use is prohibited.
+              <strong className="text-cyan-300">Trademarks and Service Marks:</strong> Stardust to Sovereignty, S2S, Resonance-Based Intelligence, RBI, The Console, The S2S Interface, Source Field, The Cosmic Tapestry, and related marks are trademarks and service marks of Stardust to Sovereignty. Unauthorized use is prohibited.
             </p>
             <p className="mb-4">
               <strong className="text-cyan-300">Patent Protection:</strong> The Resonance-Based Intelligence (RBI) computational framework, Proof-of-Meaning verification methods, field-level coherence computation, temporal continuity validation, 4D Resonance Vector mathematics, and coherence-based similarity algorithms are covered by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
@@ -51,7 +48,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Console Access</h2>
             <p className="mb-4">
-              Console access will be announced via email to all preorder participants. We're targeting mid-February 2026, but timing may vary. Console access is included with your preorder at no additional cost.
+              Console access will be announced via email. We're targeting Summer 2026, but timing may vary. Join the newsletter to be notified when the Console launches.
             </p>
           </section>
 

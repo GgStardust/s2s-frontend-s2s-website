@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        /** Fluid book-title scale for hero and major headings */
+        display: [
+          'clamp(1.875rem, 1.35rem + 2vw, 2.75rem)',
+          { lineHeight: '1.12', letterSpacing: '-0.025em' },
+        ],
+        'section-title': [
+          'clamp(1.25rem, 1.1rem + 0.45vw, 1.5rem)',
+          { lineHeight: '1.25', letterSpacing: '-0.02em' },
+        ],
+      },
+      fontFamily: {
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-lora)', 'Georgia', 'serif'],
+      },
       colors: {
         // Primary palette - cosmic dark backgrounds
         cosmic: {

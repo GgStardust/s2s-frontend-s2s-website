@@ -1,11 +1,18 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Montserrat, Lora } from 'next/font/google'
+import Link from 'next/link'
 import './globals.css'
 import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import NewsletterSignup from '@/components/NewsletterSignup'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Analytics from '@/components/Analytics'
-import { ErrorBoundary } from '@/components/ErrorBoundary'
+import {
+  AMAZON_LISTING_URL,
+  BOOK_CATALOG,
+  ISBN_SCHEMA_PRIMARY,
+  PRICING,
+  SEARCH_KEYWORDS,
+} from '@/lib/publishingMetadata'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -17,42 +24,50 @@ const lora = Lora({
   variable: '--font-lora',
 })
 
+const siteKeywords = [
+  ...SEARCH_KEYWORDS,
+  BOOK_CATALOG.title,
+  BOOK_CATALOG.series,
+  BOOK_CATALOG.author,
+  'Stardust to Sovereignty',
+]
+
 export const metadata: Metadata = {
   title: {
-    default: 'Stardust to Sovereignty | Preorder Book One: The Cosmic Tapestry',
-    template: '%s | Stardust to Sovereignty',
+    default: `The Cosmic Tapestry · Book One | ${BOOK_CATALOG.series}`,
+    template: `%s | ${BOOK_CATALOG.series}`,
   },
-  description: 'A living architecture for coherence, perception, and sovereign identity. Preorder Book One: The Cosmic Tapestry - Ships February 28, 2026. Discover the Sovereign Field and constellation of intelligences.',
-  keywords: ['Stardust to Sovereignty', 'consciousness technology', 'sovereign field', 'coherence system', 'perception', 'identity', 'preorder', 'book', 'resonance-based intelligence', 'RBI', 'quantum intuition', 'temporal sovereignty', 'photonic intelligence'],
-  authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/about' }],
-  creator: 'Gigi Stardust',
-  publisher: 'Stardust to Sovereignty',
+  description: BOOK_CATALOG.metaDescription,
+  keywords: siteKeywords,
+  authors: [{ name: BOOK_CATALOG.author, url: 'https://stardusttosovereignty.com/about' }],
+  creator: BOOK_CATALOG.author,
+  publisher: BOOK_CATALOG.imprint,
   metadataBase: new URL('https://stardusttosovereignty.com'),
   alternates: {
     canonical: 'https://stardusttosovereignty.com',
   },
   openGraph: {
-    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
-    description: 'A living architecture for coherence, perception, and sovereign identity. Book One: The Cosmic Tapestry - Ships February 28, 2026.',
+    title: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
+    description: BOOK_CATALOG.catalogDescriptionShort,
     type: 'website',
     url: 'https://stardusttosovereignty.com',
-    siteName: 'Stardust to Sovereignty',
+    siteName: BOOK_CATALOG.series,
     locale: 'en_US',
     images: [
       {
-        url: 'https://stardusttosovereignty.com/book-cover.jpeg',
-        width: 400,
-        height: 600,
-        alt: 'Stardust to Sovereignty Book One: The Cosmic Tapestry by Gigi Stardust',
-        type: 'image/jpeg',
+        url: 'https://stardusttosovereignty.com/book-cover.png',
+        width: 800,
+        height: 1200,
+        alt: `${BOOK_CATALOG.title} by ${BOOK_CATALOG.author}, ${BOOK_CATALOG.series}, ${BOOK_CATALOG.volumeLabel}`,
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stardust to Sovereignty | Book One: The Cosmic Tapestry',
-    description: 'A living architecture for coherence, perception, and sovereign identity.',
-    images: ['https://stardusttosovereignty.com/book-cover.jpeg'],
+    title: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
+    description: BOOK_CATALOG.catalogDescriptionShort,
+    images: ['https://stardusttosovereignty.com/book-cover.png'],
     creator: '@gigi_stardust',
   },
   robots: {
@@ -72,6 +87,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -80,10 +101,11 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Stardust to Sovereignty",
+    "name": BOOK_CATALOG.imprint,
+    "alternateName": BOOK_CATALOG.series,
     "url": "https://stardusttosovereignty.com",
     "logo": "https://stardusttosovereignty.com/logo.png",
-    "description": "A living architecture for coherence, perception, and sovereign identity",
+    "description": BOOK_CATALOG.catalogDescriptionShort,
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "gigi@stardusttosovereignty.com",
@@ -95,26 +117,31 @@ export default function RootLayout({
   const bookStructuredData = {
     "@context": "https://schema.org",
     "@type": "Book",
-    "name": "Book One: The Cosmic Tapestry",
-    "alternateName": "Stardust to Sovereignty Book One: The Cosmic Tapestry",
+    "name": BOOK_CATALOG.title,
+    "alternateName": [
+      `${BOOK_CATALOG.series}: ${BOOK_CATALOG.volumeLabel}`,
+      `${BOOK_CATALOG.volumeLabel}: ${BOOK_CATALOG.title}`,
+    ],
+    "isbn": ISBN_SCHEMA_PRIMARY,
+    "numberOfPages": BOOK_CATALOG.pageCountIngramAmazon,
     "author": {
       "@type": "Person",
-      "name": "Gigi Stardust"
+      "name": BOOK_CATALOG.author
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Stardust to Sovereignty"
+      "name": BOOK_CATALOG.imprint
     },
-    "datePublished": "2026-02-28",
-    "description": "A cosmological field report and sovereign architecture for the advancement of human consciousness introducing the structure of the Sovereign Field and constellation of intelligences.",
-    "bookFormat": ["Paperback", "EPUB"],
-    "image": "https://stardusttosovereignty.com/book-cover.jpeg",
+    "datePublished": BOOK_CATALOG.publicationDateISO,
+    "description": BOOK_CATALOG.catalogDescriptionShort,
+    "bookFormat": ["Paperback", "Ebook"],
+    "image": "https://stardusttosovereignty.com/book-cover.png",
     "offers": {
       "@type": "Offer",
-      "price": "44.00",
+      "price": String(PRICING.paperbackUsd),
       "priceCurrency": "USD",
-      "availability": "https://schema.org/PreOrder",
-      "url": "https://stardusttosovereignty.com/preorder"
+      "availability": "https://schema.org/InStock",
+      "url": AMAZON_LISTING_URL
     }
   };
 
@@ -130,23 +157,71 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(bookStructuredData) }}
         />
       </head>
-      <body className="bg-cosmic-blue text-cream min-h-screen flex flex-col">
+      <body className="bg-cosmic-blue text-cream min-h-screen flex flex-col font-sans antialiased">
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>
         <div className="comet-container">
           <div className="comet"></div>
         </div>
-        <ErrorBoundary>
         <Navigation />
-        </ErrorBoundary>
         <Breadcrumbs />
         <main id="main-content" className="flex-grow">
-          <ErrorBoundary>
         {children}
-          </ErrorBoundary>
         </main>
-        <Footer />
+        <footer className="text-center text-base text-stone-200 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))] border-t border-stone-300/30">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+            <div>
+              <p className="text-stone-100 mb-1 font-medium">{BOOK_CATALOG.title}</p>
+              <p className="text-sm text-stone-400 mb-1">{BOOK_CATALOG.volumeLabel} · {BOOK_CATALOG.series}</p>
+              <p className="text-xs text-stone-500 mb-3">{BOOK_CATALOG.imprint} · {BOOK_CATALOG.press}</p>
+              <p className="text-stone-300 mb-2">© {new Date().getFullYear()} {BOOK_CATALOG.series}. All rights reserved.</p>
+              <p className="text-stone-500 text-xs mb-4 max-w-xl mx-auto">
+                RBI technology · U.S. Provisional Patent Application No. 63/909,031 (patent pending)
+              </p>
+              <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm sm:gap-x-5 sm:gap-y-2">
+                <Link
+                  href="/order"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-200 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                >
+                  Where to buy
+                </Link>
+                <a
+                  href="mailto:gigi@stardusttosovereignty.com"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                >
+                  Contact
+                </a>
+                <a
+                  href="https://www.instagram.com/gigi_stardust/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                >
+                  Instagram
+                </a>
+                <Link
+                  href="/source-field"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                >
+                  Source Field
+                </Link>
+                <Link
+                  href="/console"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-500 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                >
+                  Console (coming 2026)
+                </Link>
+              </div>
+            </div>
+            <div className="pt-4 border-t border-stone-300/30">
+              <p className="text-base text-stone-300 mb-3">Occasional updates: retailers, book news, Console.</p>
+              <div className="max-w-md mx-auto">
+                <NewsletterSignup />
+              </div>
+            </div>
+          </div>
+        </footer>
         <Analytics />
       </body>
     </html>

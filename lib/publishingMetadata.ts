@@ -14,7 +14,6 @@ export const BOOK_CATALOG = {
   publicationDateDisplay: 'March 6, 2026',
   trimSize: '6 × 9 in.',
   pageCountIngramAmazon: 254,
-  pageCountMixamPod: 237,
   bisacShelf: 'Philosophy · Metaphysics · Mind & Body',
   /** Shortest catalog description (matches retailer “catalog” short) */
   catalogDescriptionShort:
@@ -41,13 +40,14 @@ export const SEARCH_KEYWORDS = [
 ] as const
 
 export const PRICING = {
-  /** Retail / marketplace paperback reference */
+  /** Typical Amazon KDP paperback list (retailer may add shipping at checkout). */
   paperbackUsd: 33,
-  /** Reserved for a future author-direct checkout path (off the public site until you enable it). */
-  directPaperbackUsd: 29,
+  /** Author's Edition: direct Stripe checkout, paperback trim, standard shipping included in total. */
+  directPaperbackUsd: 44,
   digitalUsd: 17,
-  hardcoverUsd: 44,
-  websitePaperbackNote: 'Paperback list price $33.00 USD on Amazon; Mixam Authors Edition uses the order link on this site.',
+  /** Shown on the order hub: explains why direct checkout differs from marketplace list price. */
+  websitePaperbackNote:
+    "Amazon and similar retailers often list the paperback around $33.00 USD; shipping is separate at checkout. Author's Edition here is $44.00 USD total with standard shipping included; same trim, fulfilled directly.",
 } as const
 
 /** Primary ISBN for schema.org (Amazon KDP paperback, 254 pp.) */
@@ -80,12 +80,12 @@ export const BACK_COVER_COPY = {
 export const BOOK_ONE_READER_GUIDE = {
   heading: 'A structural introduction to the system',
   subheading:
-    'Book One builds the architecture from origin and biology into sovereignty, time, and collective field.',
+    "Fourteen reader-map entry points follow the book's conceptual arc (not every titled section in the print manuscript). Section titles match the book.",
   entries: [
     {
       label: 'Prologue',
-      title: 'The Narrative Intelligence Speaks',
-      summary: 'Establishes scale and field through a mythic opening voice.',
+      title: 'Before Form, I Witnessed You',
+      summary: 'Mythic comet-voice opening: scale, Earth threshold, recognition across distance.',
     },
     {
       label: 'Chapter 1',

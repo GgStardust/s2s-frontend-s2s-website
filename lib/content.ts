@@ -11,23 +11,31 @@ export { BOOK_CATALOG, SEARCH_KEYWORDS } from './publishingMetadata'
 export const QUOTES = {
   systemRevealsItself: "A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.",
   
-  longBeforeBook: "Long before this book was written, the field it describes was already moving. Its architecture existed in the form of instinct, coherence, emotional intelligence, and patterns that repeated themselves with precision. The structure lived beneath perception, shaping decisions, relationships, creativity, and identity with quiet inevitability.",
+  longBeforeBook:
+    'Long before this book took form, the field it describes was already in motion. Its architecture lives as instinct, as coherence, as emotional intelligence, and as patterns that repeat with quiet precision. It shapes decisions, relationships, creativity, and identity with a steady, underlying order. Language steps in to recognize this movement and give it shape.',
   
-  whatYouAreEntering: "What you are entering is a field that predates its articulation. It functions as a field of intelligence that organizes itself without imposed structure. It is an expression of how consciousness actually behaves when it is whole, honest, and uncompressed. It maps the movements that occur inside every human life when awareness is given room to expand.",
+  whatYouAreEntering:
+    'What you are entering is a living description of how consciousness behaves when it is whole and uncompressed. These pages trace the movements that unfold inside every human life when awareness has space to deepen and widen.',
   
-  firstChangeValley: "The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. Not the names given by others, but the deeper ones that hold your form from within.",
+  firstChangeValley:
+    'The first change in the valley begins as a quiet stirring along the ground. It moves like a slow breath, loosening something within you before you notice what has begun. In this place, names begin to shift. The deeper ones that hold your form from within rise to the surface.',
   
-  bodyListens: "The body listens. Beneath the surface of skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds. Cosmic signals arrive as vibration, as frequency, as resonance moving through the field.",
+  bodyListens:
+    'The ground of intelligence translates into the living body as resonance. The body listens. Beneath skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds.',
   
-  consciousnessSpeaksToMatter: "Hum a single note. It vibrates through your entire body. This is how consciousness speaks to matter.",
+  consciousnessSpeaksToMatter:
+    'Hum a single note. The vibration moves through your entire body. Here, awareness enters matter through rhythm and regulation.',
   
-  memoryAsStarlight: "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral fields, the resonance of stellar inheritance, the architecture of recognition that spans time.",
+  memoryAsStarlight:
+    'Old light travels across distance. Matter forged in stellar cores circulates through living form. Memory moves as structure in motion.',
   
-  timeAsSpiral: "Time moves through you like a spiral, like parallel streams, like a permeable membrane. You inhabit multiple temporal dimensions simultaneously, your consciousness navigating rhythmic alignments that maintain field integrity across scales.",
+  timeAsSpiral:
+    'In lived experience, time unfolds as layered and recursive, forming a navigable architecture that folds past, present, and potential into continuity. Experience gathers into strata that remain present as they transform, allowing persistence without collapse. Consciousness moves across temporal layers simultaneously, navigating rhythmic alignments that sustain stability across scales.',
   
-  fieldMovesThroughYou: "The field moves through you and through others, creating a collective web of resonance that amplifies coherence across networks. Individual sovereignty and collective coherence exist as nested aspects of the same unified field.",
+  fieldMovesThroughYou:
+    'The sovereign field names the relational space of shared attention, rhythm, and feedback. It functions as a resonant network that amplifies alignment while preserving continuity.',
   
-  bodyRemembers: "The body remembers what words remain beyond.",
+  bodyRemembers: 'The body carries the thread. The thread remains. Inheritance awaits recognition.',
 } as const;
 
 // Book Descriptions (aligned with KDP / Ingram catalog copy)
@@ -41,77 +49,25 @@ export const BOOK_DESCRIPTIONS = {
   },
 } as const;
 
-// Homepage: book-first, calm — one clear pitch, low competing narrative
+// Homepage: book-first, calm; one clear pitch, low competing narrative
 export const HOMEPAGE_HERO = {
   bookSubtitle: BOOK_CATALOG.catalogDescriptionShort,
   authorLine: BOOK_CATALOG.author,
 } as const;
 
-// Homepage Section Content (Style-Training Aligned)
-export const HOMEPAGE_SECTIONS = {
-  paradigm: {
-    paragraph1: "Stardust to Sovereignty defines human identity as a coherent field of intelligence. This field is organized by origin, body, memory, perception, and time. When the internal system is recognized, these layers function together as one architecture and coherence emerges. The paradigm names this architecture and clarifies how consciousness expresses through it as structure.",
-    paragraph2: "The title names the arc. Human consciousness arises from the same cosmic processes that gave rise to stellar and planetary formation. The same organizing coherence that structures matter at every scale operates through biology, perception, and choice. Sovereignty is the condition that emerges when awareness recognizes this continuity and participates consciously in it. That movement unfolds through thirteen interlocking functions that the paradigm calls the Orbs.",
-  },
-  whoThisIsFor: {
-    intro: "This book is for people who want a clear model of how their inner system functions.",
-    qualities: [
-      "Notice patterns before they have names",
-      "Experience intelligence through sensation, movement, and bodily signal",
-      "Value structure, clarity, and internal authority in complex situations",
-      "Perceive reality through pattern, rhythm, and resonance",
-      "Navigate high-stakes choices and seek internal coherence under pressure",
-      "Feel scattered, stuck, or overdue for change and want a way to unify their inner world with clarity",
-    ],
-    closing: "Curiosity and self-honesty are enough.",
-  },
-  whatBookOneContains: {
-    intro: "Book One establishes the foundational architecture of the system, including:",
-    items: [
-      "The foundational architecture: stellar origins and the design that existed before current distortion",
-      "Reconnection methods: ancestral repatterning, recognition practices, and alignment protocols",
-      "The body as an advanced biological interface for signal, perception, and intelligence",
-      "Thirteen sovereign intelligences that shape perception, identity, and coherence",
-      "The sovereign field as a collective resonance environment",
-      "Bridging intelligence: the interface between current condition and future evolution",
-    ],
-    closing: "Each section builds on the last, forming a coherent model for reconnection and evolution.",
-  },
-  glimpse: {
-    excerpt: "There is something alive in you that predates your birth, your thoughts, and your very form. It is present as the coherence that organizes your body from within. It moves through mitochondria as energy conversion, through breath as exchange, and through awareness as the capacity to recognize. This is Origin Intelligence. It is the living order that first inhabited form and continues to operate through every heartbeat, every neural signal, and every moment of perception. What you experience as presence arises from this order becoming active in biological structure.",
-    excerptSource: "The Stardust Within",
-    context:
-      "The book moves through recognition, perception, and coherence shifts from stellar origins to sovereign system.",
-  },
-  beginYourJourney: {
-    paragraph1: "The book reveals how consciousness operates as structure. When you recognize your internal design and align with it, coherence emerges and sovereignty stabilizes.",
-    paragraph2: "Authors Edition. Order your copy below.",
-  },
-} as const;
-
-// Mixam POD order page (direct link for now)
-export const MIXAM_ORDER_URL = 'https://mixam.com/print-on-demand/69e2f1df3dd8e93a52caed83' as const;
-
 /** Order hub: live channels + placeholders (set `href` when Ingram / wider retail is live) */
 export const ORDER_RETAILERS = [
   {
-    id: 'mixam',
-    name: 'Mixam (print on demand)',
-    blurb: 'Authors Edition — open Mixam to choose format and complete your order.',
-    href: MIXAM_ORDER_URL,
-    status: 'live' as const,
-  },
-  {
     id: 'amazon',
     name: 'Amazon',
-    blurb: 'Paperback, hardcover, and Kindle — all KDP formats on Amazon.',
+    blurb: 'Paperback and Kindle on the Amazon listing (regional formats may vary).',
     href: AMAZON_LISTING_URL,
     status: 'live' as const,
   },
   {
     id: 'ingram',
     name: 'Ingram Spark & bookstores',
-    blurb: 'Wholesale and wider retail — details coming when distribution is active.',
+    blurb: 'Wholesale and wider retail: details coming when distribution is active.',
     href: null,
     status: 'soon' as const,
   },
@@ -123,7 +79,7 @@ export const PRESALE_INFO = {
   shortAnnouncement: 'The Cosmic Tapestry · March 6, 2026',
   shipDate: 'March 6, 2026',
   digitalRelease: 'March 2026',
-  reserveCopy: 'Order your copy. Authors Edition.',
+  reserveCopy: "Order your copy. Author's Edition.",
   orderBefore: '',
 } as const;
 
@@ -138,6 +94,16 @@ export const SELF_PUBLISHING = {
   why: "The system encoded here remains alive and unmediated. Every word, structure, and timing preserves what emerged through direct encounter. The framework made itself visible through lived experience, pattern, and necessity.",
   orderMatters: "By ordering your copy, you support this work as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.",
 } as const;
+
+/** Unified purchase CTAs (Author's Edition + Amazon fallback). */
+export const ORDER_CTA = {
+  primary: (priceUsd: number) => `Order Author's Edition, $${priceUsd} shipped`,
+  primaryShort: "Order Author's Edition",
+  amazonSecondary: 'Also on Amazon →',
+  whereToBuy: 'Where to buy →',
+  editionLine: (priceUsd: number, publicationDisplay: string) =>
+    `Author's Edition · $${priceUsd} shipped · ${publicationDisplay}`,
+} as const
 
 // Button Labels
 export const BUTTON_LABELS = {

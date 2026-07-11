@@ -15,7 +15,7 @@ export default function PrivacyPage() {
               We collect information you provide directly to us, including:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-              <li>Name and email address when you preorder or sign up for our newsletter</li>
+              <li>Name and email address when you purchase or sign up for our newsletter</li>
               <li>Shipping address for print editions</li>
               <li>Order preferences and special instructions</li>
             </ul>
@@ -25,8 +25,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">How We Use Your Information</h2>
             <p className="mb-4">We use the information we collect to:</p>
             <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-              <li>Process and fulfill your preorders</li>
-              <li>Send you order confirmations and payment instructions</li>
+              <li>Process and fulfill your orders</li>
+              <li>Send you order confirmations</li>
               <li>Communicate about Console access and updates</li>
               <li>Send newsletter updates (if you've subscribed)</li>
               <li>Respond to your inquiries</li>
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-stone-100">Data Storage and Security</h2>
             <p className="mb-4">
-              Your information is stored securely and is not shared with third parties except as necessary to process your order (e.g., payment processors, shipping services). We use Formspree for form submissions and do not store payment information on our servers.
+              Your information is stored securely and is not shared with third parties except as necessary to process your order (for example, payment processors and shipping services operated by retailers or print partners you choose at checkout). We use Formspree for newsletter signups (submissions may include a signup source field).
             </p>
           </section>
 

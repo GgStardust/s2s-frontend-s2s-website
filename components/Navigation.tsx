@@ -9,26 +9,32 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems: Array<{ href: string; label: string; prominent?: boolean; comingSoon?: boolean }> = [
-    { href: '/', label: 'Enter' },
-    { href: '/about', label: 'The System' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/books', label: 'Books' },
-    { href: '/codex', label: 'Codex' },
-    { href: '/console', label: 'Console' },
+    { href: '/order', label: 'Order', prominent: true },
   ];
 
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
     }
+    if (href === '/order') {
+      return pathname === '/order' || pathname?.startsWith('/order/') || false;
+    }
     return pathname?.startsWith(href);
   };
 
   return (
-    <header className="w-full border-b border-cyan-500/30 bg-cosmic-blue/95 backdrop-blur-sm sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
+    <header className="w-full border-b border-cyan-500/30 bg-cosmic-blue/95 backdrop-blur-sm sticky top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+        <div className="flex items-center justify-between gap-3 min-h-[44px]">
           {/* Logo/Brand */}
-          <Link href="/" className="text-2xl font-bold text-city-light hover:text-cyan-300 transition-colors" title="Stardust to Sovereignty">
+          <Link
+            href="/"
+            className="text-lg sm:text-xl md:text-2xl font-bold text-city-light hover:text-cyan-300 transition-colors leading-snug max-w-[65vw] truncate sm:max-w-none sm:overflow-visible sm:whitespace-normal touch-manipulation py-1"
+            title="The Cosmic Tapestry · Book One · Stardust to Sovereignty"
+          >
             Stardust to Sovereignty
           </Link>
 
@@ -53,7 +59,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                  className={`text-base transition-colors relative ${
+                  className={`text-base transition-colors relative touch-manipulation ${
                     item.prominent
                       ? isActive(item.href)
                         ? 'text-cyan-400 font-bold'
@@ -71,9 +77,11 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-cream hover:text-cyan-300 transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-cream hover:text-cyan-300 hover:bg-white/5 transition-colors touch-manipulation"
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             <svg
               className="w-6 h-6"
@@ -117,7 +125,7 @@ export default function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                    className={`text-base transition-colors relative ${
+                    className={`block py-3 text-base transition-colors relative touch-manipulation ${
                       item.prominent
                         ? isActive(item.href)
                           ? 'text-cyan-400 font-bold'

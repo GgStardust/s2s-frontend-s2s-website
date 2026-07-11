@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
+import { BOOK_CATALOG } from '@/lib/publishingMetadata'
 
 export const metadata: Metadata = {
-  title: 'Preorder Book One | Stardust to Sovereignty',
-  description: 'Preorder Book One: The Cosmic Tapestry. Ships February 28, 2026. Choose from Print ($44), Digital ($22), or Bundle ($55).',
+  title: 'Preorder Book One',
+  description: `Preorder ${BOOK_CATALOG.title}. Publication ${BOOK_CATALOG.publicationDateDisplay}. See current print and digital pricing on the order page and retailers.`,
   keywords: ['preorder', 'book preorder', 'The Cosmic Tapestry', 'Stardust to Sovereignty', 'book one'],
   openGraph: {
-    title: 'Preorder Book One: The Cosmic Tapestry | Stardust to Sovereignty',
-    description: 'Preorder Book One: The Cosmic Tapestry. Ships February 28, 2026.',
+    title: `Preorder | ${BOOK_CATALOG.title}`,
+    description: `${BOOK_CATALOG.title} · ${BOOK_CATALOG.publicationDateDisplay}.`,
     type: 'website',
     url: 'https://stardusttosovereignty.com/preorder',
   },

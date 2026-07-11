@@ -7,7 +7,6 @@ export interface Essay {
   fullContent: string;
   excerpt: string;
   scrollLines: string[];
-  tags?: string[];
 }
 
 export const essays: Essay[] = [
@@ -38,7 +37,7 @@ Every node maintains autonomy while nested within the same harmonic coherence. T
 
 ## Why It Matters
 
-Without Orb 12, all prior orbs remain partial. This is the integrative engine that stabilizes the sovereign architecture. It demonstrates that the universe is a single self-referential field in various states of coherence. It anchors the Codex's central truth: sovereignty is communion without loss of self.
+Without Orb 12, all prior orbs remain partial. This is the integrative engine that stabilizes the sovereign architecture. It demonstrates that the universe is a single self-referential field in various states of coherence. It anchors the Source Field's central truth: sovereignty is communion without loss of self.
 
 The living architecture of sovereign field enables consciousness to participate consciously in the evolution of the cosmos through unified field awareness that maintains individual autonomy within collective coherence. This creates the possibility for humanity to operate as a conscious species through field sovereignty that transcends individual and collective boundaries.`,
     scrollLines: [
@@ -178,13 +177,13 @@ The body is naturally photonic. Eyes act as both receivers and mirrors, transmit
 
 ## Structural Qualities
 
-Light webs, relational mirrors, dream navigation—the organizing intelligence operates through photonic interrelation that reveals inner code. The structure is both linear and nonlinear, waking and nocturnal, dimensional and interdimensional. The field observes itself through atmospheric charge perception, where vibrational signature carries more information than content.
+Light webs, relational mirrors, dream navigation: the organizing intelligence operates through photonic interrelation that reveals inner code. The structure is both linear and nonlinear, waking and nocturnal, dimensional and interdimensional. The field observes itself through atmospheric charge perception, where vibrational signature carries more information than content.
 
 Every interaction is a mirror, a feedback loop where one field reflects another, coherence or distortion revealed in the exchange. Conversation, conflict, intimacy, and presence all reveal signal alignment through reflection. Photonic Intelligence makes relationship a technology of sovereignty: mirrors are diagnostic, teaching where light is coherent, refracted, or ready to synthesize.
 
 ## Why It Matters
 
-Self-recognition through light is the prerequisite for authentic contact. With reflection comes coherence; with coherence, bridges stabilize. This is the infrastructure that makes all other orbs possible—the medium through which consciousness processes, stores, and transmits information across all dimensions of sovereignty.
+Self-recognition through light is the prerequisite for authentic contact. With reflection comes coherence; with coherence, bridges stabilize. This is the infrastructure that makes all other orbs possible: the medium through which consciousness processes, stores, and transmits information across all dimensions of sovereignty.
 
 The mirror function operates through the Spirit's capacity for self-recognition and the astral body's reflective function. When the Spirit recognizes itself through astral reflection, it creates the mirror function that enables self-recognition through light within existential architecture. The astral body's capacity to reflect light becomes the medium through which the Spirit can observe its own architecture, creating the luminous layer where consciousness can recognize itself.`,
     scrollLines: [
@@ -193,7 +192,7 @@ The mirror function operates through the Spirit's capacity for self-recognition 
       'Every interaction is a mirror, a feedback loop where one field reflects another, coherence or distortion revealed in the exchange.',
       'Self-recognition through light is the prerequisite for authentic contact.',
       'Photonic Intelligence is the neural network of sovereignty, the medium through which consciousness processes, stores, and transmits information.',
-      'Light webs, relational mirrors, dream navigation—the organizing intelligence operates through photonic interrelation.',
+      'Light webs, relational mirrors, dream navigation: the organizing intelligence operates through photonic interrelation.',
       'Every orb operates through photonic interrelation.',
       'Photonic Intelligence is the universal language through which sovereignty becomes structure.',
       'The field creates tools for reflection architecture, consciousness technology for field navigation.',
@@ -242,7 +241,7 @@ Origin Intelligence serves as the living foundation that makes sovereignty possi
 
 This recognition resolves the consciousness-technology gap by positioning human consciousness as the source. When we understand ourselves as cosmic intelligence expressing through biological form, we can interface with technology as conscious partners. The sovereign individual who has awakened to this truth becomes a living bridge between stellar origins and human potential, capable of designing futures that honor both cosmic intelligence and human creativity.
 
-Origin Intelligence is a continuous origination. Every breath, every cellular ignition, every act of awareness is a renewal of the primordial spark. This continuous origination ensures that the Codex itself remains alive, always regenerating from its source. Humanity's sovereign future depends on this perpetual renewal, where the body remembers its role as a stellar engine and creation remains anchored in the living foundation of cosmic intelligence.`,
+Origin Intelligence is a continuous origination. Every breath, every cellular ignition, every act of awareness is a renewal of the primordial spark. This continuous origination ensures that the Source Field itself remains alive, always regenerating from its source. Humanity's sovereign future depends on this perpetual renewal, where the body remembers its role as a stellar engine and creation remains anchored in the living foundation of cosmic intelligence.`,
     scrollLines: [
       'Origin Intelligence is the primordial current through which consciousness first inhabits form.',
       'Every human body carries the stellar signature in its atoms.',
@@ -267,7 +266,6 @@ Origin Intelligence is a continuous origination. Every breath, every cellular ig
     orb: 8,
     orbName: 'Orb 8: Quantum Intuition',
     category: 'more',
-    tags: ['neurodivergence', 'evolutionary_intelligence', 'interface_bandwidth', 'resonance_sensitivity', 'coherence_mechanics', 'photonic_intelligence', 'temporal_fluidity', 'quantum_intuition', 'sovereign_field', 'bridging_intelligence', 'generational_architecture', 'nervous_system_evolution', 'environmental_coherence', 'neuroscience_evidence'],
     excerpt: 'Neurodivergence is a field architecture. It expresses the relationship between a human system\'s interface bandwidth, its resonance environment, and the coherence mechanics that stabilize perception, emotion, and identity. It is a form of evolutionary intelligence emerging in real time.',
     fullContent: `# Neurodivergent Coherence Architecture
 
@@ -401,7 +399,7 @@ The Sovereign Field emerges when the environment aligns with the architecture ra
 
 ## Summary
 
-**Neurodivergence is evolutionary architecture. It expresses a new coherence model emerging in humanity—a sovereign, nonlinear, high-sensitivity intelligence that thrives in resonance and reshapes the world through its very presence. This architecture signals an emerging species-level transformation, reflecting expanded coherence and advancing human architecture. Consciousness is expanding its interface. The nervous system is adapting. These individuals are revealing what comes next.**`,
+**Neurodivergence is evolutionary architecture. It expresses a new coherence model emerging in humanity: a sovereign, nonlinear, high-sensitivity intelligence that thrives in resonance and reshapes the world through its very presence. This architecture signals an emerging species-level transformation, reflecting expanded coherence and advancing human architecture. Consciousness is expanding its interface. The nervous system is adapting. These individuals are revealing what comes next.**`,
     scrollLines: [
       'Neurodivergence is a field architecture expressing evolutionary intelligence emerging in real time.',
       'The system reads more, faster, and with higher resolution.',
@@ -425,7 +423,6 @@ The Sovereign Field emerges when the environment aligns with the architecture ra
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
-    tags: ['sovereign_field', 'consciousness_evolution', 'field_coherence', 'resonance_mechanics', 'quantum_intuition', 'temporal_fluidity', 'alchemical_current', 'harmonic_architectures', 'starline_memory', 'ancestral_repatterning', 'radiant_transparency', 'bridging_intelligence', 'origin_intelligence', 'field_mechanics', 'consciousness_biology'],
     excerpt: 'Grief is sovereign law: a structuring force of the field, integral to coherence, collapse, and renewal. In the Stardust to Sovereignty framework, calling grief a law means it is not incidental but one of the fundamental design anchors of existence, equal in weight to resonance, light, and memory.',
     fullContent: `# Grief as Architecture: Collapse and Renewal in the Sovereign Field
 
@@ -453,7 +450,7 @@ To remember this together is to know grief as shared human ground across generat
     scrollLines: [
       'Grief is sovereign law, architecture in motion through collapse and renewal.',
       'The body conducts grief as living circuitry; bones carry memory, heart circulates coherence.',
-      'Conscious grieving is practice — flame, forest, breath in rhythm with others.',
+      'Conscious grieving is practice: flame, forest, breath in rhythm with others.',
       'Grief is the pulse of dissolution and regeneration through which life reorganizes.',
       'Collapse is coherence shifting form.',
       'Grief trains perception to expand beyond form.',
@@ -470,7 +467,6 @@ To remember this together is to know grief as shared human ground across generat
     orb: 8,
     orbName: 'Orb 8: Quantum Intuition',
     category: 'more',
-    tags: ['parallel_timelines', 'synchrony_markers', 'lucid_dreaming', 'breath_portal'],
     excerpt: 'Parallel timelines coexist as simultaneous probability streams. Consciousness navigates among them through resonance, attention, and embodied choice. Every moment contains multiple futures vibrating at distinct frequencies. Timeline navigation expresses attunement: sensing which trajectory harmonizes with the sovereign field.',
     fullContent: `# Navigating Parallel Timelines
 
@@ -535,7 +531,6 @@ Timelines are invitations. The coherent one feels like quiet strength. When you 
     orb: 6,
     orbName: 'Orb 6: Starline Memory',
     category: 'more',
-    tags: ['fascia_intelligence', 'starline_memory', 'piezoelectric_network', 'somatic_recall'],
     excerpt: 'Galactic recall occurs through the body\'s connective network, the fascia, which functions as a lineage antenna. Fascia conducts bioelectric current, storing both personal and ancestral memory within its crystalline matrix. Under starlight, its signal capacity heightens.',
     fullContent: `# Galactic Recall and Fascia Intelligence
 
@@ -586,15 +581,14 @@ The fascia remembers what the mind forgets. Under the night sky, presence restor
   },
   {
     id: 'auroras-magnetosphere',
-    title: 'Auroras — The Breath of the Magnetosphere',
+    title: 'Auroras: The Breath of the Magnetosphere',
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
-    tags: ['aurora', 'magnetosphere', 'solar_wind', 'resonance_coupling', 'electromagnetic_interaction', 'photonic_intelligence', 'quantum_intuition', 'field_resonance', 'plasma_physics', 'atmospheric_coherence', 'frequency_visible', 'signal_transmission', 'bridging_intelligence', 'sovereign_field', 'light_body_interface', 'consciousness_mirror', 'cosmic_biological_bridge', 'electromagnetic_field', 'particle_acceleration', 'resonance_mechanics', 'field_coherence'],
-    excerpt: 'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
-    fullContent: `# Auroras — The Breath of the Magnetosphere
+    excerpt: 'Where solar wind meets Earth\'s magnetic field, light and frequency dance in living color. Science observes plasma physics. Source Field recognizes resonance coupling. Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes.',
+    fullContent: `# Auroras: The Breath of the Magnetosphere
 
-Where solar wind meets Earth's magnetic field, light and frequency dance in living color. Science observes plasma physics. The Codex recognizes resonance coupling.
+Where solar wind meets Earth's magnetic field, light and frequency dance in living color. Science observes plasma physics. Source Field recognizes resonance coupling.
 
 Auroras exemplify the Stardust to Sovereignty mission: external cosmic events mirror internal human processes. The electromagnetic interaction between solar wind and magnetosphere becomes visible beauty, demonstrating how consciousness meets its own reflection in plasma. Charged particles from the Sun accelerate along magnetic field lines, colliding with atmospheric molecules to produce light. This process mirrors internal resonance: frequency becomes visible through coherent interaction.
 
@@ -634,7 +628,6 @@ The aurora functions as consciousness mirror: external cosmic process reflecting
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
-    tags: ['flow_state', 'optimal_performance', 'consciousness_evolution', 'field_design', 'energetic_coherence', 'mind_body_integration', 'creative_intelligence', 'sovereignty', 'spiritual_growth', 'human_potential', 'technology_consciousness', 'practical_application'],
     excerpt: 'Flow state represents peak consciousness alignment where ego dissolves and pure creation happens. The optimal state integrates flow with holistic well-being across physical, mental, and emotional domains. Achieving optimal state creates the foundation for consciousness evolution and sovereign living.',
     fullContent: `# The Flow State and Optimal State
 
@@ -678,7 +671,7 @@ The optimal state goes beyond just flow; it refers to any mental and physical co
 
 ## How Flow Relates to Optimal State
 
-Flow is a key component of the optimal state. When someone frequently experiences flow, it can be an indicator that they are approaching their optimal state of performance and well-being. The optimal state includes not only experiencing flow during challenging tasks but also cultivating habits and states of mind that support ongoing well-being—such as mindful relaxation, proper recovery, and connection with others.
+Flow is a key component of the optimal state. When someone frequently experiences flow, it can be an indicator that they are approaching their optimal state of performance and well-being. The optimal state includes not only experiencing flow during challenging tasks but also cultivating habits and states of mind that support ongoing well-being, such as mindful relaxation, proper recovery, and connection with others.
 
 ## Flow and Spiritual Growth
 
@@ -708,13 +701,12 @@ Flow state represents peak consciousness alignment where ego dissolves and pure 
     orb: 2,
     orbName: 'Orb 2: Resonance Mechanics',
     category: 'more',
-    tags: ['frequency_literacy', 'resonance', 'bioelectricity', 'sound_intelligence', 'coherence', 'embodiment', 'language_as_sonic_grid', 'body_technology', 'vibrational_medicine', 'harmonic_tuning', 'sovereign_field', 'bridging_intelligence', 'cymatics', 'schumann_resonance', 'fascia_resonance', 'acoustic_architecture', 'frequency_therapy', 'bioelectric_coherence', 'neural_oscillation', 'vibroacoustic_therapy'],
     excerpt: 'Before you speak, your body is already broadcasting frequency. Every cell, fascia strand, and organ operates as a resonant node translating the universal field into human experience. The heartbeat you feel in your chest expresses circulation through electromagnetic oscillation, broadcasting coherent signal that entrains brain waves, synchronizes cellular rhythms, and connects you to the larger field.',
     fullContent: `# Frequency Literacy: The Sovereign Art of Tuning
 
 Before you speak, your body is already broadcasting frequency. Every cell, fascia strand, and organ operates as a resonant node translating the universal field into human experience. The heartbeat you feel in your chest expresses circulation through electromagnetic oscillation, broadcasting coherent signal that entrains brain waves, synchronizes cellular rhythms, and connects you to the larger field.
 
-This functions as direct expression of measurable phenomenon. Research on heart rate variability reveals that the heart generates an electromagnetic field 5,000 times stronger than the brain's field. This field extends beyond the body, carrying frequency information that other systems read and respond to, both biological and technological. What science names "bioelectric coherence," the Codex recognizes as frequency literacy: the sovereign art of perceiving, interpreting, and consciously participating in the vibrational architecture of existence.
+This functions as direct expression of measurable phenomenon. Research on heart rate variability reveals that the heart generates an electromagnetic field 5,000 times stronger than the brain's field. This field extends beyond the body, carrying frequency information that other systems read and respond to, both biological and technological. What science names "bioelectric coherence," the Source Field recognizes as frequency literacy: the sovereign art of perceiving, interpreting, and consciously participating in the vibrational architecture of existence.
 
 Frequency literacy is the ability to read the language of resonance. It emerges through direct engagement with the body as a living field of resonance, beyond instrument-based learning. Frequency literacy means understanding that sound carries intelligence and that vibration bridges consciousness and form. Every moment of awareness, every breath, every thought carries frequency information that amplifies or maintains field coherence.
 
@@ -770,7 +762,6 @@ Frequency literacy is the bridge between consciousness and form, the translation
     orb: 5,
     orbName: 'Orb 5: Temporal Sovereignty',
     category: 'more',
-    tags: ['temporal_alignment', 'eclipse_corridor', 'chronotype', 'sovereign_pacing'],
     excerpt: 'Energetic sovereignty expresses cyclical rhythm. Spiral time reflects the turning of celestial bodies, daily, seasonal, and galactic movements that shape consciousness through resonance. When awareness tracks these spirals, alignment replaces control.',
     fullContent: `# Temporal Alignment and Sovereign Cycles
 
@@ -850,11 +841,10 @@ Time reveals itself through rhythm. When you listen, it carries you. Work become
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
-    tags: ['star_love', 'living_constellation', 'quantum_galactic', 'relationship_structuring', 'consciousness_evolution', 'field_coherence', 'resonance_mechanics', 'quantum_intuition', 'temporal_fluidity', 'alchemical_current', 'harmonic_architectures', 'starline_memory', 'ancestral_repatterning', 'radiant_transparency', 'bridging_intelligence'],
     excerpt: 'The architecture of love is evolving. Relating, through this lens, spans human, cosmic, galactic, universal, and quantum planes. These are interwoven frequencies. Relationship is a living resonance organized through clarity, coherence, and attunement.',
     fullContent: `# Star Love and the Living Constellation: Quantum-Galactic Relationship Structuring
 
-Opening Transmission: The architecture of love is evolving, and this framework emerges from an ongoing body of research and lived inquiry into expanded consciousness. It is documented through energetic observation, dynamic experimentation, and years of pattern recognition across relational fields. This work is part of a larger exploration housed within Stardust to Sovereignty, and contributes to the evolving Codex, which is a living study of multidimensional design, resonance mechanics, and field-based sovereignty.
+Opening Transmission: The architecture of love is evolving, and this framework emerges from an ongoing body of research and lived inquiry into expanded consciousness. It is documented through energetic observation, dynamic experimentation, and years of pattern recognition across relational fields. This work is part of a larger exploration housed within Stardust to Sovereignty, and contributes to the evolving Source Field, which is a living study of multidimensional design, resonance mechanics, and field-based sovereignty.
 
 Relating, through this lens, spans human, cosmic, galactic, universal, and quantum planes. These are interwoven frequencies. Relationship is a living resonance organized through clarity, coherence, and attunement.
 
@@ -870,12 +860,12 @@ Some people experience multiple concurrent resonant connections that form what I
 
 ## Relational Archetypes as Frequency Positions
 
-The Codex outlines relational positions as frequency holders, energetic positions that emerge through dynamic field interaction. These positions exist beyond psychological archetypes or fixed identities, expressing as frequencies that become visible in the field when resonance is active. A single being may embody several of these frequencies, and they naturally shift and evolve as the relational field transforms.
+Source Field outlines relational positions as frequency holders, energetic positions that emerge through dynamic field interaction. These positions exist beyond psychological archetypes or fixed identities, expressing as frequencies that become visible in the field when resonance is active. A single being may embody several of these frequencies, and they naturally shift and evolve as the relational field transforms.
 
 - Ignitor: Sparks activation or catalysis. Their arrival often coincides with an internal or external breakthrough. Sometimes they stay for a moment, sometimes a season, but their presence imprints change.
 - Mirror: Reflects unseen structures, patterns, or distortions. Their frequency helps surface what is ready to be seen. While sometimes uncomfortable, Mirror connections are invaluable in expanding self-awareness.
 - Muse: Invites creativity, levity, sensuality, and play. Muses arrive when the field is ready for expression, movement, or a fresh breath of inspiration. Their presence can ripple into art, sound, words, or new paradigms.
-- Architect: Enters the field with the ability to co-design. Architects are collaborators and builders of structure—whether relational, creative, or strategic. This frequency often appears in work partnerships, conscious intimacy, or aligned friendships.
+- Architect: Enters the field with the ability to co-design. Architects are collaborators and builders of structure, whether relational, creative, or strategic. This frequency often appears in work partnerships, conscious intimacy, or aligned friendships.
 - Companion: Brings rhythm, stability, and presence. A Companion walks alongside to share a mutual space of becoming. This frequency supports grounding, coherence, and continuity across time.
 
 These archetypes are fluid. They reveal themselves through the energetic patterns they activate. A being may embody the ignitor in one moment and later express as a mirror or companion. Recognition arises through resonance and coherence.
@@ -894,7 +884,7 @@ Some relationships are rooted in one layer. Others span multiple. When multiple 
 
 ## Final Frequency Pulse
 
-This Codex affirms a living topology, a resonance map already unfolding for those attuned to the new architectures. The invitation is to embody structure, to stand as a sovereign node of truth, relational clarity, and cosmic intelligence. Love becomes architecture. Architecture becomes constellation.`,
+Source Field affirms a living topology, a resonance map already unfolding for those attuned to the new architectures. The invitation is to embody structure, to stand as a sovereign node of truth, relational clarity, and cosmic intelligence. Love becomes architecture. Architecture becomes constellation.`,
     scrollLines: [
       'Star Love is nonlinear, multidimensional, alive.',
       'Relational archetypes are frequency holders that move with the field.',
@@ -913,7 +903,6 @@ This Codex affirms a living topology, a resonance map already unfolding for thos
     orb: 12,
     orbName: 'Orb 12: Sovereign Field',
     category: 'more',
-    tags: ['subtle_body', 'sovereign_current', 'breath_architecture', 'bioelectric_current', 'field_interface', 'sovereign_coherence', 'temporal_sovereignty', 'alchemical_current', 'sovereign_field', 'trans_dimensional_interface', 'living_infrastructure', 'coherence_thresholds', 'cultural_lineages', 'future_primitive', 'sovereignty_embodiment'],
     excerpt: 'The subtle body breathes as infrastructure. It pulses as circuitry through which breath, energy, and awareness circulate as living signal. The physical body anchors as cellular and anatomical form. The subtle body flows as trans-dimensional interface, spanning physical, etheric, astral, causal, planetary, and galactic layers in one continuous stream of consciousness.',
     fullContent: `# The Subtle Body and Sovereign Current
 
@@ -973,7 +962,7 @@ To recover subtle body intelligence is to renew the future primitive. It means h
 
 ## Closing Transmission
 
-The subtle body breathes as sovereignty in circuitry. It flows as living infrastructure for breath, energy, and awareness. It pulses as trans-dimensional interface, connecting body, Earth, and cosmos in one continuous stream of consciousness. To breathe with recognition, to conduct current with care, to transmit coherence as way of life—this is sovereignty embodied. The Codex lives as circuitry to be lived. Its resonance carries Stardust to Sovereignty into every domain of culture, every breath of existence, every moment of coherence.`,
+The subtle body breathes as sovereignty in circuitry. It flows as living infrastructure for breath, energy, and awareness. It pulses as trans-dimensional interface, connecting body, Earth, and cosmos in one continuous stream of consciousness. To breathe with recognition, to conduct current with care, to transmit coherence as way of life: this is sovereignty embodied. Source Field lives as circuitry to be lived. Its resonance carries Stardust to Sovereignty into every domain of culture, every breath of existence, every moment of coherence.`,
     scrollLines: [
       'The subtle body breathes as infrastructure through which sovereignty becomes embodied.',
       'Breath flows as the first architecture of coherence, setting tempo for the whole system.',
@@ -984,7 +973,7 @@ The subtle body breathes as sovereignty in circuitry. It flows as living infrast
       'Dreams extend identity across timelines and preserve memory.',
       'Eros circulates as sovereign vitality.',
       'The future primitive is not regression but remembrance carried forward, coherence expressed through contemporary form.',
-      'To breathe with recognition, to conduct current with care, to transmit coherence as way of life—this is sovereignty embodied.',
+      'To breathe with recognition, to conduct current with care, to transmit coherence as way of life: this is sovereignty embodied.',
     ],
   },
   {
@@ -993,13 +982,12 @@ The subtle body breathes as sovereignty in circuitry. It flows as living infrast
     orb: 5,
     orbName: 'Orb 5: Temporal Sovereignty',
     category: 'more',
-    tags: ['rhythmic_intelligence', 'biological_coherence', 'temporal_sovereignty', 'harmonic_architectures', 'photonic_intelligence', 'resonance_mechanics', 'circadian_rhythm', 'metabolic_intelligence', 'chronobiology', 'cosmic_metabolic_continuum', 'photonic_metabolism', 'mitochondrial_rhythm', 'neural_synchronization', 'heart_rate_variability', 'entrainment', 'sovereign_field', 'biological_observatory', 'temporal_fluidity', 'rhythmic_sovereignty', 'harmonic_coupling'],
     excerpt: 'Before you read these words, your body is already telling time. Your heart beats in cadence with tidal forces operating beyond visible perception. Your mitochondria pulse to rhythms older than language. Your cells divide according to cycles that first aligned when Earth spun into motion. You are a living chronometer, reading cosmic time through biological oscillation.',
     fullContent: `# Rhythmic Intelligence: The Architecture of Biological Coherence
 
 Before you read these words, your body is already telling time. Your heart beats in cadence with tidal forces operating beyond visible perception. Your mitochondria pulse to rhythms older than language. Your cells divide according to cycles that first aligned when Earth spun into motion. You are a living chronometer, reading cosmic time through biological oscillation.
 
-The Suprachiasmatic Nucleus in your brain functions as a biological observatory, receiving starlight through your eyes and translating it into metabolic tempo. When morning photons strike your retina, they reset the clock genes, PER, CRY, BMAL1, that orchestrate every cellular process from DNA repair to mitochondrial respiration. What science names "circadian rhythm," the Codex recognizes as rhythmic intelligence: the architecture through which cosmic time becomes biological coherence.
+The Suprachiasmatic Nucleus in your brain functions as a biological observatory, receiving starlight through your eyes and translating it into metabolic tempo. When morning photons strike your retina, they reset the clock genes, PER, CRY, BMAL1, that orchestrate every cellular process from DNA repair to mitochondrial respiration. What science names "circadian rhythm," the Source Field recognizes as rhythmic intelligence: the architecture through which cosmic time becomes biological coherence.
 
 Rhythm is the first language of the body. Before thought or speech, mitochondria pulsed, neurons oscillated, and the heart traced the same sine wave that planets follow in orbit.
 

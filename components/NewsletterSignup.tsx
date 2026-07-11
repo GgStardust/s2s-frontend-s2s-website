@@ -20,7 +20,8 @@ export default function NewsletterSignup() {
         },
         body: JSON.stringify({
           email,
-          _subject: 'Newsletter Signup',
+          signup_source: 'website_newsletter',
+          _subject: 'Newsletter signup (website)',
           _template: 'plain',
         }),
       });

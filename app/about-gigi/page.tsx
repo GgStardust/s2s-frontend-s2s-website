@@ -38,13 +38,13 @@ export default function AboutGigiPage() {
                   She is the creator of Stardust to Sovereignty, a body of work that developed through years of writing, reflection, and direct engagement with the patterns shaping perception, identity, and relationship. Gigi writes from inside experience. Her work is informed by research and synthesis, yet it remains closely tied to the realities of being human, navigating complexity, and staying in relationship with what is unfolding.
                 </p>
                 <p>
-                  Over time, her writing revealed underlying structures that extended beyond narrative or philosophy. This recognition led her to formalize the work as a system and to build the supporting architecture that allows it to remain active and responsive. The books, Codex, and Console function as different ways of engaging the same core intelligence, each offering a distinct entry point into the work.
+                  Over time, her writing revealed underlying structures that extended beyond narrative or philosophy. This recognition led her to formalize the work as a system and to build the supporting design that allows it to remain active and responsive. The books, Source Field, and Console function as different ways of engaging the same core intelligence, each offering a distinct entry point into the work.
                 </p>
                 <p>
                   A central discovery within this process is Resonance-Based Intelligence, a framework Gigi articulated through close attention to patterns within her own writing and research. This discovery forms the foundation for a larger ecosystem that includes authorship, publishing, and a coherent intelligence system designed to preserve coherence and integrity as the work evolves.
                 </p>
                 <p>
-                  At the heart of Gigi's work is care. She returns to the page daily, not to produce content, but to stay in relationship with what is real, emerging, and unresolved. This sustained attention gives Stardust to Sovereignty its particular tone. Clear without being rigid. Precise without being distant. Grounded in lived experience while remaining open to what comes next.
+                  At the heart of Gigi&apos;s work is care. She returns to the page daily to stay in relationship with what is real, emerging, and unresolved. This sustained attention gives Stardust to Sovereignty its particular tone: clear and steady, precise and close to lived experience, grounded while remaining open to what comes next.
                 </p>
               </div>
             </div>

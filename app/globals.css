@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .comet-container {
+    display: none;
+  }
+
+  .bg-structural-grid::before {
+    animation: none !important;
+  }
+}
+
 :root {
   --cosmic-blue: #0A0E27;
   --cosmic-blue-light: #1A2342;
@@ -25,6 +43,9 @@
 body {
   background-color: #0A0E27;
   color: #F4F1E8;
+  /* Respect notches and home indicator on phones (needs viewport-fit=cover) */
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
 }
 
 /* Background matching header/footer */
@@ -597,8 +618,12 @@ body {
 .skip-to-main:focus {
   left: 50%;
   transform: translateX(-50%);
-  top: 1rem;
+  top: max(1rem, env(safe-area-inset-top, 0px));
   padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #00D4FF;
   color: #0A0E27;
   text-decoration: none;
@@ -616,6 +641,36 @@ body {
 
 .transform-style-preserve-3d {
   transform-style: preserve-3d;
+}
+
+/* Book cover framing: tilt, shadow, spine, book-like appearance */
+.book-cover-wrapper {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.book-cover-inner {
+  transform: perspective(1000px) rotateY(-6deg);
+  transform-style: preserve-3d;
+  border-radius: 0.25rem;
+  box-shadow:
+    8px 12px 24px rgba(0, 0, 0, 0.45),
+    16px 24px 48px rgba(0, 0, 0, 0.28);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.book-cover-inner-hoverable:hover {
+  transform: perspective(1000px) rotateY(-2deg);
+  box-shadow:
+    10px 14px 28px rgba(0, 0, 0, 0.5),
+    20px 30px 56px rgba(0, 0, 0, 0.3);
+}
+
+.book-cover-spine {
+  width: 12px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #0a0a0a 0%, #0A0E27 70%, #0d1229 100%);
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 /* Earth terminator gradient border - the bright band at Earth's edge */
@@ -723,10 +778,5 @@ body {
     opacity: 0.3;
     filter: brightness(0.4);
   }
-}
-
-/* Triangle clip-path for abstract card shapes */
-.clip-path-triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 

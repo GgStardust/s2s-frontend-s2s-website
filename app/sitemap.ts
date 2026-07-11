@@ -1,5 +1,4 @@
 import { MetadataRoute } from 'next'
-import { essays } from '@/content/essays-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stardusttosovereignty.com'
@@ -9,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
@@ -19,10 +18,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about-gigi`,
+      url: `${baseUrl}/order`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/order/direct`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/source-field`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/books`,
@@ -31,32 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/codex`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/preorder`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/console`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      changeFrequency: 'monthly' as const,
+      priority: 0.35,
     },
   ]
 
-  // Dynamic essay pages
-  const essayPages = essays.map((essay) => ({
-    url: `${baseUrl}/codex/${essay.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
-  return [...staticPages, ...essayPages]
+  return staticPages
 }

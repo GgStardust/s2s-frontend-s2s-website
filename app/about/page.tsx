@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
-import { MIXAM_ORDER_URL } from '@/lib/content';
-import { BOOK_CATALOG } from '@/lib/publishingMetadata';
+import { ORDER_CTA } from '@/lib/content';
+import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata';
+import {
+  howToReadSummary,
+  howToReadVerbatim,
+  introductionClosingInvitation,
+  introductionOpeningFollow,
+} from '@/lib/manuscriptWebsiteCopy';
+import { ABOUT_PARADIGM_LEAD } from '@/lib/homepageCopy';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,7 +34,7 @@ export default function AboutPage() {
             Book One: The Cosmic Tapestry
           </h2>
           <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto italic">
-            A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.
+            {ABOUT_PARADIGM_LEAD}
           </p>
         </div>
       </section>
@@ -37,9 +44,7 @@ export default function AboutPage() {
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="max-w-3xl">
-              <p className="text-base leading-relaxed text-stone-200">
-                Long before this book took form, the field it describes was already in motion. Its architecture lives as instinct, as coherence, as emotional intelligence, and as patterns that repeat with quiet precision. The structure lived beneath perception; language arrived later to recognize it.
-              </p>
+              <p className="text-base leading-relaxed text-stone-200">{introductionOpeningFollow}</p>
             </div>
           </div>
         </div>
@@ -54,26 +59,31 @@ export default function AboutPage() {
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
                   The Paradigm
                 </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">
-                    A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.
-                  </span>
-                </div>
+                <p className="text-sm text-cyan-300/80 italic mt-4">
+                  Consciousness as lawful, embodied design.
+                </p>
               </div>
               <div className="lg:col-span-3 space-y-4">
                 <p className="text-base leading-relaxed text-stone-200">
-                  Stardust to Sovereignty defines human identity as a coherent field of intelligence. This field is organized by origin, body, memory, perception, and time. When the internal system is recognized, these layers function together as one architecture and coherence emerges. The paradigm names this architecture and clarifies how consciousness expresses through it as structure.
+                  Stardust to Sovereignty defines human identity as a coherent system of intelligence. This system is
+                  organized by origin, body, memory, perception, and time. When the internal design is recognized, these
+                  layers function together as one structure and coherence emerges. The paradigm names this design and
+                  clarifies how consciousness expresses through it as structure.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  The system operates through recognition. It shows you what happens when awareness aligns with the structure already governing experience. Sovereignty emerges as a native condition of awareness when the design is recognized and activated.
+                  The system operates through recognition. It shows you what happens when awareness aligns with the
+                  structure already governing experience. Sovereignty emerges as a native condition of awareness when the
+                  design is recognized and activated.
                 </p>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
                   <p className="text-base leading-relaxed text-stone-200 mb-2">
                     <strong className="text-cyan-300">Consciousness behaves as structure.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Patterns form with precision and organize experience through movements that can be perceived and understood. These movements express through instinct, emotional intelligence, relational dynamics, creativity, and decision-making. They follow an internal architecture that lives beneath perception. The architecture is already active. Recognition brings it into view and allows participation to deepen.
+                    Patterns form with precision and organize experience through movements that can be perceived and
+                    understood. These movements express through instinct, emotional intelligence, relational dynamics,
+                    creativity, and decision-making. They follow an internal design that lives beneath perception. The
+                    design is already active. Recognition brings it into view and allows participation to deepen.
                   </p>
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
@@ -81,7 +91,10 @@ export default function AboutPage() {
                     <strong className="text-cyan-300">The human system contains a constellation of thirteen sovereign intelligences.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Each Orb names a distinct function through which awareness organizes, orients, and expresses. Together they form one living architecture. They shape the way a person perceives reality, relates to others, navigates time, forms identity, and stabilizes coherence. These intelligences generate the Sovereign Field.
+                    Each Orb names a distinct function through which awareness organizes, orients, and expresses.
+                    Together they form one living structure. They shape the way a person perceives reality, relates to
+                    others, navigates time, forms identity, and stabilizes coherence. These intelligences generate the
+                    Sovereign Field.
                   </p>
                 </div>
                 <div className="border-l-2 border-cyan-400/50 pl-4 my-4">
@@ -89,7 +102,9 @@ export default function AboutPage() {
                     <strong className="text-cyan-300">Sovereignty is the natural outcome of recognition.</strong>
                   </p>
                   <p className="text-base leading-relaxed text-stone-200">
-                    Sovereignty arises when awareness aligns with the actual structure of its own field. It is also a participatory state. When the field is understood as architecture, identity becomes coherent and responsive.
+                    Sovereignty arises when awareness aligns with the actual structure of its own system. It is also a
+                    participatory state. When the system is understood as design, identity becomes coherent and
+                    responsive.
                   </p>
                 </div>
               </div>
@@ -113,7 +128,7 @@ export default function AboutPage() {
                   The book moves through recognition, perception, and coherence shifts. It traces the arc from stellar origins to sovereign system. Each chapter builds the same argument forward: how inner order becomes legible, shareable, and operable in the world you inhabit.
                 </p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  The prose stays close to lived experience (body, attention, relationship, design) while naming the architecture that makes coherence possible.
+                  The prose stays close to lived experience (body, attention, relationship, design) while naming the structure that makes coherence possible.
                 </p>
               </div>
             </div>
@@ -147,52 +162,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Arc of the Book (merged: body, memory, time, sovereign field) */}
+      {/* Manuscript excerpts live on Books */}
       <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
         <div className="terminator-border">
           <div className="p-8 bg-cosmic-blue rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-4">
-                  The Arc of the Book
+                  From the manuscript
                 </h2>
               </div>
-              <div className="lg:col-span-3 space-y-6">
-                <div>
-                  <p className="text-base leading-relaxed text-stone-200 mb-3">
-                    The body reveals itself as advanced biological technology:
-                  </p>
-                  <div className="border-l-2 border-cyan-400/50 pl-4 mb-2">
-                    <p className="text-base leading-relaxed text-stone-200 italic">
-                      "The body listens. Beneath skin and bone, beneath the familiar rhythms of breath and pulse, a deeper conversation unfolds."
-                    </p>
-                  </div>
-                  <div className="border-l-2 border-cyan-400/30 pl-4">
-                    <p className="text-base leading-relaxed text-stone-200 italic text-cyan-300/90">
-                      "Hum a single note. The vibration moves through your entire body. Here, awareness enters matter through rhythm and regulation."
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base leading-relaxed text-stone-200 mb-3">
-                    Memory, time, and the sovereign field:
-                  </p>
-                  <div className="border-l-2 border-cyan-400/50 pl-4 mb-2">
-                    <p className="text-base leading-relaxed text-stone-200 italic">
-                      "Memory lives in your cells like starlight lives in the void. Patterns from distant origins move through you, carrying the intelligence of ancestral fields, the resonance of stellar inheritance, the architecture of recognition that spans time."
-                    </p>
-                  </div>
-                  <div className="border-l-2 border-cyan-400/30 pl-4 mb-2">
-                    <p className="text-base leading-relaxed text-stone-200 italic text-cyan-300/90">
-                      "Time moves through you like a spiral, like parallel streams, like a permeable membrane. You inhabit multiple temporal dimensions simultaneously, your consciousness navigating rhythmic alignments that maintain field integrity across scales."
-                    </p>
-                  </div>
-                  <div className="border-l-2 border-cyan-400/50 pl-4">
-                    <p className="text-base leading-relaxed text-stone-200 italic">
-                      "The field moves through you and through others, creating a collective web of resonance that amplifies coherence across networks. The body remembers what words remain beyond."
-                    </p>
-                  </div>
-                </div>
+              <div className="lg:col-span-3 space-y-4">
+                <p className="text-base leading-relaxed text-stone-200">
+                  Chapter excerpts, the prologue, and a structural reader map live on the Books page so this section stays
+                  focused on the paradigm itself.
+                </p>
+                <Link
+                  href="/books#from-the-manuscript"
+                  className="inline-flex min-h-[44px] items-center text-sm text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4"
+                >
+                  Read excerpts &amp; structure →
+                </Link>
               </div>
             </div>
           </div>
@@ -209,12 +199,16 @@ export default function AboutPage() {
                   How to Read It
                 </h2>
               </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  This is a book you return to. Treat it as an environment. Let it open at the pace that matches your own field. Sovereignty restores coherence; this book guides that restoration through recognition. When you recognize something true, the body and mind reorganize around it naturally.
-                </p>
+              <div className="lg:col-span-3 space-y-4">
+                {howToReadVerbatim.map((p) => (
+                  <p key={p.slice(0, 48)} className="text-base leading-relaxed text-stone-200">
+                    {p}
+                  </p>
+                ))}
+                <p className="text-sm text-stone-400 leading-relaxed">{howToReadSummary}</p>
                 <p className="text-base leading-relaxed text-stone-200">
-                  Nothing here began as theory. It began as recognition. The language and structure emerged as ways to articulate processes already active in human experience.
+                  Recognition came first. The language, structure, and diagrams emerged as ways to articulate processes
+                  already active in human experience.
                 </p>
               </div>
             </div>
@@ -230,15 +224,15 @@ export default function AboutPage() {
               <p className="text-base leading-relaxed text-stone-200 mb-4">
                 This is an invitation into a deeper relationship with your own awareness, identity, and creative force. A way of recognizing the intelligence that has been guiding you long before you had a language for it.
               </p>
-              <p className="text-lg leading-relaxed text-cyan-300 mb-6 italic">
-                Enter in the way that feels coherent to you. Move with what resonates. Let what rests simply rest. The system will meet you where you are.
+              <p className="text-lg leading-relaxed text-cyan-300 mb-6 italic text-center">
+                {introductionClosingInvitation}
               </p>
               <p className="text-base text-cyan-300 mb-6 font-medium">
-                Authors Edition. Order your copy.
+                Author&apos;s Edition. Order your copy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <Button href={MIXAM_ORDER_URL} variant="primary" className="text-lg" external>
-                  Get Book One →
+                <Button href="/order/direct" variant="primary" className="text-lg">
+                  {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
                 </Button>
                 <Button href="/books" variant="secondary" className="text-lg">
                   Explore excerpts →
@@ -246,7 +240,7 @@ export default function AboutPage() {
               </div>
               <p className="text-sm text-center mb-10">
                 <Link href="/order" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
-                  Where to buy →
+                  {ORDER_CTA.whereToBuy}
                 </Link>
               </p>
               <p className="text-base text-stone-300 leading-relaxed mb-6 max-w-2xl mx-auto">
