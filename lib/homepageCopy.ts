@@ -62,9 +62,9 @@ export const ABOUT_ORBS_INTRO =
 export const ABOUT_AUTHOR = {
   heading: 'About the author',
   body: [
-    'For more than three decades, Gigi Stardust has followed one question: how does intelligence become recognizable in living form?',
-    'Her work emerged through decades of building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
-    'Decades of observation across science, systems thinking, technology, business, mythology, and lived experience gather into Stardust to Sovereignty, an evolving body of work expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
+    'Gigi Stardust\u2019s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
+    'Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
+    'Observation across science, systems thinking, technology, business, mythology, and lived experience gathered over a lifetime into Stardust to Sovereignty, an evolving body of work expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
   ],
 } as const
 

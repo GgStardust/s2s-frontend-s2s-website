@@ -20,7 +20,7 @@ export const BOOK_CATALOG = {
   metaDescription:
     'The Cosmic Tapestry (Book One, Stardust to Sovereignty) by Gigi Stardust: consciousness as a unified field: Origin Intelligence, sovereignty, and architectural coherence. Publication March 6, 2026.',
   authorBioShort:
-    'For more than three decades, Gigi Stardust has followed how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first volume of Stardust to Sovereignty.',
+    'Gigi Stardust\u2019s life has evolved toward one question: how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first volume of Stardust to Sovereignty.',
 } as const
 
 /** Deduped search phrases (KDP / site keywords) */
