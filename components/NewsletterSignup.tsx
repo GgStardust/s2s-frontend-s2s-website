@@ -32,7 +32,7 @@ export default function NewsletterSignup() {
       } else {
         setError('There was an error. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('There was an error. Please try again.');
     }
   };
@@ -40,33 +40,34 @@ export default function NewsletterSignup() {
   if (submitted) {
     return (
       <div className="text-center py-4">
-        <p className="text-cyan-400 font-medium">Thank you! You're on the list.</p>
+        <p className="text-stone-300 font-serif">Thank you. You are on the list.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        required
-        className="flex-1 px-4 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-md text-cream placeholder-cyan-400/40 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20"
-        aria-label="Email address for newsletter"
-      />
-      <button
-        type="submit"
-        className="px-6 py-3 rounded-md bg-cyan-500 text-cosmic-blue hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-medium whitespace-nowrap"
-        aria-label="Subscribe to newsletter"
-      >
-        Join List
-      </button>
-      {error && <p className="text-red-400 text-sm mt-2" role="alert">{error}</p>}
-      {!submitted && (
-        <p className="text-xs text-cyan-300/60 mt-1 text-center sm:text-left">
-          Get Console early access updates
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email"
+          required
+          className="flex-1 px-4 py-3 bg-cosmic-blue-light/20 border border-stone-500/30 rounded-sm text-stone-200 placeholder-stone-600 focus:outline-none focus:border-stone-400/50 focus:ring-1 focus:ring-stone-400/30 font-sans text-sm"
+          aria-label="Email address for newsletter"
+        />
+        <button
+          type="submit"
+          className="px-6 py-3 rounded-sm bg-stone-200 text-cosmic-blue hover:bg-stone-100 border border-stone-300/40 transition-colors font-medium whitespace-nowrap text-sm font-sans"
+          aria-label="Subscribe to newsletter"
+        >
+          Join list
+        </button>
+      </div>
+      {error && (
+        <p className="text-red-400/90 text-sm font-sans" role="alert">
+          {error}
         </p>
       )}
     </form>

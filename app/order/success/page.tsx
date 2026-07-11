@@ -2,10 +2,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getStripe } from '@/lib/stripe-server';
+import { ORDER_SUCCESS_PAID } from '@/lib/orderCopy';
 import { BOOK_CATALOG } from '@/lib/publishingMetadata';
 
 export const metadata: Metadata = {
-  title: 'Thank you',
+  title: `Thank you · ${BOOK_CATALOG.title}`,
   robots: { index: false, follow: false },
 };
 
@@ -30,51 +31,47 @@ export default async function OrderSuccessPage({
       expand: ['customer_details', 'shipping_details'],
     });
     paid = session.payment_status === 'paid';
-    emailHint =
-      session.customer_details?.email ?? session.customer_email ?? null;
+    emailHint = session.customer_details?.email ?? session.customer_email ?? null;
     ref = session.id.replace(/^cs_/, '').slice(0, 12).toUpperCase();
   } catch {
     redirect('/order/direct');
   }
 
   return (
-    <main className="min-h-screen bg-structural-grid relative">
-      <div className="relative z-10 max-w-xl mx-auto px-6 py-20 text-center">
-        <h1 className="text-2xl md:text-3xl font-bold text-stone-100 mb-4">Thank you</h1>
+    <main className="min-h-screen bg-book-vessel">
+      <div className="max-w-xl mx-auto px-6 py-20 text-center">
+        <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 font-sans">Author&apos;s Edition</p>
+        <h1 className="text-3xl md:text-4xl font-bold text-stone-100 font-serif mb-2">{BOOK_CATALOG.title}</h1>
+        <p className="text-lg text-stone-400 font-serif mb-8">Thank you</p>
+
         {paid ? (
           <>
-            <p className="text-stone-300 leading-relaxed mb-6">
-              Your payment for <em className="text-cyan-200 not-italic">{BOOK_CATALOG.title}</em> went through.
-              {ref && (
-                <>
-                  {' '}
-                  Reference: <span className="font-mono text-cyan-300">{ref}</span>
-                </>
-              )}
-            </p>
-            {emailHint && (
-              <p className="text-sm text-stone-500 mb-6">
-                Confirmation is sent to <span className="text-stone-400">{emailHint}</span> (and appears in your Stripe
-                receipt).
+            <p className="text-base text-stone-300 leading-relaxed mb-6 font-serif">{ORDER_SUCCESS_PAID}</p>
+            {ref && (
+              <p className="text-sm text-stone-500 mb-4 font-sans">
+                Reference <span className="font-mono text-stone-400">{ref}</span>
               </p>
             )}
-            <p className="text-sm text-stone-500 mb-10">
-              The author prepares each paperback; you will be contacted if anything is needed before shipment.
-            </p>
+            {emailHint && (
+              <p className="text-sm text-stone-500 mb-8 font-sans">
+                Confirmation sent to <span className="text-stone-400">{emailHint}</span>
+              </p>
+            )}
           </>
         ) : (
-          <p className="text-stone-400 mb-10">
-            Payment is still processing for this session. If you completed payment, check your email for a Stripe
-            receipt or return to the order page to try again.
+          <p className="text-base text-stone-400 mb-10 font-serif">
+            Payment is still processing. If you completed checkout, check your email for confirmation.
           </p>
         )}
-        <Link href="/books" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm">
-          Read excerpts
-        </Link>
-        <span className="text-stone-600 mx-2">·</span>
-        <Link href="/" className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 text-sm">
-          Home
-        </Link>
+
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-sans">
+          <Link href="/books" className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
+            Read an excerpt
+          </Link>
+          <Link href="/" className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
+            Home
+          </Link>
+        </div>
       </div>
     </main>
   );

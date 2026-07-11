@@ -1,8 +1,3 @@
-/**
- * Canonical copy aligned with Amazon KDP, Ingram Spark, and on-book metadata.
- * Update this file when retailer or cover copy changes.
- */
-
 export const BOOK_CATALOG = {
   title: 'The Cosmic Tapestry',
   series: 'Stardust to Sovereignty',
@@ -25,7 +20,7 @@ export const BOOK_CATALOG = {
   metaDescription:
     'The Cosmic Tapestry (Book One, Stardust to Sovereignty) by Gigi Stardust: consciousness as a unified field: Origin Intelligence, sovereignty, and architectural coherence. Publication March 6, 2026.',
   authorBioShort:
-    'Gigi Stardust is an author and systems thinker developing a structured model of consciousness known as Stardust to Sovereignty. Her work integrates cosmology, biological systems, and lived experience into a unified architecture of creation and awareness.',
+    'For more than three decades, Gigi Stardust has followed how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first volume of Stardust to Sovereignty.',
 } as const
 
 /** Deduped search phrases (KDP / site keywords) */
@@ -45,9 +40,9 @@ export const PRICING = {
   /** Author's Edition: direct Stripe checkout, paperback trim, standard shipping included in total. */
   directPaperbackUsd: 44,
   digitalUsd: 17,
-  /** Shown on the order hub: explains why direct checkout differs from marketplace list price. */
+  /** Shown on the order hub when a price comparison note is needed (keep minimal). */
   websitePaperbackNote:
-    "Amazon and similar retailers often list the paperback around $33.00 USD; shipping is separate at checkout. Author's Edition here is $44.00 USD total with standard shipping included; same trim, fulfilled directly.",
+    "Author's Edition: $44.00 USD total with standard shipping included, fulfilled directly.",
 } as const
 
 /** Primary ISBN for schema.org (Amazon KDP paperback, 254 pp.) */

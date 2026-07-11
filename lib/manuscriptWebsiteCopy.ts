@@ -75,6 +75,14 @@ export const chapterTemporalFluidity = {
     'The section moves from body-led timing and the Now Portal through temporal viscosity, interoception, flow, and coordinated timing in relationships and groups: time as navigable medium rather than a fixed line.',
 } as const
 
+export const interludeFieldRemembers = {
+  title: 'The Field that Remembers You',
+  excerpt:
+    'No one remembers the first moment of arrival.\n\nLater, when the elders of the valley spoke of it, they would say the stranger came with the tide. A figure borne in by the long breath of the water, as if the sea had been considering something for many seasons and finally decided to answer.',
+  continuation:
+    'But the truth was simpler. A consciousness crossed a threshold. It entered a world whose logic had its own weight and its own patience.\n\nThe air here carried a kind of listening. The grasses moved in a rhythm that continued their ancient conversation, maintaining their own cadence. The land held. It maintained presence.',
+} as const
+
 export const chapterSovereignField = {
   verbatim: `The sovereign field names the relational space of shared attention, rhythm, and feedback. It functions as a resonant network that amplifies alignment while preserving continuity.`,
   verbatimClosing: `When individual sovereignty and collective alignment exist as nested aspects of one relational whole, integration reveals living indivisibility. The Sovereign Field names this condition.`,

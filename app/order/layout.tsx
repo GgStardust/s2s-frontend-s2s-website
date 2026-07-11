@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { BOOK_CATALOG } from '@/lib/publishingMetadata';
+import { AUTHORS_EDITION_LABEL } from '@/lib/orderCopy';
 
 export const metadata: Metadata = {
-  title: 'Where to buy',
-  description: `${BOOK_CATALOG.title} (${BOOK_CATALOG.volumeLabel}). ${BOOK_CATALOG.metaDescription}`,
+  title: `Order · ${BOOK_CATALOG.title}`,
+  description: `Order The Cosmic Tapestry (${AUTHORS_EDITION_LABEL}). Paperback with standard shipping included.`,
   openGraph: {
-    title: `Where to buy | ${BOOK_CATALOG.title}`,
+    title: `Order · ${BOOK_CATALOG.title}`,
     description: BOOK_CATALOG.catalogDescriptionShort,
     url: 'https://stardusttosovereignty.com/order',
   },

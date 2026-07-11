@@ -1,99 +1,72 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
-import { ORDER_CTA, ORDER_RETAILERS } from '@/lib/content';
+import { ORDER_CTA, ORDER_RETAILERS, CONTACT_EMAIL } from '@/lib/content';
+import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import {
+  AUTHORS_EDITION_FULFILLMENT,
+  AUTHORS_EDITION_LABEL,
+  AUTHORS_EDITION_WHAT,
+  ORDER_BOOK_LEAD,
+  ORDER_WHOLESALE_NOTE,
+} from '@/lib/orderCopy';
 import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata';
 
+export const metadata: Metadata = {
+  title: `Order · ${BOOK_CATALOG.title}`,
+  description: `Order The Cosmic Tapestry (${AUTHORS_EDITION_LABEL}).`,
+};
+
 export default function OrderPage() {
-  const otherRetailers = ORDER_RETAILERS;
-
   return (
-    <main className="min-h-screen bg-structural-grid relative">
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-14 md:py-20">
-        <header className="mb-10 md:mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-stone-100 mb-3">
-            Where to buy
-          </h1>
-          <p className="text-base text-stone-400 leading-relaxed max-w-2xl">
-            <span className="text-stone-300">{BOOK_CATALOG.title}</span>
-            {' · '}
-            {BOOK_CATALOG.volumeLabel}, {BOOK_CATALOG.series}. Author&apos;s Edition.
+    <main className="min-h-screen bg-book-vessel pb-20">
+      <header className="max-w-3xl mx-auto px-6 pt-14 md:pt-18 pb-10 text-center border-b border-stone-300/15">
+        <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-3 font-sans">{BOOK_SERIES_CONTEXT}</p>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
+          {BOOK_CATALOG.title}
+        </h1>
+        <p className="text-base text-stone-400 mt-3 font-sans">{AUTHORS_EDITION_LABEL}</p>
+        <p className="text-base text-stone-500 leading-relaxed mt-5 max-w-xl mx-auto font-serif">{ORDER_BOOK_LEAD}</p>
+        <div className="mt-8">
+          <Button href="/order/direct" variant="primary" className="px-8">
+            {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
+          </Button>
+        </div>
+      </header>
+
+      <article className="max-w-3xl mx-auto px-6 py-12 space-y-8 text-center md:text-left">
+        <p className="text-base leading-relaxed text-stone-400 font-serif">{AUTHORS_EDITION_WHAT}</p>
+        <p className="text-sm text-stone-500 font-sans">{AUTHORS_EDITION_FULFILLMENT}</p>
+
+        <div className="pt-6 border-t border-stone-300/15 space-y-3">
+          <p className="text-sm text-stone-500 font-sans">
+            {ORDER_RETAILERS[0].name}:{' '}
+            <a
+              href={ORDER_RETAILERS[0].href!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-400 hover:text-stone-200 underline underline-offset-4"
+            >
+              paperback and ebook
+            </a>
           </p>
-          <p className="text-sm text-stone-500 mt-3">{BOOK_CATALOG.bisacShelf}</p>
-          <div className="mt-6">
-            <Button href="/order/direct" variant="primary" className="w-full sm:w-auto">
-              {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
-            </Button>
-          </div>
-        </header>
+          <p className="text-sm text-stone-500 font-sans">
+            {ORDER_WHOLESALE_NOTE}{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-stone-400 hover:text-stone-200 underline underline-offset-4">
+              {CONTACT_EMAIL}
+            </a>
+          </p>
+        </div>
 
-        <section aria-labelledby="edition-facts-heading" className="mb-10">
-          <h2 id="edition-facts-heading" className="sr-only">
-            Edition details
-          </h2>
-          <div className="rounded-lg border border-stone-400/20 bg-cosmic-blue/60 p-5 md:p-6 text-sm text-stone-300 space-y-2">
-            <p>
-              <span className="text-stone-400">Publication: </span>
-              {BOOK_CATALOG.publicationDateDisplay}
-            </p>
-            <p>
-              <span className="text-stone-400">Trim: </span>
-              {BOOK_CATALOG.trimSize} ·{' '}
-              <span className="text-stone-400">Reference page count: </span>
-              {BOOK_CATALOG.pageCountIngramAmazon} pp.
-            </p>
-            <p>
-              <span className="text-stone-400">Marketplace paperback (typical list): </span>${PRICING.paperbackUsd}{' '}
-              USD · <span className="text-stone-400">Ebook: </span>${PRICING.digitalUsd} USD
-            </p>
-            <p>
-              <span className="text-stone-400">Author&apos;s Edition (this site): </span>${PRICING.directPaperbackUsd}{' '}
-              USD including standard shipping
-            </p>
-            <p className="text-stone-400 pt-1">{PRICING.websitePaperbackNote}</p>
-          </div>
-        </section>
-
-        <section aria-labelledby="more-retailers-heading">
-          <h2 id="more-retailers-heading" className="text-lg font-semibold text-stone-200 mb-4">
-            More channels
-          </h2>
-          <ul className="grid gap-4 md:grid-cols-2">
-            {otherRetailers.map((r) => (
-              <li
-                key={r.id}
-                className="rounded-lg border border-stone-400/20 bg-cosmic-blue/80 p-5 md:p-6 backdrop-blur-sm"
-              >
-                <h3 className="text-base font-medium text-stone-100 mb-2">{r.name}</h3>
-                <p className="text-sm text-stone-400 mb-4">{r.blurb}</p>
-                {!r.href ? (
-                  <p className="text-xs uppercase tracking-wider text-stone-500">Coming soon</p>
-                ) : (
-                  <a
-                    href={r.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-cyan-300 hover:text-cyan-200 underline underline-offset-4"
-                  >
-                    Shop this title
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <div className="mt-12 pt-8 border-t border-stone-400/20 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-          <Link href="/" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
-            ← Home
-          </Link>
-          <Link href="/books" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
-            Excerpts
-          </Link>
-          <Link href="/about" className="text-cyan-300/90 hover:text-cyan-200 underline underline-offset-4">
-            About
+        <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <Button href="/order/direct" variant="primary" className="px-8">
+            {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
+          </Button>
+          <Link href="/books" className="inline-flex min-h-[44px] items-center text-sm text-stone-500 hover:text-stone-300 underline underline-offset-4 font-sans">
+            Read an excerpt
           </Link>
         </div>
-      </div>
+      </article>
     </main>
   );
 }

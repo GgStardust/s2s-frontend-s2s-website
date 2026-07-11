@@ -13,7 +13,7 @@ export default function Breadcrumbs() {
   const segmentLabels: Record<string, string> = {
     order: 'Order',
     direct: 'Order direct',
-    books: 'Books',
+    books: 'Read',
     about: 'About',
     codex: 'Source Field',
     'source-field': 'Source Field',

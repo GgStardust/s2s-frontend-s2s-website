@@ -23,12 +23,15 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseClasses =
-    'px-6 py-3 rounded-md font-medium transition-colors inline-block text-center disabled:opacity-50 disabled:pointer-events-none';
-  
+    'px-6 py-3 rounded-sm font-medium transition-colors inline-block text-center disabled:opacity-50 disabled:pointer-events-none font-sans text-sm sm:text-base';
+
   const variantClasses = {
-    primary: 'bg-cyan-500 text-cosmic-blue hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/50 focus:outline-2 focus:outline-cyan-300 focus:outline-offset-2 transition-all font-semibold',
-    secondary: 'bg-cosmic-blue text-cyan-300 hover:bg-cyan-400/10 focus:outline-2 focus:outline-cyan-300 focus:outline-offset-2 transition-all',
-    tertiary: 'text-cyan-300 hover:text-cyan-200 hover:underline underline-offset-4 focus:outline-2 focus:outline-cyan-300 focus:outline-offset-2 transition-colors',
+    primary:
+      'bg-stone-200 text-cosmic-blue hover:bg-stone-100 border border-stone-300/40 focus:outline-2 focus:outline-stone-400/50 focus:outline-offset-2',
+    secondary:
+      'bg-transparent text-stone-200 border border-stone-400/35 hover:border-stone-300/60 hover:bg-stone-400/5 focus:outline-2 focus:outline-stone-400/50 focus:outline-offset-2',
+    tertiary:
+      'text-stone-300 hover:text-stone-100 underline underline-offset-4 focus:outline-2 focus:outline-stone-400/50 focus:outline-offset-2',
   };
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;

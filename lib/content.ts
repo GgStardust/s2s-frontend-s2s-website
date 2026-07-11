@@ -55,7 +55,7 @@ export const HOMEPAGE_HERO = {
   authorLine: BOOK_CATALOG.author,
 } as const;
 
-/** Order hub: live channels + placeholders (set `href` when Ingram / wider retail is live) */
+/** Order hub: direct + marketplace channels. */
 export const ORDER_RETAILERS = [
   {
     id: 'amazon',
@@ -64,14 +64,10 @@ export const ORDER_RETAILERS = [
     href: AMAZON_LISTING_URL,
     status: 'live' as const,
   },
-  {
-    id: 'ingram',
-    name: 'Ingram Spark & bookstores',
-    blurb: 'Wholesale and wider retail: details coming when distribution is active.',
-    href: null,
-    status: 'soon' as const,
-  },
 ] as const;
+
+/** Public contact for orders, wholesale, and site inquiries. */
+export const CONTACT_EMAIL = 'gigi@gigistardust.com' as const;
 
 // Book availability (aligned with publication date March 6, 2026)
 export const PRESALE_INFO = {
@@ -97,7 +93,7 @@ export const SELF_PUBLISHING = {
 
 /** Unified purchase CTAs (Author's Edition + Amazon fallback). */
 export const ORDER_CTA = {
-  primary: (priceUsd: number) => `Order Author's Edition, $${priceUsd} shipped`,
+  primary: (priceUsd: number) => `Order the book · $${priceUsd} shipped`,
   primaryShort: "Order Author's Edition",
   amazonSecondary: 'Also on Amazon →',
   whereToBuy: 'Where to buy →',

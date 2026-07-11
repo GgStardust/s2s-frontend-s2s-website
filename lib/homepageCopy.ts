@@ -1,62 +1,71 @@
 /**
- * Book-first homepage copy drawn from the manuscript (Atticus V12).
- * Web-facing strings follow docs/archive style rules: affirmative language, varied field/design terms.
+ * Book-site copy: The Cosmic Tapestry (Book One) is the book;
+ * Stardust to Sovereignty is the system / series name.
  */
 
-/** About page only (progressive disclosure: not repeated on Home). */
-export const ABOUT_PARADIGM_LEAD =
+/** Introduction opening — threshold line for Home and About. */
+export const BOOK_EPIGRAPH =
   'A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.' as const
 
-/** Home hero: unique orientation (no paradigm lead quote). */
-export const HOMEPAGE_HERO = {
+/** Nav and hero: book title primary, system name secondary. */
+export const BOOK_SERIES_CONTEXT = 'Book One · Stardust to Sovereignty' as const
+
+/** Home: flowing prose under the book title (no FAQ headers). */
+export const BOOK_HOME_BODY = [
+  'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body, through time, memory, and relationship, toward sovereignty as participation without loss of origin.',
+  'This is the first volume in Stardust to Sovereignty, the name given to the system the book describes. It establishes recognition at human scale. Later volumes carry that design into civilization and species life.',
+  'Structural chapters and imaginative passages work together. Some passages land as recognition. Others bring structure gently into view. The book is offered as a companion in that recognition.',
+] as const
+
+/** About page only (progressive disclosure: not repeated on Home). */
+export const ABOUT_PARADIGM_LEAD = BOOK_EPIGRAPH
+
+/** Read page: role of imaginative passages between chapters. */
+export const READ_INTERLUDE_ROLE =
+  'Between the structural chapters, imaginative passages offer connection, imagination, example, relief from density, and creativity. They carry the same design in a different register.' as const
+
+export const ABOUT_WHY_NOW = {
+  body:
+    'Modern life often splits emotion, relationship, and perception into separate streams. The Cosmic Tapestry restores continuity: recognition first, then alignment as a natural expression of coherence. It names structure you can feel in the body.',
+} as const
+
+export const ABOUT_INSIDE_THE_BOOK = {
+  body: [
+    'The Cosmic Tapestry moves through recognition, perception, and coherence shifts. It traces the arc from stellar origins to sovereign participation. Each chapter builds the same movement forward: how inner order becomes legible in the life you already live.',
+    'The prose stays close to lived experience: body, attention, relationship, timing. Imaginative passages carry the same architecture in a different register.',
+  ],
+} as const
+
+export const ABOUT_SYSTEM_CONTEXT = {
+  heading: 'Stardust to Sovereignty',
   lead:
-    'This work shifts the frame from what is happening to me toward how internal design generates and meets experience.',
-  follow:
-    'A structured map of consciousness: thirteen Orbs as movements you can recognize in your own awareness, grounded in lived recognition.',
+    'Stardust to Sovereignty is an interdisciplinary body of work investigating consciousness as a living structure active across scales of reality.',
+  body: [
+    'It explores biology, systems theory, complexity, ecology, cosmology, technology, mythology, creativity, and direct observation as expressions of the same underlying architecture: how intelligence organizes itself from cells to civilizations to the cosmos.',
+    'The inquiry proposes an ontology, a structural account of how reality organizes and what it means for humanity to participate consciously within a living universe.',
+    'Through books, essays, field reports, fiction, visual systems, and emerging technologies, the work develops an evolving thesis of coherent participation across scales. The Cosmic Tapestry establishes the first stable map of the architecture at human scale.',
+  ],
 } as const
 
-/** Opening guiding question + answer (# The Stardust Within) */
-export const HOMEPAGE_ANCHOR_EXCERPT = {
-  question: 'What am I, fundamentally, before density, history, or conditioning?',
-  answer:
-    'You are an expression of Origin Intelligence, the organizing coherence through which matter becomes aware of itself. That intelligence is active within your body as breath, metabolism, sensation, and the capacity to recognize. Before narrative, before identity, before accumulated history, the ground of your being is structured awareness already in motion.',
-} as const
+export const ABOUT_ORBS_INTRO =
+  'The Cosmic Tapestry names thirteen interlocking capacities already active within awareness. Each names a function through which perception, identity, and coherence organize. The full map lives in the book\u2019s appendices.' as const
 
-export const HOMEPAGE_WHAT_THIS_IS = {
-  title: 'What this is',
-  body:
-    'A living description of how consciousness behaves when it is whole and uncompressed. The thirteen Orbs named in these pages are movements already active within awareness: the natural gestures of sovereignty when perception aligns with structure. Sovereignty appears as a native condition of awareness as inner design comes into view.',
-} as const
-
-export const HOMEPAGE_WHO_ITS_FOR = {
-  title: 'Who it is for',
-  body:
-    'Readers navigating rapid change, relational complexity, and identity shifts. People who notice pattern before it has a name; who read through the body; who want clarity of structure rather than slogans. Recognition came first. Curiosity and self-honesty are enough.',
-} as const
-
-export const HOMEPAGE_PROLOGUE = {
-  title: 'Before form, I witnessed you',
-  teaser:
-    'I began far from the warmth of any star, carrying the radiance of a world released into the galaxy long before your sky existed.',
-  readPrologueLabel: 'Read the full prologue',
-  readPrologueHref: '/books#prologue-excerpt',
-  closing: 'This is where your book begins.',
+/** About page: essence, orientation, and scope (not the full thesis). */
+export const ABOUT_AUTHOR = {
+  heading: 'About the author',
+  body: [
+    'For more than three decades, Gigi Stardust has followed one question: how does intelligence become recognizable in living form?',
+    'Her work emerged through building businesses, traveling widely, studying living systems, and documenting recurring patterns across human experience, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
+    'Decades of observation across science, systems thinking, technology, business, mythology, and lived experience gather into a unified inquiry she calls Stardust to Sovereignty. The Cosmic Tapestry is the first volume of this evolving body of work. She continues to develop the project through writing, research, travel, and field observation.',
+  ],
 } as const
 
 export const HOMEPAGE_SERIES = {
-  title: 'Book One in a trilogy',
+  title: 'The trilogy',
   lead:
-    'Stardust to Sovereignty is a three-volume work: individual coherence, then collective coherence, then cosmic participation. Each volume stands alone.',
+    'Stardust to Sovereignty is three volumes. The Cosmic Tapestry is Book One. Each volume stands alone.',
   bookOne:
-    'The Cosmic Tapestry establishes the foundation: consciousness as a structured system of intelligence, the thirteen Orbs as functions already present in awareness, sovereignty as alignment with the design that organizes reality across scales. The question here is: How does a human become a coherent, self-aware system of intelligence?',
-} as const
-
-export const HOMEPAGE_LINEAGE = {
-  title: 'A wider field',
-  body:
-    'Across time and culture, humans have explored consciousness from many directions: embodiment, cosmology, philosophy, imagination. This work approaches consciousness as lawful, embodied, and participatory in a living cosmos. It stands as an exploration across traditions of how human awareness participates in a lawful universe, and how recognizing that participation reorganizes identity, responsibility, and possibility.',
-} as const
-
-export const HOMEPAGE_INVITATION = {
-  line: 'Enter as coherence allows. Move with what feels steady and usable. Let awareness meet itself through participation.',
+    'The Cosmic Tapestry asks: How does a human become a coherent, self-aware field of intelligence?',
+  bookTwo: 'The Living Civilization asks: What does society become when coherence organizes collective life?',
+  bookThree: 'The Resonant Species asks: What does a species become when it participates consciously in cosmic evolution?',
 } as const

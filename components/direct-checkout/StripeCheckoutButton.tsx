@@ -38,18 +38,14 @@ export default function StripeCheckoutButton({ priceUsd }: Props) {
   }
 
   return (
-    <div className="space-y-4 max-w-xl">
-      <p className="text-sm text-stone-400 leading-relaxed">
-        On the next screen, Stripe will ask for your email, phone (for the shipper), and shipping address. Your card is
-        charged only once; shipping is included in the price shown.
-      </p>
+    <div className="space-y-3">
       {error && (
-        <p className="text-sm text-red-400" role="alert">
+        <p className="text-sm text-red-400/90 font-sans" role="alert">
           {error}
         </p>
       )}
-      <Button type="button" variant="primary" className="w-full sm:w-auto" disabled={loading} onClick={startCheckout}>
-        {loading ? 'Opening secure checkout…' : `Continue to checkout · $${priceUsd.toFixed(2)} USD`}
+      <Button type="button" variant="primary" className="w-full sm:w-auto px-8" disabled={loading} onClick={startCheckout}>
+        {loading ? 'Opening checkout…' : `Checkout · $${priceUsd.toFixed(2)} USD`}
       </Button>
     </div>
   );

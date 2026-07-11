@@ -6,6 +6,8 @@ import Navigation from '@/components/Navigation'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Analytics from '@/components/Analytics'
+import { CONTACT_EMAIL } from '@/lib/content'
+import { BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy'
 import {
   AMAZON_LISTING_URL,
   BOOK_CATALOG,
@@ -108,7 +110,7 @@ export default function RootLayout({
     "description": BOOK_CATALOG.catalogDescriptionShort,
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "gigi@stardusttosovereignty.com",
+      "email": CONTACT_EMAIL,
       "contactType": "Customer Service"
     },
     "sameAs": []
@@ -161,61 +163,75 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>
-        <div className="comet-container">
-          <div className="comet"></div>
-        </div>
         <Navigation />
         <Breadcrumbs />
         <main id="main-content" className="flex-grow">
         {children}
         </main>
-        <footer className="text-center text-base text-stone-200 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))] border-t border-stone-300/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+        <footer className="text-center text-base text-stone-400 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))] border-t border-stone-300/15">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-8">
             <div>
-              <p className="text-stone-100 mb-1 font-medium">{BOOK_CATALOG.title}</p>
-              <p className="text-sm text-stone-400 mb-1">{BOOK_CATALOG.volumeLabel} · {BOOK_CATALOG.series}</p>
-              <p className="text-xs text-stone-500 mb-3">{BOOK_CATALOG.imprint} · {BOOK_CATALOG.press}</p>
-              <p className="text-stone-300 mb-2">© {new Date().getFullYear()} {BOOK_CATALOG.series}. All rights reserved.</p>
-              <p className="text-stone-500 text-xs mb-4 max-w-xl mx-auto">
-                RBI technology · U.S. Provisional Patent Application No. 63/909,031 (patent pending)
+              <p className="text-stone-100 mb-1 font-serif text-lg">{BOOK_CATALOG.title}</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-stone-500 mb-1 font-sans">{BOOK_SERIES_CONTEXT}</p>
+              <p className="text-sm text-stone-500 mb-4 font-sans">{BOOK_CATALOG.author}</p>
+              <p className="text-xs text-stone-600 mb-6 font-sans">
+                © {new Date().getFullYear()} {BOOK_CATALOG.author}. All rights reserved.
               </p>
-              <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm sm:gap-x-5 sm:gap-y-2">
+              <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm sm:gap-x-4 sm:gap-y-2 font-sans">
+                <Link
+                  href="/books"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
+                >
+                  Read
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
+                >
+                  About
+                </Link>
                 <Link
                   href="/order"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-200 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-stone-100 underline underline-offset-4 touch-manipulation"
                 >
-                  Where to buy
+                  Order
                 </Link>
                 <a
-                  href="mailto:gigi@stardusttosovereignty.com"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
                 >
-                  Contact
+                  {CONTACT_EMAIL}
                 </a>
                 <a
                   href="https://www.instagram.com/gigi_stardust/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-500 hover:text-stone-300 underline underline-offset-4 touch-manipulation"
                 >
                   Instagram
                 </a>
                 <Link
-                  href="/source-field"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                  href="/privacy"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-600 hover:text-stone-400 underline underline-offset-4 touch-manipulation"
                 >
-                  Source Field
+                  Privacy
                 </Link>
                 <Link
-                  href="/console"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-500 hover:text-cyan-300 underline underline-offset-4 touch-manipulation"
+                  href="/terms"
+                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-600 hover:text-stone-400 underline underline-offset-4 touch-manipulation"
                 >
-                  Console (coming 2026)
+                  Terms
                 </Link>
               </div>
+              <p className="text-xs text-stone-600 mt-6 font-sans">
+                Wholesale inquiries:{' '}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
+                  {CONTACT_EMAIL}
+                </a>
+              </p>
             </div>
-            <div className="pt-4 border-t border-stone-300/30">
-              <p className="text-base text-stone-300 mb-3">Occasional updates: retailers, book news, Console.</p>
+            <div className="pt-6 border-t border-stone-300/15">
+              <p className="text-sm text-stone-500 mb-4 font-sans">Occasional notes on the book and availability.</p>
               <div className="max-w-md mx-auto">
                 <NewsletterSignup />
               </div>

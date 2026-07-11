@@ -1,36 +1,49 @@
 # Website Direction
 
-How **stardusttosovereignty.com** should read for new visitors, grounded in Book One (Author's Edition v12). Companion: [BOOK_ONE_WEB_BRIEF.md](./BOOK_ONE_WEB_BRIEF.md).
+How **stardusttosovereignty.com** should read for new visitors, grounded in Book One (Author's Edition v12). Companion: [BOOK_ONE_WEB_BRIEF.md](./BOOK_ONE_WEB_BRIEF.md), [WEBSITE_VESSEL_BRIEF.md](./WEBSITE_VESSEL_BRIEF.md).
 
 ---
 
 ## Purpose
 
-The site sells and orients **Book One: The Cosmic Tapestry**. It is not the book, not the full paradigm encyclopedia, and not a product landing page for RBI/Console yet.
+The site sells and orients **Book One: The Cosmic Tapestry**. It is the **vessel membrane**: cover, voice sample, buy.
 
-**Success:** A curious visitor understands what the book is, who it is for, and how to buy it within 60 seconds — without needing to know what an Orb is.
+It is not the book. It is not the platform. RBI, Console, Source Field, and Codex metadata belong to **upstream architecture** and live outside this site until (if ever) they have their own home.
+
+**Success:** A curious visitor understands what the book is, why it was written, and how to buy it within 60 seconds.
 
 ---
 
-## Three doors (visitor paths)
+## Build strategy: revise in place (not parallel v2)
 
-### Door 1 — Curious browser
+**Recommendation:** Edit the current Next.js site; do not maintain a parallel v2 codebase.
 
-**Needs:** Plain language, one emotional hook, one structural sentence, clear CTA.  
-**Path:** Home → Order (or Books if they want more before buying).  
-**Avoid:** Orb list, lineage essay, Source Field jargon, multiple competing narratives.
+| Revise in place | Parallel v2 site |
+|-----------------|------------------|
+| Stripe, routes, metadata already work | Duplicate env, checkout, deploy wiring |
+| Threshold fix is copy + CSS + IA on ~4 pages | Two codebases to merge or swap |
+| Git branch + Vercel preview for steward review | Same preview possible, more overhead |
+| One subtree push to production | Risk of drift between v1 and v2 |
 
-### Door 2 — Serious reader
+Use a **preview branch** (e.g. `book-vessel-pass`) for your read-aloud test. Merge to `main` when the brief is confirmed and Home passes the 60-second test. No second repository unless the stack itself were wrong (it is not).
 
-**Needs:** Proof of voice, excerpt quality, trilogy context, author credibility.  
-**Path:** Home → Books (prologue + anchor excerpt) → About (paradigm) → Order.  
+---
+
+## Visitor paths (book only)
+
+### Curious browser
+
+**Needs:** Plain language, cover, one structural sentence, clear CTA.  
+**Path:** Home → Order (or Read if they want voice first).  
+**Avoid:** Orb list, platform links, patent language, animated system chrome.
+
+### Serious reader
+
+**Needs:** Proof of voice, excerpt quality, trilogy context.  
+**Path:** Home → Read → About → Order.  
 **Avoid:** Duplicating full paradigm on Home and About.
 
-### Door 3 — Depth seeker
-
-**Needs:** Essays, glossary-adjacent material, Orb exploration, optional RBI context later.  
-**Path:** Footer **Source Field** → individual essays; About for paradigm + constellation.  
-**Avoid:** Putting Source Field in primary nav (keeps Door 1 clean).
+Depth seekers find essays and platform tools **off this site** (future platform URL or direct channels), not through book-site footer.
 
 ---
 
@@ -38,121 +51,64 @@ The site sells and orients **Book One: The Cosmic Tapestry**. It is not the book
 
 | Page | Job | Primary manuscript sources |
 |------|-----|----------------------------|
-| **Home** | Orient + one mythic sample + commerce | Introduction tone; prologue teaser; anchor excerpt; Series Note one line |
-| **About** | Paradigm + author + Orbs constellation | Paradigm section; Appendix A one-liners; Author's Note |
-| **Books** | Read before buy: excerpts, map, trilogy | Prologue, Field sample, chapter anchors, back matter in `<details>` |
-| **Source Field** | Optional depth (essays) | Essays aligned to chapters/Orbs; no broken `/rbi` until page exists |
-| **Order** | Commerce only | `publishingMetadata`; Stripe direct; no paradigm blocks |
-| **Console** | Placeholder / future | Minimal; not in main conversion path |
+| **Home** | Orient + commerce | Introduction tone; Series Note one line; cover |
+| **Read** (`/books`) | Prologue + structural excerpt + interlude sample + trilogy | Prologue; chapter anchors; interlude role named |
+| **About** | Paradigm + author + optional Orbs (collapsed) | Paradigm; Author's Note; Appendix A if needed |
+| **Order** | Commerce only | `publishingMetadata`; Stripe |
 
 ### Navigation
 
-**Primary nav:** Home · About · Books · Order  
-**Footer only:** Source Field, legal, sitemap  
-**Legacy redirects:** `/codex` → `/source-field`; `/thank-you-preorder` → `/order/success`
+**Primary nav:** Read · About · Order (Home via logo/title)  
+**Footer:** Author, legal, contact if any. **No** Source Field, Console, RBI.  
+**Legacy:** Redirect `/thank-you-preorder` → `/order/success`. Plan to remove book-site routes for `/source-field`, `/console`, `/codex` from sitemap and nav (routes may 404 or redirect when platform exists).
 
 ---
 
-## Layered disclosure (how much esoteric, where)
+## Layered disclosure
 
 ```
-Layer 0 — Home hero
-  "Structured map of consciousness" + recognition frame + CTA
+Layer 0 — Home
+  Cover + what / why / how to enter + Order + Read excerpt
 
-Layer 1 — Home body
-  What this is · Who it's for · Prologue teaser · Anchor Q&A · Series one paragraph
+Layer 1 — Read
+  Prologue, structural passage, interlude sample, trilogy, Order
 
 Layer 2 — About
-  Full paradigm lead · Orb constellation (names + one-liners) · Author
+  Paradigm prose, author, optional Orbs in details
 
-Layer 3 — Books
-  Long excerpts · interludes · consciousness overview · collapsed back matter
-
-Layer 4 — Source Field
-  Essays · codex entries · RBI mention without dead links
-
-Layer 5 — Book itself
-  Full mythic frame · all chapters · appendices · glossary
+Layer 3 — Off site
+  Platform, essays, Console, RBI (upstream; not book website)
 ```
 
-**Rule:** Never skip a layer on Home. Orbs are Layer 2+, not Layer 0.
+---
+
+## Design threshold
+
+Current site reads as **platform landing page** before **book**. Fixes:
+
+- Remove or disable 13-node starfield animation on Home and Order
+- Reduce cyan UI chrome and terminator-border boxes on Home
+- Serif-led voice blocks; sticky commerce strip optional (steward choice)
+- Interludes named on Read as connection layer, not "mythic frame" marketing
 
 ---
 
-## Copy principles
+## Copy authority stack
 
-1. **Manuscript over archive** — v12 and [BOOK_ONE_WEB_BRIEF.md](./BOOK_ONE_WEB_BRIEF.md) beat old plans in `docs/archive/`.
-2. **Recognition before theory** — match Introduction contract.
-3. **One CTA voice** — `Order Author's Edition, $44 shipped` (from `ORDER_CTA` in `lib/content.ts`).
-4. **Affirmative, varied vocabulary** — see style docs in archive; no em dashes in marketing strings.
-5. **Poetic where sampled, plain where orienting** — comet voice on Books; clear sentences on Home/Order.
-6. **No duplicate blocks** — paradigm quote lives on About; Home uses distinct hero (`lib/homepageCopy.ts`).
+1. Author's Edition v12 (Introduction, Author's Note, Series Note, Paradigm, Appendix A)
+2. Steward edits in [WEBSITE_VESSEL_BRIEF.md](./WEBSITE_VESSEL_BRIEF.md)
+3. Style guide: `docs/archive/STYLE_AND_LANGUAGE_UPDATES.md`
+4. `publishingMetadata.ts` for price/format only, not spiritual voice
 
 ---
 
-## Orbs: placement rules
+## Process (current phase)
 
-| Location | Allowed |
-|----------|---------|
-| Home hero | No Orb list; at most one phrase ("thirteen Orbs") |
-| Home "What this is" | One sentence on Orbs as movements |
-| About | Full constellation (13 one-liners) + link to Books/Source Field |
-| Books | Chapter/Orb map; excerpts tied to chapters |
-| Source Field | Deep dives per theme |
-| Order | None |
+1. **Steward confirms** [WEBSITE_VESSEL_BRIEF.md](./WEBSITE_VESSEL_BRIEF.md) (checklist at bottom).
+2. **Implement on preview branch:** boundary (remove platform links), quiet Home, copy from brief.
+3. **Read-aloud test:** 60 seconds, stranger, path to order.
+4. **About + Order polish**, then merge to `main` and deploy.
 
 ---
 
-## Commerce
-
-- **Live path:** `/order/direct` (Stripe) → `/order/success`
-- **Hub:** `/order` lists channels from `publishingMetadata`
-- **Removed from active UX:** preorder countdown, presale banner, thank-you-preorder content
-- Sticky/inline **OrderCommerceStrip** on Home and Books only
-
----
-
-## Technical / content hygiene (done or ongoing)
-
-**Completed (cleanup pass):**
-
-- Removed unused components: `ParadigmSection`, `PresaleBanner`, `BookDescription`, `ManuscriptQuote`, `AudienceCarousel`, `PreorderCountdown`, `Footer.tsx`
-- `thank-you-preorder` redirects to `/order/success`
-- Removed broken `/rbi` link on Source Field page
-- Moved `BOOK_2_3_UPDATE_PLAN.md` to `docs/archive/` (superseded by Series Note)
-- Removed unused `HOMEPAGE_SECTIONS` from `lib/content.ts`
-
-**Still optional:**
-
-- Add `/rbi` page or keep RBI as plain text until ready
-- Trim `lib/content.ts` legacy quotes if unused
-- Align Source Field essay metadata with Orb map
-
----
-
-## Next step: copy pass (after you approve this doc)
-
-1. Read site aloud as Door 1 visitor (Home → Order).
-2. Apply [BOOK_ONE_WEB_BRIEF.md](./BOOK_ONE_WEB_BRIEF.md) gaps list.
-3. Add About Orbs constellation component (static data from brief).
-4. Fix Book 2/3 teaser titles on Books page if still outdated.
-5. One more dedupe pass: Home vs About vs Books shared paragraphs.
-
-**Do not** rewrite manuscript excerpts in `lib/manuscriptWebsiteCopy.ts` without explicit editorial approval.
-
----
-
-## Files to treat as canonical for web work
-
-| File | Role |
-|------|------|
-| `lib/homepageCopy.ts` | Home strings (Atticus-aligned) |
-| `lib/content.ts` | CTAs, catalog, order channels |
-| `lib/manuscriptWebsiteCopy.ts` | Verbatim excerpts |
-| `lib/publishingMetadata.ts` | ISBN, pricing, KDP |
-| `docs/BOOK_ONE_WEB_BRIEF.md` | Manuscript distillations |
-| `docs/WEBSITE_DIRECTION.md` | This document |
-
----
-
-*Approved for implementation planning. Copy pass waits on steward sign-off.*
+*Updated: July 2026. Book-site-only boundary; revise-in-place strategy.*

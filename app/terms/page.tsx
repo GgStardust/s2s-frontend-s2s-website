@@ -1,68 +1,106 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { CONTACT_EMAIL, ORDER_RETAILERS } from '@/lib/content';
+import { LEGAL_LAST_UPDATED, LEGAL_SITE_NAME } from '@/lib/legalCopy';
+import { AUTHORS_EDITION_LABEL } from '@/lib/orderCopy';
+import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata';
+
+export const metadata: Metadata = {
+  title: `Terms · ${BOOK_CATALOG.title}`,
+  description: `Terms of service for ${LEGAL_SITE_NAME}. Purchases, shipping, and use of site content.`,
+  robots: { index: true, follow: true },
+};
+
+const linkClass =
+  'text-stone-400 hover:text-stone-200 underline underline-offset-4';
 
 export default function TermsPage() {
+  const amazon = ORDER_RETAILERS[0];
+
   return (
-    <main className="min-h-screen bg-structural-grid">
-      <div className="max-w-6xl mx-auto py-20 px-6">
-        <h1 className="text-4xl font-bold mb-8 text-stone-100">Terms of Service</h1>
-        
-        <div className="space-y-6 text-base leading-relaxed text-stone-200">
-          <p className="text-sm text-stone-300 mb-6">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-          
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Purchases</h2>
-            <p className="mb-4">
-              By placing an order, you agree to purchase the book at the listed price. Payment, shipping, and returns are governed by the retailer or print partner you use (for example Amazon or a bookstore); their terms and checkout apply.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Shipping:</strong> Print fulfillment timelines follow your retailer&apos;s schedule; publication date for <em>The Cosmic Tapestry</em> is March 6, 2026. Website orders through our print partner include shipping as stated at checkout. International orders may require customs fees.
-            </p>
-          </section>
+    <main className="min-h-screen bg-book-vessel pb-20">
+      <div className="max-w-3xl mx-auto px-6 py-14 md:py-18">
+        <header className="border-b border-stone-300/15 pb-10 mb-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-3 font-sans">Legal</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
+            Terms of Service
+          </h1>
+          <p className="text-sm text-stone-500 mt-4 font-sans">Last updated: {LEGAL_LAST_UPDATED}</p>
+        </header>
 
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Refund Policy</h2>
-            <p className="mb-4">
-              This is the Author&apos;s Edition supporting self-publishing. <strong className="text-cyan-300">No refunds will be issued. All sales are final.</strong>
-            </p>
-          </section>
+        <article className="space-y-10 text-base leading-relaxed text-stone-300 font-serif">
+          <p>
+            These terms apply to your use of {LEGAL_SITE_NAME} and purchases of{' '}
+            <em>{BOOK_CATALOG.title}</em> offered here.
+          </p>
 
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Intellectual Property</h2>
-            <p className="mb-4">
-              All content on this website and in the books is the intellectual property of Stardust to Sovereignty and is protected by copyright. You may not reproduce, distribute, or create derivative works without permission.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Trademarks and Service Marks:</strong> Stardust to Sovereignty, S2S, Resonance-Based Intelligence, RBI, The Console, The S2S Interface, Source Field, The Cosmic Tapestry, and related marks are trademarks and service marks of Stardust to Sovereignty. Unauthorized use is prohibited.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Patent Protection:</strong> The Resonance-Based Intelligence (RBI) computational framework, Proof-of-Meaning verification methods, field-level coherence computation, temporal continuity validation, 4D Resonance Vector mathematics, and coherence-based similarity algorithms are covered by U.S. Provisional Patent Application No. 63/909,031. Patent pending.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">RBI Technology:</strong> All RBI code, methods, algorithms, and mathematical foundations are protected by patent application and copyright. Use of RBI technology requires appropriate licensing.
-            </p>
-            <p className="mb-4">
-              <strong className="text-cyan-300">Book Titles and Series:</strong> Book titles, series names, and related intellectual property are protected. The Stardust to Sovereignty book series, including "The Cosmic Tapestry," "The Architecture of Civilization," and "The Resonant Species," are protected works.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Console Access</h2>
-            <p className="mb-4">
-              Console access will be announced via email. We're targeting Summer 2026, but timing may vary. Join the newsletter to be notified when the Console launches.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-stone-100">Contact</h2>
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Purchases</h2>
             <p>
-              For questions about these terms, contact us at <a href="mailto:gigi@stardusttosovereignty.com" className="text-cyan-300 hover:text-cyan-200 underline">gigi@stardusttosovereignty.com</a>.
+              <strong className="text-stone-200 font-medium">{AUTHORS_EDITION_LABEL} (this site).</strong> You may order
+              the paperback directly through Stripe Checkout. The listed price (${PRICING.directPaperbackUsd.toFixed(2)}{' '}
+              USD at time of writing) includes standard shipping to eligible countries shown at checkout. Payment,
+              billing, and shipping details are collected by Stripe. Orders are fulfilled by {BOOK_CATALOG.author}.
+            </p>
+            <p>
+              <strong className="text-stone-200 font-medium">Retailers.</strong> Paperback and ebook editions are also
+              available through {amazon.name} and other booksellers. Those purchases are governed by the retailer&apos;s
+              terms, pricing, and shipping policies.
             </p>
           </section>
-        </div>
 
-        <div className="mt-12 pt-8 border-t border-stone-300/30">
-          <Link href="/" className="text-cyan-300 hover:text-cyan-200 underline">
-            ← Back to Home
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Shipping</h2>
+            <p>
+              Author&apos;s Edition orders ship after payment is confirmed. Delivery times depend on destination and
+              carrier service. International orders may be subject to customs duties or import fees collected by local
+              authorities.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Refunds</h2>
+            <p>
+              Author&apos;s Edition orders on this site are final. For retailer purchases, refund and return policies
+              follow the retailer you used.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Intellectual property</h2>
+            <p>
+              All content on this website and in the books is the intellectual property of Stardust to Sovereignty and
+              is protected by copyright. Reproduction, distribution, or creation of derivative works requires written
+              permission.
+            </p>
+            <p>
+              Stardust to Sovereignty, S2S, {BOOK_CATALOG.title}, The Living Civilization, The Resonant Species, and
+              related book and series marks are trademarks of Stardust to Sovereignty. Unauthorized use is prohibited.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Website use</h2>
+            <p>
+              Site content is provided for reading about and ordering the book. We may update these terms or site
+              content as the book and availability evolve.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-section-title font-semibold text-stone-200 font-serif">Contact</h2>
+            <p>
+              Questions about these terms:{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+                {CONTACT_EMAIL}
+              </a>
+            </p>
+          </section>
+        </article>
+
+        <div className="mt-12 pt-8 border-t border-stone-300/15">
+          <Link href="/" className={`text-sm font-sans ${linkClass}`}>
+            ← Home
           </Link>
         </div>
       </div>
