@@ -10,15 +10,15 @@ export const BOOK_CATALOG = {
   trimSize: '6 × 9 in.',
   pageCountIngramAmazon: 254,
   bisacShelf: 'Philosophy · Metaphysics · Mind & Body',
-  /** Shortest catalog description (matches retailer “catalog” short) */
+  /** Shortest catalog description (Amazon subtitle hook, meta fallback). */
   catalogDescriptionShort:
-    'The Cosmic Tapestry presents a structured model of consciousness in which body, perception, and identity operate as a unified field of intelligence. It establishes a framework for understanding human experience as an expression of underlying architectural coherence.',
-  /** Full 150–250 word retailer description (deduped; matches KDP/Ingram long short) */
+    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body to sovereign participation. Book One of Stardust to Sovereignty.',
+  /** Full retailer description (~150–250 words; aligned with lib/amazonCopy.ts). */
   catalogDescriptionFull:
-    'The Cosmic Tapestry presents a structured framework for understanding consciousness, creation, and the inherent intelligence within reality. Drawing from cosmology, biology, and lived experience, the work positions the human being as an expression of Origin Intelligence: coherent, precise, and capable of direct authorship of experience. It presents a system that reveals how perception, structure, and awareness interlock to form a unified field of creation. Readers are invited to engage with a model of sovereignty that is internally consistent, operational, and applicable across personal, relational, and collective domains.',
+    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body, through time, memory, and relationship, toward sovereignty as participation without loss of origin. This is the first published volume of Stardust to Sovereignty, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception. The book moves through fourteen structural chapters and imaginative passages that carry the same design in a different register. Some passages land as recognition. Others bring structure gently into view. Together they trace the arc from stellar origins to sovereign participation: how inner order becomes legible in the life you already live. The book names thirteen interlocking capacities already active within awareness. Back matter includes a consciousness architecture overview, paradigm statement, series note, and glossary. Gigi Stardust\'s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
   /** ~155–165 chars for HTML meta tags */
   metaDescription:
-    'The Cosmic Tapestry (Book One, Stardust to Sovereignty) by Gigi Stardust: consciousness as a unified field: Origin Intelligence, sovereignty, and architectural coherence. Publication March 6, 2026.',
+    'The Cosmic Tapestry (Book One, Stardust to Sovereignty) by Gigi Stardust: a map of recognition from stellar origin through the body to sovereign participation.',
   authorBioShort:
     'Gigi Stardust\u2019s life has evolved toward one question: how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first volume of Stardust to Sovereignty.',
 } as const

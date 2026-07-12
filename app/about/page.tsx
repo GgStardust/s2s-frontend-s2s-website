@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
@@ -93,14 +94,23 @@ export default function AboutPage() {
         </div>
 
         <div className="pt-2 border-t border-stone-300/15">
-          <h2 className="text-section-title font-semibold text-stone-200 font-serif pt-6 mb-2">{ABOUT_AUTHOR.heading}</h2>
-          <BookProsePull>{authorEssence}</BookProsePull>
-          <div className="space-y-5">
-            {authorRest.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
-                {paragraph}
-              </p>
-            ))}
+          <h2 className="text-section-title font-semibold text-stone-200 font-serif pt-6 mb-6">{ABOUT_AUTHOR.heading}</h2>
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+            <Image
+              src="/author-gigi-stardust.jpg"
+              alt={`${BOOK_CATALOG.author}, author of ${BOOK_CATALOG.title}`}
+              width={300}
+              height={400}
+              className="w-44 sm:w-52 h-auto shrink-0 rounded-sm"
+            />
+            <div className="space-y-5 min-w-0">
+              <BookProsePull>{authorEssence}</BookProsePull>
+              {authorRest.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
 
