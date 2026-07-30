@@ -49,7 +49,11 @@ export default function AboutGigiPage() {
               ))}
             </div>
 
-            <div className="mt-12 pt-9 border-t border-stone-300/20">
+            <p className="mt-12 pt-9 border-t border-stone-300/20 text-xl md:text-2xl leading-relaxed text-stone-200 font-serif">
+              {GIGI.closing}
+            </p>
+
+            <div className="mt-10">
               <Link
                 href="/about"
                 className="inline-flex min-h-[44px] items-center text-sm text-stone-300 hover:text-cyan-100 underline underline-offset-4 font-sans"

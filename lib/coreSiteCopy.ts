@@ -11,16 +11,16 @@ export const SITE = {
   shortName: 'S2S',
   author: 'Gigi Stardust',
   description:
-    'Gigi Stardust’s philosophical and creative body of work about intelligence, relationship, and how life changes without losing its connection to origin.',
+    'Gigi Stardust’s living body of work, beginning in the human body and following the question of how life changes without losing its relationship to origin.',
 };
 
 export const HOME = {
   eyebrow: SITE.name,
   title: 'How do we change without losing where we came from?',
   lead:
-    'Stardust to Sovereignty is the name I gave a body of work that began with the human body and kept widening: into relationship, place, civilization, the planet, and the cosmos.',
+    'The system arrived after the question. I followed that question from the human body into relationship, place, civilization, the planet, and the cosmos. Stardust to Sovereignty is the name I gave what appeared.',
   premise:
-    'Before the Orbs had names, they were dots on my murals. Before The Cosmic Tapestry became a book, it was 174 essays. The material came first. The architecture arrived through the work.',
+    'Before the Orbs had names, they were dots on my murals. Before The Cosmic Tapestry became a book, it was 174 essays. The material came first. The architecture waited for me to catch up.',
   inquiry:
     'How can we enter larger relationships, change through them, and remain connected to what gave us life?',
   scale: [
@@ -34,18 +34,18 @@ export const HOME = {
     'Galaxy',
   ],
   sovereignty:
-    'Sovereignty, in S2S, is the ability to remain yourself in relationship. You can participate, change course, refuse, or leave while keeping hold of the thread of who you are.',
+    'Sovereignty, in S2S, is the capacity to enter relationship without disappearing into it. To participate, change course, refuse, or leave while keeping hold of the thread of who you are.',
   livingLiteraryTechnology:
-    'A book is one form the work can take. So is an essay, a field note, a map, a work of fiction, or a piece of software. Living Literary Technology is the name for the way S2S can move among those forms while its origins and authorship remain visible. The Constitutional Chamber keeps that record.',
+    'A book is one form the work can take. So is an essay, a field note, a map, a work of fiction, or a piece of software. S2S calls this movement Living Literary Technology: the work changes form while remaining in relationship with its source. The Constitutional Chamber protects the lineage and the possibility of return.',
   closing:
-    'S2S begins in the body and follows the question as far as it can go.',
+    'The body was the first place the question became impossible to ignore.',
 };
 
 export const ENTRY_POINTS = [
   {
     href: '/about',
     label: 'The Work',
-    title: 'The question that became an architecture',
+    title: 'The question that refused to stay small',
     description:
       'Begin with the body, then follow the inquiry into relationship, place, civilization, and beyond.',
   },
@@ -61,7 +61,7 @@ export const ENTRY_POINTS = [
     label: 'Book One',
     title: 'The Cosmic Tapestry',
     description:
-      'The first book, and the place where S2S first took a complete form.',
+      'The first complete literary form of S2S, where cosmic origin returns to the scale of a human life.',
   },
 ];
 
@@ -69,12 +69,12 @@ export const WORK = {
   eyebrow: 'The Work',
   title: 'The question keeps getting larger',
   lead:
-    'S2S begins with a human being inside a body. It asks what allows that person to change, enter relationship, and remain whole. Then it carries the question into communities, institutions, civilizations, planets, and other forms of intelligence.',
+    'The question begins close to the skin: what allows a human being to change, enter relationship, and remain whole? It did not stay there. It followed me into communities, institutions, civilizations, planets, and other forms of intelligence.',
   originHeading: 'The premise',
   originBody: [
-    'S2S begins from a premise: reality is made of relationships as much as things. A living being becomes itself through contact with a world that is already in motion.',
-    'The human body makes this visible. It carries a material history, the memory of what it has lived, and the immediate conditions of the present. It changes constantly while preserving enough continuity to remain a life.',
-    'S2S calls that continuity through changing form coherence. When a being can remain itself and still enter relationship, S2S calls that sovereignty.',
+    'Reality, as S2S understands it, is made of relationships as much as things. A living being becomes itself through contact with a world already in motion.',
+    'The body demonstrates this before any diagram can. It carries stellar material, lived memory, and the pressure of the present. It changes constantly while preserving enough continuity to remain a life.',
+    'I use coherence for that continuity through change. Sovereignty names what becomes possible when a being can enter relationship without surrendering itself.',
   ],
   movementHeading: 'Where the question travels',
   movement: [
@@ -89,10 +89,10 @@ export const WORK = {
   ],
   formsHeading: 'When the question leaves the individual',
   formsBody:
-    'Book One stays close to the body and the emergence of a sovereign self. The work that follows asks what happens when that self enters a world already shaped by other people, place, power, memory, and inherited systems. At the widest edge sits a harder question: can a civilization learn from the consequences it creates?',
+    'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, and consequences. At the widest edge waits a harder question: can a civilization learn from what it creates?',
   orientation:
     'What allows us to enter a larger world while keeping hold of the thread of who we are?',
-  closing: 'The body is where the question first becomes lived.',
+  closing: 'The body is where the question became impossible to keep theoretical.',
 };
 
 export const SOURCE_FIELD = {
@@ -102,14 +102,14 @@ export const SOURCE_FIELD = {
     'The Source Field is where I keep material before I know what it will become.',
   body: [
     'It holds essays, field notes, field reports, research, fiction, maps, and the occasional thing that resists a category.',
-    'Some of it becomes public. Some of it becomes part of a book, a map, a system, or a story. Some of it simply waits. Its value does not depend on my knowing the ending in advance.',
+    'Some of it becomes public. Some becomes part of a book, a map, a system, or a story. Some simply waits. Waiting is part of the work. Its value exists before I know the ending.',
   ],
   methodHeading: 'The method',
   method: [
     'Make contact.',
     'Keep the source intact.',
     'Notice what it touches.',
-    'Name what has actually become visible.',
+    'Name only what has become visible.',
     'Let the final form arrive later.',
   ],
   publicHeading: 'Public selections',
@@ -120,17 +120,24 @@ export const SOURCE_FIELD = {
 export const BOOK_ONE = {
   eyebrow: 'Book One',
   title: 'The Cosmic Tapestry',
-  lead: 'The first book to emerge from Stardust to Sovereignty.',
+  lead: 'The first complete literary form of Stardust to Sovereignty.',
+  epigraph:
+    'A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.',
+  introduction: [
+    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through body, time, memory, and relationship, toward sovereignty as participation without loss of origin.',
+    'This is the first volume of Stardust to Sovereignty, the name given to the system the book describes. It establishes the inquiry at human scale. Later volumes carry it into civilization and species life.',
+    'Structural chapters and imaginative passages work together. Some arrive as recognition. Others bring the architecture gently into view. The book is offered as a companion to what the reader may already sense.',
+  ],
+  originHeading: 'Before the book',
   origin: [
     'Before it was a book, The Cosmic Tapestry was 174 long-form essays. Most of them did not enter the manuscript. They still made the book possible.',
-    'The Orbs had appeared even earlier as large dots in my murals. I drew lines between them before I knew what to call the relationships. The book gave that architecture its first sustained literary form.',
   ],
-  insideHeading: 'The question inside the book',
+  insideHeading: 'The Orbs',
   thesis:
-    'The Cosmic Tapestry begins with the body. It follows the movement from cosmic material into living form, then asks how memory, perception, time, and relationship shape a human being capable of choice. Its central question is how a person can change through life without losing connection to origin.',
-  orbsHeading: 'The Orbs',
+    'The book gives this movement thirteen points of attention called the Orbs. Each names a capacity that becomes visible in lived experience. Together they form its working architecture.',
+  orbsHeading: 'Dots first. Names later.',
   orbs:
-    'The book gives this movement thirteen points of attention called the Orbs. Each names a capacity that becomes visible in lived experience. Together they form the architecture of the book. They first appeared as dots in my murals. Their names came later.',
+    'The Orbs first appeared as large dots in my murals. I drew lines between them before I could explain why they belonged together. Their names came later. That order still matters: the pattern was encountered before it was explained.',
   statusHeading: 'Returning to the book',
   status: [
     'I am reading the manuscript again, line by line, with the originating material beside me. I am deciding what still sounds like me, what belongs to an earlier stage of the work, and what I want to write again.',
@@ -145,12 +152,14 @@ export const GIGI = {
   eyebrow: 'Creator and Steward',
   title: 'Gigi Stardust',
   lead:
-    'I began with paint and questions, not a system.',
+    'I began with paint and questions. The system came later.',
   body: [
     'Before The Cosmic Tapestry became a book, I wrote 174 essays. Before the Orbs had names, they were large dots in my murals. I drew lines between them because I could see that they belonged together. The names came later.',
-    'My work has moved through businesses, murals, writing, travel, field notes, research, fiction, software, and places that changed the question while I was standing in them.',
+    'I have followed the question through businesses, murals, writing, long drives, field notes, research, fiction, software, and places that changed it while I was still standing in them.',
     'I created Stardust to Sovereignty and remain its steward. That means I keep track of where the work came from, decide what is ready to become public, and return to earlier forms when the work asks me to look again.',
   ],
+  closing:
+    'The work keeps changing form. My job is to carry its memory with it.',
 };
 
 export const CONSOLE = {

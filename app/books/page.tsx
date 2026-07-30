@@ -43,12 +43,32 @@ export default function BooksPage() {
 
       <article className="max-w-4xl mx-auto px-6">
         <section className="py-14 md:py-20 border-t border-stone-300/20">
-          <div className="space-y-6 max-w-3xl">
-            {BOOK_ONE.origin.map((paragraph) => (
+          <blockquote className="max-w-3xl border-l-2 border-cyan-300/40 pl-6 md:pl-8">
+            <p className="text-xl md:text-2xl leading-relaxed text-stone-200 font-serif italic">
+              {BOOK_ONE.epigraph}
+            </p>
+          </blockquote>
+          <div className="mt-10 space-y-6 max-w-3xl">
+            {BOOK_ONE.introduction.map((paragraph) => (
               <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
                 {paragraph}
               </p>
             ))}
+          </div>
+        </section>
+
+        <section className="py-14 md:py-20 border-t border-stone-300/20">
+          <div className="grid grid-cols-1 md:grid-cols-[0.65fr_1.35fr] gap-8 md:gap-14">
+            <h2 className="text-2xl md:text-3xl leading-tight text-stone-100 font-serif">
+              {BOOK_ONE.originHeading}
+            </h2>
+            <div className="space-y-6">
+              {BOOK_ONE.origin.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 

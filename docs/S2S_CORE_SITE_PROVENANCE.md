@@ -36,6 +36,13 @@ Stardust's material history, plain questions, and concrete sources before
 offering S2S definitions. Formal terms remain available without requiring a
 first-time visitor to learn the internal architecture all at once.
 
+The 2026-07-29 voice pass restores Gigi Stardust's literary register without
+reintroducing generalized density. It uses source-backed particulars including
+paint, mural dots, 174 essays, the body, long drives, and the sequence in which
+pattern preceded explanation. Sentence length and cadence vary deliberately.
+First-person language appears where Gigi's actual encounter with the work is
+the clearest form of orientation.
+
 ## Primary sources
 
 Public copy in `lib/coreSiteCopy.ts` is derived from:
@@ -49,10 +56,13 @@ Public copy in `lib/coreSiteCopy.ts` is derived from:
 - `constitutional/02_CONSTITUTION/constitutional-support-package/LIVING_LITERARY_TECHNOLOGY_ORIENTATION.md`
 - `source-field/sources/SF-012_The_Architecture_Came_Out_of_the_Material.md`
 - `source-field/sources/SF-016_When_the_Framework_Became_Permeable.md`
+- `source-field/systems/distribution/gigi_stardust_public_voice_capsule.md`
 - the steward's formulation: “Living Literary Technology is the capacity of
   S2S to move through multiple embodiments. The Constitutional Chamber governs
   that movement by protecting source, lineage, permission, authority, status,
   and the possibility of return.”
+- the steward's Book One opening: “A system reveals itself in the same way
+  truth does: by arriving before language, waiting for attention to catch up.”
 
 ## Page map
 
@@ -85,10 +95,12 @@ return through research, authorial development, or a later release decision.
 
 `lib/homepageCopy.ts`, `lib/aboutCopy.ts`, `lib/content.ts`, and
 `lib/publishingMetadata.ts` still preserve language from earlier website and
-Book One presentations. They are not approved sources for the present public
+Book One presentations. They are not general sources for the present public
 voice. Some modules remain in the codebase because isolated catalog, contact,
-or transaction values are still imported elsewhere. Their prose must not
-silently return to public pages through component reuse.
+or transaction values are still imported elsewhere. The Book One epigraph and
+opening were deliberately returned to the public copy after the steward
+identified them as the more accurate literary register. Other dormant prose
+must not silently return through component reuse.
 
 ## Open steward decisions
 
