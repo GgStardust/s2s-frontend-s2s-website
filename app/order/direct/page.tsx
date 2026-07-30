@@ -3,13 +3,13 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import StripeCheckoutButton from '@/components/direct-checkout/StripeCheckoutButton';
 import { getDirectSalePriceUsd } from '@/lib/directPricing';
-import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
 import { AUTHORS_EDITION_LABEL, AUTHORS_EDITION_WHAT } from '@/lib/orderCopy';
 import { BOOK_CATALOG } from '@/lib/publishingMetadata';
 
 export const metadata: Metadata = {
   title: `Checkout · ${BOOK_CATALOG.title}`,
-  description: `Order The Cosmic Tapestry (${AUTHORS_EDITION_LABEL}).`,
+  description: `Purchase the current first edition of ${BOOK_CATALOG.title} directly from Gigi Stardust.`,
+  robots: { index: false, follow: false },
 };
 
 export default function DirectOrderPage({
@@ -24,12 +24,14 @@ export default function DirectOrderPage({
     <main className="min-h-screen bg-book-vessel pb-20">
       <div className="max-w-3xl mx-auto px-6 py-14 md:py-16">
         <header className="text-center mb-10 border-b border-stone-300/15 pb-10">
-          <BookSeriesEyebrow className="mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
+          <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
+            Book One · Stardust to Sovereignty
+          </p>
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
             {BOOK_CATALOG.title}
           </h1>
           <p className="text-base text-stone-400 mt-3 font-sans">
-            {AUTHORS_EDITION_LABEL} · ${priceUsd.toFixed(2)} USD · shipping included
+            {AUTHORS_EDITION_LABEL} · ${priceUsd.toFixed(2)} USD · standard shipping included
           </p>
         </header>
 
@@ -55,17 +57,16 @@ export default function DirectOrderPage({
               />
             </div>
           </div>
-          <p className="text-base leading-relaxed text-stone-400 font-serif">{AUTHORS_EDITION_WHAT}</p>
+          <p className="text-base leading-relaxed text-stone-300 font-serif">
+            {AUTHORS_EDITION_WHAT}
+          </p>
         </div>
 
         <StripeCheckoutButton priceUsd={priceUsd} />
 
-        <div className="mt-10 flex flex-wrap gap-x-4 gap-y-2 text-sm font-sans justify-center">
-          <Link href="/order" className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
-            Other ways to buy
-          </Link>
+        <div className="mt-10 flex justify-center text-sm font-sans">
           <Link href="/books" className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
-            Read an excerpt
+            Return to Book One
           </Link>
         </div>
       </div>

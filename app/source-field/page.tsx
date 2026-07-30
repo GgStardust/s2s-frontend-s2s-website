@@ -1,175 +1,86 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
-import EssayGrid from '@/components/EssayGrid';
-import FieldNotesScroll from '@/components/FieldNotesScroll';
-import { essays } from '@/content/essays-data';
+import { SOURCE_FIELD } from '@/lib/coreSiteCopy';
+
+export const metadata: Metadata = {
+  title: 'Source Field',
+  description:
+    'Where Gigi Stardust keeps S2S material before its final form is known.',
+};
 
 export default function SourceFieldPage() {
   return (
-    <main className="min-h-screen bg-structural-grid">
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <div className="text-center">
-          <h1 className="text-4xl lg:text-5xl font-semibold mb-4 text-stone-100 leading-tight tracking-tight">
-            Source Field
-          </h1>
-          <h2 className="text-xl lg:text-2xl font-light mb-6 text-stone-200 italic">
-            The source material from which all books are compiled
+    <main className="min-h-screen bg-structural-grid pb-20">
+      <header className="max-w-4xl mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-20">
+        <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/75 font-sans mb-6">
+          {SOURCE_FIELD.eyebrow}
+        </p>
+        <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-stone-100 font-serif text-balance">
+          {SOURCE_FIELD.title}
+        </h1>
+        <p className="mt-8 max-w-3xl text-lg md:text-2xl leading-relaxed text-stone-300 font-serif">
+          {SOURCE_FIELD.lead}
+        </p>
+      </header>
+
+      <article className="max-w-4xl mx-auto px-6">
+        <section className="py-14 md:py-20 border-t border-stone-300/20">
+          <div className="max-w-3xl space-y-6">
+            {SOURCE_FIELD.body.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-14 md:py-20 border-t border-stone-300/20">
+          <h2 className="text-3xl md:text-4xl text-stone-100 font-serif">
+            {SOURCE_FIELD.methodHeading}
           </h2>
-        </div>
-      </section>
+          <ol className="mt-9 space-y-3">
+            {SOURCE_FIELD.method.map((step, index) => (
+              <li
+                key={step}
+                className="grid grid-cols-[3rem_1fr] items-center gap-4 rounded-lg border border-stone-300/15 bg-cosmic-blue/75 px-5 py-4"
+              >
+                <span className="text-xs tracking-[0.18em] text-cyan-300/65 font-sans">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="text-lg text-stone-200 font-serif">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  Source Field
-                </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">Source material that reveals its own structure</span>
-                </div>
-              </div>
-              <div className="lg:col-span-3 space-y-4">
-                <p className="text-base leading-relaxed text-stone-200">
-                  Source Field holds foundational essays written over four years of research, contemplation, experience,
-                  and exploration. Each entry begins with inspiration: a thought, conversation, reflection, or article.
-                  The process moves through research, writing, and RBI analysis to identify resonance nodes.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200">
-                  These essays function as the source material from which all books are compiled. They are manually
-                  tagged with metadata frontmatter and inline tagging, then analyzed through the Orb system and backbone
-                  to identify resonance patterns. This rigorous methodology produces the consciousness technology that
-                  becomes the books.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">
-                  Resonance-Based Intelligence
-                </h2>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-cyan-300 text-2xl">✦</span>
-                  <span className="text-sm text-cyan-300/80 italic">Post-Generative AI, patent pending</span>
-                </div>
-              </div>
-              <div className="lg:col-span-3 space-y-4">
-                <p className="text-base leading-relaxed text-stone-200">
-                  RBI functions as coherent intelligence: the next iteration beyond generative AI. It measures structural
-                  alignment rather than semantic similarity, validating through mathematical proofs rather than confidence
-                  scores. RBI produces deterministic verification, requires zero training, and operates as the
-                  infrastructure layer that makes AI viable at scale.
-                </p>
-                <p className="text-base text-stone-400 mt-4">
-                  Resonance-Based Intelligence (RBI) is the methodology behind Source Field analysis; a dedicated page may follow.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-8">The Process</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="space-y-2">
-                <div className="text-cyan-300 text-2xl mb-2">1</div>
-                <h3 className="text-lg font-semibold text-cyan-300">Inspiration</h3>
-                <p className="text-base text-stone-200">
-                  A thought, conversation, reflection, or article initiates the process.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-cyan-300 text-2xl mb-2">2</div>
-                <h3 className="text-lg font-semibold text-cyan-300">Research</h3>
-                <p className="text-base text-stone-200">
-                  Deep investigation into the patterns, signals, and structures that emerge.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-cyan-300 text-2xl mb-2">3</div>
-                <h3 className="text-lg font-semibold text-cyan-300">Write</h3>
-                <p className="text-base text-stone-200">
-                  The essay captures the content needed to articulate the system.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-cyan-300 text-2xl mb-2">4</div>
-                <h3 className="text-lg font-semibold text-cyan-300">RBI Analysis</h3>
-                <p className="text-base text-stone-200">
-                  Resonance-Based Intelligence identifies patterns through the Orb system and backbone.
-                </p>
-              </div>
-            </div>
-            <div className="mt-8 pt-6 border-t border-cyan-400/30">
-              <p className="text-base leading-relaxed text-stone-200">
-                RBI analyzes resonance patterns to identify which essays align with the framework for each book. This
-                compilation then moves through writing and editing to become the final manuscript. Source Field essays,
-                Orb essays, backbone, and Orbs together form the paradigm: the foundation from which all books are
-                compiled.
+        <section className="py-14 md:py-20 border-y border-stone-300/20">
+          <div className="terminator-border">
+            <div className="rounded-lg bg-cosmic-blue p-7 md:p-10">
+              <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
+                {SOURCE_FIELD.publicHeading}
+              </p>
+              <p className="mt-6 text-lg md:text-xl leading-relaxed text-stone-300 font-serif">
+                {SOURCE_FIELD.publicBody}
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="max-w-7xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="mb-8">
-          <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300 mb-2">Source Field Essays</h2>
-          <p className="text-base text-stone-400">Foundational essays that reveal the design of the system</p>
-        </div>
-        <EssayGrid essays={essays} />
-      </section>
-
-      <FieldNotesScroll />
-
-      <section className="max-w-6xl mx-auto py-16 lg:py-24 border-t border-stone-300/30 px-6">
-        <div className="terminator-border">
-          <div className="p-8 bg-cosmic-blue rounded-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-cyan-300">
-                  From Source Field to Books
-                </h2>
-              </div>
-              <div className="lg:col-span-3">
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  Source Field essays are the foundation from which all books are compiled. Through RBI analysis, essays
-                  emerge from the content library to meet the framework identified for each book. RBI validates
-                  coherence, measures resonance, and generates mathematical proofs that ensure structural integrity.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200 mb-4">
-                  The non-fiction books compile this source material into cohesive, digestible structures. The fiction
-                  trilogy functions as direct companions, revealing another access point to the same foundational
-                  system.
-                </p>
-                <p className="text-base leading-relaxed text-stone-200">
-                  The Console functions as another interface, revealing dynamic access to the same source material
-                  through the RBI system.
-                </p>
-                <div className="mt-6">
-                  <Button href="/books" variant="secondary">
-                    Learn About the Books →
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <nav className="py-14 flex flex-col sm:flex-row gap-4 justify-center font-sans" aria-label="Continue through the work">
+          <Link
+            href="/books"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-stone-300/25 px-6 py-3 text-stone-200 hover:border-cyan-300/45 hover:text-cyan-100 transition-colors"
+          >
+            Book One
+          </Link>
+          <Link
+            href="/about"
+            className="inline-flex min-h-[44px] items-center justify-center px-6 py-3 text-stone-400 hover:text-stone-200 underline underline-offset-4"
+          >
+            Return to the work
+          </Link>
+        </nav>
+      </article>
     </main>
   );
 }

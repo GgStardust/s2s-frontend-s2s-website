@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/admin/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/order/direct', '/source-field/*'],
       },
     ],
     sitemap: 'https://stardusttosovereignty.com/sitemap.xml',

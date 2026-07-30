@@ -1,32 +1,38 @@
-import NewsletterSignup from '@/components/NewsletterSignup';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { CONSOLE } from '@/lib/coreSiteCopy';
+
+export const metadata: Metadata = {
+  title: CONSOLE.title,
+  description: CONSOLE.lead,
+  robots: { index: false, follow: true },
+};
 
 export default function ConsolePage() {
   return (
     <main className="min-h-screen bg-structural-grid">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero */}
-        <section className="py-20 px-6">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-100 tracking-tight">
-              The Console
-            </h1>
-            <h2 className="text-xl md:text-2xl font-light mb-8 text-stone-200 italic">
-              Real-time coherence system. Coming Summer 2026.
-            </h2>
-            <p className="text-base leading-relaxed text-stone-200 max-w-2xl mx-auto mb-10">
-              The Console functions as a real-time application layer. The design of Book One becomes immediately accessible. It reads your current orientation through the Sovereign Field Inquiry and reveals how your system is perceiving, organizing, and moving right now. Pathways and practices emerge from there.
-            </p>
-            <div className="terminator-border max-w-md mx-auto">
-              <div className="p-6 bg-cosmic-blue rounded-lg">
-                <p className="text-base text-stone-200 mb-4">
-                  Get notified when the Console launches:
-                </p>
-                <NewsletterSignup />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      <section className="max-w-3xl mx-auto px-6 py-20 md:py-28">
+        <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/75 font-sans mb-6">
+          {CONSOLE.eyebrow}
+        </p>
+        <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-stone-100 font-serif">
+          {CONSOLE.title}
+        </h1>
+        <p className="mt-8 text-lg md:text-2xl leading-relaxed text-stone-300 font-serif">
+          {CONSOLE.lead}
+        </p>
+        <p className="mt-6 text-base md:text-lg leading-relaxed text-stone-400 font-serif">
+          {CONSOLE.body}
+        </p>
+        <div className="mt-12 pt-8 border-t border-stone-300/20">
+          <Link
+            href="/about"
+            className="inline-flex min-h-[44px] items-center text-sm text-stone-300 hover:text-cyan-100 underline underline-offset-4 font-sans"
+          >
+            Return to the work →
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

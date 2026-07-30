@@ -37,12 +37,12 @@ export const SEARCH_KEYWORDS = [
 export const PRICING = {
   /** Typical Amazon KDP paperback list (retailer may add shipping at checkout). */
   paperbackUsd: 33,
-  /** Author's Edition: direct Stripe checkout, paperback trim, standard shipping included in total. */
+  /** Current first edition: direct Stripe checkout, paperback trim, standard shipping included in total. */
   directPaperbackUsd: 44,
   digitalUsd: 17,
   /** Shown on the order hub when a price comparison note is needed (keep minimal). */
   websitePaperbackNote:
-    "Author's Edition: $44.00 USD total with standard shipping included, fulfilled directly.",
+    'Current First Edition: $44.00 USD total with standard shipping included, purchased directly from Gigi Stardust.',
 } as const
 
 /** Primary ISBN for schema.org (Amazon KDP paperback, 254 pp.) */

@@ -1,75 +1,68 @@
-import type { Metadata, Viewport } from 'next'
-import { Montserrat, Lora } from 'next/font/google'
-import Link from 'next/link'
-import './globals.css'
-import Navigation from '@/components/Navigation'
-import NewsletterSignup from '@/components/NewsletterSignup'
-import Breadcrumbs from '@/components/Breadcrumbs'
-import Analytics from '@/components/Analytics'
-import { CONTACT_EMAIL } from '@/lib/content'
-import { SERIES_NAME, BOOK_VOLUME_LABEL } from '@/lib/homepageCopy'
-import {
-  AMAZON_LISTING_URL,
-  BOOK_CATALOG,
-  ISBN_SCHEMA_PRIMARY,
-  PRICING,
-  SEARCH_KEYWORDS,
-} from '@/lib/publishingMetadata'
+import type { Metadata, Viewport } from 'next';
+import { Lora, Montserrat } from 'next/font/google';
+import Link from 'next/link';
+import './globals.css';
+import Analytics from '@/components/Analytics';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import Navigation from '@/components/Navigation';
+import NewsletterSignup from '@/components/NewsletterSignup';
+import { CONTACT_EMAIL } from '@/lib/content';
+import { SITE } from '@/lib/coreSiteCopy';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
-})
+});
 
 const lora = Lora({
   subsets: ['latin'],
   variable: '--font-lora',
-})
-
-const siteKeywords = [
-  ...SEARCH_KEYWORDS,
-  BOOK_CATALOG.title,
-  BOOK_CATALOG.series,
-  BOOK_CATALOG.author,
-  'Stardust to Sovereignty',
-]
+});
 
 export const metadata: Metadata = {
   title: {
-    default: `The Cosmic Tapestry · Book One | ${BOOK_CATALOG.series}`,
-    template: `%s | ${BOOK_CATALOG.series}`,
+    default: SITE.name,
+    template: `%s | ${SITE.name}`,
   },
-  description: BOOK_CATALOG.metaDescription,
-  keywords: siteKeywords,
-  authors: [{ name: BOOK_CATALOG.author, url: 'https://stardusttosovereignty.com/about' }],
-  creator: BOOK_CATALOG.author,
-  publisher: BOOK_CATALOG.imprint,
+  description: SITE.description,
+  keywords: [
+    SITE.name,
+    'Gigi Stardust',
+    'Coherent inhabitation',
+    'Developmental architecture',
+    'The Resonant Species',
+    'Living Literary Technology',
+    'Source Field',
+    'The Cosmic Tapestry',
+  ],
+  authors: [{ name: SITE.author, url: 'https://stardusttosovereignty.com/about-gigi' }],
+  creator: SITE.author,
   metadataBase: new URL('https://stardusttosovereignty.com'),
   alternates: {
     canonical: 'https://stardusttosovereignty.com',
   },
   openGraph: {
-    title: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
-    description: BOOK_CATALOG.catalogDescriptionShort,
+    title: SITE.name,
+    description: SITE.description,
     type: 'website',
     url: 'https://stardusttosovereignty.com',
-    siteName: BOOK_CATALOG.series,
+    siteName: SITE.name,
     locale: 'en_US',
     images: [
       {
-        url: 'https://stardusttosovereignty.com/book-cover.png',
-        width: 800,
-        height: 1200,
-        alt: `${BOOK_CATALOG.title} by ${BOOK_CATALOG.author}, ${BOOK_CATALOG.series}, ${BOOK_CATALOG.volumeLabel}`,
+        url: '/og-v4.png',
+        width: 1200,
+        height: 630,
+        alt: 'Stardust to Sovereignty: How do we change without losing where we came from?',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
-    description: BOOK_CATALOG.catalogDescriptionShort,
-    images: ['https://stardusttosovereignty.com/book-cover.png'],
+    title: SITE.name,
+    description: SITE.description,
+    images: ['/og-v4.png'],
     creator: '@gigi_stardust',
   },
   robots: {
@@ -83,68 +76,30 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // Add Google Search Console verification if available
-    // google: 'your-verification-code',
-  },
-}
+};
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": BOOK_CATALOG.imprint,
-    "alternateName": BOOK_CATALOG.series,
-    "url": "https://stardusttosovereignty.com",
-    "logo": "https://stardusttosovereignty.com/logo.png",
-    "description": BOOK_CATALOG.catalogDescriptionShort,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": CONTACT_EMAIL,
-      "contactType": "Customer Service"
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: SITE.name,
+    description: SITE.description,
+    url: 'https://stardusttosovereignty.com',
+    creator: {
+      '@type': 'Person',
+      name: SITE.author,
+      url: 'https://stardusttosovereignty.com/about-gigi',
     },
-    "sameAs": []
-  };
-
-  const bookStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": BOOK_CATALOG.title,
-    "alternateName": [
-      `${BOOK_CATALOG.series}: ${BOOK_CATALOG.volumeLabel}`,
-      `${BOOK_CATALOG.volumeLabel}: ${BOOK_CATALOG.title}`,
-    ],
-    "isbn": ISBN_SCHEMA_PRIMARY,
-    "numberOfPages": BOOK_CATALOG.pageCountIngramAmazon,
-    "author": {
-      "@type": "Person",
-      "name": BOOK_CATALOG.author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": BOOK_CATALOG.imprint
-    },
-    "datePublished": BOOK_CATALOG.publicationDateISO,
-    "description": BOOK_CATALOG.catalogDescriptionShort,
-    "bookFormat": ["Paperback", "Ebook"],
-    "image": "https://stardusttosovereignty.com/book-cover.png",
-    "offers": {
-      "@type": "Offer",
-      "price": String(PRICING.paperbackUsd),
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": AMAZON_LISTING_URL
-    }
   };
 
   return (
@@ -154,10 +109,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(bookStructuredData) }}
-        />
       </head>
       <body className="bg-cosmic-blue text-cream min-h-screen flex flex-col font-sans antialiased">
         <a href="#main-content" className="skip-to-main">
@@ -166,81 +117,58 @@ export default function RootLayout({
         <Navigation />
         <Breadcrumbs />
         <main id="main-content" className="flex-grow">
-        {children}
+          {children}
         </main>
-        <footer className="text-center text-base text-stone-400 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))] border-t border-stone-300/15">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-8">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-stone-500 mb-0.5 font-sans">{SERIES_NAME}</p>
-              <p className="text-[10px] uppercase tracking-[0.16em] text-stone-600 mb-1 font-sans">{BOOK_VOLUME_LABEL}</p>
-              <p className="text-stone-100 mb-1 font-serif text-lg">{BOOK_CATALOG.title}</p>
-              <p className="text-sm text-stone-500 mb-4 font-sans">{BOOK_CATALOG.author}</p>
-              <p className="text-xs text-stone-600 mb-6 font-sans">
-                © {new Date().getFullYear()} {BOOK_CATALOG.author}. All rights reserved.
-              </p>
-              <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm sm:gap-x-4 sm:gap-y-2 font-sans">
-                <Link
-                  href="/books"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
-                >
-                  Read
+        <footer className="border-t border-stone-300/15 py-12 pb-[max(3rem,calc(env(safe-area-inset-bottom,0px)+2.5rem))]">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16">
+              <div>
+                <p className="text-xl text-stone-100 font-serif">{SITE.name}</p>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-stone-500 font-sans">
+                  A philosophical and creative body of work by Gigi Stardust.
+                </p>
+                <p className="mt-5 text-xs text-stone-600 font-sans">
+                  © {new Date().getFullYear()} {SITE.author}. All rights reserved.
+                </p>
+              </div>
+              <nav className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm font-sans" aria-label="Footer">
+                <Link href="/about" className="text-stone-400 hover:text-stone-200">
+                  The Work
                 </Link>
-                <Link
-                  href="/about"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
-                >
-                  About
+                <Link href="/source-field" className="text-stone-400 hover:text-stone-200">
+                  Source Field
                 </Link>
-                <Link
-                  href="/order"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-300 hover:text-stone-100 underline underline-offset-4 touch-manipulation"
-                >
-                  Order
+                <Link href="/books" className="text-stone-400 hover:text-stone-200">
+                  Book One
                 </Link>
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-400 hover:text-stone-200 underline underline-offset-4 touch-manipulation"
-                >
-                  {CONTACT_EMAIL}
+                <Link href="/about-gigi" className="text-stone-400 hover:text-stone-200">
+                  Gigi
+                </Link>
+                <Link href="/console" className="text-stone-500 hover:text-stone-300">
+                  Console
+                </Link>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-stone-500 hover:text-stone-300">
+                  Contact
                 </a>
-                <a
-                  href="https://www.instagram.com/gigi_stardust/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-500 hover:text-stone-300 underline underline-offset-4 touch-manipulation"
-                >
-                  Instagram
-                </a>
-                <Link
-                  href="/privacy"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-600 hover:text-stone-400 underline underline-offset-4 touch-manipulation"
-                >
+                <Link href="/privacy" className="text-stone-600 hover:text-stone-400">
                   Privacy
                 </Link>
-                <Link
-                  href="/terms"
-                  className="inline-flex min-h-[44px] items-center px-3 py-2 text-stone-600 hover:text-stone-400 underline underline-offset-4 touch-manipulation"
-                >
+                <Link href="/terms" className="text-stone-600 hover:text-stone-400">
                   Terms
                 </Link>
-              </div>
-              <p className="text-xs text-stone-600 mt-6 font-sans">
-                Wholesale inquiries:{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
-                  {CONTACT_EMAIL}
-                </a>
-              </p>
+              </nav>
             </div>
-            <div className="pt-6 border-t border-stone-300/15">
-              <p className="text-sm text-stone-500 mb-4 font-sans">Occasional notes on the book and availability.</p>
-              <div className="max-w-md mx-auto">
-                <NewsletterSignup />
-              </div>
+
+            <div className="mt-10 pt-8 border-t border-stone-300/10 max-w-xl">
+              <p className="text-sm text-stone-500 mb-4 font-sans">
+                Occasional notes from the evolving field.
+              </p>
+              <NewsletterSignup />
             </div>
           </div>
         </footer>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

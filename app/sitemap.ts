@@ -1,50 +1,51 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://stardusttosovereignty.com'
+  const baseUrl = 'https://stardusttosovereignty.com';
+  const lastModified = new Date('2026-07-29');
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      lastModified,
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/books`,
-      lastModified: new Date(),
+      url: `${baseUrl}/about`,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      url: `${baseUrl}/source-field`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/books`,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/order`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/order/direct`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.95,
+      url: `${baseUrl}/about-gigi`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'yearly',
-      priority: 0.3,
+      priority: 0.2,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'yearly',
-      priority: 0.3,
+      priority: 0.2,
     },
-  ]
+  ];
 }

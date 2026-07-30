@@ -1,15 +1,14 @@
 /**
- * Order and Author's Edition copy — minimal, standard commerce tone.
- * The Cosmic Tapestry is the book; Author's Edition is the direct print channel.
+ * Direct-order copy for the current first edition.
  */
 
-export const AUTHORS_EDITION_LABEL = "Author's Edition" as const
+export const AUTHORS_EDITION_LABEL = 'Current First Edition' as const
 
 export const ORDER_BOOK_LEAD =
-  'Paperback, ordered here and shipped from the author.' as const
+  'Paperback purchased directly from Gigi Stardust.' as const
 
 export const AUTHORS_EDITION_WHAT =
-  "Each Author's Edition is ordered directly from the author and supports the continued development of Stardust to Sovereignty." as const
+  'This is the edition of The Cosmic Tapestry published on March 6, 2026. A later edition may change as Gigi returns to the manuscript.' as const
 
 export const AUTHORS_EDITION_FULFILLMENT = 'You receive confirmation by email when your order is placed.' as const
 

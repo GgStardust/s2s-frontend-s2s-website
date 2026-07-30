@@ -75,7 +75,7 @@ export const PRESALE_INFO = {
   shortAnnouncement: 'The Cosmic Tapestry · March 6, 2026',
   shipDate: 'March 6, 2026',
   digitalRelease: 'March 2026',
-  reserveCopy: "Order your copy. Author's Edition.",
+  reserveCopy: 'Purchase the current first edition.',
   orderBefore: '',
 } as const;
 
@@ -91,14 +91,14 @@ export const SELF_PUBLISHING = {
   orderMatters: "By ordering your copy, you support this work as it was intended: a translation of a system that predates its articulation, preserved in its original integrity.",
 } as const;
 
-/** Unified purchase CTAs (Author's Edition + Amazon fallback). */
+/** Unified purchase CTAs for the current first edition. */
 export const ORDER_CTA = {
   primary: (priceUsd: number) => `Order the book · $${priceUsd} shipped`,
-  primaryShort: "Order Author's Edition",
+  primaryShort: 'Purchase the current first edition',
   amazonSecondary: 'Also on Amazon →',
   whereToBuy: 'Where to buy →',
   editionLine: (priceUsd: number, publicationDisplay: string) =>
-    `Author's Edition · $${priceUsd} shipped · ${publicationDisplay}`,
+    `Current First Edition · $${priceUsd} shipped · ${publicationDisplay}`,
 } as const
 
 // Button Labels

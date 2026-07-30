@@ -3,24 +3,22 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { SERIES_NAME, BOOK_VOLUME_LABEL, BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
+import { SITE } from '@/lib/coreSiteCopy';
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems: Array<{ href: string; label: string; prominent?: boolean }> = [
-    { href: '/books', label: 'Read' },
-    { href: '/about', label: 'About' },
-    { href: '/order', label: 'Order', prominent: true },
+  const navItems: Array<{ href: string; label: string }> = [
+    { href: '/about', label: 'The Work' },
+    { href: '/source-field', label: 'Source Field' },
+    { href: '/books', label: 'Book One' },
+    { href: '/about-gigi', label: 'Gigi' },
   ];
 
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
-    }
-    if (href === '/order') {
-      return pathname === '/order' || pathname?.startsWith('/order/') || false;
     }
     return pathname?.startsWith(href);
   };
@@ -33,16 +31,13 @@ export default function Navigation() {
           <Link
             href="/"
             className="group touch-manipulation py-1 leading-snug max-w-[65vw] sm:max-w-none"
-            title={BOOK_SERIES_CONTEXT}
+            title={SITE.description}
           >
             <span className="block text-lg sm:text-xl md:text-2xl font-bold text-stone-100 group-hover:text-stone-50 font-serif truncate sm:overflow-visible sm:whitespace-normal">
-              The Cosmic Tapestry
+              {SITE.name}
             </span>
             <span className="hidden sm:block text-[11px] uppercase tracking-[0.18em] text-stone-500 font-sans mt-0.5">
-              {SERIES_NAME}
-            </span>
-            <span className="hidden sm:block text-[10px] uppercase tracking-[0.16em] text-stone-600 font-sans">
-              {BOOK_VOLUME_LABEL}
+              A living body of work
             </span>
           </Link>
 
@@ -52,15 +47,11 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                  className={`text-base transition-colors relative touch-manipulation font-sans ${
-                    item.prominent
-                      ? isActive(item.href)
-                        ? 'text-stone-100 font-semibold'
-                        : 'text-stone-200 font-medium hover:text-stone-50'
-                      : isActive(item.href)
-                        ? 'text-stone-100 font-medium'
-                        : 'text-stone-400 hover:text-stone-200'
-                  }`}
+                className={`text-sm transition-colors relative touch-manipulation font-sans ${
+                  isActive(item.href)
+                    ? 'text-stone-100 font-medium'
+                    : 'text-stone-400 hover:text-stone-200'
+                }`}
               >
                 {item.label}
               </Link>
@@ -102,15 +93,11 @@ export default function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                    className={`block py-3 text-base transition-colors relative touch-manipulation font-sans ${
-                      item.prominent
-                        ? isActive(item.href)
-                          ? 'text-stone-100 font-semibold'
-                          : 'text-stone-200 font-medium hover:text-stone-50'
-                        : isActive(item.href)
-                          ? 'text-stone-100 font-medium'
-                          : 'text-stone-400 hover:text-stone-200'
-                    }`}
+                  className={`block py-3 text-base transition-colors relative touch-manipulation font-sans ${
+                    isActive(item.href)
+                      ? 'text-stone-100 font-medium'
+                      : 'text-stone-400 hover:text-stone-200'
+                  }`}
                 >
                   {item.label}
                 </Link>

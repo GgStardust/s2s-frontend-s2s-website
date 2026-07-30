@@ -1,29 +1,13 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import FirstReaders from '@/components/FirstReaders';
-import { ORDER_CTA, SEARCH_KEYWORDS } from '@/lib/content';
-import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata';
-import { BOOK_EPIGRAPH, BOOK_HOME_BODY, BOOK_SERIES_CONTEXT } from '@/lib/homepageCopy';
-import BookSeriesEyebrow from '@/components/book-vessel/BookSeriesEyebrow';
-import { AUTHORS_EDITION_LABEL } from '@/lib/orderCopy';
+import { ENTRY_POINTS, HOME, SITE } from '@/lib/coreSiteCopy';
 
 export const metadata: Metadata = {
   title: {
-    absolute: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
+    absolute: SITE.name,
   },
-  description:
-    'The Cosmic Tapestry (Book One): a paperback map of recognition from stellar origin through the body to sovereign participation. Read excerpts or order the Author\'s Edition.',
-  keywords: [...SEARCH_KEYWORDS, BOOK_CATALOG.title, BOOK_CATALOG.author],
-  openGraph: {
-    title: `The Cosmic Tapestry · ${BOOK_CATALOG.volumeLabel} | ${BOOK_CATALOG.series}`,
-    description: BOOK_CATALOG.catalogDescriptionShort,
-    url: 'https://stardusttosovereignty.com',
-    siteName: BOOK_CATALOG.series,
-    type: 'website',
-    locale: 'en_US',
-  },
+  description: SITE.description,
   alternates: {
     canonical: 'https://stardusttosovereignty.com',
   },
@@ -31,81 +15,121 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-book-vessel relative z-10 pb-20">
-      <section
-        id="home-hero"
-        aria-labelledby="home-hero-heading"
-        className="scroll-mt-28 max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-10 md:pt-24 md:pb-14"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:items-start">
-          <div className="flex justify-center lg:justify-end order-2 lg:order-1">
-            <div className="rounded-sm p-2 bg-cosmic-blue-light/30">
-              <Image
-                src="/book-cover.png"
-                alt={`${BOOK_CATALOG.title} by ${BOOK_CATALOG.author}, ${BOOK_SERIES_CONTEXT}`}
-                width={320}
-                height={480}
-                className="w-full h-auto block max-w-[280px] lg:max-w-[320px] rounded-sm"
-                priority
-              />
-            </div>
-          </div>
-
-          <div className="order-1 lg:order-2 space-y-5 text-center lg:text-left">
-            <BookSeriesEyebrow centered={false} className="lg:text-left text-center" />
-            <div>
-              <h1
-                id="home-hero-heading"
-                className="text-display font-bold text-stone-100 font-serif text-balance"
-              >
-                {BOOK_CATALOG.title}
-              </h1>
-              <p className="text-base text-stone-400 mt-2 font-sans">{BOOK_CATALOG.author}</p>
-            <p className="text-sm text-stone-500 mt-1 font-sans">{AUTHORS_EDITION_LABEL} available here</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 pt-1 justify-center lg:justify-start">
-              <Button href="/order/direct" variant="primary" className="px-8">
-                {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
-              </Button>
-              <Link
-                href="/books"
-                className="inline-flex min-h-[44px] items-center justify-center text-sm text-stone-400 hover:text-stone-200 underline underline-offset-4 focus:outline-2 focus:outline-stone-400/50 focus:outline-offset-2 rounded-sm px-4 touch-manipulation font-sans"
-              >
-                Read an excerpt
-              </Link>
-            </div>
+    <main className="min-h-screen bg-structural-grid relative z-10 pb-20">
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+        <div className="max-w-4xl">
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/80 font-sans mb-7">
+            {HOME.eyebrow}
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-[5.4rem] lg:leading-[1.02] font-semibold tracking-tight text-stone-100 font-serif text-balance">
+            {HOME.title}
+          </h1>
+          <p className="mt-8 max-w-3xl text-lg md:text-2xl leading-relaxed text-stone-200 font-serif">
+            {HOME.lead}
+          </p>
+          <p className="mt-6 max-w-3xl text-base md:text-lg leading-relaxed text-stone-400 font-serif">
+            {HOME.premise}
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Button href="/about" variant="primary" className="px-8">
+              Enter the work
+            </Button>
+            <Button href="/source-field" variant="secondary" className="px-8">
+              Visit the Source Field
+            </Button>
           </div>
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-14 md:pb-16 border-t border-stone-300/15 pt-12 md:pt-14">
-        <blockquote className="border-l-2 border-stone-500/40 pl-5 md:pl-6 mb-12">
-          <p className="text-lg md:text-xl leading-relaxed text-stone-300 italic font-serif">{BOOK_EPIGRAPH}</p>
-        </blockquote>
-
-        <div className="space-y-6">
-          {BOOK_HOME_BODY.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)} className="text-base md:text-lg leading-relaxed text-stone-300 font-serif">
-              {paragraph}
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-stone-300/20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-14 items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
+              The question beneath the work
             </p>
+            <h2 className="mt-5 max-w-4xl text-3xl md:text-5xl leading-tight text-stone-100 font-serif text-balance">
+              {HOME.inquiry}
+            </h2>
+          </div>
+          <div className="rounded-lg border border-stone-300/15 bg-cosmic-blue-light/25 p-7 md:p-8">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/70 font-sans">
+              Sovereignty
+            </p>
+            <p className="mt-5 text-lg leading-relaxed text-stone-300 font-serif">
+              {HOME.sovereignty}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20 border-t border-stone-300/20">
+        <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
+          Where the question travels
+        </p>
+        <ol className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-lg border border-stone-300/15 bg-stone-300/15">
+          {HOME.scale.map((scale, index) => (
+            <li
+              key={scale}
+              className="min-h-28 bg-cosmic-blue px-5 py-5 flex flex-col justify-between"
+            >
+              <span className="text-xs text-stone-600 font-sans">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className="text-base md:text-lg text-stone-200 font-serif">{scale}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20 border-t border-stone-300/20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {ENTRY_POINTS.map((entry, index) => (
+            <Link
+              key={entry.href}
+              href={entry.href}
+              className="group min-h-full rounded-lg border border-stone-300/15 bg-cosmic-blue-light/25 p-7 md:p-8 hover:border-cyan-300/35 hover:bg-cosmic-blue-light/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/70 font-sans">
+                {String(index + 1).padStart(2, '0')} · {entry.label}
+              </p>
+              <h2 className="mt-5 text-2xl leading-snug text-stone-100 font-serif">
+                {entry.title}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-stone-400 font-serif">
+                {entry.description}
+              </p>
+              <span className="mt-7 inline-block text-sm text-stone-300 group-hover:text-cyan-200 font-sans">
+                Enter →
+              </span>
+            </Link>
           ))}
         </div>
       </section>
 
-      <FirstReaders />
-
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href="/order/direct" variant="primary" className="px-8">
-            {ORDER_CTA.primary(PRICING.directPaperbackUsd)}
-          </Button>
-          <Link
-            href="/books"
-            className="inline-flex min-h-[44px] items-center justify-center text-sm text-stone-400 hover:text-stone-200 underline underline-offset-4 px-2 touch-manipulation font-sans"
-          >
-            Read an excerpt
-          </Link>
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-stone-300/20">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
+              Living Literary Technology
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl text-stone-100 font-serif leading-tight">
+              The work can change form and still remember where it came from.
+            </h2>
+          </div>
+          <div className="terminator-border">
+            <div className="rounded-lg bg-cosmic-blue p-7 md:p-10">
+              <p className="text-lg md:text-xl leading-relaxed text-stone-200 font-serif">
+                {HOME.livingLiteraryTechnology}
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-6 py-16 md:py-20 border-t border-stone-300/20 text-center">
+        <p className="text-2xl md:text-3xl leading-relaxed text-stone-200 font-serif">
+          {HOME.closing}
+        </p>
       </section>
     </main>
   );

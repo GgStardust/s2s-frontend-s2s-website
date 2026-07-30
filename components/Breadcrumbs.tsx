@@ -11,10 +11,11 @@ export default function Breadcrumbs() {
   const pathSegments = pathname.split('/').filter(Boolean);
 
   const segmentLabels: Record<string, string> = {
-    order: 'Order',
-    direct: 'Order direct',
-    books: 'Read',
-    about: 'About',
+    order: 'Availability',
+    direct: 'Availability',
+    books: 'Book One',
+    about: 'The Work',
+    'about-gigi': 'Gigi Stardust',
     codex: 'Source Field',
     'source-field': 'Source Field',
     console: 'Console',
