@@ -10,7 +10,7 @@ export default function PageMain() {
             Questions S2S is actively exploring.
           </h1>
           <p className="inquiry-open__lede">
-            These questions are public entry points into the larger body of work.
+            These questions are public entry points into the larger S2S inquiry.
           </p>
         </div>
       </section>

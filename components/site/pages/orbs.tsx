@@ -8,15 +8,15 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h1 id="orbs-title" className="display display--section">
-              Thirteen lenses<br />
-              for paying attention.
+              Thirteen primary Orbs<br />
+              within S2S.
             </h1>
             <p className="lede">
-              The Orbs give names to recurring patterns in Book One and Stardust to Sovereignty.
+              The Orbs are primary intelligences and structural principles within Stardust to Sovereignty.
             </p>
             <p className="lede">
-              They help track origin, relationship, memory, time, transformation, clarity,
-              sovereignty, and bridging intelligence.
+              They help make origin, resonance, relationship, memory, time, transformation,
+              sovereignty, and bridging across scales recognizable.
             </p>
           </div>
         </div>
@@ -282,7 +282,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-12" role="region" aria-hidden="true">
-              <p>The integrated state in which the whole architecture coheres.</p>
+              <p>The integrated state in which the whole field coheres.</p>
             </div>
           </li>
 
@@ -309,7 +309,7 @@ export default function PageMain() {
           </li>
         </ul>
 
-        <p className="orbs__closing">The same world looks different through each lens.</p>
+        <p className="orbs__closing">The same world becomes recognizable through different Orbs.</p>
       </section>
     
     </main>

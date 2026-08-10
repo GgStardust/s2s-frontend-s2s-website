@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import PageMain from '@/components/site/pages/book-one'
 
 export const metadata: Metadata = {
-  title: 'Book One — The Cosmic Tapestry',
+  title: 'Book One: The Cosmic Tapestry',
   description:
-    'The Cosmic Tapestry — Book One of Stardust to Sovereignty by Gigi Stardust. Literary opening, excerpts, and purchase.',
+    'The Cosmic Tapestry, Book One of Stardust to Sovereignty by Gigi Stardust. Literary opening, excerpts, and purchase.',
   openGraph: {
     title: 'The Cosmic Tapestry · Book One',
     description:

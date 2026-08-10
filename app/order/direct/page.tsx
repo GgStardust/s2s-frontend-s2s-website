@@ -73,7 +73,7 @@ export default function DirectOrderPage({
             <figure className="book-photo order-checkout__photo">
               <Image
                 src="/assets/book/book-one-mockup.png"
-                alt={`${BOOK_CATALOG.title} — Book One by Gigi Stardust`}
+                alt={`${BOOK_CATALOG.title}, Book One by Gigi Stardust`}
                 width={819}
                 height={1024}
                 priority

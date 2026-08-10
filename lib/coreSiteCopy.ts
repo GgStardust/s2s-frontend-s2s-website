@@ -10,14 +10,14 @@ export const SITE = {
   shortName: 'S2S',
   author: 'Gigi Stardust',
   description:
-    'Gigi Stardust writes and builds Stardust to Sovereignty, a body of work about consciousness, relationship, technology, creativity, and the future human.',
+    'Gigi Stardust writes and builds Stardust to Sovereignty, an inquiry into intelligence, relationship, technology, creativity, sovereignty, and the future human.',
 };
 
 export const HOME = {
   eyebrow: SITE.name,
   title: 'Start with the body. Follow the work outward.',
   lead:
-    'A book and body of work about consciousness, relationship, technology, creativity, and the future human.',
+    'Book One is available now. Stardust to Sovereignty follows intelligence, relationship, technology, creativity, sovereignty, and the future human.',
   premise:
     'It began as observation, inquiry, experience, presence, long-form research, and long-form writing. The architecture existed first as instinct, as coherence, as patterns that repeated with precision. Language arrived later to recognize the system.',
   inquiry:
@@ -105,7 +105,7 @@ export const HOME = {
     },
   ],
   orbsIntro:
-    'The thirteen Orbs are direct expressions of lived intelligence. They describe movements within awareness and gestures of sovereignty.',
+    'The thirteen Orbs are primary intelligences and structural principles within Stardust to Sovereignty.',
   orbs: [
     'Origin',
     'Resonance',
@@ -133,7 +133,7 @@ export const ENTRY_POINTS = [
     label: 'The Work',
     title: 'The question that became a system',
     description:
-      'Begin with the body, then follow the inquiry as it becomes architecture, scale, and lawful movement.',
+      'Begin with the body, then follow the inquiry as it moves through intelligence, relationship, scale, and sovereign participation.',
   },
   {
     href: '/book-one',
@@ -191,7 +191,7 @@ export const BOOK_ONE = {
   ],
   insideHeading: 'The Orbs',
   thesis:
-    'The book gives this movement thirteen points of attention called the Orbs. Each names a capacity that becomes visible in lived experience. Together they form its working architecture.',
+    'The book introduces thirteen primary Orbs. Each names a capacity that becomes visible in lived experience. Together they form a working system of recognition.',
   orbsHeading: 'Dots first. Names later.',
   orbs:
     'The Orbs first appeared as large dots in my murals. I drew lines between them before I could explain why they belonged together. Their names came later. That order still matters: the pattern was encountered before it was explained.',

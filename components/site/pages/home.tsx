@@ -12,8 +12,8 @@ export default function PageMain() {
               Follow the work outward.
             </h1>
             <p className="lede">
-              A book and body of work about consciousness, relationship, technology,
-              creativity, and the future human.
+              Book One is available now. Stardust to Sovereignty follows intelligence,
+              relationship, technology, creativity, sovereignty, and the future human.
             </p>
           </div>
           <figure className="hero__glyph">
@@ -37,21 +37,26 @@ export default function PageMain() {
             <p className="label">Book One</p>
             <h2 id="book-title" className="display display--section">The Cosmic Tapestry</h2>
             <p className="lede">
-              Book One begins with the body and opens into consciousness, time, relationship,
-              creativity, technology, and the larger universe we participate in.
+              The first completed literary embodiment of Stardust to Sovereignty.
+              Available now in paperback, hardcover, and ebook.
             </p>
             <p className="keywords">
               Origin · Embodiment · Relationship · Recognition · Sovereignty
             </p>
-            <a className="text-link book__enter" href="/book-one">
-              Enter the book <span className="book__enter-rule" aria-hidden="true"></span><span aria-hidden="true">→</span>
-            </a>
+            <p className="order-row book__home-links">
+              <a className="text-link book__enter" href="/book-one">
+                Explore Book One <span className="book__enter-rule" aria-hidden="true"></span><span aria-hidden="true">→</span>
+              </a>
+              <a className="text-link book__enter" href="/book-one#purchase">
+                Buy the book <span className="book__enter-rule" aria-hidden="true"></span><span aria-hidden="true">→</span>
+              </a>
+            </p>
           </div>
           <aside className="book__object" aria-label="Book One">
             <figure className="book-photo">
               <img
                 src="/assets/book/book-one-mockup.png?v=spine"
-                alt="The Cosmic Tapestry — Book One by Gigi Stardust"
+                alt="The Cosmic Tapestry, Book One by Gigi Stardust"
                 width={819}
                 height={1024}
                 decoding="async"
@@ -95,7 +100,7 @@ export default function PageMain() {
               Stardust to Sovereignty
             </h2>
             <p className="paradigm__support">
-              A body of work following consciousness, coherence, and participation through many registers.
+              An inquiry following intelligence, coherence, and sovereign participation across scale.
             </p>
             <p className="band-copy">
               Experience raises questions.<br />
@@ -110,8 +115,8 @@ export default function PageMain() {
             </p>
             <p className="body-dark">Each can become a field of inquiry.</p>
             <p className="body-dark">
-              S2S also lives at the scale of ordinary human relationship: conversation, attention,
-              care, being seen, and the intelligence that forms between people.
+              Relationship is central here: resonance, cohesion, recognition, consequence, and
+              continuity become visible through encounter.
             </p>
             <p className="body-dark">
               Stardust to Sovereignty holds those fields within one paradigm of discovery.
@@ -195,16 +200,16 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h2 id="orbs-title" className="display display--section">
-              Thirteen lenses<br />
-              for paying attention.
+              Thirteen primary Orbs<br />
+              within S2S.
             </h2>
             <p className="lede">
-              Book One introduces the Orbs as names for patterns that keep appearing
-              throughout Stardust to Sovereignty.
+              Book One introduces the Orbs as primary intelligences and structural principles
+              within Stardust to Sovereignty.
             </p>
             <p className="orbs__overview">
-              They help track origin, relationship, memory, time, transformation, clarity,
-              sovereignty, and bridging intelligence.
+              They help make origin, resonance, relationship, memory, time, transformation,
+              sovereignty, and bridging across scales recognizable.
             </p>
           </div>
         </div>

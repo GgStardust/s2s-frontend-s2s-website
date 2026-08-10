@@ -39,13 +39,13 @@ export default function PageMain() {
             Gigi Stardust is an author, systems thinker, and creator working across consciousness, technology, literature, and human evolution.
           </p>
           <p>
-            She created Stardust to Sovereignty, a body of work exploring what becomes possible as human consciousness expands across biological, relational, technological, planetary, and cosmic scale.
+            She created Stardust to Sovereignty, a body of work exploring intelligence and sovereign participation across biological, relational, technological, planetary, cosmic, and future-human scale.
           </p>
           <p>
             <em>The Cosmic Tapestry</em> is its first completed literary embodiment.
           </p>
           <p className="gigi-bio__method">
-            The way I unlock what is beyond my comprehension is to encounter life, people, and experience everything I come in contact with as an opportunity to further develop my body of work and aspects of my being.
+            The way I unlock what is beyond my comprehension is to encounter life, people, place, beauty, conflict, and surprise as living material that changes the work and changes me.
           </p>
         </div>
       </section>

@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     template: '%s | Stardust to Sovereignty',
   },
   description:
-    'Stardust to Sovereignty is a book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
+    'Stardust to Sovereignty by Gigi Stardust follows intelligence, relationship, technology, creativity, sovereignty, and the future human. Book One is available now.',
   metadataBase: new URL('https://stardusttosovereignty.com'),
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/gigi' }],
   creator: 'Gigi Stardust',
   openGraph: {
     title: 'Stardust to Sovereignty',
     description:
-      'A book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
+      'Stardust to Sovereignty follows intelligence, relationship, technology, creativity, sovereignty, and the future human. Book One is available now.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Stardust to Sovereignty',
     description:
-      'A book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
+      'Stardust to Sovereignty follows intelligence, relationship, technology, creativity, sovereignty, and the future human. Book One is available now.',
     images: ['/og-v5.png'],
     creator: '@gigi_stardust',
   },

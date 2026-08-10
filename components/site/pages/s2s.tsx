@@ -7,17 +7,17 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label label--light">Stardust to Sovereignty</p>
           <h1 id="threshold-title" className="display display--dark s2s-threshold__question">
-            A body of work about being human in a rapidly changing world.
+            A paradigm for intelligence and sovereign participation across scale.
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
-              Our capacity to see, build, alter, automate, connect, and reach beyond ourselves is accelerating.
+              Stardust to Sovereignty follows intelligence as it becomes recognizable through body, relationship, place, technology, creativity, civilization, planet, cosmos, future human capacity, and intelligences still partly unknown.
             </p>
             <p className="body-dark">
-              Human consciousness is living inside a scale of reality our inherited structures were never designed to hold.
+              Relationship is central to the work. Resonance, cohesion, consequence, and continuity form through encounter.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty is a paradigm for that threshold.
+              Book One is the first completed literary embodiment. The larger S2S field continues through writing, making, observation, and future forms.
             </p>
           </div>
           <figure className="s2s-register__glyph" aria-hidden="true">
@@ -30,18 +30,18 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label">The 13 Orbs</p>
           <h2 id="s2s-orbs-title" className="display display--section">
-            The Orbs help organize<br />
-            what the work is tracking.
+            The Orbs are primary<br />
+            intelligences within S2S.
           </h2>
           <div className="s2s-prose s2s-prose--light">
             <p>
-              S2S uses the Orbs as lenses for tracking how pattern, memory, time, transformation,
-              sovereignty, and relationship move through experience.
+              S2S uses the Orbs as structural principles and design keys for tracking how pattern,
+              memory, time, transformation, sovereignty, and relationship move through experience.
             </p>
             <p className="s2s-orb-chain">
               Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.
             </p>
-            <p>Each lens changes the field.</p>
+            <p>Each Orb changes what can be recognized.</p>
             <p>
               Together, they expand the ways we can perceive ourselves, the systems we inhabit, the world we are creating, and the larger reality in which we participate.
             </p>
@@ -231,11 +231,6 @@ export default function PageMain() {
             </blockquote>
           </figure>
 
-          <p className="s2s-pressure-q" aria-label="Pressure question">
-            What are YOU doing<br />
-            with all your extra time?
-          </p>
-
           <div className="s2s-prose">
             <p className="body-dark">
               The question beneath progress is larger than what technology can do.
@@ -273,7 +268,10 @@ export default function PageMain() {
           </h2>
           <div className="s2s-prose">
             <p className="body-dark">
-              Sovereignty is the capacity to remain fully oneself while participating in realities far larger than oneself.
+              Sovereignty is coherent self-holding within relationship.
+            </p>
+            <p className="body-dark">
+              It includes participation, discernment, refusal, transformation, inheritance, completion, and continuation.
             </p>
             <p className="body-dark s2s-scale-words">Human. Technological. Planetary. Cosmic.</p>
             <p className="body-dark">Sovereignty strengthens as the field becomes larger.</p>

@@ -9,12 +9,15 @@ export default function PageMain() {
             <p className="label">Book One</p>
             <h1 id="book-title" className="display display--section">The Cosmic Tapestry</h1>
             <p className="lede">
-              Book One begins with the body and opens into consciousness, time, relationship,
-              creativity, technology, and the larger universe we participate in.
+              The first completed literary embodiment of Stardust to Sovereignty.
+              Available now in paperback, hardcover, and ebook.
             </p>
             <p className="order-row book__order-links">
+              <a className="text-link" href="/order/direct">
+                Buy directly from Gigi <span aria-hidden="true">→</span>
+              </a>
               <a className="text-link" href="#purchase">
-                Order Book One <span aria-hidden="true">→</span>
+                See all editions <span aria-hidden="true">→</span>
               </a>
             </p>
           </div>
@@ -22,7 +25,7 @@ export default function PageMain() {
             <figure className="book-photo">
               <img
                 src="/assets/book/book-one-mockup.png?v=spine"
-                alt="The Cosmic Tapestry — Book One by Gigi Stardust"
+                alt="The Cosmic Tapestry, Book One by Gigi Stardust"
                 width={819}
                 height={1024}
                 decoding="async"
@@ -58,7 +61,7 @@ export default function PageMain() {
 
           <div className="order-row">
             <a className="text-link" href="/order/direct">
-              Authors Edition · Direct checkout <span aria-hidden="true">→</span>
+              Buy directly from Gigi <span aria-hidden="true">→</span>
             </a>
             <a
               className="text-link"
@@ -114,7 +117,7 @@ export default function PageMain() {
 
           <div className="book-desc__stages">
             <p className="body-dark">
-              Book One begins there: not with abstraction, but with the body as the place where
+              Book One begins there: with the body as the place where
               ancient matter becomes sensation, memory, perception, and choice.
             </p>
             <p className="body-dark book-desc__turn">The question becomes immediate.</p>
@@ -129,7 +132,7 @@ export default function PageMain() {
             </p>
             <p className="body-dark">From there, the scale expands.</p>
             <p className="body-dark">
-              The thirteen Orbs of Stardust to Sovereignty offer different lenses through which origin, resonance, pattern, time, memory, transformation, intuition, inheritance, sovereignty, and emerging forms of intelligence come into view.
+              The thirteen Orbs of Stardust to Sovereignty are primary intelligences and structural principles through which origin, resonance, pattern, time, memory, transformation, intuition, inheritance, sovereignty, and emerging forms of intelligence come into view.
             </p>
             <p className="body-dark">
               The result is an inquiry into what it means to be human inside a universe vastly older, larger, and stranger than the structures through which we usually understand ourselves.
