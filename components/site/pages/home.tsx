@@ -15,10 +15,10 @@ export default function PageMain() {
           </div>
           <figure className="hero__glyph">
             <img
-              src="/assets/glyphs/glyph_01.png"
+              src="/assets/glyphs/glyph_01.png?v=ink1"
               alt=""
-              width={420}
-              height={720}
+              width={241}
+              height={455}
               decoding="async"
             />
             <figcaption className="sr-only">Authored glyph</figcaption>
