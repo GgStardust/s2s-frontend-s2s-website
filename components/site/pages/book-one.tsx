@@ -109,7 +109,7 @@ export default function PageMain() {
       <section className="register register--ink book-desc" aria-labelledby="book-desc-title">
         <div className="book-desc__inner">
           <h2 id="book-desc-title" className="display display--dark book-desc__question">
-            What kind of human can hold the scale of the universe?
+            Book One begins with the body.
           </h2>
 
           <div className="book-desc__stages">
@@ -117,9 +117,9 @@ export default function PageMain() {
               Book One begins there: not with abstraction, but with the body as the place where
               ancient matter becomes sensation, memory, perception, and choice.
             </p>
-            <p className="body-dark book-desc__turn">So what, exactly, are we?</p>
+            <p className="body-dark book-desc__turn">The question becomes immediate.</p>
             <p className="body-dark">
-              What changes when we begin to understand ourselves as participants in the same architecture we are trying to comprehend?
+              We are not separate observers of the universe. We are living participants in it.
             </p>
             <p className="body-dark">
               Gigi Stardust follows these questions across consciousness, biology, relationship, time, creativity, technology, cosmology, and the lived experience of being human.

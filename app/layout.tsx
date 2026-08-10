@@ -28,26 +28,26 @@ export const metadata: Metadata = {
     template: '%s | Stardust to Sovereignty',
   },
   description:
-    'Stardust to Sovereignty — a dynamic paradigm of discovery. Book One: The Cosmic Tapestry.',
+    'Stardust to Sovereignty is a book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
   metadataBase: new URL('https://stardusttosovereignty.com'),
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/gigi' }],
   creator: 'Gigi Stardust',
   openGraph: {
     title: 'Stardust to Sovereignty',
     description:
-      'Stardust to Sovereignty — a dynamic paradigm of discovery. Book One: The Cosmic Tapestry.',
+      'A book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     locale: 'en_US',
-    images: [{ url: '/og-v4.png', width: 1200, height: 630, alt: 'Stardust to Sovereignty' }],
+    images: [{ url: '/og-v5.png', width: 1200, height: 630, alt: 'Stardust to Sovereignty' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stardust to Sovereignty',
     description:
-      'Stardust to Sovereignty — a dynamic paradigm of discovery. Book One: The Cosmic Tapestry.',
-    images: ['/og-v4.png'],
+      'A book and body of work by Gigi Stardust about consciousness, relationship, technology, creativity, and the future human.',
+    images: ['/og-v5.png'],
     creator: '@gigi_stardust',
   },
   robots: { index: true, follow: true },

@@ -7,10 +7,10 @@ export default function PageMain() {
         <div className="inquiry-open__inner">
           <p className="label label--light">The Inquiry</p>
           <h1 id="inquiry-title" className="display display--dark">
-            Questions currently under pressure.
+            Questions S2S is actively exploring.
           </h1>
           <p className="inquiry-open__lede">
-            These questions are public points of entry into deeper architectural inquiries within Stardust to Sovereignty.
+            These questions are public entry points into the larger body of work.
           </p>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function PageMain() {
             </button>
             <div className="inquiry-unit__depth" id="inquiry-depth-04">
               <div className="inquiry-arch" aria-hidden="true">
-                <p>What architecture produces a coherent inhabitant?</p>
+                <p>What kinds of people does a society train into being?</p>
                 <p>What does a civilization teach its people to perceive, value, ignore, and protect?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
@@ -149,7 +149,7 @@ export default function PageMain() {
             </button>
             <div className="inquiry-unit__depth" id="inquiry-depth-06">
               <div className="inquiry-arch" aria-hidden="true">
-                <p>What architecture forms the future participant?</p>
+                <p>What forms the people a society depends on?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
                 <p>S2S reads the future human as already under formation.</p>
@@ -162,32 +162,32 @@ export default function PageMain() {
 
       <section className="register register--light inquiry-engines" aria-labelledby="engines-label">
         <div className="inquiry-engines__inner">
-          <p className="label" id="engines-label">Deeper inquiry architecture</p>
+          <p className="label" id="engines-label">Other lines of inquiry</p>
 
           <div className="inquiry-engine">
             <p className="inquiry-engine__label">Emergence</p>
             <p className="inquiry-engine__q inquiry-engine__q--primary">
-              What conditions allow latent intelligence, creativity, or source material to become visible without premature closure?
+              What helps intelligence, creativity, or source material become visible before the answer is forced?
             </p>
             <p className="inquiry-engine__q inquiry-engine__q--secondary">
-              What form can carry this without reducing it?
+              What form can carry this without flattening it?
             </p>
           </div>
 
           <div className="inquiry-engine">
             <p className="inquiry-engine__label">Epistemic Integrity</p>
             <p className="inquiry-engine__q inquiry-engine__q--primary">
-              What remains particular, and what cannot be known?
+              What stays specific, and what do we still not know?
             </p>
             <p className="inquiry-engine__q inquiry-engine__q--secondary">
-              Where did the first interpretation fail, and what correction does consequence require?
+              Where did the first reading miss something, and what needs to be corrected?
             </p>
           </div>
 
           <div className="inquiry-engine">
             <p className="inquiry-engine__label">Interfaces for Recognition</p>
             <p className="inquiry-engine__q inquiry-engine__q--primary">
-              How can a body, place, book, field report, AI system, fiction, or civic structure become an interface for recognition?
+              How can a body, place, book, field report, AI system, fiction, or civic structure help recognition happen?
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export default function PageMain() {
       <section className="register register--ink inquiry-close" aria-labelledby="inquiry-close-q">
         <div className="inquiry-close__inner">
           <h2 id="inquiry-close-q" className="display display--dark inquiry-close__q">
-            What becomes visible when the question is allowed to keep moving?
+            The questions are meant to be entered, not solved all at once.
           </h2>
           <img
             className="inquiry-close__glyph"

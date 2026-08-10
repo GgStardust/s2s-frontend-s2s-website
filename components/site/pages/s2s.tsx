@@ -7,7 +7,7 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label label--light">Stardust to Sovereignty</p>
           <h1 id="threshold-title" className="display display--dark s2s-threshold__question">
-            What becomes possible when human consciousness expands?
+            A body of work about being human in a rapidly changing world.
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
@@ -30,8 +30,8 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label">The 13 Orbs</p>
           <h2 id="s2s-orbs-title" className="display display--section">
-            The Orbs keep<br />
-            perception moving.
+            The Orbs help organize<br />
+            what the work is tracking.
           </h2>
           <div className="s2s-prose s2s-prose--light">
             <p>
@@ -196,7 +196,7 @@ export default function PageMain() {
           <p className="label">Creativity</p>
           <p className="s2s-creativity__inherent">Creativity is inherent.</p>
           <h2 id="creativity-title" className="display display--section s2s-creativity__q">
-            What wants to become form?
+            Making is part of the inquiry.
           </h2>
           <p className="s2s-creativity__line">
             Creativity is a capacity through which intelligence becomes form.
@@ -255,7 +255,7 @@ export default function PageMain() {
           <div className="s2s-future-primitive">
             <p className="label label--light">Future Primitive</p>
             <p className="s2s-pressure-line">
-              What if progress recovered human capacity instead of trading it away?
+              Progress can recover human capacity instead of trading it away.
             </p>
             <p className="s2s-future-primitive__horizon">
               It asks what an advanced civilization might recover: direct perception, embodied intelligence, relationship with place, creativity, and sovereign participation with technology.
@@ -268,8 +268,8 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label label--light">Sovereignty</p>
           <h2 id="sovereignty-title" className="display display--dark">
-            The larger the field,<br />
-            the more coherence matters.
+            Sovereignty means staying whole<br />
+            inside larger systems.
           </h2>
           <div className="s2s-prose">
             <p className="body-dark">
@@ -283,7 +283,7 @@ export default function PageMain() {
           </div>
 
           <p className="s2s-closing-q">
-            What becomes possible when we are capable of meeting the future we are creating?
+            The work asks how we meet the future without giving away human capacity.
           </p>
 
           <figure className="s2s-register__glyph s2s-register__glyph--end" aria-hidden="true">

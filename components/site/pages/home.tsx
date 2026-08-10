@@ -3,15 +3,18 @@ export default function PageMain() {
   return (
     <main id="main">
 
-      <section className="register register--light hero" id="top" aria-labelledby="hero-question">
+      <section className="register register--light hero" id="top" aria-labelledby="hero-title">
         <div className="hero__grid">
           <div className="hero__copy">
-            <p className="label">From The Cosmic Tapestry</p>
-            <h1 id="hero-question" className="display display--hero">
-              The continuity was always there.<br />
-              What changes when<br />
-              the view catches up?
+            <p className="label">Stardust to Sovereignty</p>
+            <h1 id="hero-title" className="display display--hero">
+              Start with the body.<br />
+              Follow the work outward.
             </h1>
+            <p className="lede">
+              A book and body of work about consciousness, relationship, technology,
+              creativity, and the future human.
+            </p>
           </div>
           <figure className="hero__glyph">
             <img
@@ -95,10 +98,10 @@ export default function PageMain() {
               A body of work following consciousness, coherence, and participation through many registers.
             </p>
             <p className="band-copy">
-              Experience opens a question.<br />
-              A question alters perception.<br />
-              Recognition reveals architecture.<br />
-              Architecture changes what becomes perceptible next.
+              Experience raises questions.<br />
+              Questions change what we notice.<br />
+              Patterns become easier to see.<br />
+              What we see changes how we participate.
             </p>
             <p className="body-dark">
               Stardust to Sovereignty follows questions through body, relationship, place, land,
@@ -192,16 +195,16 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h2 id="orbs-title" className="display display--section">
-              A constellation<br />
-              of lenses.
+              Thirteen lenses<br />
+              for paying attention.
             </h2>
             <p className="lede">
-              Book One introduces thirteen recurring lenses for origin, rhythm, memory,
-              transformation, clarity, sovereignty, and relation.
+              Book One introduces the Orbs as names for patterns that keep appearing
+              throughout Stardust to Sovereignty.
             </p>
             <p className="orbs__overview">
-              Here, they appear together as a field. Each opens a different way of seeing the
-              same world.
+              They help track origin, relationship, memory, time, transformation, clarity,
+              sovereignty, and bridging intelligence.
             </p>
           </div>
         </div>

@@ -10,14 +10,14 @@ export const SITE = {
   shortName: 'S2S',
   author: 'Gigi Stardust',
   description:
-    'Gigi Stardust maps sovereign intelligence across body, Earth, universe, future forms of life, and galactic participation.',
+    'Gigi Stardust writes and builds Stardust to Sovereignty, a body of work about consciousness, relationship, technology, creativity, and the future human.',
 };
 
 export const HOME = {
   eyebrow: SITE.name,
-  title: 'What kind of human survives the scale of the universe?',
+  title: 'Start with the body. Follow the work outward.',
   lead:
-    'A map of intelligence moving through body, time, memory, creativity, relationship, civilization, Earth, universe, galaxy, future human, and unknown intelligence.',
+    'A book and body of work about consciousness, relationship, technology, creativity, and the future human.',
   premise:
     'It began as observation, inquiry, experience, presence, long-form research, and long-form writing. The architecture existed first as instinct, as coherence, as patterns that repeated with precision. Language arrived later to recognize the system.',
   inquiry:

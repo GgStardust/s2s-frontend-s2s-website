@@ -8,14 +8,15 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h1 id="orbs-title" className="display display--section">
-              Change the lens.<br />
-              Change what becomes visible.
+              Thirteen lenses<br />
+              for paying attention.
             </h1>
             <p className="lede">
-              The thirteen Orbs form the core architecture of Stardust to Sovereignty.
+              The Orbs give names to recurring patterns in Book One and Stardust to Sovereignty.
             </p>
             <p className="lede">
-              Each offers a different lens through which reality can be perceived.
+              They help track origin, relationship, memory, time, transformation, clarity,
+              sovereignty, and bridging intelligence.
             </p>
           </div>
         </div>
