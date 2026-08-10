@@ -110,7 +110,7 @@ export default function PageMain() {
             </p>
             <p className="body-dark">
               Stardust to Sovereignty follows questions through body, relationship, place, land,
-              Earth, society, civilization, future human, universe, galaxy, and unknown
+              society, civilization, Earth, galaxy, universe, future human, and unknown
               intelligence.
             </p>
             <p className="body-dark">Each can become a field of inquiry.</p>

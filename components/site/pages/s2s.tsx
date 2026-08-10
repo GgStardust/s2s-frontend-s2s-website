@@ -11,7 +11,10 @@ export default function PageMain() {
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
-              Stardust to Sovereignty follows intelligence as it becomes recognizable through body, relationship, place, technology, creativity, civilization, planet, cosmos, future human capacity, and intelligences still partly unknown.
+              Stardust to Sovereignty follows intelligence through body, relationship, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+            </p>
+            <p className="body-dark">
+              Technology and creativity are active movements within that inquiry.
             </p>
             <p className="body-dark">
               Relationship is central to the work. Resonance, cohesion, consequence, and continuity form through encounter.

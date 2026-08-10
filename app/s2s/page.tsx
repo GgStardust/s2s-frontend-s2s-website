@@ -4,7 +4,7 @@ import PageMain from '@/components/site/pages/s2s'
 export const metadata: Metadata = {
   title: 'S2S',
   description:
-    'Stardust to Sovereignty maps intelligence and sovereign participation across embodied, relational, planetary, cosmic, and future-human scales.',
+    'Stardust to Sovereignty maps intelligence and sovereign participation across body, relationship, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.',
   openGraph: {
     title: 'S2S · Stardust to Sovereignty',
     description:
