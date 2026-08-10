@@ -964,6 +964,15 @@ a.text-link--pending {
   height: auto;
 }
 
+.orbs__overview {
+  max-width: 50rem;
+  margin: 1.75rem 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 .orb-grid {
   list-style: none;
   margin: 3.5rem auto 0;
@@ -1049,29 +1058,24 @@ a.text-link--pending {
   margin-top: 0.75rem;
 }
 
-.orb-grid--preview {
-  max-width: min(100%, 980px);
-  grid-template-columns: 1fr;
-  row-gap: 2.5rem;
+.orb-grid--constellation {
+  max-width: min(100%, 42rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 1rem;
 }
 
-.orb-grid--preview .orb-grid__bridge {
-  grid-column: auto;
-  width: auto;
-  margin-top: 0;
+.orb-grid--constellation .orb-mark {
+  height: clamp(4.25rem, 15vw, 6rem);
 }
 
-.orb-grid--preview .orb-name {
-  max-width: 18ch;
+.orb-grid--constellation .orb-mark--bridge {
+  height: clamp(5rem, 18vw, 7rem);
+  max-width: 8rem;
 }
 
-.orb-preview-copy {
-  display: block;
-  max-width: 20rem;
-  font-family: var(--serif);
-  font-size: clamp(1rem, 1.6vw, 1.1rem);
-  line-height: 1.45;
-  color: var(--muted);
+.orb-grid--constellation .orb-name {
+  max-width: 14ch;
+  font-size: clamp(0.72rem, 1.6vw, 0.84rem);
 }
 
 .orbs__cta {
@@ -1112,14 +1116,118 @@ a.text-link--pending {
     margin-top: 1rem;
   }
 
-  .orb-grid--preview {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .orb-grid--constellation {
+    position: relative;
+    display: block;
+    width: min(72vw, 43rem);
+    max-width: 43rem;
+    aspect-ratio: 1;
+    margin-top: clamp(4rem, 8vw, 6rem);
   }
 
-  .orb-grid--preview .orb-grid__bridge {
-    grid-column: auto;
-    width: auto;
-    margin-top: 0;
+  .orb-grid--constellation::before,
+  .orb-grid--constellation::after {
+    content: "";
+    position: absolute;
+    inset: 14%;
+    border: 1px solid color-mix(in srgb, var(--muted) 28%, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .orb-grid--constellation::after {
+    inset: 27%;
+    opacity: 0.55;
+  }
+
+  .orb-grid--constellation li {
+    position: absolute;
+    width: clamp(4.8rem, 8vw, 6.25rem);
+    gap: 0.35rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .orb-grid--constellation .orb-mark {
+    height: clamp(3.3rem, 5.4vw, 4.5rem);
+  }
+
+  .orb-grid--constellation .orb-mark--bridge {
+    height: clamp(5.4rem, 9vw, 7rem);
+    max-width: 8rem;
+  }
+
+  .orb-grid--constellation .orb-num {
+    font-size: 0.62rem;
+  }
+
+  .orb-grid--constellation .orb-name {
+    font-size: clamp(0.66rem, 1.05vw, 0.78rem);
+    line-height: 1.15;
+  }
+
+  .orb-node--01 {
+    top: 7%;
+    left: 50%;
+  }
+
+  .orb-node--02 {
+    top: 13%;
+    left: 72%;
+  }
+
+  .orb-node--03 {
+    top: 28%;
+    left: 87%;
+  }
+
+  .orb-node--04 {
+    top: 50%;
+    left: 93%;
+  }
+
+  .orb-node--05 {
+    top: 72%;
+    left: 87%;
+  }
+
+  .orb-node--06 {
+    top: 87%;
+    left: 72%;
+  }
+
+  .orb-node--07 {
+    top: 93%;
+    left: 50%;
+  }
+
+  .orb-node--08 {
+    top: 87%;
+    left: 28%;
+  }
+
+  .orb-node--09 {
+    top: 72%;
+    left: 13%;
+  }
+
+  .orb-node--10 {
+    top: 50%;
+    left: 7%;
+  }
+
+  .orb-node--11 {
+    top: 28%;
+    left: 13%;
+  }
+
+  .orb-node--12 {
+    top: 13%;
+    left: 28%;
+  }
+
+  .orb-node--13 {
+    top: 50%;
+    left: 50%;
   }
 }
 
