@@ -787,6 +787,1122 @@ body {
 }
 
 @layer components {
+  .cinematic-home {
+    --ink: #080807;
+    --bone: #f3efe5;
+    --bone-soft: #cfc8bb;
+    --smoke: #8f887d;
+    --electric: #b7c4ff;
+    --signal: #a7ffe0;
+    background:
+      radial-gradient(circle at 72% 18%, rgba(183, 196, 255, 0.18), transparent 27rem),
+      radial-gradient(circle at 48% 46%, rgba(243, 239, 229, 0.075), transparent 38rem),
+      radial-gradient(circle at 12% 86%, rgba(167, 255, 224, 0.09), transparent 30rem),
+      linear-gradient(145deg, #040404 0%, #0b0a0a 54%, #171410 100%);
+    color: var(--bone);
+    overflow: hidden;
+  }
+
+  .cinematic-home > section {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .cinematic-kicker {
+    @apply text-xs uppercase tracking-[0.24em] font-sans;
+    color: rgba(167, 255, 224, 0.76);
+  }
+
+  .cinematic-threshold {
+    min-height: calc(100svh - 5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.72fr);
+    grid-template-rows: auto 1fr auto;
+    gap: clamp(2rem, 5vw, 6rem);
+    max-width: 108rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 4.5rem);
+  }
+
+  .cinematic-threshold::before {
+    content: '';
+    position: absolute;
+    inset: 5rem 4vw auto auto;
+    width: min(46rem, 76vw);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.92), rgba(217, 224, 255, 0.9) 18%, rgba(52, 62, 106, 0.95) 54%, rgba(0, 0, 0, 0.1) 71%),
+      radial-gradient(circle at center, rgba(243, 239, 229, 0.22), transparent 68%);
+    box-shadow:
+      0 0 5rem rgba(183, 196, 255, 0.18),
+      inset -5rem -4rem 7rem rgba(0, 0, 0, 0.78);
+    opacity: 0.86;
+    z-index: -1;
+  }
+
+  .cinematic-threshold::after {
+    content: '';
+    position: absolute;
+    inset: 9rem 7vw auto auto;
+    width: min(60rem, 94vw);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    border: 1px solid rgba(243, 239, 229, 0.1);
+    box-shadow:
+      0 0 0 7rem rgba(243, 239, 229, 0.025),
+      0 0 0 14rem rgba(167, 255, 224, 0.018),
+      0 0 0 23rem rgba(183, 196, 255, 0.014);
+    z-index: -2;
+  }
+
+  .threshold-nav {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .threshold-nav a,
+  .cinematic-button,
+  .cinematic-link {
+    @apply font-sans text-xs uppercase tracking-[0.18em] transition-colors;
+  }
+
+  .threshold-nav a {
+    color: rgba(243, 239, 229, 0.58);
+  }
+
+  .threshold-nav a:hover,
+  .cinematic-link:hover {
+    color: var(--bone);
+  }
+
+  .threshold-copy {
+    align-self: center;
+    max-width: 64rem;
+  }
+
+  .threshold-copy h1 {
+    @apply mt-7 font-serif tracking-tight text-balance;
+    font-size: clamp(3.2rem, 8vw, 8.8rem);
+    line-height: 0.94;
+    color: var(--bone);
+  }
+
+  .threshold-copy > p:last-child {
+    @apply mt-8 max-w-3xl font-serif leading-relaxed;
+    font-size: clamp(1.15rem, 2vw, 1.55rem);
+    color: var(--bone-soft);
+  }
+
+  .active-orb-stage {
+    align-self: center;
+    min-height: 32rem;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .active-orb {
+    position: absolute;
+    right: clamp(1rem, 8vw, 10rem);
+    top: clamp(8rem, 18vw, 16rem);
+    width: clamp(14rem, 28vw, 27rem);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 34% 28%, #fffdf4 0 9%, #ffffff 10% 18%, #cfd8ff 29%, #28335c 58%, #040405 76%);
+    box-shadow:
+      0 0 4rem rgba(183, 196, 255, 0.22),
+      inset -4rem -3rem 6rem rgba(0, 0, 0, 0.78);
+  }
+
+  .active-orb-card {
+    width: min(28rem, 100%);
+    margin-bottom: clamp(0rem, 7vw, 6rem);
+    padding: 1.5rem;
+    border: 1px solid rgba(243, 239, 229, 0.16);
+    border-radius: 1.5rem;
+    background: rgba(8, 8, 7, 0.64);
+    backdrop-filter: blur(18px);
+  }
+
+  .active-orb-card p {
+    @apply text-xs uppercase tracking-[0.2em] font-sans;
+    color: rgba(167, 255, 224, 0.72);
+  }
+
+  .active-orb-card h2 {
+    @apply mt-5 font-serif text-3xl font-normal;
+    color: var(--bone);
+  }
+
+  .active-orb-card span {
+    @apply mt-5 block text-sm leading-relaxed font-sans;
+    color: rgba(243, 239, 229, 0.68);
+  }
+
+  .scale-thread {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    max-width: 68rem;
+  }
+
+  .scale-thread span {
+    @apply rounded-full border px-3 py-2 text-xs uppercase tracking-[0.16em] font-sans;
+    border-color: rgba(243, 239, 229, 0.14);
+    color: rgba(243, 239, 229, 0.58);
+    background: rgba(243, 239, 229, 0.035);
+  }
+
+  .orb-paradigm-section,
+  .field-fragment-section,
+  .book-one-section,
+  .gigi-signal-section {
+    max-width: 108rem;
+    margin: 0 auto;
+    padding: clamp(4rem, 9vw, 9rem) clamp(1.5rem, 4vw, 4.5rem);
+    border-top: 1px solid rgba(243, 239, 229, 0.12);
+  }
+
+  .section-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.8fr);
+    gap: clamp(2rem, 5vw, 7rem);
+    align-items: end;
+  }
+
+  .section-intro h2,
+  .field-fragment-copy h2,
+  .book-one-section h2,
+  .gigi-signal-card h2 {
+    @apply mt-6 font-serif font-normal tracking-tight text-balance;
+    font-size: clamp(2.2rem, 5vw, 5.6rem);
+    line-height: 0.98;
+    color: var(--bone);
+  }
+
+  .section-intro > p:last-child,
+  .field-fragment-copy p,
+  .book-one-section > p,
+  .gigi-signal-card p {
+    @apply font-serif leading-relaxed;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    color: var(--bone-soft);
+  }
+
+  .orb-paradigm-map {
+    list-style: none;
+    padding: 0;
+    margin: clamp(3rem, 7vw, 7rem) 0 0;
+    display: grid;
+    grid-template-columns: repeat(13, minmax(8.2rem, 1fr));
+    gap: 0.7rem;
+    overflow-x: auto;
+    min-height: 34rem;
+    align-items: end;
+  }
+
+  .orb-paradigm-map li {
+    min-height: calc(13rem + var(--rise, 0rem));
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 999px 999px 1.1rem 1.1rem;
+    border: 1px solid rgba(243, 239, 229, 0.14);
+    background:
+      radial-gradient(circle at 50% 12%, rgba(243, 239, 229, 0.22), transparent 3.2rem),
+      linear-gradient(to top, rgba(243, 239, 229, 0.08), rgba(243, 239, 229, 0.025));
+  }
+
+  .orb-paradigm-map li:nth-child(2n) {
+    --rise: 4rem;
+  }
+
+  .orb-paradigm-map li:nth-child(3n) {
+    --rise: 8rem;
+  }
+
+  .orb-paradigm-map li:nth-child(5n) {
+    --rise: 12rem;
+  }
+
+  .orb-paradigm-map span {
+    @apply text-xs uppercase tracking-[0.18em] font-sans;
+    color: rgba(167, 255, 224, 0.6);
+  }
+
+  .orb-paradigm-map strong {
+    @apply mt-6 font-serif text-xl font-normal;
+    color: var(--bone);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .orb-paradigm-map p {
+    @apply mt-6 text-xs leading-relaxed font-sans;
+    color: rgba(243, 239, 229, 0.52);
+  }
+
+  .field-fragment-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 7rem);
+  }
+
+  .field-fragment-copy {
+    position: sticky;
+    top: 8rem;
+    align-self: start;
+  }
+
+  .field-fragment-stack {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .field-fragment-stack figure {
+    padding: clamp(1.4rem, 3vw, 2.4rem);
+    border: 1px solid rgba(243, 239, 229, 0.14);
+    border-radius: 2rem;
+    background: rgba(243, 239, 229, 0.92);
+    color: #14120f;
+  }
+
+  .field-fragment-stack figcaption {
+    @apply text-xs uppercase tracking-[0.2em] font-sans;
+    color: rgba(20, 18, 15, 0.52);
+  }
+
+  .field-fragment-stack blockquote {
+    @apply mt-8 font-serif;
+    font-size: clamp(1.55rem, 3vw, 3rem);
+    line-height: 1.04;
+  }
+
+  .book-one-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 0.78fr) auto;
+    gap: clamp(1.5rem, 4vw, 5rem);
+    align-items: end;
+  }
+
+  .cinematic-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.5rem;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    background: var(--bone);
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .cinematic-button:hover {
+    background: #ffffff;
+  }
+
+  .gigi-signal-section {
+    padding-bottom: clamp(5rem, 10vw, 10rem);
+  }
+
+  .gigi-signal-card {
+    max-width: 68rem;
+    margin-left: auto;
+    padding: clamp(2rem, 5vw, 4.5rem);
+    border-radius: 2.5rem;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 90% 10%, rgba(183, 196, 255, 0.28), transparent 15rem),
+      var(--bone);
+  }
+
+  .gigi-signal-card h2 {
+    color: var(--ink);
+  }
+
+  .gigi-signal-card p {
+    color: rgba(8, 8, 7, 0.72);
+  }
+
+  .cinematic-link {
+    display: inline-flex;
+    margin-top: 2rem;
+    color: rgba(8, 8, 7, 0.72);
+    border-bottom: 1px solid rgba(8, 8, 7, 0.28);
+  }
+
+  @media (max-width: 980px) {
+    .cinematic-threshold,
+    .section-intro,
+    .field-fragment-section,
+    .book-one-section {
+      grid-template-columns: 1fr;
+    }
+
+    .threshold-nav {
+      justify-content: flex-start;
+    }
+
+    .active-orb-stage {
+      min-height: 19rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .active-orb {
+      right: 2rem;
+      top: auto;
+      bottom: 9rem;
+      width: 15rem;
+      opacity: 0.76;
+    }
+
+    .active-orb-card {
+      margin-bottom: 0;
+      width: min(25rem, 100%);
+    }
+
+    .field-fragment-copy {
+      position: static;
+    }
+
+    .book-one-section {
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .cinematic-threshold {
+      min-height: auto;
+      padding-top: 2.5rem;
+    }
+
+    .cinematic-threshold::before {
+      width: 18rem;
+      inset: 13rem -4rem auto auto;
+      opacity: 0.54;
+    }
+
+    .cinematic-threshold::after {
+      display: none;
+    }
+
+    .threshold-copy h1 {
+      font-size: clamp(3rem, 17vw, 4.6rem);
+    }
+
+    .threshold-nav {
+      gap: 0.55rem;
+    }
+
+    .threshold-nav a {
+      width: 100%;
+    }
+
+    .orb-paradigm-map {
+      min-height: 29rem;
+      grid-template-columns: repeat(13, minmax(7rem, 1fr));
+    }
+
+    .orb-paradigm-map p {
+      display: none;
+    }
+  }
+
+  .s2s-threshold {
+    background:
+      radial-gradient(circle at 74% 18%, rgba(77, 255, 255, 0.09), transparent 28rem),
+      radial-gradient(circle at 12% 80%, rgba(157, 78, 221, 0.09), transparent 30rem),
+      linear-gradient(155deg, #050713 0%, #0a0e27 44%, #04050d 100%);
+    color: #f4f1e8;
+    overflow: hidden;
+  }
+
+  .s2s-threshold::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(77, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.34) 1px, transparent 2px),
+      radial-gradient(circle at 62% 18%, rgba(77, 255, 255, 0.3) 1px, transparent 2px),
+      radial-gradient(circle at 78% 66%, rgba(255, 179, 71, 0.32) 1px, transparent 2px),
+      radial-gradient(circle at 34% 74%, rgba(157, 78, 221, 0.32) 1px, transparent 2px);
+    background-size: 84px 84px, 84px 84px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+    opacity: 0.48;
+  }
+
+  .s2s-threshold > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .s2s-field-page {
+    background:
+      radial-gradient(circle at 70% 8%, rgba(77, 255, 255, 0.08), transparent 24rem),
+      radial-gradient(circle at 18% 34%, rgba(157, 78, 221, 0.08), transparent 28rem),
+      radial-gradient(circle at 58% 92%, rgba(255, 179, 71, 0.07), transparent 26rem),
+      linear-gradient(160deg, #050713 0%, #0a0e27 48%, #04050d 100%);
+    color: #f4f1e8;
+    overflow: hidden;
+  }
+
+  .s2s-field-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.28) 1px, transparent 2px),
+      radial-gradient(circle at 62% 18%, rgba(77, 255, 255, 0.25) 1px, transparent 2px),
+      radial-gradient(circle at 78% 66%, rgba(255, 179, 71, 0.25) 1px, transparent 2px),
+      radial-gradient(circle at 34% 74%, rgba(157, 78, 221, 0.25) 1px, transparent 2px);
+    opacity: 0.46;
+  }
+
+  .s2s-field-page > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-hero {
+    min-height: min(48rem, calc(100vh - 5rem));
+    display: grid;
+    place-items: center;
+    max-width: 94rem;
+    margin: 0 auto;
+  }
+
+  .field-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 66rem;
+    text-align: center;
+  }
+
+  .field-hero h1 {
+    @apply mt-7 font-serif font-semibold tracking-tight text-stone-100 text-balance;
+    font-size: clamp(2.9rem, 7vw, 7.2rem);
+    line-height: 0.98;
+  }
+
+  .field-hero .threshold-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .field-provocations {
+    @apply mt-10 flex flex-wrap justify-center gap-3;
+  }
+
+  .field-provocations p {
+    @apply rounded-full border border-cyan-200/20 bg-white/5 px-4 py-2 text-sm md:text-base text-stone-300 font-serif;
+  }
+
+  .field-orbit {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: min(44rem, 88vw);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    opacity: 0.38;
+    background:
+      radial-gradient(circle at center, rgba(77, 255, 255, 0.08), transparent 7rem),
+      radial-gradient(circle at center, transparent 38%, rgba(77, 255, 255, 0.14) 38.3%, transparent 38.7%),
+      radial-gradient(circle at center, transparent 65%, rgba(157, 78, 221, 0.14) 65.3%, transparent 65.7%),
+      radial-gradient(circle at center, transparent 84%, rgba(255, 179, 71, 0.12) 84.3%, transparent 84.7%);
+  }
+
+  .field-orbit span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: rgba(77, 255, 255, 0.7);
+    box-shadow: 0 0 14px rgba(77, 255, 255, 0.4);
+    transform:
+      rotate(calc(var(--i) * 27.69deg))
+      translateX(min(19rem, 38vw));
+  }
+
+  .inquiry-field,
+  .artifact-field,
+  .instrument-field {
+    max-width: 92rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(244, 241, 232, 0.12);
+  }
+
+  .inquiry-field-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 5rem);
+    align-items: end;
+    max-width: 82rem;
+  }
+
+  .inquiry-field-head h2,
+  .artifact-field-inner h2,
+  .instrument-copy h2 {
+    @apply font-serif text-stone-100 tracking-tight text-balance;
+    font-size: clamp(1.9rem, 4vw, 4.5rem);
+    line-height: 1.03;
+  }
+
+  .inquiry-field-head p:last-child,
+  .artifact-field-inner > p,
+  .instrument-copy p {
+    @apply text-base md:text-xl leading-relaxed text-stone-300 font-serif;
+  }
+
+  .inquiry-node-grid {
+    margin-top: clamp(2rem, 5vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(77, 255, 255, 0.16);
+    border: 1px solid rgba(77, 255, 255, 0.16);
+  }
+
+  .inquiry-node {
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(10, 14, 39, 0.94);
+    padding: 1.25rem;
+  }
+
+  .inquiry-node:nth-child(2n) {
+    background: rgba(17, 23, 55, 0.94);
+  }
+
+  .inquiry-node:nth-child(3n) {
+    transform: translateY(1.25rem);
+  }
+
+  .inquiry-node:nth-child(5n) {
+    transform: translateY(-0.75rem);
+  }
+
+  .inquiry-node span,
+  .artifact-river figcaption,
+  .orb-cloud span {
+    @apply text-xs uppercase tracking-[0.18em] text-cyan-300/60 font-sans;
+  }
+
+  .inquiry-node h3 {
+    @apply mt-8 text-2xl text-stone-100 font-serif font-normal;
+  }
+
+  .inquiry-node p {
+    @apply mt-4 text-sm leading-relaxed text-stone-400 font-sans;
+  }
+
+  .artifact-field-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 5rem);
+    align-items: end;
+  }
+
+  .artifact-river {
+    margin-top: clamp(2rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(14rem, 1fr));
+    gap: 1px;
+    background: rgba(255, 179, 71, 0.16);
+    border: 1px solid rgba(255, 179, 71, 0.16);
+    overflow-x: auto;
+  }
+
+  .artifact-river figure {
+    min-height: 18rem;
+    background: rgba(5, 7, 19, 0.94);
+    padding: 1.4rem;
+  }
+
+  .artifact-river blockquote {
+    @apply mt-8 text-lg md:text-xl leading-snug text-stone-100 font-serif;
+  }
+
+  .instrument-field {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 6rem);
+  }
+
+  .orb-cloud {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 0.75rem;
+  }
+
+  .orb-cloud li {
+    @apply rounded-full border border-cyan-200/20 bg-white/5 px-4 py-3;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.65rem;
+  }
+
+  .orb-cloud strong {
+    @apply text-base md:text-lg text-stone-100 font-serif font-normal;
+  }
+
+  @media (max-width: 1100px) {
+    .inquiry-node-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .inquiry-node:nth-child(3n),
+    .inquiry-node:nth-child(5n) {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .field-hero {
+      min-height: auto;
+      place-items: center;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .field-hero h1 {
+      font-size: clamp(2.5rem, 15vw, 4.2rem);
+      line-height: 1.02;
+    }
+
+    .field-orbit {
+      width: 120vw;
+      opacity: 0.24;
+    }
+
+    .field-orbit span {
+      transform:
+        rotate(calc(var(--i) * 27.69deg))
+        translateX(48vw);
+    }
+
+    .inquiry-field-head,
+    .artifact-field-inner,
+    .instrument-field,
+    .medium-transmission {
+      grid-template-columns: 1fr;
+    }
+
+    .inquiry-node-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inquiry-node {
+      min-height: 11rem;
+    }
+
+    .artifact-river {
+      grid-template-columns: 1fr;
+      overflow-x: visible;
+    }
+  }
+
+  .threshold-hero {
+    position: relative;
+    display: grid;
+    place-items: end start;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  .threshold-hero-inner {
+    max-width: 78rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .threshold-kicker {
+    @apply text-xs uppercase tracking-[0.28em] text-cyan-300/75 font-sans;
+  }
+
+  .threshold-hero h1 {
+    @apply mt-7 max-w-6xl font-serif font-semibold tracking-tight text-stone-100 text-balance;
+    font-size: clamp(2.8rem, 6.6vw, 6.2rem);
+    line-height: 1;
+  }
+
+  .threshold-lead {
+    @apply mt-7 max-w-3xl text-lg md:text-xl leading-relaxed text-stone-300 font-serif;
+  }
+
+  .threshold-manifest {
+    @apply mt-12 grid gap-3 md:grid-cols-3 max-w-5xl;
+  }
+
+  .threshold-manifest p {
+    @apply border-t border-cyan-200/20 pt-4 text-lg md:text-xl leading-snug text-stone-200 font-serif;
+  }
+
+  .threshold-constellation {
+    position: absolute;
+    right: min(2vw, 2rem);
+    top: 9vh;
+    width: min(46rem, 88vw);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    opacity: 0.36;
+    background:
+      radial-gradient(circle at center, rgba(77, 255, 255, 0.07), transparent 7rem),
+      radial-gradient(circle at center, transparent 42%, rgba(77, 255, 255, 0.13) 42.3%, transparent 42.8%),
+      radial-gradient(circle at center, transparent 61%, rgba(157, 78, 221, 0.13) 61.3%, transparent 61.8%),
+      radial-gradient(circle at center, transparent 78%, rgba(255, 179, 71, 0.1) 78.3%, transparent 78.8%);
+  }
+
+  .threshold-constellation span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: rgba(77, 255, 255, 0.72);
+    box-shadow: 0 0 14px rgba(77, 255, 255, 0.42);
+    transform:
+      rotate(calc(var(--i) * 27.69deg))
+      translateX(14rem);
+  }
+
+  .threshold-constellation span:nth-child(3n) {
+    transform:
+      rotate(calc(var(--i) * 27.69deg))
+      translateX(18rem);
+  }
+
+  .threshold-constellation span:nth-child(4n) {
+    transform:
+      rotate(calc(var(--i) * 27.69deg))
+      translateX(11rem);
+  }
+
+  .threshold-band,
+  .source-transmission,
+  .orb-constellation-section,
+  .scale-field,
+  .medium-transmission,
+  .dispatch-grid,
+  .entry-coordinates,
+  .threshold-close {
+    border-top: 1px solid rgba(244, 241, 232, 0.13);
+  }
+
+  .threshold-split,
+  .source-transmission-inner,
+  .medium-transmission,
+  .dispatch-grid,
+  .entry-coordinates,
+  .threshold-close,
+  .scale-field-inner {
+    max-width: 88rem;
+    margin: 0 auto;
+  }
+
+  .threshold-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 7rem);
+    align-items: start;
+  }
+
+  .threshold-split h2,
+  .source-title h2,
+  .orb-constellation-copy h2,
+  .medium-transmission h2 {
+    @apply font-serif text-stone-100 tracking-tight text-balance;
+    font-size: clamp(1.8rem, 3.4vw, 3.8rem);
+    line-height: 1.05;
+  }
+
+  .threshold-split p:last-child,
+  .source-title p:last-child,
+  .orb-constellation-copy p,
+  .medium-transmission > p {
+    @apply text-base md:text-xl leading-relaxed text-stone-300 font-serif;
+  }
+
+  .source-transmission-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 5vw, 6rem);
+  }
+
+  .source-title {
+    position: sticky;
+    top: 7rem;
+    align-self: start;
+  }
+
+  .source-title h2,
+  .orb-constellation-copy h2,
+  .medium-transmission h2 {
+    margin-top: 1.4rem;
+  }
+
+  .source-title p:last-child {
+    margin-top: 2rem;
+  }
+
+  .source-stream {
+    display: grid;
+    gap: 1px;
+    background: rgba(77, 255, 255, 0.18);
+    border: 1px solid rgba(77, 255, 255, 0.18);
+  }
+
+  .source-stream figure {
+    @apply bg-cosmic-blue/95 px-6 py-7 md:px-9 md:py-10;
+  }
+
+  .source-stream figcaption {
+    @apply text-xs uppercase tracking-[0.24em] text-cyan-300/70 font-sans;
+  }
+
+  .source-stream blockquote {
+    @apply mt-5 text-lg md:text-2xl leading-snug text-stone-100 font-serif;
+  }
+
+  .orb-constellation-section {
+    max-width: 88rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 5vw, 6rem);
+  }
+
+  .orb-constellation-copy p {
+    margin-top: 1.5rem;
+  }
+
+  .orb-constellation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(13, minmax(5.2rem, 1fr));
+    min-height: 28rem;
+    align-items: end;
+    overflow-x: auto;
+    gap: 0.75rem;
+  }
+
+  .orb-constellation-list li {
+    min-height: calc(7rem + var(--orb-rise, 0rem));
+    border-left: 1px solid rgba(77, 255, 255, 0.24);
+    padding: 0 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(77, 255, 255, 0.1), transparent 72%);
+  }
+
+  .orb-constellation-list li:nth-child(2n) {
+    --orb-rise: 3rem;
+  }
+
+  .orb-constellation-list li:nth-child(3n) {
+    --orb-rise: 6rem;
+  }
+
+  .orb-constellation-list li:nth-child(5n) {
+    --orb-rise: 9rem;
+  }
+
+  .orb-constellation-list span,
+  .scale-field span,
+  .entry-coordinate span {
+    @apply text-xs text-cyan-300/55 font-sans tracking-[0.16em] uppercase;
+  }
+
+  .orb-constellation-list strong {
+    @apply mt-3 text-lg text-stone-100 font-serif font-normal;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .scale-field ol {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(8rem, 1fr));
+    overflow-x: auto;
+    border-top: 1px solid rgba(255, 179, 71, 0.28);
+  }
+
+  .scale-field li {
+    min-height: 12rem;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 179, 71, 0.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .scale-field strong {
+    @apply text-xl text-stone-100 font-serif font-normal;
+  }
+
+  .medium-transmission {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 5vw, 6rem);
+    align-items: end;
+  }
+
+  .dispatch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(244, 241, 232, 0.14);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .dispatch-grid article {
+    @apply bg-cosmic-blue px-6 py-10 md:px-12 md:py-16;
+  }
+
+  .dispatch-grid h2 {
+    @apply mt-5 text-xl md:text-3xl leading-snug text-stone-100 font-serif font-normal;
+  }
+
+  .entry-coordinates > div {
+    display: grid;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(77, 255, 255, 0.18);
+  }
+
+  .entry-coordinate {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 0.65fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid rgba(77, 255, 255, 0.18);
+  }
+
+  .entry-coordinate strong {
+    @apply text-xl text-stone-100 font-serif font-normal;
+  }
+
+  .entry-coordinate em {
+    @apply text-base md:text-lg text-stone-400 font-serif not-italic leading-relaxed;
+  }
+
+  .threshold-close {
+    text-align: center;
+  }
+
+  .threshold-close p {
+    @apply max-w-3xl mx-auto text-2xl md:text-4xl leading-tight text-stone-100 font-serif;
+  }
+
+  @media (max-width: 900px) {
+    .threshold-split,
+    .source-transmission-inner,
+    .orb-constellation-section,
+    .medium-transmission {
+      grid-template-columns: 1fr;
+    }
+
+    .source-title {
+      position: static;
+    }
+
+    .dispatch-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .entry-coordinate {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+  }
+
+  .signal-panel {
+    @apply rounded-xl border border-cyan-200/15 bg-cosmic-blue-light/25 shadow-[0_0_80px_rgba(0,212,255,0.08)] backdrop-blur-sm;
+  }
+
+  .source-shard {
+    @apply rounded-xl border border-stone-200/15 bg-stone-100/[0.035] shadow-[0_0_70px_rgba(157,78,221,0.08)] backdrop-blur-sm transition-colors hover:border-cyan-200/30 hover:bg-stone-100/[0.055];
+  }
+
+  .threshold-orbit {
+    position: absolute;
+    right: -10rem;
+    top: 5rem;
+    width: min(42rem, 70vw);
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(77, 255, 255, 0.2), transparent 9%),
+      radial-gradient(circle at 50% 50%, transparent 38%, rgba(77, 255, 255, 0.22) 39%, transparent 40%),
+      radial-gradient(circle at 50% 50%, transparent 58%, rgba(157, 78, 221, 0.18) 59%, transparent 60%),
+      radial-gradient(circle at 50% 50%, rgba(255, 179, 71, 0.12), transparent 62%);
+    opacity: 0.58;
+    filter: blur(0.2px);
+    pointer-events: none;
+  }
+
+  /* Legacy vessel grid — renamed so it cannot tint cleanroom .orb-grid */
+  .legacy-orb-grid {
+    @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px overflow-hidden rounded-xl border border-cyan-200/15 bg-cyan-200/15;
+  }
+
+  .legacy-orb-cell {
+    @apply min-h-28 bg-cosmic-blue/95 px-5 py-5 flex flex-col justify-between transition-colors hover:bg-cosmic-blue-light/80;
+  }
+
+  .legacy-orb-cell span {
+    @apply text-xs text-cyan-300/45 font-sans;
+  }
+
+  .legacy-orb-cell strong {
+    @apply text-lg text-stone-100 font-serif font-normal;
+  }
+
+  .scale-rail {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3;
+  }
+
+  .scale-rail li {
+    @apply min-h-28 rounded-xl border border-stone-200/15 bg-cosmic-blue-light/20 px-5 py-5 flex flex-col justify-between;
+  }
+
+  .scale-rail span {
+    @apply text-xs text-stone-500 font-sans;
+  }
+
+  .scale-rail strong {
+    @apply text-xl text-stone-100 font-serif font-normal;
+  }
+
   /** Centered epigraph-style break between prose sections (book vessel). */
   .book-prose-interlude {
     @apply text-center space-y-1 py-10 md:py-12 my-2 border-y border-stone-300/15;
@@ -819,4 +1935,3 @@ body {
     @apply text-sm md:text-base text-stone-400 font-serif leading-relaxed tracking-wide;
   }
 }
-

@@ -11,50 +11,146 @@ export const SITE = {
   shortName: 'S2S',
   author: 'Gigi Stardust',
   description:
-    'Gigi Stardust’s living body of work, beginning in the human body and following the question of how life changes without losing its relationship to origin.',
+    'Gigi Stardust maps sovereign intelligence across body, Earth, universe, future forms of life, and galactic participation.',
 };
 
 export const HOME = {
   eyebrow: SITE.name,
-  title: 'How do we change without losing where we came from?',
+  title: 'What kind of human survives the scale of the universe?',
   lead:
-    'The system arrived after the question. I followed that question from the human body into relationship, place, civilization, the planet, and the cosmos. Stardust to Sovereignty is the name I gave what appeared.',
+    'A map of intelligence moving through body, time, memory, creativity, relationship, civilization, Earth, universe, galaxy, future human, and unknown intelligence.',
   premise:
-    'Before the Orbs had names, they were dots on my murals. Before The Cosmic Tapestry became a book, it was 174 essays. The material came first. The architecture waited for me to catch up.',
+    'It began as observation, inquiry, experience, presence, long-form research, and long-form writing. The architecture existed first as instinct, as coherence, as patterns that repeated with precision. Language arrived later to recognize the system.',
   inquiry:
-    'How can we enter larger relationships, change through them, and remain connected to what gave us life?',
+    'The human is an interface. The question is: with what?',
   scale: [
+    'Observation',
     'Body',
+    'Time',
+    'Memory',
+    'Creativity',
     'Relationship',
-    'Community',
-    'Place',
-    'Civic System',
     'Civilization',
-    'Planet',
+    'Earth',
+    'Universe',
     'Galaxy',
+    'Future Human',
+    'Unknown Intelligence',
+  ],
+  inquiryNodes: [
+    {
+      label: 'Body',
+      question: 'What does the body know before thought arrives?',
+    },
+    {
+      label: 'Time',
+      question: 'What does time become when it is lived from the inside?',
+    },
+    {
+      label: 'Memory',
+      question: 'How does memory travel through body, lineage, place, and form?',
+    },
+    {
+      label: 'Creativity',
+      question: 'How does making reveal an architecture that explanation missed?',
+    },
+    {
+      label: 'Relationship',
+      question: 'How does participation organize identity across scale?',
+    },
+    {
+      label: 'Civilization',
+      question: 'What does civilization train the human to perceive?',
+    },
+    {
+      label: 'Earth',
+      question: 'How does inhabiting Earth teach coherence, limit, and return?',
+    },
+    {
+      label: 'Galaxy',
+      question: 'What does the galaxy ask of the human form?',
+    },
+    {
+      label: 'Future Human',
+      question: 'What capacities return when the future becomes primitive again?',
+    },
+    {
+      label: 'Unknown Intelligence',
+      question: 'What intelligences become available when perception changes form?',
+    },
   ],
   sovereignty:
-    'Sovereignty, in S2S, is the capacity to enter relationship without disappearing into it. To participate, change course, refuse, or leave while keeping hold of the thread of who you are.',
+    'Sovereignty, in S2S, is the capacity to enter relationship while remaining whole. To participate, refuse, transform, inherit, and continue while keeping hold of the thread of who you are.',
   livingLiteraryTechnology:
-    'A book is one form the work can take. So is an essay, a field note, a map, a work of fiction, or a piece of software. S2S calls this movement Living Literary Technology: the work changes form while remaining in relationship with its source. The Constitutional Chamber protects the lineage and the possibility of return.',
+    'A living field can become a book, a map, a field note, fiction, a system, an encounter, an interface, or an unknown future form. S2S is authoring the laws of movement that allow the field to change form while remaining in relationship with its source.',
   closing:
-    'The body was the first place the question became impossible to ignore.',
+    'Enter through the form that recognizes you first.',
+  provocations: [
+    'The Stardust Current keeps moving.',
+    'The book was one form.',
+    'The field kept moving.',
+  ],
+  fieldStatement:
+    'The Source Field holds levels and layers of observation and experience, available for development in any direction.',
+  excerpts: [
+    {
+      label: 'Field origin',
+      text:
+        'The architecture came out of the material.',
+    },
+    {
+      label: 'Book One',
+      text:
+        'With every breath, matter forged in stellar fire crosses the threshold into you, continuing a journey that began long before Earth existed.',
+    },
+    {
+      label: 'Source Field',
+      text:
+        'I need the components to become unrecognizable for a while.',
+    },
+    {
+      label: 'Gigi',
+      text:
+        'I arrange based on where the nodes of resonance accumulate.',
+    },
+  ],
+  orbsIntro:
+    'The thirteen Orbs are direct expressions of lived intelligence. They describe movements within awareness and gestures of sovereignty.',
+  orbs: [
+    'Origin',
+    'Resonance',
+    'Clarity',
+    'Order',
+    'Time',
+    'Memory',
+    'Transformation',
+    'Intuition',
+    'Adaptation',
+    'Lineage',
+    'Transparency',
+    'Sovereignty',
+    'Bridging',
+  ],
+  dispatches:
+    'Dispatches are where the living field meets the world before it becomes architecture: bodies, roads, towns, medicine, appetite, weather, technology, joy, refusal, and consequence.',
+  futurePrimitive:
+    'Future primitive carries restored embodied, relational, ecological, territorial, lineage, and mythic capacities into futures our current systems barely know how to perceive.',
 };
 
 export const ENTRY_POINTS = [
   {
     href: '/about',
     label: 'The Work',
-    title: 'The question that refused to stay small',
+    title: 'The question that became a system',
     description:
-      'Begin with the body, then follow the inquiry into relationship, place, civilization, and beyond.',
+      'Begin with the body, then follow the inquiry as it becomes architecture, scale, and lawful movement.',
   },
   {
     href: '/source-field',
     label: 'Source Field',
-    title: 'Where unfinished work can stay alive',
+    title: 'The living material beneath the forms',
     description:
-      'Essays, field notes, research, fiction, maps, and material whose final form is still unknown.',
+      'Essays, field notes, research, fiction, maps, and documented experience held for possible continuation.',
   },
   {
     href: '/books',
@@ -67,14 +163,14 @@ export const ENTRY_POINTS = [
 
 export const WORK = {
   eyebrow: 'The Work',
-  title: 'The question keeps getting larger',
+  title: 'The work is becoming a medium',
   lead:
-    'The question begins close to the skin: what allows a human being to change, enter relationship, and remain whole? It did not stay there. It followed me into communities, institutions, civilizations, planets, and other forms of intelligence.',
+    'The question begins close to the skin: what allows a human being to change, enter relationship, and remain whole? From there, it followed me into communities, institutions, civilizations, planets, other forms of intelligence, and finally into the question of form itself.',
   originHeading: 'The premise',
   originBody: [
     'Reality, as S2S understands it, is made of relationships as much as things. A living being becomes itself through contact with a world already in motion.',
     'The body demonstrates this before any diagram can. It carries stellar material, lived memory, and the pressure of the present. It changes constantly while preserving enough continuity to remain a life.',
-    'I use coherence for that continuity through change. Sovereignty names what becomes possible when a being can enter relationship without surrendering itself.',
+    'I use coherence for that continuity through change. Sovereignty names what becomes possible when a being can enter relationship while remaining whole. The same question now governs the work: how does a literary body change form while carrying origin forward?',
   ],
   movementHeading: 'Where the question travels',
   movement: [
@@ -87,50 +183,51 @@ export const WORK = {
     'Planet',
     'Galaxy',
   ],
-  formsHeading: 'When the question leaves the individual',
+  formsHeading: 'When the work changes form',
   formsBody:
-    'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, and consequences. At the widest edge waits a harder question: can a civilization learn from what it creates?',
+    'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, consequence, and technology. The current development is constitutional authorship: writing the native laws that allow S2S to move through new embodiments before those embodiments decide what the work is.',
   orientation:
-    'What allows us to enter a larger world while keeping hold of the thread of who we are?',
-  closing: 'The body is where the question became impossible to keep theoretical.',
+    'What allows a living work to enter a larger world while keeping hold of the thread of what gave it life?',
+  closing: 'The body is where the question became impossible to keep theoretical. The medium is where it becomes buildable.',
 };
 
 export const SOURCE_FIELD = {
   eyebrow: 'Source Field',
-  title: 'Where unfinished work can remain alive',
+  title: 'The living material before final form',
   lead:
-    'The Source Field is where I keep material before I know what it will become.',
+    'The Source Field is the intentional body of material I preserve for possible continuation and development.',
   body: [
-    'It holds essays, field notes, field reports, research, fiction, maps, and the occasional thing that resists a category.',
-    'Some of it becomes public. Some becomes part of a book, a map, a system, or a story. Some simply waits. Waiting is part of the work. Its value exists before I know the ending.',
+    'It holds observations, voice notes, essays, poems, field notes, field reports, research, fiction, maps, manuscripts, and the occasional thing that resists a category.',
+    'The Source Field is intentionally kept material that remains available to move. Some of it becomes public. Some becomes part of a book, a map, a system, a story, or a future form still arriving. Some simply waits. Waiting is part of the work.',
   ],
   methodHeading: 'The method',
   method: [
     'Make contact.',
     'Keep the source intact.',
-    'Notice what it touches.',
+    'Hold the familiar forms aside.',
+    'Notice where resonance accumulates.',
     'Name only what has become visible.',
-    'Let the final form arrive later.',
+    'Let the next form declare itself.',
   ],
-  publicHeading: 'Public selections',
+  publicHeading: 'What becomes public',
   publicBody:
-    'The private Source Field is much larger than what appears here. Nothing becomes public merely because it has been saved. I decide what is ready, what still needs work, and what should remain held.',
+    'The private Source Field is much larger than what appears here. Nothing becomes public merely because it has been saved, repeated, or retrieved. I decide what is ready, what still needs work, and what should remain held.',
 };
 
 export const BOOK_ONE = {
   eyebrow: 'Book One',
   title: 'The Cosmic Tapestry',
-  lead: 'The first complete literary form of Stardust to Sovereignty.',
+  lead: 'The first completed literary embodiment of Stardust to Sovereignty.',
   epigraph:
     'A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.',
   introduction: [
-    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through body, time, memory, and relationship, toward sovereignty as participation without loss of origin.',
+    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through body, time, memory, and relationship, toward sovereignty as participation that carries origin forward.',
     'This is the first volume of Stardust to Sovereignty, the name given to the system the book describes. It establishes the inquiry at human scale. Later volumes carry it into civilization and species life.',
     'Structural chapters and imaginative passages work together. Some arrive as recognition. Others bring the architecture gently into view. The book is offered as a companion to what the reader may already sense.',
   ],
   originHeading: 'Before the book',
   origin: [
-    'Before it was a book, The Cosmic Tapestry was 174 long-form essays. Most of them did not enter the manuscript. They still made the book possible.',
+    'Before it was a book, The Cosmic Tapestry was 174 long-form essays. Many remained outside the manuscript while still making the book possible. That is how S2S often moves: the material arrives first, the form comes later, and the source remains part of the lineage.',
   ],
   insideHeading: 'The Orbs',
   thesis:
@@ -140,8 +237,8 @@ export const BOOK_ONE = {
     'The Orbs first appeared as large dots in my murals. I drew lines between them before I could explain why they belonged together. Their names came later. That order still matters: the pattern was encountered before it was explained.',
   statusHeading: 'Returning to the book',
   status: [
-    'I am reading the manuscript again, line by line, with the originating material beside me. I am deciding what still sounds like me, what belongs to an earlier stage of the work, and what I want to write again.',
-    'The first edition records a real moment in the development of S2S. I am keeping that history visible while I decide what the book becomes next.',
+    'I am reading the manuscript again, line by line, with the originating material beside me. I am deciding what still sounds like me, what belongs to an earlier stage of the work, and what I want to author again.',
+    'The first edition records a real moment in the development of S2S. I am keeping that history visible while I decide what the book becomes next. Book One remains a living embodiment, a completed form with an active lineage.',
   ],
   availability:
     'The current first edition remains available for direct purchase while I do that work.',
@@ -157,18 +254,19 @@ export const GIGI = {
     'Before The Cosmic Tapestry became a book, I wrote 174 essays. Before the Orbs had names, they were large dots in my murals. I drew lines between them because I could see that they belonged together. The names came later.',
     'I have followed the question through businesses, murals, writing, long drives, field notes, research, fiction, software, and places that changed it while I was still standing in them.',
     'I created Stardust to Sovereignty and remain its steward. That means I keep track of where the work came from, decide what is ready to become public, and return to earlier forms when the work asks me to look again.',
+    'Right now I am authoring the constitutional architecture of the literary medium itself: the laws, movements, permissions, capacities, and return paths that future embodiments will inherit.',
   ],
   closing:
-    'The work keeps changing form. My job is to carry its memory with it.',
+    'The work keeps changing form. My job is to let it move while keeping its origin alive.',
 };
 
 export const CONSOLE = {
   eyebrow: 'In development',
   title: 'Console',
   lead:
-    'Console is being developed as a way to explore released S2S material and the relationships within it.',
+    'Console is one possible future embodiment of S2S.',
   body:
-    'I am still discovering what its public form needs to be. There is no launch date yet.',
+    'The current work is constitutional authorship: writing the native laws of the medium before software or interface design is allowed to define it. Console remains in development while that order becomes clearer.',
 };
 
 export const BOOK_STATUS = {

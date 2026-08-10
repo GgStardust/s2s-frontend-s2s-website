@@ -46,7 +46,7 @@ export default function TermsPage() {
               public selections may change as the work develops.
             </p>
             <p>
-              Original content identified with {SITE.name} or {SITE.author} remains part of that authored body of work.
+              Original content identified with {SITE.name} or {SITE.author} remains part of the authored field.
               Please request written permission before reproducing or distributing substantial portions.
             </p>
           </section>

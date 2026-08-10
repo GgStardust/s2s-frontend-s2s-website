@@ -23,7 +23,7 @@ actual philosophical and developmental center of Stardust to Sovereignty:
   collective and civilizational form, planet, and galaxy;
 - sovereignty means coherent self-holding within relationship;
 - Living Literary Technology names the constitutional capacity by which this
-  body of work can move through multiple embodiments without losing source.
+  living field can move through multiple embodiments without losing source.
 
 The website presents the living-coherence field as an S2S premise rather than
 as an externally established fact. Public release remains distinct from
@@ -43,6 +43,26 @@ pattern preceded explanation. Sentence length and cadence vary deliberately.
 First-person language appears where Gigi's actual encounter with the work is
 the clearest form of orientation.
 
+The 2026-08-05 alignment pass updates the public site to reflect the current
+Constitutional Chamber orientation: S2S is a living field developing a new
+literary medium; Book One is its first completed literary embodiment; the
+Source Field is intentional living material preserved for possible
+continuation; and the present development center is the direct authorship of
+the medium's native laws before future technological embodiments are built.
+Public copy names the Constitutional Chamber and Living Literary Technology
+without treating working constitutional language as adopted law.
+
+The 2026-08-05 provocative threshold pass follows the steward's correction
+that S2S did not begin as a book and should not be publicly flattened into the
+Chamber, Book One, source preservation, software, or website explanation. The
+homepage now opens from the question, “What kind of human survives the scale of
+the universe?” It treats S2S as a non-linear map of intelligence moving across
+body, Earth, universe, future primitive capacities, galactic participation, and
+intelligences not yet fully known. It uses short Source Field excerpts as
+public artifacts and brings Gigi Stardust forward as the field observer whose
+lived inquiry, presence, research, and long-form writing preceded the first
+book embodiment.
+
 ## Primary sources
 
 Public copy in `lib/coreSiteCopy.ts` is derived from:
@@ -56,7 +76,10 @@ Public copy in `lib/coreSiteCopy.ts` is derived from:
 - `constitutional/02_CONSTITUTION/constitutional-support-package/LIVING_LITERARY_TECHNOLOGY_ORIENTATION.md`
 - `source-field/sources/SF-012_The_Architecture_Came_Out_of_the_Material.md`
 - `source-field/sources/SF-016_When_the_Framework_Became_Permeable.md`
+- `source-field/field-notes/What Does the Source Field Look Like in the Future.md`
 - `source-field/systems/distribution/gigi_stardust_public_voice_capsule.md`
+- `constitutional/08_DECISIONS/DECISIONS.md`, including CH-008 Whole-Work
+  Orientation
 - the steward's formulation: “Living Literary Technology is the capacity of
   S2S to move through multiple embodiments. The Constitutional Chamber governs
   that movement by protecting source, lineage, permission, authority, status,
@@ -71,9 +94,9 @@ Public copy in `lib/coreSiteCopy.ts` is derived from:
 | Home | Thesis V2 plus the Post-Book-One Spine and constitutional support package | S2S is introduced through its governing inquiry, premise, definition of sovereignty, and scale movement |
 | The Work | Thesis V2, Post-Book-One Spine, and Open Content Architecture | The developmental architecture moves from embodied life into collective, civilizational, planetary, and galactic participation |
 | Source Field | SF-012 plus publishing membrane | Public release is separated from private archival presence |
-| Book One | SF-012 plus current steward-directed reclamation | First embodiment under authorial return; current first edition available through a quiet direct-purchase path |
-| Gigi | SF-012 and steward role | Creator and steward rather than a conventional author persona |
-| Console | Living Literary Technology Orientation | In development; no diagnostic or launch claims |
+| Book One | SF-012 plus current steward-directed reclamation | First completed embodiment under authorial return; current first edition available through a quiet direct-purchase path |
+| Gigi | SF-012 and steward role | Creator and steward of a living literary system rather than a conventional author persona |
+| Console | Living Literary Technology Orientation plus current Chamber alignment | Possible future embodiment held beneath constitutional authorship; no diagnostic or launch claims |
 
 ## Material intentionally withdrawn from the preview
 

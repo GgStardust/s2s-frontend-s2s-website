@@ -8,6 +8,7 @@ import { SITE } from '@/lib/coreSiteCopy';
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const isHome = pathname === '/';
 
   const navItems: Array<{ href: string; label: string }> = [
     { href: '/about', label: 'The Work' },
@@ -24,7 +25,11 @@ export default function Navigation() {
   };
 
   return (
-    <header className="w-full border-b border-stone-400/20 bg-cosmic-blue/95 backdrop-blur-sm sticky top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
+    <header className={`w-full z-50 pt-[env(safe-area-inset-top,0px)] ${
+      isHome
+        ? 'absolute top-0 border-b border-stone-100/10 bg-transparent'
+        : 'sticky top-0 border-b border-stone-400/20 bg-cosmic-blue/95 backdrop-blur-sm'
+    }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex items-center justify-between gap-3 min-h-[44px]">
           {/* Logo/Brand */}
@@ -36,8 +41,10 @@ export default function Navigation() {
             <span className="block text-lg sm:text-xl md:text-2xl font-bold text-stone-100 group-hover:text-stone-50 font-serif truncate sm:overflow-visible sm:whitespace-normal">
               {SITE.name}
             </span>
-            <span className="hidden sm:block text-[11px] uppercase tracking-[0.18em] text-stone-500 font-sans mt-0.5">
-              A living body of work
+            <span className={`hidden sm:block text-[11px] uppercase tracking-[0.18em] font-sans mt-0.5 ${
+              isHome ? 'text-stone-400' : 'text-stone-500'
+            }`}>
+              A map of intelligence
             </span>
           </Link>
 

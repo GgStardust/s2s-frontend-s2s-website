@@ -1,75 +1,87 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import type { Metadata } from 'next';
-import StripeCheckoutButton from '@/components/direct-checkout/StripeCheckoutButton';
-import { getDirectSalePriceUsd } from '@/lib/directPricing';
-import { AUTHORS_EDITION_LABEL, AUTHORS_EDITION_WHAT } from '@/lib/orderCopy';
-import { BOOK_CATALOG } from '@/lib/publishingMetadata';
+import Image from 'next/image'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+import StripeCheckoutButton from '@/components/direct-checkout/StripeCheckoutButton'
+import { getDirectSalePriceUsd } from '@/lib/directPricing'
+import { AUTHORS_EDITION_LABEL, AUTHORS_EDITION_WHAT } from '@/lib/orderCopy'
+import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata'
 
 export const metadata: Metadata = {
   title: `Checkout · ${BOOK_CATALOG.title}`,
   description: `Purchase the current first edition of ${BOOK_CATALOG.title} directly from Gigi Stardust.`,
   robots: { index: false, follow: false },
-};
+}
 
 export default function DirectOrderPage({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Record<string, string | string[] | undefined>
 }) {
-  const priceUsd = getDirectSalePriceUsd();
-  const canceled = searchParams.canceled === '1';
+  const priceUsd = getDirectSalePriceUsd()
+  const canceled = searchParams.canceled === '1'
 
   return (
-    <main className="min-h-screen bg-book-vessel pb-20">
-      <div className="max-w-3xl mx-auto px-6 py-14 md:py-16">
-        <header className="text-center mb-10 border-b border-stone-300/15 pb-10">
-          <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70 font-sans">
-            Book One · Stardust to Sovereignty
-          </p>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-stone-100 font-serif">
-            {BOOK_CATALOG.title}
-          </h1>
-          <p className="text-base text-stone-400 mt-3 font-sans">
-            {AUTHORS_EDITION_LABEL} · ${priceUsd.toFixed(2)} USD · standard shipping included
-          </p>
-        </header>
+    <main id="main" className="page-order">
+      <section className="register register--light order-checkout" aria-labelledby="checkout-title">
+        <div className="order-checkout__grid">
+          <div className="order-checkout__copy">
+            <p className="label">Book One · Direct purchase</p>
+            <h1 id="checkout-title" className="display display--section">
+              {BOOK_CATALOG.title}
+            </h1>
+            <p className="order-hero__edition">{AUTHORS_EDITION_LABEL}</p>
+            <p className="lede">{AUTHORS_EDITION_WHAT}</p>
 
-        {canceled && (
-          <div
-            className="mb-8 rounded-sm border border-stone-500/30 bg-stone-400/5 px-4 py-3 text-sm text-stone-300 font-sans"
-            role="status"
-          >
-            Checkout was canceled.
-          </div>
-        )}
+            <dl className="edition-facts">
+              <div>
+                <dt>Format</dt>
+                <dd>Paperback</dd>
+              </div>
+              <div>
+                <dt>Total</dt>
+                <dd>${priceUsd.toFixed(2)} USD</dd>
+              </div>
+              <div>
+                <dt>Shipping</dt>
+                <dd>Standard included</dd>
+              </div>
+              <div>
+                <dt>Also available</dt>
+                <dd>
+                  Amazon paperback ${PRICING.paperbackUsd} · Ebook ${PRICING.digitalUsd}
+                </dd>
+              </div>
+            </dl>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10">
-          <div className="flex justify-center md:justify-start">
-            <div className="rounded-sm p-2 bg-cosmic-blue-light/30 max-w-[260px]">
-              <Image
-                src="/book-cover.png"
-                alt={`${BOOK_CATALOG.title} cover`}
-                width={260}
-                height={390}
-                className="w-full h-auto block rounded-sm"
-                priority
-              />
+            {canceled && (
+              <p className="order-status" role="status">
+                Checkout was canceled. You can start again when ready.
+              </p>
+            )}
+
+            <div className="order-checkout__actions">
+              <StripeCheckoutButton priceUsd={priceUsd} />
+              <p className="order-back">
+                <Link className="text-link" href="/book-one">
+                  Return to Book One <span aria-hidden="true">→</span>
+                </Link>
+              </p>
             </div>
           </div>
-          <p className="text-base leading-relaxed text-stone-300 font-serif">
-            {AUTHORS_EDITION_WHAT}
-          </p>
-        </div>
 
-        <StripeCheckoutButton priceUsd={priceUsd} />
-
-        <div className="mt-10 flex justify-center text-sm font-sans">
-          <Link href="/books" className="text-stone-500 hover:text-stone-300 underline underline-offset-4">
-            Return to Book One
-          </Link>
+          <aside className="order-checkout__object" aria-label="Book cover">
+            <figure className="book-photo order-checkout__photo">
+              <Image
+                src="/assets/book/book-one-mockup.png"
+                alt={`${BOOK_CATALOG.title} — Book One by Gigi Stardust`}
+                width={819}
+                height={1024}
+                priority
+              />
+            </figure>
+          </aside>
         </div>
-      </div>
+      </section>
     </main>
-  );
+  )
 }

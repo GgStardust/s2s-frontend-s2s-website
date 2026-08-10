@@ -47,11 +47,11 @@ export const ABOUT_INSIDE_THE_BOOK = {
 export const ABOUT_SYSTEM_CONTEXT = {
   heading: 'Stardust to Sovereignty',
   lead:
-    'Stardust to Sovereignty is an interdisciplinary body of work investigating consciousness as a living structure active across scales of reality.',
+    'Stardust to Sovereignty is a cosmological and human architecture investigating consciousness as a living structure active across scales of reality.',
   body: [
     'It explores biology, systems theory, complexity, ecology, cosmology, technology, mythology, creativity, and direct observation as expressions of the same underlying architecture: how intelligence organizes itself from cells to civilizations to the cosmos.',
     'The inquiry proposes an ontology, a structural account of how reality organizes and what it means for humanity to participate consciously within a living universe.',
-    'Through books, essays, field reports, fiction, visual systems, and emerging technologies, the work develops an evolving thesis of coherent participation across scales. The Cosmic Tapestry establishes the first stable map of the architecture at human scale.',
+    'Through books, essays, field reports, fiction, visual systems, and emerging technologies, the living field develops an evolving thesis of coherent participation across scales. The Cosmic Tapestry establishes the first stable map of the architecture at human scale.',
   ],
 } as const
 
@@ -64,7 +64,7 @@ export const ABOUT_AUTHOR = {
   body: [
     'Gigi Stardust\u2019s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
     'Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
-    'Observation across science, systems thinking, technology, business, mythology, and lived experience gathered over a lifetime into Stardust to Sovereignty, an evolving body of work expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
+    'Observation across science, systems thinking, technology, business, mythology, and lived experience gathered over a lifetime into the Stardust Current: a living field expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
   ],
 } as const
 
