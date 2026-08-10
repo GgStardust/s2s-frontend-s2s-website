@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 export default function NotFound() {
@@ -23,7 +22,7 @@ export default function NotFound() {
           <Button href="/" variant="primary">
             Return Home
           </Button>
-          <Button href="/books" variant="secondary">
+          <Button href="/book-one" variant="secondary">
             Inside Book One
           </Button>
         </div>

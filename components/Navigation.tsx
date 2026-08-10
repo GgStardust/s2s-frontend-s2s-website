@@ -11,10 +11,10 @@ export default function Navigation() {
   const isHome = pathname === '/';
 
   const navItems: Array<{ href: string; label: string }> = [
-    { href: '/about', label: 'The Work' },
     { href: '/s2s', label: 'S2S' },
-    { href: '/books', label: 'Book One' },
-    { href: '/about-gigi', label: 'Gigi' },
+    { href: '/book-one', label: 'Book One' },
+    { href: '/inquiry', label: 'Inquiry' },
+    { href: '/gigi', label: 'Gigi' },
   ];
 
   const isActive = (href: string) => {

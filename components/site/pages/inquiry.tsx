@@ -211,7 +211,7 @@ export default function PageMain() {
       <section className="register register--ink inquiry-close" aria-labelledby="inquiry-close-q">
         <div className="inquiry-close__inner">
           <h2 id="inquiry-close-q" className="display display--dark inquiry-close__q">
-            What architecture forms the future participant?
+            What becomes visible when the question is allowed to keep moving?
           </h2>
           <img
             className="inquiry-close__glyph"

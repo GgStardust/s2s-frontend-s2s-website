@@ -129,14 +129,14 @@ export const HOME = {
 
 export const ENTRY_POINTS = [
   {
-    href: '/about',
+    href: '/s2s',
     label: 'The Work',
     title: 'The question that became a system',
     description:
       'Begin with the body, then follow the inquiry as it becomes architecture, scale, and lawful movement.',
   },
   {
-    href: '/books',
+    href: '/book-one',
     label: 'Book One',
     title: 'The Cosmic Tapestry',
     description:

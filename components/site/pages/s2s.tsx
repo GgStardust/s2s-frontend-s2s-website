@@ -30,12 +30,13 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label">The 13 Orbs</p>
           <h2 id="s2s-orbs-title" className="display display--section">
-            Change the lens.<br />
-            Change what becomes visible.
+            The Orbs keep<br />
+            perception moving.
           </h2>
           <div className="s2s-prose s2s-prose--light">
             <p>
-              The thirteen Orbs form the core architecture of Stardust to Sovereignty.
+              S2S uses the Orbs as lenses for tracking how pattern, memory, time, transformation,
+              sovereignty, and relationship move through experience.
             </p>
             <p className="s2s-orb-chain">
               Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.

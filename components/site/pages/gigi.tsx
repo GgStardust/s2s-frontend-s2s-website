@@ -23,7 +23,7 @@ export default function PageMain() {
             <p className="label">Gigi Stardust</p>
             <h1 id="gigi-title" className="display display--section">Author and creator.</h1>
             <p className="gigi-verbs">
-              Observing. Questioning. Writing. Building. Making. Following the questions as they move across scale.
+              Observing. Questioning. Writing. Building. Making. Following the questions as they become form.
             </p>
           </div>
           <figure className="gigi__wave-wrap" aria-hidden="true">

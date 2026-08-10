@@ -159,7 +159,7 @@ export const BOOK_ONE_READER_GUIDE = {
 
 /**
  * Back matter: manuscript-accurate structure.
- * Sections render rich `dd` content from optional fields; see `app/books/page.tsx`.
+ * Sections render rich `dd` content from optional fields; see `app/book-one/page.tsx`.
  */
 export const BOOK_ONE_BACK_MATTER = {
   heading: 'Back matter',

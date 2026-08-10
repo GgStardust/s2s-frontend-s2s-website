@@ -92,7 +92,7 @@ export default function PageMain() {
               Stardust to Sovereignty
             </h2>
             <p className="paradigm__support">
-              A body of work following consciousness, coherence, and participation across scale.
+              A body of work following consciousness, coherence, and participation through many registers.
             </p>
             <p className="band-copy">
               Experience opens a question.<br />
@@ -101,7 +101,7 @@ export default function PageMain() {
               Architecture changes what becomes perceptible next.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty follows questions across body, relationship, place, land,
+              Stardust to Sovereignty follows questions through body, relationship, place, land,
               Earth, society, civilization, future human, universe, galaxy, and unknown
               intelligence.
             </p>
@@ -111,7 +111,7 @@ export default function PageMain() {
               care, being seen, and the intelligence that forms between people.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty provides an architecture for exploring those fields across scale.
+              Stardust to Sovereignty holds those fields within one paradigm of discovery.
             </p>
             <a className="text-link text-link--light" href="/s2s">
               Explore S2S <span aria-hidden="true">→</span>
@@ -177,7 +177,7 @@ export default function PageMain() {
             <p className="label">Gigi Stardust</p>
             <h2 id="gigi-title" className="display display--section">Author and creator.</h2>
             <p className="gigi-verbs">
-              Observing. Questioning. Writing. Building. Making. Following the questions as they move across scale.
+              Observing. Questioning. Writing. Building. Making. Following the questions as they become form.
             </p>
             <a className="text-link" href="/gigi">Meet Gigi <span aria-hidden="true">→</span></a>
           </div>
@@ -192,16 +192,16 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h2 id="orbs-title" className="display display--section">
-              Change the lens.<br />
-              Change what becomes visible.
+              A constellation<br />
+              of lenses.
             </h2>
             <p className="lede">
-              The thirteen Orbs form the core architecture of Stardust to Sovereignty.
+              Book One introduces thirteen recurring lenses for origin, rhythm, memory,
+              transformation, clarity, sovereignty, and relation.
             </p>
             <p className="orbs__overview">
-              Book One introduces the Orbs as a constellation: thirteen recurring lenses for
-              origin, rhythm, memory, transformation, clarity, sovereignty, and relation. Each
-              opens a different way of seeing the same world.
+              Here, they appear together as a field. Each opens a different way of seeing the
+              same world.
             </p>
           </div>
         </div>

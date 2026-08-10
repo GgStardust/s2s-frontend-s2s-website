@@ -114,7 +114,8 @@ export default function PageMain() {
 
           <div className="book-desc__stages">
             <p className="body-dark">
-              The elements in our bones, blood, breath, and cells were forged through processes that began long before Earth existed. Carbon, oxygen, calcium, iron, water, electrical charge: ancient matter has become metabolism, sensation, memory, perception, and choice.
+              Book One begins there: not with abstraction, but with the body as the place where
+              ancient matter becomes sensation, memory, perception, and choice.
             </p>
             <p className="body-dark book-desc__turn">So what, exactly, are we?</p>
             <p className="body-dark">
