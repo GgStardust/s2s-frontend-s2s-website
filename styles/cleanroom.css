@@ -1455,8 +1455,25 @@ a.text-link--pending {
   color: rgba(243, 239, 230, 0.72);
 }
 
+.inquiry-arch .inquiry-layer__label,
+.inquiry-response .inquiry-layer__label {
+  margin-bottom: 0.8rem;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  font-style: normal;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.45);
+}
+
 .inquiry-arch p + p {
   margin-top: 0.85rem;
+}
+
+.inquiry-arch .inquiry-layer__label + p,
+.inquiry-response .inquiry-layer__label + p {
+  margin-top: 0;
 }
 
 .inquiry-response p {
@@ -1468,16 +1485,33 @@ a.text-link--pending {
   margin-top: 1rem;
 }
 
+.inquiry-response .inquiry-layer__label--coordinates {
+  margin-top: 1.8rem;
+}
+
+.inquiry-response .inquiry-layer__label--coordinates + .inquiry-coordinates {
+  margin-top: 0.65rem;
+}
+
+.inquiry-coordinates {
+  font-family: var(--mono);
+  font-size: clamp(0.68rem, 1vw, 0.78rem) !important;
+  letter-spacing: 0.12em;
+  line-height: 1.7 !important;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.68) !important;
+}
+
 .inquiry-unit.is-arch .inquiry-arch,
 .inquiry-unit.is-field .inquiry-arch {
-  max-height: 20rem;
+  max-height: 30rem;
   opacity: 1;
   transform: translateY(0);
   margin-top: 1.5rem;
 }
 
 .inquiry-unit.is-field .inquiry-response {
-  max-height: 28rem;
+  max-height: 44rem;
   opacity: 1;
   transform: translateY(0);
   margin-top: 1.5rem;
@@ -1628,6 +1662,23 @@ a.text-link--pending {
   margin-top: 0.5rem;
 }
 
+.inquiry-attraction-field {
+  padding: clamp(4rem, 9vw, 7rem) 0 0;
+  border-top: 1px solid var(--rule-light);
+}
+
+.inquiry-attraction-field .inquiry-attraction__q {
+  color: var(--paper);
+}
+
+.inquiry-attraction-field .inquiry-attraction__word {
+  color: var(--paper);
+}
+
+.inquiry-attraction-field .inquiry-attraction__word--soft {
+  color: rgba(243, 239, 230, 0.62);
+}
+
 @media (min-width: 900px) {
   .inquiry-attraction {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1666,6 +1717,14 @@ a.text-link--pending {
   height: auto;
   opacity: 0.65;
   filter: invert(1);
+}
+
+.inquiry-close__line {
+  margin: -1.5rem 0 0;
+  max-width: 34ch;
+  color: var(--muted-light);
+  font-size: var(--fs-body);
+  line-height: 1.5;
 }
 
 .inquiry-close__cta {
