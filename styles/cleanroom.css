@@ -786,10 +786,21 @@ a.text-link--pending {
 }
 
 .inquiry__intro {
-  margin: 0 0 1.75rem;
+  margin: 0 0 0.65rem;
   max-width: 36ch;
   color: var(--muted-light);
   font-size: var(--fs-body);
+}
+
+.inquiry__morsel {
+  margin: 0 0 2.25rem;
+  max-width: 42ch;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.13em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.58);
 }
 
 .inquiry-list {
@@ -807,6 +818,16 @@ a.text-link--pending {
   line-height: 1.22;
   font-style: italic;
   max-width: 28ch;
+}
+
+.inquiry-list li:nth-child(2) {
+  margin-left: clamp(1.5rem, 12vw, 11rem);
+  max-width: 24ch;
+}
+
+.inquiry-list li:nth-child(3) {
+  margin-left: clamp(0.75rem, 5vw, 4rem);
+  max-width: 30ch;
 }
 
 .inquiry-list--field {

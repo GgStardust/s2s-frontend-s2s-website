@@ -145,7 +145,10 @@ export default function PageMain() {
           </div>
           <div className="inquiry__main">
             <p className="inquiry__intro">
-              Questions currently being explored through the S2S lens.
+              Three entrances into a wider field of questions.
+            </p>
+            <p className="inquiry__morsel">
+              Inside: S2S responses, provisional answers, and coordinates through the work.
             </p>
             <ol className="inquiry-list">
               <li>
@@ -160,7 +163,7 @@ export default function PageMain() {
             </ol>
             <p className="inquiry__cta">
               <a className="text-link text-link--light" href="/inquiry">
-                Enter the Inquiry <span aria-hidden="true">→</span>
+                Open the Inquiry <span aria-hidden="true">→</span>
               </a>
             </p>
           </div>
