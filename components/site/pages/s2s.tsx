@@ -245,9 +245,10 @@ export default function PageMain() {
             <p className="body-dark">
               As systems grow easier, what forms of perception, attention, memory, creativity, and agency receive less practice?
             </p>
-            <p className="body-dark">What human capacities are we strengthening?</p>
-            <p className="body-dark">What are we allowing to disappear?</p>
-            <p className="body-dark">What kind of future are those choices making possible?</p>
+            <p className="body-dark">
+              The future human is shaped by which capacities are strengthened, which are allowed
+              to disappear, and which choices become ordinary.
+            </p>
           </div>
 
           <div className="s2s-future-primitive">

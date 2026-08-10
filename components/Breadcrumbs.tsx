@@ -16,9 +16,8 @@ export default function Breadcrumbs() {
     books: 'Book One',
     about: 'The Work',
     'about-gigi': 'Gigi Stardust',
-    codex: 'Source Field',
-    'source-field': 'Source Field',
-    console: 'Console',
+    codex: 'S2S',
+    console: 'S2S',
     success: 'Success',
   };
 

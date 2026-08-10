@@ -1049,6 +1049,31 @@ a.text-link--pending {
   margin-top: 0.75rem;
 }
 
+.orb-grid--preview {
+  max-width: min(100%, 980px);
+  grid-template-columns: 1fr;
+  row-gap: 2.5rem;
+}
+
+.orb-grid--preview .orb-grid__bridge {
+  grid-column: auto;
+  width: auto;
+  margin-top: 0;
+}
+
+.orb-grid--preview .orb-name {
+  max-width: 18ch;
+}
+
+.orb-preview-copy {
+  display: block;
+  max-width: 20rem;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .orbs__cta {
   max-width: var(--max);
   margin: 3rem auto 0;
@@ -1085,6 +1110,16 @@ a.text-link--pending {
     grid-column: 1 / -1;
     width: min(100%, 260px);
     margin-top: 1rem;
+  }
+
+  .orb-grid--preview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .orb-grid--preview .orb-grid__bridge {
+    grid-column: auto;
+    width: auto;
+    margin-top: 0;
   }
 }
 

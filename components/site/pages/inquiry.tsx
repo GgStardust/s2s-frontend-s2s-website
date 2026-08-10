@@ -34,9 +34,8 @@ export default function PageMain() {
                 <p>What kinds of participation reproduce a field, and what kinds transform it?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>We are building the field we keep enacting.</p>
-                <p>Every repeated choice becomes part of the architecture future participants inherit.</p>
-                <p>What does our rhythm keep making real?</p>
+                <p>S2S reads participation as architecture in motion.</p>
+                <p>Repeated choices become the conditions future participants inherit, often before those choices have been consciously named.</p>
               </div>
             </div>
           </article>
@@ -59,8 +58,8 @@ export default function PageMain() {
                 <p>When does technology support capacity, and when does it substitute for capacity?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>Extra time can become liberated capacity or be quietly reabsorbed into throughput.</p>
-                <p>The deeper question is what human capacities become stronger when friction is removed, and which capacities begin to disappear.</p>
+                <p>S2S reads saved time as a transfer of capacity.</p>
+                <p>Extra time can become liberated attention, creativity, and relationship, or it can be quietly reabsorbed into throughput.</p>
               </div>
             </div>
           </article>
@@ -83,8 +82,8 @@ export default function PageMain() {
                 <p>What do future beings inherit from our unfinished participation?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>They will read our infrastructure as our confession.</p>
-                <p>What we automate, normalize, preserve, repair, extract, and leave unfinished becomes part of the conditions future participants inherit.</p>
+                <p>S2S reads inheritance through the structures left behind.</p>
+                <p>What we automate, normalize, preserve, repair, extract, and leave unfinished becomes part of the world future participants must inhabit.</p>
               </div>
             </div>
           </article>
@@ -107,8 +106,8 @@ export default function PageMain() {
                 <p>What does a civilization teach its people to perceive, value, ignore, and protect?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>A society becomes difficult to inhabit when participation continuously asks for capacities it does not help sustain.</p>
-                <p>The question becomes whether the structures organizing life also support coherence, agency, creativity, relationship, time, care, and meaningful participation.</p>
+                <p>S2S reads society as a formation system.</p>
+                <p>A society becomes difficult to inhabit when it asks for capacities it does not help sustain: coherence, agency, creativity, relationship, time, care, and meaningful participation.</p>
               </div>
             </div>
           </article>
@@ -130,9 +129,8 @@ export default function PageMain() {
                 <p>What happens when critique does not alter enactment?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>We perpetuate structures when opposition remains separate from participation.</p>
-                <p>The field continues through repeated attention, consumption, workflow, ritual, convenience, automation, and compliance.</p>
-                <p>The danger is unconscious architecture.</p>
+                <p>S2S reads critique through enactment.</p>
+                <p>Structures continue through repeated attention, consumption, workflow, ritual, convenience, automation, and compliance, even when our stated values oppose them.</p>
               </div>
             </div>
           </article>
@@ -154,9 +152,8 @@ export default function PageMain() {
                 <p>What architecture forms the future participant?</p>
               </div>
               <div className="inquiry-response" aria-hidden="true">
-                <p>The future human is formed inside the systems we normalize.</p>
-                <p>Childhood, education, food, medicine, technology, land, work, culture, governance, attention, and infrastructure all participate in shaping what capacities become ordinary.</p>
-                <p>The future participant is already being formed.</p>
+                <p>S2S reads the future human as already under formation.</p>
+                <p>Childhood, education, food, medicine, technology, land, work, culture, governance, attention, and infrastructure all help determine which capacities become ordinary.</p>
               </div>
             </div>
           </article>

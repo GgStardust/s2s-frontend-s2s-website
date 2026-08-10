@@ -36,6 +36,10 @@ export default function PageMain() {
             <p className="lede">
               The first completed literary embodiment of Stardust to Sovereignty.
             </p>
+            <p className="lede">
+              Book One begins with the body and opens into consciousness, time, relationship,
+              creativity, technology, and the larger universe we participate in.
+            </p>
             <p className="keywords">
               Origin · Embodiment · Relationship · Recognition · Sovereignty
             </p>
@@ -91,7 +95,7 @@ export default function PageMain() {
               Stardust to Sovereignty
             </h2>
             <p className="paradigm__support">
-              A dynamic paradigm of discovery.
+              A body of work following consciousness, coherence, and participation across scale.
             </p>
             <p className="band-copy">
               Experience opens a question.<br />
@@ -148,12 +152,6 @@ export default function PageMain() {
               <li>
                 <span>What draws us toward life, creation, relationship, and discovery?</span>
               </li>
-              <li>
-                <span>What are YOU doing with all your extra time?</span>
-              </li>
-              <li>
-                <span>What will the humans who inherit our choices think we were doing?</span>
-              </li>
             </ol>
             <p className="inquiry__cta">
               <a className="text-link text-link--light" href="/inquiry">
@@ -205,66 +203,22 @@ export default function PageMain() {
             </p>
           </div>
         </div>
-        <ul className="orb-grid">
+        <p className="lede">
+          The Orbs are thirteen lenses for recognizing how consciousness, memory, time,
+          relationship, and sovereignty organize experience.
+        </p>
+        <ul className="orb-grid orb-grid--preview">
           <li>
             <span className="orb-num">01</span>
             <div className="orb-mark"><img src="/assets/orbs/orb_01_origin_intelligence.png?v=hi13" alt="" /></div>
             <span className="orb-name">Origin Intelligence</span>
-          </li>
-          <li>
-            <span className="orb-num">02</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_02_resonance_mechanics.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Resonance Mechanics</span>
-          </li>
-          <li>
-            <span className="orb-num">03</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_03_photonic_intelligence.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Photonic Intelligence</span>
-          </li>
-          <li>
-            <span className="orb-num">04</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_04_harmonic_architectures.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Harmonic Architectures</span>
+            <span className="orb-preview-copy">Source entering form.</span>
           </li>
           <li>
             <span className="orb-num">05</span>
             <div className="orb-mark"><img src="/assets/orbs/orb_05_temporal_sovereignty.png?v=hi13" alt="" /></div>
             <span className="orb-name">Temporal Sovereignty</span>
-          </li>
-          <li>
-            <span className="orb-num">06</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_06_starline_memory.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Starline Memory</span>
-          </li>
-          <li>
-            <span className="orb-num">07</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_07_alchemical_current.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Alchemical Current</span>
-          </li>
-          <li>
-            <span className="orb-num">08</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_08_quantum_intuition.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Quantum Intuition</span>
-          </li>
-          <li>
-            <span className="orb-num">09</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_09_temporal_fluidity.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Temporal Fluidity</span>
-          </li>
-          <li>
-            <span className="orb-num">10</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_10_ancestral_repatterning.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Ancestral Repatterning</span>
-          </li>
-          <li>
-            <span className="orb-num">11</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_11_radiant_transparency.png?v=clip" alt="" /></div>
-            <span className="orb-name">Radiant Transparency</span>
-          </li>
-          <li>
-            <span className="orb-num">12</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_12_sovereign_field.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Sovereign Field</span>
+            <span className="orb-preview-copy">Time experienced through rhythm, pacing, and alignment.</span>
           </li>
           <li className="orb-grid__bridge">
             <span className="orb-num">13</span>
@@ -272,6 +226,7 @@ export default function PageMain() {
               <img src="/assets/orbs/orb_13_bridging_circle.png?v=dark2" alt="" />
             </div>
             <span className="orb-name">Bridging Intelligence</span>
+            <span className="orb-preview-copy">Translation and exchange across distinct forms of intelligence.</span>
           </li>
         </ul>
         <p className="orbs__cta">

@@ -84,10 +84,10 @@ export default function AboutPage() {
 
         <nav className="py-14 flex flex-col sm:flex-row gap-4 justify-center font-sans" aria-label="Continue through the work">
           <Link
-            href="/source-field"
+            href="/s2s"
             className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-stone-300/25 px-6 py-3 text-stone-200 hover:border-cyan-300/45 hover:text-cyan-100 transition-colors"
           >
-            Continue to the Source Field
+            Explore S2S
           </Link>
           <Link
             href="/about-gigi"

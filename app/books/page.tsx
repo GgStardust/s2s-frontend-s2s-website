@@ -129,10 +129,10 @@ export default function BooksPage() {
             The larger work
           </Link>
           <Link
-            href="/source-field"
+            href="/s2s"
             className="inline-flex min-h-[44px] items-center justify-center px-6 py-3 text-stone-400 hover:text-stone-200 underline underline-offset-4"
           >
-            Enter the Source Field
+            Explore S2S
           </Link>
         </nav>
       </article>

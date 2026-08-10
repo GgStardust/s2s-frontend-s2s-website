@@ -79,12 +79,6 @@ export const PRESALE_INFO = {
   orderBefore: '',
 } as const;
 
-// Console Information
-export const CONSOLE_INFO = {
-  accessAnnouncement: "Console access will be announced via email. We're targeting Summer 2026.",
-  earlyAccess: "Join the newsletter to be notified when the Console launches.",
-} as const;
-
 // Self-Publishing Explanation
 export const SELF_PUBLISHING = {
   why: "The system encoded here remains alive and unmediated. Every word, structure, and timing preserves what emerged through direct encounter. The framework made itself visible through lived experience, pattern, and necessity.",

@@ -2,8 +2,7 @@
  * Public-facing copy for the core S2S site.
  *
  * This is a derived website embodiment. Its source map is recorded in
- * docs/S2S_CORE_SITE_PROVENANCE.md so that public language remains traceable
- * to the Constitutional Chamber and Source Field.
+ * docs/S2S_CORE_SITE_PROVENANCE.md so that public language remains traceable.
  */
 
 export const SITE = {
@@ -81,8 +80,6 @@ export const HOME = {
   ],
   sovereignty:
     'Sovereignty, in S2S, is the capacity to enter relationship while remaining whole. To participate, refuse, transform, inherit, and continue while keeping hold of the thread of who you are.',
-  livingLiteraryTechnology:
-    'A living field can become a book, a map, a field note, fiction, a system, an encounter, an interface, or an unknown future form. S2S is authoring the laws of movement that allow the field to change form while remaining in relationship with its source.',
   closing:
     'Enter through the form that recognizes you first.',
   provocations: [
@@ -90,8 +87,6 @@ export const HOME = {
     'The book was one form.',
     'The field kept moving.',
   ],
-  fieldStatement:
-    'The Source Field holds levels and layers of observation and experience, available for development in any direction.',
   excerpts: [
     {
       label: 'Field origin',
@@ -102,11 +97,6 @@ export const HOME = {
       label: 'Book One',
       text:
         'With every breath, matter forged in stellar fire crosses the threshold into you, continuing a journey that began long before Earth existed.',
-    },
-    {
-      label: 'Source Field',
-      text:
-        'I need the components to become unrecognizable for a while.',
     },
     {
       label: 'Gigi',
@@ -146,13 +136,6 @@ export const ENTRY_POINTS = [
       'Begin with the body, then follow the inquiry as it becomes architecture, scale, and lawful movement.',
   },
   {
-    href: '/source-field',
-    label: 'Source Field',
-    title: 'The living material beneath the forms',
-    description:
-      'Essays, field notes, research, fiction, maps, and documented experience held for possible continuation.',
-  },
-  {
     href: '/books',
     label: 'Book One',
     title: 'The Cosmic Tapestry',
@@ -185,33 +168,10 @@ export const WORK = {
   ],
   formsHeading: 'When the work changes form',
   formsBody:
-    'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, consequence, and technology. The current development is constitutional authorship: writing the native laws that allow S2S to move through new embodiments before those embodiments decide what the work is.',
+    'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, consequence, and technology. Future public forms will be shared when they are ready.',
   orientation:
     'What allows a living work to enter a larger world while keeping hold of the thread of what gave it life?',
   closing: 'The body is where the question became impossible to keep theoretical. The medium is where it becomes buildable.',
-};
-
-export const SOURCE_FIELD = {
-  eyebrow: 'Source Field',
-  title: 'The living material before final form',
-  lead:
-    'The Source Field is the intentional body of material I preserve for possible continuation and development.',
-  body: [
-    'It holds observations, voice notes, essays, poems, field notes, field reports, research, fiction, maps, manuscripts, and the occasional thing that resists a category.',
-    'The Source Field is intentionally kept material that remains available to move. Some of it becomes public. Some becomes part of a book, a map, a system, a story, or a future form still arriving. Some simply waits. Waiting is part of the work.',
-  ],
-  methodHeading: 'The method',
-  method: [
-    'Make contact.',
-    'Keep the source intact.',
-    'Hold the familiar forms aside.',
-    'Notice where resonance accumulates.',
-    'Name only what has become visible.',
-    'Let the next form declare itself.',
-  ],
-  publicHeading: 'What becomes public',
-  publicBody:
-    'The private Source Field is much larger than what appears here. Nothing becomes public merely because it has been saved, repeated, or retrieved. I decide what is ready, what still needs work, and what should remain held.',
 };
 
 export const BOOK_ONE = {
@@ -254,19 +214,10 @@ export const GIGI = {
     'Before The Cosmic Tapestry became a book, I wrote 174 essays. Before the Orbs had names, they were large dots in my murals. I drew lines between them because I could see that they belonged together. The names came later.',
     'I have followed the question through businesses, murals, writing, long drives, field notes, research, fiction, software, and places that changed it while I was still standing in them.',
     'I created Stardust to Sovereignty and remain its steward. That means I keep track of where the work came from, decide what is ready to become public, and return to earlier forms when the work asks me to look again.',
-    'Right now I am authoring the constitutional architecture of the literary medium itself: the laws, movements, permissions, capacities, and return paths that future embodiments will inherit.',
+    'Right now I am continuing the work with attention to form, timing, authorship, and what is ready to become public.',
   ],
   closing:
     'The work keeps changing form. My job is to let it move while keeping its origin alive.',
-};
-
-export const CONSOLE = {
-  eyebrow: 'In development',
-  title: 'Console',
-  lead:
-    'Console is one possible future embodiment of S2S.',
-  body:
-    'The current work is constitutional authorship: writing the native laws of the medium before software or interface design is allowed to define it. Console remains in development while that order becomes clearer.',
 };
 
 export const BOOK_STATUS = {

@@ -21,7 +21,7 @@ export default function FieldNotesScroll() {
           Field Notes
         </h2>
         <p className="text-sm text-stone-400 italic">
-          Scrollstream: excerpts from Source Field
+          Scrollstream: selected public lines
         </p>
       </div>
       <div className="terminator-border overflow-hidden rounded-lg">

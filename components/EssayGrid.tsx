@@ -133,10 +133,10 @@ function EssayCard({ essay }: EssayCardProps) {
         </p>
         
         <Link
-          href={`/source-field/${essay.id}`}
+          href="/s2s"
           className="text-cyan-300/80 hover:text-cyan-300 underline underline-offset-2 text-sm mt-auto inline-block"
         >
-          Read Full Essay →
+          Explore S2S →
         </Link>
       </div>
     </div>

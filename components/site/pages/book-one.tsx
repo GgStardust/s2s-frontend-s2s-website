@@ -134,10 +134,10 @@ export default function PageMain() {
             <p className="body-dark">
               The result is an inquiry into what it means to be human inside a universe vastly older, larger, and stranger than the structures through which we usually understand ourselves.
             </p>
-            <p className="body-dark book-desc__turn">What happens to identity when it is understood as relational?</p>
-            <p className="body-dark book-desc__turn">What happens to sovereignty as the field becomes larger?</p>
+            <p className="body-dark book-desc__turn">Identity becomes relational.</p>
+            <p className="body-dark book-desc__turn">Sovereignty changes as the field becomes larger.</p>
             <p className="body-dark book-desc__turn">
-              And what becomes possible when the human being begins to recognize itself as an active participant in the reality it inhabits?
+              The human being begins to recognize itself as an active participant in the reality it inhabits.
             </p>
           </div>
         </div>

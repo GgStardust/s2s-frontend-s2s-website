@@ -12,7 +12,7 @@ export default function Navigation() {
 
   const navItems: Array<{ href: string; label: string }> = [
     { href: '/about', label: 'The Work' },
-    { href: '/source-field', label: 'Source Field' },
+    { href: '/s2s', label: 'S2S' },
     { href: '/books', label: 'Book One' },
     { href: '/about-gigi', label: 'Gigi' },
   ];
