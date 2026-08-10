@@ -3068,6 +3068,36 @@ a.text-link--pending {
 }
 
 /* Motion — restrained, viewport-triggered via .is-visible */
+@keyframes glyph-drift-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  35% {
+    transform: translate3d(0.08rem, -0.18rem, 0) rotate(0.35deg);
+  }
+
+  70% {
+    transform: translate3d(-0.08rem, 0.12rem, 0) rotate(-0.28deg);
+  }
+}
+
+@keyframes glyph-drift-tall {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  40% {
+    transform: translate3d(0.12rem, -0.28rem, 0) rotate(0.45deg);
+  }
+
+  75% {
+    transform: translate3d(-0.1rem, 0.18rem, 0) rotate(-0.35deg);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
@@ -3113,11 +3143,67 @@ a.text-link--pending {
       border-color 0.9s var(--ease);
     transition-delay: 0.22s;
   }
+
+  .hero__glyph img,
+  .paradigm__glyph img,
+  .s2s-register__glyph img,
+  .book-quote__glyph,
+  .inquiry-close__glyph,
+  .living-field__glyph,
+  .inquiry__mark,
+  .gigi__wave,
+  .close__glyph,
+  .site-footer__mark,
+  .order-success__glyph {
+    transform-origin: center;
+    animation: glyph-drift-soft 8.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .gigi__wave,
+  .living-field__glyph {
+    animation-duration: 11s;
+  }
+
+  .hero__glyph img,
+  .paradigm__glyph img,
+  .s2s-register__glyph img,
+  .book-quote--wide .book-quote__glyph {
+    animation-name: glyph-drift-tall;
+    animation-duration: 10.5s;
+  }
+
+  .paradigm__glyph img,
+  .book-quote__glyph--final,
+  .close__glyph {
+    animation-delay: -2.75s;
+  }
+
+  .s2s-register__glyph img,
+  .inquiry-close__glyph,
+  .site-footer__mark {
+    animation-delay: -5s;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
+    transform: none;
+  }
+
+  .hero__glyph img,
+  .paradigm__glyph img,
+  .s2s-register__glyph img,
+  .book-quote__glyph,
+  .inquiry-close__glyph,
+  .living-field__glyph,
+  .inquiry__mark,
+  .gigi__wave,
+  .close__glyph,
+  .site-footer__mark,
+  .order-success__glyph {
+    animation: none;
     transform: none;
   }
 }
