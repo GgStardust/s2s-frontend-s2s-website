@@ -85,9 +85,9 @@ export default function PageMain() {
           <li>Society</li>
           <li>Civilization</li>
           <li>Earth</li>
-          <li>Future Human</li>
-          <li>Universe</li>
           <li>Galaxy</li>
+          <li>Universe</li>
+          <li>Future Human</li>
           <li>Unknown Intelligence</li>
         </ul>
       </section>
