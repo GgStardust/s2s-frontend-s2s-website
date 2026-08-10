@@ -291,16 +291,15 @@ export default function PageMain() {
       </section>
 
       <section
-        className="register register--light s2s-register s2s-llt"
-        aria-labelledby="llt-title"
+        className="register register--light s2s-register s2s-future-forms"
+        aria-labelledby="future-forms-title"
       >
-        <div className="s2s-llt__inner">
-          <p className="label">Living Literary Technology</p>
-          <h2 id="llt-title" className="display display--section s2s-llt__q">
-            What happens when literature becomes an encounter?
-          </h2>
-          <p className="s2s-llt__support">
-            Stardust to Sovereignty is exploring forms in which authored work can remain alive across books, technology, image, sound, and inquiry while preserving source, lineage, and authorship.
+        <div className="s2s-future-forms__inner">
+          <p className="label" id="future-forms-title">
+            Future Forms
+          </p>
+          <p className="s2s-future-forms__copy">
+            Stardust to Sovereignty may continue through books, essays, images, field notes, and future encounters. Those forms will be shared when they are ready.
           </p>
         </div>
       </section>

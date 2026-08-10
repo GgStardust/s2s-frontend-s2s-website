@@ -1,4 +1,6 @@
 /* Auto-ported from cleanroom — preserve copy exactly */
+import NewsletterSignup from '@/components/NewsletterSignup'
+
 export default function PageMain() {
   return (
     <main id="main">
@@ -72,6 +74,10 @@ export default function PageMain() {
             <button className="contact-form__submit" type="submit">Send</button>
             <p className="contact-form__status" id="contact-status" role="status" aria-live="polite" hidden={true} />
           </form>
+
+          <div className="gigi-contact__newsletter">
+            <NewsletterSignup idPrefix="gigi-newsletter" />
+          </div>
         </div>
       </section>
     

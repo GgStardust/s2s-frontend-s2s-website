@@ -1948,28 +1948,23 @@ a.text-link--pending {
   margin-top: 1.1rem;
 }
 
-/* Living Literary Technology — quiet horizon */
-.s2s-llt {
+/* Future Forms — quiet horizon */
+.s2s-future-forms {
   border-top: 1px solid var(--rule);
   padding-top: clamp(4rem, 9vw, 7.5rem);
   padding-bottom: clamp(4.5rem, 10vw, 8rem);
 }
 
-.s2s-llt__inner {
+.s2s-future-forms__inner {
   max-width: 36rem;
 }
 
-.s2s-llt__q {
-  max-width: 16ch;
-  margin-top: 0.5rem;
-}
-
-.s2s-llt__support {
-  margin: 1.75rem 0 0;
+.s2s-future-forms__copy {
+  margin: 1.25rem 0 0;
   max-width: 42ch;
-  font-size: var(--fs-body);
-  line-height: 1.55;
-  color: var(--muted);
+  font-size: var(--fs-lede);
+  line-height: 1.5;
+  color: var(--ink);
 }
 
 /* /book-one body register */
@@ -2808,6 +2803,93 @@ a.text-link--pending {
   font-size: var(--fs-label);
   letter-spacing: 0.08em;
   color: var(--muted);
+}
+
+.site-footer__newsletter {
+  max-width: var(--max);
+  margin: 2.5rem auto 0;
+}
+
+.newsletter {
+  max-width: 28rem;
+}
+
+.newsletter__label {
+  margin: 0 0 0.85rem;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.newsletter__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: stretch;
+}
+
+.newsletter__row input {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  padding: 0.65rem 0;
+}
+
+.newsletter__row input::placeholder {
+  color: var(--muted);
+}
+
+.newsletter__row input:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+
+.newsletter__row button {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.65rem 0.15rem;
+  cursor: pointer;
+}
+
+.newsletter__row button:hover:not(:disabled) {
+  opacity: 0.55;
+}
+
+.newsletter__row button:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+
+.newsletter__thanks,
+.newsletter__error {
+  margin: 0.75rem 0 0;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.newsletter__error {
+  color: var(--ink);
+}
+
+.gigi-contact__newsletter {
+  margin-top: clamp(2.75rem, 5vw, 3.75rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
 }
 
 .site-footer__base .quiet-13 {

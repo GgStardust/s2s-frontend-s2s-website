@@ -6,11 +6,11 @@ export default function PageMain() {
       <section className="register register--light hero" id="top" aria-labelledby="hero-question">
         <div className="hero__grid">
           <div className="hero__copy">
-            <p className="label">A question currently under pressure</p>
+            <p className="label">From The Cosmic Tapestry</p>
             <h1 id="hero-question" className="display display--hero">
-              What are we building<br />
-              simply by continuing<br />
-              to participate?
+              The continuity was always there.<br />
+              What changes when<br />
+              the view catches up?
             </h1>
           </div>
           <figure className="hero__glyph">
@@ -61,7 +61,7 @@ export default function PageMain() {
         <figure className="book-quote book-quote--home">
           <p className="book-quote__label">From The Cosmic Tapestry</p>
           <blockquote>
-            <p>The continuity was always there. The view has caught up.</p>
+            <p>The body is where the universe becomes personal.</p>
           </blockquote>
         </figure>
       </section>
@@ -143,16 +143,16 @@ export default function PageMain() {
                 <span>What are we building simply by continuing to participate?</span>
               </li>
               <li>
-                <span>What are YOU doing with all your extra time?</span>
-              </li>
-              <li>
                 <span>What forms the human who comes next?</span>
               </li>
               <li>
-                <span>What will the humans who inherit our choices think we were doing?</span>
+                <span>What draws us toward life, creation, relationship, and discovery?</span>
               </li>
               <li>
-                <span>What draws us toward life, creation, relationship, and discovery?</span>
+                <span>What are YOU doing with all your extra time?</span>
+              </li>
+              <li>
+                <span>What will the humans who inherit our choices think we were doing?</span>
               </li>
             </ol>
             <p className="inquiry__cta">

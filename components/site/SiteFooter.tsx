@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { siteConfig } from '@/lib/site/site-config'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export default function SiteFooter() {
   return (
@@ -10,14 +10,13 @@ export default function SiteFooter() {
         <Link href="/inquiry">Inquiry</Link>
         <Link href="/orbs">Orbs</Link>
         <Link href="/gigi">Gigi</Link>
-        <a href={siteConfig.writingsUrl} target="_blank" rel="noopener noreferrer">
-          Writings
-        </a>
-        <a href={siteConfig.subscribeUrl} target="_blank" rel="noopener noreferrer">
-          Subscribe
-        </a>
         <Link href="/gigi#contact">Contact</Link>
       </div>
+
+      <div className="site-footer__newsletter">
+        <NewsletterSignup idPrefix="footer-newsletter" />
+      </div>
+
       <div className="site-footer__base">
         <p>© Stardust to Sovereignty UNA</p>
         <img className="site-footer__mark" src="/assets/glyphs/glyph_10.png" alt="" width={20} height={20} />

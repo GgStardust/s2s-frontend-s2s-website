@@ -37,7 +37,7 @@ export default function SiteInteractions() {
         '.lf-pair',
         '.living-field__close',
         '.s2s-creativity__inner',
-        '.s2s-llt__inner',
+        '.s2s-future-forms__inner',
         '.inquiry-attraction__word:not(.inquiry-attraction__word--soft)',
         '.book-quote:not(.book-quote--intimate):not(.book-quote--late)',
       ].join(', ')
