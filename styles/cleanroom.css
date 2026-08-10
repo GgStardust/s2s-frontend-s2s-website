@@ -2028,6 +2028,22 @@ a.text-link--pending {
   margin-bottom: 0;
 }
 
+.book__order-links {
+  margin-top: 0.25rem;
+}
+
+.book__order-links .text-link {
+  margin-top: 1.25rem;
+}
+
+.page-book-one .book-purchase {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.page-book-one .book + .book-purchase {
+  border-top: 1px solid var(--rule);
+}
+
 /* Book One quotation system — authored interruptions */
 .book-quote-register {
   padding-top: clamp(3.25rem, 7vw, 6rem);
@@ -2039,8 +2055,8 @@ a.text-link--pending {
 }
 
 .book-quote-register--final {
-  padding-top: clamp(5rem, 11vw, 9rem);
-  padding-bottom: clamp(5rem, 11vw, 9rem);
+  padding-top: clamp(3.25rem, 7vw, 5.5rem);
+  padding-bottom: clamp(3.25rem, 7vw, 5.5rem);
 }
 
 .book-quote {

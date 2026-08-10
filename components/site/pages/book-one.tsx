@@ -11,6 +11,11 @@ export default function PageMain() {
             <p className="lede">
               The first completed literary embodiment of Stardust to Sovereignty.
             </p>
+            <p className="order-row book__order-links">
+              <a className="text-link" href="#purchase">
+                Order Book One <span aria-hidden="true">→</span>
+              </a>
+            </p>
           </div>
           <aside className="book__object" aria-label="Book One">
             <figure className="book-photo">
@@ -23,6 +28,49 @@ export default function PageMain() {
               />
             </figure>
           </aside>
+        </div>
+      </section>
+
+      <section className="register register--light book-purchase" id="purchase" aria-labelledby="purchase-title">
+        <div className="book-purchase__inner">
+          <p className="label">The Cosmic Tapestry</p>
+          <h2 id="purchase-title" className="display display--section book-purchase__title">Book One</h2>
+
+          <dl className="edition-facts">
+            <div>
+              <dt>Publication</dt>
+              <dd>March 6, 2026</dd>
+            </div>
+            <div>
+              <dt>Formats</dt>
+              <dd>Paperback · Hardcover · Ebook</dd>
+            </div>
+            <div>
+              <dt>Trim</dt>
+              <dd>6 × 9 in. · 254 pp.</dd>
+            </div>
+            <div>
+              <dt>ISBN</dt>
+              <dd>979-8-9949342-2-7</dd>
+            </div>
+          </dl>
+
+          <div className="order-row">
+            <a className="text-link" href="/order/direct">
+              Authors Edition · Direct checkout <span aria-hidden="true">→</span>
+            </a>
+            <a
+              className="text-link"
+              href="https://www.amazon.com/gp/product/B0GXCNLMBQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Order on Amazon <span aria-hidden="true">→</span>
+            </a>
+            <p className="order-note">
+              Direct paperback $44 incl. standard shipping · Amazon paperback $33 · Ebook $17 · Hardcover $44
+            </p>
+          </div>
         </div>
       </section>
 
@@ -122,49 +170,6 @@ export default function PageMain() {
               Your bones carry calcium forged in dying stars. Your blood moves with iron formed in stellar furnaces. The iron in your blood was forged in a star that died before the sun was born. The carbon that scaffolds your life emerged through cosmic processes long before Earth existed. These elements now function together as living tissue, metabolism, and sensation.
             </p>
           </blockquote>
-        </div>
-      </section>
-
-      <section className="register register--light book-purchase" aria-labelledby="purchase-title">
-        <div className="book-purchase__inner">
-          <p className="label">The Cosmic Tapestry</p>
-          <h2 id="purchase-title" className="display display--section book-purchase__title">Book One</h2>
-
-          <dl className="edition-facts">
-            <div>
-              <dt>Publication</dt>
-              <dd>March 6, 2026</dd>
-            </div>
-            <div>
-              <dt>Formats</dt>
-              <dd>Paperback · Hardcover · Ebook</dd>
-            </div>
-            <div>
-              <dt>Trim</dt>
-              <dd>6 × 9 in. · 254 pp.</dd>
-            </div>
-            <div>
-              <dt>ISBN</dt>
-              <dd>979-8-9949342-2-7</dd>
-            </div>
-          </dl>
-
-          <div className="order-row">
-            <a className="text-link" href="/order/direct">
-              Authors Edition · Direct checkout <span aria-hidden="true">→</span>
-            </a>
-            <a
-              className="text-link"
-              href="https://www.amazon.com/gp/product/B0GXCNLMBQ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Order on Amazon <span aria-hidden="true">→</span>
-            </a>
-            <p className="order-note">
-              Direct paperback $44 incl. standard shipping · Amazon paperback $33 · Ebook $17 · Hardcover $44
-            </p>
-          </div>
         </div>
       </section>
 
