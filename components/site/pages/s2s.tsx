@@ -2,6 +2,7 @@
 export default function PageMain() {
   return (
     <main id="main" className="page-s2s">
+      <div className="s2s-resonance-line" aria-hidden="true"></div>
 
       <section className="register register--ink s2s-register s2s-threshold" aria-labelledby="threshold-title">
         <div className="s2s-register__inner">
@@ -197,6 +198,7 @@ export default function PageMain() {
       >
         <div className="s2s-creativity__inner">
           <p className="label">Creativity</p>
+          <span className="s2s-creativity__trace" aria-hidden="true"></span>
           <p className="s2s-creativity__inherent">Creativity is inherent.</p>
           <h2 id="creativity-title" className="display display--section s2s-creativity__q">
             Making is part of the inquiry.

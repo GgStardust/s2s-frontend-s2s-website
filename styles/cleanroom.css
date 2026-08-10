@@ -1791,7 +1791,42 @@ a.text-link--pending {
 }
 
 /* /s2s — four primary movements */
+.page-s2s {
+  position: relative;
+  overflow: hidden;
+}
+
+.s2s-resonance-line {
+  position: absolute;
+  top: clamp(34rem, 62vw, 52rem);
+  bottom: clamp(7rem, 14vw, 11rem);
+  left: min(calc(100% - var(--pad-x) - 1.25rem), calc(50% + 25rem));
+  z-index: 0;
+  width: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(36, 34, 30, 0.16) 12%,
+    rgba(36, 34, 30, 0.07) 52%,
+    rgba(243, 239, 230, 0.18) 78%,
+    transparent
+  );
+}
+
+.s2s-resonance-line::before {
+  content: "";
+  position: absolute;
+  inset-inline: -1px;
+  top: 0;
+  height: clamp(7rem, 16vw, 13rem);
+  background: linear-gradient(to bottom, transparent, rgba(36, 34, 30, 0.42), transparent);
+  opacity: 0.55;
+}
+
 .page-s2s .s2s-register {
+  position: relative;
+  z-index: 1;
   padding-top: clamp(4rem, 9vw, 7.5rem);
   padding-bottom: clamp(4rem, 9vw, 7.5rem);
 }
@@ -1910,6 +1945,8 @@ a.text-link--pending {
 
 /* Living Field — first register */
 .living-field {
+  position: relative;
+  z-index: 1;
   padding-top: clamp(4.5rem, 10vw, 8rem);
   padding-bottom: clamp(5rem, 12vw, 9rem);
   border-top: 1px solid var(--rule);
@@ -1934,6 +1971,7 @@ a.text-link--pending {
 }
 
 .lf-line {
+  position: relative;
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.2rem, 2.4vw, 1.65rem);
@@ -2152,10 +2190,34 @@ a.text-link--pending {
 }
 
 .s2s-creativity__inner {
+  position: relative;
   max-width: var(--max);
   margin: 0 auto;
   display: grid;
   gap: 1.5rem;
+}
+
+.s2s-creativity__trace {
+  display: block;
+  width: min(10rem, 45vw);
+  height: 1px;
+  margin: 0.4rem 0 0;
+  transform-origin: left center;
+  background: currentColor;
+  color: var(--ink);
+  opacity: 0.42;
+}
+
+.s2s-creativity__trace::after {
+  content: "";
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-left: auto;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  transform: translate(0.1rem, -0.22rem);
+  opacity: 0.7;
 }
 
 .s2s-creativity__inherent {
@@ -3155,11 +3217,11 @@ a.text-link--pending {
   }
 
   35% {
-    transform: translate3d(0.08rem, -0.18rem, 0) rotate(0.35deg);
+    transform: translate3d(0.18rem, -0.38rem, 0) rotate(0.85deg);
   }
 
   70% {
-    transform: translate3d(-0.08rem, 0.12rem, 0) rotate(-0.28deg);
+    transform: translate3d(-0.16rem, 0.26rem, 0) rotate(-0.7deg);
   }
 }
 
@@ -3170,15 +3232,71 @@ a.text-link--pending {
   }
 
   40% {
-    transform: translate3d(0.12rem, -0.28rem, 0) rotate(0.45deg);
+    transform: translate3d(0.26rem, -0.62rem, 0) rotate(1.05deg);
   }
 
   75% {
-    transform: translate3d(-0.1rem, 0.18rem, 0) rotate(-0.35deg);
+    transform: translate3d(-0.22rem, 0.38rem, 0) rotate(-0.9deg);
+  }
+}
+
+@keyframes s2s-resonance-travel {
+  0% {
+    transform: translateY(-18%);
+    opacity: 0;
+  }
+
+  18%,
+  78% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translateY(118%);
+    opacity: 0;
+  }
+}
+
+@keyframes s2s-language-arrives {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.58;
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes s2s-caret-fade {
+  0%,
+  70% {
+    opacity: 0.72;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes s2s-trace-draw {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 0.42;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .s2s-resonance-line::before {
+    animation: s2s-resonance-travel 14s ease-in-out infinite;
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(0.7rem);
@@ -3213,6 +3331,58 @@ a.text-link--pending {
     opacity: 0.88;
   }
 
+  .living-field .lf-line.reveal,
+  .living-field .lf-line.reveal-slow {
+    opacity: 1;
+    transform: translateY(0.25rem);
+    clip-path: inset(0 100% 0 0);
+    transition:
+      transform 0.55s var(--ease),
+      filter 0.55s var(--ease);
+  }
+
+  .living-field .lf-line.reveal::after,
+  .living-field .lf-line.reveal-slow::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 0.9em;
+    margin-left: 0.12em;
+    transform: translateY(0.12em);
+    background: currentColor;
+    opacity: 0;
+  }
+
+  .living-field .lf-line.reveal.is-visible,
+  .living-field .lf-line.reveal-slow.is-visible {
+    transform: translateY(0);
+    animation: s2s-language-arrives 1.35s steps(34, end) both;
+  }
+
+  .living-field .lf-line--wide.reveal.is-visible,
+  .living-field .lf-line--deep.reveal.is-visible {
+    animation-duration: 1.65s;
+  }
+
+  .living-field .lf-line--quiet.reveal-slow.is-visible,
+  .living-field .lf-line--signature.reveal-slow.is-visible {
+    animation-duration: 1.9s;
+  }
+
+  .living-field .lf-line.reveal.is-visible::after,
+  .living-field .lf-line.reveal-slow.is-visible::after {
+    animation: s2s-caret-fade 1.35s steps(2, end) both;
+  }
+
+  .s2s-creativity__trace {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  .s2s-creativity__inner.is-visible .s2s-creativity__trace {
+    animation: s2s-trace-draw 1.45s var(--ease) 0.25s forwards;
+  }
+
   .inquiry-unit.is-field .inquiry-response {
     transition:
       max-height 0.95s var(--ease),
@@ -3236,13 +3406,13 @@ a.text-link--pending {
   .site-footer__mark,
   .order-success__glyph {
     transform-origin: center;
-    animation: glyph-drift-soft 8.5s ease-in-out infinite;
+    animation: glyph-drift-soft 7.25s ease-in-out infinite;
     will-change: transform;
   }
 
   .gigi__wave,
   .living-field__glyph {
-    animation-duration: 11s;
+    animation-duration: 9.75s;
   }
 
   .hero__glyph img,
@@ -3250,7 +3420,7 @@ a.text-link--pending {
   .s2s-register__glyph img,
   .book-quote--wide .book-quote__glyph {
     animation-name: glyph-drift-tall;
-    animation-duration: 10.5s;
+    animation-duration: 8.75s;
   }
 
   .paradigm__glyph img,
@@ -3270,6 +3440,15 @@ a.text-link--pending {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .living-field .lf-line {
+    clip-path: none;
+  }
+
+  .s2s-resonance-line::before,
+  .s2s-creativity__trace {
+    animation: none;
   }
 
   .hero__glyph img,
