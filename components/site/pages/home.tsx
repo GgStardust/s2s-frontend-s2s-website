@@ -34,9 +34,6 @@ export default function PageMain() {
             <p className="label">Book One</p>
             <h2 id="book-title" className="display display--section">The Cosmic Tapestry</h2>
             <p className="lede">
-              The first completed literary embodiment of Stardust to Sovereignty.
-            </p>
-            <p className="lede">
               Book One begins with the body and opens into consciousness, time, relationship,
               creativity, technology, and the larger universe we participate in.
             </p>

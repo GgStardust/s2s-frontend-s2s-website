@@ -9,7 +9,8 @@ export default function PageMain() {
             <p className="label">Book One</p>
             <h1 id="book-title" className="display display--section">The Cosmic Tapestry</h1>
             <p className="lede">
-              The first completed literary embodiment of Stardust to Sovereignty.
+              Book One begins with the body and opens into consciousness, time, relationship,
+              creativity, technology, and the larger universe we participate in.
             </p>
             <p className="order-row book__order-links">
               <a className="text-link" href="#purchase">
@@ -87,7 +88,8 @@ export default function PageMain() {
               Ancient matter became metabolism, sensation, memory, perception, imagination, and choice.
             </p>
             <p>
-              The Cosmic Tapestry begins with the human being and immediately places us inside a much larger frame.
+              Book One follows that recognition as it becomes perception, memory, choice,
+              relationship, and sovereignty.
             </p>
           </div>
         </div>
@@ -112,14 +114,11 @@ export default function PageMain() {
 
           <div className="book-desc__stages">
             <p className="body-dark">
-              <em>The Cosmic Tapestry</em> begins with the human being and immediately places us inside a much larger frame.
-            </p>
-            <p className="body-dark">
               The elements in our bones, blood, breath, and cells were forged through processes that began long before Earth existed. Carbon, oxygen, calcium, iron, water, electrical charge: ancient matter has become metabolism, sensation, memory, perception, and choice.
             </p>
             <p className="body-dark book-desc__turn">So what, exactly, are we?</p>
             <p className="body-dark">
-              And what changes when we begin to understand ourselves as participants in the same architecture we are trying to comprehend?
+              What changes when we begin to understand ourselves as participants in the same architecture we are trying to comprehend?
             </p>
             <p className="body-dark">
               Gigi Stardust follows these questions across consciousness, biology, relationship, time, creativity, technology, cosmology, and the lived experience of being human.
