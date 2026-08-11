@@ -170,10 +170,10 @@ export default function PageMain() {
 
       <section className="register register--light book-excerpt" aria-labelledby="excerpt-label">
         <div className="book-excerpt__inner">
-          <p className="label" id="excerpt-label">From Book One</p>
+          <p className="label" id="excerpt-label">From Chapter 8 · Sovereign Disintegration</p>
           <blockquote className="manuscript-excerpt">
             <p>
-              Your bones carry calcium forged in dying stars. Your blood moves with iron formed in stellar furnaces. The iron in your blood was forged in a star that died before the sun was born. The carbon that scaffolds your life emerged through cosmic processes long before Earth existed. These elements now function together as living tissue, metabolism, and sensation.
+              As this mode strengthens, familiar supports loosen. Structures that once carried direction no longer organize movement in the same way. Attention shifts from following established paths to sensing direction as it forms in real time.
             </p>
           </blockquote>
         </div>

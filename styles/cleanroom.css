@@ -1962,7 +1962,25 @@ a.text-link--pending {
 }
 
 .s2s-sovereignty {
+  overflow: hidden;
+  isolation: isolate;
   border-top: 1px solid var(--rule-light);
+}
+
+.s2s-sovereignty::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 42%;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, rgba(17, 17, 15, 0.9) 30%, rgba(17, 17, 15, 0.42) 62%, var(--ink) 100%),
+    linear-gradient(180deg, var(--ink) 0%, rgba(17, 17, 15, 0.2) 28%, rgba(17, 17, 15, 0.2) 70%, var(--ink) 100%),
+    url("/assets/field-artifacts/gold-orb-object.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, min(34vw, 25rem) auto;
+  background-position: center, center, right center;
+  opacity: 0.56;
+  pointer-events: none;
 }
 
 .s2s-map {
@@ -2941,12 +2959,30 @@ a.text-link--pending {
 
 /* Manuscript excerpt — clear separation from public description */
 .book-excerpt {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--rule);
   padding-top: clamp(2.75rem, 5.5vw, 4.75rem);
   padding-bottom: clamp(2.75rem, 5.5vw, 4.75rem);
 }
 
+.book-excerpt::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 42%;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.84) 28%, rgba(243, 239, 230, 0.3) 66%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.08) 26%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
+    url("/assets/field-artifacts/book-open-page.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, min(42vw, 34rem) auto;
+  background-position: center, center, right center;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
 .book-excerpt__inner {
+  position: relative;
   max-width: 48rem;
 }
 
@@ -3255,15 +3291,15 @@ a.text-link--pending {
 .gigi-bio-register::before {
   content: "";
   position: absolute;
-  inset: 0 0 0 48%;
+  inset: 0 0 0 42%;
   background:
-    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.84) 28%, rgba(243, 239, 230, 0.28) 64%, var(--paper) 100%),
-    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.04) 26%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
-    url("/assets/field-artifacts/feather-field.jpeg");
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.82) 28%, rgba(243, 239, 230, 0.26) 66%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.06) 26%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
+    url("/assets/field-artifacts/window-table-writing.jpeg");
   background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%, min(36vw, 28rem) auto;
+  background-size: 100% 100%, 100% 100%, min(46vw, 38rem) auto;
   background-position: center, center, right center;
-  opacity: 0.7;
+  opacity: 0.62;
   pointer-events: none;
 }
 
