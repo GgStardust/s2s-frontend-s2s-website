@@ -4,10 +4,10 @@ import PageMain from '@/components/site/pages/inquiry'
 export const metadata: Metadata = {
   title: 'Inquiry',
   description:
-    'Questions currently under pressure through Stardust to Sovereignty: participation, capacity, inheritance, and what draws us toward discovery.',
+    'Questions currently under pressure through Stardust to Sovereignty: participation, human capacity, repeated choices at scale, relationship, place, and generative attraction.',
   openGraph: {
     title: 'Inquiry · Stardust to Sovereignty',
-    description: 'Public points of entry into deeper S2S inquiries.',
+    description: 'Public points of entry into active S2S inquiries.',
   },
 }
 

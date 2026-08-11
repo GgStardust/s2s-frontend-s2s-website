@@ -4,10 +4,11 @@ import PageMain from '@/components/site/pages/gigi'
 export const metadata: Metadata = {
   title: 'Gigi Stardust',
   description:
-    'Gigi Stardust, author and creator of Stardust to Sovereignty. Biography and contact.',
+    'Gigi Stardust is the author and creator of Stardust to Sovereignty. Her work moves from lived observation through inquiry, resonance, and larger pattern.',
   openGraph: {
     title: 'Gigi Stardust',
-    description: 'Author and creator of Stardust to Sovereignty.',
+    description:
+      'Author and creator of Stardust to Sovereignty. Observation, inquiry, resonance, and larger pattern.',
   },
 }
 

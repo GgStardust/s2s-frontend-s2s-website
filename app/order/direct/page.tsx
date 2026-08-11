@@ -9,7 +9,7 @@ import { BOOK_CATALOG, PRICING } from '@/lib/publishingMetadata'
 export const metadata: Metadata = {
   title: `Checkout · ${BOOK_CATALOG.title}`,
   description: `Purchase the current first edition of ${BOOK_CATALOG.title} directly from Gigi Stardust.`,
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 }
 
 export default function DirectOrderPage({

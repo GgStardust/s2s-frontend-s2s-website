@@ -146,6 +146,62 @@ export default function SiteInteractions() {
       })
     }
 
+    /* /inquiry anchored details */
+    const inquiryField = document.querySelector('.inquiry-field')
+
+    if (inquiryField) {
+      const units = [...inquiryField.querySelectorAll<HTMLDetailsElement>('.inquiry-unit')]
+
+      const setUnitState = (unit: HTMLDetailsElement, open: boolean) => {
+        unit.open = open
+        unit.classList.toggle('is-arch', open)
+        unit.classList.toggle('is-field', open)
+
+        const trigger = unit.querySelector('.inquiry-unit__trigger')
+        const arch = unit.querySelector('.inquiry-arch')
+        const response = unit.querySelector('.inquiry-response')
+
+        trigger?.setAttribute('aria-expanded', open ? 'true' : 'false')
+        arch?.setAttribute('aria-hidden', open ? 'false' : 'true')
+        response?.setAttribute('aria-hidden', open ? 'false' : 'true')
+      }
+
+      const openFromHash = () => {
+        if (!window.location.hash.startsWith('#inquiry-')) return
+
+        const target = document.querySelector<HTMLDetailsElement>(window.location.hash)
+        if (!target || !inquiryField.contains(target)) return
+
+        units.forEach((unit) => setUnitState(unit, unit === target))
+
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ block: 'start' })
+        })
+      }
+
+      const onToggle = (event: Event) => {
+        const unit = event.currentTarget as HTMLDetailsElement
+        if (!unit.open) {
+          setUnitState(unit, false)
+          return
+        }
+
+        units.forEach((other) => {
+          if (other !== unit) setUnitState(other, false)
+        })
+        setUnitState(unit, true)
+      }
+
+      units.forEach((unit) => unit.addEventListener('toggle', onToggle))
+      window.addEventListener('hashchange', openFromHash)
+      openFromHash()
+
+      cleanupFns.push(() => {
+        units.forEach((unit) => unit.removeEventListener('toggle', onToggle))
+        window.removeEventListener('hashchange', openFromHash)
+      })
+    }
+
     /* Contact form */
     const contactForm = document.querySelector('#contact-form') as HTMLFormElement | null
     if (contactForm) {
