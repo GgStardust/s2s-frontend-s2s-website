@@ -8,7 +8,7 @@ export const ORDER_BOOK_LEAD =
   'Paperback purchased directly from Gigi Stardust.' as const
 
 export const AUTHORS_EDITION_WHAT =
-  'This is the edition of The Cosmic Tapestry published on March 6, 2026. A later edition may change as Gigi returns to the manuscript.' as const
+  'This direct paperback supports Stardust to Sovereignty at the source and includes standard shipping. It is the first edition of The Cosmic Tapestry published on March 6, 2026.' as const
 
 export const AUTHORS_EDITION_FULFILLMENT = 'You receive confirmation by email when your order is placed.' as const
 

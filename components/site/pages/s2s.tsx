@@ -21,38 +21,12 @@ export default function PageMain() {
               Relationship is central to the work. Resonance, cohesion, consequence, and continuity form through encounter.
             </p>
             <p className="body-dark">
-              Book One is the first completed literary embodiment. The larger S2S field continues through writing, making, observation, and future forms.
+              Book One is the first completed literary embodiment. The larger S2S field is active through writing, making, observation, inquiry, and forms still coming into view.
             </p>
           </div>
           <figure className="s2s-register__glyph" aria-hidden="true">
             <img src="/assets/glyphs/glyph_08.png" alt="" width={64} height={256} decoding="async" />
           </figure>
-        </div>
-      </section>
-
-      <section className="register register--light s2s-register s2s-orbs" aria-labelledby="s2s-orbs-title">
-        <div className="s2s-register__inner">
-          <p className="label">The 13 Orbs</p>
-          <h2 id="s2s-orbs-title" className="display display--section">
-            The Orbs are primary<br />
-            intelligences within S2S.
-          </h2>
-          <div className="s2s-prose s2s-prose--light">
-            <p>
-              S2S uses the Orbs as structural principles and design keys for tracking how pattern,
-              memory, time, transformation, sovereignty, and relationship move through experience.
-            </p>
-            <p className="s2s-orb-chain">
-              Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.
-            </p>
-            <p>Each Orb changes what can be recognized.</p>
-            <p>
-              Together, they expand the ways we can perceive ourselves, the systems we inhabit, the world we are creating, and the larger reality in which we participate.
-            </p>
-          </div>
-          <p className="s2s-register__cta">
-            <a className="text-link" href="/orbs">Explore the Orbs <span aria-hidden="true">→</span></a>
-          </p>
         </div>
       </section>
 
@@ -192,26 +166,6 @@ export default function PageMain() {
         </footer>
       </section>
 
-      <section
-        className="register register--light s2s-register s2s-creativity"
-        aria-labelledby="creativity-title"
-      >
-        <div className="s2s-creativity__inner">
-          <p className="label">Creativity</p>
-          <span className="s2s-creativity__trace" aria-hidden="true"></span>
-          <p className="s2s-creativity__inherent">Creativity is inherent.</p>
-          <h2 id="creativity-title" className="display display--section s2s-creativity__q">
-            Making is part of the inquiry.
-          </h2>
-          <p className="s2s-creativity__line">
-            Creativity is a capacity through which intelligence becomes form.
-          </p>
-          <p className="s2s-creativity__line s2s-creativity__line--follow">
-            Stardust to Sovereignty follows that capacity through writing, perception, making, inquiry, and the human who comes next.
-          </p>
-        </div>
-      </section>
-
       <section className="register register--ink s2s-register s2s-future" aria-labelledby="future-human-title">
         <div className="s2s-register__inner">
           <p className="label label--light">The Future Human</p>
@@ -264,6 +218,26 @@ export default function PageMain() {
         </div>
       </section>
 
+      <section
+        className="register register--light s2s-register s2s-creativity"
+        aria-labelledby="creativity-title"
+      >
+        <div className="s2s-creativity__inner">
+          <p className="label">Creativity</p>
+          <span className="s2s-creativity__trace" aria-hidden="true"></span>
+          <p className="s2s-creativity__inherent">Creativity is inherent.</p>
+          <h2 id="creativity-title" className="display display--section s2s-creativity__q">
+            Making is part of the inquiry.
+          </h2>
+          <p className="s2s-creativity__line">
+            Creativity is a capacity through which intelligence becomes form.
+          </p>
+          <p className="s2s-creativity__line s2s-creativity__line--follow">
+            Stardust to Sovereignty follows that capacity through writing, perception, making, inquiry, and the human who comes next.
+          </p>
+        </div>
+      </section>
+
       <section className="register register--ink s2s-register s2s-sovereignty" aria-labelledby="sovereignty-title">
         <div className="s2s-register__inner">
           <p className="label label--light">Sovereignty</p>
@@ -295,6 +269,64 @@ export default function PageMain() {
         </div>
       </section>
 
+      <section className="register register--light s2s-register s2s-map" aria-labelledby="s2s-map-title">
+        <div className="s2s-map__inner">
+          <div className="s2s-map__head">
+            <p className="label">How the work opens</p>
+            <h2 id="s2s-map-title" className="display display--section">
+              One field,<br />
+              several ways in.
+            </h2>
+          </div>
+          <dl className="s2s-map__list">
+            <div>
+              <dt>S2S</dt>
+              <dd>The larger inquiry into intelligence and sovereign participation across scale.</dd>
+            </div>
+            <div>
+              <dt>Inquiry</dt>
+              <dd>The questions through which the work remains alive and available to enter.</dd>
+            </div>
+            <div>
+              <dt>Orbs</dt>
+              <dd>Primary intelligences and structural principles that help patterns become recognizable.</dd>
+            </div>
+            <div>
+              <dt>Book One</dt>
+              <dd>The first completed literary embodiment of Stardust to Sovereignty.</dd>
+            </div>
+            <div>
+              <dt>Future forms</dt>
+              <dd>Books, essays, images, field notes, systems, and encounters as they become ready for public form.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="register register--light s2s-register s2s-orbs" aria-labelledby="s2s-orbs-title">
+        <div className="s2s-register__inner">
+          <p className="label">The 13 Orbs</p>
+          <h2 id="s2s-orbs-title" className="display display--section">
+            The Orbs help track what becomes recognizable.
+          </h2>
+          <div className="s2s-prose s2s-prose--light">
+            <p>
+              Within S2S, the Orbs are primary intelligences and structural principles. They can also function as lenses of recognition when a pattern, relationship, capacity, or system comes into view.
+            </p>
+            <p className="s2s-orb-chain">
+              Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.
+            </p>
+            <p>Each Orb changes what can be recognized.</p>
+            <p>
+              Together, they expand the ways we can perceive ourselves, the systems we inhabit, the world we are creating, and the larger reality in which we participate.
+            </p>
+          </div>
+          <p className="s2s-register__cta">
+            <a className="text-link" href="/orbs">Explore the Orbs <span aria-hidden="true">→</span></a>
+          </p>
+        </div>
+      </section>
+
       <section
         className="register register--light s2s-register s2s-future-forms"
         aria-labelledby="future-forms-title"
@@ -304,7 +336,7 @@ export default function PageMain() {
             Future Forms
           </p>
           <p className="s2s-future-forms__copy">
-            Stardust to Sovereignty may continue through books, essays, images, field notes, and future encounters. Those forms will be shared when they are ready.
+            Stardust to Sovereignty is already moving through Book One, inquiry, observation, relationship, making, and the living field of encounter. Essays, images, field notes, systems, and future forms will be shared as they become ready for public form.
           </p>
         </div>
       </section>

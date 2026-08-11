@@ -12,8 +12,9 @@ export default function PageMain() {
               Follow the work outward.
             </h1>
             <p className="lede">
-              Book One is available now. Stardust to Sovereignty follows intelligence,
-              relationship, technology, creativity, sovereignty, and the future human.
+              Book One is available now. Stardust to Sovereignty is an inquiry into
+              intelligence and sovereign participation across body, relationship, technology,
+              creativity, sovereignty, and the future human.
             </p>
           </div>
           <figure className="hero__glyph">
@@ -90,6 +91,24 @@ export default function PageMain() {
           <li>Future Human</li>
           <li>Unknown Intelligence</li>
         </ul>
+      </section>
+
+      <section className="register register--light s2s-practice" aria-labelledby="practice-title">
+        <div className="s2s-practice__inner">
+          <p className="label">S2S in practice</p>
+          <h2 id="practice-title" className="display display--section">
+            A technology saves time.
+          </h2>
+          <div className="s2s-practice__copy">
+            <p>
+              S2S asks what that time becomes, which capacities the system now carries,
+              and how participation changes when the tool becomes ordinary.
+            </p>
+            <a className="text-link" href="/inquiry">
+              Follow the question <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="register register--ink paradigm" id="paradigm" aria-labelledby="paradigm-title">

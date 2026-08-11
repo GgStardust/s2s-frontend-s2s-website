@@ -12,6 +12,9 @@ export default function PageMain() {
               The first completed literary embodiment of Stardust to Sovereignty.
               Available now in paperback, hardcover, and ebook.
             </p>
+            <p className="book-reader-proposition">
+              Read as an encounter with the body as origin point: a book that asks what changes when human life is recognized as matter, memory, relationship, and choice inside a larger universe.
+            </p>
             <p className="order-row book__order-links">
               <a className="text-link" href="/order/direct">
                 Buy directly from Gigi <span aria-hidden="true">→</span>
@@ -72,7 +75,7 @@ export default function PageMain() {
               Order on Amazon <span aria-hidden="true">→</span>
             </a>
             <p className="order-note">
-              Direct paperback $44 incl. standard shipping · Amazon paperback $33 · Ebook $17 · Hardcover $44
+              Direct paperback $44 incl. standard shipping and supports the work directly · Amazon paperback $33 · Ebook $17 · Hardcover $44
             </p>
           </div>
         </div>
@@ -132,7 +135,7 @@ export default function PageMain() {
             </p>
             <p className="body-dark">From there, the scale expands.</p>
             <p className="body-dark">
-              The thirteen Orbs of Stardust to Sovereignty are primary intelligences and structural principles through which origin, resonance, pattern, time, memory, transformation, intuition, inheritance, sovereignty, and emerging forms of intelligence come into view.
+              Book One introduces the 13-Orb architecture through which S2S follows different dimensions of experience: origin, resonance, pattern, time, memory, transformation, intuition, inheritance, sovereignty, and emerging forms of intelligence.
             </p>
             <p className="body-dark">
               The result is an inquiry into what it means to be human inside a universe vastly older, larger, and stranger than the structures through which we usually understand ourselves.

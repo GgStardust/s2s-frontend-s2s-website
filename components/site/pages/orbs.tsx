@@ -18,8 +18,46 @@ export default function PageMain() {
               They help make origin, resonance, relationship, memory, time, transformation,
               sovereignty, and bridging across scales recognizable.
             </p>
+            <p className="orbs__boundary">
+              These terms have specific meanings inside S2S. The same world becomes recognizable through different Orbs.
+            </p>
           </div>
         </div>
+
+        <section className="orb-demo" aria-labelledby="orb-demo-title">
+          <div className="orb-demo__head">
+            <p className="label">One situation through several Orbs</p>
+            <h2 id="orb-demo-title" className="display display--section">
+              A technology becomes part of ordinary life.
+            </h2>
+          </div>
+          <dl className="orb-demo__list">
+            <div>
+              <dt>Resonance Mechanics</dt>
+              <dd>notices how relationship reorganizes around the tool.</dd>
+            </div>
+            <div>
+              <dt>Harmonic Architectures</dt>
+              <dd>notices the pattern stabilizing into infrastructure.</dd>
+            </div>
+            <div>
+              <dt>Temporal Sovereignty</dt>
+              <dd>notices rhythm, pace, attention, and time changing.</dd>
+            </div>
+            <div>
+              <dt>Ancestral Repatterning</dt>
+              <dd>notices what gets inherited as ordinary.</dd>
+            </div>
+            <div>
+              <dt>Sovereign Field</dt>
+              <dd>asks whether human coherence remains intact inside the system.</dd>
+            </div>
+            <div>
+              <dt>Bridging Intelligence</dt>
+              <dd>tracks translation between human and machine intelligence.</dd>
+            </div>
+          </dl>
+        </section>
 
         <ul className="orb-field" role="list">
           <li className="orb-lens">

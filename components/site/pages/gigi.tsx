@@ -1,6 +1,3 @@
-/* Auto-ported from cleanroom — preserve copy exactly */
-import NewsletterSignup from '@/components/NewsletterSignup'
-
 export default function PageMain() {
   return (
     <main id="main">
@@ -36,13 +33,16 @@ export default function PageMain() {
         <div className="gigi-bio">
           <h2 id="gigi-bio-heading" className="sr-only">Biography</h2>
           <p>
-            Gigi Stardust is an author, systems thinker, and creator working across consciousness, technology, literature, and human evolution.
+            Gigi Stardust is an author, systems thinker, technologist, and creator whose work moves between lived observation and systems architecture.
           </p>
           <p>
-            She created Stardust to Sovereignty, a body of work exploring intelligence and sovereign participation across body, relationship, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+            Her inquiry developed through years of working with technology and complex systems alongside an equally sustained attention to consciousness, relationship, creativity, place, art, music, and the patterns that become visible through ordinary life.
           </p>
           <p>
-            <em>The Cosmic Tapestry</em> is its first completed literary embodiment.
+            Stardust to Sovereignty emerged from that convergence. Rather than separating the human from the systems, environments, technologies, relationships, and larger realities it inhabits, the work follows what becomes visible when they are considered in relationship across scale.
+          </p>
+          <p>
+            <em>The Cosmic Tapestry</em> is the first completed literary embodiment of that inquiry.
           </p>
           <p className="gigi-bio__method">
             The way I unlock what is beyond my comprehension is to encounter life, people, place, beauty, conflict, and surprise as living material that changes the work and changes me.
@@ -74,10 +74,6 @@ export default function PageMain() {
             <button className="contact-form__submit" type="submit">Send</button>
             <p className="contact-form__status" id="contact-status" role="status" aria-live="polite" hidden={true} />
           </form>
-
-          <div className="gigi-contact__newsletter">
-            <NewsletterSignup idPrefix="gigi-newsletter" />
-          </div>
         </div>
       </section>
     

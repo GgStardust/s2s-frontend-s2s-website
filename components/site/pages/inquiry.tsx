@@ -154,6 +154,8 @@ const inquiries: Inquiry[] = [
 
 const attractionWords = ['Desire', 'Beauty', 'Play', 'Pleasure', 'Curiosity', 'Wonder']
 
+const shortQuestion = (question: string) => question.replace(/\?$/, '')
+
 export default function PageMain() {
   return (
     <main id="main" className="page-inquiry-live">
@@ -167,13 +169,26 @@ export default function PageMain() {
           <p className="inquiry-open__lede">
             Each question opens into a short S2S orientation while the inquiry remains alive.
           </p>
+          <nav className="inquiry-index" aria-label="Inquiry index">
+            {inquiries.map((inquiry) => (
+              <a href={`#inquiry-${inquiry.number}`} key={inquiry.number}>
+                <span>{inquiry.number}</span>
+                {shortQuestion(inquiry.question)}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
       <section className="register register--ink inquiry-field" aria-label="Current inquiries">
         <div className="inquiry-field__inner">
           {inquiries.map((inquiry) => (
-            <article className="inquiry-unit" data-inquiry={inquiry.number} key={inquiry.number}>
+            <article
+              className="inquiry-unit"
+              data-inquiry={inquiry.number}
+              id={`inquiry-${inquiry.number}`}
+              key={inquiry.number}
+            >
               <button
                 type="button"
                 className="inquiry-unit__trigger"

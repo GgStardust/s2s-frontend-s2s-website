@@ -61,7 +61,10 @@ export default function NewsletterSignup({ idPrefix = 'newsletter', className = 
       onSubmit={handleSubmit}
       noValidate={false}
     >
-      <p className="newsletter__label">Occasional notes</p>
+      <p className="newsletter__label">S2S continues</p>
+      <p className="newsletter__copy">
+        New inquiries, observations, essays, images, field notes, and releases from Stardust to Sovereignty.
+      </p>
       <div className="newsletter__row">
         <label className="sr-only" htmlFor={`${idPrefix}-email`}>
           Email address
