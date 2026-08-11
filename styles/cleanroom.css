@@ -922,8 +922,13 @@ a.text-link--pending {
 .gigi {
   border-top: 1px solid var(--rule);
   position: relative;
+  overflow: hidden;
   padding-top: clamp(2.5rem, 5vw, 3.75rem);
   padding-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.page-gigi::before {
+  content: none;
 }
 
 .gigi__grid {
@@ -1009,21 +1014,28 @@ a.text-link--pending {
 }
 
 .orbs__intro {
+  position: relative;
   display: grid;
   gap: 2rem;
   align-items: end;
+  padding: clamp(1.75rem, 4vw, 3rem) 0;
+  isolation: isolate;
 }
 
-.orbs__intro-glyph {
-  margin: 0;
-  width: 72px;
-  justify-self: end;
-  opacity: 0.85;
-}
-
-.orbs__intro-glyph img {
-  width: 100%;
-  height: auto;
+.page-orbs .orbs__intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 max(-1 * var(--pad-x), -7vw) 0 28%;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.74) 18%, rgba(243, 239, 230, 0.24) 58%, var(--paper) 100%),
+    linear-gradient(180deg, rgba(243, 239, 230, 0.9), rgba(243, 239, 230, 0.08) 44%, rgba(243, 239, 230, 0.82)),
+    url("/assets/field-artifacts/constellation-detail.jpeg");
+  background-size: cover;
+  background-position: 48% 48%;
+  opacity: 0.56;
+  filter: saturate(0.78) contrast(1.08);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 88%, transparent);
 }
 
 .orbs__overview {
@@ -1365,13 +1377,7 @@ a.text-link--pending {
 
 @media (min-width: 1100px) {
   .orbs__intro {
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-  }
-
-  .orbs__intro-glyph {
-    width: 96px;
-    margin-bottom: 0.5rem;
+    padding: clamp(2.5rem, 5vw, 4.5rem) 0;
   }
 
   .orb-grid {
@@ -2316,8 +2322,28 @@ a.text-link--pending {
 }
 
 .lf-line--place {
+  position: relative;
   font-size: clamp(1.3rem, 2.6vw, 1.85rem);
   max-width: 26ch;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(2rem, 4vw, 3.25rem);
+  isolation: isolate;
+}
+
+.lf-line--place::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 max(-1 * var(--pad-x), -7vw) 0 -35vw;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.24) 34%, rgba(243, 239, 230, 0.18) 72%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.02) 28%, rgba(243, 239, 230, 0.02) 74%, var(--paper) 100%),
+    url("/assets/field-artifacts/bay-place.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, min(68vw, 54rem) auto;
+  background-position: center, center, right center;
+  opacity: 0.42;
+  pointer-events: none;
 }
 
 .lf-line--art {
@@ -2364,7 +2390,16 @@ a.text-link--pending {
 }
 
 .lf-cluster--species {
+  position: relative;
   gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.94) 34%, rgba(243, 239, 230, 0.34) 62%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.08) 24%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
+    url("/assets/field-artifacts/sea-lion.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, min(44vw, 32rem) auto;
+  background-position: center, center, right center;
 }
 
 .lf-cluster--tech {
@@ -2428,6 +2463,36 @@ a.text-link--pending {
   transform: rotate(-0.8deg);
 }
 
+.field-artifact {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(36, 34, 30, 0.14);
+  background: color-mix(in srgb, var(--paper) 84%, white 16%);
+  box-shadow: 0 1.15rem 2.8rem rgba(36, 34, 30, 0.15);
+  isolation: isolate;
+}
+
+.field-artifact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 38%, rgba(255, 255, 255, 0.16) 50%, transparent 62%),
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(36, 34, 30, 0.04), transparent 44%, rgba(36, 34, 30, 0.08));
+  mix-blend-mode: soft-light;
+}
+
+.field-artifact img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .lf-pair {
   display: grid;
   gap: 1.25rem;
@@ -2444,10 +2509,20 @@ a.text-link--pending {
   .lf-cluster--species {
     grid-template-columns: 1.2fr 0.8fr;
     column-gap: 3rem;
+    align-items: start;
   }
 
-  .lf-cluster--species .lf-line--shirley {
-    grid-column: 1 / -1;
+  .lf-cluster--species .lf-note--shirley {
+    grid-column: 1;
+    align-self: center;
+  }
+
+  .lf-cluster--species .lf-line--quiet {
+    grid-column: 1;
+  }
+
+  .lf-cluster--species .lf-line--edge {
+    grid-column: 1;
   }
 
   .lf-cluster--time {
@@ -2478,9 +2553,28 @@ a.text-link--pending {
 
 /* Creativity pressure — after Living Field */
 .s2s-creativity {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--rule);
   padding-top: clamp(4rem, 9vw, 7rem);
   padding-bottom: clamp(4rem, 9vw, 7rem);
+  isolation: isolate;
+}
+
+.s2s-creativity::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 36%;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.86) 28%, rgba(243, 239, 230, 0.42) 64%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper), rgba(243, 239, 230, 0.08) 42%, var(--paper)),
+    url("/assets/field-artifacts/geometric-mural-angle.jpeg");
+  background-size: cover;
+  background-position: 54% 48%;
+  opacity: 0.34;
+  filter: saturate(0.76) contrast(1.02);
+  mask-image: linear-gradient(90deg, transparent, #000 24%, #000 78%, transparent);
 }
 
 .s2s-creativity__inner {
@@ -2540,6 +2634,7 @@ a.text-link--pending {
 .s2s-creativity__line--follow {
   margin-top: 1.1rem;
 }
+
 
 /* Future Forms — quiet horizon */
 .s2s-future-forms {
@@ -3150,12 +3245,30 @@ a.text-link--pending {
 
 /* Gigi biography */
 .gigi-bio-register {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--rule);
   padding-top: clamp(2.5rem, 5vw, 4rem);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
+.gigi-bio-register::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 48%;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.84) 28%, rgba(243, 239, 230, 0.28) 64%, var(--paper) 100%),
+    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.04) 26%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
+    url("/assets/field-artifacts/feather-field.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, min(36vw, 28rem) auto;
+  background-position: center, center, right center;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 .gigi-bio {
+  position: relative;
   display: grid;
   gap: 1.35rem;
   max-width: var(--measure);
