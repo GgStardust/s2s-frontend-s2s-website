@@ -7,10 +7,10 @@ export default function PageMain() {
           <div className="gigi__portrait-stack">
             <figure className="gigi__portrait">
               <img
-                src="/assets/gigi/gigi-portrait.jpg?v=assert"
+                src="/assets/gigi/gigi-profile-bw.jpg"
                 alt="Gigi Stardust"
-                width={639}
-                height={834}
+                width={900}
+                height={1124}
                 decoding="async"
               />
             </figure>
@@ -20,7 +20,7 @@ export default function PageMain() {
             <p className="label">Gigi Stardust</p>
             <h1 id="gigi-title" className="display display--section">Author and creator.</h1>
             <p className="gigi-verbs">
-              Observing. Questioning. Writing. Building. Making. Following the questions as they become form.
+              Encountering. Noticing. Questioning. Connecting. Writing. Making. Following what begins to resonate.
             </p>
           </div>
           <figure className="gigi__wave-wrap" aria-hidden="true">
@@ -33,20 +33,54 @@ export default function PageMain() {
         <div className="gigi-bio">
           <h2 id="gigi-bio-heading" className="sr-only">Biography</h2>
           <p>
-            Gigi Stardust is an author, systems thinker, technologist, and creator whose work moves between lived observation and systems architecture.
+            Gigi Stardust is an author, technologist, systems thinker, and creator whose work begins close to lived experience.
           </p>
           <p>
-            Her inquiry developed through years of working with technology and complex systems alongside an equally sustained attention to consciousness, relationship, creativity, place, art, music, and the patterns that become visible through ordinary life.
+            Something catches: a conversation, a technology, a place, a pattern in the body, a piece of music, an animal returning, a contradiction in ordinary life.
           </p>
           <p>
-            Stardust to Sovereignty emerged from that convergence. Rather than separating the human from the systems, environments, technologies, relationships, and larger realities it inhabits, the work follows what becomes visible when they are considered in relationship across scale.
+            A question forms. Another apparently separate thing begins speaking to it. More lines of inquiry appear. Connections gather until resonance becomes perceptible and a larger pattern begins to show itself.
           </p>
           <p>
-            <em>The Cosmic Tapestry</em> is the first completed literary embodiment of that inquiry.
+            Stardust to Sovereignty emerged through that movement: observation, inquiry, writing, making, technology, place, art, music, human encounter, and the recognition of patterns across scale.
           </p>
           <p className="gigi-bio__method gigi-bio__method-note">
             The way I unlock what is beyond my comprehension is to encounter life, people, place, beauty, conflict, and surprise as living material that changes the work and changes me.
           </p>
+          <p>
+            <em>The Cosmic Tapestry</em> is the first completed literary embodiment of that inquiry.
+          </p>
+        </div>
+      </section>
+
+      <section className="register register--light gigi-method" aria-labelledby="gigi-method-title">
+        <div className="gigi-method__inner">
+          <p className="label">How Inquiry Moves</p>
+          <h2 id="gigi-method-title" className="display display--section">
+            Something catches before the question has language.
+          </h2>
+          <ol className="gigi-method__steps">
+            <li>
+              <span>Experience</span>
+              <p>A lived encounter produces curiosity, dissonance, attraction, recognition, or refusal.</p>
+            </li>
+            <li>
+              <span>Question</span>
+              <p>The question forms because the encounter will not quite resolve.</p>
+            </li>
+            <li>
+              <span>Lines Of Inquiry</span>
+              <p>Technology, body, place, art, music, systems, animals, memory, and human life may begin speaking to the same pressure.</p>
+            </li>
+            <li>
+              <span>Resonance</span>
+              <p>Apparently separate things start to reveal a shared signal or pattern.</p>
+            </li>
+            <li>
+              <span>Architecture</span>
+              <p>When enough resonance gathers, a larger order becomes visible enough to write, make, test, or carry forward.</p>
+            </li>
+          </ol>
         </div>
       </section>
 

@@ -35,16 +35,16 @@ const inquiries: Inquiry[] = [
   },
   {
     number: '03',
-    question: 'What will the humans who inherit our choices think we were doing?',
+    question: 'What do repeated choices become when they are carried at scale?',
     readsAs: [
-      'The future reading our choices through what remains.',
-      'Future beings encounter our values through the material and cultural conditions we leave behind.',
+      'Choice becoming condition.',
+      'Repeated choices accumulate into systems, infrastructure, environments, norms, technologies, bodies, and future conditions.',
     ],
     provisional: [
-      'Future humans will meet the difference between what we valued and what we made durable.',
-      "What we normalize, preserve, automate, repair, extract, protect, and leave unfinished becomes part of someone else's starting point.",
+      'What we normalize, preserve, automate, repair, extract, protect, and leave unfinished becomes part of the world others must inhabit.',
+      'S2S asks how ordinary participation becomes durable enough to shape what later participants experience as given.',
     ],
-    coordinates: ['Inheritance', 'Deep Time', 'Stewardship', 'Civilization'],
+    coordinates: ['Participation', 'Inheritance', 'Systems', 'Civilization'],
   },
   {
     number: '04',
@@ -126,14 +126,14 @@ const inquiries: Inquiry[] = [
   },
   {
     number: '10',
-    question: 'What becomes visible when we remain in relationship with a place long enough to recognize its patterns?',
+    question: 'What becomes visible when we return to a place long enough to recognize its patterns?',
     readsAs: [
       'Place teaching through recurrence.',
-      'Land, weather, animals, plants, water, light, scent, season, recurrence, absence, and human activity form relationships that become increasingly perceptible through attention over time.',
+      'Land, weather, animals, plants, water, light, scent, season, recurrence, absence, and human activity become increasingly perceptible through attention over time.',
     ],
     provisional: [
-      'A place moves from backdrop to relationship when attention learns its returns.',
-      'What returns, what changes, what disappears, what arrives, and what the body learns to recognize can become a living field of relationship.',
+      'A place stops behaving like backdrop when attention learns its returns.',
+      'What returns, what changes, what disappears, what arrives, and what the body learns to recognize can become a living field of inquiry.',
     ],
     coordinates: ['Place', 'Living Field', 'Ecology', 'Temporal Recognition'],
   },

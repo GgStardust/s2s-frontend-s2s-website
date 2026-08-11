@@ -18,7 +18,7 @@ export default function PageMain() {
               Technology and creativity are active movements within that inquiry.
             </p>
             <p className="body-dark">
-              Relationship is central to the work. Resonance, cohesion, consequence, and continuity form through encounter.
+              Relationship is central to the work. Encounter reveals resonance, cohesion, consequence, continuity, and the forms of relation already shaping experience.
             </p>
             <p className="body-dark">
               Book One is the first completed literary embodiment. The larger S2S field is active through writing, making, observation, inquiry, and forms still coming into view.
@@ -197,13 +197,16 @@ export default function PageMain() {
 
           <div className="s2s-prose">
             <p className="body-dark">
-              The question beneath progress is larger than what technology can do.
+              The question beneath progress is larger than what technology can do for us.
             </p>
             <p className="body-dark">
-              Technology can support human capacity. It can also substitute for it.
+              Technology can open capacity, carry capacity, or replace the practice of capacity.
             </p>
             <p className="body-dark">
-              As systems grow easier, what forms of perception, attention, memory, creativity, and agency receive less practice?
+              As systems grow easier, what becomes available for perception, attention, creativity, consciousness, participation, and development?
+            </p>
+            <p className="body-dark">
+              And which forms of memory, skill, agency, or bodily intelligence receive less practice because infrastructure now carries them?
             </p>
             <p className="body-dark">
               The future human is shaped by which capacities are strengthened, which are allowed
@@ -217,7 +220,7 @@ export default function PageMain() {
               Progress can recover human capacity instead of trading it away.
             </p>
             <p className="s2s-future-primitive__horizon">
-              It asks what an advanced civilization might recover: direct perception, embodied intelligence, relationship with place, creativity, and sovereign participation with technology.
+              It asks what an advanced civilization might recover: direct perception, embodied intelligence, relation with place, creativity, and sovereign participation with technology.
             </p>
           </div>
         </div>

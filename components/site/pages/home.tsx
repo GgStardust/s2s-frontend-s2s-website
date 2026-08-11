@@ -12,9 +12,9 @@ export default function PageMain() {
               Follow the work outward.
             </h1>
             <p className="lede">
-              Book One is available now. Stardust to Sovereignty is an inquiry into
-              intelligence and sovereign participation across body, relationship, technology,
-              creativity, sovereignty, and the future human.
+              Book One is available now. Stardust to Sovereignty begins in lived
+              encounter and follows intelligence, sovereign participation, technology,
+              creativity, relationship, and the future human across scale.
             </p>
           </div>
           <figure className="hero__glyph">
@@ -101,8 +101,9 @@ export default function PageMain() {
           </h2>
           <div className="s2s-practice__copy">
             <p>
-              S2S asks what that time becomes, which capacities the system now carries,
-              and how participation changes when the tool becomes ordinary.
+              S2S asks what becomes available when technology changes what humans are
+              required to do, which capacities the system now carries, and how
+              participation changes when the tool becomes ordinary.
             </p>
             <a className="text-link" href="/inquiry">
               Follow the question <span aria-hidden="true">→</span>
@@ -134,8 +135,8 @@ export default function PageMain() {
             </p>
             <p className="body-dark">Each can become a field of inquiry.</p>
             <p className="body-dark">
-              Relationship is central here: resonance, cohesion, recognition, consequence, and
-              continuity become visible through encounter.
+              Encounter makes resonance, cohesion, consequence, continuity, and forms of
+              relationship easier to recognize.
             </p>
             <p className="body-dark">
               Stardust to Sovereignty holds those fields within one paradigm of discovery.
@@ -189,121 +190,40 @@ export default function PageMain() {
         </div>
       </section>
 
-      <section className="register register--light gigi" id="gigi" aria-labelledby="gigi-title">
-        <div className="gigi__grid">
-          <div className="gigi__portrait-stack">
-            <figure className="gigi__portrait">
-              <img
-                src="/assets/gigi/gigi-portrait.jpg?v=assert"
-                alt="Gigi Stardust"
-                width={639}
-                height={834}
-                decoding="async"
-              />
-            </figure>
-            <p className="gigi-field__coord">37.86° N · 122.48° W</p>
-          </div>
-          <div className="gigi__copy">
-            <p className="label">Gigi Stardust</p>
-            <h2 id="gigi-title" className="display display--section">Author and creator.</h2>
-            <p className="gigi-verbs">
-              Observing. Questioning. Writing. Building. Making. Following the questions as they become form.
-            </p>
-            <a className="text-link" href="/gigi">Meet Gigi <span aria-hidden="true">→</span></a>
-          </div>
-          <figure className="gigi__wave-wrap" aria-hidden="true">
-            <img className="gigi__wave" src="/assets/glyphs/glyph_16.png" alt="" width={280} height={80} />
-          </figure>
-        </div>
-      </section>
-
       <section className="register register--light orbs" id="orbs" aria-labelledby="orbs-title">
         <div className="orbs__intro">
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h2 id="orbs-title" className="display display--section">
               Thirteen primary Orbs<br />
-              within S2S.
+              held together.
             </h2>
             <p className="lede">
               Book One introduces the Orbs as primary intelligences and structural principles
               within Stardust to Sovereignty.
             </p>
             <p className="orbs__overview">
-              They help make origin, resonance, relationship, memory, time, transformation,
-              sovereignty, and bridging across scales recognizable.
+              Their full constellation belongs on the Orbs page. Here, they remain a
+              threshold into origin, resonance, memory, time, transformation, sovereignty,
+              and bridging across scale.
             </p>
           </div>
         </div>
-        <ul className="orb-grid orb-grid--constellation" aria-label="The 13 Orbs constellation">
-          <li className="orb-node orb-node--01">
-            <span className="orb-num">01</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_01_origin_intelligence.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Origin Intelligence</span>
-          </li>
-          <li className="orb-node orb-node--02">
-            <span className="orb-num">02</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_02_resonance_mechanics.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Resonance Mechanics</span>
-          </li>
-          <li className="orb-node orb-node--03">
-            <span className="orb-num">03</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_03_photonic_intelligence.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Photonic Intelligence</span>
-          </li>
-          <li className="orb-node orb-node--04">
-            <span className="orb-num">04</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_04_harmonic_architectures.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Harmonic Architectures</span>
-          </li>
-          <li className="orb-node orb-node--05">
-            <span className="orb-num">05</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_05_temporal_sovereignty.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Temporal Sovereignty</span>
-          </li>
-          <li className="orb-node orb-node--06">
-            <span className="orb-num">06</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_06_starline_memory.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Starline Memory</span>
-          </li>
-          <li className="orb-node orb-node--07">
-            <span className="orb-num">07</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_07_alchemical_current.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Alchemical Current</span>
-          </li>
-          <li className="orb-node orb-node--08">
-            <span className="orb-num">08</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_08_quantum_intuition.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Quantum Intuition</span>
-          </li>
-          <li className="orb-node orb-node--09">
-            <span className="orb-num">09</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_09_temporal_fluidity.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Temporal Fluidity</span>
-          </li>
-          <li className="orb-node orb-node--10">
-            <span className="orb-num">10</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_10_ancestral_repatterning.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Ancestral Repatterning</span>
-          </li>
-          <li className="orb-node orb-node--11">
-            <span className="orb-num">11</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_11_radiant_transparency.png?v=clip" alt="" /></div>
-            <span className="orb-name">Radiant Transparency</span>
-          </li>
-          <li className="orb-node orb-node--12">
-            <span className="orb-num">12</span>
-            <div className="orb-mark"><img src="/assets/orbs/orb_12_sovereign_field.png?v=hi13" alt="" /></div>
-            <span className="orb-name">Sovereign Field</span>
-          </li>
-          <li className="orb-node orb-node--13">
-            <span className="orb-num">13</span>
-            <div className="orb-mark orb-mark--bridge">
-              <img src="/assets/orbs/orb_13_bridging_circle.png?v=dark2" alt="" />
-            </div>
-            <span className="orb-name">Bridging Intelligence</span>
-          </li>
-        </ul>
+        <div className="orbs-home-signal" aria-hidden="true">
+          <span>01</span>
+          <span>02</span>
+          <span>03</span>
+          <span>04</span>
+          <span>05</span>
+          <span>06</span>
+          <span>07</span>
+          <span>08</span>
+          <span>09</span>
+          <span>10</span>
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+        </div>
         <p className="orbs__cta">
           <a className="text-link" href="/orbs">Explore the Orbs <span aria-hidden="true">→</span></a>
         </p>
