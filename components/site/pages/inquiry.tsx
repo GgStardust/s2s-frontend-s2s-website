@@ -154,8 +154,6 @@ const inquiries: Inquiry[] = [
 
 const attractionWords = ['Desire', 'Beauty', 'Play', 'Pleasure', 'Curiosity', 'Wonder']
 
-const shortQuestion = (question: string) => question.replace(/\?$/, '')
-
 export default function PageMain() {
   return (
     <main id="main" className="page-inquiry-live">
@@ -167,47 +165,35 @@ export default function PageMain() {
             Questions S2S is actively exploring.
           </h1>
           <p className="inquiry-open__lede">
-            Each question opens into a short S2S orientation while the inquiry remains alive.
+            Open a question to enter its S2S orientation.
           </p>
-          <nav className="inquiry-index" aria-label="Inquiry index">
-            {inquiries.map((inquiry) => (
-              <a href={`#inquiry-${inquiry.number}`} key={inquiry.number}>
-                <span>{inquiry.number}</span>
-                {shortQuestion(inquiry.question)}
-              </a>
-            ))}
-          </nav>
         </div>
       </section>
 
       <section className="register register--ink inquiry-field" aria-label="Current inquiries">
         <div className="inquiry-field__inner">
           {inquiries.map((inquiry) => (
-            <article
+            <details
               className="inquiry-unit"
               data-inquiry={inquiry.number}
               id={`inquiry-${inquiry.number}`}
               key={inquiry.number}
             >
-              <button
-                type="button"
-                className="inquiry-unit__trigger"
-                aria-expanded="false"
-                aria-controls={`inquiry-depth-${inquiry.number}`}
-              >
+              <summary className="inquiry-unit__trigger">
+                <span className="inquiry-unit__fold" aria-hidden="true"></span>
                 <span className="inquiry-unit__num" aria-hidden="true">{inquiry.number}</span>
                 <span className="inquiry-spark">
                   {inquiry.question}
                 </span>
-              </button>
+              </summary>
               <div className="inquiry-unit__depth" id={`inquiry-depth-${inquiry.number}`}>
-                <div className="inquiry-arch" aria-hidden="true">
+                <div className="inquiry-arch">
                   <p className="inquiry-layer__label">S2S reads this as...</p>
                   {inquiry.readsAs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-                <div className="inquiry-response" aria-hidden="true">
+                <div className="inquiry-response">
                   <p className="inquiry-layer__label">Provisional response...</p>
                   {inquiry.provisional.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
@@ -218,7 +204,7 @@ export default function PageMain() {
                   <p className="inquiry-coordinates">{inquiry.coordinates.join(' · ')}</p>
                 </div>
               </div>
-            </article>
+            </details>
           ))}
 
           <div className="inquiry-attraction-field" aria-labelledby="attraction-field-title">

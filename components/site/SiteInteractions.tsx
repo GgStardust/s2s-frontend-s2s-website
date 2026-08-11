@@ -20,7 +20,6 @@ export default function SiteInteractions() {
         '.paradigm__copy',
         '.paradigm__aside',
         '.s2s-practice__inner',
-        '.inquiry-index',
         '.inquiry-list li',
         '.inquiry-unit',
         '.inquiry-engine__label',
@@ -142,115 +141,6 @@ export default function SiteInteractions() {
       document.addEventListener('pointerdown', onPointer)
       cleanupFns.push(() => {
         orbField.removeEventListener('click', onOrbClick)
-        document.removeEventListener('keydown', onKey)
-        document.removeEventListener('pointerdown', onPointer)
-      })
-    }
-
-    /* /inquiry progressive units */
-    const inquiryField = document.querySelector('.inquiry-field')
-    if (inquiryField) {
-      const units = [...inquiryField.querySelectorAll('.inquiry-unit')]
-      const finePointer = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
-
-      const syncExpanded = (unit: Element) => {
-        const trigger = unit.querySelector('.inquiry-unit__trigger')
-        const expanded =
-          unit.classList.contains('is-arch') || unit.classList.contains('is-field')
-        trigger?.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-      }
-
-      const setArch = (unit: Element, on: boolean) => {
-        const arch = unit.querySelector('.inquiry-arch')
-        unit.classList.toggle('is-arch', on)
-        arch?.setAttribute('aria-hidden', on ? 'false' : 'true')
-        syncExpanded(unit)
-      }
-
-      const setField = (unit: Element, on: boolean) => {
-        const response = unit.querySelector('.inquiry-response')
-        unit.classList.toggle('is-field', on)
-        response?.setAttribute('aria-hidden', on ? 'false' : 'true')
-        if (on) setArch(unit, true)
-        else syncExpanded(unit)
-      }
-
-      const resetUnit = (unit: Element) => {
-        unit.classList.remove('is-field')
-        unit.querySelector('.inquiry-response')?.setAttribute('aria-hidden', 'true')
-        setArch(unit, false)
-      }
-
-      const resetOthers = (unit: Element) => {
-        units.forEach((other) => {
-          if (other !== unit) resetUnit(other)
-        })
-      }
-
-      const unitCleanups: Array<() => void> = []
-
-      units.forEach((unit) => {
-        const trigger = unit.querySelector('.inquiry-unit__trigger')
-        if (!trigger) return
-
-        const onEnter = () => {
-          if (!finePointer()) return
-          setArch(unit, true)
-        }
-        const onLeave = () => {
-          if (!finePointer()) return
-          if (!unit.classList.contains('is-field')) setArch(unit, false)
-        }
-        const onFocus = () => setArch(unit, true)
-        const onBlur = () => {
-          if (!unit.classList.contains('is-field') && !unit.matches(':hover')) {
-            setArch(unit, false)
-          }
-        }
-        const onClick = (event: Event) => {
-          event.stopPropagation()
-          resetOthers(unit)
-          if (!finePointer()) {
-            if (!unit.classList.contains('is-arch')) {
-              setArch(unit, true)
-              return
-            }
-            if (!unit.classList.contains('is-field')) {
-              setField(unit, true)
-              return
-            }
-            resetUnit(unit)
-            return
-          }
-          if (unit.classList.contains('is-field')) setField(unit, false)
-          else setField(unit, true)
-        }
-
-        unit.addEventListener('pointerenter', onEnter)
-        unit.addEventListener('pointerleave', onLeave)
-        trigger.addEventListener('focus', onFocus)
-        trigger.addEventListener('blur', onBlur)
-        trigger.addEventListener('click', onClick)
-        unitCleanups.push(() => {
-          unit.removeEventListener('pointerenter', onEnter)
-          unit.removeEventListener('pointerleave', onLeave)
-          trigger.removeEventListener('focus', onFocus)
-          trigger.removeEventListener('blur', onBlur)
-          trigger.removeEventListener('click', onClick)
-        })
-      })
-
-      const onKey = (event: KeyboardEvent) => {
-        if (event.key === 'Escape') units.forEach(resetUnit)
-      }
-      const onPointer = (event: Event) => {
-        if ((event.target as Element).closest('.inquiry-unit')) return
-        units.forEach(resetUnit)
-      }
-      document.addEventListener('keydown', onKey)
-      document.addEventListener('pointerdown', onPointer)
-      cleanupFns.push(() => {
-        unitCleanups.forEach((fn) => fn())
         document.removeEventListener('keydown', onKey)
         document.removeEventListener('pointerdown', onPointer)
       })

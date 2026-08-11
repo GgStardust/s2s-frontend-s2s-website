@@ -44,7 +44,7 @@ export default function PageMain() {
           <p>
             <em>The Cosmic Tapestry</em> is the first completed literary embodiment of that inquiry.
           </p>
-          <p className="gigi-bio__method">
+          <p className="gigi-bio__method gigi-bio__method-note">
             The way I unlock what is beyond my comprehension is to encounter life, people, place, beauty, conflict, and surprise as living material that changes the work and changes me.
           </p>
         </div>

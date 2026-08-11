@@ -38,7 +38,10 @@ export default function PageMain() {
       >
         <header className="living-field__head">
           <p className="label">The Living Field</p>
-          <h2 id="living-field-title" className="display display--section living-field__governing">
+          <h2
+            id="living-field-title"
+            className="display display--section living-field__governing s2s-principle-heading s2s-principle-heading--light"
+          >
             Intelligence becomes visible through encounter.
           </h2>
         </header>
@@ -67,7 +70,7 @@ export default function PageMain() {
             <p className="lf-line lf-line--quiet">
               Being seen. Seeing another person more clearly.
             </p>
-            <p className="lf-line lf-line--quiet lf-line--dissonance">
+            <p className="lf-note lf-note--gigi lf-note--dissonance">
               I love dissonance as much as synchronicity.
             </p>
           </div>
@@ -86,7 +89,7 @@ export default function PageMain() {
           </p>
 
           <div className="lf-cluster lf-cluster--species" aria-label="Place and other species">
-            <p className="lf-line lf-line--shirley">
+            <p className="lf-note lf-note--gigi lf-note--shirley">
               The sea lions in the bay, all of whom I call Shirley.
             </p>
             <p className="lf-line lf-line--quiet">
@@ -142,7 +145,7 @@ export default function PageMain() {
           </div>
 
           <div className="lf-cluster lf-cluster--resonance" aria-label="Signature and afterlife of encounter">
-            <p className="lf-line lf-line--signature">
+            <p className="lf-note lf-note--gigi lf-note--signature">
               Through the vastness and depth of all my encounters and relationships, as brief or long-lasting as they are, each carries its own signature resonance and quality.
             </p>
             <p className="lf-line lf-line--quiet lf-line--offset">
@@ -173,8 +176,10 @@ export default function PageMain() {
             We are already designing the human who comes next.
           </h2>
           <div className="s2s-prose">
-            <p className="body-dark">Every convenience removes a demand.</p>
-            <p className="body-dark">Every automation transfers a capacity.</p>
+            <div className="s2s-principle-stack" aria-label="S2S principles">
+              <p className="s2s-principle s2s-principle--one">Every convenience removes a demand.</p>
+              <p className="s2s-principle s2s-principle--two">Every automation transfers a capacity.</p>
+            </div>
             <p className="body-dark">
               Every structure we repeat becomes easier to inhabit and harder to imagine living without.
             </p>
@@ -241,7 +246,7 @@ export default function PageMain() {
       <section className="register register--ink s2s-register s2s-sovereignty" aria-labelledby="sovereignty-title">
         <div className="s2s-register__inner">
           <p className="label label--light">Sovereignty</p>
-          <h2 id="sovereignty-title" className="display display--dark">
+          <h2 id="sovereignty-title" className="display display--dark s2s-principle-heading">
             Sovereignty means staying whole<br />
             inside larger systems.
           </h2>
