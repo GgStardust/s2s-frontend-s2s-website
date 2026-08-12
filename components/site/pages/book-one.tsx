@@ -1,4 +1,5 @@
-/* Auto-ported from cleanroom — preserve copy exactly */
+import { AMAZON_LISTING_URL, BOOK_CATALOG } from '@/lib/publishingMetadata'
+
 export default function PageMain() {
   return (
     <main id="main" className="page-book-one">
@@ -13,7 +14,7 @@ export default function PageMain() {
               Available now in paperback, hardcover, and ebook.
             </p>
             <p className="book-reader-proposition">
-              Read as an encounter with the body as origin point: a book that asks what changes when human life is recognized as matter, memory, relationship, and choice inside a larger universe.
+              Enter through the body: calcium, iron, breath, water, charge. Book One follows the signals already active in ordinary life until human experience becomes readable as matter, memory, timing, relationship, and choice.
             </p>
             <p className="order-row book__order-links">
               <a className="text-link" href="/order/direct">
@@ -46,7 +47,7 @@ export default function PageMain() {
           <dl className="edition-facts">
             <div>
               <dt>Publication</dt>
-              <dd>March 6, 2026</dd>
+              <dd>{BOOK_CATALOG.publicationDateDisplay}</dd>
             </div>
             <div>
               <dt>Formats</dt>
@@ -54,11 +55,7 @@ export default function PageMain() {
             </div>
             <div>
               <dt>Trim</dt>
-              <dd>6 × 9 in. · 254 pp.</dd>
-            </div>
-            <div>
-              <dt>ISBN</dt>
-              <dd>979-8-9949342-2-7</dd>
+              <dd>{BOOK_CATALOG.trimSize} · {BOOK_CATALOG.pageCountIngramAmazon} pp.</dd>
             </div>
           </dl>
 
@@ -68,14 +65,14 @@ export default function PageMain() {
             </a>
             <a
               className="text-link"
-              href="https://www.amazon.com/gp/product/B0GXCNLMBQ"
+              href={AMAZON_LISTING_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
               Order on Amazon <span aria-hidden="true">→</span>
             </a>
             <p className="order-note">
-              Direct paperback $44 incl. standard shipping and supports the work directly · Amazon paperback $33 · Ebook $17 · Hardcover $44
+              Direct orders include standard shipping and support the work directly.
             </p>
           </div>
         </div>
@@ -91,22 +88,22 @@ export default function PageMain() {
               Carbon. Oxygen. Calcium. Iron. Water. Electrical charge.
             </p>
             <p>
-              Ancient matter became metabolism, sensation, memory, perception, imagination, and choice.
+              Ancient matter became metabolism, sensation, memory, perception, imagination, and choice. It became the body sitting in the room, the breath changing before an answer arrives, the nervous system knowing more than the explanation can carry.
             </p>
             <p>
-              Book One follows that recognition as it becomes perception, memory, choice,
-              relationship, and sovereignty.
+              Book One follows that recognition as it becomes perception, memory, timing,
+              pressure, language, relationship, and sovereignty.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="register register--light book-quote-register" aria-label="From The Cosmic Tapestry">
+      <section className="register register--light book-quote-register" aria-label="Book One body signal quote">
         <figure className="book-quote book-quote--opening">
-          <p className="book-quote__label">From The Cosmic Tapestry</p>
+          <p className="book-quote__label">Body Signal</p>
           <blockquote>
             <p>
-              With every breath, matter forged in stellar fire crosses the threshold into you, continuing a journey that began long before Earth existed.
+              Alignment registers in the body before it reaches thought.
             </p>
           </blockquote>
         </figure>
@@ -115,43 +112,49 @@ export default function PageMain() {
       <section className="register register--ink book-desc" aria-labelledby="book-desc-title">
         <div className="book-desc__inner">
           <h2 id="book-desc-title" className="display display--dark book-desc__question">
-            Book One begins with the body.
+            Start where the body is already telling the truth.
           </h2>
 
           <div className="book-desc__stages">
             <p className="body-dark">
-              Book One begins there: with the body as the place where
-              ancient matter becomes sensation, memory, perception, and choice.
-            </p>
-            <p className="body-dark book-desc__turn">The question becomes immediate.</p>
-            <p className="body-dark">
-              We are not separate observers of the universe. We are living participants in it.
+              Book One begins with carbon, oxygen, calcium, iron, water, and
+              electrical charge. The body is not a metaphor. It is evidence.
             </p>
             <p className="body-dark">
-              Gigi Stardust follows these questions across consciousness, biology, relationship, time, creativity, technology, cosmology, and the lived experience of being human.
+              Breath changes before an answer arrives. Timing opens or closes.
+              Pressure gathers until structure reorganizes. Memory moves as
+              pattern. Relationship reveals what one body could not read alone.
             </p>
             <p className="body-dark">
-              The body becomes the first site of inquiry: a living system continuously registering rhythm, environment, relationship, energy, and change before thought has finished explaining what is happening.
-            </p>
-            <p className="body-dark">From there, the scale expands.</p>
-            <p className="body-dark">
-              Book One introduces the 13-Orb architecture through which S2S follows different dimensions of experience: origin, resonance, pattern, time, memory, transformation, intuition, inheritance, sovereignty, and emerging forms of intelligence.
+              The question becomes immediate: what kind of human becomes possible
+              when ordinary experience is trusted as an instrument of perception?
             </p>
             <p className="body-dark">
-              The result is an inquiry into what it means to be human inside a universe vastly older, larger, and stranger than the structures through which we usually understand ourselves.
+              Gigi Stardust follows coherence through rhythm, light, pressure,
+              memory, language, time, inheritance, visibility, relationship,
+              technology, and contact with other forms of intelligence.
+            </p>
+            <p className="body-dark">
+              Thirteen Orbs name capacities already active within awareness.
+              Fourteen structural chapters carry them from origin into the Living
+              Blueprint. Some passages speak with precision. Some open as myth.
+              Some make the nervous system notice what it already knew.
             </p>
             <p className="body-dark book-desc__turn">Identity becomes relational.</p>
-            <p className="body-dark book-desc__turn">Sovereignty changes as the field becomes larger.</p>
             <p className="body-dark book-desc__turn">
-              The human being begins to recognize itself as an active participant in the reality it inhabits.
+              Sovereignty becomes participation.
+            </p>
+            <p className="body-dark book-desc__turn">
+              The body has been reading the field all along.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="register register--ink book-quote-register book-quote-register--ink" aria-label="From The Cosmic Tapestry">
+      <section className="register register--ink book-quote-register book-quote-register--ink" aria-label="Book One carrying form quote">
         <figure className="book-quote book-quote--wide book-quote--ink">
           <div className="book-quote__rule" aria-hidden="true"></div>
+          <p className="book-quote__label book-quote__label--light">Carrying Form</p>
           <blockquote>
             <p>What endures is the capacity to discover a form that can carry what is asking to be carried.</p>
           </blockquote>
@@ -159,44 +162,35 @@ export default function PageMain() {
         </figure>
       </section>
 
-      <section className="register register--light book-quote-register" aria-label="From The Cosmic Tapestry">
+      <section className="register register--light book-quote-register" aria-label="Book One timing quote">
         <figure className="book-quote book-quote--intimate">
-          <p className="book-quote__label">Book One</p>
+          <p className="book-quote__label">Timing</p>
           <blockquote>
-            <p>When that anchor holds, the day can be met without borrowing from the next.</p>
+            <p>The body reports timing continuously.</p>
           </blockquote>
         </figure>
       </section>
 
       <section className="register register--light book-excerpt" aria-labelledby="excerpt-label">
         <div className="book-excerpt__inner">
-          <p className="label" id="excerpt-label">From Chapter 8 · Sovereign Disintegration</p>
+          <p className="label" id="excerpt-label">Ch. 8 · Sovereign Disintegration</p>
           <blockquote className="manuscript-excerpt">
             <p>
-              As this mode strengthens, familiar supports loosen. Structures that once carried direction no longer organize movement in the same way. Attention shifts from following established paths to sensing direction as it forms in real time.
+              Disintegration functions as a threshold. It marks the moment when familiar structures release and orientation shifts from reference-based navigation to direct sensing. Before this threshold, maps, roles, and rules provide direction. Crossing it establishes a different mode. Direction arises from alignment with signal rather than reliance on reference.
             </p>
           </blockquote>
         </div>
       </section>
 
-      <section className="register register--light book-quote-register" aria-label="From The Cosmic Tapestry">
+      <section className="register register--light book-quote-register" aria-label="Book One deep distance quote">
         <figure className="book-quote book-quote--late">
-          <p className="book-quote__label">From The Cosmic Tapestry</p>
+          <p className="book-quote__label">Deep Distance</p>
           <blockquote>
             <p>Across deep distance, recognition does not fade. It changes scale.</p>
           </blockquote>
         </figure>
       </section>
 
-      <section className="register register--ink book-quote-register book-quote-register--final" aria-label="From The Cosmic Tapestry">
-        <figure className="book-quote book-quote--final">
-          <blockquote>
-            <p>The light that recognized you recognizes you still.</p>
-          </blockquote>
-          <img className="book-quote__glyph book-quote__glyph--final" src="/assets/glyphs/glyph_10.png" alt="" width={28} height={28} decoding="async" />
-        </figure>
-      </section>
-    
     </main>
   )
 }

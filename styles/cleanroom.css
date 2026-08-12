@@ -550,11 +550,22 @@ a.text-link--pending {
   width: min(100%, 300px);
 }
 
+.book-photo::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 8%;
+  bottom: 2.5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 36, 26, 0.34), transparent);
+}
+
 .book-photo img {
+  position: relative;
   width: 100%;
   height: auto;
   display: block;
-  filter: contrast(0.96) saturate(0.88);
+  filter: drop-shadow(0 2.15rem 2.35rem rgba(21, 18, 14, 0.3)) saturate(1.04) contrast(1.02);
 }
 
 @media (min-width: 900px) {
@@ -3075,18 +3086,7 @@ a.text-link--pending {
 }
 
 .book-excerpt::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 0 42%;
-  background:
-    linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, 0.84) 28%, rgba(243, 239, 230, 0.3) 66%, var(--paper) 100%),
-    linear-gradient(180deg, var(--paper) 0%, rgba(243, 239, 230, 0.08) 26%, rgba(243, 239, 230, 0.08) 72%, var(--paper) 100%),
-    url("/assets/field-artifacts/book-open-page.jpeg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%, min(42vw, 34rem) auto;
-  background-position: center, center, right center;
-  opacity: 0.58;
-  pointer-events: none;
+  content: none;
 }
 
 .book-excerpt__inner {
