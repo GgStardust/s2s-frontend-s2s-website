@@ -28,26 +28,34 @@ export const metadata: Metadata = {
     template: '%s | Stardust to Sovereignty',
   },
   description:
-    'Stardust to Sovereignty by Gigi Stardust follows intelligence, participation, coherence, and the living forms through which origin remains present.',
+    'What becomes visible when we follow how things relate? Stardust to Sovereignty is an evolving inquiry by Gigi Stardust.',
   metadataBase: new URL('https://stardusttosovereignty.com'),
+  alternates: {
+    canonical: '/',
+  },
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/gigi' }],
   creator: 'Gigi Stardust',
   openGraph: {
     title: 'Stardust to Sovereignty',
-    description:
-      'Stardust to Sovereignty follows intelligence, participation, coherence, and the living forms through which origin remains present.',
+    description: 'What becomes visible when we follow how things relate?',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     locale: 'en_US',
-    images: [{ url: '/og-v6.png', width: 1200, height: 630, alt: 'Stardust to Sovereignty' }],
+    images: [
+      {
+        url: '/og-v7.png',
+        width: 1200,
+        height: 630,
+        alt: 'Stardust to Sovereignty — What becomes visible when we follow how things relate?',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stardust to Sovereignty',
-    description:
-      'Stardust to Sovereignty follows intelligence, participation, coherence, and the living forms through which origin remains present.',
-    images: ['/og-v6.png'],
+    description: 'What becomes visible when we follow how things relate?',
+    images: ['/og-v7.png'],
     creator: '@gigi_stardust',
   },
   robots: { index: true, follow: true },
