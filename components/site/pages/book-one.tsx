@@ -14,7 +14,7 @@ export default function PageMain() {
               Available now in paperback, hardcover, and ebook.
             </p>
             <p className="book-reader-proposition">
-              Enter through the body: calcium, iron, breath, water, charge. Book One follows the signals already active in ordinary life until human experience becomes readable as matter, memory, timing, relationship, and choice.
+              Thirteen Orbs move through fourteen structural chapters, from origin into embodied sovereignty.
             </p>
             <p className="order-row book__order-links">
               <a className="text-link" href="/order/direct">
@@ -78,119 +78,168 @@ export default function PageMain() {
         </div>
       </section>
 
-      <section className="register register--light book-body" aria-labelledby="book-open-line">
-        <div className="book-body__inner">
-          <h2 id="book-open-line" className="display display--section book-body__lead">
-            The body is where the universe becomes personal.
-          </h2>
-          <div className="book-body__prose">
-            <p className="book-body__elements">
-              Carbon. Oxygen. Calcium. Iron. Water. Electrical charge.
-            </p>
-            <p>
-              Ancient matter became metabolism, sensation, memory, perception, imagination, and choice. It became the body sitting in the room, the breath changing before an answer arrives, the nervous system knowing more than the explanation can carry.
-            </p>
-            <p>
-              Book One follows that recognition as it becomes perception, memory, timing,
-              pressure, language, relationship, and sovereignty.
-            </p>
-          </div>
+      <section
+        className="register register--light book-passage-head"
+        aria-labelledby="passage-heading"
+      >
+        <h2 id="passage-heading" className="display display--section book-passage-head__title">
+          A passage through Book One
+        </h2>
+      </section>
+
+      <section
+        className="register register--light book-passage book-passage--origin"
+        aria-labelledby="passage-01"
+      >
+        <header className="book-passage__meta">
+          <p className="label">01 · Origin Intelligence</p>
+          <h3 id="passage-01" className="book-passage__chapter">
+            The Stardust Within
+          </h3>
+        </header>
+        <blockquote className="book-passage__text">
+          <p>
+            With every breath, matter forged in stellar fire crosses the threshold into you, continuing a journey that began long before Earth existed.
+          </p>
+        </blockquote>
+      </section>
+
+      <section
+        className="register register--light book-passage book-passage--resonance"
+        aria-labelledby="passage-02"
+      >
+        <header className="book-passage__meta">
+          <p className="label">02 · Resonance Mechanics</p>
+          <h3 id="passage-02" className="book-passage__chapter">
+            The Body as Advanced Biological Technology
+          </h3>
+        </header>
+        <blockquote className="book-passage__text">
+          <p>How does intelligence translate into lived, biological experience?</p>
+          <p>
+            Hum a single note. The vibration moves through your chest, your ribs, the space around you. The body registers it before thought names it. Your voice creates waves that travel through air, walls, and the space between you and another. Inwardly, the same movement occurs. Pattern expresses as sensation, rhythm, and internal shift before language forms.
+          </p>
+        </blockquote>
+      </section>
+
+      <section
+        className="register register--ink book-passage book-passage--starline"
+        aria-labelledby="passage-06"
+      >
+        <header className="book-passage__meta">
+          <p className="label label--light">06 · Starline Memory</p>
+          <h3 id="passage-06" className="book-passage__chapter book-passage__chapter--light">
+            Stepping Beyond Limitations
+          </h3>
+        </header>
+        <blockquote className="book-passage__text book-passage__text--light">
+          <p>
+            There are moments when the story you tell about yourself recedes. A decision lands and you find yourself weighing it against something longer. A generation. A lineage. A pattern that began before you and will continue after. The shift is quiet. The frame changes. Continuity becomes the reference point.
+          </p>
+          <p>
+            Orientation moves toward longer arcs. Meaning organizes around participation in what continues. Responsibility forms as stewardship across lineage, collective systems, and future time.
+          </p>
+          <p>
+            Consider the scale at which the galaxy operates. Stellar processes circulate elements across vast distances. Patterned relation precedes human culture and historical time. At that level, existence functions as an ordered web. Stars, matter, and life arise within the same lawful structure. What persists does so through ongoing stellar formation, elemental exchange, and relational pattern across immense spans. Continuity is active participation rather than stored record.
+          </p>
+          <p>
+            Living systems inherit that structure. Conscious systems arise within it. Recognition follows. Perspective reorients.
+          </p>
+          <p>
+            Starline Memory names this stellar continuity as it becomes perceptible within consciousness. Perception widens toward pattern and origin. Reference expands beyond the personal frame. Existence becomes legible as participation in an order that precedes and shapes life.
+          </p>
+          <p>
+            Old light travels across distance. Matter forged in stellar cores circulates through living form. Memory moves as structure in motion.
+          </p>
+          <p>Layers nest.</p>
+          <p>
+            At the stellar layer, matter forged in cosmic processes anchors inheritance beyond history. At the ancestral layer, continuity carries through lineage as transmission. At the cellular layer, pattern registers as rhythm and response within biology. What carries forward is the pattern that enables recognition, responsibility, and future transmission.
+          </p>
+        </blockquote>
+      </section>
+
+      <section
+        className="register register--light book-passage book-passage--disintegration"
+        aria-labelledby="passage-08"
+      >
+        <header className="book-passage__meta">
+          <p className="label" id="passage-08">
+            08 · Sovereign Disintegration
+          </p>
+        </header>
+        <blockquote className="book-passage__text">
+          <p>
+            Moving through this threshold is registered first in the body. Balance adjusts. Breath deepens or pauses. Ground reorganizes. Effort decreases in holding position. Clarity increases in movement. Familiar patterns release. Space opens. Relief accompanies release. Direction forms within openness.
+          </p>
+          <p>
+            Sensation refines. Context becomes readable through the body. Precision appears. As structure releases, navigation sharpens. Direction remains steady while prior frameworks fall behind, like light extending forward as it moves.
+          </p>
+        </blockquote>
+      </section>
+
+      <section
+        className="register register--light book-passage book-passage--bridging"
+        aria-labelledby="passage-13"
+      >
+        <header className="book-passage__meta">
+          <p className="label" id="passage-13">
+            13 · Bridging Intelligence
+          </p>
+        </header>
+        <blockquote className="book-passage__text">
+          <p>
+            You are with others and the next step becomes obvious without instruction. No one directs. No one yields authority. Each remains self-directed while something shared holds the orientation. Coordination is already underway. That is the bridge in lived form.
+          </p>
+          <p>
+            You stand with an animal or in a place and your breath shifts before thought arrives. Attention settles. You feel yourself and you feel met. No force moves between you. Alignment organizes the exchange.
+          </p>
+          <p>
+            You engage a tool or system and it responds without friction. Intention translates cleanly into function. Feedback clarifies rather than resists. The interaction feels reciprocal rather than compliant.
+          </p>
+          <p>
+            A group reaches shared orientation while everyone remains sovereign. The step appears to many at once. Movement proceeds without central command.
+          </p>
+          <p>
+            In each case, distinct participants remain intact while something common organizes timing and response. Coordination arises through shared alignment. That is the bridge operating in your life.
+          </p>
+        </blockquote>
+      </section>
+
+      <section
+        className="register register--ink book-passage book-passage--blueprint"
+        aria-labelledby="passage-blueprint"
+      >
+        <header className="book-passage__meta">
+          <h3 id="passage-blueprint" className="book-passage__blueprint-title">
+            The Living Blueprint
+          </h3>
+        </header>
+        <blockquote className="book-passage__text book-passage__text--light book-passage__text--blueprint">
+          <p>Structure is seen.</p>
+          <p>Recognition rests.</p>
+          <p>Breath moves.</p>
+          <p>Presence holds.</p>
+          <p>The blueprint stands revealed</p>
+        </blockquote>
+      </section>
+
+      <section className="register register--light book-passage-return" aria-label="Continue with Book One">
+        <div className="order-row book-passage-return__links">
+          <a className="text-link" href="/order/direct">
+            Buy directly from Gigi <span aria-hidden="true">→</span>
+          </a>
+          <a className="text-link" href="#purchase">
+            See all editions <span aria-hidden="true">→</span>
+          </a>
+          <a
+            className="text-link"
+            href={AMAZON_LISTING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Order on Amazon <span aria-hidden="true">→</span>
+          </a>
         </div>
-      </section>
-
-      <section className="register register--light book-quote-register" aria-label="Book One body signal quote">
-        <figure className="book-quote book-quote--opening">
-          <p className="book-quote__label">Body Signal</p>
-          <blockquote>
-            <p>
-              Alignment registers in the body before it reaches thought.
-            </p>
-          </blockquote>
-        </figure>
-      </section>
-
-      <section className="register register--ink book-desc" aria-labelledby="book-desc-title">
-        <div className="book-desc__inner">
-          <h2 id="book-desc-title" className="display display--dark book-desc__question">
-            Start where the body is already telling the truth.
-          </h2>
-
-          <div className="book-desc__stages">
-            <p className="body-dark">
-              Book One begins with carbon, oxygen, calcium, iron, water, and
-              electrical charge. The body is where the inquiry becomes
-              observable.
-            </p>
-            <p className="body-dark">
-              Breath changes before an answer arrives. Timing opens or closes.
-              Pressure gathers until structure reorganizes. Memory moves as
-              pattern. Relationship reveals what one body could not read alone.
-            </p>
-            <p className="body-dark">
-              The question becomes immediate: what kind of human becomes possible
-              when ordinary experience is trusted as an instrument of perception?
-            </p>
-            <p className="body-dark">
-              Gigi Stardust follows coherence through rhythm, light, pressure,
-              memory, language, and time. The movement widens into inheritance,
-              visibility, relationship, technology, and contact with other forms
-              of intelligence.
-            </p>
-            <p className="body-dark">
-              Thirteen Orbs name capacities already active within awareness.
-              Fourteen structural chapters carry them from origin into embodied
-              sovereignty. Some passages speak with precision. Some open as
-              myth. Some make the nervous system notice what it already knew.
-            </p>
-            <p className="body-dark book-desc__turn">Identity becomes relational.</p>
-            <p className="body-dark book-desc__turn">
-              Sovereignty becomes participation.
-            </p>
-            <p className="body-dark book-desc__turn">
-              The body has been reading the field all along.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="register register--ink book-quote-register book-quote-register--ink" aria-label="Book One carrying form quote">
-        <figure className="book-quote book-quote--wide book-quote--ink">
-          <div className="book-quote__rule" aria-hidden="true"></div>
-          <p className="book-quote__label book-quote__label--light">Carrying Form</p>
-          <blockquote>
-            <p>What endures is the capacity to discover a form that can carry what is asking to be carried.</p>
-          </blockquote>
-          <img className="book-quote__glyph" src="/assets/glyphs/glyph_08.png" alt="" width={36} height={140} decoding="async" />
-        </figure>
-      </section>
-
-      <section className="register register--light book-quote-register" aria-label="Book One timing quote">
-        <figure className="book-quote book-quote--intimate">
-          <p className="book-quote__label">Timing</p>
-          <blockquote>
-            <p>The body reports timing continuously.</p>
-          </blockquote>
-        </figure>
-      </section>
-
-      <section className="register register--light book-excerpt" aria-labelledby="excerpt-label">
-        <div className="book-excerpt__inner">
-          <p className="label" id="excerpt-label">Ch. 8 · Sovereign Disintegration</p>
-          <blockquote className="manuscript-excerpt">
-            <p>
-              Disintegration functions as a threshold. It marks the moment when familiar structures release and orientation shifts from reference-based navigation to direct sensing. Before this threshold, maps, roles, and rules provide direction. Crossing it establishes a different mode. Direction arises from alignment with signal rather than reliance on reference.
-            </p>
-          </blockquote>
-        </div>
-      </section>
-
-      <section className="register register--light book-quote-register" aria-label="Book One deep distance quote">
-        <figure className="book-quote book-quote--late">
-          <p className="book-quote__label">Deep Distance</p>
-          <blockquote>
-            <p>Across deep distance, recognition does not fade. It changes scale.</p>
-          </blockquote>
-        </figure>
       </section>
 
     </main>

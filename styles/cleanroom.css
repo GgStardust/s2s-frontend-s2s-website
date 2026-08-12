@@ -2678,10 +2678,206 @@ a.text-link--pending {
 
 .book-reader-proposition {
   margin: 1.4rem 0 0;
-  max-width: 36ch;
+  max-width: 42ch;
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.48;
   color: var(--ink-soft);
+}
+
+/* Book One — curated manuscript traversal */
+.book-passage-head {
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.book-passage-head__title {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+}
+
+.book-passage {
+  border-top: none;
+}
+
+.book-passage__meta {
+  margin: 0 0 1.75rem;
+}
+
+.book-passage__chapter {
+  margin: 0.85rem 0 0;
+  max-width: 18ch;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.book-passage__chapter--light {
+  color: var(--paper);
+}
+
+.book-passage__blueprint-title {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.55);
+}
+
+.book-passage__text {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 36rem;
+}
+
+.book-passage__text p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.book-passage__text p + p {
+  margin-top: 1.35rem;
+}
+
+.book-passage__text--light p {
+  color: rgba(244, 240, 230, 0.92);
+}
+
+/* 01 · Origin — brief, spacious */
+.book-passage--origin {
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+}
+
+.book-passage--origin .book-passage__text {
+  max-width: 28rem;
+}
+
+.book-passage--origin .book-passage__text p {
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  line-height: 1.4;
+}
+
+/* 02 · Resonance — intimate */
+.book-passage--resonance {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(3.25rem, 7vw, 5.5rem);
+}
+
+.book-passage--resonance .book-passage__text {
+  max-width: 32rem;
+}
+
+.book-passage--resonance .book-passage__text p {
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  line-height: 1.58;
+}
+
+/* 06 · Starline — greatest reading space */
+.book-passage--starline {
+  padding-top: clamp(4rem, 9vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 10vw, 8rem);
+  border-top: 1px solid var(--rule-light);
+}
+
+.book-passage--starline .book-passage__text {
+  max-width: 38rem;
+}
+
+.book-passage--starline .book-passage__text p {
+  font-size: clamp(1.18rem, 2.2vw, 1.5rem);
+  line-height: 1.6;
+}
+
+.book-passage--starline .book-passage__text p + p {
+  margin-top: 1.65rem;
+}
+
+/* 08 · Disintegration — concentrated */
+.book-passage--disintegration {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--rule);
+}
+
+.book-passage--disintegration .book-passage__text {
+  max-width: 30rem;
+}
+
+.book-passage--disintegration .book-passage__text p {
+  font-size: clamp(1.1rem, 2vw, 1.32rem);
+  line-height: 1.5;
+}
+
+.book-passage--disintegration .book-passage__text p + p {
+  margin-top: 1.15rem;
+}
+
+/* 13 · Bridging — opens spatially */
+.book-passage--bridging {
+  padding-top: clamp(3.5rem, 8vw, 6.5rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+}
+
+.book-passage--bridging .book-passage__text {
+  max-width: 36rem;
+}
+
+.book-passage--bridging .book-passage__text p {
+  font-size: clamp(1.15rem, 2.15vw, 1.42rem);
+  line-height: 1.55;
+}
+
+.book-passage--bridging .book-passage__text p + p {
+  margin-top: 1.75rem;
+}
+
+/* Living Blueprint — extremely spare */
+.book-passage--blueprint {
+  padding-top: clamp(3.5rem, 8vw, 6rem);
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+  border-top: 1px solid var(--rule-light);
+  text-align: center;
+}
+
+.book-passage--blueprint .book-passage__meta {
+  margin-bottom: 2.5rem;
+}
+
+.book-passage__text--blueprint {
+  max-width: 16rem;
+  margin-inline: auto;
+}
+
+.book-passage__text--blueprint p {
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.book-passage__text--blueprint p + p {
+  margin-top: 0.85rem;
+}
+
+.book-passage-return {
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(2.25rem, 4.5vw, 3.5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.book-passage-return__links {
+  margin-top: 0;
 }
 
 .page-book-one .book-purchase {
