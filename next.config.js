@@ -15,6 +15,11 @@ const nextConfig = {
       { source: '/console', destination: '/s2s', permanent: false },
       { source: '/preorder', destination: '/order/direct', permanent: true },
       { source: '/thank-you-preorder', destination: '/order/success', permanent: true },
+      // Soft legacy / convenience paths → home or contact
+      { source: '/contact', destination: '/gigi#contact', permanent: false },
+      { source: '/writings', destination: '/', permanent: false },
+      { source: '/subscribe', destination: '/', permanent: false },
+      { source: '/newsletter', destination: '/', permanent: false },
     ]
   },
 }
