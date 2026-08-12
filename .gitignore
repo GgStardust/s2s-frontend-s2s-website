@@ -35,3 +35,6 @@ yarn-error.log*
 next-env.d.ts
 
 .tmp/
+public/assets/atmosphere/family-contact-sheet.png
+public/assets/atmosphere/_archive-*/
+public/og-mockups/

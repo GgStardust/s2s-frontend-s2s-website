@@ -51,13 +51,13 @@ const element = h(
   h('div', {
     style: {
       position: 'absolute',
-      left: 240,
+      left: 200,
       top: 0,
-      width: 420,
+      width: 520,
       height: 630,
       display: 'flex',
       backgroundImage:
-        'linear-gradient(90deg, rgba(5,7,12,0.55) 0%, rgba(5,7,12,0.42) 55%, rgba(5,7,12,0) 100%)',
+        'linear-gradient(90deg, rgba(5,7,12,0.58) 0%, rgba(5,7,12,0.4) 58%, rgba(5,7,12,0) 100%)',
     },
   }),
   h(
@@ -66,10 +66,10 @@ const element = h(
       style: {
         position: 'absolute',
         // Center-square safe zone starts ~285px — keep type inside it
-        left: 310,
+        left: 300,
         top: 0,
         bottom: 0,
-        width: 420,
+        width: 480,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -81,11 +81,11 @@ const element = h(
       {
         style: {
           fontFamily: 'Cormorant',
-          fontSize: 16,
-          letterSpacing: '0.26em',
+          fontSize: 18,
+          letterSpacing: '0.24em',
           textTransform: 'uppercase',
           color: IVORY_DIM,
-          marginBottom: 34,
+          marginBottom: 28,
         },
       },
       'Stardust to Sovereignty',
@@ -95,12 +95,12 @@ const element = h(
       {
         style: {
           fontFamily: 'Cormorant',
-          fontSize: 44,
-          lineHeight: 1.2,
+          fontSize: 56,
+          lineHeight: 1.12,
           fontWeight: 500,
-          letterSpacing: '0.005em',
+          letterSpacing: '-0.01em',
           color: IVORY,
-          marginBottom: 6,
+          marginBottom: 4,
         },
       },
       'What becomes visible',
@@ -110,11 +110,11 @@ const element = h(
       {
         style: {
           fontFamily: 'Cormorant',
-          fontSize: 44,
-          lineHeight: 1.2,
+          fontSize: 56,
+          lineHeight: 1.12,
           fontWeight: 500,
           color: IVORY,
-          marginBottom: 6,
+          marginBottom: 4,
         },
       },
       'when we follow',
@@ -124,11 +124,11 @@ const element = h(
       {
         style: {
           fontFamily: 'Cormorant',
-          fontSize: 44,
-          lineHeight: 1.2,
+          fontSize: 56,
+          lineHeight: 1.12,
           fontWeight: 500,
           color: IVORY,
-          marginBottom: 36,
+          marginBottom: 30,
         },
       },
       'how things relate?',
@@ -138,8 +138,8 @@ const element = h(
       {
         style: {
           fontFamily: 'Cormorant',
-          fontSize: 15,
-          letterSpacing: '0.28em',
+          fontSize: 17,
+          letterSpacing: '0.26em',
           textTransform: 'uppercase',
           color: IVORY_DIM,
         },
