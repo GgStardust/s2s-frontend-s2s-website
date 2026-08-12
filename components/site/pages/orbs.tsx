@@ -22,8 +22,8 @@ export default function PageMain() {
               and stabilizes coherence.
             </p>
             <p className="orbs__boundary">
-              Open an Orb to see its function in the architecture and its expression
-              in lived experience.
+              Select any Orb to reveal its function in the architecture and its
+              expression in lived experience.
             </p>
           </div>
         </div>
