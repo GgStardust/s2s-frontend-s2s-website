@@ -6,27 +6,26 @@ export default function PageMain() {
       <section className="register register--light hero" id="top" aria-labelledby="hero-title">
         <div className="hero__grid">
           <div className="hero__copy">
-            <p className="label">Stardust to Sovereignty</p>
+            <p className="label">An evolving inquiry by Gigi Stardust</p>
             <h1 id="hero-title" className="display display--hero">
-              What are we building<br />
-              simply by continuing<br />
-              to participate?
+              Stardust to<br />
+              Sovereignty
             </h1>
             <p className="lede">
-              Stardust to Sovereignty follows how intelligence becomes form, how
-              participation enters consequence, and how a human, a culture, or a
-              civilization remains answerable to what gave it life.
+              What does it mean to remain whole while participating in systems
+              larger than ourselves?
             </p>
             <p className="lede lede--quiet">
-              A living field of writing, inquiry, art, place, technology, and future human
-              capacity by Gigi Stardust. Book One is available now.
+              Enter through the body, relationship, technology, place, art,
+              questions, Book One, and the patterns of intelligence already
+              active in ordinary life.
             </p>
             <p className="hero__links">
-              <a className="text-link" href="/book-one">
-                Enter Book One <span aria-hidden="true">→</span>
-              </a>
               <a className="text-link" href="/s2s">
                 Explore S2S <span aria-hidden="true">→</span>
+              </a>
+              <a className="text-link" href="/book-one">
+                Enter Book One <span aria-hidden="true">→</span>
               </a>
             </p>
           </div>
@@ -97,7 +96,8 @@ export default function PageMain() {
               The wider field
             </h2>
             <p className="paradigm__support">
-              An inquiry following intelligence, coherence, and sovereign participation across scale.
+              A first orientation into intelligence, coherence, and sovereign
+              participation across scale.
             </p>
             <p className="band-copy">
               Experience raises questions.<br />
@@ -106,8 +106,8 @@ export default function PageMain() {
               What we see changes how we participate.
             </p>
             <p className="body-dark">
-              S2S is the wider field behind the public entrances here: Book One,
-              Inquiry, Orbs, and Gigi's ongoing work.
+              S2S is the wider field behind Book One, Inquiry, Orbs, and Gigi's
+              ongoing work.
             </p>
             <p className="body-dark">
               Encounter makes resonance, cohesion, consequence, continuity, and
@@ -171,12 +171,13 @@ export default function PageMain() {
               held together.
             </h2>
             <p className="lede">
-              Book One introduces the Orbs as primary intelligences and structural principles
-              within Stardust to Sovereignty.
+              Book One introduces the Orbs after body, memory, timing,
+              relationship, and sovereignty have begun to show their shape.
             </p>
             <p className="orbs__overview">
-              They offer a threshold into origin, resonance, memory, time,
-              transformation, sovereignty, and bridging across scale.
+              They give the wider field resolution: origin, resonance, memory,
+              time, transformation, sovereignty, and bridging within one
+              architecture.
             </p>
           </div>
         </div>

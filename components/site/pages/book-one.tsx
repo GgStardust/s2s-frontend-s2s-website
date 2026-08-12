@@ -118,7 +118,7 @@ export default function PageMain() {
           <div className="book-desc__stages">
             <p className="body-dark">
               Book One begins with carbon, oxygen, calcium, iron, water, and
-              electrical charge. The body is not a metaphor. It is evidence.
+              electrical charge. The body carries evidence.
             </p>
             <p className="body-dark">
               Breath changes before an answer arrives. Timing opens or closes.
@@ -131,14 +131,15 @@ export default function PageMain() {
             </p>
             <p className="body-dark">
               Gigi Stardust follows coherence through rhythm, light, pressure,
-              memory, language, time, inheritance, visibility, relationship,
-              technology, and contact with other forms of intelligence.
+              memory, language, and time. The movement widens into inheritance,
+              visibility, relationship, technology, and contact with other forms
+              of intelligence.
             </p>
             <p className="body-dark">
               Thirteen Orbs name capacities already active within awareness.
-              Fourteen structural chapters carry them from origin into the Living
-              Blueprint. Some passages speak with precision. Some open as myth.
-              Some make the nervous system notice what it already knew.
+              Fourteen structural chapters carry them from origin into embodied
+              sovereignty. Some passages speak with precision. Some open as
+              myth. Some make the nervous system notice what it already knew.
             </p>
             <p className="body-dark book-desc__turn">Identity becomes relational.</p>
             <p className="body-dark book-desc__turn">
@@ -194,3 +195,4 @@ export default function PageMain() {
     </main>
   )
 }
+

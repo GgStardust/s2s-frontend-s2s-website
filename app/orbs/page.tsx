@@ -4,10 +4,10 @@ import PageMain from '@/components/site/pages/orbs'
 export const metadata: Metadata = {
   title: 'The 13 Orbs',
   description:
-    'The thirteen Orbs of Stardust to Sovereignty are primary interpretive intelligences and structural principles within Book One and the larger S2S field.',
+    'The thirteen Orbs of Stardust to Sovereignty name capacities already active in human experience and give the wider field structural resolution.',
   openGraph: {
     title: 'The 13 Orbs · Stardust to Sovereignty',
-    description: 'Thirteen primary Orbs within S2S.',
+    description: 'Thirteen functions within one S2S architecture.',
   },
 }
 

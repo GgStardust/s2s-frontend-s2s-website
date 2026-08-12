@@ -4,11 +4,11 @@ import PageMain from '@/components/site/pages/s2s'
 export const metadata: Metadata = {
   title: 'S2S',
   description:
-    'Stardust to Sovereignty follows intelligence through body, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.',
+    'Stardust to Sovereignty follows intelligence from lived encounter into relationship, systems, Earth, future human capacity, and larger scales of participation.',
   openGraph: {
     title: 'S2S · Stardust to Sovereignty',
     description:
-      'A paradigm for intelligence and sovereign participation across scale.',
+      'An orientation into intelligence, coherence, and sovereign participation across scale.',
   },
 }
 

@@ -8,14 +8,21 @@ export default function PageMain() {
         <div className="s2s-register__inner">
           <p className="label label--light">Stardust to Sovereignty</p>
           <h1 id="threshold-title" className="display display--dark s2s-threshold__question">
-            A paradigm for intelligence and sovereign participation across scale.
+            An invitation to remain whole inside larger systems.
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
-              The inquiry moves through body, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+              Enter through what can be observed: a body registering before
+              thought, a relationship changing perception, a technology altering
+              capacity, a pattern repeating until it becomes structure.
             </p>
             <p className="body-dark">
-              Resonance surrounds the inquiry: rhythm, signal, dissonance, coherence, recognition, and the conditions through which participation becomes form.
+              The inquiry moves from the body into relationship, place, land,
+              technology, society, civilization, and Earth.
+            </p>
+            <p className="body-dark">
+              From there, the same movement can open toward the future human,
+              the cosmic scale, and forms of intelligence not yet fully known.
             </p>
             <p className="body-dark">
               Book One is the first completed literary embodiment. The larger S2S field remains active through writing, making, observation, and public forms still coming into view.
@@ -155,6 +162,10 @@ export default function PageMain() {
           <p className="lf-line lf-line--close">
             Intelligence appears through what repeats, changes, arrives, disappears, returns, resonates, and becomes available to recognition.
           </p>
+          <p className="lf-line lf-line--quiet">
+            As recurrence becomes legible, the language becomes more precise:
+            field, signal, resonance, sovereignty, Orbs.
+          </p>
           <img
             className="living-field__glyph"
             src="/assets/glyphs/glyph_16.png"
@@ -213,7 +224,7 @@ export default function PageMain() {
           <div className="s2s-future-primitive">
             <p className="label label--light">Future Primitive</p>
             <p className="s2s-pressure-line">
-              Progress can return human capacity to practice.
+              Progress can return older human capacities to practice.
             </p>
             <p className="s2s-future-primitive__horizon">
               Direct perception, embodied intelligence, relation with place, creativity,
@@ -293,7 +304,7 @@ export default function PageMain() {
             </div>
             <div>
               <dt>Orbs</dt>
-              <dd>Primary intelligences and structural principles that help patterns become recognizable.</dd>
+              <dd>Primary intelligences and structural principles through which awareness organizes, orients, and expresses.</dd>
             </div>
             <div>
               <dt>Book One</dt>

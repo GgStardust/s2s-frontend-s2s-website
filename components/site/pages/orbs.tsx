@@ -8,20 +8,22 @@ export default function PageMain() {
           <div className="orbs__intro-copy">
             <p className="label">The 13 Orbs</p>
             <h1 id="orbs-title" className="display display--section">
-              Thirteen primary Orbs<br />
-              within S2S.
+              One architecture<br />
+              through thirteen functions.
             </h1>
             <p className="lede">
-              Each Orb is a foundational frequency field within Stardust to Sovereignty.
+              The Orbs express lived intelligence. Each one names a capacity already
+              active within human experience, sometimes clear, sometimes waiting
+              beneath attention.
             </p>
             <p className="lede">
-              Together, they form the backbone of the architecture: thirteen structural
-              principles through which origin, resonance, reflection, pattern, time, memory,
-              transformation, intuition, ancestry, clarity, sovereignty, and bridging take form.
+              Together they form one living architecture, shaping how awareness
+              perceives reality, relates to others, navigates time, forms identity,
+              and stabilizes coherence.
             </p>
             <p className="orbs__boundary">
-              They function as design keys. Function names what an Orb does; expression reveals
-              how it becomes recognizable in lived experience.
+              Open an Orb to see its function in the architecture and its expression
+              in lived experience.
             </p>
           </div>
         </div>
@@ -45,7 +47,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-01" role="region" aria-hidden="true">
-              <p>Holds the origination code of embodiment: pre-form light encoding meeting biological activation. Stellar inheritance becomes cellular ignition, the living foundation through which sovereignty expresses.</p>
+              <p><span>Function</span> The organizing coherence through which matter becomes aware of itself.</p>
+              <p><span>Expression</span> A subtle clarity around beginnings; the sense of origin that persists through change.</p>
             </div>
           </li>
 
@@ -67,7 +70,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-02" role="region" aria-hidden="true">
-              <p>Translates encoded signal into structure. Sound, emotion, vibration, and resonance fields become the architecture through which form broadcasts.</p>
+              <p><span>Function</span> The translation of intelligence into lived biological experience through resonance.</p>
+              <p><span>Expression</span> Alignment or friction sensed before words arrive; the body setting direction before thought names it.</p>
             </div>
           </li>
 
@@ -89,7 +93,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-03" role="region" aria-hidden="true">
-              <p>Opens light webs and relational mirrors for field observation. Reflection initiates coherence; contrast becomes synthesis and inner code becomes visible.</p>
+              <p><span>Function</span> The sustaining conditions through which light regulates biological timing and organization.</p>
+              <p><span>Expression</span> Clarity before interpretation; steadiness when rhythm, attention, and recognition can be held.</p>
             </div>
           </li>
 
@@ -111,7 +116,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-04" role="region" aria-hidden="true">
-              <p>Stabilizes pattern as the bridge between fields. Harmonic law, proportion, geometry, and rhythm hold coherence, including collapse as recalibration.</p>
+              <p><span>Function</span> The underlying structure through which coherence stabilizes systems under load.</p>
+              <p><span>Expression</span> The sense of whether structures will hold or fragment; geometric order recognized within complexity.</p>
             </div>
           </li>
 
@@ -133,7 +139,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-05" role="region" aria-hidden="true">
-              <p>Reclaims time as tool rather than container. Spiral rhythm, rest-phase logic, and field integrity make pacing part of sovereignty.</p>
+              <p><span>Function</span> The capacity to carry responsibility and action forward through time without fracture.</p>
+              <p><span>Expression</span> Rhythm that stabilizes attention; pacing that matches capacity and sustains continuity.</p>
             </div>
           </li>
 
@@ -155,7 +162,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-06" role="region" aria-hidden="true">
-              <p>Carries galactic intelligence and ancestral recall. Memory returns as signal through living strands of history across bodies, lineages, and consciousness networks.</p>
+              <p><span>Function</span> The continuity of coherent pattern across biological, ancestral, and stellar expression.</p>
+              <p><span>Expression</span> Memory felt as recognition rather than recall; familiarity that emerges before narrative.</p>
             </div>
           </li>
 
@@ -177,7 +185,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-07" role="region" aria-hidden="true">
-              <p>Moves the alchemy of experience. Density becomes light through heat, compression, pulse, emotional intensity, energetic holding, and release.</p>
+              <p><span>Function</span> The transmutation through which density transforms into capacity.</p>
+              <p><span>Expression</span> Pressure creating conditions for reorganization; collapse opening new structure.</p>
             </div>
           </li>
 
@@ -199,7 +208,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-08" role="region" aria-hidden="true">
-              <p>Aligns decisions with signal logic. Intuition becomes infrastructure: nonlinear, subtle, precise direction within uncertainty and open possibility.</p>
+              <p><span>Function</span> The directional intelligence through which consciousness navigates by signal and coherence.</p>
+              <p><span>Expression</span> The body knowing before the mind understands; direction sharpening as old structure releases.</p>
             </div>
           </li>
 
@@ -221,7 +231,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-09" role="region" aria-hidden="true">
-              <p>Moves with the field moment by moment. Temporal conditions shift while coherence travels through multidimensional resonance without fragmentation.</p>
+              <p><span>Function</span> The fluid movement of awareness through time as a layered and navigable field.</p>
+              <p><span>Expression</span> Time felt as soft, layered, and navigable; movement by feel rather than force.</p>
             </div>
           </li>
 
@@ -243,7 +254,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-10" role="region" aria-hidden="true">
-              <p>Regenerates inherited pattern as conscious form. Body becomes myth as personal storylines merge with collective DNA, soul-coded history, and repatterned ancestry.</p>
+              <p><span>Function</span> The capacity to transform inherited patterns through conscious participation in lineage continuity.</p>
+              <p><span>Expression</span> Recognition of what inheritance serves and what requires transformation.</p>
             </div>
           </li>
 
@@ -265,7 +277,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-11" role="region" aria-hidden="true">
-              <p>Expresses full-field coherence. Inner architecture becomes radiant, and truth takes luminous form through transparency as frequency.</p>
+              <p><span>Function</span> The capacity of consciousness to transmit coherence as visible form.</p>
+              <p><span>Expression</span> Inner and outer realities aligning; congruence others can read without explanation.</p>
             </div>
           </li>
 
@@ -287,7 +300,8 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-12" role="region" aria-hidden="true">
-              <p>The integrated state in which every Orb activates. Coherence becomes field: total, radiant, whole, a sovereign architecture of communion without loss of self.</p>
+              <p><span>Function</span> The collective web of resonance that amplifies coherence across networks while preserving individual sovereignty.</p>
+              <p><span>Expression</span> Unity without loss of autonomy; participation in collective coherence while remaining whole.</p>
             </div>
           </li>
 
@@ -309,12 +323,18 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-13" role="region" aria-hidden="true">
-              <p>Bridges interface zones for signal contact across dimensions and species. Pattern translates through resonance while integrity is preserved across difference.</p>
+              <p><span>Function</span> The interface where consciousness recognizes connection across species, systems, and unfamiliar forms of intelligence.</p>
+              <p><span>Expression</span> Intelligences meeting without hierarchy; contact as reciprocal transparency.</p>
             </div>
           </li>
         </ul>
 
-        <p className="orbs__closing">The Orbs are the answers. Each one gives a foundational inquiry architectural form.</p>
+        <p className="orbs__closing">
+          The Orbs function as one integrated system: Origin to Sovereignty,
+          Resonance to Transparency, Light to Memory, Harmonics to Alchemy,
+          Temporal Intelligence, Ancestry to Sovereign Presence, and Bridging
+          the whole.
+        </p>
       </section>
     
     </main>
