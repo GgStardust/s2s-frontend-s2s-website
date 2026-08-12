@@ -13,8 +13,10 @@ const nextConfig = {
       { source: '/source-field/:id', destination: '/s2s', permanent: true },
       { source: '/enter', destination: '/', permanent: true },
       { source: '/console', destination: '/s2s', permanent: false },
-      { source: '/preorder', destination: '/order/direct', permanent: true },
+      { source: '/preorder', destination: '/order', permanent: true },
       { source: '/thank-you-preorder', destination: '/order/success', permanent: true },
+      { source: '/order/direct', destination: '/order', permanent: true },
+      { source: '/order/direct/:path*', destination: '/order', permanent: true },
       // Soft legacy / convenience paths → home or contact
       { source: '/contact', destination: '/gigi#contact', permanent: false },
       { source: '/writings', destination: '/', permanent: false },

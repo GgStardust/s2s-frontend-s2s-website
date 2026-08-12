@@ -17,7 +17,7 @@ export default function PageMain() {
               Thirteen Orbs move through fourteen structural chapters, from origin into embodied sovereignty.
             </p>
             <p className="order-row book__order-links">
-              <a className="text-link" href="/order/direct">
+              <a className="text-link" href="/order">
                 Buy directly from Gigi <span aria-hidden="true">→</span>
               </a>
               <a className="text-link" href="#purchase">
@@ -60,7 +60,7 @@ export default function PageMain() {
           </dl>
 
           <div className="order-row">
-            <a className="text-link" href="/order/direct">
+            <a className="text-link" href="/order">
               Buy directly from Gigi <span aria-hidden="true">→</span>
             </a>
             <a
@@ -125,16 +125,16 @@ export default function PageMain() {
       </section>
 
       <section
-        className="register register--ink book-passage book-passage--starline"
+        className="register register--light book-passage book-passage--starline"
         aria-labelledby="passage-06"
       >
         <header className="book-passage__meta">
-          <p className="label label--light">06 · Starline Memory</p>
-          <h3 id="passage-06" className="book-passage__chapter book-passage__chapter--light">
+          <p className="label">06 · Starline Memory</p>
+          <h3 id="passage-06" className="book-passage__chapter">
             Stepping Beyond Limitations
           </h3>
         </header>
-        <blockquote className="book-passage__text book-passage__text--light">
+        <blockquote className="book-passage__text">
           <p>
             There are moments when the story you tell about yourself recedes. A decision lands and you find yourself weighing it against something longer. A generation. A lineage. A pattern that began before you and will continue after. The shift is quiet. The frame changes. Continuity becomes the reference point.
           </p>
@@ -217,7 +217,7 @@ export default function PageMain() {
       </section>
 
       <section
-        className="register register--ink book-passage book-passage--blueprint"
+        className="register register--light book-passage book-passage--blueprint"
         aria-labelledby="passage-blueprint"
       >
         <header className="book-passage__meta">
@@ -225,7 +225,7 @@ export default function PageMain() {
             The Living Blueprint
           </h3>
         </header>
-        <blockquote className="book-passage__text book-passage__text--light book-passage__text--blueprint">
+        <blockquote className="book-passage__text book-passage__text--blueprint">
           <p>Structure is seen.</p>
           <p>Recognition rests.</p>
           <p>Breath moves.</p>
@@ -236,7 +236,7 @@ export default function PageMain() {
 
       <section className="register register--light book-passage-return" aria-label="Continue with Book One">
         <div className="order-row book-passage-return__links">
-          <a className="text-link" href="/order/direct">
+          <a className="text-link" href="/order">
             Buy directly from Gigi <span aria-hidden="true">→</span>
           </a>
           <a className="text-link" href="#purchase">

@@ -24,7 +24,7 @@ export default function OrderCommerceStrip({ variant = 'inline', className = '' 
             {ORDER_CTA.editionLine(price, BOOK_CATALOG.publicationDateDisplay)}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Button href="/order/direct" variant="primary" className="text-sm px-5 py-2.5 min-h-[44px]">
+            <Button href="/order" variant="primary" className="text-sm px-5 py-2.5 min-h-[44px]">
               {primaryLabel}
             </Button>
             <a
@@ -55,7 +55,7 @@ export default function OrderCommerceStrip({ variant = 'inline', className = '' 
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-          <Button href="/order/direct" variant="primary" className="text-sm px-6 min-h-[44px] w-full sm:w-auto">
+          <Button href="/order" variant="primary" className="text-sm px-6 min-h-[44px] w-full sm:w-auto">
             {primaryLabel}
           </Button>
           <a
@@ -67,7 +67,7 @@ export default function OrderCommerceStrip({ variant = 'inline', className = '' 
             {ORDER_CTA.amazonSecondary}
           </a>
           <Link
-            href="/order"
+            href="/book-one"
             className="inline-flex min-h-[44px] items-center text-sm text-stone-500 hover:text-stone-300 underline underline-offset-4 px-2 touch-manipulation"
           >
             {ORDER_CTA.whereToBuy}

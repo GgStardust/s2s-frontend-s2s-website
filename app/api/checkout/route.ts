@@ -58,7 +58,7 @@ export async function POST(request: Request) {
         },
       ],
       success_url: `${origin}/order/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/order/direct?canceled=1`,
+      cancel_url: `${origin}/order?canceled=1`,
     });
 
     if (!session.url) {

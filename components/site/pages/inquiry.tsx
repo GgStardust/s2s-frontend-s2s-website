@@ -180,11 +180,11 @@ export default function PageMain() {
               key={inquiry.number}
             >
               <summary className="inquiry-unit__trigger">
-                <span className="inquiry-unit__fold" aria-hidden="true"></span>
                 <span className="inquiry-unit__num" aria-hidden="true">{inquiry.number}</span>
                 <span className="inquiry-spark">
                   {inquiry.question}
                 </span>
+                <span className="inquiry-unit__fold" aria-hidden="true" />
               </summary>
               <div className="inquiry-unit__depth" id={`inquiry-depth-${inquiry.number}`}>
                 <div className="inquiry-arch">

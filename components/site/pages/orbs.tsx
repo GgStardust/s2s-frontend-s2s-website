@@ -330,10 +330,18 @@ export default function PageMain() {
         </ul>
 
         <p className="orbs__closing">
-          The Orbs function as one integrated system: Origin to Sovereignty,
-          Resonance to Transparency, Light to Memory, Harmonics to Alchemy,
-          Temporal Intelligence, Ancestry to Sovereign Presence, and Bridging
-          the whole.
+          <span className="orbs__closing-lead">
+            The Orbs function as one integrated system.
+          </span>
+          <span className="orbs__closing-relations">
+            Origin to Sovereignty
+            <br />
+            Resonance to Transparency · Light to Memory
+            <br />
+            Harmonics to Alchemy · Temporal Intelligence
+            <br />
+            Ancestry to Sovereign Presence · Bridging the whole
+          </span>
         </p>
       </section>
     

@@ -83,7 +83,7 @@ export default function PageMain() {
         <figure className="book-quote book-quote--home">
           <p className="book-quote__label">Body Signal</p>
           <blockquote>
-            <p>The body is where the universe becomes personal.</p>
+            <p>The body is where cosmic continuity becomes lived experience.</p>
           </blockquote>
         </figure>
       </section>

@@ -18,7 +18,7 @@ export default async function OrderSuccessPage({
   const raw = searchParams.session_id
   const sessionId = typeof raw === 'string' ? raw : null
   if (!sessionId) {
-    redirect('/order/direct')
+    redirect('/order')
   }
 
   let paid = false
@@ -34,7 +34,7 @@ export default async function OrderSuccessPage({
     emailHint = session.customer_details?.email ?? session.customer_email ?? null
     ref = session.id.replace(/^cs_/, '').slice(0, 12).toUpperCase()
   } catch {
-    redirect('/order/direct')
+    redirect('/order')
   }
 
   return (
