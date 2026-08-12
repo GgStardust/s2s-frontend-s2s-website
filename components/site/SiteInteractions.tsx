@@ -1,8 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function SiteInteractions() {
+  const pathname = usePathname()
+
   useEffect(() => {
     /* Viewport-triggered reveals */
     const revealNodes = document.querySelectorAll(
@@ -68,6 +71,15 @@ export default function SiteInteractions() {
     })
 
     const allReveal = [...revealNodes, ...slowRevealNodes]
+    const revealVisibleInViewport = () => {
+      allReveal.forEach((el) => {
+        if (el.classList.contains('is-visible')) return
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible')
+        }
+      })
+    }
 
     let io: IntersectionObserver | null = null
     if ('IntersectionObserver' in window) {
@@ -86,6 +98,8 @@ export default function SiteInteractions() {
     } else {
       allReveal.forEach((el) => el.classList.add('is-visible'))
     }
+
+    const fallbackTimer = window.setTimeout(revealVisibleInViewport, 900)
 
     /* /orbs progressive lenses */
     const orbField = document.querySelector('.orb-field')
@@ -199,10 +213,11 @@ export default function SiteInteractions() {
     }
 
     return () => {
+      window.clearTimeout(fallbackTimer)
       io?.disconnect()
       cleanupFns.forEach((fn) => fn())
     }
-  }, [])
+  }, [pathname])
 
   return null
 }
