@@ -98,7 +98,7 @@ export default function PageMain() {
           </h3>
         </header>
         <blockquote className="book-passage__text">
-          <p>
+          <p className="book-passage__line book-passage__line--elemental">
             With every breath, matter forged in stellar fire crosses the threshold into you, continuing a journey that began long before Earth existed.
           </p>
         </blockquote>
@@ -115,8 +115,10 @@ export default function PageMain() {
           </h3>
         </header>
         <blockquote className="book-passage__text">
-          <p>How does intelligence translate into lived, biological experience?</p>
-          <p>
+          <p className="book-passage__line book-passage__line--guide">
+            How does intelligence translate into lived, biological experience?
+          </p>
+          <p className="book-passage__line book-passage__line--embodied">
             Hum a single note. The vibration moves through your chest, your ribs, the space around you. The body registers it before thought names it. Your voice creates waves that travel through air, walls, and the space between you and another. Inwardly, the same movement occurs. Pattern expresses as sensation, rhythm, and internal shift before language forms.
           </p>
         </blockquote>
@@ -151,7 +153,7 @@ export default function PageMain() {
           <p>
             Old light travels across distance. Matter forged in stellar cores circulates through living form. Memory moves as structure in motion.
           </p>
-          <p>Layers nest.</p>
+          <p className="book-passage__line book-passage__line--nest">Layers nest.</p>
           <p>
             At the stellar layer, matter forged in cosmic processes anchors inheritance beyond history. At the ancestral layer, continuity carries through lineage as transmission. At the cellular layer, pattern registers as rhythm and response within biology. What carries forward is the pattern that enables recognition, responsibility, and future transmission.
           </p>
@@ -168,10 +170,19 @@ export default function PageMain() {
           </p>
         </header>
         <blockquote className="book-passage__text">
-          <p>
-            Moving through this threshold is registered first in the body. Balance adjusts. Breath deepens or pauses. Ground reorganizes. Effort decreases in holding position. Clarity increases in movement. Familiar patterns release. Space opens. Relief accompanies release. Direction forms within openness.
+          <p>Moving through this threshold is registered first in the body.</p>
+          <p>Balance adjusts.</p>
+          <p>Breath deepens or pauses.</p>
+          <p>Ground reorganizes.</p>
+          <p>Effort decreases in holding position.</p>
+          <p>Clarity increases in movement.</p>
+          <p>Familiar patterns release.</p>
+          <p>Space opens.</p>
+          <p>Relief accompanies release.</p>
+          <p className="book-passage__line book-passage__line--turn">
+            Direction forms within openness.
           </p>
-          <p>
+          <p className="book-passage__line book-passage__line--continue">
             Sensation refines. Context becomes readable through the body. Precision appears. As structure releases, navigation sharpens. Direction remains steady while prior frameworks fall behind, like light extending forward as it moves.
           </p>
         </blockquote>
@@ -187,19 +198,19 @@ export default function PageMain() {
           </p>
         </header>
         <blockquote className="book-passage__text">
-          <p>
+          <p className="book-passage__encounter book-passage__encounter--a">
             You are with others and the next step becomes obvious without instruction. No one directs. No one yields authority. Each remains self-directed while something shared holds the orientation. Coordination is already underway. That is the bridge in lived form.
           </p>
-          <p>
+          <p className="book-passage__encounter book-passage__encounter--b">
             You stand with an animal or in a place and your breath shifts before thought arrives. Attention settles. You feel yourself and you feel met. No force moves between you. Alignment organizes the exchange.
           </p>
-          <p>
+          <p className="book-passage__encounter book-passage__encounter--c">
             You engage a tool or system and it responds without friction. Intention translates cleanly into function. Feedback clarifies rather than resists. The interaction feels reciprocal rather than compliant.
           </p>
-          <p>
+          <p className="book-passage__encounter book-passage__encounter--d">
             A group reaches shared orientation while everyone remains sovereign. The step appears to many at once. Movement proceeds without central command.
           </p>
-          <p>
+          <p className="book-passage__encounter book-passage__encounter--close">
             In each case, distinct participants remain intact while something common organizes timing and response. Coordination arises through shared alignment. That is the bridge operating in your life.
           </p>
         </blockquote>
@@ -219,7 +230,7 @@ export default function PageMain() {
           <p>Recognition rests.</p>
           <p>Breath moves.</p>
           <p>Presence holds.</p>
-          <p>The blueprint stands revealed</p>
+          <p className="book-passage__line book-passage__line--terminal">The blueprint stands revealed</p>
         </blockquote>
       </section>
 
