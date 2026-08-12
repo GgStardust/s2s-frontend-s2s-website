@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
     locale: 'en_US',
-    images: [{ url: '/og-v5.png', width: 1200, height: 630, alt: 'Stardust to Sovereignty' }],
+    images: [{ url: '/og-v6.png', width: 1200, height: 630, alt: 'Stardust to Sovereignty' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stardust to Sovereignty',
     description:
       'Stardust to Sovereignty follows intelligence, participation, coherence, and the living forms through which origin remains present.',
-    images: ['/og-v5.png'],
+    images: ['/og-v6.png'],
     creator: '@gigi_stardust',
   },
   robots: { index: true, follow: true },
