@@ -166,6 +166,11 @@ export default function PageMain() {
             As recurrence becomes legible, the language becomes more precise:
             field, signal, resonance, sovereignty, Orbs.
           </p>
+          <p className="lf-line lf-line--quiet">
+            Within S2S, intelligence names organizing pattern already in motion.
+            Consciousness is the perceptual interface through which that order
+            becomes recognizable.
+          </p>
           <img
             className="living-field__glyph"
             src="/assets/glyphs/glyph_16.png"

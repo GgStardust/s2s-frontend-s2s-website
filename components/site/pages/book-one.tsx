@@ -118,7 +118,8 @@ export default function PageMain() {
           <div className="book-desc__stages">
             <p className="body-dark">
               Book One begins with carbon, oxygen, calcium, iron, water, and
-              electrical charge. The body carries evidence.
+              electrical charge. The body is where the inquiry becomes
+              observable.
             </p>
             <p className="body-dark">
               Breath changes before an answer arrives. Timing opens or closes.
@@ -195,4 +196,3 @@ export default function PageMain() {
     </main>
   )
 }
-
