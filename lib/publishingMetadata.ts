@@ -15,12 +15,12 @@ export const BOOK_CATALOG = {
     'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body to sovereign participation. Book One of Stardust to Sovereignty.',
   /** Full retailer description (~150–250 words; aligned with lib/amazonCopy.ts). */
   catalogDescriptionFull:
-    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body, through time, memory, and relationship, toward sovereignty as participation without loss of origin. This is the first published volume of Stardust to Sovereignty, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception. The book moves through fourteen structural chapters and imaginative passages that carry the same design in a different register. Some passages land as recognition. Others bring structure gently into view. Together they trace the arc from stellar origins to sovereign participation: how inner order becomes legible in the life you already live. The book names thirteen interlocking capacities already active within awareness. Back matter includes a consciousness architecture overview, paradigm statement, series note, and glossary. Gigi Stardust\'s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
+    'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body, through time, memory, and relationship, toward sovereignty as participation without loss of origin. This is the first completed literary embodiment of Stardust to Sovereignty, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception. The book moves through fourteen structural chapters and imaginative passages that carry the same design in a different register. Some passages land as recognition. Others bring structure gently into view. Together they trace the arc from stellar origins to sovereign participation: how inner order becomes legible in the life you already live. The book names thirteen interlocking capacities already active within awareness. Back matter includes a consciousness architecture overview, paradigm statement, series note, and glossary. Gigi Stardust\'s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
   /** ~155–165 chars for HTML meta tags */
   metaDescription:
     'The Cosmic Tapestry (Book One, Stardust to Sovereignty) by Gigi Stardust: a map of recognition from stellar origin through the body to sovereign participation.',
   authorBioShort:
-    'Gigi Stardust\u2019s life has evolved toward one question: how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first volume of Stardust to Sovereignty.',
+    'Gigi Stardust\u2019s life has evolved toward one question: how intelligence becomes recognizable in living form. The Cosmic Tapestry is the first completed literary embodiment of Stardust to Sovereignty.',
 } as const
 
 /** Deduped search phrases (KDP / site keywords) */
@@ -67,7 +67,7 @@ export const BACK_COVER_COPY = {
     'Sovereignty emerges as the perceptual state that arises when structure is recognized and lived.',
   ],
   closingCredit:
-    'Gigi Stardust is a writer and systems thinker exploring the architecture of consciousness. The Cosmic Tapestry is the first volume in the Stardust to Sovereignty trilogy.',
+    'Gigi Stardust is a writer and systems thinker exploring the architecture of consciousness. The Cosmic Tapestry is the first completed literary embodiment of Stardust to Sovereignty.',
   colophonLines: ['S2S Press', 'Cover design and art by Gigi Stardust', 'Philosophy | Metaphysics | Mind-Body'],
 } as const
 
@@ -207,9 +207,9 @@ export const BOOK_ONE_BACK_MATTER = {
       ],
     },
     {
-      title: 'The Trilogy',
+      title: 'Series Note',
       paragraphs: [
-        'Places Book One within the larger three-book arc. The progression moves from sovereign individual, to coherent civilization, to participatory species.',
+        'Places Book One within the larger Stardust to Sovereignty field while leaving future embodiments open.',
       ],
     },
     {

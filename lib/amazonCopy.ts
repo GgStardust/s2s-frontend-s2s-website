@@ -21,7 +21,7 @@ export const AMAZON_DESCRIPTION_OPENING =
 /** Plain text for KDP description box (line breaks preserved). */
 export const AMAZON_DESCRIPTION_PLAIN = `${AMAZON_DESCRIPTION_OPENING}
 
-This is the first published volume of Stardust to Sovereignty, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception.
+This is the first completed literary embodiment of Stardust to Sovereignty, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception.
 
 ${BOOK_CATALOG.title} moves through fourteen structural chapters and imaginative passages that carry the same design in a different register. Some passages land as recognition. Others bring structure gently into view. Together they trace the arc from stellar origins to sovereign participation: how inner order becomes legible in the life you already live.
 
@@ -31,12 +31,12 @@ Book One asks: How does a human become a coherent, self-aware field of intellige
 
 Gigi Stardust's life has been an evolution toward one question: how does intelligence become recognizable in living form?
 
-The Stardust to Sovereignty series continues with The Living Civilization (Book Two) and The Resonant Species (Book Three).` as const
+Stardust to Sovereignty continues through writing, inquiry, observation, making, and future public forms that will be shared when they are ready.` as const
 
 /** KDP accepts basic HTML in the description field. */
 export const AMAZON_DESCRIPTION_HTML = `<p><i>${AMAZON_DESCRIPTION_OPENING}</i></p>
 
-<p>This is the first published volume of <b>Stardust to Sovereignty</b>, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception.</p>
+<p>This is the first completed literary embodiment of <b>Stardust to Sovereignty</b>, an inquiry into consciousness as a living structure active across scales of reality. Recognition came before theory. Structure emerged when language caught up to processes already moving through embodiment, relationship, and perception.</p>
 
 <p><b>${BOOK_CATALOG.title}</b> moves through fourteen structural chapters and imaginative passages that carry the same design in a different register. Some passages land as recognition. Others bring structure gently into view. Together they trace the arc from stellar origins to sovereign participation: how inner order becomes legible in the life you already live.</p>
 
@@ -46,7 +46,7 @@ export const AMAZON_DESCRIPTION_HTML = `<p><i>${AMAZON_DESCRIPTION_OPENING}</i><
 
 <p>Gigi Stardust's life has been an evolution toward one question: how does intelligence become recognizable in living form?</p>
 
-<p>The Stardust to Sovereignty series continues with <i>The Living Civilization</i> (Book Two) and <i>The Resonant Species</i> (Book Three).</p>` as const
+<p>Stardust to Sovereignty continues through writing, inquiry, observation, making, and future public forms that will be shared when they are ready.</p>` as const
 
 /** KDP allows 7 keyword phrases (max 50 characters each). */
 export const AMAZON_KEYWORDS = [
@@ -61,7 +61,7 @@ export const AMAZON_KEYWORDS = [
 
 /** Amazon Author Central / “About the author” (third person). */
 export const AMAZON_AUTHOR_BIO =
-  "Gigi Stardust's life has been an evolution toward one question: how does intelligence become recognizable in living form? Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author. The Cosmic Tapestry is the first published volume of Stardust to Sovereignty." as const
+  "Gigi Stardust's life has been an evolution toward one question: how does intelligence become recognizable in living form? Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems thinker, and author. The Cosmic Tapestry is the first completed literary embodiment of Stardust to Sovereignty." as const
 
 /** One-line catalog blurb (A+ Content, ads, short fields). */
 export const AMAZON_CATALOG_BLURB =

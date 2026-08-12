@@ -11,9 +11,10 @@ export default function Navigation() {
   const isHome = pathname === '/';
 
   const navItems: Array<{ href: string; label: string }> = [
-    { href: '/s2s', label: 'S2S' },
     { href: '/book-one', label: 'Book One' },
+    { href: '/s2s', label: 'S2S' },
     { href: '/inquiry', label: 'Inquiry' },
+    { href: '/orbs', label: 'Orbs' },
     { href: '/gigi', label: 'Gigi' },
   ];
 

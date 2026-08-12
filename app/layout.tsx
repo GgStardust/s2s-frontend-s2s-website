@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     template: '%s | Stardust to Sovereignty',
   },
   description:
-    'Stardust to Sovereignty by Gigi Stardust follows how intelligence becomes form, enters consequence through participation, and remains in recoverable relation with source.',
+    'Stardust to Sovereignty by Gigi Stardust follows intelligence, participation, coherence, and the living forms through which origin remains present.',
   metadataBase: new URL('https://stardusttosovereignty.com'),
   authors: [{ name: 'Gigi Stardust', url: 'https://stardusttosovereignty.com/gigi' }],
   creator: 'Gigi Stardust',
   openGraph: {
     title: 'Stardust to Sovereignty',
     description:
-      'Stardust to Sovereignty follows how intelligence becomes form, enters consequence through participation, and remains in recoverable relation with source.',
+      'Stardust to Sovereignty follows intelligence, participation, coherence, and the living forms through which origin remains present.',
     type: 'website',
     url: 'https://stardusttosovereignty.com',
     siteName: 'Stardust to Sovereignty',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Stardust to Sovereignty',
     description:
-      'Stardust to Sovereignty follows how intelligence becomes form, enters consequence through participation, and remains in recoverable relation with source.',
+      'Stardust to Sovereignty follows intelligence, participation, coherence, and the living forms through which origin remains present.',
     images: ['/og-v5.png'],
     creator: '@gigi_stardust',
   },

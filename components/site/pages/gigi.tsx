@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from '@/lib/content'
+
 export default function PageMain() {
   return (
     <main id="main">
@@ -57,7 +59,7 @@ export default function PageMain() {
         <div className="gigi-method__inner">
           <p className="label">How Inquiry Moves</p>
           <h2 id="gigi-method-title" className="display display--section">
-            Something catches before the question has language.
+            The pattern gathers before it has a name.
           </h2>
           <ol className="gigi-method__steps">
             <li>
@@ -92,22 +94,11 @@ export default function PageMain() {
             For publishing, media, collaboration, speaking, and general inquiries.
           </p>
 
-          <form className="contact-form" id="contact-form" noValidate>
-            <div className="contact-form__field">
-              <label htmlFor="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" autoComplete="name" required />
-            </div>
-            <div className="contact-form__field">
-              <label htmlFor="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" autoComplete="email" required />
-            </div>
-            <div className="contact-form__field">
-              <label htmlFor="contact-message">Message</label>
-              <textarea id="contact-message" name="message" rows={6} required></textarea>
-            </div>
-            <button className="contact-form__submit" type="submit">Send</button>
-            <p className="contact-form__status" id="contact-status" role="status" aria-live="polite" hidden={true} />
-          </form>
+          <p className="contact-direct">
+            <a className="text-link" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL} <span aria-hidden="true">→</span>
+            </a>
+          </p>
         </div>
       </section>
     

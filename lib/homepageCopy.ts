@@ -21,7 +21,7 @@ export const READ_PAGE_LEAD =
 /** Home: flowing prose under the book title (no FAQ headers). */
 export const BOOK_HOME_BODY = [
   'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through the body, through time, memory, and relationship, toward sovereignty as participation without loss of origin.',
-  'This is the first volume in Stardust to Sovereignty, the name given to the system the book describes. It establishes recognition at human scale. Later volumes carry that design into civilization and species life.',
+  'This is the first completed literary embodiment of Stardust to Sovereignty. It establishes recognition at human scale while the larger field remains open to future forms.',
   'Structural chapters and imaginative passages work together. Some passages land as recognition. Others bring structure gently into view. The book is offered as a companion in that recognition.',
 ] as const
 
@@ -63,17 +63,17 @@ export const ABOUT_AUTHOR = {
   heading: 'About the author',
   body: [
     'Gigi Stardust\u2019s life has been an evolution toward one question: how does intelligence become recognizable in living form?',
-    'Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems architect, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
-    'Observation across science, systems thinking, technology, business, mythology, and lived experience gathered over a lifetime into the Stardust Current: a living field expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first published volume.',
+    'Her work emerged through building businesses, studying living systems, documenting recurring patterns, and exploring the relationship between people, place, nature, and technology. She is an independent researcher, systems thinker, and author exploring the relationship between consciousness, biology, creativity, civilization, and the cosmos.',
+    'Observation across science, systems thinking, technology, business, mythology, and lived experience gathered over a lifetime into the Stardust Current: a living field expressed through books, essays, field reports, fiction, and emerging technologies. The Cosmic Tapestry is its first completed literary embodiment.',
   ],
 } as const
 
 export const HOMEPAGE_SERIES = {
-  title: 'The trilogy',
+  title: 'The larger field',
   lead:
-    'Stardust to Sovereignty is three volumes. The Cosmic Tapestry is Book One. Each volume stands alone.',
+    'Stardust to Sovereignty is larger than any single vessel. The Cosmic Tapestry is Book One and stands complete on its own.',
   bookOne:
     'The Cosmic Tapestry asks: How does a human become a coherent, self-aware field of intelligence?',
-  bookTwo: 'The Living Civilization asks: What does society become when coherence organizes collective life?',
-  bookThree: 'The Resonant Species asks: What does a species become when it participates consciously in cosmic evolution?',
+  bookTwo: 'Future public forms will be shared when they are ready.',
+  bookThree: 'The field remains active through writing, inquiry, observation, making, and encounter.',
 } as const

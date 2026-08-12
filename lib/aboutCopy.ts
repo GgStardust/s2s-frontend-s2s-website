@@ -17,8 +17,8 @@ export const ABOUT_ECOSYSTEM = {
       text: 'Book One establishes individual coherence: origin, body, memory, perception, time, and the thirteen Orbs as lived capacities.',
     },
     {
-      name: 'The S2S Interface',
-      text: 'A structural mapping process that brings the architecture of awareness into view, revealing movements, signals, and intelligences already shaping experience.',
+      name: 'The S2S Inquiry',
+      text: 'An open field of questions that helps movements, signals, and patterns become recognizable without closing the work too quickly.',
     },
   ],
 } as const;

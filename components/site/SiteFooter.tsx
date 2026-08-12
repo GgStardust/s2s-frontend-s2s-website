@@ -5,8 +5,8 @@ export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__grid site-footer__grid--links">
-        <Link href="/s2s">S2S</Link>
         <Link href="/book-one">Book One</Link>
+        <Link href="/s2s">S2S</Link>
         <Link href="/inquiry">Inquiry</Link>
         <Link href="/orbs">Orbs</Link>
         <Link href="/gigi">Gigi</Link>

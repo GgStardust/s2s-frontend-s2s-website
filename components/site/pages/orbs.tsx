@@ -12,52 +12,19 @@ export default function PageMain() {
               within S2S.
             </h1>
             <p className="lede">
-              The Orbs are primary interpretive intelligences and structural principles within Stardust to Sovereignty.
+              Each Orb is a foundational frequency field within Stardust to Sovereignty.
             </p>
             <p className="lede">
-              They help make origin, resonance, relation, memory, time, transformation,
-              sovereignty, and bridging across scales recognizable.
+              Together, they form the backbone of the architecture: thirteen structural
+              principles through which origin, resonance, reflection, pattern, time, memory,
+              transformation, intuition, ancestry, clarity, sovereignty, and bridging take form.
             </p>
             <p className="orbs__boundary">
-              These terms have specific meanings inside S2S. The same world becomes recognizable through different Orbs.
+              They function as design keys. Function names what an Orb does; expression reveals
+              how it becomes recognizable in lived experience.
             </p>
           </div>
         </div>
-
-        <section className="orb-demo" aria-labelledby="orb-demo-title">
-          <div className="orb-demo__head">
-            <p className="label">One situation through several Orbs</p>
-            <h2 id="orb-demo-title" className="display display--section">
-              A technology becomes part of ordinary life.
-            </h2>
-          </div>
-          <dl className="orb-demo__list">
-            <div>
-              <dt>Resonance Mechanics</dt>
-              <dd>notices how signal, rhythm, and participation reorganize around the tool.</dd>
-            </div>
-            <div>
-              <dt>Harmonic Architectures</dt>
-              <dd>notices the pattern stabilizing into infrastructure.</dd>
-            </div>
-            <div>
-              <dt>Temporal Sovereignty</dt>
-              <dd>notices rhythm, pace, attention, and time changing.</dd>
-            </div>
-            <div>
-              <dt>Ancestral Repatterning</dt>
-              <dd>notices what gets inherited as ordinary.</dd>
-            </div>
-            <div>
-              <dt>Sovereign Field</dt>
-              <dd>asks whether human coherence remains intact inside the system.</dd>
-            </div>
-            <div>
-              <dt>Bridging Intelligence</dt>
-              <dd>tracks translation between human and machine intelligence.</dd>
-            </div>
-          </dl>
-        </section>
 
         <ul className="orb-field" role="list">
           <li className="orb-lens">
@@ -78,7 +45,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-01" role="region" aria-hidden="true">
-              <p>Source entering form: the first coherent orientation of being.</p>
+              <p>Holds the origination code of embodiment: pre-form light encoding meeting biological activation. Stellar inheritance becomes cellular ignition, the living foundation through which sovereignty expresses.</p>
             </div>
           </li>
 
@@ -100,7 +67,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-02" role="region" aria-hidden="true">
-              <p>How signal moves, meets, amplifies, and organizes relationship and form.</p>
+              <p>Translates encoded signal into structure. Sound, emotion, vibration, and resonance fields become the architecture through which form broadcasts.</p>
             </div>
           </li>
 
@@ -122,7 +89,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-03" role="region" aria-hidden="true">
-              <p>Recognition through light, reflection, contrast, and relationship.</p>
+              <p>Opens light webs and relational mirrors for field observation. Reflection initiates coherence; contrast becomes synthesis and inner code becomes visible.</p>
             </div>
           </li>
 
@@ -144,7 +111,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-04" role="region" aria-hidden="true">
-              <p>Pattern, proportion, and rhythm that allow coherence to hold.</p>
+              <p>Stabilizes pattern as the bridge between fields. Harmonic law, proportion, geometry, and rhythm hold coherence, including collapse as recalibration.</p>
             </div>
           </li>
 
@@ -166,7 +133,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-05" role="region" aria-hidden="true">
-              <p>Time experienced through internal rhythm, pacing, and alignment.</p>
+              <p>Reclaims time as tool rather than container. Spiral rhythm, rest-phase logic, and field integrity make pacing part of sovereignty.</p>
             </div>
           </li>
 
@@ -188,7 +155,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-06" role="region" aria-hidden="true">
-              <p>Memory and continuity carried across lineage and scale.</p>
+              <p>Carries galactic intelligence and ancestral recall. Memory returns as signal through living strands of history across bodies, lineages, and consciousness networks.</p>
             </div>
           </li>
 
@@ -210,7 +177,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-07" role="region" aria-hidden="true">
-              <p>Transformation through pressure, intensity, release, and reorganization.</p>
+              <p>Moves the alchemy of experience. Density becomes light through heat, compression, pulse, emotional intensity, energetic holding, and release.</p>
             </div>
           </li>
 
@@ -232,7 +199,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-08" role="region" aria-hidden="true">
-              <p>Nonlinear directional knowing within uncertainty and possibility.</p>
+              <p>Aligns decisions with signal logic. Intuition becomes infrastructure: nonlinear, subtle, precise direction within uncertainty and open possibility.</p>
             </div>
           </li>
 
@@ -254,7 +221,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-09" role="region" aria-hidden="true">
-              <p>Movement through changing temporal conditions while maintaining coherence.</p>
+              <p>Moves with the field moment by moment. Temporal conditions shift while coherence travels through multidimensional resonance without fragmentation.</p>
             </div>
           </li>
 
@@ -276,7 +243,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-10" role="region" aria-hidden="true">
-              <p>Inherited patterns becoming available for conscious transformation.</p>
+              <p>Regenerates inherited pattern as conscious form. Body becomes myth as personal storylines merge with collective DNA, soul-coded history, and repatterned ancestry.</p>
             </div>
           </li>
 
@@ -298,7 +265,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-11" role="region" aria-hidden="true">
-              <p>Inner coherence becoming visible with clarity.</p>
+              <p>Expresses full-field coherence. Inner architecture becomes radiant, and truth takes luminous form through transparency as frequency.</p>
             </div>
           </li>
 
@@ -320,7 +287,7 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-12" role="region" aria-hidden="true">
-              <p>The integrated state in which the whole field coheres.</p>
+              <p>The integrated state in which every Orb activates. Coherence becomes field: total, radiant, whole, a sovereign architecture of communion without loss of self.</p>
             </div>
           </li>
 
@@ -342,12 +309,12 @@ export default function PageMain() {
               </span>
             </button>
             <div className="orb-desc" id="orb-desc-13" role="region" aria-hidden="true">
-              <p>Translation and exchange across distinct forms of intelligence.</p>
+              <p>Bridges interface zones for signal contact across dimensions and species. Pattern translates through resonance while integrity is preserved across difference.</p>
             </div>
           </li>
         </ul>
 
-        <p className="orbs__closing">The same world becomes recognizable through different Orbs.</p>
+        <p className="orbs__closing">The Orbs are the answers. Each one gives a foundational inquiry architectural form.</p>
       </section>
     
     </main>

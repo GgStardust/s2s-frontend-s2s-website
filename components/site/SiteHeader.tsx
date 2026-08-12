@@ -6,8 +6,9 @@ import { useEffect, useState } from 'react'
 
 const NAV = [
   { href: '/book-one', label: 'Book One' },
-  { href: '/inquiry', label: 'Inquiry' },
   { href: '/s2s', label: 'S2S' },
+  { href: '/inquiry', label: 'Inquiry' },
+  { href: '/orbs', label: 'Orbs' },
   { href: '/gigi', label: 'Gigi' },
 ] as const
 

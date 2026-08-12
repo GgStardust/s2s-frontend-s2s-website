@@ -10,14 +10,14 @@ export const SITE = {
   shortName: 'S2S',
   author: 'Gigi Stardust',
   description:
-    'Gigi Stardust writes and builds Stardust to Sovereignty, an inquiry into intelligence, relationship, technology, creativity, sovereignty, and the future human.',
+    'Gigi Stardust writes and builds Stardust to Sovereignty, an inquiry into intelligence, relationship, creativity, sovereignty, technology, and the future human.',
 };
 
 export const HOME = {
   eyebrow: SITE.name,
   title: 'Start with the body. Follow the work outward.',
   lead:
-    'Book One is available now. Stardust to Sovereignty follows intelligence, relationship, technology, creativity, sovereignty, and the future human.',
+    'Book One is available now. Stardust to Sovereignty follows intelligence, relationship, creativity, sovereignty, technology, and the future human.',
   premise:
     'It began as observation, inquiry, experience, presence, long-form research, and long-form writing. The architecture existed first as instinct, as coherence, as patterns that repeated with precision. Language arrived later to recognize the system.',
   inquiry:
@@ -145,7 +145,7 @@ export const ENTRY_POINTS = [
 
 export const WORK = {
   eyebrow: 'The Work',
-  title: 'The work is becoming a medium',
+  title: 'The work changes form',
   lead:
     'The question begins close to the skin: what allows a human being to change, enter relationship, and remain whole? From there, it followed me into communities, institutions, civilizations, planets, other forms of intelligence, and finally into the question of form itself.',
   originHeading: 'The premise',
@@ -173,7 +173,7 @@ export const WORK = {
     'Book One stays close to the body and the emergence of a sovereign self. From there, the work enters a world crowded with other people, place, power, memory, inheritance, consequence, and technology. Future public forms will be shared when they are ready.',
   orientation:
     'What allows a living work to enter a larger world while keeping hold of the thread of what gave it life?',
-  closing: 'The body is where the question became impossible to keep theoretical. The medium is where it becomes buildable.',
+  closing: 'The body is where the question became impossible to keep theoretical. Future forms are where the work becomes available to encounter.',
 };
 
 export const BOOK_ONE = {
@@ -184,7 +184,7 @@ export const BOOK_ONE = {
     'A system reveals itself in the same way truth does: by arriving before language, waiting for attention to catch up.',
   introduction: [
     'The Cosmic Tapestry maps how lawful order becomes recognizable in a human life: from stellar origin through body, time, memory, and relationship, toward sovereignty as participation that carries origin forward.',
-    'This is the first volume of Stardust to Sovereignty, the name given to the system the book describes. It establishes the inquiry at human scale. Later volumes carry it into civilization and species life.',
+    'This is the first completed literary embodiment of Stardust to Sovereignty. It establishes the inquiry at human scale while the larger field remains open to future forms.',
     'Structural chapters and imaginative passages work together. Some arrive as recognition. Others bring the architecture gently into view. The book is offered as a companion to what the reader may already sense.',
   ],
   originHeading: 'Before the book',

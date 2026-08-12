@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import { siteConfig } from '@/lib/site/site-config'
 
 export default function SiteInteractions() {
   useEffect(() => {
@@ -19,7 +18,6 @@ export default function SiteInteractions() {
         '.book-reader-proposition',
         '.paradigm__copy',
         '.paradigm__aside',
-        '.s2s-practice__inner',
         '.inquiry-list li',
         '.inquiry-unit',
         '.inquiry-engine__label',
@@ -27,7 +25,6 @@ export default function SiteInteractions() {
         '.inquiry-attraction__q',
         '.inquiry-close__inner',
         '.orb-grid li',
-        '.orb-demo',
         '.orb-lens',
         '.gigi__grid',
         '.gigi-bio',
@@ -41,7 +38,6 @@ export default function SiteInteractions() {
         '.lf-pair',
         '.living-field__close',
         '.s2s-creativity__inner',
-        '.s2s-future-forms__inner',
         '.inquiry-attraction__word:not(.inquiry-attraction__word--soft)',
         '.book-quote:not(.book-quote--intimate):not(.book-quote--late)',
       ].join(', ')
@@ -200,49 +196,6 @@ export default function SiteInteractions() {
         units.forEach((unit) => unit.removeEventListener('toggle', onToggle))
         window.removeEventListener('hashchange', openFromHash)
       })
-    }
-
-    /* Contact form */
-    const contactForm = document.querySelector('#contact-form') as HTMLFormElement | null
-    if (contactForm) {
-      const status = document.querySelector('#contact-status') as HTMLElement | null
-      const submit = contactForm.querySelector('.contact-form__submit') as HTMLButtonElement | null
-
-      const setStatus = (message: string, kind = 'info') => {
-        if (!status) return
-        status.hidden = false
-        status.dataset.kind = kind
-        status.textContent = message
-      }
-
-      const onSubmit = async (event: Event) => {
-        event.preventDefault()
-        const action = siteConfig.contactFormAction.trim()
-        if (!action) {
-          setStatus('Contact is not configured yet. Please try again later.', 'error')
-          return
-        }
-        const formData = new FormData(contactForm)
-        if (submit) submit.disabled = true
-        setStatus('Sending…', 'info')
-        try {
-          const response = await fetch(action, {
-            method: 'POST',
-            body: formData,
-            headers: { Accept: 'application/json' },
-          })
-          if (!response.ok) throw new Error(`Request failed: ${response.status}`)
-          contactForm.reset()
-          setStatus('Message sent.', 'success')
-        } catch {
-          setStatus('Unable to send right now. Please try again later.', 'error')
-        } finally {
-          if (submit) submit.disabled = false
-        }
-      }
-
-      contactForm.addEventListener('submit', onSubmit)
-      cleanupFns.push(() => contactForm.removeEventListener('submit', onSubmit))
     }
 
     return () => {

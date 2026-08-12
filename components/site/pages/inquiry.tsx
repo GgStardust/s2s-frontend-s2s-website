@@ -209,7 +209,7 @@ export default function PageMain() {
 
           <div className="inquiry-attraction-field" aria-labelledby="attraction-field-title">
             <h2 id="attraction-field-title" className="inquiry-attraction__q">
-              What draws us toward life, creation, relationship, and discovery?
+              Attraction remains an open current.
             </h2>
             <ul className="inquiry-attraction" aria-label="Forces of attraction">
               {attractionWords.map((word) => (

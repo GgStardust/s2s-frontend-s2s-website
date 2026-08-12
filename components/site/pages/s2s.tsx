@@ -12,16 +12,13 @@ export default function PageMain() {
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
-              Stardust to Sovereignty follows intelligence through body, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+              The inquiry moves through body, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
             </p>
             <p className="body-dark">
               Resonance surrounds the inquiry: rhythm, signal, dissonance, coherence, recognition, and the conditions through which participation becomes form.
             </p>
             <p className="body-dark">
-              Technology and creativity are active movements within that inquiry.
-            </p>
-            <p className="body-dark">
-              Book One is the first completed literary embodiment. The larger S2S field is active through writing, making, observation, inquiry, and forms still coming into view.
+              Book One is the first completed literary embodiment. The larger S2S field remains active through writing, making, observation, and public forms still coming into view.
             </p>
           </div>
           <figure className="s2s-register__glyph" aria-hidden="true">
@@ -156,7 +153,7 @@ export default function PageMain() {
 
         <footer className="living-field__close">
           <p className="lf-line lf-line--close">
-            Stardust to Sovereignty follows intelligence where it appears: through what repeats, changes, arrives, disappears, returns, resonates, and becomes available to recognition.
+            Intelligence appears through what repeats, changes, arrives, disappears, returns, resonates, and becomes available to recognition.
           </p>
           <img
             className="living-field__glyph"
@@ -189,7 +186,7 @@ export default function PageMain() {
           </div>
 
           <figure className="book-quote book-quote--s2s book-quote--ink">
-            <p className="book-quote__label book-quote__label--light">From The Cosmic Tapestry</p>
+            <p className="book-quote__label book-quote__label--light">Human Systems</p>
             <blockquote>
               <p>Technology reflects the coherence of the human systems that design and use it.</p>
             </blockquote>
@@ -197,30 +194,30 @@ export default function PageMain() {
 
           <div className="s2s-prose">
             <p className="body-dark">
-              The question beneath progress is larger than what technology can do for us.
+              The question beneath progress is larger than utility.
             </p>
             <p className="body-dark">
-              Technology can open capacity, carry capacity, or replace the practice of capacity.
+              Technology can extend agency, carry labor, or change what humans practice.
             </p>
             <p className="body-dark">
-              As systems grow easier, what becomes available for perception, attention, creativity, consciousness, participation, and development?
+              As systems grow easier, what becomes available for perception, attention, creativity, consciousness, and development?
             </p>
             <p className="body-dark">
-              And which forms of memory, skill, agency, or bodily intelligence receive less practice because infrastructure now carries them?
+              Which forms of memory, skill, agency, or bodily intelligence move into infrastructure?
             </p>
             <p className="body-dark">
-              The future human is shaped by which capacities are strengthened, which are allowed
-              to disappear, and which choices become ordinary.
+              The future human is shaped by what gets practiced, transferred, refined, and made ordinary.
             </p>
           </div>
 
           <div className="s2s-future-primitive">
             <p className="label label--light">Future Primitive</p>
             <p className="s2s-pressure-line">
-              Progress can recover human capacity instead of trading it away.
+              Progress can return human capacity to practice.
             </p>
             <p className="s2s-future-primitive__horizon">
-              It asks what an advanced civilization might recover: direct perception, embodied intelligence, relation with place, creativity, and sovereign participation with technology.
+              Direct perception, embodied intelligence, relation with place, creativity,
+              and sovereign participation with technology.
             </p>
           </div>
         </div>
@@ -238,10 +235,10 @@ export default function PageMain() {
             Making is part of the inquiry.
           </h2>
           <p className="s2s-creativity__line">
-            Creativity is a capacity through which intelligence becomes form.
+            Creativity is one way intelligence becomes form.
           </p>
           <p className="s2s-creativity__line s2s-creativity__line--follow">
-            Stardust to Sovereignty follows that capacity through writing, perception, making, inquiry, and the human who comes next.
+            Writing, perception, and making give the inquiry public shape.
           </p>
         </div>
       </section>
@@ -261,14 +258,13 @@ export default function PageMain() {
               It includes participation, discernment, refusal, transformation, inheritance, completion, and continuation.
             </p>
             <p className="body-dark s2s-scale-words">Human. Technological. Planetary. Cosmic.</p>
-            <p className="body-dark">Sovereignty strengthens as the field becomes larger.</p>
             <p className="body-dark">
               The movement from stardust to sovereignty is participation at greater scale, held through coherent selfhood.
             </p>
           </div>
 
           <p className="s2s-closing-q">
-            The work asks how we meet the future without giving away human capacity.
+            The work asks how we meet the future with human capacity alive.
           </p>
 
           <figure className="s2s-register__glyph s2s-register__glyph--end" aria-hidden="true">
@@ -304,48 +300,10 @@ export default function PageMain() {
               <dd>The first completed literary embodiment of Stardust to Sovereignty.</dd>
             </div>
             <div>
-              <dt>Future forms</dt>
-              <dd>Books, essays, images, field notes, systems, and encounters as they become ready for public form.</dd>
+              <dt>Gigi</dt>
+              <dd>The authorial presence moving through observation, inquiry, writing, making, and encounter.</dd>
             </div>
           </dl>
-        </div>
-      </section>
-
-      <section className="register register--light s2s-register s2s-orbs" aria-labelledby="s2s-orbs-title">
-        <div className="s2s-register__inner">
-          <p className="label">The 13 Orbs</p>
-          <h2 id="s2s-orbs-title" className="display display--section">
-            The Orbs help track what becomes recognizable.
-          </h2>
-          <div className="s2s-prose s2s-prose--light">
-            <p>
-              Within S2S, the Orbs are primary interpretive intelligences and structural principles. They function as modes of recognition when a pattern, relation, capacity, or system comes into view.
-            </p>
-            <p className="s2s-orb-chain">
-              Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.
-            </p>
-            <p>Each Orb changes what can be recognized.</p>
-            <p>
-              Together, they expand the ways we can perceive ourselves, the systems we inhabit, the world we are creating, and the larger reality in which we participate.
-            </p>
-          </div>
-          <p className="s2s-register__cta">
-            <a className="text-link" href="/orbs">Explore the Orbs <span aria-hidden="true">→</span></a>
-          </p>
-        </div>
-      </section>
-
-      <section
-        className="register register--light s2s-register s2s-future-forms"
-        aria-labelledby="future-forms-title"
-      >
-        <div className="s2s-future-forms__inner">
-          <p className="label" id="future-forms-title">
-            Future Forms
-          </p>
-          <p className="s2s-future-forms__copy">
-            Stardust to Sovereignty is already moving through Book One, inquiry, observation, making, and the living field of encounter. Essays, images, field notes, systems, and future forms will be shared as they become ready for public form.
-          </p>
         </div>
       </section>
 

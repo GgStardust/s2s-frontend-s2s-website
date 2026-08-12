@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import { BOOK_CATALOG } from '@/lib/publishingMetadata'
 
 export const metadata: Metadata = {
-  title: 'Preorder Book One',
-  description: `Preorder ${BOOK_CATALOG.title}. Publication ${BOOK_CATALOG.publicationDateDisplay}. See current print and digital pricing on the order page and retailers.`,
-  keywords: ['preorder', 'book preorder', 'The Cosmic Tapestry', 'Stardust to Sovereignty', 'book one'],
+  title: 'Order Book One',
+  description: `Order ${BOOK_CATALOG.title}, Book One of Stardust to Sovereignty.`,
+  keywords: ['book order', 'The Cosmic Tapestry', 'Stardust to Sovereignty', 'book one'],
   openGraph: {
-    title: `Preorder | ${BOOK_CATALOG.title}`,
-    description: `${BOOK_CATALOG.title} · ${BOOK_CATALOG.publicationDateDisplay}.`,
+    title: `Order | ${BOOK_CATALOG.title}`,
+    description: `${BOOK_CATALOG.title} · Book One of Stardust to Sovereignty.`,
     type: 'website',
     url: 'https://stardusttosovereignty.com/preorder',
   },

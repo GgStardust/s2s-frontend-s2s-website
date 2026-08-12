@@ -18,15 +18,15 @@ export default function PageMain() {
               civilization remains answerable to what gave it life.
             </p>
             <p className="lede lede--quiet">
-              A living field of writing, inquiry, art, technology, and future human
+              A living field of writing, inquiry, art, place, technology, and future human
               capacity by Gigi Stardust. Book One is available now.
             </p>
             <p className="hero__links">
               <a className="text-link" href="/book-one">
                 Enter Book One <span aria-hidden="true">→</span>
               </a>
-              <a className="text-link" href="/inquiry">
-                Explore the Inquiry <span aria-hidden="true">→</span>
+              <a className="text-link" href="/s2s">
+                Explore S2S <span aria-hidden="true">→</span>
               </a>
             </p>
           </div>
@@ -80,48 +80,13 @@ export default function PageMain() {
         </div>
       </section>
 
-      <section className="register register--light book-quote-register" aria-label="From The Cosmic Tapestry">
+      <section className="register register--light book-quote-register" aria-label="Book One body quote">
         <figure className="book-quote book-quote--home">
-          <p className="book-quote__label">From The Cosmic Tapestry</p>
+          <p className="book-quote__label">Body Signal</p>
           <blockquote>
             <p>The body is where the universe becomes personal.</p>
           </blockquote>
         </figure>
-      </section>
-
-      <section className="register register--light scale" aria-labelledby="scale-label">
-        <p id="scale-label" className="label">The inquiry moves across scale</p>
-        <ul className="scale-list">
-          <li>Body</li>
-          <li>Place</li>
-          <li>Land</li>
-          <li>Society</li>
-          <li>Civilization</li>
-          <li>Earth</li>
-          <li>Galaxy</li>
-          <li>Universe</li>
-          <li>Future Human</li>
-          <li>Unknown Intelligence</li>
-        </ul>
-      </section>
-
-      <section className="register register--light s2s-practice" aria-labelledby="practice-title">
-        <div className="s2s-practice__inner">
-          <p className="label">S2S in practice</p>
-          <h2 id="practice-title" className="display display--section">
-            A technology saves time.
-          </h2>
-          <div className="s2s-practice__copy">
-            <p>
-              S2S asks what becomes available when technology changes what humans are
-              required to do, which capacities the system now carries, and how
-              participation changes when the tool becomes ordinary.
-            </p>
-            <a className="text-link" href="/inquiry">
-              Follow the question <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
       </section>
 
       <section className="register register--ink paradigm" id="paradigm" aria-labelledby="paradigm-title">
@@ -129,7 +94,7 @@ export default function PageMain() {
           <div className="paradigm__copy">
             <p className="label label--light">S2S</p>
             <h2 id="paradigm-title" className="display display--dark">
-              Stardust to Sovereignty
+              The wider field
             </h2>
             <p className="paradigm__support">
               An inquiry following intelligence, coherence, and sovereign participation across scale.
@@ -141,16 +106,12 @@ export default function PageMain() {
               What we see changes how we participate.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty follows questions through body, place, land, society,
-              civilization, Earth, galaxy, universe, future human, and unknown intelligence.
-            </p>
-            <p className="body-dark">Each can become a field of inquiry.</p>
-            <p className="body-dark">
-              Encounter makes resonance, cohesion, consequence, continuity, and relation easier
-              to recognize.
+              S2S is the wider field behind the public entrances here: Book One,
+              Inquiry, Orbs, and Gigi's ongoing work.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty holds those fields within one paradigm of discovery.
+              Encounter makes resonance, cohesion, consequence, continuity, and
+              relation easier to recognize.
             </p>
             <a className="text-link text-link--light" href="/s2s">
               Explore S2S <span aria-hidden="true">→</span>
@@ -183,7 +144,7 @@ export default function PageMain() {
             </p>
             <ol className="inquiry-list">
               <li>
-                <span>What are we building simply by continuing to participate?</span>
+                <span>What are YOU doing with all your extra time?</span>
               </li>
               <li>
                 <span>What forms the human who comes next?</span>
@@ -214,9 +175,8 @@ export default function PageMain() {
               within Stardust to Sovereignty.
             </p>
             <p className="orbs__overview">
-              Their full constellation belongs on the Orbs page. Here, they remain a
-              threshold into origin, resonance, memory, time, transformation, sovereignty,
-              and bridging across scale.
+              They offer a threshold into origin, resonance, memory, time,
+              transformation, sovereignty, and bridging across scale.
             </p>
           </div>
         </div>
