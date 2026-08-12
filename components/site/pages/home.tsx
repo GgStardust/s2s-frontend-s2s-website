@@ -8,13 +8,26 @@ export default function PageMain() {
           <div className="hero__copy">
             <p className="label">Stardust to Sovereignty</p>
             <h1 id="hero-title" className="display display--hero">
-              Start with the body.<br />
-              Follow the work outward.
+              What are we building<br />
+              simply by continuing<br />
+              to participate?
             </h1>
             <p className="lede">
-              Book One is available now. Stardust to Sovereignty begins in lived
-              encounter and follows intelligence, sovereign participation, technology,
-              creativity, relationship, and the future human across scale.
+              Stardust to Sovereignty follows how intelligence becomes form, how
+              participation enters consequence, and how a human, a culture, or a
+              civilization remains answerable to what gave it life.
+            </p>
+            <p className="lede lede--quiet">
+              A living field of writing, inquiry, art, technology, and future human
+              capacity by Gigi Stardust. Book One is available now.
+            </p>
+            <p className="hero__links">
+              <a className="text-link" href="/book-one">
+                Enter Book One <span aria-hidden="true">→</span>
+              </a>
+              <a className="text-link" href="/inquiry">
+                Explore the Inquiry <span aria-hidden="true">→</span>
+              </a>
             </p>
           </div>
           <figure className="hero__glyph">
@@ -80,7 +93,6 @@ export default function PageMain() {
         <p id="scale-label" className="label">The inquiry moves across scale</p>
         <ul className="scale-list">
           <li>Body</li>
-          <li>Relationship</li>
           <li>Place</li>
           <li>Land</li>
           <li>Society</li>
@@ -129,14 +141,13 @@ export default function PageMain() {
               What we see changes how we participate.
             </p>
             <p className="body-dark">
-              Stardust to Sovereignty follows questions through body, relationship, place, land,
-              society, civilization, Earth, galaxy, universe, future human, and unknown
-              intelligence.
+              Stardust to Sovereignty follows questions through body, place, land, society,
+              civilization, Earth, galaxy, universe, future human, and unknown intelligence.
             </p>
             <p className="body-dark">Each can become a field of inquiry.</p>
             <p className="body-dark">
-              Encounter makes resonance, cohesion, consequence, continuity, and forms of
-              relationship easier to recognize.
+              Encounter makes resonance, cohesion, consequence, continuity, and relation easier
+              to recognize.
             </p>
             <p className="body-dark">
               Stardust to Sovereignty holds those fields within one paradigm of discovery.

@@ -113,16 +113,16 @@ const inquiries: Inquiry[] = [
   },
   {
     number: '09',
-    question: 'What becomes knowable through relationship that cannot be known alone?',
+    question: 'What becomes visible when attention follows how things are relating?',
     readsAs: [
-      'Relationship as a way of knowing.',
-      'Another person can reveal aspects of self, difference, attachment, perception, care, conflict, attraction, intimacy, recognition, and possibility that isolation cannot generate in the same way.',
+      'Attention following relation before interpretation closes around the form.',
+      'S2S asks what becomes recognizable when attention stays with how bodies, places, systems, patterns, signals, and conditions are relating.',
     ],
     provisional: [
-      'Some parts of a person become available in the presence of another.',
-      'Friendship, family, intimacy, strangers, conversation, care, conflict, humor, attention, and being seen can each alter what becomes perceptible.',
+      'Relating is active before it is named. Rhythm, pressure, timing, repetition, dissonance, and fit can reveal the order already shaping what is present.',
+      'Attention becomes a way of entering the field without reducing it too quickly to a category, conclusion, or familiar story.',
     ],
-    coordinates: ['Relationship', 'Recognition', 'Intimacy', 'Sovereignty'],
+    coordinates: ['Attention', 'Relation', 'Recognition', 'Resonance'],
   },
   {
     number: '10',

@@ -12,10 +12,10 @@ export default function PageMain() {
               within S2S.
             </h1>
             <p className="lede">
-              The Orbs are primary intelligences and structural principles within Stardust to Sovereignty.
+              The Orbs are primary interpretive intelligences and structural principles within Stardust to Sovereignty.
             </p>
             <p className="lede">
-              They help make origin, resonance, relationship, memory, time, transformation,
+              They help make origin, resonance, relation, memory, time, transformation,
               sovereignty, and bridging across scales recognizable.
             </p>
             <p className="orbs__boundary">
@@ -34,7 +34,7 @@ export default function PageMain() {
           <dl className="orb-demo__list">
             <div>
               <dt>Resonance Mechanics</dt>
-              <dd>notices how relationship reorganizes around the tool.</dd>
+              <dd>notices how signal, rhythm, and participation reorganize around the tool.</dd>
             </div>
             <div>
               <dt>Harmonic Architectures</dt>

@@ -12,13 +12,13 @@ export default function PageMain() {
           </h1>
           <div className="s2s-prose">
             <p className="body-dark">
-              Stardust to Sovereignty follows intelligence through body, relationship, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+              Stardust to Sovereignty follows intelligence through body, place, land, society, civilization, Earth, galaxy, universe, future human, and unknown intelligence.
+            </p>
+            <p className="body-dark">
+              Resonance surrounds the inquiry: rhythm, signal, dissonance, coherence, recognition, and the conditions through which participation becomes form.
             </p>
             <p className="body-dark">
               Technology and creativity are active movements within that inquiry.
-            </p>
-            <p className="body-dark">
-              Relationship is central to the work. Encounter reveals resonance, cohesion, consequence, continuity, and the forms of relation already shaping experience.
             </p>
             <p className="body-dark">
               Book One is the first completed literary embodiment. The larger S2S field is active through writing, making, observation, inquiry, and forms still coming into view.
@@ -319,7 +319,7 @@ export default function PageMain() {
           </h2>
           <div className="s2s-prose s2s-prose--light">
             <p>
-              Within S2S, the Orbs are primary intelligences and structural principles. They can also function as lenses of recognition when a pattern, relationship, capacity, or system comes into view.
+              Within S2S, the Orbs are primary interpretive intelligences and structural principles. They function as modes of recognition when a pattern, relation, capacity, or system comes into view.
             </p>
             <p className="s2s-orb-chain">
               Origin. Resonance. Light. Pattern. Time. Memory. Transformation. Intuition. Fluidity. Inheritance. Transparency. Sovereignty. Bridging Intelligence.
@@ -344,7 +344,7 @@ export default function PageMain() {
             Future Forms
           </p>
           <p className="s2s-future-forms__copy">
-            Stardust to Sovereignty is already moving through Book One, inquiry, observation, relationship, making, and the living field of encounter. Essays, images, field notes, systems, and future forms will be shared as they become ready for public form.
+            Stardust to Sovereignty is already moving through Book One, inquiry, observation, making, and the living field of encounter. Essays, images, field notes, systems, and future forms will be shared as they become ready for public form.
           </p>
         </div>
       </section>
