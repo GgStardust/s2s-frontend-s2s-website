@@ -13,9 +13,6 @@ export default function PageMain() {
               The first completed literary embodiment of Stardust to Sovereignty.
               Available now in paperback, hardcover, and ebook.
             </p>
-            <p className="book-reader-proposition">
-              Thirteen Orbs move through fourteen structural chapters, from origin into embodied sovereignty.
-            </p>
             <p className="order-row book__order-links">
               <a className="text-link" href="/order">
                 Buy directly from Gigi <span aria-hidden="true">→</span>

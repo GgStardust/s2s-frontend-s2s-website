@@ -7,6 +7,7 @@ const ALLOWED = [
   '/book-one',
   '/orbs',
   '/gigi',
+  '/previous',
   '/order',
   '/privacy',
   '/terms',

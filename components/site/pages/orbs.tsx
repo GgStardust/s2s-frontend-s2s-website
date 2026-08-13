@@ -11,20 +11,6 @@ export default function PageMain() {
               One architecture<br />
               through thirteen functions.
             </h1>
-            <p className="lede">
-              The Orbs express lived intelligence. Each one names a capacity already
-              active within human experience, sometimes clear, sometimes waiting
-              beneath attention.
-            </p>
-            <p className="lede">
-              Together they form one living architecture, shaping how awareness
-              perceives reality, relates to others, navigates time, forms identity,
-              and stabilizes coherence.
-            </p>
-            <p className="orbs__boundary">
-              Select any Orb to reveal its function in the architecture and its
-              expression in lived experience.
-            </p>
           </div>
         </div>
 
@@ -328,6 +314,23 @@ export default function PageMain() {
             </div>
           </li>
         </ul>
+
+        <div className="orbs__orientation">
+          <p className="lede">
+            The Orbs express lived intelligence. Each one names a capacity already
+            active within human experience, sometimes clear, sometimes waiting
+            beneath attention.
+          </p>
+          <p className="lede">
+            Together they form one living architecture, shaping how awareness
+            perceives reality, relates to others, navigates time, forms identity,
+            and stabilizes coherence.
+          </p>
+          <p className="orbs__boundary">
+            Select any Orb to reveal its function in the architecture and its
+            expression in lived experience.
+          </p>
+        </div>
 
         <p className="orbs__closing">
           <span className="orbs__closing-lead">

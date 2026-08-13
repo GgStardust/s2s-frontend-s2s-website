@@ -4,6 +4,37 @@ export default function PageMain() {
   return (
     <main id="main">
 
+      <section className="register register--light gigi-method" aria-labelledby="gigi-method-title">
+        <div className="gigi-method__inner">
+          <p className="label">How Inquiry Moves</p>
+          <ol className="gigi-method__steps">
+            <li>
+              <span>Experience</span>
+              <p>A lived encounter produces curiosity, dissonance, attraction, recognition, or refusal.</p>
+            </li>
+            <li>
+              <span>Question</span>
+              <p>The question forms because the encounter will not quite resolve.</p>
+            </li>
+            <li>
+              <span>Lines Of Inquiry</span>
+              <p>Technology, body, place, art, music, systems, animals, memory, and human life may begin speaking to the same pressure.</p>
+            </li>
+            <li>
+              <span>Resonance</span>
+              <p>Apparently separate things start to reveal a shared signal or pattern.</p>
+            </li>
+            <li>
+              <span>Architecture</span>
+              <p>When enough resonance gathers, a larger order becomes visible enough to write, make, test, or carry forward.</p>
+            </li>
+          </ol>
+          <h1 id="gigi-method-title" className="display display--section gigi-method__turn">
+            The pattern gathers before it has a name.
+          </h1>
+        </div>
+      </section>
+
       <section className="register register--light gigi page-gigi" aria-labelledby="gigi-title">
         <div className="gigi__grid">
           <div className="gigi__portrait-stack">
@@ -20,7 +51,7 @@ export default function PageMain() {
           </div>
           <div className="gigi__copy">
             <p className="label">Gigi Stardust</p>
-            <h1 id="gigi-title" className="display display--section">Author and creator.</h1>
+            <h2 id="gigi-title" className="display display--section">Author and creator.</h2>
             <p className="gigi-verbs">
               Encountering. Noticing. Questioning. Connecting. Writing. Making. Following what begins to resonate.
             </p>
@@ -52,37 +83,6 @@ export default function PageMain() {
           <p>
             <em>The Cosmic Tapestry</em> is the first completed literary embodiment of that inquiry.
           </p>
-        </div>
-      </section>
-
-      <section className="register register--light gigi-method" aria-labelledby="gigi-method-title">
-        <div className="gigi-method__inner">
-          <p className="label">How Inquiry Moves</p>
-          <h2 id="gigi-method-title" className="display display--section">
-            The pattern gathers before it has a name.
-          </h2>
-          <ol className="gigi-method__steps">
-            <li>
-              <span>Experience</span>
-              <p>A lived encounter produces curiosity, dissonance, attraction, recognition, or refusal.</p>
-            </li>
-            <li>
-              <span>Question</span>
-              <p>The question forms because the encounter will not quite resolve.</p>
-            </li>
-            <li>
-              <span>Lines Of Inquiry</span>
-              <p>Technology, body, place, art, music, systems, animals, memory, and human life may begin speaking to the same pressure.</p>
-            </li>
-            <li>
-              <span>Resonance</span>
-              <p>Apparently separate things start to reveal a shared signal or pattern.</p>
-            </li>
-            <li>
-              <span>Architecture</span>
-              <p>When enough resonance gathers, a larger order becomes visible enough to write, make, test, or carry forward.</p>
-            </li>
-          </ol>
         </div>
       </section>
 

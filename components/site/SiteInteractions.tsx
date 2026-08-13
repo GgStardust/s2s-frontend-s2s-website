@@ -12,6 +12,11 @@ export default function SiteInteractions() {
       [
         '.hero__copy',
         '.hero__glyph',
+        '.encounter__moment',
+        '.encounter__hinge',
+        '.ft-inquiry__q',
+        '.orbs-reveal',
+        '.gigi-method__inner',
         '.book__text',
         '.book-photo',
         '.book-purchase__inner',
