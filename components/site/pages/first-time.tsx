@@ -201,9 +201,16 @@ export default function PageMain() {
 
       <section className="register register--light orbs orbs--reveal" id="orbs" aria-labelledby="orbs-turn">
         <div className="orbs-reveal" aria-hidden="true">
-          {ORB_MARKS.map((src) => (
-            <img key={src} src={src} alt="" />
-          ))}
+          <div className="orbs-reveal__row">
+            {ORB_MARKS.slice(0, 12).map((src) => (
+              <img key={src} src={src} alt="" />
+            ))}
+          </div>
+          <img
+            className="orbs-reveal__last"
+            src={ORB_MARKS[12]}
+            alt=""
+          />
         </div>
         <p className="orbs-reveal__13" aria-hidden="true">
           13
