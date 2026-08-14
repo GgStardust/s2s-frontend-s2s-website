@@ -22,13 +22,44 @@ const ORB_MARKS = [
 export default function PageMain() {
   return (
     <main id="main" className="page-first-time">
-      <section className="register register--light encounter" aria-labelledby="encounter-title">
-        <div className="encounter__moment encounter__moment--title">
-          <h1 id="encounter-title" className="display display--hero encounter__name">
-            Stardust to<br />
-            Sovereignty
-          </h1>
+      <section className="register register--light hero" id="top" aria-labelledby="hero-title">
+        <div className="hero__grid">
+          <div className="hero__copy">
+            <p className="label">An evolving inquiry by Gigi Stardust</p>
+            <h1 id="hero-title" className="display display--hero">
+              Stardust to<br />
+              Sovereignty
+            </h1>
+            <p className="lede">
+              What does it mean to remain whole while participating in systems
+              larger than ourselves?
+            </p>
+            <p className="lede lede--quiet">
+              Enter through the body, relationship, technology, place, art,
+              questions, Book One, and the patterns of intelligence already
+              active in ordinary life.
+            </p>
+            <p className="hero__links">
+              <a className="text-link" href="/s2s">
+                Explore S2S <span aria-hidden="true">→</span>
+              </a>
+              <a className="text-link" href="/book-one">
+                Enter Book One <span aria-hidden="true">→</span>
+              </a>
+            </p>
+          </div>
+          <figure className="hero__glyph">
+            <img
+              src="/assets/glyphs/glyph_01.png?v=ink1"
+              alt=""
+              width={241}
+              height={455}
+              decoding="async"
+            />
+            <figcaption className="sr-only">Authored glyph</figcaption>
+          </figure>
         </div>
+        <div className="rule rule--full" aria-hidden="true"></div>
       </section>
 
       <section className="register register--light encounter" aria-label="Lived encounter">
