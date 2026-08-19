@@ -25,14 +25,17 @@ export default function PrivacyPage() {
 
         <article className="space-y-10 text-base leading-relaxed text-stone-300 font-serif">
           <p>
-            This policy describes how {LEGAL_SITE_NAME} handles personal information when you join the mailing list,
-            contact us, place a direct book order, or visit the site.
+            This policy describes how {LEGAL_SITE_NAME} handles personal information when you contact us, place a
+            direct book order, or visit the site. Writings and mailing-list signups are offered through Substack.
           </p>
 
           <section className="space-y-4">
             <h2 className="text-section-title font-semibold text-stone-200 font-serif">Information we collect</h2>
             <ul className="list-disc list-outside ml-5 space-y-2 font-sans text-stone-400 text-sm">
-              <li>Email address when you subscribe to occasional notes</li>
+              <li>
+                Email address and related account information, if you subscribe through Substack, collected by Substack
+                under its own terms
+              </li>
               <li>Messages you send to {CONTACT_EMAIL}</li>
               <li>Contact, purchase, and shipping information associated with a direct book order</li>
               <li>Basic site usage information collected through enabled analytics services</li>
@@ -50,17 +53,17 @@ export default function PrivacyPage() {
           <section className="space-y-4">
             <h2 className="text-section-title font-semibold text-stone-200 font-serif">Service providers</h2>
             <p>
-              The site may use Formspree for mailing-list signups, Vercel for hosting and analytics, Google Analytics
-              when enabled, Stripe for payment processing and purchase records, and service providers required to
-              fulfill direct orders. Each provider handles information under its own privacy terms.
+              The site may use Substack for writings and mailing-list signups, Vercel for hosting and analytics, Google
+              Analytics when enabled, Stripe for payment processing and purchase records, and service providers
+              required to fulfill direct orders. Each provider handles information under its own privacy terms.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-section-title font-semibold text-stone-200 font-serif">Your choices</h2>
             <p>
-              You may unsubscribe using the link in any mailing-list message. For access, correction, or deletion
-              requests, contact{' '}
+              You may unsubscribe using the link in any Substack mailing-list message. For access, correction, or
+              deletion requests about information this site holds, contact{' '}
               <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
                 {CONTACT_EMAIL}
               </a>

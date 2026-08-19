@@ -19,9 +19,9 @@ const nextConfig = {
       { source: '/order/direct/:path*', destination: '/order', permanent: true },
       // Soft legacy / convenience paths → home or contact
       { source: '/contact', destination: '/gigi#contact', permanent: false },
-      { source: '/writings', destination: '/', permanent: false },
-      { source: '/subscribe', destination: '/', permanent: false },
-      { source: '/newsletter', destination: '/', permanent: false },
+      { source: '/writings', destination: 'https://stardusttosovereignty.substack.com', permanent: false },
+      { source: '/subscribe', destination: 'https://stardusttosovereignty.substack.com/subscribe', permanent: false },
+      { source: '/newsletter', destination: 'https://stardusttosovereignty.substack.com/subscribe', permanent: false },
     ]
   },
 }

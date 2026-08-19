@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NewsletterSignup from '@/components/NewsletterSignup'
+import { siteConfig } from '@/lib/site/site-config'
 
 export default function SiteFooter() {
   return (
@@ -10,11 +11,17 @@ export default function SiteFooter() {
         <Link href="/book-one">Book One</Link>
         <Link href="/orbs">Orbs</Link>
         <Link href="/gigi">Gigi</Link>
+        <a href={siteConfig.writingsUrl} target="_blank" rel="noopener noreferrer">
+          Writings
+        </a>
+        <a href={siteConfig.subscribeUrl} target="_blank" rel="noopener noreferrer">
+          Subscribe
+        </a>
         <Link href="/gigi#contact">Contact</Link>
       </div>
 
       <div className="site-footer__newsletter">
-        <NewsletterSignup idPrefix="footer-newsletter" />
+        <NewsletterSignup />
       </div>
 
       <div className="site-footer__base">
