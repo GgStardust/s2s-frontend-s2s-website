@@ -3,14 +3,22 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { siteConfig } from '@/lib/site/site-config'
 
-const NAV = [
+type NavItem = {
+  href: string
+  label: string
+  external?: boolean
+}
+
+const NAV: NavItem[] = [
   { href: '/s2s', label: 'S2S' },
   { href: '/inquiry', label: 'Inquiry' },
   { href: '/book-one', label: 'Book One' },
   { href: '/orbs', label: 'Orbs' },
+  { href: siteConfig.writingsUrl, label: 'Writings', external: true },
   { href: '/gigi', label: 'Gigi' },
-] as const
+]
 
 export default function SiteHeader() {
   const pathname = usePathname()
@@ -28,13 +36,19 @@ export default function SiteHeader() {
         </Link>
         <nav className="site-nav" aria-label="Primary">
           {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? 'page' : undefined}
-            >
-              {item.label}
-            </Link>
+            item.external ? (
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
         <button
@@ -51,13 +65,19 @@ export default function SiteHeader() {
       </div>
       <nav id="mobile-nav" className="mobile-nav" hidden={!open}>
         {NAV.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? 'page' : undefined}
-          >
-            {item.label}
-          </Link>
+          item.external ? (
+            <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.label}
+            </a>
+          ) : (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+          )
         ))}
       </nav>
     </header>

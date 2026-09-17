@@ -1,4 +1,6 @@
 /* /s2s — paradigm registers + Living Field */
+import { siteConfig } from '@/lib/site/site-config'
+
 export default function PageMain() {
   return (
     <main id="main" className="page-s2s">
@@ -26,6 +28,16 @@ export default function PageMain() {
             </p>
             <p className="body-dark">
               Book One is the first completed literary embodiment. The larger S2S field remains active through writing, making, observation, and public forms still coming into view.
+            </p>
+            <p className="body-dark">
+              <a
+                className="text-link text-link--light"
+                href={siteConfig.writingsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the ongoing writings <span aria-hidden="true">→</span>
+              </a>
             </p>
           </div>
           <figure className="s2s-register__glyph" aria-hidden="true">

@@ -14,9 +14,6 @@ export default function SiteFooter() {
         <a href={siteConfig.writingsUrl} target="_blank" rel="noopener noreferrer">
           Writings
         </a>
-        <a href={siteConfig.subscribeUrl} target="_blank" rel="noopener noreferrer">
-          Subscribe
-        </a>
         <Link href="/gigi#contact">Contact</Link>
       </div>
 

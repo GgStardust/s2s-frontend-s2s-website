@@ -19,7 +19,7 @@ export default function NewsletterSignup({ className = '' }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Join <span aria-hidden="true">→</span>
+          Read and subscribe <span aria-hidden="true">→</span>
         </a>
       </p>
     </div>
