@@ -30,6 +30,11 @@ export async function POST(request: Request) {
   if (event.type === 'checkout.session.completed') {
     try {
       const session = event.data.object as Stripe.Checkout.Session
+      // This account also sells the UNA Guide kit; it has its own fulfillment.
+      if (session.metadata?.product === 'una_california_planning_kit_v1') {
+        return NextResponse.json({ received: true })
+      }
+
       if (session.payment_status !== 'paid') {
         return NextResponse.json({ received: true })
       }
